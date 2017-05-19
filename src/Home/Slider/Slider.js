@@ -14,24 +14,18 @@ class Slider extends Component {
       }
     ]
 
+    const moreThanOnePicture = _.size(this.pictures) > 1;
+    const slideShowIsOn = moreThanOnePicture ? true : false;
+
     this.state = {
       slideIndex: 0,
-      slideShowIsOn: true
+      slideShowIsOn
     }
-  }
-
-  componentWillMount() {
-    const moreThanOnePicture = _.size(this.pictures) > 1;
-    if (!moreThanOnePicture) {
-      this.setState({slideShowIsOn: false});
-    }
-
-    this.slideShow(this.state.slideShowIsOn);
   }
 
   componentDidMount() {
-    window.onload = this.savePictureHeight.bind(this);
     window.onresize = this.savePictureHeight.bind(this);
+    this.slideShow(this.state.slideShowIsOn);
   }
 
   componentWillUpdate(nextProps, nextState) {
@@ -39,13 +33,15 @@ class Slider extends Component {
     if (slideShowTurnedOnOrOff || nextState.instantChange) {
       this.slideShow(nextState.slideShowIsOn);
     }
+  }
 
+  componentWillUnmount() {
+    this.slideShow(false);
   }
 
   savePictureHeight() {
     if (_.size(this.pictures)) {
       const pictureElements = document.getElementsByClassName('slide-picture');
-
       const pictureHeight = pictureElements[0].querySelectorAll('img').item(0).offsetHeight;
       const sliderContainer = document.getElementById('slider-chris');
       sliderContainer.style.height = pictureHeight + 'px';
@@ -55,6 +51,7 @@ class Slider extends Component {
   slideShow(on) {
     // always reset the slideShow
     this.slideShowTimer && clearInterval(this.slideShowTimer);
+
     if (on) {
       this.slideShowTimer = setInterval(
         () => {
@@ -189,6 +186,7 @@ class Slider extends Component {
             src={source}
             alt={altTag}
             href={link}
+            onLoad={this.savePictureHeight.bind(this)}
           />
         </div>
       );

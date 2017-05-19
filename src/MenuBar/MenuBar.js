@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class MenuBar extends Component {
   render() {
     return (
       <div id="menubar">
         <ul className="cfm">
-          <li><a href="christianedu.php?p=welcome">Welcome</a></li>
-          <li><a href="christianedu.php?p=who">Who We are</a></li>
-          <li><a href="christianedu.php?p=why">Why We Are Here</a></li>
-          <li><a href="christianedu.php?p=where">Where We Are Going</a></li>
-          <li className='second-to-last-menu-item'><a href="christianedu.php?p=what">What's In Store</a></li>
-          <li className="lastmenuitem"><a href="christianedu.php?p=ideaform">Tell Us What You Think</a></li>
+          <li><Link to="/">Welcome</Link></li>
+          <li><Link to="/who">Who We are</Link></li>
+          <li><Link to="/why">Why We Are Here</Link></li>
+          <li><Link to="/where">Where We Are Going</Link></li>
+          <li className='second-to-last-menu-item'><Link to="/what">What's In Store</Link></li>
+          <li className="lastmenuitem"><Link to="/ideaform">Tell Us What You Think</Link></li>
         </ul>
       </div>
     );
