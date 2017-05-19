@@ -1,0 +1,577 @@
+﻿$arial: arial, helvetica, sans-serif;
+$calibri: "Segoe UI", Calibri, Candara, Segoe, Optima, Arial, sans-serif;
+$cambria: cambria, georgia, "bookman old style", "times new roman", serif;
+
+$main-green: RGB(146, 208,80);
+$RGB77: RGB(77,77,77);
+$RGB63: RGB(63,63,63);
+$RGB95: RGB(95,95,95);
+
+@mixin content-widths() {
+	width: 80%;
+	min-width: 800px;
+	max-width: 1000px;
+	margin:auto;
+}
+
+html{
+	height: 100%
+}
+
+#top-react-div{
+	min-height: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	margin:auto;
+	position: relative;
+}
+
+
+#maincontent{
+	@include content-widths();
+	flex: 1 0 auto;
+
+	&.welcome-page-main-content {
+		width: 100%;
+		max-width: none;
+	}
+}
+
+a{
+	text-decoration:none;
+}
+
+a:hover{
+cursor:pointer;
+text-decoration:underline;
+}
+
+h1{
+	display:inline-block;
+	padding-bottom:5px;
+	padding-right:100px;
+	margin-left:1em;
+	margin-bottom:2em;
+	border-bottom: 1px solid RGB(115,175,85);
+	font-family:$calibri;
+	font-size:80%;
+	text-transform:uppercase;
+	color:$main-green;
+	font-weight:normal;
+
+
+	span{
+		font-size:150%;
+		color:RGB(115,175,85);
+	}
+}
+
+form
+	{
+		border:1px solid $RGB95;
+		padding:1em 10%;
+
+		input[type=text], input[type=email],input[type=tel], textarea, select{
+		border:1px solid gray;
+		width:99%;
+		color:$RGB63;
+		}
+		select{
+			width:150px;
+
+		}
+
+
+		textarea{
+		height:120pt;
+		border:1px solid gray;
+		}
+
+		button{
+			display:block;
+			text-align:center;
+			margin:auto;
+			background-color:RGB(178,178,178);
+		}
+
+	}
+
+#menubar{
+	width:100%;
+	min-width: 800px;
+	margin-bottom: 4.5em;
+	background-color:$main-green;
+	font-size:90%;
+	font-family: $calibri;
+	text-transform:uppercase;
+	flex: 0 0 auto;
+
+
+	ul{
+		display: flex;
+		justify-content: space-between;
+		@include content-widths();
+		margin:0;
+		padding:3px 0;
+		list-style-type: none;
+		text-align:left;
+		vertical-align:center;
+		margin:auto;
+
+		li{
+			padding:0px;
+			margin-top:0px;
+			display:list-item;
+
+			&:first-child {
+				padding:0px;
+			}
+
+			&.second-to-last-menu-item {
+				flex: 1 0 auto;
+			}
+
+			&:last-child {
+				color:white;
+				text-align: right;
+
+				a, a:visited
+				{
+					color:white;
+				}
+			}
+
+			a{
+				padding:.1em 15px;
+				text-decoration: none;
+			}
+			a:visited{
+				color:black;
+			}
+			a:hover{
+				text-decoration: underline;
+				color:white;
+				cursor:pointer;
+			}
+		}
+
+	}
+}
+
+#header{
+	@include content-widths();
+	margin: auto;
+	position: relative;
+
+	// & > div {
+	// 	width: 80%;
+	// 	max-width:1000px;
+	// 	min-width: 800px;
+	// }
+
+	img{
+		padding:1em;
+		width:25%;
+		float:right;
+	}
+}
+
+#slider-chris{
+	position: relative;
+	width: 100%;
+	min-width: 800px;
+	overflow: hidden;
+	margin: auto;
+	flex: 1 0 auto;
+
+	.slider-control-buttons {
+		font-size: 20px;
+		@mixin slider-control-button() {
+			position: absolute;
+			color: white;
+			background: transparent;
+			border: none;
+			z-index: 20;
+		}
+
+		&.hide {
+			display: none;
+		}
+
+		.pic-control-button {
+			@include slider-control-button();
+			top: 50%;
+			transform: translate(0, -50%);
+
+			&.next {
+				right: 5px;
+			}
+
+			&.prev {
+				left: 5px;
+			}
+		}
+
+		.select-and-pause-controls {
+			position: absolute;
+			z-index: 20;
+			bottom: 10px;
+			left: 50%;
+			transform: translate(-50%);
+
+			.picture-select-button, #play-pause-button {
+				background: none;
+				border: none;
+				position: relative;
+
+					.fa-circle {
+						color: white;
+						transition: color 2s;
+					}
+
+					.fa-circle-o {
+						color: black;
+						transition: color 2s;
+					}
+
+				&.current {
+					.fa-circle {
+						color: black;
+					}
+
+					.fa-circle-o {
+						color: white;
+					}
+				}
+
+				// stacked elements are in the wrong place without this
+				&.fa-stack .fa {
+					top: 0;
+				}
+			}
+		}
+	}
+
+	.slide-picture {
+		position: absolute;
+		width: 100%;
+
+		&.hidden {
+			z-index: 0;
+			left: 100%;
+			transition: left 0s 1s;
+			&.instant {
+				transition: left 0s .3s;
+			}
+		}
+
+		&.current {
+			left: 0;
+			transition: left 1s ease-out;
+			z-index: 5;
+
+			&.instant {
+				transition: left .2s ease-out;
+			}
+		}
+
+		img {
+			position: absolute;
+			width: 100%;
+		}
+	}
+}
+
+.home-page-bottom-content {
+	@include content-widths();
+	margin: 3em auto;
+	display: none;
+	justify-content: space-between;
+
+	div {
+		border: 1px solid gray;
+		width: 200px;
+		height: 200px;
+	}
+
+	div:last-child {
+		margin-right: 0;
+	}
+}
+
+#leftcontent{
+	@include content-widths();
+	margin: auto;
+	font-family:$calibri;
+	color:$RGB63;
+
+	p,ol,ul{
+		margin-left:auto;
+		margin-right:auto;
+		width:800px;
+	}
+	ol,ul{
+		padding-left:4em;
+	}
+}
+
+ul.member-list{
+	width: 500px;
+	margin-left:auto;
+	margin-right:auto;
+	padding-left:4em;
+	list-style-type:none;
+	line-height:2.2em;
+	color:$main-green;
+	text-transform: uppercase;
+	font-size: 14px;
+
+	.member-title {
+		font-size: 10px;
+	}
+}
+
+#leftform{
+	margin:auto;
+	padding-top:2em;
+	width:400px;
+	font-family:$calibri;
+	font-size:10pt;
+	color:$RGB95;
+
+	h1{
+		font-weight:normal;
+		margin:.1em 0;
+		font-size:24pt;
+	}
+
+	h2{
+		font-family:$arial;
+		margin:.1em 0;
+		font-size:12pt;
+		text-transform:uppercase;
+	}
+
+	p#bottomnote{
+
+	text-align:center;
+
+	font-size:10pt;
+	font-family:cgothic;
+	color:rgb(0,204,0);
+	}
+
+	a:visited{
+		color:$RGB95;
+	}
+	a{
+		color:$RGB95;
+	}
+	img{
+		display:block;
+		text-align:center;
+		margin-left:auto; margin-right:auto;
+	}
+}
+.opinionsent{
+	padding-top: 1em; padding-bottom: 1em;
+	text-align:center;
+}
+
+#learnmore{
+	text-align:center;
+	font-size:70%;
+}
+
+$instorewidth:800px;
+$tableleft:300px;
+#instoretable{
+	margin-left:auto;
+	margin-right:auto;
+	width:$instorewidth;
+	font-family:$calibri;
+
+	.tableline{
+		margin:0;
+		border-bottom:1px solid orange;
+		clear:both;
+	}
+
+	.tableline:last-child{
+		border-bottom:none;
+	}
+
+	.tableleft{
+		box-sizing:border-box;
+		float:left;
+		margin:0;
+		padding:16px 8px 16px 1.5em;
+		width:$tableleft;
+		clear:both;
+		color:$main-green;
+	}
+	.tableright{
+		box-sizing:border-box;
+		margin:0; margin-left:$tableleft;
+		width:$instorewidth - $tableleft;
+		padding:1em;
+		border-left:1px solid orange;
+		font-size:10pt;
+	}
+	ol.tableright{
+	padding-left: 5em;
+	}
+}
+
+.valuedesc{
+	clear:left;
+	background-color:grey;
+
+	p{
+	float:right;
+	margin:0px;
+	padding:.3em;
+	width:12%;
+	font-size:60%;
+	text-align:center;
+	}
+}
+
+.pollline{
+	padding:.2em;
+}
+
+.pollquest{
+	clear:left;
+	float:left;
+	width:55%;
+	margin-bottom:10px;
+	font-size:75%
+
+}
+
+.radiobutts{
+	float:right;
+	margin:0px;
+	padding:.3em;
+	width:12%;
+	font-size:60%;
+	text-align:center;
+}
+
+.submit{
+	clear:both;
+	text-align:center;
+}
+
+#bottomquote{
+@include content-widths();
+padding-top:3em;
+text-align:center;
+font-family: $cambria;
+font-style:italic;
+color:grey;
+flex: 0 0 auto;
+}
+
+#footerbar{
+	background-color:RGB(180,180,180);
+
+}
+#footer{
+	width:1000px;
+	margin: auto;
+	padding-bottom: 10px;
+	font-size:70%;
+}
+#footerlinks
+{
+	position:relative;
+	float:left;
+	overflow:hidden;
+	color:$RGB77;
+	font-family:$calibri;
+}
+
+.footlinklist{
+	float:left;
+	margin:0px 20px;
+	ul{
+		margin:2px 5px;
+		padding:0px;
+		list-style-type: none;
+		li{
+			margin: 0px;
+		}
+	}
+	h3{
+		margin:1em 5px 2px 5px;
+		font-size:100%;
+		text-transform:uppercase;
+	}
+	a{
+		color:$RGB77;
+		text-decoration:none;
+	}
+	a:visited{
+		color:$RGB77;
+		text-decoration:none;
+	}
+}
+
+#socialcopyright{
+	margin-left:800px;
+	padding-top:15px;
+	font-size:65%;
+	font-family:$calibri;
+	img{
+		width:25px;
+		border-bottom: 1px solid blue;
+	}
+}
+
+/* Contain floats. */
+.cf:before, .cf:after {
+	content: '\0020';
+  display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}
+
+.cf:after {
+	clear: both;
+}
+
+.cf {
+	zoom: 1;
+}
+
+/* Contain floats *and margins*. */
+.cfm:before,
+.cfm:after {
+  content: ' ';
+  display: table;
+}
+.cfm:after {
+  clear: both;
+}
+
+/*General  */
+.clear{	clear:both}
+
+/*************** Font Family ************/
+.gill{	font-family:"gill sans mt", arial, sans-serif}
+.candara{font-family:"candara","trebuchet ms", helvetica, sans-serif}
+.verdana{font-family:verdana, geneva, sans-serif}
+.clear{	clear:both}
+.italic{font-style:italic;}
+.center{text-align:center;}
+.topofview{position:fixed; top:1em;}
+.thin{font-weight:lighter;}
+.maroon{color:maroon;}
+.bold{font-weight:bolder;}
+.black{color: black}
+.white{color: white}
