@@ -4,12 +4,15 @@ import _ from 'lodash';
 class Slider extends Component {
   constructor() {
     super();
-    this.pictures = undefined;
-    this.pictureSelectButtons = undefined;
-    this.slideCount = undefined;
-    this.slideShowTimer = undefined;
-    this.playPauseButton = undefined;
-    // this.slideShow = this.slideShow.bind(this);
+    this.pictures = [
+      {
+        source: require('./christian-ed-home-banner-VBS-temp.png'),
+        altTag: 'Banner for City Temple Vacation Bible School. July 10-14 6:30 pm-8:00 pm'
+      }, {
+        source: require('./christian-ed-home-banner-2020-temp.png'),
+        altTag: 'City Temple 2020 Vision'
+      }
+    ]
 
     this.state = {
       slideIndex: 0,
@@ -17,41 +20,34 @@ class Slider extends Component {
     }
   }
 
+  componentWillMount() {
+    const moreThanOnePicture = _.size(this.pictures) > 1;
+    if (!moreThanOnePicture) {
+      this.setState({slideShowIsOn: false});
+    }
+
+    this.slideShow(this.state.slideShowIsOn);
+  }
+
   componentDidMount() {
     window.onload = this.savePictureHeight.bind(this);
     window.onresize = this.savePictureHeight.bind(this);
+  }
 
-    this.pictures = document.getElementsByClassName('slide-picture');
-    this.slideCount = _.size(this.pictures);
-
-    var moreThanOnePicture = this.slideCount > 1;
-    if (moreThanOnePicture) {
-      this.setState({slideShowIsOn: true});
-      this.slideShow(this.state.slideShowIsOn);
-      var firstSelectButton = document.getElementsByClassName('picture-select-button')[0];
-      var selectAndPauseControlsDiv = document.getElementsByClassName('select-and-pause-controls')[0];
-      this.playPauseButton = document.getElementById('play-pause-button');
-      [].forEach.call(this.pictures, (picture, index) => {
-        if (index) {
-          var newSelectButton = firstSelectButton.cloneNode(true);
-          newSelectButton.onclick=this.showPicture.bind(this, index);
-          selectAndPauseControlsDiv.insertBefore(newSelectButton, this.playPauseButton);
-        }
-      });
-
-      firstSelectButton.className += ' current';
-
-      this.pictureSelectButtons = document.getElementsByClassName('picture-select-button');
-    } else {
-      var sliderControlButtons = document.getElementsByClassName('slider-control-buttons')[0];
-      sliderControlButtons.className += ' hide';
+  componentWillUpdate(nextProps, nextState) {
+    const slideShowTurnedOnOrOff = nextState.slideShowIsOn !== this.state.slideShowIsOn;
+    if (slideShowTurnedOnOrOff || nextState.instantChange) {
+      this.slideShow(nextState.slideShowIsOn);
     }
+
   }
 
   savePictureHeight() {
-    if (this.slideCount) {
-      var pictureHeight = this.pictures[0].querySelectorAll('img').item(0).offsetHeight;
-      var sliderContainer = document.getElementById('slider-chris');
+    if (_.size(this.pictures)) {
+      const pictureElements = document.getElementsByClassName('slide-picture');
+
+      const pictureHeight = pictureElements[0].querySelectorAll('img').item(0).offsetHeight;
+      const sliderContainer = document.getElementById('slider-chris');
       sliderContainer.style.height = pictureHeight + 'px';
     }
   }
@@ -62,85 +58,85 @@ class Slider extends Component {
     if (on) {
       this.slideShowTimer = setInterval(
         () => {
-          this.setState({slideIndex: this.getNextNumber(this.state.slideIndex, this.slideCount)});
-          console.log('calling set picture automaticlaly');
-          this.setPictureAndButtonClasses(this.state.slideIndex, true);
+          this.setState({
+            slideIndex: this.getNextNumber(this.state.slideIndex, _.size(this.pictures)),
+            instantChange: false
+          });
         },
         3000
       );
     }
   }
 
-  setPictureAndButtonClasses(displayIndex, automaticSlide) {
-    // want the slideShow timer to reset if picture changed by user button press
-    if (!automaticSlide) {
-      this.slideShow(this.state.slideShowIsOn);
-    }
-
-    [].forEach.call(this.pictures, (picture, index) => {
-      if (index === displayIndex) {
-        picture.className = 'slide-picture current';
-        this.pictureSelectButtons[index].className='picture-select-button fa-stack current';
-      } else {
-        picture.className = 'slide-picture hidden';
-        this.pictureSelectButtons[index].className='picture-select-button fa-stack hidden';
-      }
-
-      // user initiated picture changes should have instant class that doesn't do transition
-      // things currently get messy when transitioning random clicks
-      picture.className += automaticSlide ? '' : ' instant';
-    });
-  };
-
   getNextNumber(currentNumber, length, reverse) {
-    var nextNumber = currentNumber;
-    var lastSlideIndex = length - 1;
-    var firstSlideIndex = 0;
-    var onLastSlide = currentNumber === lastSlideIndex;
-    var onFirstSlide = currentNumber === firstSlideIndex;
+    let nextNumber = currentNumber;
+    const lastSlideIndex = length - 1;
+    const firstSlideIndex = 0;
+    const onLastSlide = nextNumber === lastSlideIndex;
+    const onFirstSlide = nextNumber === firstSlideIndex;
 
     if (reverse) {
-      currentNumber = onFirstSlide ? lastSlideIndex : --currentNumber;
+      nextNumber = onFirstSlide ? lastSlideIndex : --nextNumber;
     } else {
-      currentNumber = onLastSlide ? firstSlideIndex : ++currentNumber;
+      nextNumber = onLastSlide ? firstSlideIndex : ++nextNumber;
     }
 
-    return currentNumber
+    return nextNumber
   }
 
   showPicture(control) {
-    console.log('inside showPicture, control = ', control)
+    const {slideIndex} = this.state;
+    let newIndex;
     switch(control) {
       case 'next':
-        this.setState({slideIndex: this.getNextNumber(this.state.slideIndex, this.slideCount)});
+
+        newIndex = this.getNextNumber(slideIndex, _.size(this.pictures));
         break;
       case 'previous':
-        this.setState({slideIndex: this.getNextNumber(this.state.slideIndex, this.slideCount, true)});
+        newIndex = this.getNextNumber(slideIndex, _.size(this.pictures), true);
         break;
       default:
-        console.log('inside default');
-        if (typeof(control) === 'number' && 0 <= control && control < this.slideCount) {
+        if (typeof(control) === 'number' && 0 <= control && control < _.size(this.pictures)) {
           this.slideShow(this.state.slideShowIsOn);
-          console.log('setting state')
-          this.setState({slideIndex: control});
+          newIndex = control;
         }
     }
-    this.setPictureAndButtonClasses(this.state.slideIndex);
+
+    if (newIndex !== slideIndex) {
+      this.setState({
+        slideIndex: newIndex,
+        instantChange: true
+      })
+    }
   }
 
   toggleSlideShow() {
     this.setState({slideShowIsOn: !this.state.slideShowIsOn});
-    this.slideShow(this.state.slideShowIsOn);
-    var playPauseClassname;
-    if (this.state.slideShowIsOn) {
-      playPauseClassname = 'fa fa-pause-circle-o fa-stack-2x play-pause-icon';
-    } else {
-      playPauseClassname = 'fa fa-play-circle-o fa-stack-2x play-pause-icon';
-    }
-    this.playPauseButton.getElementsByClassName('play-pause-icon')[0].className = playPauseClassname;
+  }
+
+  _renderPictureSelectButtons() {
+    return this.pictures.map((picture, index) => {
+      const isCurrentPicture = index === this.state.slideIndex;
+      const currentOrHidden = isCurrentPicture ? 'current' : 'hidden';
+      return (
+        <button
+          className={`picture-select-button fa-stack ${currentOrHidden}`}
+          key={index}
+          onClick={_.bind(this.showPicture, this, index)}
+          type='button'
+        >
+          <i className='fa fa-circle fa-stack-2x'></i>
+          <i className='fa fa-circle-o fa-stack-2x'></i>
+        </button>
+      );
+    });
   }
 
   _renderslideShowButtons() {
+
+    const playOrPause = this.state.slideShowIsOn ? 'pause' : 'play';
+    const playPauseClassname = `fa fa-${playOrPause}-circle-o fa-stack-2x play-pause-icon`;
+
     return (
       <div className='slider-control-buttons'>
         <button
@@ -160,14 +156,7 @@ class Slider extends Component {
             <i className='fa fa-chevron-circle-right fa-stack-1x'></i>
         </button>
         <div className='select-and-pause-controls'>
-          <button
-            type='button'
-            className='picture-select-button fa-stack'
-            onClick={_.bind(this.showPicture, this, 0)}
-          >
-            <i className='fa fa-circle fa-stack-2x'></i>
-            <i className='fa fa-circle-o fa-stack-2x'></i>
-          </button>
+          {this._renderPictureSelectButtons()}
           <button
             id='play-pause-button'
             type='button'
@@ -175,7 +164,7 @@ class Slider extends Component {
             onClick={this.toggleSlideShow.bind(this)}
           >
             <i className='fa fa-circle fa-stack-2x white'></i>
-            <i className='fa fa-pause-circle-o fa-stack-2x play-pause-icon'></i>
+            <i className={playPauseClassname}></i>
           </button>
         </div>
       </div>
@@ -184,26 +173,23 @@ class Slider extends Component {
 
 
   _renderSlideShowPictures() {
-    const pictures = [
-      {
-        source: require('./christian-ed-home-banner-VBS-temp.png'),
-        altTag: 'Banner for City Temple Vacation Bible School. July 10-14 6:30 pm-8:00 pm'
-      }, {
-        source: require('./christian-ed-home-banner-2020-temp.png'),
-        altTag: 'City Temple 2020 Vision'
-      }
-    ]
-
-    const picturesElements = pictures.map((picture, index) => {
+    const picturesElements = this.pictures.map((picture, index) => {
       const {source, altTag, link} = picture;
-      const currentSlide = this.state.slideIndex === index;
-      const currentSuffix = currentSlide ? ' current' : '';
+      const {slideIndex, instantChange} = this.state;
+      const currentSlide = slideIndex === index;
+      const currentSuffix = currentSlide ? ' current' : ' hidden';
+      const instant = instantChange ? ' instant' : '';
+
       return (
         <div
           key={index}
-          className={'slide-picture' + currentSuffix}
+          className={'slide-picture' + currentSuffix + instant}
         >
-          <img src={source} alt={altTag} />
+          <img
+            src={source}
+            alt={altTag}
+            href={link}
+          />
         </div>
       );
     });
@@ -218,7 +204,7 @@ class Slider extends Component {
   render() {
     return (
     <div id='slider-chris'>
-      {this._renderslideShowButtons()}
+      {this.pictures.length > 1 ? this._renderslideShowButtons() : null}
       {this._renderSlideShowPictures()}
     </div>
     );

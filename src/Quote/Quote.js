@@ -16,8 +16,6 @@ class Quote extends Component {
     ,"“Iron sharpens iron, and one man sharpens another. Proverbs 27:17”"
     ];
 
-    console.log(random(0, quotes.length - 1));
-
   	return quotes[random(0, quotes.length - 1)];
   }
 
