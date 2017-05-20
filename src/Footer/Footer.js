@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
+
 import fbLogo from './smfbblack.png'
 import twitterLogo from './smtwblack.png'
 import envelope from './smmailblack.png'
@@ -10,32 +12,33 @@ class Footer extends Component {
     const currentYear = new Date().getFullYear();
 
     return (
+      // TODO: See if I can make links out to other city temple sites relational
+
       <div id="footerbar">
         <div id="footer" className="cf">
           <div id="footerlinks">
           <div className="footlinklist cf">
           <h3>About Us</h3>
           <ul>
-            <li><a href="christianedu.php?p=who">Who We Are</a></li>
-            <li><a href="christianedu.php?p=why">Why We Are Here</a></li>
-            <li><a href="christianedu.php?p=where">Where Are We Going</a></li>
+            <li><Link to="/who">Who We Are</Link></li>
+            <li><Link to="/why">Why We Are Here</Link></li>
+            <li><Link to="/where">Where Are We Going</Link></li>
           </ul>
           </div>
           <div className="footlinklist">
           <h3>Learn More</h3>
           <ul>
-            <li><a href="christianedu.php?p=what">What's In Store</a></li>
-            <li><a href="/blog/">Pastor's Blog</a></li>
-            <li><a href="aboutpage.php?p=membership">Join Our Church</a></li>
+            <li><Link to="/what">What's In Store</Link></li>
+            <li><a href="http://www.thecitytemple.org/blog/">Pastor's Blog</a></li>
+            <li><a href="http://www.thecitytemple.org/aboutpage.php?p=membership">Join Our Church</a></li>
           </ul>
           </div>
           <div className="footlinklist">
           <h3>Participate</h3>
           <ul>
-            <li><a href="christianedu.php?p=ideaform">Tell Us What You Think</a></li>
-            <li><a href="christianedu.php?p=welcome">Take Our Survey</a></li>
-            <li><a href="submenu.php?p=giving">Donate</a></li>
-            <li><a href="ministries.php">Join A Ministry</a></li>
+            <li><Link to="/ideaform">Tell Us What You Think</Link></li>
+            <li><a href="http://www.thecitytemple.org/submenu.php?p=giving">Donate</a></li>
+            <li><a href="http://www.thecitytemple.org/ministries.php">Join A Ministry</a></li>
           </ul>
           </div>
           </div>

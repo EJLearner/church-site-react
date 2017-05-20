@@ -5,20 +5,18 @@ class What extends Component {
   render() {
     return (
       <div id='leftcontent'>
-        <h1>What We <span className='emphwelcomeline'>Are</span></h1>
-
-        <ul className='member-list'>
-          <li>April S. Jones, <span className='member-title'>Co-chair</span></li>
-          <li>Davina Morton, <span className='member-title'>Co-chair</span></li>
-          <li>Linda Alexander, <span className='member-title'>Treasurer</span></li>
-          <li>Violet Churn</li>
-          <li>Iris Ford</li>
-          <li>Min. Charles Gaskins</li>
-          <li>Tyres Jones, Sr.</li>
-          <li>Janet Stewart</li>
-          <li>Emily Tilghman</li>
-          <li>Min. Patricia A. Yeargin</li>
-        </ul>
+      <h1>Where We Are <span>Going</span></h1>
+      <p>Our vision is to provide continual opportunities for spiritual growth to support the church&rsquo;s vision of &ldquo;becoming a spiritually mature Christian fellowship in order to provide an effective witness for Christ in this world.&rdquo;</p>
+      <p>Our goals are to:</p>
+      <ul>
+      <li>Expand attendance of the Church-wide Institute and seminars to our community members.</li>
+      <li>Host at least one workshop or class each quarter.</li>
+      <li>Offer more training classes and seminars for youth and teens.</li>
+      <li>Support any educational enterprise (spiritual or otherwise) of every ministry in the church.</li>
+      </ul>
+      <p>We have a very dedicated Sunday School and Vacation Bible School (VBS) staff. The Board of Christian Education hopes to continue to attract and train even more committed persons to support the increased demand of these endeavors.
+      In the past, City Temple operated &ldquo;Children&rsquo;s Church.&rdquo; Children&rsquo;s Church provided a safe and fun environment for children to learn about the bible and their faith on their level, while offering an opportunity for parents to engage in the worship service free of distractions.</p>
+      <p>Christian Education plans to design a new Children&rsquo;s Church model to determine if we can support bringing this program back to City Temple.</p>
       </div>
     );
   }
