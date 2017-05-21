@@ -43,9 +43,9 @@ class Footer extends Component {
           </div>
           </div>
           <div id="socialcopyright">
-            <a href="https://www.facebook.com/thecitytemple"><img src={fbLogo} alt="FaceBook Icon" />></a>
-            <a href="https://twitter.com/thecitytemple"><img src={twitterLogo} alt="Twitter Icon" />></a>
-            <a href="mailto:church@thecitytemple.org"><img src={envelope} alt="Mail Us" />></a>
+            <a href="https://www.facebook.com/thecitytemple"><img src={fbLogo} alt="FaceBook Icon" /></a>
+            <a href="https://twitter.com/thecitytemple"><img src={twitterLogo} alt="Twitter Icon" /></a>
+            <a href="mailto:church@thecitytemple.org"><img src={envelope} alt="Mail Us" /></a>
             <p>&copy; {currentYear} The City Temple (Baptist) Church</p>
           </div>
         </div>
