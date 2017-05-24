@@ -41,10 +41,8 @@ class Slider extends Component {
 
   savePictureHeight() {
     if (_.size(this.pictures)) {
-      const pictureElements = document.getElementsByClassName('slide-picture');
-      const pictureHeight = pictureElements[0].querySelectorAll('img').item(0).offsetHeight;
-      const sliderContainer = document.getElementById('slider-chris');
-      sliderContainer.style.height = pictureHeight + 'px';
+      const pictureHeight = this.slideShowImage.offsetHeight;
+      this.sliderDiv.style.height = pictureHeight + 'px';
     }
   }
 
@@ -183,10 +181,15 @@ class Slider extends Component {
           className={'slide-picture' + currentSuffix + instant}
         >
           <img
-            src={source}
             alt={altTag}
             href={link}
             onLoad={this.savePictureHeight.bind(this)}
+            ref={(node) => {
+              if (!this.slideShowImage) {
+                this.slideShowImage = node;
+              }
+            }}
+            src={source}
           />
         </div>
       );
@@ -201,7 +204,11 @@ class Slider extends Component {
 
   render() {
     return (
-    <div id='slider-chris'>
+    <div
+      id="leftcontent"
+      className='slider-chris'
+      ref={(node) => this.sliderDiv = node}
+    >
       {this.pictures.length > 1 ? this._renderslideShowButtons() : null}
       {this._renderSlideShowPictures()}
     </div>

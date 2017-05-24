@@ -43,19 +43,21 @@ class Calendar
 
   renderTableBodyRow(weekNumber, year){
     const renderedDays = _.range(0, 7).map((cell) => {
-      const dayMoment = moment().week(weekNumber).add(cell, 'day');
+      const dayMoment = moment().week(weekNumber).startOf('week').add(cell, 'day');
       const dayEvents = this.getEvents(dayMoment);
-      console.log(dayEvents);
       return(
-        <td
+        <td className='date-cell'
           key={cell}
           title={dayMoment.format('LL')}
+          style={{width: '150px', height: '150px'}}
         >
           <div>
-            {dayMoment.date()}
-          </div>
-          <div>
-            {dayEvents}
+            <div className='date-area'>
+              {dayMoment.date()}
+            </div>
+            <div classname='events-area'>
+              {dayEvents}
+            </div>
           </div>
         </td>
       );
@@ -69,7 +71,7 @@ class Calendar
   }
 
   renderTableBody(){
-    const today = '2017-05-21';
+    const today = '2017-05-23';
     const todayMoment = moment(today);
     const firstWeekOfMonth = todayMoment.startOf('month').week();
     const lastWeekOfMonth = todayMoment.endOf('month').week();
@@ -87,7 +89,7 @@ class Calendar
   render() {
     return (
       <div>
-        <table>
+        <table id='calendar-table'>
           {this.getTableHeader()}
           {this.renderTableBody()}
         </table>

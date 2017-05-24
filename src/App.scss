@@ -191,13 +191,23 @@ form
 	}
 }
 
-#slider-chris{
+#leftcontent.slider-chris{
 	position: relative;
 	width: 100%;
-	min-width: 800px;
+	max-width: 100%;
 	overflow: hidden;
-	margin: auto;
 	flex: 1 0 auto;
+
+	button{
+		opacity: 0.5;
+		transition: opacity .3
+	}
+
+	button:hover{
+		cursor: pointer;
+		opacity: 1.0;
+		transition: opacity .3
+	}
 
 	.slider-control-buttons {
 		font-size: 20px;
@@ -316,7 +326,6 @@ form
 
 #leftcontent{
 	@include content-widths();
-	margin: auto;
 	font-family:$calibri;
 	color:$RGB63;
 
@@ -479,6 +488,22 @@ $tableleft:300px;
 	text-align:center;
 }
 
+//calendar area
+#calendar-table{
+	td > div{
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		padding: 5px;
+
+		.date-area {
+			padding-bottom: 10px;
+		}
+	}
+}
+
+
 #bottomquote{
 @include content-widths();
 padding-top:3em;
@@ -489,6 +514,7 @@ color:grey;
 flex: 0 0 auto;
 }
 
+// footer area
 #footerbar{
 	background-color:RGB(180,180,180);
 
