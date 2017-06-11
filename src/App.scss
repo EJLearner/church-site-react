@@ -489,42 +489,47 @@ $tableleft:300px;
 }
 
 //calendar area
-#calendar-table{
-	td > div{
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		height: 100%;
-		padding: 5px;
+#calendar-div{
+	margin: auto;
 
-		.date-area {
-			padding-bottom: 10px;
+	#calendar-table{
+		td > div{
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			height: 100%;
+			padding: 5px;
+
+			.date-area {
+				padding-bottom: 10px;
+			}
 		}
 	}
 }
 
 
 #bottomquote{
-@include content-widths();
-padding-top:3em;
-text-align:center;
-font-family: $cambria;
-font-style:italic;
-color:grey;
-flex: 0 0 auto;
+	@include content-widths();
+	padding-top:3em;
+	text-align:center;
+	font-family: $cambria;
+	font-style:italic;
+	color:grey;
+	flex: 0 0 auto;
 }
 
 // footer area
 #footerbar{
 	background-color:RGB(180,180,180);
-
 }
+
 #footer{
 	width:1000px;
 	margin: auto;
 	padding-bottom: 10px;
 	font-size:70%;
 }
+
 #footerlinks
 {
 	position:relative;
@@ -537,23 +542,28 @@ flex: 0 0 auto;
 .footlinklist{
 	float:left;
 	margin:0px 20px;
+
 	ul{
 		margin:2px 5px;
 		padding:0px;
 		list-style-type: none;
+
 		li{
 			margin: 0px;
 		}
 	}
+
 	h3{
 		margin:1em 5px 2px 5px;
 		font-size:100%;
 		text-transform:uppercase;
 	}
+
 	a{
 		color:$RGB77;
 		text-decoration:none;
 	}
+
 	a:visited{
 		color:$RGB77;
 		text-decoration:none;

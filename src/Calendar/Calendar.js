@@ -13,14 +13,18 @@ class Calendar
     const events = {
       '2017': {
         'May': {
-          '25': 'Pumpkin chucking',
-          '29': 'Test  dummy day',
-          '05': 'Subpar golfing'
+          '25': ['Pumpkin chucking', 'Cleaning'],
+          '29': ['Test  dummy day'],
+          '05': ['Subpar golfing'],
+          '18': ['Hazardous stuff']
         }
       }
     };
 
-    return(_.get(events, `[${dayMomentYear}][${dayMomentMonth}][${dayMomentDate}]`));
+    const dayEvents = _.get(events, `[${dayMomentYear}][${dayMomentMonth}][${dayMomentDate}]`);
+
+    return _.map(dayEvents, ((event, index) => <span key={index}>{event}<br /></span>));
+    // return dayEvents;
   }
 
   getTableHeader(){
@@ -55,7 +59,7 @@ class Calendar
             <div className='date-area'>
               {dayMoment.date()}
             </div>
-            <div classname='events-area'>
+            <div className='events-area'>
               {dayEvents}
             </div>
           </div>
@@ -88,7 +92,7 @@ class Calendar
 
   render() {
     return (
-      <div>
+      <div id='calendar-div'>
         <table id='calendar-table'>
           {this.getTableHeader()}
           {this.renderTableBody()}
