@@ -10,6 +10,7 @@ class MenuBar extends Component {
           <li><Link to="/who">Who We are</Link></li>
           <li><Link to="/why">Why We Are Here</Link></li>
           <li><Link to="/where">Where We Are Going</Link></li>
+          <li><Link to='/calendar'>Calendar</Link></li>
           <li className='second-to-last-menu-item'><Link to="/what">What's In Store</Link></li>
           <li className="lastmenuitem"><Link to="/ideaform">Tell Us What You Think</Link></li>
         </ul>
