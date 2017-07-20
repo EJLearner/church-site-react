@@ -12,11 +12,9 @@ class Calendar
     const dayMomentDate = dayMoment.format('DD');
     const events = {
       '2017': {
-        'May': {
-          '25': ['Pumpkin chucking', 'Cleaning'],
-          '29': ['Test  dummy day'],
-          '05': ['Subpar golfing'],
-          '18': ['Hazardous stuff']
+        'Jul': {
+          '10': ['Vacation Bible School Start'],
+          '14': ['Vacation Bible School End and Closing Ceremony'],
         }
       }
     };
@@ -75,8 +73,7 @@ class Calendar
   }
 
   renderTableBody(){
-    const today = '2017-05-23';
-    const todayMoment = moment(today);
+    const todayMoment = moment();
     const firstWeekOfMonth = todayMoment.startOf('month').week();
     const lastWeekOfMonth = todayMoment.endOf('month').week();
 
