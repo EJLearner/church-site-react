@@ -4,7 +4,7 @@ import {Route, Switch} from 'react-router-dom';
 import Calendar from '../Calendar/Calendar'
 import Home from '../Home/Home'
 import IdeaForm from '../IdeaForm/IdeaForm'
-import NotFound from '../Components/NotFound/NotFound'
+import NotFound from '../NotFound/NotFound'
 import What from '../What/What'
 import Where from '../Where/Where'
 import WhoWeAre from '../WhoWeAre/WhoWeAre'
