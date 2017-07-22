@@ -57,8 +57,8 @@ a{
 }
 
 a:hover{
-cursor:pointer;
-text-decoration:underline;
+	cursor:pointer;
+	text-decoration:underline;
 }
 
 h1{
@@ -93,7 +93,6 @@ form
 		}
 		select{
 			width:150px;
-
 		}
 
 
@@ -108,7 +107,6 @@ form
 			margin:auto;
 			background-color:RGB(178,178,178);
 		}
-
 	}
 
 #menubar{
@@ -610,13 +608,13 @@ $tableleft:300px;
 }
 
 /*General  */
-.clear{	clear:both}
+.clear{clear:both}
 
 /*************** Font Family ************/
-.gill{	font-family:"gill sans mt", arial, sans-serif}
+.gill{font-family:"gill sans mt", arial, sans-serif}
 .candara{font-family:"candara","trebuchet ms", helvetica, sans-serif}
 .verdana{font-family:verdana, geneva, sans-serif}
-.clear{	clear:both}
+.clear{clear:both}
 .italic{font-style:italic;}
 .center{text-align:center;}
 .topofview{position:fixed; top:1em;}
