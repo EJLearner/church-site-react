@@ -47,6 +47,7 @@ class Slider extends Component {
   }
 
   slideShow(on) {
+    const timePerSlide = 8000;
     // always reset the slideShow
     this.slideShowTimer && clearInterval(this.slideShowTimer);
 
@@ -58,7 +59,7 @@ class Slider extends Component {
             instantChange: false
           });
         },
-        3000
+        timePerSlide
       );
     }
   }
