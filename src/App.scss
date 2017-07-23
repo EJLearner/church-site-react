@@ -41,7 +41,6 @@ table, th, td{
 	position: relative;
 }
 
-
 #maincontent{
 	@include content-widths();
 	flex: 1 0 auto;
@@ -81,112 +80,31 @@ h1{
 	}
 }
 
-form
-	{
-		border:1px solid $RGB95;
-		padding:1em 10%;
+form {
+	border:1px solid $RGB95;
+	padding:1em 10%;
 
-		input[type=text], input[type=email],input[type=tel], textarea, select{
-		border:1px solid gray;
-		width:99%;
-		color:$RGB63;
-		}
-		select{
-			width:150px;
-		}
-
-
-		textarea{
-		height:120pt;
-		border:1px solid gray;
-		}
-
-		button{
-			display:block;
-			text-align:center;
-			margin:auto;
-			background-color:RGB(178,178,178);
-		}
+	input[type=text], input[type=email],input[type=tel], textarea, select{
+	border:1px solid gray;
+	width:99%;
+	color:$RGB63;
 	}
 
-#menubar{
-	width:100%;
-	min-width: 800px;
-	margin-bottom: 4.5em;
-	background-color:$main-green;
-	font-size:90%;
-	font-family: $calibri;
-	text-transform:uppercase;
-	flex: 0 0 auto;
+	select{
+		width:150px;
+	}
 
 
-	ul{
-		display: flex;
-		justify-content: space-between;
-		@include content-widths();
-		margin:0;
-		padding:3px 0;
-		list-style-type: none;
-		text-align:left;
-		vertical-align:center;
+	textarea{
+	height:120pt;
+	border:1px solid gray;
+	}
+
+	button{
+		display:block;
+		text-align:center;
 		margin:auto;
-
-		li{
-			padding:0px;
-			margin-top:0px;
-			display:list-item;
-
-			&:first-child {
-				padding:0px;
-			}
-
-			&.second-to-last-menu-item {
-				flex: 1 0 auto;
-			}
-
-			&:last-child {
-				color:white;
-				text-align: right;
-
-				a, a:visited
-				{
-					color:white;
-				}
-			}
-
-			a{
-				color: black;
-				padding:.1em 15px;
-				text-decoration: none;
-			}
-			a:visited{
-				color:black;
-			}
-			a:hover{
-				text-decoration: underline;
-				color:white;
-				cursor:pointer;
-			}
-		}
-
-	}
-}
-
-#header{
-	@include content-widths();
-	margin: auto;
-	position: relative;
-
-	// & > div {
-	// 	width: 80%;
-	// 	max-width:1000px;
-	// 	min-width: 800px;
-	// }
-
-	img{
-		padding:1em;
-		width:25%;
-		float:right;
+		background-color:RGB(178,178,178);
 	}
 }
 
@@ -396,6 +314,7 @@ ul.member-list{
 		margin-left:auto; margin-right:auto;
 	}
 }
+
 .opinionsent{
 	padding-top: 1em; padding-bottom: 1em;
 	text-align:center;

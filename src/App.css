@@ -71,64 +71,6 @@ form {
     margin: auto;
     background-color: RGB(178, 178, 178); }
 
-#menubar {
-  width: 100%;
-  min-width: 800px;
-  margin-bottom: 4.5em;
-  background-color: RGB(146, 208, 80);
-  font-size: 90%;
-  font-family: "Segoe UI", Calibri, Candara, Segoe, Optima, Arial, sans-serif;
-  text-transform: uppercase;
-  flex: 0 0 auto; }
-  #menubar ul {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    min-width: 800px;
-    max-width: 1000px;
-    margin: auto;
-    margin: 0;
-    padding: 3px 0;
-    list-style-type: none;
-    text-align: left;
-    vertical-align: center;
-    margin: auto; }
-    #menubar ul li {
-      padding: 0px;
-      margin-top: 0px;
-      display: list-item; }
-      #menubar ul li:first-child {
-        padding: 0px; }
-      #menubar ul li.second-to-last-menu-item {
-        flex: 1 0 auto; }
-      #menubar ul li:last-child {
-        color: white;
-        text-align: right; }
-        #menubar ul li:last-child a, #menubar ul li:last-child a:visited {
-          color: white; }
-      #menubar ul li a {
-        color: black;
-        padding: .1em 15px;
-        text-decoration: none; }
-      #menubar ul li a:visited {
-        color: black; }
-      #menubar ul li a:hover {
-        text-decoration: underline;
-        color: white;
-        cursor: pointer; }
-
-#header {
-  width: 80%;
-  min-width: 800px;
-  max-width: 1000px;
-  margin: auto;
-  margin: auto;
-  position: relative; }
-  #header img {
-    padding: 1em;
-    width: 25%;
-    float: right; }
-
 #leftcontent.slider-chris {
   position: relative;
   width: 100%;
