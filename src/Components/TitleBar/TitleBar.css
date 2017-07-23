@@ -1,10 +1,17 @@
 #titlebar{
   background-color: rgb(146, 208, 80);
   color: white;
+  display: flex;
   font-family: "Segoe UI", Calibri, Candara, Segoe, Optima, Arial, sans-serif;
-  padding: .5em 8em;
+  padding: .5em 1em;
+  justify-content: space-between
 }
 
 #website-title {
   font-size: 80%;
+  padding-left: 5em;
+}
+
+#titlebar a, #titlebar a:visited {
+  color: white;
 }
