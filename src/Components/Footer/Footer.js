@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import fbLogo from './smfbblack.png'
-import twitterLogo from './smtwblack.png'
-import envelope from './smmailblack.png'
-
-
 class Footer extends Component {
 
   render() {
