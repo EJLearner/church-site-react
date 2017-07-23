@@ -491,11 +491,19 @@ $tableleft:300px;
 #socialcopyright{
 	margin-left:800px;
 	padding-top:15px;
-	font-size:65%;
 	font-family:$calibri;
-	img{
-		width:25px;
+
+	i {
 		border-bottom: 1px solid blue;
+		padding: 3px;
+	}
+
+	p {
+		font-size: 65%;
+	}
+
+	a, a:visited {
+		color: black
 	}
 }
 

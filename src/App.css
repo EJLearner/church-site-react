@@ -348,11 +348,14 @@ ul.member-list {
 #socialcopyright {
   margin-left: 800px;
   padding-top: 15px;
-  font-size: 65%;
   font-family: "Segoe UI", Calibri, Candara, Segoe, Optima, Arial, sans-serif; }
-  #socialcopyright img {
-    width: 25px;
-    border-bottom: 1px solid blue; }
+  #socialcopyright i {
+    border-bottom: 1px solid blue;
+    padding: 3px; }
+  #socialcopyright p {
+    font-size: 65%; }
+  #socialcopyright a, #socialcopyright a:visited {
+    color: black; }
 
 /* Contain floats. */
 .cf:before, .cf:after {
