@@ -18,7 +18,7 @@ class MenuBar extends Component {
           <li className="lastmenuitem"><Link to="/ideaform">Tell Us What You Think</Link></li>
         </ul>
         <div className="logo">
-          <img src={churchLogo} />
+          <img src={churchLogo}  alt=""/>
         </div>
       </div>
     );

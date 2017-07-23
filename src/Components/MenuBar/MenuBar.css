@@ -44,20 +44,14 @@
 	color:RGB(146, 208,80);
 }
 
-#menubar li a{
+#menubar li a, #menubar li a:visited{
 	color: black;
 	text-align: center;
 	text-decoration: none;
 }
 
-#menubar li a:visited{
-	color:black;
-}
-
 #menubar li a:hover{
 	text-decoration: underline;
-	color:black;
-	cursor:pointer;
 }
 
 .logo {
