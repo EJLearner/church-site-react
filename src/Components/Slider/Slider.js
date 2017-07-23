@@ -123,8 +123,8 @@ class Slider extends Component {
           onClick={_.bind(this.showPicture, this, index)}
           type='button'
         >
-          <i className='fa fa-circle fa-stack-2x'></i>
-          <i className='fa fa-circle-o fa-stack-2x'></i>
+          <i className='fa fa-circle fa-stack-1x' ariaLabel={`select picture ${index + 1}`}></i>
+          <i className='fa fa-circle-o fa-stack-1x'></i>
         </button>
       );
     });
@@ -132,8 +132,15 @@ class Slider extends Component {
 
   _renderslideShowButtons() {
 
-    const playOrPause = this.state.slideShowIsOn ? 'pause' : 'play';
-    const playPauseClassname = `fa fa-${playOrPause}-circle-o fa-stack-2x play-pause-icon`;
+    let playPauseClassname;
+    let playOrPauseLabel;
+    if (this.state.slideShowIsOn) {
+      playPauseClassname = 'fa fa-pause-circle-o fa-stack-1x play-pause-icon';
+      playOrPauseLabel = 'Pause the slide show'
+    } else {
+      playPauseClassname = 'fa fa-play-circle-o fa-stack-1x play-pause-icon';
+      playOrPauseLabel = 'Play the slide show'
+    }
 
     return (
       <div className='slider-control-buttons'>
@@ -161,8 +168,8 @@ class Slider extends Component {
             className='fa-stack'
             onClick={this.toggleSlideShow.bind(this)}
           >
-            <i className='fa fa-circle fa-stack-2x white'></i>
-            <i className={playPauseClassname}></i>
+            <i className='fa fa-circle fa-stack-1x white'></i>
+            <i className={playPauseClassname} ariaLabel={playOrPauseLabel}></i>
           </button>
         </div>
       </div>
