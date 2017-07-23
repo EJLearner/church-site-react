@@ -4,7 +4,7 @@ import Slider from '../Slider/Slider';
 class Home extends Component {
   render() {
     return (
-      <Slider />
+      <Slider showPictureSelectButtons={false} />
     );
   }
 }

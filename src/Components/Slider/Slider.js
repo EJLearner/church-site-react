@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+
 import _ from 'lodash';
 
 class Slider extends Component {
@@ -152,7 +154,7 @@ class Slider extends Component {
             <i className='fa fa-chevron-circle-right fa-stack-1x'></i>
         </button>
         <div className='select-and-pause-controls'>
-          {this._renderPictureSelectButtons()}
+          {this.props.showPictureSelectButtons ? this._renderPictureSelectButtons() : null}
           <button
             id='play-pause-button'
             type='button'
@@ -215,6 +217,14 @@ class Slider extends Component {
     </div>
     );
   }
+}
+
+Slider.propTypes = {
+  showPictureSelectButtons: PropTypes.bool
+};
+
+Slider.defaultProps = {
+  showPictureSelectButtons: true
 }
 
 export default Slider;
