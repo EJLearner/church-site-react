@@ -224,23 +224,6 @@ form {
 	}
 }
 
-.home-page-bottom-content {
-	@include content-widths();
-	margin: 3em auto;
-	display: none;
-	justify-content: space-between;
-
-	div {
-		border: 1px solid gray;
-		width: 200px;
-		height: 200px;
-	}
-
-	div:last-child {
-		margin-right: 0;
-	}
-}
-
 #leftcontent{
 	@include content-widths();
 	font-family:$calibri;
