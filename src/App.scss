@@ -130,7 +130,7 @@ form {
 		font-size: 20px;
 		@mixin slider-control-button() {
 			position: absolute;
-			color: white;
+			color: rgb(41, 41, 41);
 			background: transparent;
 			border: none;
 			z-index: 20;
@@ -164,26 +164,31 @@ form {
 			.picture-select-button, #play-pause-button {
 				background: none;
 				border: none;
+				font-size: 50%;
 				position: relative;
 
-					.fa-circle {
-						color: white;
-						transition: color 2s;
-					}
+				.fa-circle {
+					color: rgb(41, 41, 41);
+					transition: color 2s;
+				}
 
-					.fa-circle-o {
-						color: black;
-						transition: color 2s;
-					}
+				.fa-circle-o {
+					color: white;
+					transition: color 2s;
+				}
 
 				&.current {
 					.fa-circle {
-						color: black;
+						color: white;
 					}
 
 					.fa-circle-o {
-						color: white;
+						color: rgb(41, 41, 41);
 					}
+				}
+
+				.fa-pause-circle-o, .fa-play-circle-o {
+					color: white;
 				}
 
 				// stacked elements are in the wrong place without this
@@ -534,3 +539,4 @@ $tableleft:300px;
 .bold{font-weight:bolder;}
 .black{color: black}
 .white{color: white}
+.gray{color: rgb(41, 41, 41)}

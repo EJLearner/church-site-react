@@ -90,7 +90,7 @@ form {
       display: none; }
     #leftcontent.slider-chris .slider-control-buttons .pic-control-button {
       position: absolute;
-      color: white;
+      color: #292929;
       background: transparent;
       border: none;
       z-index: 20;
@@ -109,16 +109,19 @@ form {
       #leftcontent.slider-chris .slider-control-buttons .select-and-pause-controls .picture-select-button, #leftcontent.slider-chris .slider-control-buttons .select-and-pause-controls #play-pause-button {
         background: none;
         border: none;
+        font-size: 50%;
         position: relative; }
         #leftcontent.slider-chris .slider-control-buttons .select-and-pause-controls .picture-select-button .fa-circle, #leftcontent.slider-chris .slider-control-buttons .select-and-pause-controls #play-pause-button .fa-circle {
-          color: white;
+          color: #292929;
           transition: color 2s; }
         #leftcontent.slider-chris .slider-control-buttons .select-and-pause-controls .picture-select-button .fa-circle-o, #leftcontent.slider-chris .slider-control-buttons .select-and-pause-controls #play-pause-button .fa-circle-o {
-          color: black;
+          color: white;
           transition: color 2s; }
         #leftcontent.slider-chris .slider-control-buttons .select-and-pause-controls .picture-select-button.current .fa-circle, #leftcontent.slider-chris .slider-control-buttons .select-and-pause-controls #play-pause-button.current .fa-circle {
-          color: black; }
+          color: white; }
         #leftcontent.slider-chris .slider-control-buttons .select-and-pause-controls .picture-select-button.current .fa-circle-o, #leftcontent.slider-chris .slider-control-buttons .select-and-pause-controls #play-pause-button.current .fa-circle-o {
+          color: #292929; }
+        #leftcontent.slider-chris .slider-control-buttons .select-and-pause-controls .picture-select-button .fa-pause-circle-o, #leftcontent.slider-chris .slider-control-buttons .select-and-pause-controls .picture-select-button .fa-play-circle-o, #leftcontent.slider-chris .slider-control-buttons .select-and-pause-controls #play-pause-button .fa-pause-circle-o, #leftcontent.slider-chris .slider-control-buttons .select-and-pause-controls #play-pause-button .fa-play-circle-o {
           color: white; }
         #leftcontent.slider-chris .slider-control-buttons .select-and-pause-controls .picture-select-button.fa-stack .fa, #leftcontent.slider-chris .slider-control-buttons .select-and-pause-controls #play-pause-button.fa-stack .fa {
           top: 0; }
@@ -140,21 +143,6 @@ form {
     #leftcontent.slider-chris .slide-picture img {
       position: absolute;
       width: 100%; }
-
-.home-page-bottom-content {
-  width: 80%;
-  min-width: 800px;
-  max-width: 1000px;
-  margin: auto;
-  margin: 3em auto;
-  display: none;
-  justify-content: space-between; }
-  .home-page-bottom-content div {
-    border: 1px solid gray;
-    width: 200px;
-    height: 200px; }
-  .home-page-bottom-content div:last-child {
-    margin-right: 0; }
 
 #leftcontent {
   width: 80%;
@@ -422,3 +410,6 @@ ul.member-list {
 
 .white {
   color: white; }
+
+.gray {
+  color: #292929; }

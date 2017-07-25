@@ -123,8 +123,8 @@ class Slider extends Component {
           onClick={_.bind(this.showPicture, this, index)}
           type='button'
         >
-          <i className='fa fa-circle fa-stack-1x' ariaLabel={`select picture ${index + 1}`}></i>
-          <i className='fa fa-circle-o fa-stack-1x'></i>
+          <i className='fa fa-circle fa-stack-2x' ariaLabel={`select picture ${index + 1}`}></i>
+          <i className='fa fa-circle-o fa-stack-2x'></i>
         </button>
       );
     });
@@ -135,10 +135,10 @@ class Slider extends Component {
     let playPauseClassname;
     let playOrPauseLabel;
     if (this.state.slideShowIsOn) {
-      playPauseClassname = 'fa fa-pause-circle-o fa-stack-1x play-pause-icon';
+      playPauseClassname = 'fa fa-pause-circle-o fa-stack-2x play-pause-icon';
       playOrPauseLabel = 'Pause the slide show'
     } else {
-      playPauseClassname = 'fa fa-play-circle-o fa-stack-1x play-pause-icon';
+      playPauseClassname = 'fa fa-play-circle-o fa-stack-2x play-pause-icon';
       playOrPauseLabel = 'Play the slide show'
     }
 
@@ -149,7 +149,7 @@ class Slider extends Component {
           className='pic-control-button prev fa fa-chevron-circle-left'
           onClick={_.bind(this.showPicture, this, 'previous')}
         >
-            <i className='fa fa-circle fa-stack-1x black'></i>
+            <i className='fa fa-circle fa-stack-1x white'></i>
             <i className='fa fa-chevron-circle-left fa-stack-1x'></i>
         </button>
         <button
@@ -157,7 +157,7 @@ class Slider extends Component {
           className='pic-control-button next fa fa-chevron-circle-right'
           onClick={_.bind(this.showPicture, this, 'next')}
         >
-            <i className='fa fa-circle fa-stack-1x black'></i>
+            <i className='fa fa-circle fa-stack-1x white'></i>
             <i className='fa fa-chevron-circle-right fa-stack-1x'></i>
         </button>
         <div className='select-and-pause-controls'>
@@ -168,7 +168,7 @@ class Slider extends Component {
             className='fa-stack'
             onClick={this.toggleSlideShow.bind(this)}
           >
-            <i className='fa fa-circle fa-stack-1x white'></i>
+            <i className='fa fa-circle fa-stack-2x gray'></i>
             <i className={playPauseClassname} ariaLabel={playOrPauseLabel}></i>
           </button>
         </div>
