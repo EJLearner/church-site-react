@@ -34,19 +34,21 @@
 
 
 #menubar li:last-child {
-	/*repeating stuff $main-green*/
-	color:RGB(146, 208,80);
+	color:RGB(102, 158, 74);
 }
 
 #menubar li:last-child a, #menubar li:last-child a:visited {
-	/*repeating stuff $main-green*/
-	color:RGB(146, 208,80);
+	color:RGB(102, 158, 74);
 }
 
 #menubar li a, #menubar li a:visited{
 	color: black;
 	text-align: center;
 	text-decoration: none;
+}
+
+#menubar li.current-page-link a, #menubar li.current-page-link a:visited{
+	color: rgb(255, 192, 0);
 }
 
 #menubar li a:hover{
