@@ -123,7 +123,7 @@ class Slider extends Component {
           onClick={_.bind(this.showPicture, this, index)}
           type='button'
         >
-          <i className='fa fa-circle fa-stack-2x' ariaLabel={`select picture ${index + 1}`}></i>
+          <i className='fa fa-circle fa-stack-2x' aria-label={`select picture ${index + 1}`}></i>
           <i className='fa fa-circle-o fa-stack-2x'></i>
         </button>
       );
@@ -169,7 +169,7 @@ class Slider extends Component {
             onClick={this.toggleSlideShow.bind(this)}
           >
             <i className='fa fa-circle fa-stack-2x gray'></i>
-            <i className={playPauseClassname} ariaLabel={playOrPauseLabel}></i>
+            <i className={playPauseClassname} aria-label={playOrPauseLabel}></i>
           </button>
         </div>
       </div>
