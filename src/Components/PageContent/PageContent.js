@@ -1,4 +1,3 @@
-// import Slider from './Slider/Slider'
 import React, {Component} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import Calendar from '../Calendar/Calendar'

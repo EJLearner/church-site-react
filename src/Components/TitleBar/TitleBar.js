@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 
 import LoginControl from '../LoginControl/LoginControl'
-import styles from './TitleBar.css';
+
+import './TitleBar.css';
 
 class TitleBar extends Component {
   render() {

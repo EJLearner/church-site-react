@@ -3,12 +3,10 @@ import {Link} from 'react-router-dom';
 import { withRouter } from 'react-router-dom'
 import churchLogo from './chrisedtopbanner.png'
 
-import styles from './MenuBar.css'
+import './MenuBar.css'
 
 class MenuBar extends Component {
   render() {
-    console.log(this.props.location);
-
     const links = [
       {
         path: '/',
@@ -35,8 +33,12 @@ class MenuBar extends Component {
     ];
 
     const renderedLinks = links.map((link) => {
-      console.log(link.path, this.props.location.pathname)
-      const className = link.path === this.props.location.pathname ? 'current-page-link' : null;
+      const {pathname} = this.props.location;
+      let className = link.path === pathname ? 'current-page-link' : null;
+      const isHomePage = !pathname || pathname === '/christianedu.html';
+      if (link.path === '/' && isHomePage) {
+        className = 'current-page-link';
+      }
       return (
         <li key={link.path} className={className}>
           <Link to={link.path}>{link.text}</Link>
