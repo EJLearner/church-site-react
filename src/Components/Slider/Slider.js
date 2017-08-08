@@ -135,10 +135,10 @@ class Slider extends Component {
     let playPauseClassname;
     let playOrPauseLabel;
     if (this.state.slideShowIsOn) {
-      playPauseClassname = 'fa fa-pause-circle-o fa-stack-2x play-pause-icon';
+      playPauseClassname = 'fa fa-pause fa-stack-1x play-pause-icon';
       playOrPauseLabel = 'Pause the slide show'
     } else {
-      playPauseClassname = 'fa fa-play-circle-o fa-stack-2x play-pause-icon';
+      playPauseClassname = 'fa fa-play fa-stack-1x play-pause-icon';
       playOrPauseLabel = 'Play the slide show'
     }
 
@@ -146,19 +146,19 @@ class Slider extends Component {
       <div className='slider-control-buttons'>
         <button
           type='button'
-          className='pic-control-button prev fa fa-chevron-circle-left'
+          className='pic-control-button prev fa fa-angle-left'
           onClick={_.bind(this.showPicture, this, 'previous')}
         >
-            <i className='fa fa-circle fa-stack-1x white'></i>
-            <i className='fa fa-chevron-circle-left fa-stack-1x'></i>
+            <i className='fa fa-circle fa-stack-1x'></i>
+            <i className='fa fa-angle-left fa-stack-1x white'></i>
         </button>
         <button
           type='button'
-          className='pic-control-button next fa fa-chevron-circle-right'
+          className='pic-control-button next fa fa-angle-right'
           onClick={_.bind(this.showPicture, this, 'next')}
         >
-            <i className='fa fa-circle fa-stack-1x white'></i>
-            <i className='fa fa-chevron-circle-right fa-stack-1x'></i>
+            <i className='fa fa-circle fa-stack-1x'></i>
+            <i className='fa fa-angle-right fa-stack-1x white'></i>
         </button>
         <div className='select-and-pause-controls'>
           {this.props.showPictureSelectButtons ? this._renderPictureSelectButtons() : null}

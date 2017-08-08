@@ -187,7 +187,7 @@ form {
 					}
 				}
 
-				.fa-pause-circle-o, .fa-play-circle-o {
+				.fa-pause, .fa-play {
 					color: white;
 				}
 
@@ -393,26 +393,6 @@ $tableleft:300px;
 	clear:both;
 	text-align:center;
 }
-
-//calendar area
-#calendar-div{
-	margin: auto;
-
-	#calendar-table{
-		td > div{
-			display: flex;
-			flex-direction: column;
-			width: 100%;
-			height: 100%;
-			padding: 5px;
-
-			.date-area {
-				padding-bottom: 10px;
-			}
-		}
-	}
-}
-
 
 #bottomquote{
 	@include content-widths();

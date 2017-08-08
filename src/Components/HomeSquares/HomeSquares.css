@@ -30,3 +30,7 @@
 		position: relative;
 		width: 200px;
 	}
+
+.announcement-header {
+	color: orange;
+}
