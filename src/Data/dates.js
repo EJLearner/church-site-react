@@ -3,38 +3,29 @@ import React from 'react';
 import _ from 'lodash';
 
 const dates = {
-  getEventsForDate: (dayMoment) => {
-    const dayMomentYear = dayMoment.format('YYYY');
-    const dayMomentMonth = dayMoment.format('MMM');
-    const dayMomentDate = dayMoment.format('DD');
-    const events = {
-      '2017': {
-        'Jul': {
-          '10': [
-            {
-              title: 'Vacation Bible School Start'
-            }
-          ],
-          '14': ['Vacation Bible School End and Closing Ceremony'],
-        },
-        'Aug' : {
-          '27' : [
-            {
-              title: 'Outreach Benefit Concert',
-              description: 'The Outreach Ministry is sponsoring an Outreach Benefit Conert featuring Gary Stewart!!'
-            }
-          ]
-        }
+  getEventsForDate: (dateString) => {
+    const dates = [
+      {
+        date: '2017-07-10',
+        events: [{title: 'Vacation Bible School Start'}]
+      }, {
+        date: '2017-07-14',
+        events: ['Vacation Bible School End and Closing Ceremony']
+      }, {
+        date: '2017-08-27',
+        events: [{
+          title: 'Outreach Benefit Concert',
+          description: 'The Outreach Ministry is sponsoring an Outreach Benefit Conert featuring Gary Stewart!!'
+        }]
       }
-    };
+    ];
 
-
-
-    return _.get(events, `[${dayMomentYear}][${dayMomentMonth}][${dayMomentDate}]`);
+    const dateObject = dates.find((date) => date.date === dateString)
+    return dateObject && dateObject.events;
   },
 
-  getRenderedEventsForDate: (dayMoment) => {
-    const dayEvents = dates.getEventsForDate(dayMoment);
+  getRenderedEventsForDate: (dateString) => {
+    const dayEvents = dates.getEventsForDate(dateString);
 
     return _.map(dayEvents, (event, index) => {
       const title = event.title || event;

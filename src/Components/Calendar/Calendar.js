@@ -50,7 +50,7 @@ class Calendar
   _renderTableBodyRow(weekNumber, year){
     const renderedDays = _.range(0, 7).map((cell) => {
       const dayMoment = moment().week(weekNumber).startOf('week').add(cell, 'day');
-      const dayEvents = dates.getRenderedEventsForDate(dayMoment);
+      const dayEvents = dates.getRenderedEventsForDate(dayMoment.format('YYYY-MM-DD'));
       return(
         <td className='date-cell'
           key={cell}
@@ -92,7 +92,6 @@ class Calendar
   }
 
   render() {
-    console.log(dates.getRenderedEventsForDate(moment('2017-07-10')));
     return (
 
       <div id='calendar-div'>
