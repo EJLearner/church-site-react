@@ -9,6 +9,9 @@
 # production
 /build
 
+#styling
+*.css
+
 # misc
 .DS_Store
 .env
@@ -17,5 +20,5 @@ yarn-error.log*
 .swp
 .history/
 .vscode/
-
 reference_files/
+
