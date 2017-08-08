@@ -1,0 +1,65 @@
+#menubar {
+	align-items: center;
+	display: flex;
+	/* repeating $calibri */
+	font-family: "Segoe UI", Calibri, Candara, Segoe, Optima, Arial, sans-serif;;
+	font-size:90%;
+	justify-content: space-between;
+	min-width: 800px;
+	padding: 16px 16px;
+	text-transform:uppercase;
+	flex: 0 0 auto;
+}
+
+#menubar ul{
+	align-content: center;
+	display: flex;
+	justify-content: space-between;
+	/*repeating stuff @mixin*/
+	min-width: 800px;
+	margin:auto;
+	margin:0;
+	padding:3px 0;
+	list-style-type: none;
+	text-align:left;
+	width: 80%;
+}
+
+#menubar li{
+	display: flex;
+	margin-top:0px;
+	padding:0 8px;
+	text-align: center;
+}
+
+
+#menubar li:last-child {
+	color:RGB(102, 158, 74);
+}
+
+#menubar li:last-child a, #menubar li:last-child a:visited {
+	color:RGB(102, 158, 74);
+}
+
+#menubar li a, #menubar li a:visited{
+	color: black;
+	text-align: center;
+	text-decoration: none;
+}
+
+#menubar li.current-page-link a, #menubar li.current-page-link a:visited{
+	color: rgb(255, 192, 0);
+}
+
+#menubar li a:hover{
+	text-decoration: underline;
+}
+
+.logo {
+	width: 10%;
+}
+
+.logo img {
+	width: 100%;
+}
+

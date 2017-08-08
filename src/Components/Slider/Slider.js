@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+
 import _ from 'lodash';
 
 class Slider extends Component {
@@ -121,7 +123,7 @@ class Slider extends Component {
           onClick={_.bind(this.showPicture, this, index)}
           type='button'
         >
-          <i className='fa fa-circle fa-stack-2x'></i>
+          <i className='fa fa-circle fa-stack-2x' aria-label={`select picture ${index + 1}`}></i>
           <i className='fa fa-circle-o fa-stack-2x'></i>
         </button>
       );
@@ -130,8 +132,15 @@ class Slider extends Component {
 
   _renderslideShowButtons() {
 
-    const playOrPause = this.state.slideShowIsOn ? 'pause' : 'play';
-    const playPauseClassname = `fa fa-${playOrPause}-circle-o fa-stack-2x play-pause-icon`;
+    let playPauseClassname;
+    let playOrPauseLabel;
+    if (this.state.slideShowIsOn) {
+      playPauseClassname = 'fa fa-pause-circle-o fa-stack-2x play-pause-icon';
+      playOrPauseLabel = 'Pause the slide show'
+    } else {
+      playPauseClassname = 'fa fa-play-circle-o fa-stack-2x play-pause-icon';
+      playOrPauseLabel = 'Play the slide show'
+    }
 
     return (
       <div className='slider-control-buttons'>
@@ -140,7 +149,7 @@ class Slider extends Component {
           className='pic-control-button prev fa fa-chevron-circle-left'
           onClick={_.bind(this.showPicture, this, 'previous')}
         >
-            <i className='fa fa-circle fa-stack-1x black'></i>
+            <i className='fa fa-circle fa-stack-1x white'></i>
             <i className='fa fa-chevron-circle-left fa-stack-1x'></i>
         </button>
         <button
@@ -148,19 +157,19 @@ class Slider extends Component {
           className='pic-control-button next fa fa-chevron-circle-right'
           onClick={_.bind(this.showPicture, this, 'next')}
         >
-            <i className='fa fa-circle fa-stack-1x black'></i>
+            <i className='fa fa-circle fa-stack-1x white'></i>
             <i className='fa fa-chevron-circle-right fa-stack-1x'></i>
         </button>
         <div className='select-and-pause-controls'>
-          {this._renderPictureSelectButtons()}
+          {this.props.showPictureSelectButtons ? this._renderPictureSelectButtons() : null}
           <button
             id='play-pause-button'
             type='button'
             className='fa-stack'
             onClick={this.toggleSlideShow.bind(this)}
           >
-            <i className='fa fa-circle fa-stack-2x white'></i>
-            <i className={playPauseClassname}></i>
+            <i className='fa fa-circle fa-stack-2x gray'></i>
+            <i className={playPauseClassname} aria-label={playOrPauseLabel}></i>
           </button>
         </div>
       </div>
@@ -215,6 +224,14 @@ class Slider extends Component {
     </div>
     );
   }
+}
+
+Slider.propTypes = {
+  showPictureSelectButtons: PropTypes.bool
+};
+
+Slider.defaultProps = {
+  showPictureSelectButtons: true
 }
 
 export default Slider;
