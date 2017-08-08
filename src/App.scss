@@ -394,26 +394,6 @@ $tableleft:300px;
 	text-align:center;
 }
 
-//calendar area
-#calendar-div{
-	margin: auto;
-
-	#calendar-table{
-		td > div{
-			display: flex;
-			flex-direction: column;
-			width: 100%;
-			height: 100%;
-			padding: 5px;
-
-			.date-area {
-				padding-bottom: 10px;
-			}
-		}
-	}
-}
-
-
 #bottomquote{
 	@include content-widths();
 	padding-top:3em;
