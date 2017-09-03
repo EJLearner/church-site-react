@@ -1,5 +1,8 @@
+@import "../../_variables.scss";
+
+
 #titlebar{
-  background-color: rgb(146, 208, 80);
+  background-color: $main-green;
   color: white;
   display: flex;
   font-family:"Century Gothic", CenturyGothic, AppleGothic, sans-serif;

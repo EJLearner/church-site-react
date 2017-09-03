@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import _ from 'lodash';
 
+import './Slider.css';
+
 class Slider extends Component {
   constructor() {
     super();

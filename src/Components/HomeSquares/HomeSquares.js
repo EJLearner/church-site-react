@@ -1,11 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Announcements from '../Announcements/Announcements.js'
+
 import './HomeSquares.css';
 
+import calendarPic from "./calendar.png"
+import kidsPic from "./kids.jpg"
+import leadershipPic from "./leadership.png"
+
 const HomeSquare = (props) => {
+  const scrollClass = props.scroll ? ' scroll' : '';
+  const classNames = 'home-square' + scrollClass;
+
+
   return (
-    <div>
+    <div className={classNames}>
       <h2><span>{props.title}</span></h2>
       {props.children}
     </div>
@@ -15,20 +25,20 @@ const HomeSquare = (props) => {
 const HomeSquares = (props) => {
   return (
     <div className="home-page-bottom-content">
-      <HomeSquare title="Announcements">
-        <div>Test Content</div>
+      <HomeSquare scroll title="Announcements">
+        <Announcements />
       </HomeSquare>
 
       <HomeSquare title="Youth Ministries">
-        <div>Test Content</div>
+        <img src={kidsPic} alt="Children" />
       </HomeSquare>
 
       <HomeSquare title="Leadership">
-        <div>Test Content</div>
+        <img src={leadershipPic} alt="Leadership" />
       </HomeSquare>
 
       <HomeSquare title="Calendar">
-        <div>Test Content</div>
+        <img src={calendarPic} alt="Calendar" />
       </HomeSquare>
 
     </div>
@@ -36,8 +46,9 @@ const HomeSquares = (props) => {
 };
 
 HomeSquare.propTypes = {
-  title: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  scroll: PropTypes.bool,
+  title: PropTypes.string.isRequired
 }
 
 export default HomeSquares;

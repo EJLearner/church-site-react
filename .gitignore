@@ -10,7 +10,7 @@
 /build
 
 #styling
-*.css
+**/*.css
 
 # misc
 .DS_Store
@@ -21,4 +21,3 @@ yarn-error.log*
 .history/
 .vscode/
 reference_files/
-

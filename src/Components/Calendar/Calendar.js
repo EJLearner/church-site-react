@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import moment from 'moment';
 import _ from 'lodash';
 
-import dates from '../../Data/dates.js';
+import calendarDatesUtils from '../../Data/calendarDatesUtils.js';
 
 import './Calendar.css';
 
@@ -50,7 +50,7 @@ class Calendar
   _renderTableBodyRow(weekNumber, year){
     const renderedDays = _.range(0, 7).map((cell) => {
       const dayMoment = moment().week(weekNumber).startOf('week').add(cell, 'day');
-      const dayEvents = dates.getRenderedEventsForDate(dayMoment.format('YYYY-MM-DD'));
+      const dayEvents = calendarDatesUtils.getRenderedEventsForDate(dayMoment.format('YYYY-MM-DD'));
       return(
         <td className='date-cell'
           key={cell}
@@ -95,9 +95,11 @@ class Calendar
     return (
 
       <div id='calendar-div'>
-        {/* <a onClick={this._monthBack}>Previous</a> */}
-        <h2 className="calendar-month-name">{this.state.currentMonth.format('MMMM')}</h2>
-        {/* <a onClick={this._monthForward}>Next</a> */}
+        <div className="controls-and-title">
+          <a onClick={this._monthBack}><i className="fa fa-caret-left fa-lg" title="Previous Month"/></a>
+          <h2>{this.state.currentMonth.format('MMMM YYYY')}</h2>
+          <a onClick={this._monthForward}><i className="fa fa-caret-right fa-lg" title="Next Month"/></a>
+        </div>
         <table id='calendar-table'>
           {this._getTableHeader()}
           {this._renderTableBody()}

@@ -17,11 +17,12 @@ class PageContent extends Component {
           <Route exact path="/" component={Home}/>
           <Route path="/christianedu.html" component={Home}/>
           <Route path="/calendar" component={Calendar}/>
+          <Route path="/ideaform" component={IdeaForm}/>
+          {/* <Route path="/cc-registration" component={RegistrationLanding}/> */}
           <Route path="/who" component={WhoWeAre}/>
           <Route path="/why" component={Why}/>
-          <Route path="/where" component={Where}/>
           <Route path="/what" component={What}/>
-          <Route path="/ideaform" component={IdeaForm}/>
+          <Route path="/where" component={Where}/>
           <Route component={NotFound}/>
       </Switch>
     );

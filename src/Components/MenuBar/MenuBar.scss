@@ -1,3 +1,5 @@
+@import "../../_variables.scss";
+
 #menubar {
 	align-items: center;
 	display: flex;
@@ -34,11 +36,11 @@
 
 
 #menubar li:last-child {
-	color:RGB(102, 158, 74);
+	color: $last-link-green;
 }
 
 #menubar li:last-child a, #menubar li:last-child a:visited {
-	color:RGB(102, 158, 74);
+	color: $last-link-green;
 }
 
 #menubar li a, #menubar li a:visited{
@@ -48,7 +50,7 @@
 }
 
 #menubar li.current-page-link a, #menubar li.current-page-link a:visited{
-	color: rgb(255, 192, 0);
+	color: $orange;
 }
 
 #menubar li a:hover{
