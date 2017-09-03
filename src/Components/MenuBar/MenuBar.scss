@@ -3,8 +3,7 @@
 #menubar {
 	align-items: center;
 	display: flex;
-	/* repeating $calibri */
-	font-family: "Segoe UI", Calibri, Candara, Segoe, Optima, Arial, sans-serif;;
+	font-family: $calibri;
 	font-size:90%;
 	justify-content: space-between;
 	min-width: 800px;
@@ -17,7 +16,6 @@
 	align-content: center;
 	display: flex;
 	justify-content: space-between;
-	/*repeating stuff @mixin*/
 	min-width: 800px;
 	margin:auto;
 	margin:0;
