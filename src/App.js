@@ -7,7 +7,7 @@ import Footer from './Components/Footer/Footer'
 import Quote from './Components/Quote/Quote'
 import TitleBar from './Components/TitleBar/TitleBar'
 import Calendar from './Components/Calendar/Calendar'
-import CcRegistration from './Components/RegistrationPages/CcRegistration'
+import CcRegistrationLanding from './Components/RegistrationPages/CcRegistrationLanding'
 import Home from './Components/Home/Home'
 import IdeaForm from './Components/IdeaForm/IdeaForm'
 import NotFound from './Components/NotFound/NotFound'
@@ -49,7 +49,7 @@ class App extends Component {
           <Route path="/christianedu.html" render={() => <FullPage><Home /></FullPage>} />
           <Route path="/calendar" render={() => <FullPage><Calendar /></FullPage>} />
           <Route path="/ideaform" render={() => <FullPage><IdeaForm /></FullPage>} />
-          <Route path="/cc-registration" render={() => <BarePage><CcRegistration /></BarePage>} />
+          <Route path="/cc-registration" render={() => <BarePage><CcRegistrationLanding /></BarePage>} />
           <Route path="/who" render={() => <FullPage><WhoWeAre /></FullPage>} />
           <Route path="/why" render={() => <FullPage><Why /></FullPage>} />
           <Route path="/what" render={() => <FullPage><What /></FullPage>} />

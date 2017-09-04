@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import _ from 'lodash';
-import ceLogo from './cesquare.png'
 
 import './RegistrationLanding.css';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import RegistrationLanding from './RegistrationLanding.js';
 
-const CcRegistration = (props) => {
+const CcRegistrationLanding = (props) => {
   return (
     <RegistrationLanding
       onClickAttend={() => {console.log('Attending Button Clicked')}}
@@ -11,4 +11,4 @@ const CcRegistration = (props) => {
   );
 };
 
-export default CcRegistration;
+export default CcRegistrationLanding;
