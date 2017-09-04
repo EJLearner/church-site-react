@@ -1,5 +1,5 @@
 #calendar-div{
-  margin: auto;
+  margin: 0 auto;
 }
 
 #calendar-table td > div{
@@ -27,4 +27,14 @@
     width: 300px;
     text-align:center;
   }
+}
+
+table{
+  border-collapse: collapse;
+  margin: auto;
+}
+
+table, th, td{
+	border: 1px solid black;
+	padding: 5px;
 }

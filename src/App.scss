@@ -7,23 +7,20 @@
 	margin:auto;
 }
 
-body{
-	padding: 0px;
-	margin: 0px;
-}
-
 html{
 	height: 100%
 }
 
-table{
-	border-collapse: collapse;
+body{
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
 }
 
-table, th, td{
-	border: 1px solid black;
-	padding: 5px;
+#root {
+	height: 100%;
 }
+
 
 #top-react-div{
 	min-height: 100%;
@@ -158,7 +155,7 @@ ul.member-list{
 	text-align:center;
 
 	font-size:10pt;
-	font-family:cgothic;
+	font-family:century-gothic;
 	color:rgb(0,204,0);
 	}
 

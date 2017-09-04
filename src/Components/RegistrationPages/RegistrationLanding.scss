@@ -1,0 +1,52 @@
+@import "../../_variables.scss";
+
+.registration-landing {
+  display: flex;
+  flex-grow: 2;
+  position: relative;
+
+  button {
+    position: absolute;
+    background-color: transparent;
+    border: 1px solid;
+    color: inherit;
+    display: block;
+    padding: 1.5em;
+    margin: 0 auto;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 20%;
+  }
+}
+
+.left-side {
+  position: relative;
+  background-color: black;
+  color: white;
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+.right-side {
+  position: relative;
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+div.sentence {
+  font-size: 300%;
+  margin: 20vh 0 2em 10%;
+
+  span {
+    display: block;
+  }
+
+  span.first-part {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  span.rest-of-sentence {
+    font-family: $century-gothic;
+  }
+}
