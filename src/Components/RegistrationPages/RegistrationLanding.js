@@ -13,7 +13,10 @@ const types = {
 const RegistrationLanding = (props) => {
   return (
     <div className="registration-landing">
-      <div className="left-side">
+      <div
+        className="left-side"
+        style={{backgroundImage: `url(${props.imgPath})`}}
+      >
         <div className="sentence">
           <span className="first-part">Register </span>
           <span className="rest-of-sentence">for a Class</span>
@@ -32,9 +35,10 @@ const RegistrationLanding = (props) => {
 };
 
 RegistrationLanding.propTypes = {
-  type: PropTypes.oneOf(_.values(types)),
+  imgPath: PropTypes.string,
   onClickAttend: PropTypes.func.isRequired,
-  onClickVolunteer: PropTypes.func.isRequired
+  onClickVolunteer: PropTypes.func.isRequired,
+  type: PropTypes.oneOf(_.values(types)),
 };
 
 RegistrationLanding.TYPES = types;

@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import {Route, Switch} from 'react-router-dom';
 
-import CeLogo from './Components/CeLogo/CeLogo';
-import MenuBar from './Components/MenuBar/MenuBar'
-import Footer from './Components/Footer/Footer'
-import Quote from './Components/Quote/Quote'
-import TitleBar from './Components/TitleBar/TitleBar'
 import Calendar from './Components/Calendar/Calendar'
-import CcRegistrationLanding from './Components/RegistrationPages/CcRegistrationLanding'
+import CeLogo from './Components/CeLogo/CeLogo';
+import Footer from './Components/Footer/Footer'
 import Home from './Components/Home/Home'
 import IdeaForm from './Components/IdeaForm/IdeaForm'
+import MenuBar from './Components/MenuBar/MenuBar'
 import NotFound from './Components/NotFound/NotFound'
+import Quote from './Components/Quote/Quote'
+import CcRegistrationLanding from './Components/RegistrationPages/CcRegistrationLanding'
+import VbsRegistrationLanding from './Components/RegistrationPages/VbsRegistrationLanding'
+import TitleBar from './Components/TitleBar/TitleBar'
 import What from './Components/What/What'
 import Where from './Components/Where/Where'
 import WhoWeAre from './Components/WhoWeAre/WhoWeAre'
@@ -49,7 +50,8 @@ class App extends Component {
           <Route path="/christianedu.html" render={() => <FullPage><Home /></FullPage>} />
           <Route path="/calendar" render={() => <FullPage><Calendar /></FullPage>} />
           <Route path="/ideaform" render={() => <FullPage><IdeaForm /></FullPage>} />
-          <Route path="/cc-registration" render={() => <BarePage><CcRegistrationLanding /></BarePage>} />
+          <Route path="/cc-registration-landing" render={() => <BarePage><CcRegistrationLanding /></BarePage>} />
+          <Route path="/vbs-registration-landing" render={() => <BarePage><VbsRegistrationLanding /></BarePage>} />
           <Route path="/who" render={() => <FullPage><WhoWeAre /></FullPage>} />
           <Route path="/why" render={() => <FullPage><Why /></FullPage>} />
           <Route path="/what" render={() => <FullPage><What /></FullPage>} />
