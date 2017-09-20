@@ -1,0 +1,17 @@
+@import '../../_variables.scss';
+
+.registration-page {
+  padding: 1em 5em;
+
+  h1 {
+    font-size: 36px;
+    color: $orange;
+    margin-bottom: 0px;
+  }
+
+  h2 {
+    font-size: 24px;
+    color: orange;
+    margin-top: 0px;
+  }
+}
