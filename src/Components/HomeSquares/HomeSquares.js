@@ -1,28 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Announcements from '../Announcements/Announcements.js'
+import Announcements from '../Announcements/Announcements.js';
 
 import './HomeSquares.css';
 
-import calendarPic from "./calendar.png"
-import kidsPic from "./kids.jpg"
-import leadershipPic from "./leadership.png"
+import calendarPic from './calendar.png';
+import kidsPic from './kids.jpg';
+import leadershipPic from './leadership.png';
 
-const HomeSquare = (props) => {
+const HomeSquare = props => {
   const scrollClass = props.scroll ? ' scroll' : '';
   const classNames = 'home-square' + scrollClass;
 
-
   return (
     <div className={classNames}>
-      <h2><span>{props.title}</span></h2>
+      <h2>
+        <span>{props.title}</span>
+      </h2>
       {props.children}
     </div>
   );
 };
 
-const HomeSquares = (props) => {
+const HomeSquares = props => {
   return (
     <div className="home-page-bottom-content">
       <HomeSquare scroll title="Announcements">
@@ -40,7 +41,6 @@ const HomeSquares = (props) => {
       <HomeSquare title="Calendar">
         <img src={calendarPic} alt="Calendar" />
       </HomeSquare>
-
     </div>
   );
 };
@@ -49,6 +49,6 @@ HomeSquare.propTypes = {
   children: PropTypes.node.isRequired,
   scroll: PropTypes.bool,
   title: PropTypes.string.isRequired
-}
+};
 
 export default HomeSquares;

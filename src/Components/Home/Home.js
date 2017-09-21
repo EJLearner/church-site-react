@@ -5,11 +5,11 @@ import HomeSquares from '../HomeSquares/HomeSquares';
 
 const Home = () => {
   return (
-  <div>
-    <Slider showPictureSelectButtons={false} />
-    <HomeSquares></HomeSquares>
-  </div>
+    <div>
+      <Slider showPictureSelectButtons={false} />
+      <HomeSquares />
+    </div>
   );
-}
+};
 
 export default Home;

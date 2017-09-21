@@ -11,12 +11,14 @@ class Slider extends Component {
     this.pictures = [
       {
         source: require('./christian-ed-home-banner-VBS-temp.png'),
-        altTag: 'Banner for City Temple Vacation Bible School. July 10-14 6:30 pm-8:00 pm'
-      }, {
+        altTag:
+          'Banner for City Temple Vacation Bible School. July 10-14 6:30 pm-8:00 pm'
+      },
+      {
         source: require('./christian-ed-home-banner-2020-temp.png'),
         altTag: 'City Temple 2020 Vision'
       }
-    ]
+    ];
 
     const moreThanOnePicture = _.size(this.pictures) > 1;
     const slideShowIsOn = moreThanOnePicture ? true : false;
@@ -24,7 +26,7 @@ class Slider extends Component {
     this.state = {
       slideIndex: 0,
       slideShowIsOn
-    }
+    };
   }
 
   componentDidMount() {
@@ -33,7 +35,8 @@ class Slider extends Component {
   }
 
   componentWillUpdate(nextProps, nextState) {
-    const slideShowTurnedOnOrOff = nextState.slideShowIsOn !== this.state.slideShowIsOn;
+    const slideShowTurnedOnOrOff =
+      nextState.slideShowIsOn !== this.state.slideShowIsOn;
     if (slideShowTurnedOnOrOff || nextState.instantChange) {
       this.slideShow(nextState.slideShowIsOn);
     }
@@ -56,15 +59,15 @@ class Slider extends Component {
     this.slideShowTimer && clearInterval(this.slideShowTimer);
 
     if (on) {
-      this.slideShowTimer = setInterval(
-        () => {
-          this.setState({
-            slideIndex: this.getNextNumber(this.state.slideIndex, _.size(this.pictures)),
-            instantChange: false
-          });
-        },
-        timePerSlide
-      );
+      this.slideShowTimer = setInterval(() => {
+        this.setState({
+          slideIndex: this.getNextNumber(
+            this.state.slideIndex,
+            _.size(this.pictures)
+          ),
+          instantChange: false
+        });
+      }, timePerSlide);
     }
   }
 
@@ -81,22 +84,25 @@ class Slider extends Component {
       nextNumber = onLastSlide ? firstSlideIndex : ++nextNumber;
     }
 
-    return nextNumber
+    return nextNumber;
   }
 
   showPicture(control) {
     const {slideIndex} = this.state;
     let newIndex;
-    switch(control) {
+    switch (control) {
       case 'next':
-
         newIndex = this.getNextNumber(slideIndex, _.size(this.pictures));
         break;
       case 'previous':
         newIndex = this.getNextNumber(slideIndex, _.size(this.pictures), true);
         break;
       default:
-        if (typeof(control) === 'number' && 0 <= control && control < _.size(this.pictures)) {
+        if (
+          typeof control === 'number' &&
+          0 <= control &&
+          control < _.size(this.pictures)
+        ) {
           this.slideShow(this.state.slideShowIsOn);
           newIndex = control;
         }
@@ -106,7 +112,7 @@ class Slider extends Component {
       this.setState({
         slideIndex: newIndex,
         instantChange: true
-      })
+      });
     }
   }
 
@@ -123,61 +129,64 @@ class Slider extends Component {
           className={`picture-select-button fa-stack ${currentOrHidden}`}
           key={index}
           onClick={_.bind(this.showPicture, this, index)}
-          type='button'
+          type="button"
         >
-          <i className='fa fa-circle fa-stack-2x' aria-label={`select picture ${index + 1}`}></i>
-          <i className='fa fa-circle-o fa-stack-2x'></i>
+          <i
+            className="fa fa-circle fa-stack-2x"
+            aria-label={`select picture ${index + 1}`}
+          />
+          <i className="fa fa-circle-o fa-stack-2x" />
         </button>
       );
     });
   }
 
   _renderslideShowButtons() {
-
     let playPauseClassname;
     let playOrPauseLabel;
     if (this.state.slideShowIsOn) {
       playPauseClassname = 'fa fa-pause fa-stack-1x play-pause-icon';
-      playOrPauseLabel = 'Pause the slide show'
+      playOrPauseLabel = 'Pause the slide show';
     } else {
       playPauseClassname = 'fa fa-play fa-stack-1x play-pause-icon';
-      playOrPauseLabel = 'Play the slide show'
+      playOrPauseLabel = 'Play the slide show';
     }
 
     return (
-      <div className='slider-control-buttons'>
+      <div className="slider-control-buttons">
         <button
-          type='button'
-          className='pic-control-button prev fa fa-angle-left'
+          type="button"
+          className="pic-control-button prev fa fa-angle-left"
           onClick={_.bind(this.showPicture, this, 'previous')}
         >
-            <i className='fa fa-circle fa-stack-1x'></i>
-            <i className='fa fa-angle-left fa-stack-1x white'></i>
+          <i className="fa fa-circle fa-stack-1x" />
+          <i className="fa fa-angle-left fa-stack-1x white" />
         </button>
         <button
-          type='button'
-          className='pic-control-button next fa fa-angle-right'
+          type="button"
+          className="pic-control-button next fa fa-angle-right"
           onClick={_.bind(this.showPicture, this, 'next')}
         >
-            <i className='fa fa-circle fa-stack-1x'></i>
-            <i className='fa fa-angle-right fa-stack-1x white'></i>
+          <i className="fa fa-circle fa-stack-1x" />
+          <i className="fa fa-angle-right fa-stack-1x white" />
         </button>
-        <div className='select-and-pause-controls'>
-          {this.props.showPictureSelectButtons ? this._renderPictureSelectButtons() : null}
+        <div className="select-and-pause-controls">
+          {this.props.showPictureSelectButtons
+            ? this._renderPictureSelectButtons()
+            : null}
           <button
-            id='play-pause-button'
-            type='button'
-            className='fa-stack'
+            id="play-pause-button"
+            type="button"
+            className="fa-stack"
             onClick={this.toggleSlideShow.bind(this)}
           >
-            <i className='fa fa-circle fa-stack-2x gray'></i>
-            <i className={playPauseClassname} aria-label={playOrPauseLabel}></i>
+            <i className="fa fa-circle fa-stack-2x gray" />
+            <i className={playPauseClassname} aria-label={playOrPauseLabel} />
           </button>
         </div>
       </div>
     );
   }
-
 
   _renderSlideShowPictures() {
     const picturesElements = this.pictures.map((picture, index) => {
@@ -188,15 +197,12 @@ class Slider extends Component {
       const instant = instantChange ? ' instant' : '';
 
       return (
-        <div
-          key={index}
-          className={'slide-picture' + currentSuffix + instant}
-        >
+        <div key={index} className={'slide-picture' + currentSuffix + instant}>
           <img
             alt={altTag}
             href={link}
             onLoad={this.savePictureHeight.bind(this)}
-            ref={(node) => {
+            ref={node => {
               if (!this.slideShowImage) {
                 this.slideShowImage = node;
               }
@@ -207,23 +213,19 @@ class Slider extends Component {
       );
     });
 
-    return (
-      <div className='slideshow'>
-        {picturesElements}
-      </div>
-    );
+    return <div className="slideshow">{picturesElements}</div>;
   }
 
   render() {
     return (
-    <div
-      id="leftcontent"
-      className='slider-chris'
-      ref={(node) => this.sliderDiv = node}
-    >
-      {this.pictures.length > 1 ? this._renderslideShowButtons() : null}
-      {this._renderSlideShowPictures()}
-    </div>
+      <div
+        id="leftcontent"
+        className="slider-chris"
+        ref={node => (this.sliderDiv = node)}
+      >
+        {this.pictures.length > 1 ? this._renderslideShowButtons() : null}
+        {this._renderSlideShowPictures()}
+      </div>
     );
   }
 }
@@ -234,6 +236,6 @@ Slider.propTypes = {
 
 Slider.defaultProps = {
   showPictureSelectButtons: true
-}
+};
 
 export default Slider;

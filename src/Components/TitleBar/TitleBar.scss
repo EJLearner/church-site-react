@@ -1,12 +1,11 @@
-@import "../../_variables.scss";
+@import '../../_variables.scss';
 
-
-#titlebar{
+#titlebar {
   background-color: $main-green;
   color: white;
   display: flex;
-  font-family:"Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-  padding: .5em 1em;
+  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+  padding: 0.5em 1em;
   justify-content: space-between;
   flex-shrink: 0;
 }
@@ -16,6 +15,7 @@
   padding-left: 5em;
 }
 
-#titlebar a, #titlebar a:visited {
+#titlebar a,
+#titlebar a:visited {
   color: white;
 }
