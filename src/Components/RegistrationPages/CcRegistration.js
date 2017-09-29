@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import moment from 'moment';
+
 import Checklist from '../Reusable/Checklist/Checklist';
 import Textbox from '../Reusable/Textbox/Textbox';
 
@@ -30,7 +32,8 @@ class CcRegistration extends Component {
       'past-admin': false,
       transition: false,
       'past-kitchen': false,
-      'past-chaperone': false
+      'past-chaperone': false,
+      errors: []
     };
 
     this._onChangeTextbox = this._onChangeTextbox.bind(this);
@@ -45,11 +48,140 @@ class CcRegistration extends Component {
     this.setState({[id]: value});
   }
 
+  _getPageErrors(state = {}, rules = []) {
+    const errors = [];
+    rules.forEach(rule => {
+      const {fieldRules, id, label} = rule;
+      const value = this.state[id];
+
+      fieldRules.forEach(checkFunc => {
+        const message = checkFunc(value, label);
+
+        if (message) {
+          errors.push({
+            id,
+            message
+          });
+        }
+      });
+    });
+
+    return errors;
+  }
+
+  _renderErrors(errors) {
+    const errorList = errors.map((error, index) => {
+      return <li key={index}>{error.message}</li>;
+    });
+
+    return <ul>{errorList}</ul>;
+  }
+
   render() {
+    const isNotEmpty = (value, label) => {
+      if (!value) {
+        return `${label} is required`;
+      }
+    };
+
+    const isDate = (value, label) => {
+      const validFormats = ['M/D/YY', 'M/D/YYYY', 'M-D-YYYY', 'M-D-YY'];
+
+      const valid = moment(value, validFormats, true).isValid();
+      if (value && !valid) {
+        return `${label} is not a valid date`;
+      }
+    };
+
+    const isAllLetters = (value, label) => {
+      const valid = value.match(/^[a-z ]+$/i);
+      if (value && !valid) {
+        return `${label} must only consist of letters`;
+      }
+    };
+
+    const isValidZip = (value, label) => {
+      const valid = value.match(/^\d{5}(-\d{4})?$/);
+      if (value && !valid) {
+        return `${label} must be a valid zip code`;
+      }
+    };
+
+    const isValidEmail = (value, label) => {
+      const valid = value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i);
+      if (value && !valid) {
+        return `${label} must be a valid zip code`;
+      }
+    };
+
+    const isAtLeastTwoCharacters = (value, label) => {
+      const valid = value && value.length > 1;
+      if (value && !valid) {
+        return `${label} is not valid`;
+      }
+    };
+
+    const isPhoneNumber = (value, label) => {
+      const phoneDigits = value.replace(/[^0-9]/g, '');
+      const valid = phoneDigits.length === 9;
+      if (value && !valid) {
+        return `${label} is not a valid phonenumber`;
+      }
+    };
+
+    const allRules = [
+      {
+        id: 'email',
+        label: 'Email',
+        fieldRules: [isValidEmail]
+      },
+      {
+        id: 'name',
+        label: 'Name',
+        fieldRules: [isNotEmpty, isAtLeastTwoCharacters]
+      },
+      {
+        id: 'dob',
+        label: 'Date of Birth',
+        fieldRules: [isNotEmpty, isDate]
+      },
+      {
+        id: 'address1',
+        label: 'Address Line 1',
+        fieldRules: [isNotEmpty, isAtLeastTwoCharacters]
+      },
+      {
+        id: 'city',
+        label: 'City',
+        fieldRules: [isAllLetters, isNotEmpty, isAtLeastTwoCharacters]
+      },
+      {
+        id: 'state',
+        label: 'State',
+        fieldRules: [isAllLetters, isNotEmpty, isAtLeastTwoCharacters]
+      },
+      {
+        id: 'zip',
+        label: 'ZIP Code',
+        fieldRules: [isNotEmpty, isValidZip]
+      },
+      {
+        id: 'mobile',
+        label: 'Mobile',
+        fieldRules: [isPhoneNumber]
+      },
+      {
+        id: 'home',
+        label: 'Home',
+        fieldRules: [isPhoneNumber]
+      }
+    ];
+
     return (
       <div className="registration-page">
         <h1>Children’s Church</h1>
         <h2>Pilot Program Registration</h2>
+        {this._renderErrors(this.state.errors)}
         <div>
           <Textbox
             id={'email'}
@@ -220,6 +352,15 @@ class CcRegistration extends Component {
             label="Your role:"
             onChange={this._onChangeCheckbox}
           />
+
+          <button
+            onClick={() => {
+              const errors = this._getPageErrors(this.state, allRules);
+              this.setState({errors});
+            }}
+          >
+            Submit
+          </button>
         </div>
       </div>
     );
