@@ -14,4 +14,18 @@
     color: orange;
     margin-top: 0px;
   }
+
+  #success-error-box {
+    margin-top: 16px;
+    border: 1px solid black;
+    width: 300px;
+  }
+
+  .success {
+    background-color: green;
+  }
+
+  .failure {
+    background-color: red;
+  }
 }
