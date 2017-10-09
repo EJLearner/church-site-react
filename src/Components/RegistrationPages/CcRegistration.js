@@ -1,16 +1,33 @@
 import React, {Component} from 'react';
 
-import moment from 'moment';
-
 import Checklist from '../Reusable/Checklist/Checklist';
 import Textbox from '../Reusable/Textbox/Textbox';
+
+import fieldValidators from './fieldValidators';
+import {post} from 'jquery';
 
 import './CcRegistration.css';
 
 class CcRegistration extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.state = this._getFreshState();
+
+    this._onChangeInput = this._onChangeInput.bind(this);
+    this._submitDataClick = this._submitDataClick.bind(this);
+    this._submitData = this._submitData.bind(this);
+    this._renderStatusMessage = this._renderStatusMessage.bind(this);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (!prevState.postStatus && this.state.postStatus) {
+      const successBox = document.getElementById('success-error-box');
+      successBox.focus();
+    }
+  }
+
+  _getFreshState() {
+    return {
       email: '',
       name: '',
       dob: '',
@@ -33,19 +50,39 @@ class CcRegistration extends Component {
       transition: false,
       'past-kitchen': false,
       'past-chaperone': false,
+
+      /*
+      // datafortesting
+      email: 'sjdf@sldkfjsd.com',
+      name: 'sdfsddsd',
+      dob: '01/01/2012',
+      address1: 'sdfsd',
+      address2: '',
+      city: 'sdfsd',
+      state: 'sdfsd',
+      zip: '20000',
+      mobile: '000-000-0000',
+      home: '000-000-0000',
+      teacher: true,
+      admin: true,
+      'assistant-mentor': true,
+      kitchen: true,
+      'sunday-school': true,
+      'bible-school': true,
+      youthMinistry: true,
+      'past-teacher': true,
+      'past-admin': true,
+      transition: true,
+      'past-kitchen': true,
+      'past-chaperone': true,
+      */
+
       errors: []
     };
-
-    this._onChangeTextbox = this._onChangeTextbox.bind(this);
-    this._onChangeCheckbox = this._onChangeCheckbox.bind(this);
   }
 
-  _onChangeTextbox(value, id) {
-    this.setState({[id]: value});
-  }
-
-  _onChangeCheckbox(value, id) {
-    this.setState({[id]: value});
+  _onChangeInput(value, id) {
+    this.setState({[id]: value, postStatus: undefined});
   }
 
   _getPageErrors(state = {}, rules = []) {
@@ -77,106 +114,158 @@ class CcRegistration extends Component {
     return <ul>{errorList}</ul>;
   }
 
-  render() {
-    const isNotEmpty = (value, label) => {
-      if (!value) {
-        return `${label} is required`;
-      }
+  _submitData() {
+    const data = {
+      email: this.state.email,
+      name: this.state.name,
+      dob: this.state.dob,
+      address1: this.state.address1,
+      address2: this.state.address2,
+      city: this.state.city,
+      state: this.state.state,
+      zip: this.state.zip,
+      mobile: this.state.mobile,
+      home: this.state.home,
+      teacher: this.state.teacher,
+      admin: this.state.admin,
+      assistantMentor: this.state['assistant-mentor'],
+      kitchen: this.state.kitchen,
+      sundaySchool: this.state['sunday-school'],
+      bibleSchool: this.state['bible-school'],
+      youthMinistry: this.state.youthMinistry,
+      pastTeacher: this.state['past-teacher'],
+      pastAdmin: this.state['past-admin'],
+      transition: this.state.transition,
+      pastKitchen: this.state['past-kitchen'],
+      pastChaperone: this.state['past-chaperone']
     };
 
-    const isDate = (value, label) => {
-      const validFormats = ['M/D/YY', 'M/D/YYYY', 'M-D-YYYY', 'M-D-YY'];
+    post(
+      'ccRegistrationFormProcess.php',
+      data,
+      response => {
+        if (response.success) {
+          this._postSubmitProcess();
+        } else {
+          this.setState({postStatus: 'failure'});
+        }
+      },
+      'json'
+    );
+  }
 
-      const valid = moment(value, validFormats, true).isValid();
-      if (value && !valid) {
-        return `${label} is not a valid date`;
-      }
-    };
-
-    const isAllLetters = (value, label) => {
-      const valid = value.match(/^[a-z ]+$/i);
-      if (value && !valid) {
-        return `${label} must only consist of letters`;
-      }
-    };
-
-    const isValidZip = (value, label) => {
-      const valid = value.match(/^\d{5}(-\d{4})?$/);
-      if (value && !valid) {
-        return `${label} must be a valid zip code`;
-      }
-    };
-
-    const isValidEmail = (value, label) => {
-      const valid = value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i);
-      if (value && !valid) {
-        return `${label} must be a valid zip code`;
-      }
-    };
-
-    const isAtLeastTwoCharacters = (value, label) => {
-      const valid = value && value.length > 1;
-      if (value && !valid) {
-        return `${label} is not valid`;
-      }
-    };
-
-    const isPhoneNumber = (value, label) => {
-      const phoneDigits = value.replace(/[^0-9]/g, '');
-      const valid = phoneDigits.length === 9;
-      if (value && !valid) {
-        return `${label} is not a valid phonenumber`;
-      }
-    };
-
+  _submitDataClick() {
     const allRules = [
       {
         id: 'email',
         label: 'Email',
-        fieldRules: [isValidEmail]
+        fieldRules: [fieldValidators.isValidEmail]
       },
       {
         id: 'name',
         label: 'Name',
-        fieldRules: [isNotEmpty, isAtLeastTwoCharacters]
+        fieldRules: [
+          fieldValidators.isNotEmpty,
+          fieldValidators.isAtLeastTwoCharacters
+        ]
       },
       {
         id: 'dob',
         label: 'Date of Birth',
-        fieldRules: [isNotEmpty, isDate]
+        fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate]
       },
       {
         id: 'address1',
         label: 'Address Line 1',
-        fieldRules: [isNotEmpty, isAtLeastTwoCharacters]
+        fieldRules: [
+          fieldValidators.isNotEmpty,
+          fieldValidators.isAtLeastTwoCharacters
+        ]
       },
       {
         id: 'city',
         label: 'City',
-        fieldRules: [isAllLetters, isNotEmpty, isAtLeastTwoCharacters]
+        fieldRules: [
+          fieldValidators.isAllLetters,
+          fieldValidators.isNotEmpty,
+          fieldValidators.isAtLeastTwoCharacters
+        ]
       },
       {
         id: 'state',
         label: 'State',
-        fieldRules: [isAllLetters, isNotEmpty, isAtLeastTwoCharacters]
+        fieldRules: [
+          fieldValidators.isAllLetters,
+          fieldValidators.isNotEmpty,
+          fieldValidators.isAtLeastTwoCharacters
+        ]
       },
       {
         id: 'zip',
         label: 'ZIP Code',
-        fieldRules: [isNotEmpty, isValidZip]
+        fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isValidZip]
       },
       {
         id: 'mobile',
         label: 'Mobile',
-        fieldRules: [isPhoneNumber]
+        fieldRules: [fieldValidators.isPhoneNumber]
       },
       {
         id: 'home',
         label: 'Home',
-        fieldRules: [isPhoneNumber]
+        fieldRules: [fieldValidators.isPhoneNumber]
       }
     ];
 
+    const errors = this._getPageErrors(this.state, allRules);
+    if (!errors.length) {
+      this._submitData();
+    }
+
+    this.setState({errors});
+  }
+
+  _postSubmitProcess() {
+    this.setState({postStatus: 'success', ...this._getFreshState()});
+  }
+
+  _renderStatusMessage() {
+    const id = 'success-error-box';
+    if (this.state.postStatus || this.state.errors.length) {
+      let className;
+      let message;
+      if (this.state.postStatus === 'success') {
+        className = 'success';
+        message = 'Success! Ready for more registration info';
+      } else if (this.state.postStatus === 'failure') {
+        className = 'failure';
+        message = (
+          <div>
+            Submission failed<br />
+            Please try again or contact the administrator
+          </div>
+        );
+      } else {
+        className = 'failure';
+        message = (
+          <div>
+            Invalid data entered<br />
+            Please check your fields and the error at the top of the page.
+          </div>
+        );
+      }
+
+      return (
+        <div className={className} id={id} tabIndex="0">
+          {message}
+        </div>
+      );
+    }
+
+    return null;
+  }
+
+  render() {
     return (
       <div className="registration-page">
         <h1>Children’s Church</h1>
@@ -186,7 +275,7 @@ class CcRegistration extends Component {
           <Textbox
             id={'email'}
             label="Email Address"
-            onChange={this._onChangeTextbox}
+            onChange={this._onChangeInput}
             size="20"
             value={this.state.email}
           />
@@ -195,7 +284,7 @@ class CcRegistration extends Component {
           <Textbox
             id={'name'}
             label="Name"
-            onChange={this._onChangeTextbox}
+            onChange={this._onChangeInput}
             required
             size="20"
             value={this.state.name}
@@ -203,7 +292,7 @@ class CcRegistration extends Component {
           <Textbox
             id={'dob'}
             label="Date of Birth"
-            onChange={this._onChangeTextbox}
+            onChange={this._onChangeInput}
             required
             size="10"
             value={this.state.dob}
@@ -213,7 +302,7 @@ class CcRegistration extends Component {
           <Textbox
             id={'address1'}
             label="Address Line 1"
-            onChange={this._onChangeTextbox}
+            onChange={this._onChangeInput}
             required
             size="40"
             value={this.state.address1}
@@ -223,7 +312,7 @@ class CcRegistration extends Component {
           <Textbox
             id={'address2'}
             label="Address Line 2"
-            onChange={this._onChangeTextbox}
+            onChange={this._onChangeInput}
             size="40"
             value={this.state.address2}
           />
@@ -232,7 +321,7 @@ class CcRegistration extends Component {
           <Textbox
             id={'city'}
             label="City"
-            onChange={this._onChangeTextbox}
+            onChange={this._onChangeInput}
             required
             size="20"
             value={this.state.city}
@@ -240,7 +329,7 @@ class CcRegistration extends Component {
           <Textbox
             id={'state'}
             label="State"
-            onChange={this._onChangeTextbox}
+            onChange={this._onChangeInput}
             required
             size="20"
             value={this.state.state}
@@ -248,7 +337,7 @@ class CcRegistration extends Component {
           <Textbox
             id={'zip'}
             label="ZIP Code"
-            onChange={this._onChangeTextbox}
+            onChange={this._onChangeInput}
             required
             size="8"
             value={this.state.zip}
@@ -258,14 +347,14 @@ class CcRegistration extends Component {
           <Textbox
             id={'mobile'}
             label="Mobile Phone"
-            onChange={this._onChangeTextbox}
+            onChange={this._onChangeInput}
             size="10"
             value={this.state.mobile}
           />
           <Textbox
             id={'home'}
             label="Home Phone"
-            onChange={this._onChangeTextbox}
+            onChange={this._onChangeInput}
             size="10"
             value={this.state.home}
           />
@@ -295,7 +384,7 @@ class CcRegistration extends Component {
           ]}
           id="role"
           label="I am interested in volunteering in the role of:"
-          onChange={this._onChangeCheckbox}
+          onChange={this._onChangeInput}
         />
         <div>
           <Checklist
@@ -318,7 +407,7 @@ class CcRegistration extends Component {
             ]}
             id="past-volunteer-area"
             label="Have you volunteered at City Temple before? Check all that apply."
-            onChange={this._onChangeCheckbox}
+            onChange={this._onChangeInput}
           />
           <Checklist
             checklistItems={[
@@ -350,17 +439,12 @@ class CcRegistration extends Component {
             ]}
             id="past-volunteer-role"
             label="Your role:"
-            onChange={this._onChangeCheckbox}
+            onChange={this._onChangeInput}
           />
-
-          <button
-            onClick={() => {
-              const errors = this._getPageErrors(this.state, allRules);
-              this.setState({errors});
-            }}
-          >
-            Submit
-          </button>
+          <div>
+            <button onClick={this._submitDataClick}>Submit</button>
+            {this._renderStatusMessage()}
+          </div>
         </div>
       </div>
     );
