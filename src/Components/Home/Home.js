@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
       <Slider showPictureSelectButtons={false} />
-      <HomeSquares />
+      {/*<HomeSquares />*/}
     </div>
   );
 };
