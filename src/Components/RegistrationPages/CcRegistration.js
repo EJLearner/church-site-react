@@ -269,7 +269,7 @@ class CcRegistration extends Component {
     return (
       <div className="registration-page">
         <h1>Children’s Church</h1>
-        <h2>Pilot Program Registration</h2>
+        <h2>Volunteer Registration</h2>
         {this._renderErrors(this.state.errors)}
         <div>
           <Textbox
