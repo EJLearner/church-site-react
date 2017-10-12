@@ -47,6 +47,15 @@
   label {
     color: $RGB95;
     font-family: $century-gothic;
+    font-weight: bold;
     font-size: 11px;
+  }
+
+  .checklist-pattern > label {
+    color: $darker-green;
+  }
+
+  .cc-registration-checkbox > label {
+    color: $darker-green;
   }
 }

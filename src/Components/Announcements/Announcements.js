@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './Announcements.css';
-import calendarDatesUtils from '../../Data/calendarDatesUtils.js';
+import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
 
 const Announcements = props => {
   const renderedAnnouncments = calendarDatesUtils

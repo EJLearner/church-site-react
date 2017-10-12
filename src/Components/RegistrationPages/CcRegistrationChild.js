@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import Checklist from '../Reusable/Checklist/Checklist';
+import Checkbox from '../Reusable/Checklist/Checkbox';
 import Text from '../Reusable/Text/Text';
 
 import fieldValidators from './fieldValidators';
@@ -8,7 +8,7 @@ import {post} from 'jquery';
 
 import './CcRegistration.css';
 
-class CcRegistration extends Component {
+class CcRegistrationChild extends Component {
   constructor(props) {
     super(props);
     this.state = this._getFreshState();
@@ -28,28 +28,18 @@ class CcRegistration extends Component {
 
   _getFreshState() {
     return {
-      email: '',
-      name: '',
-      dob: '',
+      childName: '',
+      childDob: '',
+      childAge: '',
+      parentEmail: '',
+      parentName: '',
+      parentPhone: '',
       address1: '',
       address2: '',
-      city: '',
       state: '',
       zip: '',
-      mobile: '',
-      home: '',
-      teacher: false,
-      admin: false,
-      'assistant-mentor': false,
-      kitchen: false,
-      'sunday-school': false,
-      'bible-school': false,
-      youthMinistry: false,
-      'past-teacher': false,
-      'past-admin': false,
-      transition: false,
-      'past-kitchen': false,
-      'past-chaperone': false,
+      subscribe: false,
+      knownAllergies: '',
 
       /*
       // datafortesting
@@ -116,32 +106,22 @@ class CcRegistration extends Component {
 
   _submitData() {
     const data = {
-      email: this.state.email,
-      name: this.state.name,
-      dob: this.state.dob,
+      childName: this.state.childName,
+      childDob: this.state.childDob,
+      childAge: this.state.childAge,
+      parentEmail: this.state.parentEmail,
+      parentName: this.state.parentName,
+      parentPhone: this.state.parentPhone,
       address1: this.state.address1,
       address2: this.state.address2,
-      city: this.state.city,
       state: this.state.state,
       zip: this.state.zip,
-      mobile: this.state.mobile,
-      home: this.state.home,
-      teacher: this.state.teacher,
-      admin: this.state.admin,
-      assistantMentor: this.state['assistant-mentor'],
-      kitchen: this.state.kitchen,
-      sundaySchool: this.state['sunday-school'],
-      bibleSchool: this.state['bible-school'],
-      youthMinistry: this.state.youthMinistry,
-      pastTeacher: this.state['past-teacher'],
-      pastAdmin: this.state['past-admin'],
-      transition: this.state.transition,
-      pastKitchen: this.state['past-kitchen'],
-      pastChaperone: this.state['past-chaperone']
+      subscribe: this.state.subscribe,
+      knownAllergies: this.state.knownAllergies
     };
 
     post(
-      'ccRegistrationFormProcess.php',
+      'ccRegistrationChildFormProcess.php',
       data,
       response => {
         if (response.success) {
@@ -160,6 +140,14 @@ class CcRegistration extends Component {
         id: 'email',
         label: 'Email',
         fieldRules: [fieldValidators.isValidEmail]
+      },
+      {
+        id: 'name',
+        label: 'Name',
+        fieldRules: [
+          fieldValidators.isNotEmpty,
+          fieldValidators.isAtLeastTwoCharacters
+        ]
       },
       {
         id: 'name',
@@ -217,7 +205,7 @@ class CcRegistration extends Component {
       }
     ];
 
-    const errors = this._getPageErrors(this.state, allRules);
+    const errors = this._getPageErrors(this.state, []);
     if (!errors.length) {
       this._submitData();
     }
@@ -271,9 +259,29 @@ class CcRegistration extends Component {
         <h1>Children’s Church</h1>
         <h2>Volunteer Registration</h2>
         {this._renderErrors(this.state.errors)}
+
+        <Text
+          id={'childName'}
+          label="Child’s name"
+          onChange={this._onChangeInput}
+          required
+          size="20"
+          value={this.state.childName}
+        />
+        <Text
+          id={'childDob'}
+          label="Child’s Date of Birth"
+          onChange={this._onChangeInput}
+          required
+          size="10"
+          value={this.state.childDob}
+        />
+
+        <h3>Parent/Guardian Information</h3>
+
         <div>
           <Text
-            id={'email'}
+            id={'parentEmail'}
             label="Email Address"
             onChange={this._onChangeInput}
             size="20"
@@ -282,12 +290,20 @@ class CcRegistration extends Component {
         </div>
         <div>
           <Text
-            id={'dob'}
-            label="Date of Birth"
+            id={'parentName'}
+            label="Name"
+            onChange={this._onChangeInput}
+            required
+            size="20"
+            value={this.state.parentName}
+          />
+          <Text
+            id={'parentPhone'}
+            label="Best Phone Number to Reach You"
             onChange={this._onChangeInput}
             required
             size="10"
-            value={this.state.dob}
+            value={this.state.home}
           />
         </div>
         <div>
@@ -311,6 +327,14 @@ class CcRegistration extends Component {
         </div>
         <div>
           <Text
+            id={'state'}
+            label="State"
+            onChange={this._onChangeInput}
+            required
+            size="20"
+            value={this.state.state}
+          />
+          <Text
             id={'zip'}
             label="ZIP Code"
             onChange={this._onChangeInput}
@@ -318,106 +342,30 @@ class CcRegistration extends Component {
             size="8"
             value={this.state.zip}
           />
-        </div>
-        <div>
-          <Text
-            id={'home'}
-            label="Home Phone"
+          <Checkbox
+            checked={this.state.subscribe}
+            className="cc-registration-checkbox"
+            id="subscribe"
+            label="I'd like to know what other exciting events you have going on in the Temple!"
             onChange={this._onChangeInput}
-            size="10"
-            value={this.state.home}
+            value="subscribe"
           />
         </div>
-        <Checklist
-          checklistItems={[
-            {
-              label: 'Teacher',
-              value: 'teacher',
-              checked: this.state.teacher
-            },
-            {
-              label: 'Administrative Staff',
-              value: 'admin',
-              checked: this.state['admin']
-            },
-            {
-              label: 'Class Assistant/Hallway Monitor',
-              value: 'assistant-mentor',
-              checked: this.state['assistant-mentor']
-            },
-            {
-              label: 'Kitchen Staff',
-              value: 'kitchen',
-              checked: this.state['kitchen']
-            }
-          ]}
-          id="role"
-          label="I am interested in volunteering in the role of:"
+        <Text
+          id="knownAllergies"
+          label="List any known food allergies. Mark N/A if none."
           onChange={this._onChangeInput}
+          required
+          textArea
+          value={this.state.knownAllergies}
         />
         <div>
-          <Checklist
-            checklistItems={[
-              {
-                label: 'Sunday School',
-                value: 'sunday-school',
-                checked: this.state['sunday-school']
-              },
-              {
-                label: 'Vacation Bible School',
-                value: 'bible-school',
-                checked: this.state['bible-school']
-              },
-              {
-                label: 'Youth Ministory',
-                value: 'youthMinistry',
-                checked: this.state['youthMinistry']
-              }
-            ]}
-            id="past-volunteer-area"
-            label="Have you volunteered at City Temple before? Check all that apply."
-            onChange={this._onChangeInput}
-          />
-          <Checklist
-            checklistItems={[
-              {
-                label: 'Teacher',
-                value: 'past-teacher',
-                checked: this.state['past-teacher']
-              },
-              {
-                label: 'Administrative Staff',
-                value: 'past-admin',
-                checked: this.state['past-admin']
-              },
-              {
-                label: 'Transition Team',
-                value: 'transition',
-                checked: this.state['transition']
-              },
-              {
-                label: 'Kitchen Staff',
-                value: 'past-kitchen',
-                checked: this.state['past-kitchen']
-              },
-              {
-                label: 'Chaperon',
-                value: 'past-chaperone',
-                checked: this.state['past-chaperone']
-              }
-            ]}
-            id="past-volunteer-role"
-            label="Your role:"
-            onChange={this._onChangeInput}
-          />
-          <div>
-            <button onClick={this._submitDataClick}>Submit</button>
-            {this._renderStatusMessage()}
-          </div>
+          <button onClick={this._submitDataClick}>Submit</button>
+          {this._renderStatusMessage()}
         </div>
       </div>
     );
   }
 }
 
-export default CcRegistration;
+export default CcRegistrationChild;

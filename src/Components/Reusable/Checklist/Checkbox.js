@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import classNames from '../../../utils/classNames';
+
 import './Checkbox.css';
 
 const Checkbox = props => {
@@ -14,8 +16,10 @@ const Checkbox = props => {
     ? `${props.ariaLabelledBy} ${labelId}`
     : labelId;
 
+  const computedClassName = classNames('checkbox-pattern', props.className);
+
   return (
-    <div className="checkbox-pattern">
+    <div className={computedClassName}>
       <input
         aria-labelledby={computedAriaLabelledBy}
         checked={props.checked}
@@ -34,6 +38,7 @@ const Checkbox = props => {
 Checkbox.propTypes = {
   ariaLabelledBy: PropTypes.string,
   checked: PropTypes.bool.isRequired,
+  className: PropTypes.string,
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
