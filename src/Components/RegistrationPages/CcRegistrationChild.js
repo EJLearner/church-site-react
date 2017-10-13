@@ -29,30 +29,18 @@ class CcRegistrationChild extends Component {
 
   _getFreshState() {
     return {
-      // childName: '',
-      // childDob: '',
-      // childAge: '',
-      // parentEmail: '',
-      // parentName: '',
-      // parentPhone: '',
-      // address1: '',
-      // address2: '',
-      // state: '',
-      // zip: '',
-      // subscribe: false,
-      // knownAllergies: '',
-
-      childName: 'Child',
-      childDob: '01/01/2018',
-      parentEmail: 'test@email.com',
-      parentName: 'Test Name',
-      parentPhone: '410-111-1019',
-      address1: 'Test Add1',
-      address2: 'Test Add2',
-      state: 'MD',
-      zip: '21001',
-      subscribe: true,
-      knownAllergies: 'None Dawg',
+      childName: '',
+      childDob: '',
+      childAge: '',
+      parentEmail: '',
+      parentName: '',
+      parentPhone: '',
+      address1: '',
+      address2: '',
+      state: '',
+      zip: '',
+      subscribe: false,
+      knownAllergies: '',
 
       errors: []
     };
