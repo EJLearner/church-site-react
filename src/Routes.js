@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Route, Switch} from 'react-router-dom';
 
 import Calendar from './Components/Calendar/Calendar';
-import CcRegistration from './Components/RegistrationPages/CcRegistration';
+import CcRegistrationVolunteer from './Components/RegistrationPages/CcRegistrationVolunteer';
 import CcRegistrationChild from './Components/RegistrationPages/CcRegistrationChild';
 import CcRegistrationLanding from './Components/RegistrationPages/CcRegistrationLanding';
 import CeLogo from './Components/CeLogo/CeLogo';
@@ -51,7 +51,7 @@ class Routes extends Component {
           <Route exact path="/" render={() => <FullPage><Home /></FullPage>} />
           <Route path="/calendar" render={() => <FullPage><Calendar /></FullPage>} />
           <Route path="/cc-registration-landing" render={() => <BarePage><CcRegistrationLanding /></BarePage>} />
-          <Route path="/cc-registration" render={() => <BarePage><CcRegistration /></BarePage>} />
+          <Route path="/cc-registration-volunteer" render={() => <BarePage><CcRegistrationVolunteer /></BarePage>} />
           <Route path="/cc-registration-child" render={() => <BarePage><CcRegistrationChild /></BarePage>} />
           <Route path="/christianedu.html" render={() => <FullPage><Home /></FullPage>} />
           <Route path="/ideaform" render={() => <FullPage><IdeaForm /></FullPage>} />

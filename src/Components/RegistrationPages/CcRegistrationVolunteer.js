@@ -8,13 +8,13 @@ import {post} from 'jquery';
 
 import './CcRegistration.css';
 
-class CcRegistration extends Component {
+class CcRegistrationVolunteer extends Component {
   constructor(props) {
     super(props);
     this.state = this._getFreshState();
 
     this._onChangeInput = this._onChangeInput.bind(this);
-    this._submitDataClick = this._submitDataClick.bind(this);
+    this._setErrors = this._setErrors.bind(this);
     this._submitData = this._submitData.bind(this);
     this._renderStatusMessage = this._renderStatusMessage.bind(this);
   }
@@ -141,7 +141,7 @@ class CcRegistration extends Component {
     };
 
     post(
-      'ccRegistrationFormProcess.php',
+      'ccRegistrationFormVolunteerProcess.php',
       data,
       response => {
         if (response.success) {
@@ -154,7 +154,7 @@ class CcRegistration extends Component {
     );
   }
 
-  _submitDataClick() {
+  _setErrors() {
     const allRules = [
       {
         id: 'email',
@@ -282,6 +282,14 @@ class CcRegistration extends Component {
         </div>
         <div>
           <Text
+            id={'name'}
+            label="Name"
+            onChange={this._onChangeInput}
+            required
+            size="20"
+            value={this.state.name}
+          />
+          <Text
             id={'dob'}
             label="Date of Birth"
             onChange={this._onChangeInput}
@@ -311,6 +319,22 @@ class CcRegistration extends Component {
         </div>
         <div>
           <Text
+            id={'city'}
+            label="City"
+            onChange={this._onChangeInput}
+            required
+            size="20"
+            value={this.state.city}
+          />
+          <Text
+            id={'state'}
+            label="State"
+            onChange={this._onChangeInput}
+            required
+            size="20"
+            value={this.state.state}
+          />
+          <Text
             id={'zip'}
             label="ZIP Code"
             onChange={this._onChangeInput}
@@ -320,6 +344,13 @@ class CcRegistration extends Component {
           />
         </div>
         <div>
+          <Text
+            id={'mobile'}
+            label="Mobile Phone"
+            onChange={this._onChangeInput}
+            size="10"
+            value={this.state.mobile}
+          />
           <Text
             id={'home'}
             label="Home Phone"
@@ -411,7 +442,7 @@ class CcRegistration extends Component {
             onChange={this._onChangeInput}
           />
           <div>
-            <button onClick={this._submitDataClick}>Submit</button>
+            <button onClick={this._setErrors}>Submit</button>
             {this._renderStatusMessage()}
           </div>
         </div>
@@ -420,4 +451,4 @@ class CcRegistration extends Component {
   }
 }
 
-export default CcRegistration;
+export default CcRegistrationVolunteer;
