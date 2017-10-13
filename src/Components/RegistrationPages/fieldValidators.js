@@ -1,6 +1,8 @@
 import _ from 'lodash';
 import moment from 'moment';
 
+const validDateFormats = ['M/D/YY', 'M/D/YYYY', 'M-D-YYYY', 'M-D-YY'];
+
 const fieldValidators = {
   isNotEmpty: (value, label) => {
     if (!value) {
@@ -9,9 +11,7 @@ const fieldValidators = {
   },
 
   isDate: (value, label) => {
-    const validFormats = ['M/D/YY', 'M/D/YYYY', 'M-D-YYYY', 'M-D-YY'];
-
-    const valid = moment(value, validFormats, true).isValid();
+    const valid = moment(value, validDateFormats, true).isValid();
     if (value && !valid) {
       return `${label} is not a valid date`;
     }
@@ -47,11 +47,13 @@ const fieldValidators = {
 
   isPhoneNumber: (value, label) => {
     const phoneDigits = value.replace(/[^0-9]/g, '');
-    const valid = phoneDigits.length === 9;
+    const valid = phoneDigits.length === 10;
     if (value && !valid) {
-      return `${label} is not a valid phonenumber`;
+      return `${label} is not a valid phone number`;
     }
   }
 };
+
+fieldValidators.validDateFormats = validDateFormats;
 
 export default fieldValidators;

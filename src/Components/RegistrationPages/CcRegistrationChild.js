@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import moment from 'moment';
 
 import Checkbox from '../Reusable/Checklist/Checkbox';
 import Text from '../Reusable/Text/Text';
@@ -14,7 +15,7 @@ class CcRegistrationChild extends Component {
     this.state = this._getFreshState();
 
     this._onChangeInput = this._onChangeInput.bind(this);
-    this._submitDataClick = this._submitDataClick.bind(this);
+    this._setErrors = this._setErrors.bind(this);
     this._submitData = this._submitData.bind(this);
     this._renderStatusMessage = this._renderStatusMessage.bind(this);
   }
@@ -28,44 +29,30 @@ class CcRegistrationChild extends Component {
 
   _getFreshState() {
     return {
-      childName: '',
-      childDob: '',
-      childAge: '',
-      parentEmail: '',
-      parentName: '',
-      parentPhone: '',
-      address1: '',
-      address2: '',
-      state: '',
-      zip: '',
-      subscribe: false,
-      knownAllergies: '',
+      // childName: '',
+      // childDob: '',
+      // childAge: '',
+      // parentEmail: '',
+      // parentName: '',
+      // parentPhone: '',
+      // address1: '',
+      // address2: '',
+      // state: '',
+      // zip: '',
+      // subscribe: false,
+      // knownAllergies: '',
 
-      /*
-      // datafortesting
-      email: 'sjdf@sldkfjsd.com',
-      name: 'sdfsddsd',
-      dob: '01/01/2012',
-      address1: 'sdfsd',
-      address2: '',
-      city: 'sdfsd',
-      state: 'sdfsd',
-      zip: '20000',
-      mobile: '000-000-0000',
-      home: '000-000-0000',
-      teacher: true,
-      admin: true,
-      'assistant-mentor': true,
-      kitchen: true,
-      'sunday-school': true,
-      'bible-school': true,
-      youthMinistry: true,
-      'past-teacher': true,
-      'past-admin': true,
-      transition: true,
-      'past-kitchen': true,
-      'past-chaperone': true,
-      */
+      childName: 'Child',
+      childDob: '01/01/2018',
+      parentEmail: 'test@email.com',
+      parentName: 'Test Name',
+      parentPhone: '410-111-1019',
+      address1: 'Test Add1',
+      address2: 'Test Add2',
+      state: 'MD',
+      zip: '21001',
+      subscribe: true,
+      knownAllergies: 'None Dawg',
 
       errors: []
     };
@@ -104,11 +91,20 @@ class CcRegistrationChild extends Component {
     return <ul>{errorList}</ul>;
   }
 
+  _getYearsFromToday(dobString) {
+    return moment().diff(
+      moment(this.state.childDob, fieldValidators.validDateFormats),
+      'years'
+    );
+  }
+
   _submitData() {
+    const {childDob} = this.state;
+
     const data = {
       childName: this.state.childName,
       childDob: this.state.childDob,
-      childAge: this.state.childAge,
+      childAge: this._getYearsFromToday(childDob),
       parentEmail: this.state.parentEmail,
       parentName: this.state.parentName,
       parentPhone: this.state.parentPhone,
@@ -121,7 +117,7 @@ class CcRegistrationChild extends Component {
     };
 
     post(
-      'ccRegistrationChildFormProcess.php',
+      'ccRegistrationFormChildProcess.php',
       data,
       response => {
         if (response.success) {
@@ -134,47 +130,43 @@ class CcRegistrationChild extends Component {
     );
   }
 
-  _submitDataClick() {
+  _setErrors() {
     const allRules = [
       {
-        id: 'email',
-        label: 'Email',
+        id: 'childName',
+        label: 'Child’s name',
+        fieldRules: [
+          fieldValidators.isNotEmpty,
+          fieldValidators.isAtLeastTwoCharacters
+        ]
+      },
+      {
+        id: 'childDob',
+        label: 'Child’s Date of Birth',
+        fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate]
+      },
+      {
+        id: 'parentEmail',
+        label: 'Email Address',
         fieldRules: [fieldValidators.isValidEmail]
       },
       {
-        id: 'name',
-        label: 'Name',
+        id: 'parentName',
+        label: 'Parent’s Name',
         fieldRules: [
           fieldValidators.isNotEmpty,
           fieldValidators.isAtLeastTwoCharacters
         ]
       },
       {
-        id: 'name',
-        label: 'Name',
-        fieldRules: [
-          fieldValidators.isNotEmpty,
-          fieldValidators.isAtLeastTwoCharacters
-        ]
-      },
-      {
-        id: 'dob',
-        label: 'Date of Birth',
-        fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate]
+        id: 'parentPhone',
+        label: 'Phone Number',
+        fieldRules: [fieldValidators.isPhoneNumber, fieldValidators.isNotEmpty]
       },
       {
         id: 'address1',
         label: 'Address Line 1',
         fieldRules: [
-          fieldValidators.isNotEmpty,
-          fieldValidators.isAtLeastTwoCharacters
-        ]
-      },
-      {
-        id: 'city',
-        label: 'City',
-        fieldRules: [
-          fieldValidators.isAllLetters,
           fieldValidators.isNotEmpty,
           fieldValidators.isAtLeastTwoCharacters
         ]
@@ -194,18 +186,13 @@ class CcRegistrationChild extends Component {
         fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isValidZip]
       },
       {
-        id: 'mobile',
-        label: 'Mobile',
-        fieldRules: [fieldValidators.isPhoneNumber]
-      },
-      {
-        id: 'home',
-        label: 'Home',
-        fieldRules: [fieldValidators.isPhoneNumber]
+        id: 'knownAllergies',
+        label: 'Known Allergies',
+        fieldRules: [fieldValidators.isNotEmpty]
       }
     ];
 
-    const errors = this._getPageErrors(this.state, []);
+    const errors = this._getPageErrors(this.state, allRules);
     if (!errors.length) {
       this._submitData();
     }
@@ -262,7 +249,7 @@ class CcRegistrationChild extends Component {
 
         <Text
           id={'childName'}
-          label="Child’s name"
+          label="Child’s Name"
           onChange={this._onChangeInput}
           required
           size="20"
@@ -303,7 +290,7 @@ class CcRegistrationChild extends Component {
             onChange={this._onChangeInput}
             required
             size="10"
-            value={this.state.home}
+            value={this.state.parentPhone}
           />
         </div>
         <div>
@@ -360,7 +347,7 @@ class CcRegistrationChild extends Component {
           value={this.state.knownAllergies}
         />
         <div>
-          <button onClick={this._submitDataClick}>Submit</button>
+          <button onClick={this._setErrors}>Submit</button>
           {this._renderStatusMessage()}
         </div>
       </div>
