@@ -2,6 +2,7 @@
 
 .registration-page {
   padding: 1em 5em;
+  font-family: $century-gothic;
 
   h1 {
     font-family: $garamond;
@@ -29,6 +30,8 @@
     border: 1px solid gray;
     border-radius: 5px;
     box-shadow: 0 2px 2px 0 #c2c2c2;
+    font-family: $century-gothic;
+    padding: 6px;
   }
 
   input[type='checkbox'] {
@@ -48,7 +51,8 @@
     color: $RGB95;
     font-family: $century-gothic;
     font-weight: bold;
-    font-size: 11px;
+    font-size: 12px;
+    margin-bottom: 5px;
   }
 
   .checklist-pattern > label {

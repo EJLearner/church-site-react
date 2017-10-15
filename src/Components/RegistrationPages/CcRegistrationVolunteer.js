@@ -111,7 +111,7 @@ class CcRegistrationVolunteer extends Component {
       return <li key={index}>{error.message}</li>;
     });
 
-    return <ul>{errorList}</ul>;
+    return <ul className="error-list">{errorList}</ul>;
   }
 
   _submitData() {
