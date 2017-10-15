@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import Calendar from './Components/Calendar/Calendar';
 import CcRegistrationVolunteer from './Components/RegistrationPages/CcRegistrationVolunteer';
@@ -47,21 +47,23 @@ class Routes extends Component {
   render() {
     // prettier-ignore
     return (
-      <Switch>
-          <Route exact path="/" render={() => <FullPage><Home /></FullPage>} />
-          <Route path="/calendar" render={() => <FullPage><Calendar /></FullPage>} />
-          <Route path="/cc-registration-landing" render={() => <BarePage><CcRegistrationLanding /></BarePage>} />
-          <Route path="/cc-registration-volunteer" render={() => <BarePage><CcRegistrationVolunteer /></BarePage>} />
-          <Route path="/cc-registration-child" render={() => <BarePage><CcRegistrationChild /></BarePage>} />
-          <Route path="/christianedu.html" render={() => <FullPage><Home /></FullPage>} />
-          <Route path="/ideaform" render={() => <FullPage><IdeaForm /></FullPage>} />
-          <Route path="/vbs-registration-landing" render={() => <BarePage><VbsRegistrationLanding /></BarePage>} />
-          <Route path="/who" render={() => <FullPage><WhoWeAre /></FullPage>} />
-          <Route path="/why" render={() => <FullPage><Why /></FullPage>} />
-          <Route path="/what" render={() => <FullPage><What /></FullPage>} />
-          <Route path="/where" render={() => <FullPage><Where /></FullPage>} />
-          <Route render={() => <FullPage><NotFound /></FullPage>} />
-      </Switch>
+      <BrowserRouter>
+        <Switch>
+            <Route exact path="/" render={() => <FullPage><Home /></FullPage>} />
+            <Route path="/calendar" render={() => <FullPage><Calendar /></FullPage>} />
+            <Route path="/cc-registration-landing" render={() => <BarePage><CcRegistrationLanding /></BarePage>} />
+            <Route path="/cc-registration-volunteer" render={() => <BarePage><CcRegistrationVolunteer /></BarePage>} />
+            <Route path="/cc-registration-child" render={() => <BarePage><CcRegistrationChild /></BarePage>} />
+            <Route path="/christianedu.html" render={() => <FullPage><Home /></FullPage>} />
+            <Route path="/ideaform" render={() => <FullPage><IdeaForm /></FullPage>} />
+            <Route path="/vbs-registration-landing" render={() => <BarePage><VbsRegistrationLanding /></BarePage>} />
+            <Route path="/who" render={() => <FullPage><WhoWeAre /></FullPage>} />
+            <Route path="/why" render={() => <FullPage><Why /></FullPage>} />
+            <Route path="/what" render={() => <FullPage><What /></FullPage>} />
+            <Route path="/where" render={() => <FullPage><Where /></FullPage>} />
+            <Route render={() => <FullPage><NotFound /></FullPage>} />
+        </Switch>
+      </BrowserRouter>
     );
   }
 }
