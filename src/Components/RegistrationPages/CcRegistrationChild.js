@@ -349,9 +349,6 @@ export default CcRegistrationChild;
 
 // TODO: Error Message
 // TODO: Include an orange hazard symbol and a message that reads "Oops...we think you made a mistake." (Century Gothic - same size as Parent/Guardian Information)
-// TODO: Change color to 95, 95, 95// TODO:
-
-// TODO: Same things apply to the Volunteer page with the addition of changing the font of Parent/Guardian Information to Century Gothic with color 95, 95, 95// TODO:
 
 // TODO: For email that's sent to me
 // TODO: Only send me the completed fields
