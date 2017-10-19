@@ -3,8 +3,10 @@ import moment from 'moment';
 
 import Checkbox from '../Reusable/Checklist/Checkbox';
 import Text from '../Reusable/Text/Text';
+import Button from '../Reusable/Button/Button';
 
 import fieldValidators from './fieldValidators';
+import registrationUtils from './registrationUtils';
 import {post} from 'jquery';
 
 import './CcRegistration.css';
@@ -15,9 +17,9 @@ class CcRegistrationChild extends Component {
     this.state = this._getFreshState();
 
     this._onChangeInput = this._onChangeInput.bind(this);
+    this._renderFormFields = this._renderFormFields.bind(this);
     this._setErrors = this._setErrors.bind(this);
     this._submitData = this._submitData.bind(this);
-    this._renderStatusMessage = this._renderStatusMessage.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -50,35 +52,6 @@ class CcRegistrationChild extends Component {
     this.setState({[id]: value, postStatus: undefined});
   }
 
-  _getPageErrors(state = {}, rules = []) {
-    const errors = [];
-    rules.forEach(rule => {
-      const {fieldRules, id, label} = rule;
-      const value = this.state[id];
-
-      fieldRules.forEach(checkFunc => {
-        const message = checkFunc(value, label);
-
-        if (message) {
-          errors.push({
-            id,
-            message
-          });
-        }
-      });
-    });
-
-    return errors;
-  }
-
-  _renderErrors(errors) {
-    const errorList = errors.map((error, index) => {
-      return <li key={index}>{error.message}</li>;
-    });
-
-    return <ul className="error-list">{errorList}</ul>;
-  }
-
   _getYearsFromToday(dobString) {
     return moment().diff(
       moment(this.state.childDob, fieldValidators.validDateFormats),
@@ -91,7 +64,7 @@ class CcRegistrationChild extends Component {
 
     const data = {
       childName: this.state.childName,
-      childDob: this.state.childDob,
+      childDob: childDob,
       childAge: this._getYearsFromToday(childDob),
       parentEmail: this.state.parentEmail,
       parentName: this.state.parentName,
@@ -180,7 +153,7 @@ class CcRegistrationChild extends Component {
       }
     ];
 
-    const errors = this._getPageErrors(this.state, allRules);
+    const errors = registrationUtils.getPageErrors(this.state, allRules);
     if (!errors.length) {
       this._submitData();
     }
@@ -192,49 +165,9 @@ class CcRegistrationChild extends Component {
     this.setState({postStatus: 'success', ...this._getFreshState()});
   }
 
-  _renderStatusMessage() {
-    const id = 'success-error-box';
-    if (this.state.postStatus || this.state.errors.length) {
-      let className;
-      let message;
-      if (this.state.postStatus === 'success') {
-        className = 'success';
-        message = 'Success! Ready for more registration info';
-      } else if (this.state.postStatus === 'failure') {
-        className = 'failure';
-        message = (
-          <div>
-            Submission failed<br />
-            Please try again or contact the administrator
-          </div>
-        );
-      } else {
-        className = 'failure';
-        message = (
-          <div>
-            Invalid data entered<br />
-            Please check your fields and the error at the top of the page.
-          </div>
-        );
-      }
-
-      return (
-        <div className={className} id={id} tabIndex="0">
-          {message}
-        </div>
-      );
-    }
-
-    return null;
-  }
-
-  render() {
+  _renderFormFields() {
     return (
-      <div className="registration-page">
-        <h1>Children’s Church</h1>
-        <h2>Child Registration</h2>
-        {this._renderErrors(this.state.errors)}
-
+      <div id="form-fields">
         <Text
           id={'childName'}
           label="Child’s Name"
@@ -335,9 +268,23 @@ class CcRegistrationChild extends Component {
           value={this.state.knownAllergies}
         />
         <div>
-          <button onClick={this._setErrors}>Submit</button>
-          {this._renderStatusMessage()}
+          <Button onClick={this._setErrors}>Submit</Button>
         </div>
+      </div>
+    );
+  }
+
+  render() {
+    return (
+      <div className="registration-page">
+        <h1>Children’s Church</h1>
+        <h2>Child Registration</h2>
+        {registrationUtils.renderErrors(this.state.errors)}
+        {this._renderFormFields()}
+        {registrationUtils.renderStatusMessage(
+          this.state.postStatus,
+          this.state.errors
+        )}
       </div>
     );
   }
@@ -345,11 +292,4 @@ class CcRegistrationChild extends Component {
 
 export default CcRegistrationChild;
 
-// TODO: Style button as discussed
-
-// TODO: Error Message
-// TODO: Include an orange hazard symbol and a message that reads "Oops...we think you made a mistake." (Century Gothic - same size as Parent/Guardian Information)
-
-// TODO: For email that's sent to me
-// TODO: Only send me the completed fields
 // TODO: Send the email also to Tiffany and Phyllis

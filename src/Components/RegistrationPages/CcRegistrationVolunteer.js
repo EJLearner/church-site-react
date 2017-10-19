@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 
+import Button from '../Reusable/Button/Button';
 import Checklist from '../Reusable/Checklist/Checklist';
 import Text from '../Reusable/Text/Text';
 
 import fieldValidators from './fieldValidators';
+import registrationUtils from './registrationUtils';
 import {post} from 'jquery';
 
 import './CcRegistration.css';
@@ -14,9 +16,9 @@ class CcRegistrationVolunteer extends Component {
     this.state = this._getFreshState();
 
     this._onChangeInput = this._onChangeInput.bind(this);
+    this._renderFormFields = this._renderFormFields.bind(this);
     this._setErrors = this._setErrors.bind(this);
     this._submitData = this._submitData.bind(this);
-    this._renderStatusMessage = this._renderStatusMessage.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -40,16 +42,16 @@ class CcRegistrationVolunteer extends Component {
       home: '',
       teacher: false,
       admin: false,
-      'assistant-mentor': false,
+      assistantMentor: false,
       kitchen: false,
-      'sunday-school': false,
-      'bible-school': false,
+      sundaySchool: false,
+      bibleSchool: false,
       youthMinistry: false,
-      'past-teacher': false,
-      'past-admin': false,
+      pastTeacher: false,
+      pastAdmin: false,
       transition: false,
-      'past-kitchen': false,
-      'past-chaperone': false,
+      pastKitchen: false,
+      pastChaperone: false,
 
       /*
       // datafortesting
@@ -65,16 +67,16 @@ class CcRegistrationVolunteer extends Component {
       home: '000-000-0000',
       teacher: true,
       admin: true,
-      'assistant-mentor': true,
+      'assistantMentor': true,
       kitchen: true,
-      'sunday-school': true,
-      'bible-school': true,
+      'sundaySchool': true,
+      'bibleSchool': true,
       youthMinistry: true,
-      'past-teacher': true,
-      'past-admin': true,
+      'pastTeacher': true,
+      'pastAdmin': true,
       transition: true,
-      'past-kitchen': true,
-      'past-chaperone': true,
+      'pastKitchen': true,
+      'pastChaperone': true,
       */
 
       errors: []
@@ -83,35 +85,6 @@ class CcRegistrationVolunteer extends Component {
 
   _onChangeInput(value, id) {
     this.setState({[id]: value, postStatus: undefined});
-  }
-
-  _getPageErrors(state = {}, rules = []) {
-    const errors = [];
-    rules.forEach(rule => {
-      const {fieldRules, id, label} = rule;
-      const value = this.state[id];
-
-      fieldRules.forEach(checkFunc => {
-        const message = checkFunc(value, label);
-
-        if (message) {
-          errors.push({
-            id,
-            message
-          });
-        }
-      });
-    });
-
-    return errors;
-  }
-
-  _renderErrors(errors) {
-    const errorList = errors.map((error, index) => {
-      return <li key={index}>{error.message}</li>;
-    });
-
-    return <ul className="error-list">{errorList}</ul>;
   }
 
   _submitData() {
@@ -128,16 +101,16 @@ class CcRegistrationVolunteer extends Component {
       home: this.state.home,
       teacher: this.state.teacher,
       admin: this.state.admin,
-      assistantMentor: this.state['assistant-mentor'],
+      assistantMentor: this.state['assistantMentor'],
       kitchen: this.state.kitchen,
-      sundaySchool: this.state['sunday-school'],
-      bibleSchool: this.state['bible-school'],
+      sundaySchool: this.state['sundaySchool'],
+      bibleSchool: this.state['bibleSchool'],
       youthMinistry: this.state.youthMinistry,
-      pastTeacher: this.state['past-teacher'],
-      pastAdmin: this.state['past-admin'],
+      pastTeacher: this.state['pastTeacher'],
+      pastAdmin: this.state['pastAdmin'],
       transition: this.state.transition,
-      pastKitchen: this.state['past-kitchen'],
-      pastChaperone: this.state['past-chaperone']
+      pastKitchen: this.state['pastKitchen'],
+      pastChaperone: this.state['pastChaperone']
     };
 
     post(
@@ -217,7 +190,7 @@ class CcRegistrationVolunteer extends Component {
       }
     ];
 
-    const errors = this._getPageErrors(this.state, allRules);
+    const errors = registrationUtils.getPageErrors(this.state, allRules);
     if (!errors.length) {
       this._submitData();
     }
@@ -229,48 +202,9 @@ class CcRegistrationVolunteer extends Component {
     this.setState({postStatus: 'success', ...this._getFreshState()});
   }
 
-  _renderStatusMessage() {
-    const id = 'success-error-box';
-    if (this.state.postStatus || this.state.errors.length) {
-      let className;
-      let message;
-      if (this.state.postStatus === 'success') {
-        className = 'success';
-        message = 'Success! Ready for more registration info';
-      } else if (this.state.postStatus === 'failure') {
-        className = 'failure';
-        message = (
-          <div>
-            Submission failed<br />
-            Please try again or contact the administrator
-          </div>
-        );
-      } else {
-        className = 'failure';
-        message = (
-          <div>
-            Invalid data entered<br />
-            Please check your fields and the error at the top of the page.
-          </div>
-        );
-      }
-
-      return (
-        <div className={className} id={id} tabIndex="0">
-          {message}
-        </div>
-      );
-    }
-
-    return null;
-  }
-
-  render() {
+  _renderFormFields() {
     return (
-      <div className="registration-page">
-        <h1>Children’s Church</h1>
-        <h2>Volunteer Registration</h2>
-        {this._renderErrors(this.state.errors)}
+      <div id="form-fields">
         <div>
           <Text
             id={'email'}
@@ -373,8 +307,8 @@ class CcRegistrationVolunteer extends Component {
             },
             {
               label: 'Class Assistant/Hallway Monitor',
-              value: 'assistant-mentor',
-              checked: this.state['assistant-mentor']
+              value: 'assistantMentor',
+              checked: this.state['assistantMentor']
             },
             {
               label: 'Kitchen Staff',
@@ -391,13 +325,13 @@ class CcRegistrationVolunteer extends Component {
             checklistItems={[
               {
                 label: 'Sunday School',
-                value: 'sunday-school',
-                checked: this.state['sunday-school']
+                value: 'sundaySchool',
+                checked: this.state['sundaySchool']
               },
               {
                 label: 'Vacation Bible School',
-                value: 'bible-school',
-                checked: this.state['bible-school']
+                value: 'bibleSchool',
+                checked: this.state['bibleSchool']
               },
               {
                 label: 'Youth Ministory',
@@ -413,13 +347,13 @@ class CcRegistrationVolunteer extends Component {
             checklistItems={[
               {
                 label: 'Teacher',
-                value: 'past-teacher',
-                checked: this.state['past-teacher']
+                value: 'pastTeacher',
+                checked: this.state['pastTeacher']
               },
               {
                 label: 'Administrative Staff',
-                value: 'past-admin',
-                checked: this.state['past-admin']
+                value: 'pastAdmin',
+                checked: this.state['pastAdmin']
               },
               {
                 label: 'Transition Team',
@@ -428,13 +362,13 @@ class CcRegistrationVolunteer extends Component {
               },
               {
                 label: 'Kitchen Staff',
-                value: 'past-kitchen',
-                checked: this.state['past-kitchen']
+                value: 'pastKitchen',
+                checked: this.state['pastKitchen']
               },
               {
                 label: 'Chaperon',
-                value: 'past-chaperone',
-                checked: this.state['past-chaperone']
+                value: 'pastChaperone',
+                checked: this.state['pastChaperone']
               }
             ]}
             id="past-volunteer-role"
@@ -442,10 +376,24 @@ class CcRegistrationVolunteer extends Component {
             onChange={this._onChangeInput}
           />
           <div>
-            <button onClick={this._setErrors}>Submit</button>
-            {this._renderStatusMessage()}
+            <Button onClick={this._setErrors}>Submit</Button>
           </div>
         </div>
+      </div>
+    );
+  }
+
+  render() {
+    return (
+      <div className="registration-page">
+        <h1>Children’s Church</h1>
+        <h2>Volunteer Registration</h2>
+        {registrationUtils.renderErrors(this.state.errors)}
+        {this._renderFormFields()}
+        {registrationUtils.renderStatusMessage(
+          this.state.postStatus,
+          this.state.errors
+        )}
       </div>
     );
   }

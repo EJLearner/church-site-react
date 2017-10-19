@@ -1,0 +1,12 @@
+@import '../../../_variables.scss';
+
+.button-component {
+  background-color: $orange;
+  background-image: linear-gradient(lighten($orange, 15), $orange);
+  border: none;
+  border-radius: 15px;
+  color: black;
+  box-shadow: none;
+  min-width: 80px;
+  min-height: 30px;
+}
