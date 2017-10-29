@@ -33,7 +33,6 @@ class CcRegistrationChild extends Component {
     return {
       childName: '',
       childDob: '',
-      childAge: '',
       parentEmail: '',
       parentName: '',
       parentPhone: '',
@@ -173,7 +172,7 @@ class CcRegistrationChild extends Component {
           label="Child’s Name"
           onChange={this._onChangeInput}
           required
-          size="20"
+          size={20}
           value={this.state.childName}
         />
         <Text
@@ -181,7 +180,7 @@ class CcRegistrationChild extends Component {
           label="Child’s Date of Birth"
           onChange={this._onChangeInput}
           required
-          size="10"
+          size={10}
           value={this.state.childDob}
         />
 
@@ -192,8 +191,8 @@ class CcRegistrationChild extends Component {
             id={'parentEmail'}
             label="Email Address"
             onChange={this._onChangeInput}
-            size="20"
-            value={this.state.email}
+            size={20}
+            value={this.state.parentEmail}
           />
         </div>
         <div>
@@ -202,7 +201,7 @@ class CcRegistrationChild extends Component {
             label="Name"
             onChange={this._onChangeInput}
             required
-            size="20"
+            size={20}
             value={this.state.parentName}
           />
           <Text
@@ -210,7 +209,7 @@ class CcRegistrationChild extends Component {
             label="Best Phone Number to Reach You"
             onChange={this._onChangeInput}
             required
-            size="10"
+            size={10}
             value={this.state.parentPhone}
           />
         </div>
@@ -220,7 +219,7 @@ class CcRegistrationChild extends Component {
             label="Address Line 1"
             onChange={this._onChangeInput}
             required
-            size="40"
+            size={40}
             value={this.state.address1}
           />
         </div>
@@ -229,7 +228,7 @@ class CcRegistrationChild extends Component {
             id={'address2'}
             label="Address Line 2"
             onChange={this._onChangeInput}
-            size="40"
+            size={40}
             value={this.state.address2}
           />
         </div>
@@ -239,7 +238,7 @@ class CcRegistrationChild extends Component {
             label="State"
             onChange={this._onChangeInput}
             required
-            size="20"
+            size={20}
             value={this.state.state}
           />
           <Text
@@ -247,7 +246,7 @@ class CcRegistrationChild extends Component {
             label="ZIP Code"
             onChange={this._onChangeInput}
             required
-            size="8"
+            size={8}
             value={this.state.zip}
           />
           <Checkbox
