@@ -39,6 +39,33 @@
     box-shadow: 0 0 0 0;
   }
 
+  .form-left {
+    display: inline-block;
+    max-width: 600px;
+    width: 50%;
+
+    p {
+      color: $RGB95;
+    }
+
+    h3 {
+      color: $RGB95;
+    }
+  }
+
+  .right-info {
+    color: $RGB95;
+    display: inline-block;
+    margin-right: 2em;
+    text-align: center;
+    vertical-align: top;
+
+    h3 {
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+  }
+
   .error-list {
     color: $RGB95;
   }

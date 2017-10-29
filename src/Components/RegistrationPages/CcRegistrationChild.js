@@ -264,6 +264,7 @@ class CcRegistrationChild extends Component {
           label="List any known food allergies. Mark N/A if none."
           onChange={this._onChangeInput}
           required
+          size={50}
           textArea
           value={this.state.knownAllergies}
         />
@@ -279,12 +280,31 @@ class CcRegistrationChild extends Component {
       <div className="registration-page">
         <h1>Children’s Church</h1>
         <h2>Child Registration</h2>
-        {registrationUtils.renderErrors(this.state.errors)}
-        {this._renderFormFields()}
-        {registrationUtils.renderStatusMessage(
-          this.state.postStatus,
-          this.state.errors
-        )}
+        <div className="form-left">
+          <div className="right-info">
+            <h3>Location</h3>Devotions in the undercroft<br />
+            Classes in the WW Payne Building
+          </div>
+          <div className="right-info">
+            <h3>Hours</h3>
+            Every Second Sunday<br />
+            9:00 AM to 11:30 AM
+          </div>
+          <hr />
+          <p>
+            Complete the following form to register your child(ren) for
+            Children’s Church. For timely enrollment, please double-check your
+            responses before clicking the <span className="bolder">Submit</span>{' '}
+            button.
+          </p>
+
+          {registrationUtils.renderErrors(this.state.errors)}
+          {this._renderFormFields()}
+          {registrationUtils.renderStatusMessage(
+            this.state.postStatus,
+            this.state.errors
+          )}
+        </div>
       </div>
     );
   }
