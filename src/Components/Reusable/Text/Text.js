@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './Text.css';
 
@@ -22,9 +23,9 @@ const Text = props => {
   const textArea = (
     <textarea
       aria-labelledby={labelId}
+      cols={props.size}
       id={props.id}
       onChange={_onChange}
-      size={props.size}
       value={props.value}
     />
   );
@@ -41,6 +42,16 @@ const Text = props => {
       {inputOrTextarea}
     </div>
   );
+};
+
+Text.propTypes = {
+  id: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  required: PropTypes.bool,
+  size: PropTypes.number,
+  textArea: PropTypes.bool,
+  value: PropTypes.string.isRequired
 };
 
 export default Text;
