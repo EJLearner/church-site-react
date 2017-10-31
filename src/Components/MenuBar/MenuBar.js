@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
 import churchLogo from './chrisedtopbanner.png';
+import PropTypes from 'prop-types';
 
 import './MenuBar.css';
 
@@ -40,13 +41,18 @@ class MenuBar extends Component {
 
     const renderedLinks = links.map(link => {
       const {pathname} = this.props.location;
-      let className = link.path === pathname ? 'current-page-link' : null;
-      const isHomePage = !pathname || pathname === '/christianedu.html';
+      console.log(pathname);
+      let className =
+        link.path !== '/' && pathname.indexOf(link.path) > -1
+          ? 'current-page-link'
+          : null;
+      const isHomePage =
+        !pathname || pathname === '/christianedu.html' || pathname === '/';
       if (link.path === '/' && isHomePage) {
         className = 'current-page-link';
       }
       return (
-        <li key={link.path} className={className}>
+        <li className={className} key={link.path}>
           <Link to={link.path}>{link.text}</Link>
         </li>
       );
@@ -56,11 +62,15 @@ class MenuBar extends Component {
       <div id="menubar">
         <ul className="cfm">{renderedLinks}</ul>
         <div className="logo">
-          <img src={churchLogo} alt="" />
+          <img alt="" src={churchLogo} />
         </div>
       </div>
     );
   }
 }
+
+MenuBar.propTypes = {
+  location: PropTypes.object
+};
 
 export default withRouter(MenuBar);

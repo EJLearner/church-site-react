@@ -31,15 +31,15 @@ const HomeSquares = props => {
       </HomeSquare>
 
       <HomeSquare title="Youth Ministries">
-        <img src={kidsPic} alt="Children" />
+        <img alt="Children" src={kidsPic} />
       </HomeSquare>
 
       <HomeSquare title="Leadership">
-        <img src={leadershipPic} alt="Leadership" />
+        <img alt="Leadership" src={leadershipPic} />
       </HomeSquare>
 
       <HomeSquare title="Calendar">
-        <img src={calendarPic} alt="Calendar" />
+        <img alt="Calendar" src={calendarPic} />
       </HomeSquare>
     </div>
   );
