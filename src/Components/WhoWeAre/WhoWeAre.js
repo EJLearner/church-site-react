@@ -3,6 +3,8 @@ import {withRouter} from 'react-router-dom';
 import {Link, Route, Switch} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import LeftLlinks from '../Reusable/LeftLinks/LeftLinks';
+
 import ChristianEdStaff from './ChristianEdStaff';
 import Pastor from './Pastor';
 import Diaconate from './Diaconate';
@@ -15,8 +17,8 @@ import Trustees from './Trustees';
 import './WhoWeAre.css';
 
 class WhoWeAre extends Component {
-  render() {
-    const links = [
+  generateLinkData() {
+    return [
       {path: '/who/pastor', text: 'Pastor Yeargin'},
       {path: '/who/ctbc', text: 'CTBC Ministerial Staff'},
       {path: '/who/christian-ed-staff', text: 'Christian Education'},
@@ -31,26 +33,31 @@ class WhoWeAre extends Component {
         ]
       }
     ];
+  }
 
-    const renderedLinks = links => {
-      if (!links) {
-        return null;
-      }
+  renderLinks(linkData) {
+    if (!linkData) {
+      return null;
+    }
 
-      const listItems = links.map(link => {
-        const {path, text} = link;
-        const {pathname} = this.props.location;
-        const className = path === pathname ? 'current-page-link' : null;
-        return [
-          <li className={className} key={path}>
-            <Link to={path}>{text}</Link>
-          </li>,
-          renderedLinks(link.children)
-        ];
-      });
+    const listItems = linkData.map(link => {
+      const {path, text} = link;
+      const {pathname} = this.props.location;
+      const className = path === pathname ? 'current-page-link' : null;
+      return [
+        <li className={className} key={path}>
+          <Link to={path}>{text}</Link>
+        </li>,
+        this.renderLinks(link.children, pathname)
+      ];
+    });
 
-      return <ul>{listItems}</ul>;
-    };
+    return <ul>{listItems}</ul>;
+  }
+
+  render() {
+    const linkData = this.generateLinkData();
+    const {pathname} = this.props.location;
 
     return (
       <div id="flush-left-content">
@@ -60,7 +67,7 @@ class WhoWeAre extends Component {
           </h1>
         </div>
 
-        <div className="left-links">{renderedLinks(links)}</div>
+        <div className="left-links">{this.renderLinks(linkData)}</div>
         <div className="right-content">
           <Switch>
             <Route

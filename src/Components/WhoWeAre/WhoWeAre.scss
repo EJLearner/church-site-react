@@ -6,16 +6,16 @@
   color: $RGB63;
 
   h1 {
+    border-bottom: 1px solid $darker-green;
+    color: $main-green;
     display: inline-block;
     padding-bottom: 5px;
-    padding-right: 100px;
-    margin-bottom: 2em;
-    border-bottom: 1px solid $darker-green;
     font-family: $calibri;
     font-size: 80%;
-    text-transform: uppercase;
-    color: $main-green;
     font-weight: normal;
+    margin-bottom: 2em;
+    text-transform: uppercase;
+    width: 400px;
 
     span {
       font-size: 150%;
@@ -58,5 +58,22 @@
     display: inline-block;
     vertical-align: top;
     width: 500px;
+  }
+
+  h2 {
+    color: $main-green;
+    display: inline-block;
+    font-family: $calibri;
+    font-size: 80%;
+    font-weight: normal;
+    margin-bottom: 2em;
+    text-transform: uppercase;
+  }
+
+  #deacon-list {
+    li {
+      display: inline-block;
+      width: 315px;
+    }
   }
 }
