@@ -1,0 +1,34 @@
+import React from 'react';
+import {Route, Switch} from 'react-router-dom';
+import PropTypes from 'prop-types';
+import _ from 'lodash';
+
+const SubPageSwitch = props => {
+  const makeRoutes = linkData => {
+    const routes = [];
+    linkData.forEach(route => {
+      routes.push(
+        <Route key={route.path} path={route.path} render={() => route.render} />
+      );
+
+      if (route.children) {
+        routes.push(...makeRoutes(route.children));
+      }
+    });
+
+    return routes;
+  };
+
+  return <Switch>{makeRoutes(props.linkData)}</Switch>;
+};
+
+SubPageSwitch.propTypes = {
+  linkData: PropTypes.arrayOf(
+    React.PropTypes.shape({
+      path: PropTypes.string.isRequired,
+      render: PropTypes.node
+    })
+  ).isRequired
+};
+
+export default SubPageSwitch;

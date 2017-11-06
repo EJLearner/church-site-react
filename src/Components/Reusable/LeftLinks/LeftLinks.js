@@ -3,22 +3,26 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 
 const LeftLinks = props => {
-  if (!props.linkData) {
-    return null;
-  }
+  const renderLinks = (linkData, pathname) => {
+    if (!linkData) {
+      return null;
+    }
 
-  const listItems = props.linkData.map(link => {
-    const {path, text} = link;
-    const className = path === props.pathname ? 'current-page-link' : null;
-    return [
-      <li className={className} key={path}>
-        <Link to={path}>{text}</Link>
-      </li>,
-      this.renderLinks(link.children, props.pathname)
-    ];
-  });
+    const listItems = linkData.map(link => {
+      const {path, text} = link;
+      const className = path === pathname ? 'current-page-link' : null;
+      return [
+        <li className={className} key={path}>
+          <Link to={path}>{text}</Link>
+        </li>,
+        renderLinks(link.children, pathname)
+      ];
+    });
 
-  return <ul>{listItems}</ul>;
+    return <ul>{listItems}</ul>;
+  };
+
+  return renderLinks(props.linkData, props.pathname);
 };
 
 LeftLinks.propTypes = {

@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
-import {Link, Route, Switch} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 
-import LeftLlinks from '../Reusable/LeftLinks/LeftLinks';
+import LeftLinks from '../Reusable/LeftLinks/LeftLinks';
+import SubPageSwitch from '../Reusable/SubPageSwitch/SubPageSwitch';
 
 import ChristianEdStaff from './ChristianEdStaff';
 import Pastor from './Pastor';
@@ -19,45 +21,51 @@ import './WhoWeAre.css';
 class WhoWeAre extends Component {
   generateLinkData() {
     return [
-      {path: '/who/pastor', text: 'Pastor Yeargin'},
-      {path: '/who/ctbc', text: 'CTBC Ministerial Staff'},
-      {path: '/who/christian-ed-staff', text: 'Christian Education'},
-      {path: '/who/diaconate', text: 'Diaconate'},
-      {path: '/who/trustees', text: 'Trustees'},
+      {path: '/who/pastor', render: <Pastor />, text: 'Pastor Yeargin'},
+      {
+        path: '/who/ctbc',
+        render: <MinisterialStaff />,
+        text: 'CTBC Ministerial Staff'
+      },
+      {
+        path: '/who/christian-ed-staff',
+        render: <ChristianEdStaff />,
+        text: 'Christian Education'
+      },
+      {path: '/who/diaconate', render: <Diaconate />, text: 'Diaconate'},
+      {path: '/who/trustees', render: <Trustees />, text: 'Trustees'},
       {
         path: '/who/handbook',
+        render: <Handbook />,
         text: 'Leadership Handbook',
         children: [
-          {path: '/who/finance', text: 'Finance'},
-          {path: '/who/meetings', text: 'Church Meetings'}
+          {path: '/who/finance', render: <Finance />, text: 'Finance'},
+          {path: '/who/meetings', render: <Meetings />, text: 'Church Meetings'}
         ]
       }
     ];
   }
 
-  renderLinks(linkData) {
-    if (!linkData) {
-      return null;
-    }
+  renderRoutes(routeData) {
+    const routes = [];
+    routeData.forEach(route => {
+      routes.push(
+        <Route
+          key={route.path}
+          path={route.path}
+          render={_.constant(route.render)}
+        />
+      );
 
-    const listItems = linkData.map(link => {
-      const {path, text} = link;
-      const {pathname} = this.props.location;
-      const className = path === pathname ? 'current-page-link' : null;
-      return [
-        <li className={className} key={path}>
-          <Link to={path}>{text}</Link>
-        </li>,
-        this.renderLinks(link.children, pathname)
-      ];
+      if (route.children) {
+        routes.push(...this.renderRoutes(route.children));
+      }
     });
-
-    return <ul>{listItems}</ul>;
+    return <Switch>{routes}</Switch>;
   }
 
   render() {
     const linkData = this.generateLinkData();
-    const {pathname} = this.props.location;
 
     return (
       <div id="flush-left-content">
@@ -67,58 +75,14 @@ class WhoWeAre extends Component {
           </h1>
         </div>
 
-        <div className="left-links">{this.renderLinks(linkData)}</div>
+        <div className="left-links">
+          <LeftLinks
+            linkData={linkData}
+            pathname={this.props.location.pathname}
+          />
+        </div>
         <div className="right-content">
-          <Switch>
-            <Route
-              path="/who/pastor"
-              render={() => {
-                return <Pastor />;
-              }}
-            />
-            <Route
-              path="/who/ctbc"
-              render={() => {
-                return <MinisterialStaff />;
-              }}
-            />
-            <Route
-              path="/who/christian-ed-staff"
-              render={() => {
-                return <ChristianEdStaff />;
-              }}
-            />
-            <Route
-              path="/who/diaconate"
-              render={() => {
-                return <Diaconate />;
-              }}
-            />{' '}
-            <Route
-              path="/who/trustees"
-              render={() => {
-                return <Trustees />;
-              }}
-            />
-            <Route
-              path="/who/handbook"
-              render={() => {
-                return <Handbook />;
-              }}
-            />
-            <Route
-              path="/who/finance"
-              render={() => {
-                return <Finance />;
-              }}
-            />
-            <Route
-              path="/who/meetings"
-              render={() => {
-                return <Meetings />;
-              }}
-            />
-          </Switch>
+          <SubPageSwitch linkData={linkData} />
         </div>
       </div>
     );
