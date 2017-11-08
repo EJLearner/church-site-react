@@ -41,7 +41,6 @@ class MenuBar extends Component {
 
     const renderedLinks = links.map(link => {
       const {pathname} = this.props.location;
-      console.log(pathname);
       let className =
         link.path !== '/' && pathname.indexOf(link.path) > -1
           ? 'current-page-link'

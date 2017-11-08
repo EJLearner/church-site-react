@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
@@ -10,13 +11,14 @@ class Slider extends Component {
     super();
     this.pictures = [
       {
-        source: require('./christian-ed-home-banner-VBS-temp.png'),
         altTag:
-          'Banner for City Temple Vacation Bible School. July 10-14 6:30 pm-8:00 pm'
+          'Banner for City Temple Vacation Bible School. July 10-14 6:30 pm-8:00 pm',
+        source: require('./christian-ed-home-banner-VBS-temp.png')
       },
       {
-        source: require('./christian-ed-home-banner-2020-temp.png'),
-        altTag: 'City Temple 2020 Vision'
+        altTag: 'City Temple 2020 Vision',
+        linkPath: '/vision/thevision',
+        source: require('./christian-ed-home-banner-2020.png')
       }
     ];
 
@@ -132,8 +134,8 @@ class Slider extends Component {
           type="button"
         >
           <i
-            className="fa fa-circle fa-stack-2x"
             aria-label={`select picture ${index + 1}`}
+            className="fa fa-circle fa-stack-2x"
           />
           <i className="fa fa-circle-o fa-stack-2x" />
         </button>
@@ -155,33 +157,33 @@ class Slider extends Component {
     return (
       <div className="slider-control-buttons">
         <button
-          type="button"
           className="pic-control-button prev fa fa-angle-left"
           onClick={_.bind(this.showPicture, this, 'previous')}
+          type="button"
         >
           <i className="fa fa-circle fa-stack-1x" />
           <i className="fa fa-angle-left fa-stack-1x white" />
         </button>
         <button
-          type="button"
           className="pic-control-button next fa fa-angle-right"
           onClick={_.bind(this.showPicture, this, 'next')}
+          type="button"
         >
           <i className="fa fa-circle fa-stack-1x" />
           <i className="fa fa-angle-right fa-stack-1x white" />
         </button>
         <div className="select-and-pause-controls">
-          {this.props.showPictureSelectButtons
-            ? this._renderPictureSelectButtons()
-            : null}
+          {this.props.showPictureSelectButtons ? (
+            this._renderPictureSelectButtons()
+          ) : null}
           <button
-            id="play-pause-button"
-            type="button"
             className="fa-stack"
+            id="play-pause-button"
             onClick={this.toggleSlideShow.bind(this)}
+            type="button"
           >
             <i className="fa fa-circle fa-stack-2x gray" />
-            <i className={playPauseClassname} aria-label={playOrPauseLabel} />
+            <i aria-label={playOrPauseLabel} className={playPauseClassname} />
           </button>
         </div>
       </div>
@@ -190,25 +192,32 @@ class Slider extends Component {
 
   _renderSlideShowPictures() {
     const picturesElements = this.pictures.map((picture, index) => {
-      const {source, altTag, link} = picture;
+      const {source, altTag, linkPath} = picture;
       const {slideIndex, instantChange} = this.state;
       const currentSlide = slideIndex === index;
       const currentSuffix = currentSlide ? ' current' : ' hidden';
       const instant = instantChange ? ' instant' : '';
 
+      const renderedImage = (
+        <img
+          alt={altTag}
+          onLoad={this.savePictureHeight.bind(this)}
+          ref={node => {
+            if (!this.slideShowImage) {
+              this.slideShowImage = node;
+            }
+          }}
+          src={source}
+        />
+      );
+
       return (
-        <div key={index} className={'slide-picture' + currentSuffix + instant}>
-          <img
-            alt={altTag}
-            href={link}
-            onLoad={this.savePictureHeight.bind(this)}
-            ref={node => {
-              if (!this.slideShowImage) {
-                this.slideShowImage = node;
-              }
-            }}
-            src={source}
-          />
+        <div className={'slide-picture' + currentSuffix + instant} key={index}>
+          {linkPath ? (
+            <Link to={linkPath}>{renderedImage}</Link>
+          ) : (
+            <div>{renderedImage}</div>
+          )}
         </div>
       );
     });
@@ -219,8 +228,8 @@ class Slider extends Component {
   render() {
     return (
       <div
-        id="leftcontent"
         className="slider-chris"
+        id="leftcontent"
         ref={node => (this.sliderDiv = node)}
       >
         {this.pictures.length > 1 ? this._renderslideShowButtons() : null}
