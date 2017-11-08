@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
-import {Route, Switch} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
@@ -21,7 +20,13 @@ import './WhoWeAre.css';
 class WhoWeAre extends Component {
   generateLinkData() {
     return [
-      {path: '/who/pastor', render: <Pastor />, text: 'Pastor Yeargin'},
+      {
+        path: '/who/pastor',
+        render: <Pastor />,
+        text: 'Pastor Yeargin',
+        altPath: '/who',
+        isDefault: true
+      },
       {
         path: '/who/ctbc',
         render: <MinisterialStaff />,
@@ -44,24 +49,6 @@ class WhoWeAre extends Component {
         ]
       }
     ];
-  }
-
-  renderRoutes(routeData) {
-    const routes = [];
-    routeData.forEach(route => {
-      routes.push(
-        <Route
-          key={route.path}
-          path={route.path}
-          render={_.constant(route.render)}
-        />
-      );
-
-      if (route.children) {
-        routes.push(...this.renderRoutes(route.children));
-      }
-    });
-    return <Switch>{routes}</Switch>;
   }
 
   render() {

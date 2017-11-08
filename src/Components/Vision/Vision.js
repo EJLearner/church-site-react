@@ -18,7 +18,13 @@ import './Vision.css';
 class Vision extends Component {
   generateLinkData() {
     return [
-      {path: '/vision/thevision', render: <TheVision />, text: 'The Vision'},
+      {
+        altPath: '/vision',
+        isDefault: true,
+        path: '/vision/thevision',
+        render: <TheVision />,
+        text: 'The Vision'
+      },
       {
         path: '/vision/retreat2016',
         render: <Retreat2016 />,
