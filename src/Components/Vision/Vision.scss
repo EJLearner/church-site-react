@@ -1,0 +1,79 @@
+@import '../../_variables.scss';
+
+#flush-left-content {
+  margin-left: 4em;
+  font-family: $calibri;
+  color: $RGB63;
+
+  h1 {
+    border-bottom: 1px solid $darker-green;
+    color: $main-green;
+    display: inline-block;
+    padding-bottom: 5px;
+    font-family: $calibri;
+    font-size: 80%;
+    font-weight: normal;
+    margin-bottom: 2em;
+    text-transform: uppercase;
+    width: 400px;
+
+    span {
+      font-size: 150%;
+      color: $darker-green;
+    }
+  }
+
+  p,
+  ol,
+  ul {
+    width: 800px;
+  }
+
+  .left-links {
+    display: inline-block;
+    width: 400px;
+  }
+
+  .left-links a,
+  .left-links a:visited {
+    color: $darker-green;
+  }
+
+  .left-links .current-page-link a,
+  .left-links .current-page-link a:visited {
+    color: $orange;
+  }
+
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .left-links ul ul {
+    padding-left: 1em;
+  }
+
+  .right-content {
+    display: inline-block;
+    vertical-align: top;
+    width: 500px;
+  }
+
+  h2 {
+    color: $main-green;
+    display: inline-block;
+    font-family: $calibri;
+    font-size: 80%;
+    font-weight: normal;
+    margin-bottom: 2em;
+    text-transform: uppercase;
+  }
+
+  #deacon-list {
+    li {
+      display: inline-block;
+      width: 315px;
+    }
+  }
+}

@@ -18,33 +18,37 @@ import What from './Components/What/What';
 import Where from './Components/Where/Where';
 import WhoWeAre from './Components/WhoWeAre/WhoWeAre';
 import Why from './Components/Why/Why';
+import Vision from './Components/Vision/Vision';
 
 import './App.css';
 
-const FullPage = props => {
-  return (
-    <div id="top-react-div">
-      <TitleBar />
-      <MenuBar />
-      {props.children}
-      <Quote />
-      <Footer />
-    </div>
-  );
-};
-
-const BarePage = props => {
-  return (
-    <div id="top-react-div">
-      <TitleBar />
-      {props.children}
-      <CeLogo />
-    </div>
-  );
-};
-
 class Routes extends Component {
+  _renderFullPage(props) {
+    return (
+      <div id="top-react-div">
+        <TitleBar />
+        <MenuBar />
+        {props.children}
+        <Quote />
+        <Footer />
+      </div>
+    );
+  }
+
+  _renderBarePage(props) {
+    return (
+      <div id="top-react-div">
+        <TitleBar />
+        {props.children}
+        <CeLogo />
+      </div>
+    );
+  }
+
   render() {
+    const FullPage = this._renderFullPage;
+    const BarePage = this._renderBarePage;
+
     // prettier-ignore
     return (
       <BrowserRouter>
@@ -61,6 +65,7 @@ class Routes extends Component {
           <Route path="/why" render={() => <FullPage><Why /></FullPage>} />
           <Route path="/what" render={() => <FullPage><What /></FullPage>} />
           <Route path="/where" render={() => <FullPage><Where /></FullPage>} />
+          <Route path="/vision" render={() => <FullPage><Vision /></FullPage>} />
           <Route render={() => <FullPage><NotFound /></FullPage>} />
         </Switch>
       </BrowserRouter>
