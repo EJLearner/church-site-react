@@ -8,9 +8,12 @@ const LeftLinks = props => {
       return null;
     }
 
+    const isRoot = !linkData.find(link => link.path === pathname);
+
     const listItems = linkData.map(link => {
-      const {path, text} = link;
-      const className = path === pathname ? 'current-page-link' : null;
+      const {path, text, isDefault} = link;
+      const currentPage = pathname === path || (isRoot && isDefault);
+      const className = currentPage ? 'current-page-link' : null;
       return [
         <li className={className} key={path}>
           <Link to={path}>{text}</Link>
