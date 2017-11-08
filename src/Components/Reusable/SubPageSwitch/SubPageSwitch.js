@@ -16,6 +16,13 @@ const SubPageSwitch = props => {
       }
     });
 
+    const defaultRoute = linkData.find(route => route.isDefault);
+    if (defaultRoute) {
+      routes.push(
+        <Route key={'defaultRoute'} render={() => defaultRoute.render} />
+      );
+    }
+
     return routes;
   };
 
