@@ -30,10 +30,6 @@ class MenuBar extends Component {
         text: `Calendar`
       },
       {
-        path: '/what',
-        text: `What's In Store`
-      },
-      {
         path: '/ideaform',
         text: `Tell Us What You Think`
       }

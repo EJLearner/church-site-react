@@ -12,3 +12,10 @@ $orange: orange;
 $RGB77: RGB(77, 77, 77);
 $RGB63: RGB(63, 63, 63);
 $RGB95: RGB(95, 95, 95);
+
+@mixin content-widths() {
+  width: 80%;
+  min-width: 800px;
+  max-width: 1000px;
+  margin: auto;
+}

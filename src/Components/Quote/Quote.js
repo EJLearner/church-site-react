@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import random from 'lodash/random';
 
+import './Quote.css';
+
 class Quote extends Component {
   getQuote() {
     const quotes = [

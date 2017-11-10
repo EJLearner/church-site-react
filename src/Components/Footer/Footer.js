@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
+import './Footer.css';
+
 class Footer extends Component {
   render() {
     return (
       // TODO: See if I can make links out to other city temple sites relational
 
       <div id="footerbar">
-        <div id="footer" className="cf">
+        <div className="cf" id="footer">
           <div id="footerlinks">
             <div className="footlinklist cf">
               <h3>About Us</h3>
@@ -68,9 +70,7 @@ class Footer extends Component {
             <a href="mailto:church@thecitytemple.org">
               <i className="fa fa-envelope fa-2x" title="Mail Us" />
             </a>
-            <p>
-              &copy; {new Date().getFullYear()} The City Temple (Baptist) Church
-            </p>
+            <p>© {new Date().getFullYear()} The City Temple (Baptist) Church</p>
           </div>
         </div>
       </div>

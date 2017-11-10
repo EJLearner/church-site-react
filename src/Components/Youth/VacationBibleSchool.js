@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class Retreat2018 extends Component {
+class VacationBibleSchool extends Component {
   render() {
     return (
       <div>
@@ -34,4 +34,4 @@ class Retreat2018 extends Component {
   }
 }
 
-export default Retreat2018;
+export default VacationBibleSchool;

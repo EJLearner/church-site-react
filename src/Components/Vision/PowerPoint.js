@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
-import Link from 'react-router-dom';
-
 import powerPointImage from './powerpointpicture.png';
 import powerPointFile from './RetreatPowerPoint.ppsx';
 
-class Finance extends Component {
+class PowerPoint extends Component {
   render() {
-    console.log(powerPointFile);
     return (
       <div>
         <a href={powerPointFile}>
@@ -21,4 +18,4 @@ class Finance extends Component {
   }
 }
 
-export default Finance;
+export default PowerPoint;

@@ -42,7 +42,7 @@
     font-family: $century-gothic;
     font-size: 18px;
     font-weight: normal;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     text-transform: uppercase;
   }
 
@@ -50,6 +50,14 @@
     li {
       display: inline-block;
       width: 315px;
+
+      .title {
+        font-size: 80%;
+      }
+
+      .title::before {
+        content: ', ';
+      }
     }
   }
 }

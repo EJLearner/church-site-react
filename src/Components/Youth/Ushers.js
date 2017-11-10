@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 
-class Workgroups extends Component {
+class Ushers extends Component {
   render() {
     return (
       <div>
-        <h1>Workgroups</h1>
+        <h1>Ushers</h1>
       </div>
     );
   }
 }
 
-export default Workgroups;
+export default Ushers;

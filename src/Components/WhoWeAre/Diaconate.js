@@ -11,8 +11,12 @@ class Diaconate extends Component {
           support the Pastor.
         </p>
         <ul id="ce-right-column-list">
-          <li>Deacon Racquel B. Smith, Chairperson</li>
-          <li>Deacon Lilly Traynham, Co-Chairperson</li>
+          <li>
+            Deacon Racquel B. Smith<span className="title">Chairperson</span>
+          </li>
+          <li>
+            Deacon Lilly Traynham<span className="title">Co-Chairperson</span>
+          </li>
           <li>Deacon Patricia Bonaparte</li>
           <li>Deacon Gloria Brown</li>
           <li>Deacon Jonathan Brown</li>

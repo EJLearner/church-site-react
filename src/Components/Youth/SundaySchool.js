@@ -1,16 +1,10 @@
 import React, {Component} from 'react';
-import retreatPicture from './retreat-picture.jpg';
 
-class Participants2018 extends Component {
+class SundaySchool extends Component {
   render() {
     return (
       <div>
         <h2>Retreat Participants</h2>
-        <img
-          alt="retreat participants"
-          src={retreatPicture}
-          style={{width: '100%'}}
-        />
 
         <ul id="ce-right-column-list">
           <li>Grady Yeargin</li>
@@ -70,4 +64,4 @@ class Participants2018 extends Component {
   }
 }
 
-export default Participants2018;
+export default SundaySchool;

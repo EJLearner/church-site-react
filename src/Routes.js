@@ -14,11 +14,11 @@ import NotFound from './Components/NotFound/NotFound';
 import Quote from './Components/Quote/Quote';
 import TitleBar from './Components/TitleBar/TitleBar';
 import VbsRegistrationLanding from './Components/RegistrationPages/VbsRegistrationLanding';
-import What from './Components/What/What';
+import Vision from './Components/Vision/Vision';
 import Where from './Components/Where/Where';
 import WhoWeAre from './Components/WhoWeAre/WhoWeAre';
 import Why from './Components/Why/Why';
-import Vision from './Components/Vision/Vision';
+import Youth from './Components/Youth/Youth';
 
 import './App.css';
 
@@ -61,11 +61,11 @@ class Routes extends Component {
           <Route path="/christianedu.html" render={() => <FullPage><Home /></FullPage>} />
           <Route path="/ideaform" render={() => <FullPage><IdeaForm /></FullPage>} />
           <Route path="/vbs-registration-landing" render={() => <BarePage><VbsRegistrationLanding /></BarePage>} />
+          <Route path="/vision" render={() => <FullPage><Vision /></FullPage>} />
           <Route path="/who" render={() => <FullPage><WhoWeAre /></FullPage>} />
           <Route path="/why" render={() => <FullPage><Why /></FullPage>} />
-          <Route path="/what" render={() => <FullPage><What /></FullPage>} />
           <Route path="/where" render={() => <FullPage><Where /></FullPage>} />
-          <Route path="/vision" render={() => <FullPage><Vision /></FullPage>} />
+          <Route path="/youth" render={() => <FullPage><Youth /></FullPage>} />
           <Route render={() => <FullPage><NotFound /></FullPage>} />
         </Switch>
       </BrowserRouter>
