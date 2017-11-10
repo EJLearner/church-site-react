@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 
+import './LeftLink.css';
+
 const LeftLinks = props => {
   const renderLinks = (linkData, pathname) => {
     if (!linkData) {
@@ -25,7 +27,11 @@ const LeftLinks = props => {
     return <ul>{listItems}</ul>;
   };
 
-  return renderLinks(props.linkData, props.pathname);
+  return (
+    <div className="ce-left-links">
+      {renderLinks(props.linkData, props.pathname)}
+    </div>
+  );
 };
 
 LeftLinks.propTypes = {

@@ -1,0 +1,55 @@
+@import './_variables.scss';
+
+#ce-page-left-content {
+  margin-left: 4em;
+  font-family: $calibri;
+  color: $RGB63;
+
+  h1 {
+    border-bottom: 1px solid $darker-green;
+    color: $main-green;
+    display: block;
+    padding-bottom: 5px;
+    font-family: $calibri;
+    font-size: 80%;
+    font-weight: normal;
+    margin-bottom: 2em;
+    text-transform: uppercase;
+    width: 400px;
+  }
+
+  p,
+  ol,
+  ul {
+    width: 800px;
+  }
+
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .ce-page-right-content {
+    display: inline-block;
+    vertical-align: top;
+    width: 500px;
+  }
+
+  h2 {
+    color: $main-green;
+    display: inline-block;
+    font-family: $century-gothic;
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 2em;
+    text-transform: uppercase;
+  }
+
+  #ce-right-column-list {
+    li {
+      display: inline-block;
+      width: 315px;
+    }
+  }
+}

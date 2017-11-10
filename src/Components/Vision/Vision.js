@@ -8,12 +8,12 @@ import LeftLinks from '../Reusable/LeftLinks/LeftLinks';
 import SubPageSwitch from '../Reusable/SubPageSwitch/SubPageSwitch';
 
 import TheVision from './TheVision';
-import Retreat2016 from './Retreat2016';
+import Retreat2018 from './Retreat2018';
 import PowerPoint from './PowerPoint';
-import Participants2016 from './Participants2016';
+import Participants2018 from './Participants2018';
 import Workgroups from './Workgroups';
 
-import './Vision.css';
+import '../../cePageStyles.scss';
 
 class Vision extends Component {
   generateLinkData() {
@@ -25,20 +25,20 @@ class Vision extends Component {
         render: <TheVision />,
         text: 'The Vision'
       },
-      {
-        path: '/vision/retreat2016',
-        render: <Retreat2016 />,
-        text: '2016 Retreat'
-      },
+      // {
+      //   path: '/vision/retreat2018',
+      //   render: <Retreat2018 />,
+      //   text: '2018 Retreat'
+      // },
       {
         path: '/vision/powerpoint',
         render: <PowerPoint />,
         text: 'PowerPoint'
       },
       {
-        path: '/vision/participants2016',
-        render: <Participants2016 />,
-        text: '2016 Leadership Retreat Participants'
+        path: '/vision/participants2018',
+        render: <Participants2018 />,
+        text: '2018 Leadership Retreat Participants'
       },
       {path: '/vision/workgroups', render: <Workgroups />, text: 'Workgroups'}
     ];
@@ -66,20 +66,15 @@ class Vision extends Component {
     const linkData = this.generateLinkData();
 
     return (
-      <div id="flush-left-content">
-        <div>
-          <h1>
-            2020 <span className="emphwelcomeline">Vision</span>
-          </h1>
-        </div>
-
-        <div className="left-links">
-          <LeftLinks
-            linkData={linkData}
-            pathname={this.props.location.pathname}
-          />
-        </div>
-        <div className="right-content">
+      <div id="ce-page-left-content">
+        <h1>
+          2020 <span className="emphwelcomeline">Vision</span>
+        </h1>
+        <LeftLinks
+          linkData={linkData}
+          pathname={this.props.location.pathname}
+        />
+        <div className="ce-page-right-content">
           <SubPageSwitch linkData={linkData} />
         </div>
       </div>

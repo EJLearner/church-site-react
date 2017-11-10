@@ -9,13 +9,10 @@ import SubPageSwitch from '../Reusable/SubPageSwitch/SubPageSwitch';
 import ChristianEdStaff from './ChristianEdStaff';
 import Pastor from './Pastor';
 import Diaconate from './Diaconate';
-import Finance from './Finance';
-import Handbook from './Handbook';
-import Meetings from './Meetings';
 import MinisterialStaff from './MinisterialStaff';
 import Trustees from './Trustees';
 
-import './WhoWeAre.css';
+import '../../cePageStyles.css';
 
 class WhoWeAre extends Component {
   generateLinkData() {
@@ -38,16 +35,18 @@ class WhoWeAre extends Component {
         text: 'Christian Education'
       },
       {path: '/who/diaconate', render: <Diaconate />, text: 'Diaconate'},
-      {path: '/who/trustees', render: <Trustees />, text: 'Trustees'},
-      {
-        path: '/who/handbook',
-        render: <Handbook />,
-        text: 'Leadership Handbook',
-        children: [
-          {path: '/who/finance', render: <Finance />, text: 'Finance'},
-          {path: '/who/meetings', render: <Meetings />, text: 'Church Meetings'}
-        ]
-      }
+      {path: '/who/trustees', render: <Trustees />, text: 'Trustees'}
+
+      // This content won't be ready for a while. Left the code to remember that sublevels are possible
+      // {
+      //   path: '/who/handbook',
+      //   render: <Handbook />,
+      //   text: 'Leadership Handbook',
+      //   children: [
+      //     {path: '/who/finance', render: <Finance />, text: 'Finance'},
+      //     {path: '/who/meetings', render: <Meetings />, text: 'Church Meetings'}
+      //   ]
+      // }
     ];
   }
 
@@ -55,20 +54,15 @@ class WhoWeAre extends Component {
     const linkData = this.generateLinkData();
 
     return (
-      <div id="flush-left-content">
-        <div>
-          <h1>
-            Who We <span className="emphwelcomeline">Are</span>
-          </h1>
-        </div>
-
-        <div className="left-links">
-          <LeftLinks
-            linkData={linkData}
-            pathname={this.props.location.pathname}
-          />
-        </div>
-        <div className="right-content">
+      <div id="ce-page-left-content">
+        <h1>
+          Who We <span className="emphwelcomeline">Are</span>
+        </h1>
+        <LeftLinks
+          linkData={linkData}
+          pathname={this.props.location.pathname}
+        />
+        <div className="ce-page-right-content">
           <SubPageSwitch linkData={linkData} />
         </div>
       </div>
