@@ -10,7 +10,7 @@ class Retreat2018 extends Component {
           In this space, I will talk about the role of the deacons and how they
           support the Pastor.
         </p>
-        <ul id="ce-right-column-list">
+        <ul id="ce-list-half">
           <li>Deacon Racquel Smith</li>
           <li>Deacon Racquel Smith</li>
           <li>Deacon Racquel Smith</li>

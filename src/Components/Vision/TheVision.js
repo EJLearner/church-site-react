@@ -6,10 +6,10 @@ class TheVision extends Component {
       <div>
         <h2>Church Vision Statement</h2>
         <br />
-        <i>
-          We shall become a spiritually mature Christian fellowship in order to
-          provide an effective witness for Christ in this world.
-        </i>
+        <div className="vision-quote">
+          “We shall become a spiritually mature Christian fellowship in order to
+          provide an effective witness for Christ in this world.”
+        </div>
         <p>
           2020 Vision was born out of a desire to fulfill our church’s vision
           statement in a practical and tangible way. In a community where more

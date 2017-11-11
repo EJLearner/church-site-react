@@ -27,15 +27,15 @@
 
   h1.vbs-header,
   h2.vbs-header {
-    color: $darker-green;
+    color: $green-50;
   }
 
   h3 {
-    color: $RGB95;
+    color: $gray95;
   }
 
   p {
-    color: $RGB95;
+    color: $gray95;
   }
 
   #success-error-box {
@@ -44,21 +44,13 @@
     width: 300px;
   }
 
-  input {
-    border: 1px solid gray;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px 0 #c2c2c2;
-    font-family: $century-gothic;
-    padding: 6px;
-  }
-
   input[type='checkbox'] {
     color: red;
     box-shadow: 0 0 0 0;
   }
 
   .error-list {
-    color: $RGB95;
+    color: $gray95;
   }
 
   .error-list ul {
@@ -78,7 +70,7 @@
   }
 
   label {
-    color: $RGB95;
+    color: $gray95;
     font-family: $century-gothic;
     font-weight: bold;
     font-size: 12px;
@@ -86,10 +78,10 @@
   }
 
   .checklist-pattern > label {
-    color: $darker-green;
+    color: $green-50;
   }
 
   .registration-checkbox > label {
-    color: $darker-green;
+    color: $green-50;
   }
 }

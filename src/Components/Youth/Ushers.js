@@ -5,7 +5,7 @@ class Ushers extends Component {
     return (
       <div>
         <h2>Ushers</h2>{' '}
-        <ul id="ce-right-column-list">
+        <ul id="ce-list-half">
           <li>Deacon Racquel Smith</li>
           <li>Deacon Racquel Smith</li>
           <li>Deacon Racquel Smith</li>

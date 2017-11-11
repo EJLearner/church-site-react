@@ -10,7 +10,7 @@ class Diaconate extends Component {
           In this space, I will talk about the role of the deacons and how they
           support the Pastor.
         </p>
-        <ul id="ce-right-column-list">
+        <ul className="ce-list-half">
           <li>
             Deacon Racquel B. Smith<span className="title">Chairperson</span>
           </li>
@@ -23,6 +23,8 @@ class Diaconate extends Component {
           <li>Deacon Maelena Holman</li>
           <li>Deacon Doris Hunter</li>
           <li>Deacon Martha Ivey</li>
+        </ul>
+        <ul className="ce-list-half">
           <li>Deacon Cathy Neely-Hurst</li>
           <li>Deacon Gregory Reed</li>
           <li>Deacon Vonda Reed</li>

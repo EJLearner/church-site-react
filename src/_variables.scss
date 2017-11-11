@@ -1,17 +1,17 @@
 $arial: arial, helvetica, sans-serif;
-$calibri: 'Segoe UI', Calibri, Candara, Segoe, Optima, Arial, sans-serif;
+$calibri: Calibri, 'Segoe UI', Candara, Segoe, Optima, Arial, sans-serif;
 $cambria: cambria, georgia, 'bookman old style', 'times new roman', serif;
 $century-gothic: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
 $garamond: 'Adobe Garamond Pro', Garamond, Baskerville, 'Baskerville Old Face',
   'Hoefler Text', 'Times New Roman', serif;
 
-$main-green: RGB(146, 208, 80);
-$darker-green: rgb(115, 175, 85);
-$last-link-green: RGB(102, 158, 74);
+$green-20: RGB(146, 208, 80);
+$green-50: rgb(115, 175, 85);
+$green-80: RGB(102, 158, 74);
 $orange: orange;
-$RGB77: RGB(77, 77, 77);
-$RGB63: RGB(63, 63, 63);
-$RGB95: RGB(95, 95, 95);
+$gray63: RGB(63, 63, 63);
+$gray77: RGB(77, 77, 77);
+$gray95: RGB(95, 95, 95);
 
 @mixin content-widths() {
   width: 80%;

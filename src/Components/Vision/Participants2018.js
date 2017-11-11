@@ -12,9 +12,7 @@ class Participants2018 extends Component {
           style={{width: '100%'}}
         />
 
-        <ul id="ce-right-column-list">
-          <li>Grady Yeargin</li>
-          <li>Patricia Yeargin</li>
+        <ul className="ce-list-half">
           <li>Linda Alexander</li>
           <li>Delores Allen</li>
           <li>Debbie Bates</li>
@@ -41,6 +39,8 @@ class Participants2018 extends Component {
           <li>April Jones</li>
           <li>Earl Jones</li>
           <li>Marlene Jones</li>
+        </ul>
+        <ul className="ce-list-half">
           <li>Tyres Jones</li>
           <li>Candace McNeal</li>
           <li>Davina Morton</li>
@@ -64,6 +64,8 @@ class Participants2018 extends Component {
           <li>Patricia Ward</li>
           <li>Michele Williams</li>
           <li>Henry Womack</li>
+          <li>Grady Yeargin</li>
+          <li>Patricia Yeargin</li>
         </ul>
       </div>
     );

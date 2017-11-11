@@ -1,124 +1,96 @@
 import React, {Component} from 'react';
+import LeftLinks from '../Reusable/LeftLinks/LeftLinks';
+import Text from '../Reusable/Text/Text';
 
 class IdeaForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {ideadesc: '', name: '', email: '', phone: ''};
+
+    this._onChangeInput = this._onChangeInput.bind(this);
+    // this._renderFormFields = this._renderFormFields.bind(this);
+    // this._setErrors = this._setErrors.bind(this);
+    // this._submitData = this._submitData.bind(this);
+  }
+
+  _onChangeInput(value, id) {
+    this.setState({[id]: value, postStatus: undefined});
+  }
+
   render() {
     return (
-      <div>
-        <div id="leftcontent">
-          <h1>
-            Tell Us What You <span>Think!</span>
-          </h1>
-        </div>
-        <div id="leftform">
+      <div id="ce-page-left-content">
+        <h1>
+          Tell Us What You <span>Think!</span>
+        </h1>
+        <LeftLinks />
+        <div className="ce-page-right-content">
           <p>
             <label htmlFor="institute">
               This idea is for:<span className="mandatory">*</span>
             </label>
             <br />
-            <input
-              type="radio"
-              name="ideatype"
-              id="institute"
-              value="institute"
-              required
-            />
+            <input type="radio" id="institute" value="institute" required />
             <label htmlFor="institute">Institute/Seminar</label>
             <br />
 
-            <input
-              type="radio"
-              name="ideatype"
-              id="class"
-              value="class"
-              required
-            />
+            <input type="radio" id="class" value="class" required />
             <label htmlFor="class">Class</label>
             <br />
 
-            <input
-              type="radio"
-              name="ideatype"
-              id="retreat"
-              value="retreat"
-              required
-            />
+            <input type="radio" id="retreat" value="retreat" required />
             <label htmlFor="retreat">Retreat</label>
             <br />
 
-            <input
-              type="radio"
-              name="ideatype"
-              id="workshop"
-              value="workshop"
-              required
-            />
+            <input type="radio" id="workshop" value="workshop" required />
             <label htmlFor="workshop">Workshop</label>
             <br />
 
-            <input
-              type="radio"
-              name="ideatype"
-              id="other"
-              value="other"
-              required
-            />
+            <input type="radio" id="other" value="other" required />
             <label htmlFor="other">Other</label>
           </p>
 
-          <p>
-            <label htmlFor="ideadesc">
-              Describe your idea here:<span className="mandatory">*</span>
-            </label>
-            <br />
-            <textarea
-              className="ideatextbox"
-              name="ideadesc"
-              id="ideadesc"
-              rows="5"
-              cols="41"
-              maxLength="1000"
-              required
-            />
-          </p>
+          <Text
+            cols="41"
+            id="ideadesc"
+            label={'Describe your idea here'}
+            maxLength="1000"
+            onChange={this._onChangeInput}
+            required
+            rows="5"
+            value={this.state.ideadesc}
+          />
 
-          <p>
-            <label htmlFor="name">Contact Name:</label>
-            <br />
-            <input
-              type="text"
-              className="smalltextbox"
-              name="name"
-              id="name"
-              size="40"
-              maxLength="50"
-            />
-          </p>
+          <Text
+            id="name"
+            label="Contact Name:"
+            maxLength="50"
+            onChange={this._onChangeInput}
+            size={40}
+            type="text"
+            value={this.state.name}
+          />
 
-          <p>
-            <label htmlFor="email">Email:</label>
-            <br />
-            <input
-              type="email"
-              className="smalltextbox"
-              name="email"
-              id="email"
-              size="40"
-              maxLength="50"
-            />
-          </p>
+          <Text
+            id="email"
+            label="Email:"
+            maxLength="50"
+            onChange={this._onChangeInput}
+            size={40}
+            type="email"
+            value={this.state.email}
+          />
 
-          <p>
-            <label htmlFor="phone">Contact Telephone:</label>
-            <br />
-            <input
-              type="tel"
-              className="smalltextbox"
-              name="phone"
-              id="phone"
-              size="40"
-              maxLength="50"
-            />
-          </p>
+          <Text
+            id="phone"
+            label="Contact Telephone:"
+            maxLength="50"
+            onChange={this._onChangeInput}
+            size={40}
+            type="tel"
+            value={this.state.phone}
+          />
+          <br />
 
           <button type="submit">Submit</button>
         </div>

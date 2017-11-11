@@ -6,8 +6,8 @@ import './LeftLink.css';
 
 const LeftLinks = props => {
   const renderLinks = (linkData, pathname) => {
-    if (!linkData) {
-      return null;
+    if (!linkData || !pathname) {
+      return <ul />;
     }
 
     const isRoot = !linkData.find(link => link.path === pathname);
@@ -40,8 +40,8 @@ LeftLinks.propTypes = {
       path: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired
     })
-  ).isRequired,
-  pathname: PropTypes.string.isRequired
+  ),
+  pathname: PropTypes.string
 };
 
 export default LeftLinks;

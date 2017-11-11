@@ -5,7 +5,7 @@ class ChristianEdStaff extends Component {
     return (
       <div>
         <h2>Christian Education Staff</h2>
-        <ul id="ce-right-column-list">
+        <ul className="ce-list-half">
           <li>
             April S. Jones<span className="title">Co-chair</span>
           </li>
@@ -17,6 +17,8 @@ class ChristianEdStaff extends Component {
           </li>
           <li>Violet Churn</li>
           <li>Iris Ford</li>
+        </ul>
+        <ul className="ce-list-half">
           <li>Min. Charles Gaskins</li>
           <li>Tyres Jones, Sr.</li>
           <li>Janet Stewart</li>

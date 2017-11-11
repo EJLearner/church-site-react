@@ -3,19 +3,30 @@
 #ce-page-left-content {
   margin-left: 4em;
   font-family: $calibri;
-  color: $RGB63;
+  font-size: 18px;
+  color: $gray63;
 
   h1 {
-    border-bottom: 1px solid $darker-green;
-    color: $main-green;
+    border-bottom: 1px solid $green-50;
+    color: $green-20;
     display: block;
     padding-bottom: 5px;
-    font-family: $calibri;
-    font-size: 80%;
+    font-family: $century-gothic;
+    font-size: 110%;
     font-weight: normal;
     margin-bottom: 2em;
     text-transform: uppercase;
     width: 400px;
+
+    .emphwelcomeline {
+      font-size: 130%;
+      color: $green-80;
+    }
+  }
+
+  .vision-quote {
+    font-weight: bold;
+    font-style: italic;
   }
 
   p,
@@ -33,12 +44,11 @@
   .ce-page-right-content {
     display: inline-block;
     vertical-align: top;
-    width: 500px;
+    max-width: 700px;
   }
 
   h2 {
-    color: $main-green;
-    display: inline-block;
+    color: $green-20;
     font-family: $century-gothic;
     font-size: 18px;
     font-weight: normal;
@@ -46,11 +56,11 @@
     text-transform: uppercase;
   }
 
-  #ce-right-column-list {
+  .ce-list-half {
+    display: inline-block;
+    vertical-align: top;
+    width: 315px;
     li {
-      display: inline-block;
-      width: 315px;
-
       .title {
         font-size: 80%;
       }

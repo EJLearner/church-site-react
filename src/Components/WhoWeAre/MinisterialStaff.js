@@ -5,15 +5,16 @@ class MinisterialStaff extends Component {
     return (
       <div>
         <h2>Ministerial Staff</h2>
-
-        <ul id="ce-right-column-list">
-          <li>Min. Patricia Yeargin</li>
-          <li>Rev. Debra Hickman</li>
+        <ul className="ce-list-half">
           <li>Rev. Tyra Curley</li>
           <li>Min. Lori Ford</li>
-          <li>Min. Michelle Hamiel</li>
           <li>Min. Charles Gaskins</li>
+          <li>Min. Michelle Hamiel</li>
+        </ul>
+        <ul className="ce-list-half">
+          <li>Rev. Debra Hickman</li>
           <li>Min. Marshell Jenkins</li>
+          <li>Min. Patricia Yeargin</li>
         </ul>
       </div>
     );

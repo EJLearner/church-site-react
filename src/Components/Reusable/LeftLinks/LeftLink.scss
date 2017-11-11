@@ -10,12 +10,13 @@
 
 .ce-left-links a,
 .ce-left-links a:visited {
-  color: $darker-green;
+  color: $green-50;
 }
 
 .ce-left-links .current-page-link a,
 .ce-left-links .current-page-link a:visited {
   color: $orange;
+  font-weight: bolder;
 }
 
 .ce-left-links ul ul {

@@ -4,7 +4,7 @@
   align-items: center;
   display: flex;
   font-family: $calibri;
-  font-size: 90%;
+  font-size: 20px;
   justify-content: space-between;
   min-width: 800px;
   padding: 16px 16px;
@@ -33,12 +33,12 @@
 }
 
 #menubar li:last-child {
-  color: $last-link-green;
+  color: $green-80;
 }
 
 #menubar li:last-child a,
 #menubar li:last-child a:visited {
-  color: $last-link-green;
+  color: $green-80;
 }
 
 #menubar li a,

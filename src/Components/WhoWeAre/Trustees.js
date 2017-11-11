@@ -5,7 +5,7 @@ class Trustees extends Component {
     return (
       <div>
         <h2>Trustees</h2>
-        <ul id="ce-right-column-list">
+        <ul className="ce-list-half">
           <li>
             Joyce Baylor Thompson<span className="title">Chairperson</span>
           </li>
@@ -13,18 +13,20 @@ class Trustees extends Component {
             Cora Gordon<span className="title">Co-chair</span>
           </li>
           <li>Delores Allen</li>
+          <li>Willis Christian</li>
           <li>Joyce Hall</li>
           <li>Gary Hamiel</li>
-          <li>Charles Payne</li>
-          <li>Gilbert Richards</li>
-          <li>Jerome Richards</li>
-          <li>Willis Christian</li>
-          <li>
-            Juanita Morton<span className="title">Retired</span>
-          </li>
+        </ul>
+        <ul className="ce-list-half">
           <li>
             Edward Holden<span className="title">Retired</span>
           </li>
+          <li>
+            Juanita Morton<span className="title">Retired</span>
+          </li>
+          <li>Charles Payne</li>
+          <li>Gilbert Richards</li>
+          <li>Jerome Richards</li>
           <li>
             Gladys Smith<span className="title">Retired</span>
           </li>
