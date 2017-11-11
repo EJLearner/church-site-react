@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -10,15 +11,17 @@ import kidsPic from './kids.jpg';
 import leadershipPic from './leadership.png';
 
 const HomeSquare = props => {
-  const scrollClass = props.scroll ? ' scroll' : '';
+  const {children, linkTo, scroll, title} = props;
+
+  const scrollClass = scroll ? ' scroll' : '';
   const classNames = 'home-square' + scrollClass;
 
   return (
     <div className={classNames}>
       <h2>
-        <span>{props.title}</span>
+        <span>{title}</span>
       </h2>
-      {props.children}
+      {linkTo ? <Link to={linkTo}>{children}</Link> : children}
     </div>
   );
 };
@@ -30,15 +33,15 @@ const HomeSquares = props => {
         <Announcements />
       </HomeSquare>
 
-      <HomeSquare title="Youth Ministries">
+      <HomeSquare linkTo="/youth" title="Youth Ministries">
         <img alt="Children" src={kidsPic} />
       </HomeSquare>
 
-      <HomeSquare title="Leadership">
+      <HomeSquare linkTo="/who" title="Leadership">
         <img alt="Leadership" src={leadershipPic} />
       </HomeSquare>
 
-      <HomeSquare title="Calendar">
+      <HomeSquare linkTo="/calendar" title="Calendar">
         <img alt="Calendar" src={calendarPic} />
       </HomeSquare>
     </div>

@@ -10,7 +10,7 @@ import {post} from 'jquery';
 
 import './Registration.css';
 
-class CcRegistrationVolunteer extends Component {
+class VbsRegistrationVolunteer extends Component {
   constructor(props) {
     super(props);
     this.state = this._getFreshState();
@@ -114,7 +114,7 @@ class CcRegistrationVolunteer extends Component {
     };
 
     post(
-      'ccRegistrationFormVolunteerProcess.php',
+      'vbsRegistrationFormVolunteerProcess.php',
       data,
       response => {
         if (response.success) {
@@ -386,8 +386,8 @@ class CcRegistrationVolunteer extends Component {
   render() {
     return (
       <div className="registration-page">
-        <h1>Children’s Church</h1>
-        <h2>Volunteer Registration</h2>
+        <h1 className="vbs-header">Vacation Bible School</h1>
+        <h2 className="vbs-header">Volunteer Registration</h2>
         {registrationUtils.renderErrors(this.state.errors)}
         {this._renderFormFields()}
         {registrationUtils.renderStatusMessage(
@@ -399,4 +399,4 @@ class CcRegistrationVolunteer extends Component {
   }
 }
 
-export default CcRegistrationVolunteer;
+export default VbsRegistrationVolunteer;

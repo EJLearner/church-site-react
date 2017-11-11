@@ -1,8 +1,12 @@
 @import '../../_variables.scss';
 
 .registration-page {
-  padding: 1em 5em;
+  box-shadow: 6px 6px 6px 0 #c2c2c2;
+  border: 1px solid gray;
   font-family: $century-gothic;
+  margin: 1em auto;
+  padding: 0.2em 1em 2em 1em;
+  width: 600px;
 
   h1 {
     font-family: $garamond;
@@ -10,6 +14,7 @@
     font-size: 48px;
     color: $orange;
     margin-bottom: 0px;
+    margin-top: 16px;
   }
 
   h2 {
@@ -18,6 +23,19 @@
     font-size: 24px;
     color: orange;
     margin-top: 0px;
+  }
+
+  h1.vbs-header,
+  h2.vbs-header {
+    color: $darker-green;
+  }
+
+  h3 {
+    color: $RGB95;
+  }
+
+  p {
+    color: $RGB95;
   }
 
   #success-error-box {
@@ -29,7 +47,7 @@
   input {
     border: 1px solid gray;
     border-radius: 5px;
-    box-shadow: 0 2px 2px 0 #c2c2c2;
+    box-shadow: 2px 2px 2px 0 #c2c2c2;
     font-family: $century-gothic;
     padding: 6px;
   }
@@ -37,33 +55,6 @@
   input[type='checkbox'] {
     color: red;
     box-shadow: 0 0 0 0;
-  }
-
-  .form-left {
-    display: inline-block;
-    max-width: 600px;
-    width: 50%;
-
-    p {
-      color: $RGB95;
-    }
-
-    h3 {
-      color: $RGB95;
-    }
-  }
-
-  .right-info {
-    color: $RGB95;
-    display: inline-block;
-    margin-right: 2em;
-    text-align: center;
-    vertical-align: top;
-
-    h3 {
-      font-size: 16px;
-      margin-bottom: 2px;
-    }
   }
 
   .error-list {
@@ -98,7 +89,7 @@
     color: $darker-green;
   }
 
-  .cc-registration-checkbox > label {
+  .registration-checkbox > label {
     color: $darker-green;
   }
 }

@@ -25,8 +25,11 @@ class CcRegistrationLanding extends Component {
     return (
       <RegistrationLanding
         imgPath={leftPicture}
-        onClickAttend={this._setPageState.bind(null, 'cc-registration')}
-        onClickVolunteer={this._setPageState.bind(null, 'cc-volunteer')}
+        onClickAttend={this._setPageState.bind(null, 'cc-registration-child')}
+        onClickVolunteer={this._setPageState.bind(
+          null,
+          'cc-registration-volunteer'
+        )}
         type={RegistrationLanding.TYPES.CHILDRENS_CHURCH}
       />
     );

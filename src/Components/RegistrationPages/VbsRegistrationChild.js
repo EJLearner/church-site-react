@@ -11,7 +11,7 @@ import {post} from 'jquery';
 
 import './Registration.css';
 
-class CcRegistrationChild extends Component {
+class VbsRegistrationChild extends Component {
   constructor(props) {
     super(props);
     this.state = this._getFreshState();
@@ -77,7 +77,7 @@ class CcRegistrationChild extends Component {
     };
 
     post(
-      'ccRegistrationFormChildProcess.php',
+      'vbsRegistrationFormChildProcess.php',
       data,
       response => {
         if (response.success) {
@@ -277,12 +277,13 @@ class CcRegistrationChild extends Component {
   render() {
     return (
       <div className="registration-page">
-        <h1>Children’s Church</h1>
-        <h2>Child Registration</h2>
+        <h1 className="vbs-header">Vacation Bible School</h1>
+        <h2 className="vbs-header">Child Registration</h2>
         <p>
-          Complete the following form to register your child(ren) for Children’s
-          Church. For timely enrollment, please double-check your responses
-          before clicking the <span className="bold">Submit</span> button.
+          Complete the following form to register your child(ren) for Vacation
+          Bible School. For timely enrollment, please double-check your
+          responses before clicking the <span className="bold">Submit</span>{' '}
+          button.
         </p>
 
         {registrationUtils.renderErrors(this.state.errors)}
@@ -296,6 +297,6 @@ class CcRegistrationChild extends Component {
   }
 }
 
-export default CcRegistrationChild;
+export default VbsRegistrationChild;
 
 // TODO: Send the email also to Tiffany and Phyllis
