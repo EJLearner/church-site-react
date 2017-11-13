@@ -4,14 +4,12 @@ import {Route, Switch} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
-import LeftLinks from '../Reusable/LeftLinks/LeftLinks';
-import SubPageSwitch from '../Reusable/SubPageSwitch/SubPageSwitch';
-
 import TheVision from './TheVision';
-// import Retreat2018 from './Retreat2018';
 import PowerPoint from './PowerPoint';
 import Participants2018 from './Participants2018';
 import Workgroups from './Workgroups';
+
+import CePageLayoutA from '../Reusable/CePageLayoutA';
 
 import '../../cePageStyles.scss';
 
@@ -19,17 +17,11 @@ class Vision extends Component {
   generateLinkData() {
     return [
       {
-        altPath: '/vision',
         isDefault: true,
         path: '/vision/thevision',
         render: <TheVision />,
         text: 'The Vision'
       },
-      // {
-      //   path: '/vision/retreat2018',
-      //   render: <Retreat2018 />,
-      //   text: '2018 Retreat'
-      // },
       {
         path: '/vision/powerpoint',
         render: <PowerPoint />,
@@ -64,20 +56,12 @@ class Vision extends Component {
 
   render() {
     const linkData = this.generateLinkData();
-
     return (
-      <div id="ce-page-left-content">
-        <h1>
-          2020 <span className="emphwelcomeline">Vision</span>
-        </h1>
-        <LeftLinks
-          linkData={linkData}
-          pathname={this.props.location.pathname}
-        />
-        <div className="ce-page-right-content">
-          <SubPageSwitch linkData={linkData} />
-        </div>
-      </div>
+      <CePageLayoutA
+        headerBeginning="2020"
+        headerEmph="Vision"
+        linkData={linkData}
+      />
     );
   }
 }

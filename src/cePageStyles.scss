@@ -1,6 +1,6 @@
 @import './_variables.scss';
 
-#ce-page-left-content {
+#ce-page {
   margin-left: 4em;
   font-family: $calibri;
   font-size: 18px;
@@ -29,11 +29,11 @@
     font-style: italic;
   }
 
-  p,
-  ol,
-  ul {
-    width: 800px;
-  }
+  // p,
+  // ol,
+  // ul {
+  //   width: 800px;
+  // }
 
   ul {
     list-style-type: none;
@@ -41,10 +41,21 @@
     padding-left: 0;
   }
 
+  .ce-page-links-content {
+    display: flex;
+    align-content: stretch;
+  }
+
+  .ce-page-left-content {
+    flex-shrink: 0;
+    max-width: 30%;
+    min-width: 200px;
+  }
+
   .ce-page-right-content {
     display: inline-block;
     vertical-align: top;
-    max-width: 700px;
+    // max-width: 700px;
   }
 
   h2 {

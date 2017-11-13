@@ -19,7 +19,7 @@ class IdeaForm extends Component {
 
   render() {
     return (
-      <div id="ce-page-left-content">
+      <div id="ce-page">
         <h1>
           Tell Us What You <span>Think!</span>
         </h1>

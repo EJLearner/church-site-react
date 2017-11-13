@@ -3,8 +3,7 @@ import {withRouter} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
-import LeftLinks from '../Reusable/LeftLinks/LeftLinks';
-import SubPageSwitch from '../Reusable/SubPageSwitch/SubPageSwitch';
+import CePageLayoutA from '../Reusable/CePageLayoutA';
 
 import ChristianEdStaff from './ChristianEdStaff';
 import Pastor from './Pastor';
@@ -21,7 +20,6 @@ class WhoWeAre extends Component {
         path: '/who/pastor',
         render: <Pastor />,
         text: 'Pastor Yeargin',
-        altPath: '/who',
         isDefault: true
       },
       {
@@ -52,20 +50,12 @@ class WhoWeAre extends Component {
 
   render() {
     const linkData = this.generateLinkData();
-
     return (
-      <div id="ce-page-left-content">
-        <h1>
-          Who We <span className="emphwelcomeline">Are</span>
-        </h1>
-        <LeftLinks
-          linkData={linkData}
-          pathname={this.props.location.pathname}
-        />
-        <div className="ce-page-right-content">
-          <SubPageSwitch linkData={linkData} />
-        </div>
-      </div>
+      <CePageLayoutA
+        headerBeginning="Who We"
+        headerEmph="Are"
+        linkData={linkData}
+      />
     );
   }
 }

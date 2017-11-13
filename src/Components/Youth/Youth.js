@@ -69,7 +69,7 @@ class Youth extends Component {
     const linkData = this.generateLinkData();
 
     return (
-      <div id="ce-page-left-content">
+      <div id="ce-page">
         <h1>City Temple Youth</h1>
         <LeftLinks
           linkData={linkData}
