@@ -1,6 +1,17 @@
 import React, {Component} from 'react';
+import workGroupData from '../../utils/visionWorkgroupData';
 
 class TheVision extends Component {
+  _renderWorkGroupListItems() {
+    return workGroupData.getWorkGroupNames().map((name, index) => {
+      return (
+        <li key={index} type="a">
+          {name}
+        </li>
+      );
+    });
+  }
+
   render() {
     return (
       <div>
@@ -41,10 +52,18 @@ class TheVision extends Component {
             Commit to strategic planning and goals that will allow us to realize
             our vision.
           </li>
-          <ol>
-            <li type="a">List the workgroup headings</li>
-          </ol>
+          <ol>{this._renderWorkGroupListItems()}</ol>
         </ol>
+        <p>
+          In April 2016, we held a Leadership Retreat at the Embassy Suites
+          hotel in Hunt Valley, MD. The purpose of the retreat was to provide
+          training on the 2020 Vision. We also held a workshop on becoming
+          better leaders and understanding the biblical and practical
+          applications of fruitful leadership. We strategized on how we could
+          make the words of our vision a reality and defined outputs and
+          outcomes that would help us measure the success of our efforts moving
+          forward.
+        </p>
       </div>
     );
   }
