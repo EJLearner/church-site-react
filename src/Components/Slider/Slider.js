@@ -39,12 +39,16 @@ class Slider extends Component {
         displayEnd: '2018-05-01',
         source: require('./christian-ed-home-christ-risen.png')
       },
-      // {
-      //   altTag:
-      //     'Leadership prayer servie: Every saturday before the first sunday',
-      //   linkPath: '/vision/thevision',
-      //   source: require('./christian-ed-home-leadership-prayer.png')
-      // },
+
+      // TODO: this banner should link to the day or event page but they don't exist yet
+      /*
+      {
+        altTag:
+          'Leadership prayer servie: Every saturday before the first sunday',
+        linkPath: '/vision/thevision',
+        source: require('./christian-ed-home-leadership-prayer.png')
+      },
+      */
       {
         altTag:
           'o be a good father and mother requires that the parents defer many of ' +
