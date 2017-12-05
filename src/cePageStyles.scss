@@ -29,18 +29,6 @@
     font-style: italic;
   }
 
-  // p,
-  // ol,
-  // ul {
-  //   width: 800px;
-  // }
-
-  ul {
-    list-style-type: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-
   .ce-page-links-content {
     display: flex;
     align-content: stretch;
@@ -69,8 +57,12 @@
 
   .ce-list-half {
     display: inline-block;
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
     vertical-align: top;
     width: 315px;
+
     li {
       .title {
         font-size: 80%;

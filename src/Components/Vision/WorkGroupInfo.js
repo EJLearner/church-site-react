@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
+import './WorkGroupInfo.css';
+
 class WorkGroupInfo extends Component {
   _renderOutcomesList(outcomes) {
     const outcomesListItems = outcomes.map((outcome, index) => {
       return <li key={index}>{outcome}</li>;
     });
 
-    return <ol>{outcomesListItems}</ol>;
+    return <ul className="outcomes-list">{outcomesListItems}</ul>;
   }
 
   render() {
@@ -16,12 +18,16 @@ class WorkGroupInfo extends Component {
     return (
       <div>
         <h3>{name}</h3>
-        Purpose: {purpose}
-        <br />
-        Outcomes: {this._renderOutcomesList(outcomes)}
-        <br />
-        Goal: {goal}
-        <br />
+        <div>
+          <span className="type">Purpose:</span> {purpose}
+        </div>
+        <div>
+          <span className="type">Outcomes:</span>{' '}
+          {this._renderOutcomesList(outcomes)}
+        </div>
+        <div className="goal">
+          <span className="type">Goal:</span> {goal}
+        </div>
       </div>
     );
   }
