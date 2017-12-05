@@ -6,7 +6,7 @@ import _ from 'lodash';
 
 import TheVision from './TheVision';
 import PowerPoint from './PowerPoint';
-import Participants2018 from './Participants2018';
+import Participants2016 from './Participants2016';
 import Workgroups from './Workgroups';
 
 import CePageLayoutA from '../Reusable/CePageLayoutA';
@@ -28,9 +28,9 @@ class Vision extends Component {
         text: 'PowerPoint'
       },
       {
-        path: '/vision/participants2018',
-        render: <Participants2018 />,
-        text: '2018 Leadership Retreat Participants'
+        path: '/vision/participants2016',
+        render: <Participants2016 />,
+        text: '2016 Leadership Retreat Participants'
       },
       {path: '/vision/workgroups', render: <Workgroups />, text: 'Workgroups'}
     ];

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import retreatPicture from './retreat-picture.jpg';
 
-class Participants2018 extends Component {
+class Participants2016 extends Component {
   render() {
     return (
       <div>
@@ -72,4 +72,4 @@ class Participants2018 extends Component {
   }
 }
 
-export default Participants2018;
+export default Participants2016;
