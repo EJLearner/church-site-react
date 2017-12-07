@@ -53,6 +53,19 @@
     font-weight: normal;
     margin-bottom: 1em;
     text-transform: uppercase;
+
+    &.yeargin-name {
+      text-transform: none;
+      margin-bottom: 0;
+    }
+  }
+
+  .h2-sub {
+    color: $green-50;
+    font-family: $arial;
+    margin: 0;
+    padding: 0.2em;
+    text-transform: uppercase;
   }
 
   .ce-list-half {
