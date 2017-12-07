@@ -1,10 +1,20 @@
 import React, {Component} from 'react';
+import ContactLine from '../Reusable/ContactLine';
+
+import yearginImage from '../../assets/images/yearginbio.jpg';
 
 class Pastor extends Component {
   render() {
     return (
       <div>
-        <h2>Pastor Yeargin</h2>
+        <img
+          alt="Pastor Yeargin"
+          className="float-left-image"
+          src={yearginImage}
+        />
+        <h2 className="yeargin-name">Rev. Dr. Grady A. Yeargin, Jr.</h2>
+        <div className="h2-sub">Pastor</div>
+        <ContactLine address={ContactLine.ADDRESSES.YEARGIN} />
         <p>
           The Rev. Dr. Grady Andrew Yeargin, Jr. was born on November 7, 1949 in
           Greenville, South Carolina. He attended Sterling High School and was
