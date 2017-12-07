@@ -18,7 +18,7 @@ class WorkGroupInfo extends Component {
     return (
       <div>
         {image ? (
-          <img alt={`${name}`} className="workgroup-image" src={image} />
+          <img alt={`${name}`} className="float-left-image" src={image} />
         ) : null}
         <h3>{name}</h3>
         <div>
