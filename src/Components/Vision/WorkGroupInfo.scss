@@ -1,10 +1,21 @@
+@import '../../_variables.scss';
+
+.workgroup-image {
+  float: left;
+  width: 100px;
+}
+
 h3 {
+  color: $green-50;
+  font-weight: normal;
   margin-bottom: 0.2em;
 }
 
 ul.outcomes-list {
-  padding: 0 0 0 40px;
+  list-style: inside disc;
   margin: 0;
+  margin-left: 1em;
+  padding: 0 0 0 40px;
 }
 
 .goal {
