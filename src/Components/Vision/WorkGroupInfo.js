@@ -13,10 +13,13 @@ class WorkGroupInfo extends Component {
   }
 
   render() {
-    const {goal, name, outcomes, purpose} = this.props;
+    const {goal, image, name, outcomes, purpose} = this.props;
 
     return (
       <div>
+        {image ? (
+          <img alt={`${name}`} className="workgroup-image" src={image} />
+        ) : null}
         <h3>{name}</h3>
         <div>
           <span className="type">Purpose:</span> {purpose}
@@ -34,7 +37,9 @@ class WorkGroupInfo extends Component {
 }
 
 WorkGroupInfo.propTypes = {
+  // image source
   goal: PropTypes.string.isRequired,
+  image: PropTypes.string,
   name: PropTypes.string.isRequired,
   outcomes: PropTypes.arrayOf(PropTypes.string).isRequired,
   purpose: PropTypes.string.isRequired

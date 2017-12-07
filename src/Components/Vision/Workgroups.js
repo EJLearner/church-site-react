@@ -5,13 +5,16 @@ import workGroupData from '../../utils/visionWorkgroupData';
 class Workgroups extends Component {
   _renderWorkGroupInfos() {
     return workGroupData.getAll().map((workGroup, index) => {
+      const {goal, image, name, outcomes, purpose} = workGroup;
+
       return (
         <WorkGroupInfo
-          goal={workGroup.goal}
+          goal={goal}
+          image={image}
           key={index}
-          name={workGroup.name}
-          outcomes={workGroup.outcomes}
-          purpose={workGroup.purpose}
+          name={name}
+          outcomes={outcomes}
+          purpose={purpose}
         />
       );
     });

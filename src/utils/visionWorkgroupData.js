@@ -1,7 +1,9 @@
 const witness = 'To provide an effective witness  for Christ in this world.';
+import worshipImg from '../assets/images/worship.png';
 
 const workGroups = [
   {
+    image: worshipImg,
     name: 'Worship',
     purpose: 'To introduce a contemporary worship experience.',
     outcomes: [
