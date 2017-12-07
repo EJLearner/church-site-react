@@ -1,5 +1,9 @@
 const witness = 'To provide an effective witness  for Christ in this world.';
 import worshipImg from '../assets/images/worship.png';
+import communicationsImg from '../assets/images/communications.png';
+import discipleshipImg from '../assets/images/discipleship.png';
+import financeImg from '../assets/images/finance.png';
+import membershipImg from '../assets/images/membership.png';
 
 const workGroups = [
   {
@@ -15,6 +19,7 @@ const workGroups = [
     goal: witness
   },
   {
+    image: membershipImg,
     name: 'Membership',
     purpose: 'To show better care for the members of our church.',
     outcomes: [
@@ -26,6 +31,7 @@ const workGroups = [
     goal: witness
   },
   {
+    image: communicationsImg,
     name: 'Public Relations/Communications',
     purpose: 'To put our church in the face of our community members.',
     outcomes: [
@@ -37,6 +43,7 @@ const workGroups = [
     goal: witness
   },
   {
+    // TODO: Add missing image
     name: 'Evangelism',
     purpose: 'To invest in and become an active part of our community.',
     outcomes: [
@@ -49,6 +56,7 @@ const workGroups = [
     goal: witness
   },
   {
+    image: financeImg,
     name: 'Finance & Operations',
     purpose: 'To develop financial and operational plans for the church.',
     outcomes: [
@@ -61,6 +69,7 @@ const workGroups = [
     goal: witness
   },
   {
+    image: discipleshipImg,
     name: 'Discipleship',
     purpose:
       'To develop individuals to become more like Christ through training and mentoring.',
