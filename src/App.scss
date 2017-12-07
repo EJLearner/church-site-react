@@ -23,16 +23,6 @@ body {
   position: relative;
 }
 
-// #maincontent {
-//   @include content-widths();
-//   flex: 1 0 auto;
-
-//   &.welcome-page-main-content {
-//     width: 100%;
-//     max-width: none;
-//   }
-// }
-
 a {
   text-decoration: none;
 }
@@ -80,120 +70,6 @@ a:hover {
   }
 }
 
-// form {
-//   border: 1px solid $gray95;
-//   padding: 1em 10%;
-
-//   input[type='text'],
-//   input[type='email'],
-//   input[type='tel'],
-//   textarea,
-//   select {
-//     border: 1px solid gray;
-//     width: 99%;
-//     color: $gray63;
-//   }
-
-//   select {
-//     width: 150px;
-//   }
-
-//   textarea {
-//     height: 120pt;
-//     border: 1px solid gray;
-//   }
-
-//   button {
-//     display: block;
-//     text-align: center;
-//     margin: auto;
-//     background-color: RGB(178, 178, 178);
-//   }
-// }
-
-// #leftform {
-//   margin: auto;
-//   padding-top: 2em;
-//   width: 400px;
-//   font-family: $calibri;
-//   font-size: 10pt;
-//   color: $gray95;
-
-//   h1 {
-//     font-weight: normal;
-//     margin: 0.1em 0;
-//     font-size: 24pt;
-//   }
-
-//   h2 {
-//     font-family: $arial;
-//     margin: 0.1em 0;
-//     font-size: 12pt;
-//     text-transform: uppercase;
-//   }
-
-//   p#bottomnote {
-//     text-align: center;
-
-//     font-size: 10pt;
-//     font-family: century-gothic;
-//     color: rgb(0, 204, 0);
-//   }
-
-//   a:visited {
-//     color: $gray95;
-//   }
-//   a {
-//     color: $gray95;
-//   }
-//   img {
-//     display: block;
-//     text-align: center;
-//     margin-left: auto;
-//     margin-right: auto;
-//   }
-// }
-
-// .opinionsent {
-//   padding-top: 1em;
-//   padding-bottom: 1em;
-//   text-align: center;
-// }
-
-// #learnmore {
-//   text-align: center;
-//   font-size: 70%;
-// }
-
-// .valuedesc {
-//   clear: left;
-//   background-color: grey;
-
-//   p {
-//     float: right;
-//     margin: 0px;
-//     padding: 0.3em;
-//     width: 12%;
-//     font-size: 60%;
-//     text-align: center;
-//   }
-// }
-
-// .por
-
-// .radiobutts {
-//   float: right;
-//   margin: 0px;
-//   padding: 0.3em;
-//   width: 12%;
-//   font-size: 60%;
-//   text-align: center;
-// }
-
-// .submit {
-//   clear: both;
-//   text-align: center;
-// }
 
 /* Contain floats. */
 .cf:before,
