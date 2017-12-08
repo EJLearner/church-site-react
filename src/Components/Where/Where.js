@@ -6,7 +6,7 @@ class What extends Component {
     return (
       <div id="ce-page">
         <h1>
-          Where We Are <span>Going</span>
+          Where We Are <span className="emphwelcomeline">Going</span>
         </h1>
         <div className="ce-page-links-content">
           <div className="ce-page-left-content">
