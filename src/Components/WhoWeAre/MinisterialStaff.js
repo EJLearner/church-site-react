@@ -14,6 +14,7 @@ class MinisterialStaff extends Component {
         <ul className="ce-list-half">
           <li>Rev. Debra Hickman</li>
           <li>Min. Marshell Jenkins</li>
+          <li>Rev. Dr. Susan Spears</li>
           <li>Min. Patricia Yeargin</li>
         </ul>
       </div>

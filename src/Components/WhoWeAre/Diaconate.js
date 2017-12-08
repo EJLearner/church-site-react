@@ -1,14 +1,28 @@
 import React, {Component} from 'react';
+import ContactLine from '../Reusable/ContactLine';
 
 class Diaconate extends Component {
   render() {
     return (
       <div>
         <h2>Deacons</h2>
-        <div>Contact Deacon Racquel Smith Chairperson</div>
+        <ContactLine address={ContactLine.ADDRESSES.RSMITH} />
         <p>
-          In this space, I will talk about the role of the deacons and how they
-          support the Pastor.
+          Add this blurb beneath the contact line: The biblical role of deacons
+          is to take care of the physical and logistical needs of the church, so
+          that the Pastor can focus on his primary calling. The deacons set the
+          tone for the congregation for worship by opening Sunday morning
+          worship service with devotions. They are also tasked with preparing
+          and distributing the communion elements on every first Sunday.
+        </p>
+        <p>
+          Maintaining our church membership is a large portion of the
+          responsibility of the deacons. Our deacons visit the sick and shut in
+          among our congregation and commune them. They inform the pastor of
+          members of the congregation who are sick, who have passed away, and
+          need a visit from him for other reasons. They also mentor and assist
+          those who have decided to join our congregation until they receive the
+          right hand of fellowship.
         </p>
         <ul className="ce-list-half">
           <li>

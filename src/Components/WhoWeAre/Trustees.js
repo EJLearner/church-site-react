@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
+import ContactLine from '../Reusable/ContactLine';
 
 class Trustees extends Component {
   render() {
     return (
       <div>
         <h2>Trustees</h2>
+        <ContactLine address={ContactLine.ADDRESSES.JBT} />
         <ul className="ce-list-half">
           <li>
             Joyce Baylor Thompson<span className="title">Chairperson</span>
