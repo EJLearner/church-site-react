@@ -31,9 +31,8 @@ class Contact extends Component {
       <div>
         Contact:{' '}
         <a href={href} onClick={onClick} title={title}>
-          {firstChar}...
+          {firstChar}...{domain}
         </a>
-        {domain}
       </div>
     );
   }
