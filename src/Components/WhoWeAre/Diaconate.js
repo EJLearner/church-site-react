@@ -8,12 +8,12 @@ class Diaconate extends Component {
         <h2>Deacons</h2>
         <ContactLine address={ContactLine.ADDRESSES.RSMITH} />
         <p>
-          Add this blurb beneath the contact line: The biblical role of deacons
-          is to take care of the physical and logistical needs of the church, so
-          that the Pastor can focus on his primary calling. The deacons set the
-          tone for the congregation for worship by opening Sunday morning
-          worship service with devotions. They are also tasked with preparing
-          and distributing the communion elements on every first Sunday.
+          The biblical role of deacons is to take care of the physical and
+          logistical needs of the church, so that the Pastor can focus on his
+          primary calling. The deacons set the tone for the congregation for
+          worship by opening Sunday morning worship service with devotions. They
+          are also tasked with preparing and distributing the communion elements
+          on every first Sunday.
         </p>
         <p>
           Maintaining our church membership is a large portion of the
