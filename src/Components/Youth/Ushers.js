@@ -4,8 +4,8 @@ class Ushers extends Component {
   render() {
     return (
       <div>
-        <h2>Ushers</h2>{' '}
-        <ul id="ce-list-half">
+        <h2>Ushers</h2>
+        <ul className="ce-list-half">
           <li>Deacon Racquel Smith</li>
           <li>Deacon Racquel Smith</li>
           <li>Deacon Racquel Smith</li>
@@ -14,6 +14,8 @@ class Ushers extends Component {
           <li>Deacon Racquel Smith</li>
           <li>Deacon Racquel Smith</li>
           <li>Deacon Racquel Smith</li>
+        </ul>
+        <ul className="ce-list-half">
           <li>Deacon Racquel Smith</li>
           <li>Deacon Racquel Smith</li>
           <li>Deacon Racquel Smith</li>

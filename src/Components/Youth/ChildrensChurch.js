@@ -4,7 +4,7 @@ class ChildrensChurch extends Component {
   render() {
     return (
       <div>
-        <h2>ChildrensChurch</h2>
+        <h2>Children’s Church</h2>
       </div>
     );
   }
