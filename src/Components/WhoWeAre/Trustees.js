@@ -9,7 +9,7 @@ class Trustees extends Component {
         <ContactLine address={ContactLine.ADDRESSES.JBT} />
         <ul className="ce-list-half">
           <li>
-            Joyce Baylor Thompson<span className="title">Chairperson</span>
+            Joyce Baylor-Thompson<span className="title">Chairperson</span>
           </li>
           <li>
             Cora Gordon<span className="title">Co-chair</span>
