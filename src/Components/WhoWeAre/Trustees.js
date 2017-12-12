@@ -7,6 +7,17 @@ class Trustees extends Component {
       <div>
         <h2>Trustees</h2>
         <ContactLine address={ContactLine.ADDRESSES.JBT} />
+        <p>
+          Trustees function as Christian stewards of property God has entrusted
+          to the congregation. This includes supervising and maintaining both
+          the physical property of the congregation and gifts made to the
+          congregation so that each ministry in the church can operate
+          effectively. Trustees also make sure all legal requirements related to
+          the property are satisfied. Our trustees aim to be transparent and
+          make the congregation aware of the needs of the church. Spearheading
+          fundraising efforts and maintaining the parsonage are also chief among
+          their duties.
+        </p>
         <ul className="ce-list-half">
           <li>
             Joyce Baylor-Thompson<span className="title">Chairperson</span>
