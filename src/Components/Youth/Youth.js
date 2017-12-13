@@ -20,7 +20,7 @@ class Youth extends Component {
         isDefault: true,
         path: '/youth/ushers',
         render: <Ushers />,
-        text: 'Youth & Young Adult Ushers'
+        text: 'Youth and Junior Usher Ministry'
       },
       {
         path: '/youth/godsgifts',

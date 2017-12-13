@@ -120,4 +120,15 @@
     border-color: $green-50;
     color: white;
   }
+
+  .left-button.childrens-church {
+    border-color: $orange;
+    color: $orange;
+  }
+
+  .right-button.childrens-church {
+    background-color: $orange;
+    border-color: $orange;
+    color: white;
+  }
 }

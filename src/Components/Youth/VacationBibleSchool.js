@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router';
 
-import Button from '../Reusable/Button/Button';
+import VolunteerSect from './Shared/VolunteerSect';
 
 class VacationBibleSchool extends Component {
   constructor(props) {
@@ -48,47 +48,18 @@ class VacationBibleSchool extends Component {
           VBS kid, or a brand new student, we are sure they will find something
           new and exciting at City Temple’s VBS!
         </p>
-        <h2>Volunteer</h2>
-        <p>
-          Our VBS volunteer staff enable us to provide the best safety, energy,
-          entertainment, and education in Baltimore City.
-        </p>
-        <h3 className="list-desc">
-          Please consider volunteering in any of the areas below:
-        </h3>
-        <ul>
-          <li>Teaching</li>
-          <li>Assisting the Teacher</li>
-          <li>Registration</li>
-          <li>Meal Preparation</li>
-          <li>Security/Transitioning Team</li>
-          <li>Leading devotions</li>
-        </ul>
-        <h3 className="list-desc">You can also support us by donating:</h3>
-        <ul>
-          <li>Pencils, notebook paper, crayons, etc.</li>
-          <li>Craft kits</li>
-          <li>Healthy snacks</li>
-        </ul>
-        <div className="volunt-reg-buttons">
-          <Button
-            className="left-button vbs"
-            onClick={this._setPageState.bind(
-              null,
-              'vbs-registration-volunteer'
-            )}
-            style={Button.STYLES.RECT}
-          >
-            Volunteer
-          </Button>
-          <Button
-            className="right-button vbs"
-            onClick={this._setPageState.bind(null, 'vbs-registration-child')}
-            style={Button.STYLES.RECT}
-          >
-            Register
-          </Button>
-        </div>
+        <VolunteerSect
+          buttonClass="vbs"
+          name="VBS"
+          registerButtonOnClick={this._setPageState.bind(
+            null,
+            'vbs-registration-child'
+          )}
+          volunteerButtonOnClick={this._setPageState.bind(
+            null,
+            'vbs-registration-volunteer'
+          )}
+        />
       </div>
     );
   }
