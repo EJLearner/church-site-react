@@ -31,7 +31,7 @@ const SubPageSwitch = props => {
 
 SubPageSwitch.propTypes = {
   linkData: PropTypes.arrayOf(
-    React.PropTypes.shape({
+    PropTypes.shape({
       path: PropTypes.string.isRequired,
       render: PropTypes.node
     })

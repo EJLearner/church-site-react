@@ -1,10 +1,11 @@
-const witness = 'To provide an effective witness  for Christ in this world.';
 import communicationsImg from '../assets/images/communications.png';
 import discipleshipImg from '../assets/images/discipleship.png';
 import evangelismImg from '../assets/images/evangelism.png';
 import financeImg from '../assets/images/finance.png';
 import membershipImg from '../assets/images/membership.png';
 import worshipImg from '../assets/images/worship.png';
+
+const witness = 'To provide an effective witness  for Christ in this world.';
 
 const workGroups = [
   {

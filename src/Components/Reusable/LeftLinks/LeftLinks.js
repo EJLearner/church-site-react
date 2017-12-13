@@ -36,7 +36,7 @@ const LeftLinks = props => {
 
 LeftLinks.propTypes = {
   linkData: PropTypes.arrayOf(
-    React.PropTypes.shape({
+    PropTypes.shape({
       path: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired
     })
