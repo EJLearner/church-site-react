@@ -68,6 +68,16 @@
     text-transform: uppercase;
   }
 
+  h3.list-desc {
+    color: black;
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+
+  ul {
+    margin-top: 6px;
+  }
+
   .ce-list-half {
     display: inline-block;
     list-style-type: none;
@@ -85,5 +95,29 @@
         content: ', ';
       }
     }
+  }
+
+  .volunt-reg-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2em 0 2em;
+
+    button {
+      background-color: white;
+      display: block;
+      height: 40px;
+      width: 200px;
+    }
+  }
+
+  .left-button.vbs {
+    border-color: $green-50;
+    color: $green-50;
+  }
+
+  .right-button.vbs {
+    background-color: $green-50;
+    border-color: $green-50;
+    color: white;
   }
 }
