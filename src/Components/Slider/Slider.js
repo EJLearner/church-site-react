@@ -313,7 +313,7 @@ class Slider extends Component {
     const SlideShowButtons = this._renderSlideShowButtons;
     return (
       <div
-        className="slider-chrsis"
+        className="slider-chris"
         id="leftcontent"
         ref={node => (this._sliderDiv = node)}
       >
