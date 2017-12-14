@@ -7,7 +7,7 @@ import './LeftLink.css';
 const LeftLinks = props => {
   const renderLinks = (linkData, pathname) => {
     if (!linkData || !pathname) {
-      return <ul />;
+      return null;
     }
 
     const isRoot = !linkData.find(link => link.path === pathname);
