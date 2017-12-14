@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router';
 
+import ContactLine from '../Reusable/ContactLine';
+
 import VolunteerSect from './Shared/VolunteerSect';
 
 class VacationBibleSchool extends Component {
@@ -22,6 +24,7 @@ class VacationBibleSchool extends Component {
     return (
       <div>
         <h2>Vacation Bible School</h2>
+        <ContactLine address={ContactLine.ADDRESSES.DMORTON} />
         <p>
           We hold our week-long Vacation Bible School during the first full week
           after the fourth of July. At City Temple, students enjoy an
