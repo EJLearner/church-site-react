@@ -129,7 +129,7 @@ class Slider extends Component {
   savePictureHeight() {
     if (_.size(this.pictures)) {
       const pictureHeight = this.slideShowImage.offsetHeight;
-      this.sliderDiv.style.height = pictureHeight + 'px';
+      this._sliderDiv.style.height = pictureHeight + 'px';
     }
   }
 
@@ -251,9 +251,9 @@ class Slider extends Component {
           <i className="fa fa-angle-right fa-stack-1x white" />
         </button>
         <div className="select-and-pause-controls">
-          {this.props.showPictureSelectButtons ? (
-            this._renderPictureSelectButtons()
-          ) : null}
+          {this.props.showPictureSelectButtons
+            ? this._renderPictureSelectButtons()
+            : null}
           <button
             className="fa-stack"
             id="play-pause-button"
@@ -308,7 +308,7 @@ class Slider extends Component {
       <div
         className="slider-chris"
         id="leftcontent"
-        ref={node => (this.sliderDiv = node)}
+        ref={node => (this._sliderDiv = node)}
       >
         {this.pictures.length > 1 ? this._renderslideShowButtons() : null}
         {this._renderSlideShowPictures()}
