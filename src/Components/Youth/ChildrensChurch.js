@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router';
 
+import ContactLine from '../Reusable/ContactLine';
+
 import VolunteerSect from './Shared/VolunteerSect';
 
 class ChildrensChurch extends Component {
@@ -22,6 +24,7 @@ class ChildrensChurch extends Component {
     return (
       <div>
         <h2>Children’s Church</h2>
+        <ContactLine address={ContactLine.ADDRESSES.AJONES} />
         <p>
           Children’s Church provides an opportunity for children between the
           ages of 2-12 to learn about prayer, worship, and the word of God in an

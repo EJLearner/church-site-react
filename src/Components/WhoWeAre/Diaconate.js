@@ -24,6 +24,7 @@ class Diaconate extends Component {
           those who have decided to join our congregation until they receive the
           right hand of fellowship.
         </p>
+        <h2 className="member-header">Diaconate Members</h2>
         <ul className="ce-list-half">
           <li>
             Deacon Racquel B. Smith<span className="title">Chairperson</span>

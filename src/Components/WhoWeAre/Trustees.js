@@ -18,6 +18,7 @@ class Trustees extends Component {
           fundraising efforts and maintaining the parsonage are also chief among
           their duties.
         </p>
+        <h2 className="member-header">Trustees</h2>
         <ul className="ce-list-half">
           <li>
             Joyce Baylor-Thompson<span className="title">Chairperson</span>

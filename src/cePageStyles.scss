@@ -62,7 +62,8 @@
 
   .h2-sub {
     color: $green-50;
-    font-family: $arial;
+    font-family: $century-gothic;
+    font-size: 14px;
     margin: 0;
     padding: 0.2em;
     text-transform: uppercase;
@@ -76,6 +77,10 @@
 
   ul {
     margin-top: 6px;
+  }
+
+  h2.member-header {
+    margin-top: 3em;
   }
 
   .ce-list-half {
