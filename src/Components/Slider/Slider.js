@@ -10,7 +10,7 @@ import './Slider.css';
 class Slider extends Component {
   constructor() {
     super();
-    const allPictures = [
+    this.allPictures = [
       {
         altTag:
           'Christian Education Sunday 9/23/2018. Reception to follow after worship service',
@@ -73,7 +73,7 @@ class Slider extends Component {
       }
     ];
 
-    this.pictures = allPictures
+    this.pictures = this.allPictures
       .filter(picture => {
         let {annual, displayBeg, displayEnd} = picture;
 
@@ -107,6 +107,12 @@ class Slider extends Component {
       slideIndex: 0,
       slideShowIsOn
     };
+
+    this._renderSlideShowButtons = this._renderSlideShowButtons.bind(this);
+    this._renderPictureSelectButtons = this._renderPictureSelectButtons.bind(
+      this
+    );
+    this._renderSlideShowPictures = this._renderSlideShowPictures.bind(this);
   }
 
   componentDidMount() {
@@ -221,7 +227,7 @@ class Slider extends Component {
     });
   }
 
-  _renderslideShowButtons() {
+  _renderSlideShowButtons() {
     let playPauseClassname;
     let playOrPauseLabel;
     if (this.state.slideShowIsOn) {
@@ -304,13 +310,14 @@ class Slider extends Component {
   }
 
   render() {
+    const SlideShowButtons = this._renderSlideShowButtons;
     return (
       <div
-        className="slider-chris"
+        className="slider-chrsis"
         id="leftcontent"
         ref={node => (this._sliderDiv = node)}
       >
-        {this.pictures.length > 1 ? this._renderslideShowButtons() : null}
+        {this.pictures.length > 1 ? <SlideShowButtons /> : null}
         {this._renderSlideShowPictures()}
       </div>
     );
