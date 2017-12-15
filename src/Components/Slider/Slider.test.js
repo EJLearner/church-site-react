@@ -1,16 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import {mount, shallow} from 'enzyme';
+import slidePictureData from '../../utils/slidePictureData';
 
 import Slider from './Slider';
 import {MemoryRouter} from 'react-router';
+
+const pictures = slidePictureData.getPictures();
+
+describe('#constructor', () => {});
 
 describe('#render', () => {
   it('renders with proper class and id', () => {
     const wrapper = shallow(
       <MemoryRouter>
-        <Slider />
+        <Slider pictures={pictures} />
       </MemoryRouter>
     )
       .find(Slider)
@@ -25,7 +29,7 @@ describe('#render', () => {
   it('makes _sliderDiv as ref to self', () => {
     const wrapper = mount(
       <MemoryRouter>
-        <Slider />
+        <Slider pictures={pictures} />
       </MemoryRouter>
     ).find(Slider);
 
@@ -35,7 +39,7 @@ describe('#render', () => {
   it('renders _renderSlideShowButtons if there is more than one picture', () => {
     const wrapper = shallow(
       <MemoryRouter>
-        <Slider />
+        <Slider pictures={pictures} />
       </MemoryRouter>
     )
       .find(Slider)
@@ -43,24 +47,35 @@ describe('#render', () => {
 
     const SlideShowButtons = wrapper.instance()._renderSlideShowButtons;
 
-    expect(wrapper.instance().allPictures.length).toBeGreaterThan(1);
+    expect(pictures.length).toBeGreaterThan(1);
     expect(wrapper.find(SlideShowButtons).exists()).toBeTruthy();
   });
 
   it('does not render _renderSlideShowButtons if there is one picture', () => {
     const wrapper = shallow(
       <MemoryRouter>
-        <Slider />
+        <Slider pictures={[pictures[0]]} />
       </MemoryRouter>
     )
       .find(Slider)
       .dive();
 
-    wrapper.instance().pictures = [wrapper.instance().pictures[0]];
-    wrapper.update();
-
     const SlideShowButtons = wrapper.instance()._renderSlideShowButtons;
 
-    expect(wrapper.find(SlideShowButtons).exists()).toBeFalsy();
+    expect(wrapper.find(SlideShowButtons).exists()).toBe(false);
+  });
+
+  it('renders SlideShowPictures', () => {
+    const wrapper = shallow(
+      <MemoryRouter>
+        <Slider pictures={[pictures[0]]} />
+      </MemoryRouter>
+    )
+      .find(Slider)
+      .dive();
+
+    const SlideShowPictures = wrapper.instance()._renderSlideShowPictures;
+
+    expect(wrapper.find(SlideShowPictures).exists()).toBe(true);
   });
 });
