@@ -30,36 +30,81 @@ class IdeaForm extends Component {
               This idea is for:<span className="mandatory">*</span>
             </label>
             <br />
-            <input type="radio" id="institute" value="institute" required />
-            <label htmlFor="institute">Institute/Seminar</label>
+
+            <label>
+              <input
+                id="institute"
+                name="idea"
+                required
+                type="radio"
+                value="institute"
+              />
+              Institute/Seminar
+            </label>
             <br />
 
-            <input type="radio" id="class" value="class" required />
-            <label htmlFor="class">Class</label>
+            <label>
+              <input
+                id="class"
+                name="idea"
+                required
+                type="radio"
+                value="class"
+              />
+              Class
+            </label>
             <br />
 
-            <input type="radio" id="retreat" value="retreat" required />
-            <label htmlFor="retreat">Retreat</label>
+            <label>
+              <input
+                id="retreat"
+                name="idea"
+                required
+                type="radio"
+                value="retreat"
+              />
+              Retreat
+            </label>
             <br />
 
-            <input type="radio" id="workshop" value="workshop" required />
-            <label htmlFor="workshop">Workshop</label>
+            <label>
+              <input
+                id="workshop"
+                name="idea"
+                required
+                type="radio"
+                value="workshop"
+              />
+              Workshop
+            </label>
             <br />
 
-            <input type="radio" id="other" value="other" required />
-            <label htmlFor="other">Other</label>
+            <label>
+              <input
+                id="other"
+                name="idea"
+                required
+                type="radio"
+                value="other"
+              />
+              Other
+            </label>
           </p>
 
-          <Text
-            cols="41"
-            id="ideadesc"
-            label={'Describe your idea here'}
-            maxLength="1000"
-            onChange={this._onChangeInput}
-            required
-            rows="5"
-            value={this.state.ideadesc}
-          />
+          <div>
+            <Text
+              cols="41"
+              id="ideadesc"
+              label="Describe your idea here"
+              maxLength="1000"
+              onChange={this._onChangeInput}
+              required
+              rows={5}
+              size={50}
+              textArea
+              value={this.state.ideadesc}
+            />
+          </div>
 
           <Text
             id="name"
