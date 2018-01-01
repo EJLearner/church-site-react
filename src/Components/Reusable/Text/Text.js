@@ -26,6 +26,7 @@ const Text = props => {
       cols={props.size}
       id={props.id}
       onChange={_onChange}
+      rows={props.rows}
       value={props.value}
     />
   );
@@ -44,11 +45,16 @@ const Text = props => {
   );
 };
 
+Text.defaultProps = {
+  rows: 5
+};
+
 Text.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   required: PropTypes.bool,
+  rows: PropTypes.number,
   size: PropTypes.number,
   textArea: PropTypes.bool,
   value: PropTypes.string.isRequired
