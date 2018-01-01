@@ -34,7 +34,7 @@ const fieldValidators = {
   isValidEmail: (value, label) => {
     const valid = value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i);
     if (value && !valid) {
-      return `${label} must be a valid zip code`;
+      return `${label} must be a valid email address`;
     }
   },
 
