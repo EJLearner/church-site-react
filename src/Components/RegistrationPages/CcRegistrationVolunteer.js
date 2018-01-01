@@ -53,32 +53,6 @@ class CcRegistrationVolunteer extends Component {
       pastKitchen: false,
       pastChaperone: false,
 
-      /*
-      // datafortesting
-      email: 'sjdf@sldkfjsd.com',
-      name: 'sdfsddsd',
-      dob: '01/01/2012',
-      address1: 'sdfsd',
-      address2: '',
-      city: 'sdfsd',
-      state: 'sdfsd',
-      zip: '20000',
-      mobile: '000-000-0000',
-      home: '000-000-0000',
-      teacher: true,
-      admin: true,
-      'assistantMentor': true,
-      kitchen: true,
-      'sundaySchool': true,
-      'bibleSchool': true,
-      youthMinistry: true,
-      'pastTeacher': true,
-      'pastAdmin': true,
-      transition: true,
-      'pastKitchen': true,
-      'pastChaperone': true,
-      */
-
       errors: []
     };
   }
