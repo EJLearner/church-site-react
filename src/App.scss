@@ -10,6 +10,10 @@ body {
   margin: 0px;
 }
 
+input[type='radio'] {
+  box-shadow: none;
+}
+
 #root {
   height: 100%;
 }
