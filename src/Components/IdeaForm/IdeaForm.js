@@ -62,7 +62,7 @@ class IdeaForm extends Component {
       data,
       response => {
         if (response.success) {
-          this._postSubmitProcess();
+          this._postSubmitSuccess();
         } else {
           this.setState({postStatus: 'failure'});
         }
@@ -111,7 +111,7 @@ class IdeaForm extends Component {
     this.setState({errors});
   }
 
-  _postSubmitProcess() {
+  _postSubmitSuccess() {
     this.setState({postStatus: 'success', ...this._getFreshState()});
   }
 
