@@ -8,7 +8,65 @@ import {MemoryRouter} from 'react-router';
 
 const pictures = slidePictureData.getPictures();
 
-describe('#constructor', () => {});
+describe('#constructor', () => {
+  beforeEach(() => {
+    window.onresize = undefined;
+  });
+
+  it('should set the slideIndex state to 0', () => {
+    const wrapper = shallow(
+      <MemoryRouter>
+        <Slider pictures={pictures} />
+      </MemoryRouter>
+    )
+      .find(Slider)
+      .dive();
+
+    expect(wrapper.state().slideIndex).toBe(0);
+  });
+
+  it('should set slideShowIsOn state to true if more than one picture exists', () => {
+    const wrapper = shallow(
+      <MemoryRouter>
+        <Slider pictures={pictures} />
+      </MemoryRouter>
+    )
+      .find(Slider)
+      .dive();
+
+    expect(wrapper.state().slideShowIsOn).toBe(true);
+  });
+
+  it.skip('should call savePictureHeight on window resize', () => {
+    expect(window.onresize).toBe(undefined);
+    const wrapper = shallow(
+      <MemoryRouter>
+        <Slider pictures={pictures} />
+      </MemoryRouter>
+    )
+      .find(Slider)
+      .dive();
+
+    wrapper.instance().savePictureHeight = jest.fn();
+    wrapper.update();
+
+    // window.onresize();
+
+    expect(wrapper.instance().savePictureHeight).toBeCalled();
+  });
+
+  it('should set slideShowIsOn state to false if only one picture exists', () => {
+    const wrapper = shallow(
+      <MemoryRouter>
+        <Slider pictures={[pictures[0]]} />
+      </MemoryRouter>
+    )
+      .find(Slider)
+      .dive();
+
+    expect(wrapper.state().slideShowIsOn).toBe(false);
+  });
+});
 
 describe('#render', () => {
   it('renders with proper class and id', () => {
