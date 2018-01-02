@@ -250,6 +250,10 @@ class IdeaForm extends Component {
   }
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect push to="/" />;
+    }
+
     if (this.state.showThanksMessage) {
       return (
         <div className="registration-page">
@@ -259,10 +263,6 @@ class IdeaForm extends Component {
           </p>
         </div>
       );
-    }
-
-    if (this.state.redirect) {
-      return <Redirect push to="/" />;
     }
 
     return (
