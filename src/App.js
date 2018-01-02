@@ -6,10 +6,7 @@ import './App.css';
 
 class App extends Component {
   render() {
-    // prettier-ignore
-    return (
-      <Routes />
-    );
+    return <Routes />;
   }
 }
 
