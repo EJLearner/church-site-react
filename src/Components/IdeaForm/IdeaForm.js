@@ -73,11 +73,18 @@ class IdeaForm extends Component {
         if (response.success) {
           this._postSubmitSuccess();
         } else {
-          this.setState({postStatus: 'failure'});
+          this.setState({
+            postStatus: 'failure'
+          });
         }
       },
       'json'
-    );
+    ).fail(response => {
+      this.setState({
+        postStatus: 'failure',
+        response
+      });
+    });
   }
 
   _setErrors() {
@@ -274,7 +281,8 @@ class IdeaForm extends Component {
         {this._renderFormFields()}
         {registrationUtils.renderStatusMessage(
           this.state.postStatus,
-          this.state.errors
+          this.state.errors,
+          this.state.response
         )}
       </div>
     );

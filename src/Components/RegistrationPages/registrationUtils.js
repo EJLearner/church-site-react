@@ -40,9 +40,9 @@ const registrationUtils = {
     return null;
   },
 
-  renderStatusMessage(postStatus, errors) {
+  renderStatusMessage(postStatus, fieldErrors, responseObj) {
     const id = 'success-error-box';
-    if (postStatus || errors.length) {
+    if (postStatus || fieldErrors.length) {
       let className;
       let message;
       if (postStatus === 'success') {
@@ -53,6 +53,10 @@ const registrationUtils = {
         message = (
           <div>
             Submission failed<br />
+            Status: {responseObj.status}
+            <br />
+            Status Text: {responseObj.statusText}
+            <br />
             Please try again or contact the administrator
           </div>
         );
