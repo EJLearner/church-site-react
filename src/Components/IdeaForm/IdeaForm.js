@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Redirect} from 'react-router';
 
 import _ from 'lodash';
 
@@ -18,6 +19,7 @@ class IdeaForm extends Component {
     this._onChangeTextInput = this._onChangeTextInput.bind(this);
     this._renderFormFields = this._renderFormFields.bind(this);
     this._setErrors = this._setErrors.bind(this);
+    this._setPageState = this._setPageState.bind(this);
     this._submitData = this._submitData.bind(this);
   }
 
@@ -26,6 +28,13 @@ class IdeaForm extends Component {
       const successBox = document.getElementById('success-error-box');
       successBox.focus();
     }
+  }
+
+  _setPageState() {
+    this.setState({showThanksMessage: true});
+    setTimeout(() => {
+      this.setState({redirect: true});
+    }, 5000);
   }
 
   _getFreshState() {
@@ -112,7 +121,7 @@ class IdeaForm extends Component {
   }
 
   _postSubmitSuccess() {
-    this.setState({postStatus: 'success', ...this._getFreshState()});
+    this._setPageState();
   }
 
   _renderFormFields() {
@@ -241,6 +250,21 @@ class IdeaForm extends Component {
   }
 
   render() {
+    if (this.state.showThanksMessage) {
+      return (
+        <div className="registration-page">
+          <h2>Thanks for submitting your idea!</h2>
+          <p>
+            You will be redirected to the home page in less than five seconds...
+          </p>
+        </div>
+      );
+    }
+
+    if (this.state.redirect) {
+      return <Redirect push to="/" />;
+    }
+
     return (
       <div className="registration-page">
         <h1>
