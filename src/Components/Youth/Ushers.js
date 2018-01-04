@@ -24,27 +24,6 @@ class Ushers extends Component {
         </p>
         <p>The Youth Usher Advisor: Deacon Patricia Ward</p>
         <p>Youth Leader: Joshua Lindsey</p>
-        <ul className="ce-list-half">
-          <li>Deacon Racquel Smith</li>
-          <li>Deacon Racquel Smith</li>
-          <li>Deacon Racquel Smith</li>
-          <li>Deacon Racquel Smith</li>
-          <li>Deacon Racquel Smith</li>
-          <li>Deacon Racquel Smith</li>
-          <li>Deacon Racquel Smith</li>
-          <li>Deacon Racquel Smith</li>
-        </ul>
-        <ul className="ce-list-half">
-          <li>Deacon Racquel Smith</li>
-          <li>Deacon Racquel Smith</li>
-          <li>Deacon Racquel Smith</li>
-          <li>Deacon Racquel Smith</li>
-          <li>Deacon Racquel Smith</li>
-          <li>Deacon Racquel Smith</li>
-          <li>Deacon Racquel Smith</li>
-          <li>Deacon Racquel Smith</li>
-          <li>Deacon Racquel Smith</li>
-        </ul>
       </div>
     );
   }
