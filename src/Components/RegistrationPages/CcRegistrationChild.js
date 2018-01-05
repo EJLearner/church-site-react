@@ -297,5 +297,3 @@ class CcRegistrationChild extends Component {
 }
 
 export default CcRegistrationChild;
-
-// TODO: Send the email also to Tiffany and Phyllis
