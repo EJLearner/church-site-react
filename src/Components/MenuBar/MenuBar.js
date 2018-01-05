@@ -7,31 +7,12 @@ import PropTypes from 'prop-types';
 import './MenuBar.css';
 
 class MenuBar extends Component {
-  render() {
-    const links = [
-      {
-        path: '/',
-        text: 'Home'
-      },
-      {
-        path: '/who',
-        text: `Who We are`
-      },
-      {
-        path: '/why',
-        text: `Why We Are Here`
-      },
-      {
-        path: '/where',
-        text: `Where We Are Going`
-      },
-      {
-        path: '/ideaform',
-        text: `Tell Us What You Think`
-      }
-    ];
+  constructor(props) {
+    super(props);
+  }
 
-    const renderedLinks = links.map(link => {
+  render() {
+    const renderedLinks = this.props.links.map(link => {
       const {pathname} = this.props.location;
       let className =
         link.path !== '/' && pathname.indexOf(link.path) > -1
@@ -61,6 +42,12 @@ class MenuBar extends Component {
 }
 
 MenuBar.propTypes = {
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      path: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired
+    })
+  ),
   location: PropTypes.object
 };
 
