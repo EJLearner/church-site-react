@@ -1,9 +1,19 @@
 import React, {Component} from 'react';
+import {Route, Switch} from 'react-router-dom';
 
 import moment from 'moment';
 import _ from 'lodash';
 
-import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
+import CalendarDay from './CalendarDay';
+import CalendarMonth from './CalendarMonth';
+import CalendarWeek from './CalendarWeek';
+import CalendarYear from './CalendarYear';
+import CalendarUpcoming from './CalendarUpcoming';
+import Footer from '../Footer/Footer';
+import MenuBar from '../MenuBar/MenuBar';
+import Quote from '../Quote/Quote';
+import SubPageSwitch from '../Reusable/SubPageSwitch/SubPageSwitch';
+import TitleBar from '../TitleBar/TitleBar';
 
 import './Calendar.css';
 
@@ -13,91 +23,71 @@ class Calendar extends Component {
     this.state = {
       currentMonth: moment()
     };
-
-    this._monthBack = this._monthBack.bind(this);
-    this._monthForward = this._monthForward.bind(this);
-  }
-
-  _monthForward() {
-    const currentMonth = moment(this.state.currentMonth).add(1, 'month');
-    this.setState({currentMonth});
-  }
-
-  _monthBack() {
-    const currentMonth = moment(this.state.currentMonth).subtract(1, 'month');
-    this.setState({currentMonth});
-  }
-
-  _getTableHeader() {
-    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
-    const headerCells = days.map(day => {
-      return <th key={day}>{day}</th>;
-    });
-
-    return (
-      <thead>
-        <tr>{headerCells}</tr>
-      </thead>
-    );
-  }
-
-  _renderTableBodyRow(weekNumber, year) {
-    const renderedDays = _.range(0, 7).map(cell => {
-      const dayMoment = moment()
-        .week(weekNumber)
-        .startOf('week')
-        .add(cell, 'day');
-      const dayEvents = calendarDatesUtils.getRenderedEventsForDate(
-        dayMoment.format('YYYY-MM-DD')
-      );
-      return (
-        <td
-          className="date-cell"
-          key={cell}
-          style={{width: '150px', height: '150px'}}
-          title={dayMoment.format('LL')}
-        >
-          <div>
-            <div className="date-area">{dayMoment.date()}</div>
-            <div className="events-area">{dayEvents}</div>
-          </div>
-        </td>
-      );
-    });
-
-    return <tr key={weekNumber}>{renderedDays}</tr>;
-  }
-
-  _renderTableBody() {
-    const todayMoment = this.state.currentMonth;
-    const firstWeekOfMonth = todayMoment.startOf('month').week();
-    const lastWeekOfMonth = todayMoment.endOf('month').week();
-
-    const weekNumbers = _.range(firstWeekOfMonth, lastWeekOfMonth + 1);
-    const renderedWeeks = weekNumbers.map(week =>
-      this._renderTableBodyRow(week)
-    );
-
-    return <tbody>{renderedWeeks}</tbody>;
   }
 
   render() {
+    const makeRoutes = linkData => {
+      const routes = [];
+      linkData.forEach(route => {
+        routes.push(
+          <Route
+            key={route.path}
+            path={route.path}
+            render={() => route.render}
+          />
+        );
+
+        if (route.children) {
+          routes.push(...makeRoutes(route.children));
+        }
+      });
+
+      const defaultRoute = linkData.find(route => route.isDefault);
+      if (defaultRoute) {
+        routes.push(
+          <Route key={'defaultRoute'} render={() => defaultRoute.render} />
+        );
+      }
+
+      return routes;
+    };
+
+    const linkData = [
+      {
+        path: '/calendar/day',
+        render: <CalendarDay />,
+        text: 'Day View'
+      },
+      {
+        path: '/calendar/week',
+        render: <CalendarWeek />,
+        text: `Week View`
+      },
+      {
+        isDefault: true,
+        path: '/calendar/month',
+        render: <CalendarMonth />,
+        text: `Month View`
+      },
+      {
+        path: '/calendar/year',
+        render: <CalendarYear />,
+        text: 'Year View'
+      },
+      {
+        path: '/calendar/upcoming',
+        render: <CalendarUpcoming />,
+        text: 'Upcoming'
+      }
+    ];
+
     return (
-      <div id="calendar-div">
-        <div className="controls-and-title">
-          <a onClick={this._monthBack}>
-            <i className="fa fa-caret-left fa-lg" title="Previous Month" />
-          </a>
-          <h2>{this.state.currentMonth.format('MMMM YYYY')}</h2>
-          <a onClick={this._monthForward}>
-            <i className="fa fa-caret-right fa-lg" title="Next Month" />
-          </a>
-        </div>
-        <table id="calendar-table">
-          {this._getTableHeader()}
-          {this._renderTableBody()}
-        </table>
+      <div id="top-react-div">
+        <TitleBar />
+        <MenuBar links={linkData} />
+        <SubPageSwitch linkData={linkData} />
+        <Quote />
+        <Footer />
       </div>
     );
   }
