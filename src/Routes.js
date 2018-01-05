@@ -26,10 +26,68 @@ import './App.css';
 
 class Routes extends Component {
   _renderFullPage(props) {
+    const mainTopLinks = [
+      {
+        path: '/',
+        text: 'Home'
+      },
+      {
+        path: '/who',
+        text: `Who We are`
+      },
+      {
+        path: '/why',
+        text: `Why We Are Here`
+      },
+      {
+        path: '/where',
+        text: `Where We Are Going`
+      },
+      {
+        path: '/ideaform',
+        text: `Tell Us What You Think`
+      }
+    ];
+
     return (
       <div id="top-react-div">
         <TitleBar />
-        <MenuBar />
+        <MenuBar links={mainTopLinks} />
+        {props.children}
+        <Quote />
+        <Footer />
+      </div>
+    );
+  }
+
+  _renderCalendarPage(props) {
+    const mainTopLinks = [
+      {
+        path: '/calendar/day',
+        text: 'Day View'
+      },
+      {
+        path: '/calendar/week',
+        text: `Week View`
+      },
+      {
+        path: '/calendar/month',
+        text: `Month View`
+      },
+      {
+        path: '/calendar/year',
+        text: 'Year View'
+      },
+      {
+        path: '/calendar/upcoming',
+        text: 'Upcoming'
+      }
+    ];
+
+    return (
+      <div id="top-react-div">
+        <TitleBar />
+        <MenuBar links={mainTopLinks} />
         {props.children}
         <Quote />
         <Footer />
@@ -67,9 +125,7 @@ class Routes extends Component {
           <Route
             path="/calendar"
             render={() => (
-              <FullPage>
-                <Calendar />
-              </FullPage>
+              <Calendar />
             )}
           />
           <Route
