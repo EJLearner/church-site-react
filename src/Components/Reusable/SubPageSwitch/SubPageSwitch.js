@@ -1,7 +1,6 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
 
 const SubPageSwitch = props => {
   const makeRoutes = linkData => {

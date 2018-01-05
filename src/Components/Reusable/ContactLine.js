@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import './Contact.css';
@@ -17,7 +17,6 @@ const ADRESSES = {
 
 class Contact extends Component {
   render() {
-    const {onClickAddress, title} = this.props.address;
     return null;
   }
 }

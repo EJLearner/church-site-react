@@ -55,8 +55,8 @@ class Calendar extends Component {
         <td
           className="date-cell"
           key={cell}
-          title={dayMoment.format('LL')}
           style={{width: '150px', height: '150px'}}
+          title={dayMoment.format('LL')}
         >
           <div>
             <div className="date-area">{dayMoment.date()}</div>

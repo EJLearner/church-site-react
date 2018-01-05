@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 const classNames = function() {
   return [...arguments]
     .reduce((accumulator, current, index) => {
