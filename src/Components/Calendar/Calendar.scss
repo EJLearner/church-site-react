@@ -6,15 +6,24 @@ h1 {
 }
 
 #calendar-menu {
+  display: block;
+  margin: 16px 0;
+  padding: 0;
+  position: relative;
+
   ul {
     box-sizing: border-box;
     // border: 1px solid black;
+    display: inline-block;
     justify-content: flex-start;
+    min-width: initial;
     padding: 0;
+    width: initial;
   }
 
   li {
     border: none;
+    display: inline-block;
   }
 
   li a,
@@ -37,6 +46,14 @@ h1 {
   li.current-page-link a,
   li.current-page-link a:visited {
     color: black;
+  }
+
+  .styling-div {
+    bottom: 0;
+    border-bottom: 1px solid black;
+    display: inline-block;
+    position: absolute;
+    width: 20%;
   }
 }
 

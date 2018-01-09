@@ -85,7 +85,12 @@ class Calendar extends Component {
       <div id="top-react-div">
         <TitleBar />
         <h1>Events at City Temple</h1>
-        <MenuBar id="calendar-menu" links={linkData} showLogo={false} />
+        <MenuBar
+          addDivToRight
+          id="calendar-menu"
+          links={linkData}
+          showLogo={false}
+        />
         <SubPageSwitch linkData={linkData} />
         <Quote />
         <Footer />

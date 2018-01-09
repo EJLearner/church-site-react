@@ -32,12 +32,13 @@ class MenuBar extends Component {
 
     return (
       <div className="menu-bar" id={this.props.id}>
-        <ul className="cfm">{renderedLinks}</ul>
+        <ul>{renderedLinks}</ul>
         {this.props.showLogo ? (
           <div className="logo">
             <img alt="" src={churchLogo} />
           </div>
         ) : null}
+        {this.props.addDivToRight ? <div className="styling-div" /> : null}
       </div>
     );
   }
@@ -48,6 +49,8 @@ MenuBar.defaultProps = {
 };
 
 MenuBar.propTypes = {
+  // renders sibling empty div as a way to get desired calendar menu styling
+  addDivToRight: PropTypes.bool,
   id: PropTypes.string,
   links: PropTypes.arrayOf(
     PropTypes.shape({
