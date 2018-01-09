@@ -1,3 +1,45 @@
+@import '../../_variables.scss';
+
+h1 {
+  font-family: $century-gothic;
+  font-weight: normal;
+}
+
+#calendar-menu {
+  ul {
+    box-sizing: border-box;
+    // border: 1px solid black;
+    justify-content: flex-start;
+    padding: 0;
+  }
+
+  li {
+    border: none;
+  }
+
+  li a,
+  li a:visited {
+    color: $green-50;
+    padding: 0 12px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  li.current-page-link {
+    border: 1px solid black;
+    border-bottom: none;
+  }
+
+  li:not(.current-page-link) {
+    border-bottom: 1px solid black;
+  }
+
+  li.current-page-link a,
+  li.current-page-link a:visited {
+    color: black;
+  }
+}
+
 #calendar-div {
   margin: 0 auto;
 }

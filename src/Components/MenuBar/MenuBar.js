@@ -31,24 +31,32 @@ class MenuBar extends Component {
     });
 
     return (
-      <div id="menubar">
+      <div className="menu-bar" id={this.props.id}>
         <ul className="cfm">{renderedLinks}</ul>
-        <div className="logo">
-          <img alt="" src={churchLogo} />
-        </div>
+        {this.props.showLogo ? (
+          <div className="logo">
+            <img alt="" src={churchLogo} />
+          </div>
+        ) : null}
       </div>
     );
   }
 }
 
+MenuBar.defaultProps = {
+  showLogo: true
+};
+
 MenuBar.propTypes = {
+  id: PropTypes.string,
   links: PropTypes.arrayOf(
     PropTypes.shape({
       path: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired
     })
   ),
-  location: PropTypes.object
+  location: PropTypes.object,
+  showLogo: PropTypes.bool
 };
 
 export default withRouter(MenuBar);

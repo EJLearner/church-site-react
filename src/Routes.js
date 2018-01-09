@@ -52,42 +52,7 @@ class Routes extends Component {
     return (
       <div id="top-react-div">
         <TitleBar />
-        <MenuBar links={mainTopLinks} />
-        {props.children}
-        <Quote />
-        <Footer />
-      </div>
-    );
-  }
-
-  _renderCalendarPage(props) {
-    const mainTopLinks = [
-      {
-        path: '/calendar/day',
-        text: 'Day View'
-      },
-      {
-        path: '/calendar/week',
-        text: `Week View`
-      },
-      {
-        path: '/calendar/month',
-        text: `Month View`
-      },
-      {
-        path: '/calendar/year',
-        text: 'Year View'
-      },
-      {
-        path: '/calendar/upcoming',
-        text: 'Upcoming'
-      }
-    ];
-
-    return (
-      <div id="top-react-div">
-        <TitleBar />
-        <MenuBar links={mainTopLinks} />
+        <MenuBar id="main-menu-bar" links={mainTopLinks} />
         {props.children}
         <Quote />
         <Footer />

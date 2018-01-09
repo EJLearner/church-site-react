@@ -27,6 +27,35 @@ input[type='radio'] {
   position: relative;
 }
 
+#main-menu-bar {
+  text-transform: uppercase;
+
+  li a,
+  li a:visited {
+    color: black;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  li.current-page-link a,
+  li.current-page-link a:visited {
+    color: $orange;
+  }
+
+  li a:hover {
+    text-decoration: underline;
+  }
+
+  li:last-child {
+    color: $green-80;
+  }
+
+  li:last-child a,
+  li:last-child a:visited {
+    color: $green-80;
+  }
+}
+
 a {
   text-decoration: none;
 }
