@@ -23,6 +23,18 @@ const dates = [
           'The Outreach Ministry is sponsoring an Outreach Benefit Conert featuring Gary Stewart!!'
       }
     ]
+  },
+  {
+    date: '2018-01-05',
+    events: [
+      {
+        timeStart: '2017-08-27T08:00:00',
+        timeEnd: '2017-08-27T10:00:00',
+        title: 'Outreach Benefit Concert',
+        description:
+          'The Outreach Ministry is sponsoring an Outreach Benefit Conert featuring Gary Stewart!!'
+      }
+    ]
   }
 ];
 

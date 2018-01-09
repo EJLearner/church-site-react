@@ -67,7 +67,6 @@ class CalendarMonth extends Component {
         <td
           className={tdClassName}
           key={dayOfWeekIndex}
-          style={{width: '150px', height: '150px'}}
           title={dayMoment.format('LL')}
         >
           <div>
