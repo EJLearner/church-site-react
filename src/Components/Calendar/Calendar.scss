@@ -61,6 +61,10 @@ h1 {
   margin: 0 auto;
 }
 
+#calendar-table td.other-month {
+  opacity: 0.5;
+}
+
 #calendar-table td > div {
   display: flex;
   flex-direction: column;

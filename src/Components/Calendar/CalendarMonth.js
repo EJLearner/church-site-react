@@ -4,6 +4,7 @@ import moment from 'moment';
 import _ from 'lodash';
 
 import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
+import classNames from '../../utils/classNames';
 
 import './Calendar.css';
 
@@ -28,11 +29,13 @@ class CalendarMonth extends Component {
     this.setState({currentMonth});
   }
 
-  _getTableHeader() {
-    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  _renderTableHeader() {
+    const headerCells = _.range(0, 7).map(dayOfWeekIndex => {
+      const stringDayOfWeek = moment()
+        .weekday(dayOfWeekIndex)
+        .format('dddd');
 
-    const headerCells = days.map(day => {
-      return <th key={day}>{day}</th>;
+      return <th key={stringDayOfWeek}>{stringDayOfWeek}</th>;
     });
 
     return (
@@ -43,18 +46,27 @@ class CalendarMonth extends Component {
   }
 
   _renderTableBodyRow(weekNumber, year) {
-    const renderedDays = _.range(0, 7).map(cell => {
+    const renderedDays = _.range(0, 7).map(dayOfWeekIndex => {
       const dayMoment = moment()
         .week(weekNumber)
         .startOf('week')
-        .add(cell, 'day');
+        .add(dayOfWeekIndex, 'day');
+
       const dayEvents = calendarDatesUtils.getRenderedEventsForDate(
         dayMoment.format('YYYY-MM-DD')
       );
+
+      const isOtherMonth = !dayMoment.isSame(this.state.currentMonth, 'month');
+
+      const tdClassName = classNames(
+        'date-cell',
+        isOtherMonth && 'other-month'
+      );
+
       return (
         <td
-          className="date-cell"
-          key={cell}
+          className={tdClassName}
+          key={dayOfWeekIndex}
           style={{width: '150px', height: '150px'}}
           title={dayMoment.format('LL')}
         >
@@ -95,7 +107,7 @@ class CalendarMonth extends Component {
           </a>
         </div>
         <table id="calendar-table">
-          {this._getTableHeader()}
+          {this._renderTableHeader()}
           {this._renderTableBody()}
         </table>
       </div>
