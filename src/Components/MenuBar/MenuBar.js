@@ -7,10 +7,6 @@ import PropTypes from 'prop-types';
 import './MenuBar.css';
 
 class MenuBar extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const renderedLinks = this.props.links.map(link => {
       const {pathname} = this.props.location;

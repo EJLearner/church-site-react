@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import {Route, Switch} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 
 import moment from 'moment';
-import _ from 'lodash';
 
 import CalendarDay from './CalendarDay';
 import CalendarMonth from './CalendarMonth';
