@@ -14,7 +14,7 @@ class CalendarMonth extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentMonth: moment()
+      selectedMoment: moment()
     };
 
     this._monthBack = this._monthBack.bind(this);
@@ -26,23 +26,26 @@ class CalendarMonth extends Component {
   }
 
   _monthForward() {
-    const currentMonth = moment(this.state.currentMonth).add(1, 'month');
-    this.setState({currentMonth});
+    const selectedMoment = moment(this.state.selectedMoment).add(1, 'month');
+    this.setState({selectedMoment});
   }
 
   _monthBack() {
-    const currentMonth = moment(this.state.currentMonth).subtract(1, 'month');
-    this.setState({currentMonth});
+    const selectedMoment = moment(this.state.selectedMoment).subtract(
+      1,
+      'month'
+    );
+    this.setState({selectedMoment});
   }
 
   _onChangeMonth(value) {
-    const newMoment = this.state.currentMonth.clone().month(value);
-    this.setState({currentMonth: newMoment});
+    const newMoment = this.state.selectedMoment.clone().month(value);
+    this.setState({selectedMoment: newMoment});
   }
 
   _onChangeYear(value) {
-    const newMoment = this.state.currentMonth.clone().year(value);
-    this.setState({currentMonth: newMoment});
+    const newMoment = this.state.selectedMoment.clone().year(value);
+    this.setState({selectedMoment: newMoment});
   }
 
   _renderTableHeader() {
@@ -63,7 +66,7 @@ class CalendarMonth extends Component {
 
   _renderTableBodyRow(weekNumber, year) {
     const renderedDays = _.range(0, 7).map(dayOfWeekIndex => {
-      const dayMoment = this.state.currentMonth
+      const dayMoment = this.state.selectedMoment
         .clone()
         .week(weekNumber)
         .startOf('week')
@@ -73,7 +76,10 @@ class CalendarMonth extends Component {
         dayMoment.format('YYYY-MM-DD')
       );
 
-      const isOtherMonth = !dayMoment.isSame(this.state.currentMonth, 'month');
+      const isOtherMonth = !dayMoment.isSame(
+        this.state.selectedMoment,
+        'month'
+      );
 
       const tdClassName = classNames(
         'date-cell',
@@ -98,7 +104,7 @@ class CalendarMonth extends Component {
   }
 
   _renderTableBody() {
-    const todayMoment = this.state.currentMonth;
+    const todayMoment = this.state.selectedMoment;
     const firstWeekOfMonth = todayMoment.startOf('month').week();
     const lastWeekOfMonth = todayMoment.endOf('month').week();
 
@@ -112,28 +118,28 @@ class CalendarMonth extends Component {
 
   _renderYearDropDown() {
     // make these props
-    const currentYearString = this.state.currentMonth.format('YYYY');
-    const options = _.range(2000, 2020).map(year => {
-      const stringYear = String(year);
-      return {
-        label: stringYear,
-        value: stringYear
-      };
-    });
+    const selectedYear = this.state.selectedMoment.format('YYYY');
+    const options = _.range(selectedYear - 2, selectedYear * 1 + 8).map(
+      year => {
+        const stringYear = String(year);
+        return {
+          label: stringYear,
+          value: stringYear
+        };
+      }
+    );
 
     return (
       <Droplist
         onChange={this._onChangeYear}
         options={options}
-        value={String(currentYearString)}
+        value={String(selectedYear)}
       />
     );
   }
 
   _renderMonthDropDown() {
-    const currentMonthString = this.state.currentMonth
-      .format('MMM')
-      .toLowerCase();
+    const selectedMonth = this.state.selectedMoment.format('MMM').toLowerCase();
 
     const options = _.range(0, 12).map(monthNum => {
       const momentMonth = moment().month(monthNum);
@@ -147,7 +153,7 @@ class CalendarMonth extends Component {
       <Droplist
         onChange={this._onChangeMonth}
         options={options}
-        value={currentMonthString}
+        value={selectedMonth}
       />
     );
   }
@@ -164,7 +170,7 @@ class CalendarMonth extends Component {
             <a onClick={this._monthBack}>
               <i className="fa fa-caret-left fa-lg" title="Previous Month" />
             </a>
-            <h2>{this.state.currentMonth.format('MMMM')}</h2>
+            <h2>{this.state.selectedMoment.format('MMMM')}</h2>
             <a onClick={this._monthForward}>
               <i className="fa fa-caret-right fa-lg" title="Next Month" />
             </a>
