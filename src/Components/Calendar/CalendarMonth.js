@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import moment from 'moment';
 import _ from 'lodash';
 
+import Droplist from '../Reusable/Droplist/Droplist';
+
 import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
 import classNames from '../../utils/classNames';
 
@@ -17,6 +19,10 @@ class CalendarMonth extends Component {
 
     this._monthBack = this._monthBack.bind(this);
     this._monthForward = this._monthForward.bind(this);
+    this._onChangeMonth = this._onChangeMonth.bind(this);
+    this._onChangeYear = this._onChangeYear.bind(this);
+    this._renderMonthDropDown = this._renderMonthDropDown.bind(this);
+    this._renderYearDropDown = this._renderYearDropDown.bind(this);
   }
 
   _monthForward() {
@@ -27,6 +33,16 @@ class CalendarMonth extends Component {
   _monthBack() {
     const currentMonth = moment(this.state.currentMonth).subtract(1, 'month');
     this.setState({currentMonth});
+  }
+
+  _onChangeMonth(value) {
+    const newMoment = this.state.currentMonth.clone().month(value);
+    this.setState({currentMonth: newMoment});
+  }
+
+  _onChangeYear(value) {
+    const newMoment = this.state.currentMonth.clone().year(value);
+    this.setState({currentMonth: newMoment});
   }
 
   _renderTableHeader() {
@@ -47,7 +63,8 @@ class CalendarMonth extends Component {
 
   _renderTableBodyRow(weekNumber, year) {
     const renderedDays = _.range(0, 7).map(dayOfWeekIndex => {
-      const dayMoment = moment()
+      const dayMoment = this.state.currentMonth
+        .clone()
         .week(weekNumber)
         .startOf('week')
         .add(dayOfWeekIndex, 'day');
@@ -94,11 +111,45 @@ class CalendarMonth extends Component {
   }
 
   _renderYearDropDown() {
-    return 'year dropdown';
+    // make these props
+    const currentYearString = this.state.currentMonth.format('YYYY');
+    const options = _.range(2000, 2020).map(year => {
+      const stringYear = String(year);
+      return {
+        label: stringYear,
+        value: stringYear
+      };
+    });
+
+    return (
+      <Droplist
+        onChange={this._onChangeYear}
+        options={options}
+        value={String(currentYearString)}
+      />
+    );
   }
 
   _renderMonthDropDown() {
-    return 'year dropdown';
+    const currentMonthString = this.state.currentMonth
+      .format('MMM')
+      .toLowerCase();
+
+    const options = _.range(0, 12).map(monthNum => {
+      const momentMonth = moment().month(monthNum);
+      return {
+        label: momentMonth.format('MMMM'),
+        value: momentMonth.format('MMM').toLowerCase()
+      };
+    });
+
+    return (
+      <Droplist
+        onChange={this._onChangeMonth}
+        options={options}
+        value={currentMonthString}
+      />
+    );
   }
 
   render() {
