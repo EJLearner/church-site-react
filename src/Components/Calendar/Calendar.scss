@@ -87,13 +87,28 @@ h1 {
 }
 
 .controls-and-title {
-  display: flex;
-  justify-content: space-around;
   align-items: center;
+  display: flex;
+  justify-content: space-between;
 
-  h2 {
-    width: 300px;
+  .drop-downs {
+    width: 200px;
+  }
+
+  .month-arrows {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .month-arrows h2 {
+    margin: 0.8em 1em;
+    width: 150px;
     text-align: center;
+  }
+
+  .empty-space {
+    width: 200px;
   }
 }
 

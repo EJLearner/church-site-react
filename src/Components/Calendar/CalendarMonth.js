@@ -93,17 +93,32 @@ class CalendarMonth extends Component {
     return <tbody>{renderedWeeks}</tbody>;
   }
 
+  _renderYearDropDown() {
+    return 'year dropdown';
+  }
+
+  _renderMonthDropDown() {
+    return 'year dropdown';
+  }
+
   render() {
     return (
       <div id="calendar-div">
         <div className="controls-and-title">
-          <a onClick={this._monthBack}>
-            <i className="fa fa-caret-left fa-lg" title="Previous Month" />
-          </a>
-          <h2>{this.state.currentMonth.format('MMMM YYYY')}</h2>
-          <a onClick={this._monthForward}>
-            <i className="fa fa-caret-right fa-lg" title="Next Month" />
-          </a>
+          <div className="drop-downs">
+            {this._renderYearDropDown()}
+            {this._renderMonthDropDown()}
+          </div>
+          <div className="month-arrows">
+            <a onClick={this._monthBack}>
+              <i className="fa fa-caret-left fa-lg" title="Previous Month" />
+            </a>
+            <h2>{this.state.currentMonth.format('MMMM')}</h2>
+            <a onClick={this._monthForward}>
+              <i className="fa fa-caret-right fa-lg" title="Next Month" />
+            </a>
+          </div>
+          <div className="empty-space" />
         </div>
         <table id="calendar-table">
           {this._renderTableHeader()}
