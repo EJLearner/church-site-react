@@ -39,13 +39,13 @@ class CalendarMonth extends Component {
   }
 
   _onChangeMonth(value) {
-    const newMoment = this.state.selectedMoment.clone().month(value);
-    this.setState({selectedMoment: newMoment});
+    const selectedMoment = this.state.selectedMoment.clone().month(value);
+    this.setState({selectedMoment});
   }
 
   _onChangeYear(value) {
-    const newMoment = this.state.selectedMoment.clone().year(value);
-    this.setState({selectedMoment: newMoment});
+    const selectedMoment = this.state.selectedMoment.clone().year(value);
+    this.setState({selectedMoment});
   }
 
   _renderTableHeader() {
@@ -118,22 +118,20 @@ class CalendarMonth extends Component {
 
   _renderYearDropDown() {
     // make these props
-    const selectedYear = this.state.selectedMoment.format('YYYY');
-    const options = _.range(selectedYear - 2, selectedYear * 1 + 8).map(
-      year => {
-        const stringYear = String(year);
-        return {
-          label: stringYear,
-          value: stringYear
-        };
-      }
-    );
+    const currentYear = moment().year();
+    const options = _.range(currentYear - 1, currentYear + 4).map(year => {
+      const stringYear = String(year);
+      return {
+        label: stringYear,
+        value: stringYear
+      };
+    });
 
     return (
       <Droplist
         onChange={this._onChangeYear}
         options={options}
-        value={String(selectedYear)}
+        value={this.state.selectedMoment.format('YYYY')}
       />
     );
   }
