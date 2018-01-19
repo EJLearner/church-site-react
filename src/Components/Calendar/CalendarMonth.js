@@ -72,7 +72,7 @@ class CalendarMonth extends Component {
         .startOf('week')
         .add(dayOfWeekIndex, 'day');
 
-      const dayEvents = calendarDatesUtils.getRenderedEventsForDate(
+      const dayEvents = calendarDatesUtils.getRenderedEventsForDateMonthView(
         dayMoment.format('YYYY-MM-DD')
       );
 

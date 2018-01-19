@@ -42,7 +42,7 @@ const calendarDatesUtils = {
     return dateObject && dateObject.events;
   },
 
-  getRenderedEventsForDate: dateString => {
+  getRenderedEventsForDateMonthView: dateString => {
     const dayEvents = calendarDatesUtils.getEventsForDate(dateString);
 
     return _.map(dayEvents, (event, index, allEvents) => {
