@@ -1,0 +1,22 @@
+@import '../../_variables.scss';
+
+.day-event {
+  margin-bottom: 2em;
+
+  .title {
+    color: $green-50;
+  }
+
+  .time {
+    font-weight: bolder;
+    margin-top: 0.5em;
+  }
+
+  .location {
+    margin-top: 0.5em;
+  }
+
+  .blurb {
+    margin-top: 0.5em;
+  }
+}
