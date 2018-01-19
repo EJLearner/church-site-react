@@ -28,8 +28,6 @@ const dates = [
     date: '2018-01-05',
     events: [
       {
-        timeStart: '2017-08-27T08:00:00',
-        timeEnd: '2017-08-27T10:00:00',
         title: 'Outreach Benefit Concert',
         description:
           'The Outreach Ministry is sponsoring an Outreach Benefit Conert featuring Gary Stewart!!'
@@ -47,13 +45,14 @@ const calendarDatesUtils = {
   getRenderedEventsForDate: dateString => {
     const dayEvents = calendarDatesUtils.getEventsForDate(dateString);
 
-    return _.map(dayEvents, (event, index) => {
+    return _.map(dayEvents, (event, index, allEvents) => {
       const title = event.title || event;
+
       return (
-        <span key={index}>
-          {title}
-          <br />
-        </span>
+        <div>
+          <span key={index}>{title}</span>
+          {event === _.last(allEvents) ? null : <hr />}
+        </div>
       );
     });
   },
