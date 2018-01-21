@@ -3,16 +3,16 @@ import React from 'react';
 import _ from 'lodash';
 import moment from 'moment';
 
-const dates = [
-  {
+const dates = {
+  '2017-07-10': {
     date: '2017-07-10',
     events: [{title: 'Vacation Bible School Start'}]
   },
-  {
+  '2017-07-14': {
     date: '2017-07-14',
     events: ['Vacation Bible School End and Closing Ceremony']
   },
-  {
+  '2017-08-27': {
     date: '2017-08-27',
     events: [
       {
@@ -24,7 +24,7 @@ const dates = [
       }
     ]
   },
-  {
+  '2018-01-05': {
     date: '2018-01-05',
     events: [
       {
@@ -34,7 +34,7 @@ const dates = [
       }
     ]
   },
-  {
+  '2018-01-18': {
     date: '2018-01-18',
     events: [
       {
@@ -57,12 +57,14 @@ const dates = [
       }
     ]
   }
-];
+};
 
 const calendarDatesUtils = {
   getEventsForDate: dateString => {
-    const dateObject = dates.find(date => date.date === dateString);
-    return dateObject && dateObject.events;
+    return dates['2018-01-18'].events || [];
+
+    const dateObject = dates[dateString];
+    return (dateObject && dateObject.events) || [];
   },
 
   getRenderedEventsForDateMonthView: dateString => {
