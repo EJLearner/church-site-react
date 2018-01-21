@@ -175,7 +175,7 @@ class CalendarMonth extends Component {
           </div>
           <div className="empty-space" />
         </div>
-        <table id="calendar-table">
+        <table className="month-calendar-table">
           {this._renderTableHeader()}
           {this._renderTableBody()}
         </table>

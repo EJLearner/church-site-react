@@ -61,34 +61,6 @@ h1 {
   margin: 0 auto;
 }
 
-#calendar-table td.other-month {
-  opacity: 0.5;
-}
-
-#calendar-table td {
-  height: 75px;
-  width: 150px;
-}
-
-#calendar-table td > div {
-  width: 100%;
-  height: 100%;
-  padding: 5px;
-}
-
-#calendar-table td > div .date-area {
-  padding-bottom: 8px;
-}
-
-#calendar-table td > div .events-area {
-  height: 38px;
-  overflow-y: auto;
-}
-
-.calendar-month-name {
-  text-align: center;
-}
-
 .controls-and-title {
   align-items: center;
   display: flex;
@@ -115,14 +87,37 @@ h1 {
   }
 }
 
-table {
+.month-calendar-table {
   border-collapse: collapse;
   margin: auto;
-}
 
-table,
-th,
-td {
-  border: 1px solid black;
-  padding: 5px;
+  th,
+  td {
+    border: 1px solid black;
+    padding: 5px;
+  }
+
+  td.other-month {
+    opacity: 0.5;
+  }
+
+  td {
+    height: 75px;
+    width: 150px;
+  }
+
+  td > div {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+  }
+
+  td > div .date-area {
+    padding-bottom: 8px;
+  }
+
+  td > div .events-area {
+    height: 38px;
+    overflow-y: auto;
+  }
 }

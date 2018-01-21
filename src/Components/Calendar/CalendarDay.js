@@ -18,7 +18,9 @@ class CalendarDay extends Component {
       this.state.selectedDay
     );
 
-    return dayEvents.map((event, index) => {
+    console.log(dayEvents);
+
+    return _.map(dayEvents, (event, index) => {
       if (typeof event === 'object') {
         const {timeStart, timeEnd} = event;
         let simpleTime = '';
@@ -60,10 +62,15 @@ class CalendarDay extends Component {
   }
 
   render() {
+    const renderedEvents = this.renderEvents();
+    const renderEventsOrNoEvents = renderedEvents.length
+      ? renderedEvents
+      : 'No Events Today';
+
     return (
       <div>
         <h1>Today’s Events</h1>
-        {this.renderEvents()}
+        <div className="event-list-container">{renderEventsOrNoEvents}</div>
       </div>
     );
   }
