@@ -19,7 +19,6 @@ class ChristianEdStaff extends Component {
           <li>Iris Ford</li>
         </ul>
         <ul className="ce-list-half">
-          <li>Min. Charles Gaskins</li>
           <li>Tyres Jones, Sr.</li>
           <li>Janet Stewart</li>
           <li>Emily Tilghman</li>
