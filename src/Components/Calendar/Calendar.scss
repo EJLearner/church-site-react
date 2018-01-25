@@ -1,5 +1,9 @@
 @import '../../_variables.scss';
 
+.calendar-page {
+  padding: 0 1em 0 1em;
+}
+
 h1 {
   font-family: $century-gothic;
   font-weight: normal;
@@ -59,6 +63,7 @@ h1 {
 
 #calendar-div {
   margin: 0 auto;
+  padding: 0 1em;
 }
 
 .controls-and-title {
@@ -103,7 +108,7 @@ h1 {
 
   td {
     height: 75px;
-    width: 150px;
+    // width: 150px;
   }
 
   td > div {
