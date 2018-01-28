@@ -12,6 +12,25 @@ import './MiniCalendar.css';
 class MiniCalendar extends Component {
   constructor(props) {
     super(props);
+
+    this._onClickCell = this._onClickCell.bind(this);
+    this._addMonth = this._addMonth.bind(this);
+  }
+
+  _addMonth(monthsToAdd) {
+    if (this.props.onDateChange) {
+      const newDate = moment(this.props.selectedDay)
+        .add(monthsToAdd, 'months')
+        .format('YYYY-MM-DD');
+
+      this.props.onDateChange(newDate);
+    }
+  }
+
+  _onClickCell(dayString) {
+    if (this.props.onDateChange) {
+      this.props.onDateChange(dayString);
+    }
   }
 
   _renderTableHeader() {
@@ -37,22 +56,30 @@ class MiniCalendar extends Component {
         .startOf('week')
         .add(dayOfWeekIndex, 'day');
 
-      const hasDayEvents = calendarDatesUtils.getEventsForDate(
-        dayMoment.format('YYYY-MM-DD')
-      ).length;
+      const dayString = dayMoment.format('YYYY-MM-DD');
+
+      const hasDayEventsCount = calendarDatesUtils.getEventsForDate(dayString)
+        .length;
 
       const isOtherMonth = !dayMoment.isSame(this.props.selectedDay, 'month');
+      const isSelectedDay = dayMoment.isSame(this.props.selectedDay, 'day');
 
       const tdClassName = classNames('date-cell', {
+        'has-events': hasDayEventsCount,
         'other-month': isOtherMonth,
-        'has-events': hasDayEvents
+        'selected-day': isSelectedDay
       });
+
+      const daysEventCount = hasDayEventsCount
+        ? ` ${hasDayEventsCount} events this day. Click for more info`
+        : '';
 
       return (
         <td
           className={tdClassName}
           key={dayOfWeekIndex}
-          title={dayMoment.format('LL')}
+          onClick={_.partial(this._onClickCell, dayString)}
+          title={dayMoment.format('LL') + daysEventCount}
         >
           {dayMoment.date()}
         </td>
@@ -78,7 +105,17 @@ class MiniCalendar extends Component {
   render() {
     return (
       <div className="mini-calendar">
-        MiniCalendar Selected day = {this.props.selectedDay}{' '}
+        <div className="controls-and-month-name">
+          <i
+            className="fa fa-angle-double-left"
+            onClick={_.partial(this._addMonth, -1)}
+          />
+          {moment(this.props.selectedDay).format('MMMM YYYY')}
+          <i
+            className="fa fa-angle-double-right"
+            onClick={_.partial(this._addMonth, 1)}
+          />
+        </div>
         <table>
           {this._renderTableHeader()}
           {this._renderTableBody()}
@@ -89,6 +126,7 @@ class MiniCalendar extends Component {
 }
 
 MiniCalendar.propTypes = {
+  onDateChange: PropTypes.func.isRequired,
   selectedDay: PropTypes.string
 };
 

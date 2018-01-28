@@ -1,4 +1,16 @@
 .mini-calendar {
+  .controls-and-month-name {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+
+    i {
+      border: 1px solid gray;
+      border-radius: 10px;
+      padding: 0 5px;
+    }
+  }
+
   table {
     border-collapse: collapse;
     margin: auto;
@@ -10,10 +22,19 @@
       text-align: center;
       vertical-align: middle;
       width: 40px;
-    }
 
-    td.other-month {
-      opacity: 0.5;
+      &.other-month {
+        opacity: 0.5;
+      }
+
+      &.has-events {
+        background-color: yellow;
+        cursor: pointer;
+      }
+
+      &.selected-day {
+        background-color: red;
+      }
     }
   }
 }
