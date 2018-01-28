@@ -1,0 +1,19 @@
+.mini-calendar {
+  table {
+    border-collapse: collapse;
+    margin: auto;
+
+    th,
+    td {
+      border: 1px solid black;
+      height: 40px;
+      text-align: center;
+      vertical-align: middle;
+      width: 40px;
+    }
+
+    td.other-month {
+      opacity: 0.5;
+    }
+  }
+}

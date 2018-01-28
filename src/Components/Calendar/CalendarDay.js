@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
 import moment from 'moment';
-import _ from 'lodash';
 
 import EventsListPage from './EventsListPage';
 
@@ -16,6 +15,7 @@ class CalendarDay extends Component {
       <EventsListPage
         dates={[this.state.selectedDay]}
         pageTitle="Today’s Events"
+        selectedDay={this.state.selectedDay}
       />
     );
   }

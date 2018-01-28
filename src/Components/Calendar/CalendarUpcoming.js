@@ -3,18 +3,43 @@ import React, {Component} from 'react';
 import moment from 'moment';
 import _ from 'lodash';
 
-import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
+import EventsListPage from './EventsListPage';
 
 import './Calendar.css';
+import calendarDatesUtils from '../../utils/calendarDatesUtils';
 
 class CalendarUpcoming extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {selectedDay: moment().format('YYYY-MM-DD')};
+
+    this._getDates = this._getDates.bind(this);
+  }
+
+  _getDates(maxEvents) {
+    let dates = [];
+
+    let eventCount = 0;
+    // just to avoid runtime errors if events don't exist
+    let loopCount = 0;
+    let currentDayMoment = moment(this.state.selectedDay);
+    while (eventCount < maxEvents && loopCount < 365) {
+      const dateString = currentDayMoment.format('YYYY-MM-DD');
+      const daysEvents = calendarDatesUtils.getEventsForDate(dateString);
+      eventCount += daysEvents.length;
+      loopCount++;
+
+      dates.push(dateString);
+      currentDayMoment.add(1, 'day');
+    }
+
+    return dates;
   }
 
   render() {
-    return <div>CalendarUpcoming</div>;
+    return (
+      <EventsListPage dates={this._getDates(10)} pageTitle="Upcoming Events" />
+    );
   }
 }
 

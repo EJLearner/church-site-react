@@ -1,23 +1,36 @@
 @import '../../_variables.scss';
 
-.day-event {
-  margin-bottom: 2em;
-  padding: 0 1em;
-
-  .title {
-    color: $green-50;
+.events-list-page {
+  .header-and-events {
+    display: inline-block;
+    width: 600px;
   }
 
-  .time {
-    font-weight: bolder;
-    margin-top: 0.5em;
+  .day-event {
+    margin-bottom: 2em;
+    padding: 0 1em;
+
+    .title {
+      color: $green-50;
+    }
+
+    .time {
+      font-weight: bolder;
+      margin-top: 0.5em;
+    }
+
+    .location {
+      margin-top: 0.5em;
+    }
+
+    .blurb {
+      margin-top: 0.5em;
+    }
   }
 
-  .location {
-    margin-top: 0.5em;
-  }
-
-  .blurb {
-    margin-top: 0.5em;
+  .mini-calendar-wrapper {
+    display: inline-block;
+    margin: 2em;
+    vertical-align: top;
   }
 }

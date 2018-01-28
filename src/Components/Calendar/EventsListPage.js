@@ -4,57 +4,89 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import _ from 'lodash';
 
+import MiniCalendar from './MiniCalendar';
+
 import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
 
 import './EventsListPage.css';
-
-const types = {
-  DAYVIEW: 'DAYVIEW'
-};
 
 class EventsListPage extends Component {
   constructor(props) {
     super(props);
   }
 
-  renderTimeStartAndEndLines(timeStart, timeEnd) {}
+  getFormattedDate(dateString) {
+    return moment(dateString).format('MMM. D, YYYY');
+  }
+
+  getSimpleTime(timeString) {
+    const momentTime = moment(timeString);
+
+    return momentTime.minutes()
+      ? momentTime.format('h:mm a')
+      : momentTime.format('h a');
+  }
+
+  renderTimeDivs(timeStart, timeEnd, showDate, date) {
+    let start = null;
+    let end = null;
+
+    if (timeStart) {
+      const simpleTimeStart = this.getSimpleTime(timeStart);
+      const dateDisplay = showDate ? this.getFormattedDate(date) : '';
+
+      start = (
+        <div className="time-start">
+          {dateDisplay} at {simpleTimeStart}
+        </div>
+      );
+
+      if (timeEnd) {
+        const simpleTimeEnd = this.getSimpleTime(timeEnd);
+        end = <div className="time-end">Until {simpleTimeEnd}</div>;
+      }
+    }
+
+    return {
+      start,
+      end
+    };
+  }
 
   renderEvents() {
     const dateEvents = [];
 
+    const showDate = this.props.dates.length > 1;
+
     _.each(this.props.dates, date => {
-      dateEvents.push(...calendarDatesUtils.getEventsForDate(date));
+      const eventsForDate = calendarDatesUtils.getEventsForDate(date);
+      const eventsForDateWithDate = eventsForDate.map(event => {
+        const clonedEvent = _.cloneDeep(event);
+        if (typeof event === 'object') {
+          clonedEvent.date = date;
+        }
+
+        return clonedEvent;
+      });
+
+      dateEvents.push(...eventsForDateWithDate);
     });
 
     return _.map(dateEvents, (event, index) => {
       if (typeof event === 'object') {
-        const {timeStart, timeEnd} = event;
-        let timeStartDiv = null;
-        let timeEndDiv = null;
-
-        if (timeStart) {
-          const momentStart = moment(timeStart);
-          const simpleTimeStart = momentStart.minutes()
-            ? momentStart.format('h:mm a')
-            : momentStart.format('h a');
-
-          timeStartDiv = <div className="time-start">at {simpleTimeStart}</div>;
-
-          if (timeEnd) {
-            const momentEnd = moment(timeEnd);
-            const simpleTimeEnd = momentEnd.minutes()
-              ? momentEnd.format('h:mm a')
-              : momentEnd.format('h a');
-
-            timeEndDiv = <div className="time-end">Until {simpleTimeEnd}</div>;
-          }
-        }
+        const {date, timeStart, timeEnd} = event;
+        const timeDivs = this.renderTimeDivs(
+          timeStart,
+          timeEnd,
+          showDate,
+          date
+        );
 
         return (
           <div className="day-event" key={index}>
             <div className="title">{event.title}</div>
-            {timeStartDiv}
-            {timeEndDiv}
+            {timeDivs.start}
+            {timeDivs.end}
             <div className="location">{event.location}</div>
             <div className="blurb">{event.blurb}</div>
           </div>
@@ -70,15 +102,23 @@ class EventsListPage extends Component {
   }
 
   render() {
+    const {pageTitle, selectedDay, subTitle} = this.props;
+
     const renderedEvents = this.renderEvents();
     const renderEventsOrNoEvents = renderedEvents.length
       ? renderedEvents
-      : 'No Events Today';
+      : 'No Events Listed';
 
     return (
       <div className="events-list-page">
-        <h1>{this.props.pageTitle}</h1>
-        <div className="event-list-container">{renderEventsOrNoEvents}</div>
+        <div className="header-and-events">
+          <h1>{pageTitle}</h1>
+          {subTitle ? <h2>{subTitle}</h2> : null}
+          <div className="event-list-container">{renderEventsOrNoEvents}</div>
+        </div>
+        <div className="mini-calendar-wrapper">
+          <MiniCalendar selectedDay={selectedDay} />
+        </div>
       </div>
     );
   }
@@ -87,9 +127,8 @@ class EventsListPage extends Component {
 EventsListPage.propTypes = {
   dates: PropTypes.array.isRequired,
   pageTitle: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(types).isRequired
+  selectedDay: PropTypes.string.isRequired,
+  subTitle: PropTypes.string
 };
-
-EventsListPage.types = types;
 
 export default EventsListPage;

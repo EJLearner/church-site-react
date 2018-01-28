@@ -6,7 +6,7 @@ import _ from 'lodash';
 import Droplist from '../Reusable/Droplist/Droplist';
 
 import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
-import classNames from '../../utils/classNames';
+import classNames from 'classnames';
 
 import './Calendar.css';
 
@@ -81,10 +81,9 @@ class CalendarMonth extends Component {
         'month'
       );
 
-      const tdClassName = classNames(
-        'date-cell',
-        isOtherMonth && 'other-month'
-      );
+      const tdClassName = classNames('date-cell', {
+        'other-month': isOtherMonth
+      });
 
       return (
         <td
