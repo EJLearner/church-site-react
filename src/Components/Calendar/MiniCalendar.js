@@ -52,9 +52,11 @@ class MiniCalendar extends Component {
   _renderTableBodyRow(weekNumber, year) {
     const renderedDays = _.range(0, 7).map(dayOfWeekIndex => {
       const dayMoment = moment(this.props.selectedDay)
+        .year(year)
+        .startOf('year')
         .week(weekNumber)
         .startOf('week')
-        .add(dayOfWeekIndex, 'day');
+        .add(dayOfWeekIndex, 'days');
 
       const dayString = dayMoment.format('YYYY-MM-DD');
 
@@ -93,11 +95,30 @@ class MiniCalendar extends Component {
     const todayMoment = moment(this.props.selectedDay);
     const firstWeekOfMonth = todayMoment.startOf('month').week();
     const lastWeekOfMonth = todayMoment.endOf('month').week();
+    const includesNextYear = lastWeekOfMonth === 1;
 
-    const weekNumbers = _.range(firstWeekOfMonth, lastWeekOfMonth + 1);
-    const renderedWeeks = weekNumbers.map(week =>
-      this._renderTableBodyRow(week)
+    let lastWeekOfMonthInSameYear = lastWeekOfMonth;
+    if (includesNextYear) {
+      lastWeekOfMonthInSameYear = todayMoment
+        .endOf('month')
+        .subtract(1, 'weeks')
+        .week();
+    }
+
+    const weekNumbers = _.range(
+      firstWeekOfMonth,
+      lastWeekOfMonthInSameYear + 1
     );
+
+    const year = todayMoment.year();
+
+    const renderedWeeks = weekNumbers.map(week => {
+      return this._renderTableBodyRow(week, year);
+    });
+
+    if (includesNextYear) {
+      renderedWeeks.push(this._renderTableBodyRow(1, year + 1));
+    }
 
     return <tbody>{renderedWeeks}</tbody>;
   }
@@ -109,11 +130,13 @@ class MiniCalendar extends Component {
           <i
             className="fa fa-angle-double-left"
             onClick={_.partial(this._addMonth, -1)}
+            tabIndex="0"
           />
           {moment(this.props.selectedDay).format('MMMM YYYY')}
           <i
             className="fa fa-angle-double-right"
             onClick={_.partial(this._addMonth, 1)}
+            tabIndex="0"
           />
         </div>
         <table>

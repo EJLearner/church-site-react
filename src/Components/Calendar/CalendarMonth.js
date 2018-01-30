@@ -68,6 +68,8 @@ class CalendarMonth extends Component {
     const renderedDays = _.range(0, 7).map(dayOfWeekIndex => {
       const dayMoment = this.state.selectedMoment
         .clone()
+        .year(year)
+        .startOf('year')
         .week(weekNumber)
         .startOf('week')
         .add(dayOfWeekIndex, 'day');
@@ -106,11 +108,29 @@ class CalendarMonth extends Component {
     const todayMoment = this.state.selectedMoment;
     const firstWeekOfMonth = todayMoment.startOf('month').week();
     const lastWeekOfMonth = todayMoment.endOf('month').week();
+    const includesNextYear = lastWeekOfMonth === 1;
 
-    const weekNumbers = _.range(firstWeekOfMonth, lastWeekOfMonth + 1);
-    const renderedWeeks = weekNumbers.map(week =>
-      this._renderTableBodyRow(week)
+    let lastWeekOfMonthInSameYear = lastWeekOfMonth;
+    if (includesNextYear) {
+      lastWeekOfMonthInSameYear = todayMoment
+        .endOf('month')
+        .subtract(1, 'weeks')
+        .week();
+    }
+
+    const weekNumbers = _.range(
+      firstWeekOfMonth,
+      lastWeekOfMonthInSameYear + 1
     );
+
+    const year = todayMoment.year();
+    const renderedWeeks = weekNumbers.map(week =>
+      this._renderTableBodyRow(week, year)
+    );
+
+    if (includesNextYear) {
+      renderedWeeks.push(this._renderTableBodyRow(1, year + 1));
+    }
 
     return <tbody>{renderedWeeks}</tbody>;
   }
