@@ -74,8 +74,8 @@ const calendarDatesUtils = {
       const title = event.title || event;
 
       return (
-        <div>
-          <span key={index}>{title}</span>
+        <div key={index}>
+          <span>{title}</span>
           {event === _.last(allEvents) ? null : <hr />}
         </div>
       );
