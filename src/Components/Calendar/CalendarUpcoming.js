@@ -14,6 +14,11 @@ class CalendarUpcoming extends Component {
     this.state = {selectedDay: moment().format('YYYY-MM-DD')};
 
     this._getDates = this._getDates.bind(this);
+    this._onDateChange = this._onDateChange.bind(this);
+  }
+
+  _onDateChange(dayString) {
+    this.setState({selectedDay: dayString});
   }
 
   _getDates(maxEvents) {
@@ -38,7 +43,12 @@ class CalendarUpcoming extends Component {
 
   render() {
     return (
-      <EventsListPage dates={this._getDates(10)} pageTitle="Upcoming Events" />
+      <EventsListPage
+        dates={this._getDates(10)}
+        onDateChange={this._onDateChange}
+        pageTitle="Upcoming Events"
+        selectedDay={this.state.selectedDay}
+      />
     );
   }
 }
