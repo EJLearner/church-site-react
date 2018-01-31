@@ -11,10 +11,6 @@ import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
 import './EventsListPage.css';
 
 class EventsListPage extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   getFormattedDate(dateString) {
     return moment(dateString).format('MMM. D, YYYY');
   }
