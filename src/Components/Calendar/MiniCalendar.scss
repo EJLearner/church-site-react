@@ -1,9 +1,16 @@
 .mini-calendar {
+  width: 300px;
+
   .controls-and-month-name {
     display: flex;
     justify-content: space-between;
     font-size: 24px;
     margin-bottom: 1em;
+
+    &.no-controls {
+      justify-content: center;
+      margin-bottom: 0.3em;
+    }
 
     i {
       border: 1px solid gray;
@@ -14,7 +21,10 @@
 
   table {
     border-collapse: collapse;
+    box-sizing: border-box;
     margin: auto;
+    table-layout: fixed;
+    width: 100%;
 
     th,
     td {
@@ -22,7 +32,6 @@
       height: 40px;
       text-align: center;
       vertical-align: middle;
-      width: 40px;
 
       &.other-month {
         opacity: 0.5;
@@ -30,6 +39,9 @@
 
       &.has-events {
         background-color: yellow;
+      }
+
+      &.clickable {
         cursor: pointer;
       }
 
