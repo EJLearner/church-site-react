@@ -62,7 +62,12 @@ class MiniCalendar extends Component {
   }
 
   _renderTableBodyRow(weekNumber, year) {
-    const {allDatesClickable, selectedDay, yearDisplayMode} = this.props;
+    const {
+      allDatesClickable,
+      highlightWeek,
+      selectedDay,
+      yearDisplayMode
+    } = this.props;
 
     const renderedDays = _.range(0, 7).map(dayOfWeekIndex => {
       const dayMoment = moment(selectedDay)
@@ -79,12 +84,14 @@ class MiniCalendar extends Component {
 
       const isOtherMonth = !dayMoment.isSame(selectedDay, 'month');
       const isSelectedDay = dayMoment.isSame(selectedDay, 'day');
+      const isSelectedWeek = dayMoment.isSame(selectedDay, 'week');
 
       const tdClassName = classNames('date-cell', {
         'has-events': daysEventsCount,
         clickable: daysEventsCount || allDatesClickable,
         'other-month': isOtherMonth,
-        'selected-day': !yearDisplayMode && isSelectedDay
+        'selected-day': !yearDisplayMode && !highlightWeek && isSelectedDay,
+        'selected-week': highlightWeek && isSelectedWeek
       });
 
       const daysEventsMessage = daysEventsCount
@@ -98,7 +105,7 @@ class MiniCalendar extends Component {
           onClick={_.partial(this._onClickCell, dayString, daysEventsCount)}
           title={dayMoment.format('LL') + daysEventsMessage}
         >
-          {dayMoment.date()}
+          <div>{dayMoment.date()}</div>
         </td>
       );
     });
@@ -179,6 +186,7 @@ class MiniCalendar extends Component {
 
 MiniCalendar.propTypes = {
   allDatesClickable: PropTypes.bool,
+  highlightWeek: PropTypes.bool,
   onDateChange: PropTypes.func,
   onDateClick: PropTypes.func,
   selectedDay: PropTypes.string,
@@ -187,6 +195,7 @@ MiniCalendar.propTypes = {
 
 MiniCalendar.defaultProps = {
   allDatesClickable: false,
+  highlightWeek: false,
   yearDisplayMode: false
 };
 

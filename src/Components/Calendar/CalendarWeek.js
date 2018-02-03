@@ -47,6 +47,7 @@ class CalendarWeek extends Component {
     return (
       <EventsListPage
         dates={this._getDates()}
+        highlightWeek
         pageTitle="Events This Week"
         selectedDay={this.state.selectedDay}
         subTitle={this._renderSubTitleString()}

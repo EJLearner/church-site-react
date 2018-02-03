@@ -98,7 +98,13 @@ class EventsListPage extends Component {
   }
 
   render() {
-    const {pageTitle, onDateChange, selectedDay, subTitle} = this.props;
+    const {
+      highlightWeek,
+      onDateChange,
+      pageTitle,
+      selectedDay,
+      subTitle
+    } = this.props;
 
     const renderedEvents = this.renderEvents();
     const renderEventsOrNoEvents = renderedEvents.length
@@ -113,7 +119,11 @@ class EventsListPage extends Component {
           <div className="event-list-container">{renderEventsOrNoEvents}</div>
         </div>
         <div className="mini-calendar-wrapper">
-          <MiniCalendar onDateChange={onDateChange} selectedDay={selectedDay} />
+          <MiniCalendar
+            highlightWeek={highlightWeek}
+            onDateChange={onDateChange}
+            selectedDay={selectedDay}
+          />
         </div>
       </div>
     );
@@ -122,6 +132,7 @@ class EventsListPage extends Component {
 
 EventsListPage.propTypes = {
   dates: PropTypes.array.isRequired,
+  highlightWeek: PropTypes.bool,
   onDateChange: PropTypes.func.isRequired,
   pageTitle: PropTypes.string.isRequired,
   selectedDay: PropTypes.string.isRequired,

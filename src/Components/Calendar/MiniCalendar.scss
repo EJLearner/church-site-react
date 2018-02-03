@@ -30,6 +30,7 @@
     td {
       border: 1px solid black;
       height: 40px;
+      padding: 0;
       text-align: center;
       vertical-align: middle;
 
@@ -45,9 +46,26 @@
         cursor: pointer;
       }
 
-      &.selected-day {
-        background-color: red;
+      &.selected-day div {
+        background-color: black;
+        border-radius: 20px / 20px;
+        color: white;
       }
+
+      &.selected-week div {
+        background-color: black;
+        color: white;
+      }
+    }
+
+    td.selected-week:first-child div {
+      border-radius: 20px 0 0 20px;
+      color: white;
+    }
+
+    td.selected-week:last-child div {
+      border-radius: 0 20px 20px 0;
+      color: white;
     }
   }
 }
