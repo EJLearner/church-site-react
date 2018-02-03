@@ -1,10 +1,13 @@
+@import '../../_variables.scss';
+
 .mini-calendar {
   width: 300px;
 
   .controls-and-month-name {
+    color: $green-20;
     display: flex;
-    justify-content: space-between;
     font-size: 24px;
+    justify-content: space-between;
     margin-bottom: 1em;
 
     &.no-controls {
@@ -13,6 +16,7 @@
     }
 
     i {
+      color: $black;
       border: 1px solid gray;
       border-radius: 10px;
       padding: 0 5px;

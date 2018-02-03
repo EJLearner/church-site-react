@@ -9,7 +9,7 @@ const Announcements = props => {
     .map(dayData => {
       const {date} = dayData;
       const renderedEvents = dayData.events.map(event => {
-        const {timeEnd, timeStart, title, description} = event;
+        const {timeEnd, timeStart, title, shortDescription} = event;
         const timeEndString = timeStart && timeEnd ? ` - ${timeEnd}` : '';
 
         return (
@@ -19,7 +19,7 @@ const Announcements = props => {
               {timeEndString}
             </div>
             <div>{title}</div>
-            <div>{description}</div>
+            <div>{shortDescription}</div>
           </div>
         );
       });

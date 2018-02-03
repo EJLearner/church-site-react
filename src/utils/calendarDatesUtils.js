@@ -16,7 +16,7 @@ const dates = {
         timeStart: '2017-08-27T08:00:00',
         timeEnd: '2017-08-27T10:00:00',
         title: 'Outreach Benefit Concert',
-        description:
+        shortDescription:
           'The Outreach Ministry is sponsoring an Outreach Benefit Conert featuring Gary Stewart!!'
       }
     ]
@@ -25,7 +25,7 @@ const dates = {
     events: [
       {
         title: 'Outreach Benefit Concert',
-        description:
+        shortDescription:
           'The Outreach Ministry is sponsoring an Outreach Benefit Conert featuring Gary Stewart!!'
       }
     ]
@@ -33,9 +33,9 @@ const dates = {
   '2018-01-18': {
     events: [
       {
-        blurb:
+        longDescription:
           'The Women’s Ministry invites you to kick-off your yuletide celebrations early! Join us in our Winter Wonderland. There will be delectable Christmas snacks, activities, food, and maybe a visit from Santa himself. Don’t forget your $10 wrapped Christmas gift for our White Elephant game! All of this and more is planned in honor of this blessed season. R.S.V.P. for your family with any member of the Women’s Ministry. If you would like to contribute to this event, please see Min. Patricia Yeargin or Sis. Phyllis Day.',
-        description:
+        shortDescription:
           'The Outreach Ministry is sponsoring an Outreach Benefit Conert featuring Gary Stewart!!',
         title: 'Outreach Benefit Concert',
         timeStart: '2018-01-18T08:00:00',
@@ -47,7 +47,7 @@ const dates = {
       {
         timeStart: '2017-01-18T10:00:00',
         title: 'Outreach Benefit Concert 2',
-        description:
+        shortDescription:
           'The Outreach Ministry is sponsoring an Outreach Benefit Conert featuring Gary Stewart!!'
       }
     ]
@@ -86,7 +86,7 @@ const dates = {
 
 const calendarDatesUtils = {
   getEventsForDate: dateString => {
-    // return dates['2018-01-18'].events || [];
+    return dates['2018-01-18'].events || [];
 
     const dateObject = dates[dateString];
     return (dateObject && dateObject.events) || [];
@@ -117,7 +117,7 @@ const calendarDatesUtils = {
         : undefined;
 
       return {
-        description: event.description,
+        shortDescription: event.shortDescription,
         timeStart,
         timeEnd,
         title: event.title || event

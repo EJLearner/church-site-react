@@ -84,7 +84,7 @@ class EventsListPage extends Component {
             {timeDivs.start}
             {timeDivs.end}
             <div className="location">{event.location}</div>
-            <div className="blurb">{event.blurb}</div>
+            <div className="long-description">{event.longDescription}</div>
           </div>
         );
       }

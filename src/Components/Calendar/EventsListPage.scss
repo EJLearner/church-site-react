@@ -11,19 +11,25 @@
     padding: 0 1em;
 
     .title {
-      color: $green-50;
+      color: $green-20;
     }
 
-    .time {
+    .time-start {
       font-weight: bolder;
       margin-top: 0.5em;
     }
 
-    .location {
-      margin-top: 0.5em;
+    .time-end {
+      font-weight: bolder;
+      font-size: 80%;
     }
 
-    .blurb {
+    .location {
+      margin-top: 0.5em;
+      color: $gray83;
+    }
+
+    .long-description {
       margin-top: 0.5em;
     }
   }
