@@ -66,13 +66,13 @@ $button-background: rgb(41, 41, 41);
         }
 
         .fa-circle-o {
-          color: white;
+          color: $white;
           transition: color 2s;
         }
 
         &.current {
           .fa-circle {
-            color: white;
+            color: $white;
           }
 
           .fa-circle-o {
@@ -82,7 +82,7 @@ $button-background: rgb(41, 41, 41);
 
         .fa-pause,
         .fa-play {
-          color: white;
+          color: $white;
         }
 
         // stacked elements are in the wrong place without this

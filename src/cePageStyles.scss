@@ -70,7 +70,7 @@
   }
 
   h3.list-desc {
-    color: black;
+    color: $black;
     font-size: 18px;
     margin-bottom: 0;
   }
@@ -108,7 +108,7 @@
     margin: 0 2em 0 2em;
 
     button {
-      background-color: white;
+      background-color: $white;
       display: block;
       height: 40px;
       width: 200px;
@@ -123,7 +123,7 @@
   .right-button.vbs {
     background-color: $green-50;
     border-color: $green-50;
-    color: white;
+    color: $white;
   }
 
   .left-button.childrens-church {
@@ -134,6 +134,6 @@
   .right-button.childrens-church {
     background-color: $orange;
     border-color: $orange;
-    color: white;
+    color: $white;
   }
 }

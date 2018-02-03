@@ -32,7 +32,7 @@
 
     th,
     td {
-      border: 1px solid black;
+      border: 1px solid $black;
       height: 40px;
       padding: 0;
       text-align: center;
@@ -43,7 +43,7 @@
       }
 
       &.has-events {
-        background-color: yellow;
+        background-color: $yellow;
       }
 
       &.clickable {
@@ -51,25 +51,25 @@
       }
 
       &.selected-day div {
-        background-color: black;
+        background-color: $black;
         border-radius: 20px / 20px;
-        color: white;
+        color: $white;
       }
 
       &.selected-week div {
-        background-color: black;
-        color: white;
+        background-color: $black;
+        color: $white;
       }
     }
 
     td.selected-week:first-child div {
       border-radius: 20px 0 0 20px;
-      color: white;
+      color: $white;
     }
 
     td.selected-week:last-child div {
       border-radius: 0 20px 20px 0;
-      color: white;
+      color: $white;
     }
   }
 }

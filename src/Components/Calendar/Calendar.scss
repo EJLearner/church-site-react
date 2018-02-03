@@ -17,7 +17,6 @@ h1 {
 
   ul {
     box-sizing: border-box;
-    // border: 1px solid black;
     display: inline-block;
     justify-content: flex-start;
     min-width: initial;
@@ -49,7 +48,7 @@ h1 {
 
   li.current-page-link a,
   li.current-page-link a:visited {
-    color: black;
+    color: $black;
   }
 
   .styling-div {
@@ -98,7 +97,7 @@ h1 {
 
   th,
   td {
-    border: 1px solid black;
+    border: 1px solid $black;
     padding: 5px;
   }
 
