@@ -32,16 +32,27 @@ class CalendarYear extends Component {
   }
 
   _renderMonths() {
-    return this._getMiniCalendarMonths().map(monthDate => (
-      <div className="yearly-calendar-month-wrapper" key={monthDate}>
-        <MiniCalendar
-          allDatesClickable
-          onDateClick={this._goToDay}
-          selectedDay={monthDate}
-          yearDisplayMode
-        />
-      </div>
-    ));
+    return this._getMiniCalendarMonths().map(monthDate => {
+      let selectedDay = monthDate;
+      let highlightSelectedDay = false;
+
+      if (moment(monthDate).isSame(moment(), 'month')) {
+        selectedDay = moment().format('YYYY-MM-DD');
+        highlightSelectedDay = true;
+      }
+
+      return (
+        <div className="yearly-calendar-month-wrapper" key={selectedDay}>
+          <MiniCalendar
+            allDatesClickable
+            highlightSelectedDay={highlightSelectedDay}
+            onDateClick={this._goToDay}
+            selectedDay={selectedDay}
+            yearDisplayMode
+          />
+        </div>
+      );
+    });
   }
 
   _redirect() {

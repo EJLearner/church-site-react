@@ -64,9 +64,9 @@ class MiniCalendar extends Component {
   _renderTableBodyRow(weekNumber, year) {
     const {
       allDatesClickable,
+      highlightSelectedDay,
       highlightWeek,
-      selectedDay,
-      yearDisplayMode
+      selectedDay
     } = this.props;
 
     const renderedDays = _.range(0, 7).map(dayOfWeekIndex => {
@@ -90,7 +90,7 @@ class MiniCalendar extends Component {
         'has-events': daysEventsCount,
         clickable: daysEventsCount || allDatesClickable,
         'other-month': isOtherMonth,
-        'selected-day': !yearDisplayMode && !highlightWeek && isSelectedDay,
+        'selected-day': highlightSelectedDay && !highlightWeek && isSelectedDay,
         'selected-week': highlightWeek && isSelectedWeek
       });
 
@@ -189,6 +189,7 @@ class MiniCalendar extends Component {
 
 MiniCalendar.propTypes = {
   allDatesClickable: PropTypes.bool,
+  highlightSelectedDay: PropTypes.bool,
   highlightWeek: PropTypes.bool,
   onDateChange: PropTypes.func,
   onDateClick: PropTypes.func,
@@ -199,6 +200,7 @@ MiniCalendar.propTypes = {
 MiniCalendar.defaultProps = {
   allDatesClickable: true,
   highlightWeek: false,
+  highlightSelectedDay: true,
   yearDisplayMode: false
 };
 
