@@ -107,28 +107,41 @@ const calendarDatesUtils = {
     });
   },
 
-  getAnnouncements: quantity => {
-    return _.map(dates, date => {
-      const events = _.map(date.events, event => {
-        const timeStart = event.timeStart
-          ? moment(event.timeStart).format('H:mm a')
-          : undefined;
-        const timeEnd = event.timeEnd
-          ? moment(event.timeEnd).format('H:mm a')
-          : undefined;
-        return {
-          description: event.description,
-          timeStart,
-          timeEnd,
-          title: event.title || event
-        };
-      });
+  getFormattedDaysEvents: dayData => {
+    return _.map(dayData.events, event => {
+      const timeStart = event.timeStart
+        ? moment(event.timeStart).format('H:mm a')
+        : undefined;
+      const timeEnd = event.timeEnd
+        ? moment(event.timeEnd).format('H:mm a')
+        : undefined;
 
       return {
-        date: moment(date.date).format('MMMM, D YYYY'),
-        events
+        description: event.description,
+        timeStart,
+        timeEnd,
+        title: event.title || event
       };
     });
+  },
+
+  getFormattedAnnouncements: quantity => {
+    return _.reduce(
+      dates,
+      (upComingEvents, dayData, dateString) => {
+        if (moment(dateString).isSameOrAfter(moment(), 'day')) {
+          const events = calendarDatesUtils.getFormattedDaysEvents(dayData);
+
+          upComingEvents.push({
+            date: moment(dateString).format('MMMM, D YYYY'),
+            events
+          });
+        }
+
+        return upComingEvents;
+      },
+      []
+    );
   }
 };
 

@@ -45,7 +45,8 @@ class IdeaForm extends Component {
       email: '',
       phone: '',
 
-      errors: []
+      errors: [],
+      redirect: false
     };
   }
 
