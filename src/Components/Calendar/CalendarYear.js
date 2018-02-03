@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {Redirect} from 'react-router';
 
 import moment from 'moment';
 import _ from 'lodash';
@@ -9,8 +10,16 @@ import MiniCalendar from './MiniCalendar';
 import './Calendar.css';
 
 class CalendarYear extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {redirectDate: null};
+
+    this._goToDay = this._goToDay.bind(this);
+  }
+
   _goToDay(dayString, hasEvents) {
-    console.log(`going to the date ${dayString}`);
+    this.setState({redirectDate: dayString});
   }
 
   _getMiniCalendarMonths() {
@@ -22,6 +31,18 @@ class CalendarYear extends Component {
   }
 
   render() {
+    if (this.state.redirectDate) {
+      return (
+        <Redirect
+          push
+          to={{
+            pathname: `/calendar/day`,
+            state: {selectedDay: this.state.redirectDate}
+          }}
+        />
+      );
+    }
+
     return this._getMiniCalendarMonths().map(monthDate => (
       <div className="yearly-calendar-month-wrapper" key={monthDate}>
         <MiniCalendar
