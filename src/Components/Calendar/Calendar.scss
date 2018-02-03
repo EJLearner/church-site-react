@@ -39,12 +39,12 @@ h1 {
   }
 
   li.current-page-link {
-    border: 1px solid black;
+    border: 1px solid $gray217;
     border-bottom: none;
   }
 
   li:not(.current-page-link) {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $gray217;
   }
 
   li.current-page-link a,
@@ -54,7 +54,7 @@ h1 {
 
   .styling-div {
     bottom: 0;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $gray217;
     display: inline-block;
     position: absolute;
     width: 20%;
