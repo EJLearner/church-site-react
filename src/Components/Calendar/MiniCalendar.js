@@ -197,7 +197,7 @@ MiniCalendar.propTypes = {
 };
 
 MiniCalendar.defaultProps = {
-  allDatesClickable: false,
+  allDatesClickable: true,
   highlightWeek: false,
   yearDisplayMode: false
 };

@@ -86,7 +86,7 @@ const dates = {
 
 const calendarDatesUtils = {
   getEventsForDate: dateString => {
-    return dates['2018-01-18'].events || [];
+    // return dates['2018-01-18'].events || [];
 
     const dateObject = dates[dateString];
     return (dateObject && dateObject.events) || [];
