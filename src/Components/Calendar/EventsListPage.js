@@ -114,8 +114,8 @@ class EventsListPage extends Component {
     return (
       <div className="events-list-page">
         <div className="header-and-events">
-          <h1>{pageTitle}</h1>
-          {subTitle ? <h2>{subTitle}</h2> : null}
+          <h2>{pageTitle}</h2>
+          {subTitle ? <h3>{subTitle}</h3> : null}
           <div className="event-list-container">{renderEventsOrNoEvents}</div>
         </div>
         <div className="mini-calendar-wrapper">
