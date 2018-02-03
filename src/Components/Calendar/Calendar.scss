@@ -127,7 +127,21 @@ h1 {
   }
 }
 
+.year-calendar-content {
+  margin: auto;
+
+  h2 {
+    font-weight: normal;
+    text-align: center;
+  }
+}
+
+.year-calendar-months-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .yearly-calendar-month-wrapper {
-  display: inline-block;
   margin: 1em;
 }

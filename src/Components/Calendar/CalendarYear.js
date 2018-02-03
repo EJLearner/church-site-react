@@ -16,6 +16,7 @@ class CalendarYear extends Component {
     this.state = {redirectDate: null};
 
     this._goToDay = this._goToDay.bind(this);
+    this._renderMonths = this._renderMonths.bind(this);
   }
 
   _goToDay(dayString, hasEvents) {
@@ -30,19 +31,7 @@ class CalendarYear extends Component {
     });
   }
 
-  render() {
-    if (this.state.redirectDate) {
-      return (
-        <Redirect
-          push
-          to={{
-            pathname: `/calendar/day`,
-            state: {selectedDay: this.state.redirectDate}
-          }}
-        />
-      );
-    }
-
+  _renderMonths() {
     return this._getMiniCalendarMonths().map(monthDate => (
       <div className="yearly-calendar-month-wrapper" key={monthDate}>
         <MiniCalendar
@@ -53,6 +42,33 @@ class CalendarYear extends Component {
         />
       </div>
     ));
+  }
+
+  _redirect() {
+    return (
+      <Redirect
+        push
+        to={{
+          pathname: `/calendar/day`,
+          state: {selectedDay: this.state.redirectDate}
+        }}
+      />
+    );
+  }
+
+  render() {
+    if (this.state.redirectDate) {
+      return this._redirect();
+    }
+
+    return (
+      <div className="year-calendar-content">
+        <h2>Events This Year</h2>
+        <div className="year-calendar-months-display">
+          {this._renderMonths()}
+        </div>
+      </div>
+    );
   }
 }
 
