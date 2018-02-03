@@ -94,9 +94,12 @@ class MiniCalendar extends Component {
         'selected-week': highlightWeek && isSelectedWeek
       });
 
-      const daysEventsMessage = daysEventsCount
-        ? ` ${daysEventsCount} events this day. Click for more info`
-        : '';
+      let daysEventsMessage = '';
+      if (daysEventsCount) {
+        const eventOrEventsString = daysEventsCount > 1 ? 'events' : 'event';
+
+        daysEventsMessage = ` ${daysEventsCount} ${eventOrEventsString} this day. Click for more info`;
+      }
 
       return (
         <td
