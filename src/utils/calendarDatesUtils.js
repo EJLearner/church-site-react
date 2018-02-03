@@ -5,15 +5,12 @@ import moment from 'moment';
 
 const dates = {
   '2017-07-10': {
-    date: '2017-07-10',
     events: [{title: 'Vacation Bible School Start'}]
   },
   '2017-07-14': {
-    date: '2017-07-14',
     events: ['Vacation Bible School End and Closing Ceremony']
   },
   '2017-08-27': {
-    date: '2017-08-27',
     events: [
       {
         timeStart: '2017-08-27T08:00:00',
@@ -25,7 +22,6 @@ const dates = {
     ]
   },
   '2018-01-05': {
-    date: '2018-01-05',
     events: [
       {
         title: 'Outreach Benefit Concert',
@@ -35,7 +31,6 @@ const dates = {
     ]
   },
   '2018-01-18': {
-    date: '2018-01-18',
     events: [
       {
         blurb:
@@ -56,6 +51,36 @@ const dates = {
           'The Outreach Ministry is sponsoring an Outreach Benefit Conert featuring Gary Stewart!!'
       }
     ]
+  },
+
+  '2018-02-04': {
+    events: [{title: 'Sunday Church Service', timeStart: '2018-02-01T09:00:00'}]
+  },
+
+  '2018-02-11': {
+    events: [{title: 'Sunday Church Service', timeStart: '2018-02-01T09:00:00'}]
+  },
+
+  '2018-02-18': {
+    events: [{title: 'Sunday Church Service', timeStart: '2018-02-01T09:00:00'}]
+  },
+  '2018-02-25': {
+    events: [{title: 'Sunday Church Service', timeStart: '2018-02-01T09:00:00'}]
+  },
+  '2018-03-04': {
+    events: [{title: 'Sunday Church Service', timeStart: '2018-02-01T09:00:00'}]
+  },
+  '2018-03-18': {
+    events: [{title: 'Sunday Church Service', timeStart: '2018-02-01T09:00:00'}]
+  },
+  '2018-03-11': {
+    events: [{title: 'Sunday Church Service', timeStart: '2018-02-01T09:00:00'}]
+  },
+  '2018-03-25': {
+    events: [{title: 'Sunday Church Service', timeStart: '2018-02-01T09:00:00'}]
+  },
+  '2018-04-01': {
+    events: [{title: 'Sunday Church Service', timeStart: '2018-02-01T09:00:00'}]
   }
 };
 
