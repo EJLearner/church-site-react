@@ -4,8 +4,8 @@ import './Announcements.css';
 import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
 
 const Announcements = props => {
-  const renderedAnnouncments = calendarDatesUtils
-    .getAnnouncements()
+  const renderedAnnouncements = calendarDatesUtils
+    .getFormattedAnnouncements()
     .map(dayData => {
       const {date} = dayData;
       const renderedEvents = dayData.events.map(event => {
@@ -31,7 +31,7 @@ const Announcements = props => {
       );
     });
 
-  return <div className="announcements-content">{renderedAnnouncments}</div>;
+  return <div className="announcements-content">{renderedAnnouncements}</div>;
 };
 
 export default Announcements;
