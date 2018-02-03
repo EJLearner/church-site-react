@@ -12,8 +12,13 @@ class CalendarWeek extends Component {
     super(props);
     this.state = {selectedDay: moment().format('YYYY-MM-DD')};
 
-    this._renderSubTitleString = this._renderSubTitleString.bind(this);
     this._getDates = this._getDates.bind(this);
+    this._renderSubTitleString = this._renderSubTitleString.bind(this);
+    this._selectWeek = this._selectWeek.bind(this);
+  }
+
+  _selectWeek(selectedDay) {
+    this.setState({selectedDay});
   }
 
   _renderSubTitleString() {
@@ -48,6 +53,7 @@ class CalendarWeek extends Component {
       <EventsListPage
         dates={this._getDates()}
         highlightWeek
+        onDateChange={this._selectWeek}
         pageTitle="Events This Week"
         selectedDay={this.state.selectedDay}
         subTitle={this._renderSubTitleString()}
