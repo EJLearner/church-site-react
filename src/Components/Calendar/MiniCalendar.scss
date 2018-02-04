@@ -32,14 +32,15 @@
 
     th,
     td {
-      border: 1px solid $black;
+      // border: 1px solid $black;
+      font-weight: normal;
       height: 40px;
       padding: 0;
       text-align: center;
       vertical-align: middle;
 
       &.other-month {
-        opacity: 0.5;
+        color: $gray180;
       }
 
       &.has-events {

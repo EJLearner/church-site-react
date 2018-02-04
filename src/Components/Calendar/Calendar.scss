@@ -5,6 +5,7 @@
 }
 
 h1 {
+  color: $orange;
   font-family: $century-gothic;
   font-weight: normal;
 }
@@ -81,6 +82,7 @@ h1 {
   }
 
   .month-arrows h2 {
+    font-weight: normal;
     margin: 0.8em 1em;
     width: 150px;
     text-align: center;
@@ -97,12 +99,17 @@ h1 {
 
   th,
   td {
-    border: 1px solid $black;
+    // TODO: Confirm that this is what April wants. Doesn't look right
+    // border: 1px solid $black;
     padding: 5px;
   }
 
+  th {
+    font-weight: normal;
+  }
+
   td.other-month {
-    opacity: 0.5;
+    color: $gray180;
   }
 
   td {

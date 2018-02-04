@@ -23,7 +23,7 @@ class CalendarWeek extends Component {
 
   _renderSubTitleString() {
     const {selectedDay} = this.state;
-    const dayFormat = 'dddd, MMMM D, YYYY';
+    const dayFormat = 'ddd., MMM. D, YYYY';
 
     const firstDay = moment(selectedDay)
       .startOf('week')

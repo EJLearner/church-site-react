@@ -86,6 +86,12 @@ const dates = {
   },
   '2018-04-01': {
     events: [{title: 'Sunday Church Service', timeStart: '2018-02-01T09:00:00'}]
+  },
+  '2018-12-25': {
+    events: ['Christmas Day']
+  },
+  '2019-01-01': {
+    events: ['New Years Day']
   }
 };
 
