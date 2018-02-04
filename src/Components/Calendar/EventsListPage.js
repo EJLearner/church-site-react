@@ -27,13 +27,16 @@ class EventsListPage extends Component {
     let start = null;
     let end = null;
 
-    if (timeStart) {
-      const simpleTimeStart = this.getSimpleTime(timeStart);
+    if ((showDate && date) || timeStart) {
+      const timeStartString = timeStart
+        ? ` at ${this.getSimpleTime(timeStart)}`
+        : '';
       const dateDisplay = showDate ? this.getFormattedDate(date) : '';
 
       start = (
         <div className="time-start">
-          {dateDisplay} at {simpleTimeStart}
+          {dateDisplay}
+          {timeStartString}
         </div>
       );
 
@@ -57,12 +60,17 @@ class EventsListPage extends Component {
     _.each(this.props.dates, date => {
       const eventsForDate = calendarDatesUtils.getEventsForDate(date);
       const eventsForDateWithDateAddedAsProp = eventsForDate.map(event => {
-        const clonedEvent = _.cloneDeep(event);
+        let eventWithDate;
         if (typeof event === 'object') {
-          clonedEvent.date = date;
+          eventWithDate = _.cloneDeep(event);
+        } else {
+          eventWithDate = {
+            title: event
+          };
         }
 
-        return clonedEvent;
+        eventWithDate.date = date;
+        return eventWithDate;
       });
 
       dateEvents.push(...eventsForDateWithDateAddedAsProp);
