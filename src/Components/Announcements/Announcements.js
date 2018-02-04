@@ -15,7 +15,9 @@ const Announcements = props => {
       // just doing string compare since standard datetime string is used
       if (timeStartA < timeStartB) {
         return -1;
-      } else if (timeStartA > timeStartB) {
+      }
+
+      if (timeStartA > timeStartB) {
         return 1;
       }
 

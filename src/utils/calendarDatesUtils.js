@@ -58,8 +58,8 @@ const dates = {
 
   '2018-02-11': {
     events: [
-      {title: 'Sunday Church Service', timeStart: '2018-02-11T09:00:00'},
       {title: 'Sorting Test', timeStart: '2018-02-11T05:00:00'},
+      {title: 'Sunday Church Service', timeStart: '2018-02-11T09:00:00'},
       {title: 'Sorting Test also', timeStart: '2018-02-11T05:00:00'},
       'No Time',
       'No Time either'
@@ -96,7 +96,22 @@ const calendarDatesUtils = {
     // return dates['2018-01-18'].events || [];
 
     const dateObject = dates[dateString];
-    return (dateObject && dateObject.events) || [];
+    const unsortedEvents = (dateObject && dateObject.events) || [];
+
+    return unsortedEvents.sort((a, b) => {
+      const timeStartA = a.timeStart || '';
+      const timeStartB = b.timeStart || '';
+
+      if (timeStartA < timeStartB) {
+        return -1;
+      }
+
+      if (timeStartA > timeStartB) {
+        return 1;
+      }
+
+      return 0;
+    });
   },
 
   getRenderedEventsForDateMonthView: dateString => {

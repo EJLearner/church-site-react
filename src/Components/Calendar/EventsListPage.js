@@ -56,7 +56,7 @@ class EventsListPage extends Component {
 
     _.each(this.props.dates, date => {
       const eventsForDate = calendarDatesUtils.getEventsForDate(date);
-      const eventsForDateWithDate = eventsForDate.map(event => {
+      const eventsForDateWithDateAddedAsProp = eventsForDate.map(event => {
         const clonedEvent = _.cloneDeep(event);
         if (typeof event === 'object') {
           clonedEvent.date = date;
@@ -65,7 +65,7 @@ class EventsListPage extends Component {
         return clonedEvent;
       });
 
-      dateEvents.push(...eventsForDateWithDate);
+      dateEvents.push(...eventsForDateWithDateAddedAsProp);
     });
 
     return _.map(dateEvents, (event, index) => {
