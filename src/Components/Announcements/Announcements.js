@@ -9,15 +9,13 @@ import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
 const Announcements = props => {
   const getFormattedDaysEvents = unsortedEvents => {
     const sortedEvents = unsortedEvents.sort((a, b) => {
-      const timeStartA = typeof a === 'object' ? a.timeStart : undefined;
-      const momentA = timeStartA ? moment(timeStartA) : moment.unix(0);
+      const timeStartA = a.timeStart || '';
+      const timeStartB = b.timeStart || '';
 
-      const timeStartB = typeof b === 'object' ? b.timeStart : undefined;
-      const momentB = timeStartB ? moment(timeStartB) : moment.unix(0);
-
-      if (momentA.isBefore(momentB)) {
+      // just doing string compare since standard datetime string is used
+      if (timeStartA < timeStartB) {
         return -1;
-      } else if (momentA.isAfter(momentB)) {
+      } else if (timeStartA > timeStartB) {
         return 1;
       }
 
