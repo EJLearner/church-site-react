@@ -1,7 +1,6 @@
 import React from 'react';
 
 import _ from 'lodash';
-import moment from 'moment';
 
 const dates = {
   '2017-07-10': {
@@ -54,11 +53,17 @@ const dates = {
   },
 
   '2018-02-04': {
-    events: [{title: 'Sunday Church Service', timeStart: '2018-02-01T09:00:00'}]
+    events: [{title: 'Sunday Church Service', timeStart: '2018-02-04T09:00:00'}]
   },
 
   '2018-02-11': {
-    events: [{title: 'Sunday Church Service', timeStart: '2018-02-01T09:00:00'}]
+    events: [
+      {title: 'Sunday Church Service', timeStart: '2018-02-11T09:00:00'},
+      {title: 'Sorting Test', timeStart: '2018-02-11T05:00:00'},
+      {title: 'Sorting Test also', timeStart: '2018-02-11T05:00:00'},
+      'No Time',
+      'No Time either'
+    ]
   },
 
   '2018-02-18': {

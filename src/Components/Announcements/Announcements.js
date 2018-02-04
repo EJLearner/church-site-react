@@ -7,8 +7,24 @@ import './Announcements.css';
 import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
 
 const Announcements = props => {
-  const getFormattedDaysEvents = dayData => {
-    const unSortedEvents = _.map(dayData.events, event => {
+  const getFormattedDaysEvents = unsortedEvents => {
+    const sortedEvents = unsortedEvents.sort((a, b) => {
+      const timeStartA = typeof a === 'object' ? a.timeStart : undefined;
+      const momentA = timeStartA ? moment(timeStartA) : moment.unix(0);
+
+      const timeStartB = typeof b === 'object' ? b.timeStart : undefined;
+      const momentB = timeStartB ? moment(timeStartB) : moment.unix(0);
+
+      if (momentA.isBefore(momentB)) {
+        return -1;
+      } else if (momentA.isAfter(momentB)) {
+        return 1;
+      }
+
+      return 0;
+    });
+
+    const renderedEvents = _.map(sortedEvents, event => {
       const timeStart = event.timeStart
         ? moment(event.timeStart).format('H:mm a')
         : undefined;
@@ -24,9 +40,7 @@ const Announcements = props => {
       };
     });
 
-    const sortedEvents = unSortedEvents;
-
-    return sortedEvents;
+    return renderedEvents;
   };
 
   const getFormattedAnnouncements = quantity => {
@@ -34,7 +48,7 @@ const Announcements = props => {
       calendarDatesUtils.getAllDates(),
       (upComingEvents, dayData, dateString) => {
         if (moment(dateString).isSameOrAfter(moment(), 'day')) {
-          const events = getFormattedDaysEvents(dayData);
+          const events = getFormattedDaysEvents(dayData.events);
 
           upComingEvents.push({
             date: moment(dateString).format('MMMM, D YYYY'),
