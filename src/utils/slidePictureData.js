@@ -74,8 +74,6 @@ const allPictures = [
 ];
 
 const _filterAndLimit = function(pictures, maxPics) {
-  console.log(getNextSaturdayBeforeFirstSunday());
-
   return allPictures
     .filter(picture => {
       let {annual, displayBeg, displayEnd} = picture;
