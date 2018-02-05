@@ -95,12 +95,11 @@ h1 {
 
 .month-calendar-table {
   border-collapse: collapse;
-  margin: auto;
+  box-sizing: border-box;
 
   th,
   td {
-    // TODO: Confirm that this is what April wants. Doesn't look right
-    // border: 1px solid $black;
+    border: 3px solid $white;
     padding: 5px;
   }
 
@@ -113,6 +112,7 @@ h1 {
   }
 
   td {
+    background-color: $peach;
     height: 75px;
     width: 150px;
   }
@@ -128,6 +128,7 @@ h1 {
   }
 
   td > div .events-area {
+    font-size: 11px;
     height: 38px;
     overflow-y: auto;
   }
