@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
+import Admin from './Components/Admin/Admin';
 import Calendar from './Components/Calendar/Calendar';
 import CcRegistrationChild from './Components/RegistrationPages/CcRegistrationChild';
 import CcRegistrationLanding from './Components/RegistrationPages/CcRegistrationLanding';
@@ -74,7 +75,6 @@ class Routes extends Component {
     const FullPage = this._renderFullPage;
     const BarePage = this._renderBarePage;
 
-    // prettier-ignore
     return (
       <BrowserRouter>
         <Switch>
@@ -88,11 +88,14 @@ class Routes extends Component {
             )}
           />
           <Route
-            path="/calendar"
+            path="/admin"
             render={() => (
-              <Calendar />
+              <BarePage>
+                <Admin />
+              </BarePage>
             )}
           />
+          <Route component={Calendar} path="/calendar" />
           <Route
             path="/cc-registration-child"
             render={() => (

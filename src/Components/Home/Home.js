@@ -116,38 +116,6 @@ class Home extends Component {
       <div>
         <Slider pictures={slidePictures} showPictureSelectButtons={false} />
         <HomeSquares />
-
-        {this.state.user ? (
-          <Button onClick={this._logout}>Log out</Button>
-        ) : (
-          <Button onClick={this._login}>Log in</Button>
-        )}
-
-        <p>Add Item</p>
-        <Text
-          id="name"
-          label="name"
-          onChange={this._onChange}
-          value={this.state.name}
-        />
-        <Text
-          id="item"
-          label="item"
-          onChange={this._onChange}
-          value={this.state.item}
-        />
-        <Button onClick={this._submit}>Submit</Button>
-
-        <p>Remove Item</p>
-        <Text
-          id="removeKey"
-          label="Key of Item To Remove"
-          onChange={this._onChange}
-          value={this.state.removeKey}
-        />
-        <Button onClick={this._removeItem}>Remove</Button>
-
-        <div>{this._renderItems()}</div>
       </div>
     );
   }
