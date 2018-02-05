@@ -6,9 +6,9 @@ import Announcements from '../Announcements/Announcements.js';
 
 import './HomeSquares.css';
 
-import calendarPic from './calendar.png';
-import kidsPic from './kids.jpg';
-import leadershipPic from './leadership.png';
+import calendarPic from '../../assets/images/homepage/calendar.png';
+import kidsPic from '../../assets/images/homepage/kids.jpg';
+import leadershipPic from '../../assets/images/homepage/leadership.png';
 
 const HomeSquare = props => {
   const {children, linkTo, scroll, title} = props;
@@ -50,6 +50,7 @@ const HomeSquares = props => {
 
 HomeSquare.propTypes = {
   children: PropTypes.node.isRequired,
+  linkTo: PropTypes.string,
   scroll: PropTypes.bool,
   title: PropTypes.string.isRequired
 };
