@@ -1,5 +1,18 @@
 import moment from 'moment';
 
+const getNextSaturdayBeforeFirstSunday = () => {
+  const selectedSunday = moment().day(0);
+
+  while (
+    selectedSunday.isBefore(moment(), 'day') ||
+    selectedSunday.isSame(moment(), 'month')
+  ) {
+    selectedSunday.add(7, 'days');
+  }
+
+  return selectedSunday.subtract(1, 'days').format('YYYY-MM-DD');
+};
+
 const allPictures = [
   {
     altTag:
@@ -29,16 +42,14 @@ const allPictures = [
     displayEnd: '2018-05-01',
     source: require('../assets/images/slides/christian-ed-home-christ-risen.png')
   },
-
-  // TODO: this banner should link to the day or event page but they don't exist yet
-  /*
   {
-    altTag:
-      'Leadership prayer servie: Every saturday before the first sunday',
-    linkPath: '/vision/thevision',
+    altTag: 'Leadership prayer serviec: Every saturday before the first sunday',
+    linkPath: {
+      pathname: '/calendar/day',
+      state: {selectedDay: getNextSaturdayBeforeFirstSunday()}
+    },
     source: require('../assets/images/slides/christian-ed-home-leadership-prayer.png')
   },
-  */
   {
     altTag:
       'o be a good father and mother requires that the parents defer many of ' +

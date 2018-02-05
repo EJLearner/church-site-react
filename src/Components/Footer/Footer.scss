@@ -2,7 +2,7 @@
 
 // footer area
 #footerbar {
-  background-color: RGB(180, 180, 180);
+  background-color: $gray180;
 }
 
 #footer {
@@ -67,6 +67,6 @@
 
   a,
   a:visited {
-    color: black;
+    color: $black;
   }
 }

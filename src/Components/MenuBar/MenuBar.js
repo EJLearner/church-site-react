@@ -8,34 +8,7 @@ import './MenuBar.css';
 
 class MenuBar extends Component {
   render() {
-    const links = [
-      {
-        path: '/',
-        text: 'Home'
-      },
-      {
-        path: '/who',
-        text: `Who We are`
-      },
-      {
-        path: '/why',
-        text: `Why We Are Here`
-      },
-      {
-        path: '/where',
-        text: `Where We Are Going`
-      },
-      {
-        path: '/calendar',
-        text: `Calendar`
-      },
-      {
-        path: '/ideaform',
-        text: `Tell Us What You Think`
-      }
-    ];
-
-    const renderedLinks = links.map(link => {
+    const renderedLinks = this.props.links.map(link => {
       const {pathname} = this.props.location;
       let className =
         link.path !== '/' && pathname.indexOf(link.path) > -1
@@ -54,18 +27,35 @@ class MenuBar extends Component {
     });
 
     return (
-      <div id="menubar">
-        <ul className="cfm">{renderedLinks}</ul>
-        <div className="logo">
-          <img alt="" src={churchLogo} />
-        </div>
+      <div className="menu-bar" id={this.props.id}>
+        <ul>{renderedLinks}</ul>
+        {this.props.showLogo ? (
+          <div className="logo">
+            <img alt="" src={churchLogo} />
+          </div>
+        ) : null}
+        {this.props.addDivToRight ? <div className="styling-div" /> : null}
       </div>
     );
   }
 }
 
+MenuBar.defaultProps = {
+  showLogo: true
+};
+
 MenuBar.propTypes = {
-  location: PropTypes.object
+  // renders sibling empty div as a way to get desired calendar menu styling
+  addDivToRight: PropTypes.bool,
+  id: PropTypes.string,
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      path: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired
+    })
+  ),
+  location: PropTypes.object,
+  showLogo: PropTypes.bool
 };
 
 export default withRouter(MenuBar);

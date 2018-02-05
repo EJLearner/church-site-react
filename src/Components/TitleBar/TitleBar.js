@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 import LoginControl from '../LoginControl/LoginControl';
 
@@ -9,7 +10,9 @@ class TitleBar extends Component {
     return (
       <div id="titlebar">
         <div id="website-title">
-          The City Temple of Baltimore (Baptist) Christian Education Ministry
+          <Link to="/">
+            The City Temple of Baltimore (Baptist) Christian Education Ministry
+          </Link>
         </div>
         <LoginControl />
         <a href="mailto:thecitytemple317@comcast.net">

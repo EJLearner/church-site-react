@@ -8,11 +8,10 @@ class MinisterialStaff extends Component {
         <ul className="ce-list-half">
           <li>Rev. Tyra Curley</li>
           <li>Min. Lori Ford</li>
-          <li>Min. Charles Gaskins</li>
           <li>Min. Michelle Hamiel</li>
+          <li>Rev. Debra Hickman</li>
         </ul>
         <ul className="ce-list-half">
-          <li>Rev. Debra Hickman</li>
           <li>Min. Marshell Jenkins</li>
           <li>Rev. Dr. Susan Spears</li>
           <li>Min. Patricia Yeargin</li>

@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import moment from 'moment';
 
 const validDateFormats = ['M/D/YY', 'M/D/YYYY', 'M-D-YYYY', 'M-D-YY'];

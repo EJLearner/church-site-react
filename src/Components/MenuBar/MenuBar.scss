@@ -1,6 +1,6 @@
 @import '../../_variables.scss';
 
-#menubar {
+.menu-bar {
   align-items: center;
   display: flex;
   font-family: $calibri;
@@ -8,11 +8,10 @@
   justify-content: space-between;
   min-width: 800px;
   padding: 16px 16px;
-  text-transform: uppercase;
   flex: 0 0 auto;
 }
 
-#menubar ul {
+.menu-bar ul {
   align-content: center;
   display: flex;
   justify-content: space-between;
@@ -25,36 +24,11 @@
   width: 80%;
 }
 
-#menubar li {
+.menu-bar li {
   display: flex;
   margin-top: 0px;
   padding: 0 8px;
   text-align: center;
-}
-
-#menubar li:last-child {
-  color: $green-80;
-}
-
-#menubar li:last-child a,
-#menubar li:last-child a:visited {
-  color: $green-80;
-}
-
-#menubar li a,
-#menubar li a:visited {
-  color: black;
-  text-align: center;
-  text-decoration: none;
-}
-
-#menubar li.current-page-link a,
-#menubar li.current-page-link a:visited {
-  color: $orange;
-}
-
-#menubar li a:hover {
-  text-decoration: underline;
 }
 
 .logo {
