@@ -44,14 +44,24 @@ const Announcements = props => {
   };
 
   const getFormattedAnnouncements = quantity => {
+    const allDates = calendarDatesUtils.getAllDates();
+    const datesAsArray = _.map(allDates, (dateObject, dateString) => {
+      dateObject.date = dateString;
+      return dateObject;
+    });
+
+    const sortedDates = _.sortBy(datesAsArray, 'date');
+
     return _.reduce(
-      calendarDatesUtils.getAllDates(),
-      (upComingEvents, dayData, dateString) => {
-        if (moment(dateString).isSameOrAfter(moment(), 'day')) {
+      sortedDates,
+      (upComingEvents, dayData) => {
+        const {date} = dayData;
+        const dateMoment = moment(date);
+        if (dateMoment.isSameOrAfter(moment(), 'day')) {
           const events = getFormattedDaysEvents(dayData.events);
 
           upComingEvents.push({
-            date: moment(dateString).format('MMMM, D YYYY'),
+            date: dateMoment.format('MMMM, D YYYY'),
             events
           });
         }
