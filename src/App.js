@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import moment from 'moment';
+import './polyfills';
 
 import Routes from './Routes';
 
