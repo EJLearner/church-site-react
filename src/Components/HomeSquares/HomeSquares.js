@@ -41,7 +41,7 @@ const HomeSquares = props => {
         <img alt="Leadership" src={leadershipPic} />
       </HomeSquare>
 
-      <HomeSquare linkTo="/calendar" title="Calendar">
+      <HomeSquare linkTo="/calendar/month" title="Calendar">
         <img alt="Calendar" src={calendarPic} />
       </HomeSquare>
     </div>
