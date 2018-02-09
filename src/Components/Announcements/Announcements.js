@@ -7,12 +7,14 @@ import './Announcements.css';
 import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
 
 const Announcements = props => {
-  const getFormattedDaysEvents = unsortedEvents => {
-    const sortedEvents = unsortedEvents.sort((a, b) => {
+  const getFormattedDaysEvents = dayEvents => {
+    const unsortedAnnouncements = _.filter(dayEvents, {isAnnouncement: true});
+
+    const sortedEvents = unsortedAnnouncements.sort((a, b) => {
       const timeStartA = a.timeStart || '';
       const timeStartB = b.timeStart || '';
 
-      // just doing string compare since standard datetime string is used
+      // just doing string compare since standard date-time string is used
       if (timeStartA < timeStartB) {
         return -1;
       }
@@ -25,9 +27,15 @@ const Announcements = props => {
     });
 
     const renderedEvents = _.map(sortedEvents, event => {
-      const timeStart = event.timeStart
-        ? moment(event.timeStart).format('H:mm a')
-        : undefined;
+      let timeStart;
+      if (event.timeStart) {
+        if (event.followsWorship) {
+          timeStart = 'Following the morning worship';
+        } else {
+          timeStart = moment(event.timeStart).format('H:mm a');
+        }
+      }
+
       const timeEnd = event.timeEnd
         ? moment(event.timeEnd).format('H:mm a')
         : undefined;
@@ -89,12 +97,12 @@ const Announcements = props => {
         </div>
       );
     });
-    return (
+    return renderedEvents.length ? (
       <div className="date" key={date}>
         <h3>{date}</h3>
         {renderedEvents}
       </div>
-    );
+    ) : null;
   });
 
   return <div className="announcements-content">{renderedAnnouncements}</div>;
