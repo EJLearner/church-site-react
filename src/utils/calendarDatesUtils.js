@@ -3,38 +3,6 @@ import React from 'react';
 import _ from 'lodash';
 
 const dates = {
-  '2017-07-10': {
-    events: [{title: 'Vacation Bible School Start'}]
-  },
-  '2017-07-14': {
-    events: ['Vacation Bible School End and Closing Ceremony']
-  },
-  '2017-08-27': {
-    events: [
-      {
-        timeStart: '2017-08-27T08:00:00',
-        timeEnd: '2017-08-27T10:00:00',
-        title: 'Outreach Benefit Concert',
-        shortDescription:
-          'The Outreach Ministry is sponsoring an Outreach Benefit Conert featuring Gary Stewart!!'
-      }
-    ]
-  },
-  '2018-01-18': {
-    events: [
-      {
-        longDescription:
-          'The Women’s Ministry invites you to kick-off your yuletide celebrations early! Join us in our Winter Wonderland. There will be delectable Christmas snacks, activities, food, and maybe a visit from Santa himself. Don’t forget your $10 wrapped Christmas gift for our White Elephant game! All of this and more is planned in honor of this blessed season. R.S.V.P. for your family with any member of the Women’s Ministry. If you would like to contribute to this event, please see Min. Patricia Yeargin or Sis. Phyllis Day.',
-        shortDescription:
-          'The Outreach Ministry is sponsoring an Outreach Benefit Conert featuring Gary Stewart!!',
-        title: 'Outreach Benefit Concert',
-        timeStart: '2018-01-18T08:00:00',
-        timeEnd: '2018-01-18T10:00:00',
-        location: 'Undercroft'
-      }
-    ]
-  },
-
   '2018-02-04': {
     events: [{title: 'Sunday Church Service', timeStart: '2018-02-04T09:00:00'}]
   },
@@ -44,16 +12,84 @@ const dates = {
   },
 
   '2018-02-18': {
-    events: [{title: 'Sunday Church Service', timeStart: '2018-02-01T09:00:00'}]
+    events: [
+      {title: 'Sunday Church Service', timeStart: '2018-02-18T09:00:00'},
+      {
+        isAnnouncement: true,
+        title: 'City Temple Times submissions due',
+        longDescription: (
+          <span>
+            The next issue of <i>The Times</i> comes out March 2018 and we need
+            your submissions! There is much going on within the life of our
+            church and our newsletter is an excellent way to make sure the
+            information gets communicated to our entire church family. Our 2020
+            Vision Workgroups are revving up, the church has begun the
+            sacrificial sowing of seeds, and so much more. Please consider
+            sharing your thoughts, expressions, and information so that the
+            newsletter can remain a vital part of our communication stream!
+            Submissions for our March issue are due to April Jones no later than
+            Sunday, February 18, 2018 and can be sent to
+            <a href="mailto:times@thecitytemple.org">
+              {' '}
+              times@thecitytemple.org
+            </a>.
+          </span>
+        )
+      }
+    ]
   },
   '2018-02-25': {
-    events: [{title: 'Sunday Church Service', timeStart: '2018-02-01T09:00:00'}]
+    events: [
+      {title: 'Sunday Church Service', timeStart: '2018-02-25T09:00:00'},
+      {
+        followsWorship: true,
+        isAnnouncement: true,
+        longDescription: (
+          <span>
+            Come and celebrate
+            <i>“A Blast From Our Past”</i> The Christian Ed Ministry will
+            recognize African American poets, musicians and famous designers on
+            February 25, 2018, following the morning worship service. Lunch will
+            be served. Open mic poetry, instrumental musical selection or song
+            and a run way walk for those who’d like to show off their African
+            Attire. Children of all ages are welcome to express improvisational
+            forms of art. Please see April Jones or Davina Morton if you’d like
+            to share a poem or perform a musical selection. You do not want to
+            miss this event!
+          </span>
+        ),
+        timeStart: '2018-02-25T11:00:00',
+        title: 'A Blast from Our Past!'
+      }
+    ]
   },
+
+  '2018-02-26': {
+    events: [
+      {
+        isAnnouncement: true,
+        longDescription: (
+          <span>
+            Registration and testing for the next GED class will take place on
+            Monday, February 26, 2018 at 9:00 a.m. in the W.W. Payne Center. All
+            interested candidates are asked to contact Pat Payne for more
+            information.
+          </span>
+        ),
+        timeStart: '2018-02-26T09:00:00',
+        title: 'GED Class Registration and testing'
+      }
+    ]
+  },
+
   '2018-03-04': {
     events: [{title: 'Sunday Church Service', timeStart: '2018-02-01T09:00:00'}]
   },
   '2018-03-18': {
-    events: [{title: 'Sunday Church Service', timeStart: '2018-02-01T09:00:00'}]
+    events: [
+      {title: 'Sunday Church Service', timeStart: '2018-02-01T09:00:00'},
+      'Last day to purchase tickets to see "Jesus"'
+    ]
   },
   '2018-03-11': {
     events: [{title: 'Sunday Church Service', timeStart: '2018-02-01T09:00:00'}]
