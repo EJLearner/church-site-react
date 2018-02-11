@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 import moment from 'moment';
 import _ from 'lodash';
@@ -6,8 +7,8 @@ import _ from 'lodash';
 import './Announcements.css';
 import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
 
-const Announcements = props => {
-  const getFormattedDaysEvents = dayEvents => {
+class Announcements extends Component {
+  getFormattedDaysEvents(dayEvents) {
     const unsortedAnnouncements = _.filter(dayEvents, {isAnnouncement: true});
 
     const sortedEvents = unsortedAnnouncements.sort((a, b) => {
@@ -49,9 +50,9 @@ const Announcements = props => {
     });
 
     return renderedEvents;
-  };
+  }
 
-  const getFormattedAnnouncements = quantity => {
+  getFormattedAnnouncements(quantity) {
     const allDates = calendarDatesUtils.getAllDates();
     const datesAsArray = _.map(allDates, (dateObject, dateString) => {
       dateObject.date = dateString;
@@ -66,10 +67,11 @@ const Announcements = props => {
         const {date} = dayData;
         const dateMoment = moment(date);
         if (dateMoment.isSameOrAfter(moment(), 'day')) {
-          const events = getFormattedDaysEvents(dayData.events);
+          const events = this.getFormattedDaysEvents(dayData.events);
 
           upComingEvents.push({
-            date: dateMoment.format('MMMM, D YYYY'),
+            dateString: dateMoment.format('YYYY-MM-DD'),
+            displayedDate: dateMoment.format('MMMM, D YYYY'),
             events
           });
         }
@@ -78,34 +80,50 @@ const Announcements = props => {
       },
       []
     );
-  };
+  }
 
-  const renderedAnnouncements = getFormattedAnnouncements().map(dayData => {
-    const {date} = dayData;
-    const renderedEvents = dayData.events.map(event => {
-      const {timeEnd, timeStart, title, shortDescription} = event;
-      const timeEndString = timeStart && timeEnd ? ` - ${timeEnd}` : '';
+  renderedAnnouncements() {
+    return this.getFormattedAnnouncements().map(dayData => {
+      const {dateString, displayedDate} = dayData;
+      const renderedEvents = dayData.events.map(event => {
+        const {timeEnd, timeStart, title, shortDescription} = event;
+        const timeEndString = timeStart && timeEnd ? ` - ${timeEnd}` : '';
 
-      return (
-        <div className="event" key={`${date}-${title}`}>
-          <div>
-            {timeStart}
-            {timeEndString}
+        return (
+          <div className="event" key={`${displayedDate}-${title}`}>
+            <div>
+              {timeStart}
+              {timeEndString}
+            </div>
+            <div>{title}</div>
+            <div>{shortDescription}</div>
           </div>
-          <div>{title}</div>
-          <div>{shortDescription}</div>
-        </div>
-      );
+        );
+      });
+      return renderedEvents.length ? (
+        <Link
+          key={displayedDate}
+          to={{
+            pathname: `calendar/day/`,
+            state: {selectedDay: dateString}
+          }}
+        >
+          <div className="date">
+            <h3>{displayedDate}</h3>
+            {renderedEvents}
+          </div>
+        </Link>
+      ) : null;
     });
-    return renderedEvents.length ? (
-      <div className="date" key={date}>
-        <h3>{date}</h3>
-        {renderedEvents}
-      </div>
-    ) : null;
-  });
+  }
 
-  return <div className="announcements-content">{renderedAnnouncements}</div>;
-};
+  render() {
+    return (
+      <div className="announcements-content">
+        {this.renderedAnnouncements()}
+      </div>
+    );
+  }
+}
 
 export default Announcements;

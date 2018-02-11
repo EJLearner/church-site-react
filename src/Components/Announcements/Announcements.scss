@@ -3,6 +3,14 @@
 .announcements-content {
   font-size: 80%;
 
+  a:hover {
+    text-decoration: none;
+
+    h3 {
+      text-decoration: underline;
+    }
+  }
+
   h3 {
     margin: 5px 0;
   }
