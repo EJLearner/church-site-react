@@ -23,14 +23,19 @@ class EventsListPage extends Component {
       : momentTime.format('h a');
   }
 
-  renderTimeDivs(timeStart, timeEnd, showDate, date) {
+  renderTimeDivs({timeStart, timeEnd, followsWorship}, showDate, date) {
     let start = null;
     let end = null;
 
     if ((showDate && date) || timeStart) {
-      const timeStartString = timeStart
-        ? ` at ${this.getSimpleTime(timeStart)}`
-        : '';
+      let timeStartString = '';
+
+      if (followsWorship) {
+        timeStartString = ' following worship service';
+      } else if (timeStart) {
+        timeStartString = ` at ${this.getSimpleTime(timeStart)}`;
+      }
+
       const dateDisplay = showDate ? this.getFormattedDate(date) : '';
 
       start = (
@@ -78,13 +83,8 @@ class EventsListPage extends Component {
 
     return _.map(dateEvents, (event, index) => {
       if (typeof event === 'object') {
-        const {date, timeStart, timeEnd} = event;
-        const timeDivs = this.renderTimeDivs(
-          timeStart,
-          timeEnd,
-          showDate,
-          date
-        );
+        const {date} = event;
+        const timeDivs = this.renderTimeDivs(event, showDate, date);
 
         return (
           <div className="day-event" key={index}>

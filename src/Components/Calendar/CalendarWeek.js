@@ -23,17 +23,12 @@ class CalendarWeek extends Component {
 
   _renderSubTitleString() {
     const {selectedDay} = this.state;
-    const dayFormat = 'ddd., MMM. D, YYYY';
 
     const firstDay = moment(selectedDay)
       .startOf('week')
-      .format(dayFormat);
+      .format('dddd, MMMM D, YYYY');
 
-    const lastDay = moment(selectedDay)
-      .endOf('week')
-      .format(dayFormat);
-
-    return `${firstDay} - ${lastDay}`;
+    return `Week of ${firstDay}`;
   }
 
   _getDates() {

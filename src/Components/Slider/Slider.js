@@ -23,10 +23,11 @@ class Slider extends Component {
       this
     );
     this._renderSlideShowPictures = this._renderSlideShowPictures.bind(this);
+    this.savePictureHeight = this.savePictureHeight.bind(this);
   }
 
   componentDidMount() {
-    window.onresize = this.savePictureHeight.bind(this);
+    window.addEventListener('onresize', this.savePictureHeight);
     this.slideShow(this.state.slideShowIsOn);
   }
 
@@ -40,6 +41,7 @@ class Slider extends Component {
 
   componentWillUnmount() {
     this.slideShow(false);
+    window.removeEventListener('onresize', this.savePictureHeight);
   }
 
   savePictureHeight() {
@@ -199,7 +201,7 @@ class Slider extends Component {
       const renderedImage = (
         <img
           alt={altTag}
-          onLoad={this.savePictureHeight.bind(this)}
+          onLoad={this.savePictureHeight}
           ref={node => {
             if (!this.slideShowImage) {
               this.slideShowImage = node;
