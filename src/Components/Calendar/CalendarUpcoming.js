@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import moment from 'moment';
 
@@ -6,6 +7,7 @@ import EventsListPage from './EventsListPage';
 
 import './Calendar.css';
 import calendarDatesUtils from '../../utils/calendarDatesUtils';
+import withDatesSubscription from '../Hocs/withDatesSubscription';
 
 class CalendarUpcoming extends Component {
   constructor(props) {
@@ -29,11 +31,19 @@ class CalendarUpcoming extends Component {
     let currentDayMoment = moment(this.state.selectedDay);
     while (eventCount < maxEvents && loopCount < 365) {
       const dateString = currentDayMoment.format('YYYY-MM-DD');
-      const daysEvents = calendarDatesUtils.getEventsForDate(dateString);
-      eventCount += daysEvents.length;
-      loopCount++;
+      const daysEvents = calendarDatesUtils.getEventsForDate(
+        this.props.storedDates,
+        dateString
+      );
 
-      dates.push(dateString);
+      const daysEventsCount = daysEvents.length;
+
+      if (daysEventsCount) {
+        eventCount += daysEvents.length;
+        dates.push(dateString);
+      }
+
+      loopCount++;
       currentDayMoment.add(1, 'day');
     }
 
@@ -47,9 +57,14 @@ class CalendarUpcoming extends Component {
         onDateChange={this._onDateChange}
         pageTitle="Upcoming Events"
         selectedDay={this.state.selectedDay}
+        storedDates={this.props.storedDates}
       />
     );
   }
 }
 
-export default CalendarUpcoming;
+CalendarUpcoming.propTypes = {
+  storedDates: PropTypes.any
+};
+
+export default withDatesSubscription(CalendarUpcoming);

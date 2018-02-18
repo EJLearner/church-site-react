@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import moment from 'moment';
 import _ from 'lodash';
 
 import Droplist from '../Reusable/Droplist/Droplist';
+import withDatesSubscription from '../Hocs/withDatesSubscription';
 
 import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
 import classNames from 'classnames';
@@ -64,6 +66,24 @@ class CalendarMonth extends Component {
     );
   }
 
+  _renderDaysEvents(dateString) {
+    const daysEventsData = calendarDatesUtils.getEventsForDate(
+      this.props.storedDates,
+      dateString
+    );
+
+    return _.map(daysEventsData, (event, index, allEvents) => {
+      const title = event.title || event;
+
+      return (
+        <div key={index}>
+          <span>{title}</span>
+          {event === _.last(allEvents) ? null : <hr />}
+        </div>
+      );
+    });
+  }
+
   _renderTableBodyRow(weekNumber, year) {
     const renderedDays = _.range(0, 7).map(dayOfWeekIndex => {
       const dayMoment = this.state.selectedMoment
@@ -74,9 +94,7 @@ class CalendarMonth extends Component {
         .startOf('week')
         .add(dayOfWeekIndex, 'day');
 
-      const dayEvents = calendarDatesUtils.getRenderedEventsForDateMonthView(
-        dayMoment.format('YYYY-MM-DD')
-      );
+      const dayEvents = this._renderDaysEvents(dayMoment.format('YYYY-MM-DD'));
 
       const isOtherMonth = !dayMoment.isSame(
         this.state.selectedMoment,
@@ -203,4 +221,8 @@ class CalendarMonth extends Component {
   }
 }
 
-export default CalendarMonth;
+CalendarMonth.propTypes = {
+  storedDates: PropTypes.any
+};
+
+export default withDatesSubscription(CalendarMonth);

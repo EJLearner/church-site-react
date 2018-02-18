@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import moment from 'moment';
 import _ from 'lodash';
 
 import EventsListPage from './EventsListPage';
+import withDatesSubscription from '../Hocs/withDatesSubscription';
 
 import './Calendar.css';
 
@@ -51,10 +53,15 @@ class CalendarWeek extends Component {
         onDateChange={this._selectWeek}
         pageTitle="Events This Week"
         selectedDay={this.state.selectedDay}
+        storedDates={this.props.storedDates}
         subTitle={this._renderSubTitleString()}
       />
     );
   }
 }
 
-export default CalendarWeek;
+CalendarWeek.propTypes = {
+  storedDates: PropTypes.any
+};
+
+export default withDatesSubscription(CalendarWeek);

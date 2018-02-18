@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import moment from 'moment';
 import _ from 'lodash';
+import {Parser as HtmlToReactParser} from 'html-to-react';
 
 import MiniCalendar from './MiniCalendar';
 
@@ -63,7 +64,10 @@ class EventsListPage extends Component {
     const showDate = this.props.dates.length > 1;
 
     _.each(this.props.dates, date => {
-      const eventsForDate = calendarDatesUtils.getEventsForDate(date);
+      const eventsForDate = calendarDatesUtils.getEventsForDate(
+        this.props.storedDates,
+        date
+      );
       const eventsForDateWithDateAddedAsProp = eventsForDate.map(event => {
         let eventWithDate;
         if (typeof event === 'object') {
@@ -84,7 +88,13 @@ class EventsListPage extends Component {
     return _.map(dateEvents, (event, index) => {
       if (typeof event === 'object') {
         const {date} = event;
+        let {longDescription} = event;
         const timeDivs = this.renderTimeDivs(event, showDate, date);
+
+        if (longDescription && longDescription[0] === '<') {
+          const htmlToReactParser = new HtmlToReactParser();
+          longDescription = htmlToReactParser.parse(longDescription);
+        }
 
         return (
           <div className="day-event" key={index}>
@@ -92,7 +102,7 @@ class EventsListPage extends Component {
             {timeDivs.start}
             {timeDivs.end}
             <div className="location">{event.location}</div>
-            <div className="long-description">{event.longDescription}</div>
+            <div className="long-description">{longDescription}</div>
           </div>
         );
       }
@@ -146,6 +156,7 @@ EventsListPage.propTypes = {
   onDateChange: PropTypes.func.isRequired,
   pageTitle: PropTypes.string.isRequired,
   selectedDay: PropTypes.string.isRequired,
+  storedDates: PropTypes.any,
   subTitle: PropTypes.string
 };
 

@@ -8,6 +8,7 @@ import calendarDatesUtils from '../../utils/calendarDatesUtils';
 import classNames from 'classnames';
 
 import './MiniCalendar.css';
+import withDatesSubscription from '../Hocs/withDatesSubscription';
 
 const CONTROLS = {
   PREV: 'PREV',
@@ -79,8 +80,10 @@ class MiniCalendar extends Component {
 
       const dayString = dayMoment.format('YYYY-MM-DD');
 
-      const daysEventsCount = calendarDatesUtils.getEventsForDate(dayString)
-        .length;
+      const daysEventsCount = calendarDatesUtils.getEventsForDate(
+        this.props.storedDates,
+        dayString
+      ).length;
 
       const isOtherMonth = !dayMoment.isSame(selectedDay, 'month');
       const isSelectedDay = dayMoment.isSame(selectedDay, 'day');
@@ -194,6 +197,7 @@ MiniCalendar.propTypes = {
   onDateChange: PropTypes.func,
   onDateClick: PropTypes.func,
   selectedDay: PropTypes.string,
+  storedDates: PropTypes.any,
   yearDisplayMode: PropTypes.bool
 };
 
@@ -204,4 +208,4 @@ MiniCalendar.defaultProps = {
   yearDisplayMode: false
 };
 
-export default MiniCalendar;
+export default withDatesSubscription(MiniCalendar);

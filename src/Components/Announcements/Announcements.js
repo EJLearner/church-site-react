@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import moment from 'moment';
 import _ from 'lodash';
 
 import './Announcements.css';
-import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
+import withDatesSubscription from '../Hocs/withDatesSubscription';
 
 class Announcements extends Component {
   getFormattedDaysEvents(dayEvents) {
@@ -53,7 +54,7 @@ class Announcements extends Component {
   }
 
   getFormattedAnnouncements(quantity) {
-    const allDates = calendarDatesUtils.getAllDates();
+    const allDates = this.props.storedDates;
     const datesAsArray = _.map(allDates, (dateObject, dateString) => {
       dateObject.date = dateString;
       return dateObject;
@@ -126,4 +127,8 @@ class Announcements extends Component {
   }
 }
 
-export default Announcements;
+Announcements.propTypes = {
+  storedDates: PropTypes.any
+};
+
+export default withDatesSubscription(Announcements);

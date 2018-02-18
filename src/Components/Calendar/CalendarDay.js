@@ -7,6 +7,7 @@ import _ from 'lodash';
 import moment from 'moment';
 
 import EventsListPage from './EventsListPage';
+import withDatesSubscription from '../Hocs/withDatesSubscription';
 
 class CalendarDay extends Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class CalendarDay extends Component {
         onDateChange={this._onDateChange}
         pageTitle="Today’s Events"
         selectedDay={this.state.selectedDay}
+        storedDates={this.props.storedDates}
       />
     );
   }
@@ -41,11 +43,12 @@ class CalendarDay extends Component {
 
 CalendarDay.propTypes = {
   location: PropTypes.object.isRequired,
-  selectedDay: PropTypes.string
+  selectedDay: PropTypes.string,
+  storedDates: PropTypes.any
 };
 
 CalendarDay.defaultProps = {
   selectedDay: moment().format('YYYY-MM-DD')
 };
 
-export default withRouter(CalendarDay);
+export default withRouter(withDatesSubscription(CalendarDay));

@@ -1,7 +1,41 @@
-import React from 'react';
-
 import _ from 'lodash';
 
+import firebase from '../firebase';
+
+let datesStore = {};
+const callbacks = {};
+
+const callAllCallbacks = () => {
+  _.forEach(callbacks, callback => {
+    callback();
+  });
+};
+
+const loadDates = () => {
+  // FBH get a reference for the 'dates' top level prop of the data
+  const datesRef = firebase.database().ref('dates');
+
+  // FBH add a listener to the dates object, update on value change (guessing)
+  // listener gets the dates object using snapshot.val();
+  // then pushes the udpated date object into the state
+  datesRef.on('value', snapshot => {
+    const retrievedDates = snapshot.val();
+    const newState = {};
+
+    _.forEach(retrievedDates, (date, key) => {
+      // make an array of events
+      const events = _.map(date.events, event => event);
+      _.set(newState, `${key}.events`, events);
+    });
+
+    datesStore = newState;
+    callAllCallbacks();
+  });
+};
+
+loadDates();
+
+/*
 const dates = {
   '2018-02-04': {
     events: [{title: 'Sunday Church Service', timeStart: '2018-02-04T09:00:00'}]
@@ -38,31 +72,31 @@ const dates = {
       }
     ]
   },
-  '2018-02-25': {
-    events: [
-      {title: 'Sunday Church Service', timeStart: '2018-02-25T09:00:00'},
-      {
-        followsWorship: true,
-        isAnnouncement: true,
-        longDescription: (
-          <span>
-            Come and celebrate
-            <i>“A Blast From Our Past”</i> The Christian Ed Ministry will
-            recognize African American poets, musicians and famous designers on
-            February 25, 2018, following the morning worship service. Lunch will
-            be served. Open mic poetry, instrumental musical selection or song
-            and a run way walk for those who’d like to show off their African
-            Attire. Children of all ages are welcome to express improvisational
-            forms of art. Please see April Jones or Davina Morton if you’d like
-            to share a poem or perform a musical selection. You do not want to
-            miss this event!
-          </span>
-        ),
-        timeStart: '2018-02-25T11:00:00',
-        title: 'A Blast from Our Past!'
-      }
-    ]
-  },
+  // '2018-02-25': {
+  //   events: [
+  //     {title: 'Sunday Church Service', timeStart: '2018-02-25T09:00:00'},
+  //     {
+  //       followsWorship: true,
+  //       isAnnouncement: true,
+  //       longDescription: (
+  //         <span>
+  //           Come and celebrate
+  //           <i>“A Blast From Our Past”</i> The Christian Ed Ministry will
+  //           recognize African American poets, musicians and famous designers on
+  //           February 25, 2018, following the morning worship service. Lunch will
+  //           be served. Open mic poetry, instrumental musical selection or song
+  //           and a run way walk for those who’d like to show off their African
+  //           Attire. Children of all ages are welcome to express improvisational
+  //           forms of art. Please see April Jones or Davina Morton if you’d like
+  //           to share a poem or perform a musical selection. You do not want to
+  //           miss this event!
+  //         </span>
+  //       ),
+  //       timeStart: '2018-02-25T11:00:00',
+  //       title: 'A Blast from Our Past!'
+  //     }
+  //   ]
+  // },
 
   '2018-02-26': {
     events: [
@@ -100,12 +134,12 @@ const dates = {
       'Palm Sunday'
     ]
   },
-  '2018-04-01': {
-    events: [
-      {title: 'Sunday Church Service', timeStart: '2018-02-01T09:00:00'},
-      'Easter Sunday'
-    ]
-  },
+  // '2018-04-01': {
+  //   events: [
+  //     {title: 'Sunday Church Service', timeStart: '2018-02-01T09:00:00'},
+  //     'Easter Sunday'
+  //   ]
+  // },
   '2018-01-01': {
     events: ['New Year’s Day']
   },
@@ -212,14 +246,15 @@ const dates = {
     events: ['Father’s Day']
   }
 };
+*/
 
 const calendarDatesUtils = {
-  getAllDates: () => dates,
+  getAllDates: () => datesStore,
 
-  getEventsForDate: dateString => {
-    // return dates['2018-01-18'].events || [];
+  getEventsForDate: (allDates, dateString) => {
+    // return datesStore['2018-01-18'].events || [];
 
-    const dateObject = dates[dateString];
+    const dateObject = allDates[dateString];
     const unsortedEvents = (dateObject && dateObject.events) || [];
 
     return unsortedEvents.sort((a, b) => {
@@ -238,19 +273,12 @@ const calendarDatesUtils = {
     });
   },
 
-  getRenderedEventsForDateMonthView: dateString => {
-    const dayEvents = calendarDatesUtils.getEventsForDate(dateString);
+  listen: (id, callback) => {
+    return (callbacks[id] = callback);
+  },
 
-    return _.map(dayEvents, (event, index, allEvents) => {
-      const title = event.title || event;
-
-      return (
-        <div key={index}>
-          <span>{title}</span>
-          {event === _.last(allEvents) ? null : <hr />}
-        </div>
-      );
-    });
+  unlisten: id => {
+    delete callbacks[id];
   }
 };
 

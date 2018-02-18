@@ -1,15 +1,12 @@
-import _ from 'lodash';
 import React, {Component} from 'react';
 
 import slidePictureData from '../../utils/slidePictureData';
 
-import Text from '../Reusable/Text/Text';
-import Button from '../Reusable/Button/Button';
+// import Text from '../Reusable/Text/Text';
+// import Button from '../Reusable/Button/Button';
 
 import Slider from '../Slider/Slider';
 import HomeSquares from '../HomeSquares/HomeSquares';
-
-import firebase, {auth, provider} from '../../firebase';
 
 class Home extends Component {
   constructor(props) {
@@ -17,13 +14,16 @@ class Home extends Component {
 
     this.state = {name: '', item: '', items: [], removeKey: '', user: null};
 
+    /*
     this._onChange = this._onChange.bind(this);
     this._submit = this._submit.bind(this);
     this._removeItem = this._removeItem.bind(this);
     this._login = this._login.bind(this);
     this._logout = this._logout.bind(this);
+*/
   }
 
+  /*
   componentDidMount() {
     // FBH get a reference for the 'items' top level prop of the data
     const itemsRef = firebase.database().ref('items');
@@ -108,6 +108,7 @@ class Home extends Component {
       this.setState({user: null});
     });
   }
+*/
 
   render() {
     const slidePictures = slidePictureData.getPictures();
