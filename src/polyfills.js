@@ -1,5 +1,6 @@
 /* eslint-disable no-extend-native */
 // https://tc39.github.io/ecma262/#sec-array.prototype.find
+// used in multiple places
 if (!Array.prototype.find) {
   Object.defineProperty(Array.prototype, 'find', {
     value: function(predicate) {
@@ -42,6 +43,13 @@ if (!Array.prototype.find) {
       return undefined;
     }
   });
+}
+
+// used in firebase code
+if (!String.prototype.startsWith) {
+  String.prototype.startsWith = function(search, pos) {
+    return this.substr(!pos || pos < 0 ? 0 : +pos, search.length) === search;
+  };
 }
 
 module.exports = {};
