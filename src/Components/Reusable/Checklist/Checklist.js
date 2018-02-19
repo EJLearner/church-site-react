@@ -36,7 +36,13 @@ const Checklist = props => {
 };
 
 Checklist.propTypes = {
-  checklistItems: PropTypes.arrayOf(PropTypes.object),
+  checklistItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      checked: PropTypes.bool.isRequired,
+      label: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired
+    })
+  ).isRequired,
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
