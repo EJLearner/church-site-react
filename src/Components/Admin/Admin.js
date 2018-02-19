@@ -1,15 +1,10 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import {Redirect} from 'react-router';
-import {withRouter} from 'react-router-dom';
 
-import moment from 'moment';
 import firebase, {auth, provider} from '../../firebase';
 
 import Text from '../Reusable/Text/Text';
 import Button from '../Reusable/Button/Button';
-
-import _ from 'lodash';
+import Checklist from '../Reusable/Checklist/Checklist';
 
 import './Admin.css';
 
@@ -17,7 +12,19 @@ class Admin extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {name: '', item: '', items: [], removeKey: '', user: null};
+    this.state = {
+      announcement: false,
+      followsWorship: false,
+      name: '',
+      date: '',
+      dates: {},
+      longDescription: '',
+      removeKey: '',
+      timeEnd: '',
+      timeStart: '',
+      title: '',
+      user: null
+    };
 
     this._onChange = this._onChange.bind(this);
     this._submit = this._submit.bind(this);
@@ -27,26 +34,17 @@ class Admin extends Component {
   }
 
   componentDidMount() {
-    // FBH get a reference for the 'items' top level prop of the data
-    const itemsRef = firebase.database().ref('items');
+    // FBH get a reference for the 'dates' top level prop of the data
+    const datesRef = firebase.database().ref('dates');
 
-    // FBH add a listener to the items object, update on value change (guessing)
-    // listener gets the items object using snapshot.val();
-    // then pushes the udpated item object into the state
-    itemsRef.on('value', snapshot => {
-      const items = snapshot.val();
-      const newState = [];
-
-      _.forEach(items, (item, key) => {
-        newState.push({
-          id: key,
-          title: item.title,
-          user: item.user
-        });
-      });
+    // FBH add a listener to the dates object, update on value change (guessing)
+    // listener gets the dates object using snapshot.val();
+    // then pushes the udpated date object into the state
+    datesRef.on('value', snapshot => {
+      const dates = snapshot.val();
 
       this.setState({
-        items: newState
+        dates
       });
     });
 
@@ -63,39 +61,55 @@ class Admin extends Component {
   }
 
   _submit() {
-    // FBH get 'items' reference from firebase
-    const itemsRef = firebase.database().ref('items');
+    // FBH get 'dates' reference from firebase
+    const {
+      date,
+      title,
+      timeStart,
+      timeEnd,
+      longDescription,
+      followsWorship,
+      isAnnouncement
+    } = this.state;
 
-    // make new item object
-    const item = {
-      title: this.state.item,
-      user: this.state.name
-    };
+    if (date && title) {
+      const dateRef = firebase.database().ref(`dates/${date}/events`);
 
-    // push item object into 'items' reference
-    itemsRef.push(item);
+      // make new date object
+      const event = {
+        title: title,
+        timeStart: timeStart || null,
+        timeEnd: timeEnd || null,
+        longDescription: longDescription || null,
+        followsWorship: followsWorship || null,
+        isAnnouncement: isAnnouncement || null
+      };
 
-    // reset textboxes to empty
-    this.setState({
-      item: '',
-      name: ''
-    });
+      // push date object into 'dates' reference
+
+      dateRef.push(event);
+
+      // reset textboxes to empty
+      this.setState({
+        date: '',
+        title: '',
+        timeStart: '',
+        timeEnd: '',
+        longDescription: '',
+        followsWorship: false,
+        isAnnouncement: false
+      });
+    }
   }
 
   _removeItem() {
-    // FBH get specific item reference from firebase using key
-    const itemRef = firebase.database().ref(`/items/${this.state.removeKey}`);
-    itemRef.remove();
+    // FBH get specific date reference from firebase using key
+    const dateRef = firebase.database().ref(`/dates/${this.state.removeKey}`);
+    dateRef.remove();
   }
 
   _renderItems() {
-    return this.state.items.map(item => {
-      return (
-        <div key={item.id}>
-          {item.id} {item.title} {item.user}
-        </div>
-      );
-    });
+    return <pre>{JSON.stringify(this.state.dates, null, 4)}</pre>;
   }
 
   _login() {
@@ -111,6 +125,21 @@ class Admin extends Component {
     });
   }
 
+  _getOptionsList() {
+    return [
+      {
+        checked: this.state.announcement,
+        label: 'Announcement',
+        value: 'announcement'
+      },
+      {
+        checked: this.state.followsWorship,
+        label: 'Immediately Follows Worship',
+        value: 'followsWorship'
+      }
+    ];
+  }
+
   render() {
     return (
       <div>
@@ -121,18 +150,50 @@ class Admin extends Component {
         )}
         <p>Add Item</p>
         <Text
-          id="name"
-          label="name"
+          id="date"
+          label="Date"
           onChange={this._onChange}
-          value={this.state.name}
+          value={this.state.date}
         />
         <Text
-          id="item"
-          label="item"
+          id="title"
+          label="Title"
           onChange={this._onChange}
-          value={this.state.item}
+          value={this.state.title}
         />
-        <Button onClick={this._submit}>Submit</Button>
+        <Text
+          id="timeStart"
+          label="Start Time"
+          onChange={this._onChange}
+          value={this.state.timeStart}
+        />
+        <Text
+          id="timeEnd"
+          label="End Time"
+          onChange={this._onChange}
+          value={this.state.timeEnd}
+        />
+        <div>
+          <Text
+            columns={80}
+            id="longDescription"
+            label="Long Description"
+            onChange={this._onChange}
+            textArea
+            value={this.state.longDescription}
+          />
+        </div>
+
+        <Checklist
+          checklistItems={this._getOptionsList()}
+          id="options-checklist"
+          label="Options"
+          onChange={this._onChange}
+        />
+
+        <div>
+          <Button onClick={this._submit}>Submit</Button>
+        </div>
         <p>Remove Item</p>
         <Text
           id="removeKey"
@@ -146,13 +207,5 @@ class Admin extends Component {
     );
   }
 }
-
-Admin.defaultProps = {
-  moreStuff: 'Default more stuff'
-};
-
-Admin.propTypes = {
-  moreStuff: PropTypes.string
-};
 
 export default Admin;
