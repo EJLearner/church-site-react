@@ -23,7 +23,7 @@ const Text = props => {
   const textArea = (
     <textarea
       aria-labelledby={labelId}
-      cols={props.size}
+      cols={props.columns}
       id={props.id}
       onChange={_onChange}
       rows={props.rows}
@@ -50,6 +50,7 @@ Text.defaultProps = {
 };
 
 Text.propTypes = {
+  columns: PropTypes.number,
   id: PropTypes.string,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
