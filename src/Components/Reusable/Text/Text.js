@@ -15,6 +15,7 @@ const Text = props => {
       aria-labelledby={labelId}
       id={props.id}
       onChange={_onChange}
+      placeholder={props.placeholder}
       size={props.size}
       value={props.value}
     />
@@ -26,6 +27,7 @@ const Text = props => {
       cols={props.columns}
       id={props.id}
       onChange={_onChange}
+      placeholder={props.placeholder}
       rows={props.rows}
       value={props.value}
     />
@@ -54,6 +56,7 @@ Text.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
   required: PropTypes.bool,
   rows: PropTypes.number,
   size: PropTypes.number,
