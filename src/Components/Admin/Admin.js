@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import firebase, {auth, provider} from '../../firebase';
+import moment from 'moment';
 
 import Text from '../Reusable/Text/Text';
 import Button from '../Reusable/Button/Button';
@@ -27,6 +28,7 @@ class Admin extends Component {
     };
 
     this._onChange = this._onChange.bind(this);
+    this._getTime = this._getTime.bind(this);
     this._submit = this._submit.bind(this);
     this._removeItem = this._removeItem.bind(this);
     this._login = this._login.bind(this);
@@ -60,30 +62,59 @@ class Admin extends Component {
     this.setState({[id]: value});
   }
 
+  _getTime(type) {
+    const {date, timeStart, timeEnd} = this.state;
+
+    const time = type === 'start' ? timeStart : timeEnd;
+
+    if (time) {
+      const timeMoment = time ? moment(time, 'h:mm a', true) : null;
+
+      if (timeMoment.isValid()) {
+        const dateTimeMoment = moment(date, 'YYYY-MM-DD').set({
+          hour: timeMoment.hour(),
+          minute: timeMoment.minute()
+        });
+
+        return dateTimeMoment.format('YYYY-MM-DDTHH:mm:ss');
+      }
+    }
+
+    return time ? false : null;
+  }
+
+  _isValid(event) {
+    const {title, timeStart, timeEnd} = event;
+
+    return title && timeStart !== false && timeEnd !== false;
+  }
+
   _submit() {
     // FBH get 'dates' reference from firebase
     const {
       date,
       title,
-      timeStart,
-      timeEnd,
       longDescription,
       followsWorship,
       isAnnouncement
     } = this.state;
 
-    if (date && title) {
-      const dateRef = firebase.database().ref(`dates/${date}/events`);
+    const hasValidDate = moment(date, 'YYYY-MM-DD', true).isValid();
 
-      // make new date object
-      const event = {
-        title: title,
-        timeStart: timeStart || null,
-        timeEnd: timeEnd || null,
-        longDescription: longDescription || null,
-        followsWorship: followsWorship || null,
-        isAnnouncement: isAnnouncement || null
-      };
+    // make new date object
+    const event = {
+      title: title,
+      timeStart: this._getTime('start'),
+      timeEnd: this._getTime('end'),
+      longDescription: longDescription || null,
+      followsWorship: followsWorship || null,
+      isAnnouncement: isAnnouncement || null
+    };
+
+    const isDataValid = this._isValid(event) && hasValidDate;
+
+    if (isDataValid) {
+      const dateRef = firebase.database().ref(`dates/${date}/events`);
 
       // push date object into 'dates' reference
 
@@ -141,18 +172,15 @@ class Admin extends Component {
   }
 
   render() {
-    return (
+    return this.state.user ? (
       <div>
-        {this.state.user ? (
-          <Button onClick={this._logout}>Log out</Button>
-        ) : (
-          <Button onClick={this._login}>Log in</Button>
-        )}
+        <Button onClick={this._logout}>Log out</Button>
         <p>Add Item</p>
         <Text
           id="date"
           label="Date"
           onChange={this._onChange}
+          placeholder="YYYY-MM-DD"
           value={this.state.date}
         />
         <Text
@@ -165,12 +193,14 @@ class Admin extends Component {
           id="timeStart"
           label="Start Time"
           onChange={this._onChange}
+          placeholder="HH:MM am"
           value={this.state.timeStart}
         />
         <Text
           id="timeEnd"
           label="End Time"
           onChange={this._onChange}
+          placeholder="HH:MM am"
           value={this.state.timeEnd}
         />
         <div>
@@ -204,6 +234,8 @@ class Admin extends Component {
         <Button onClick={this._removeItem}>Remove</Button>
         <div>{this._renderItems()}</div>
       </div>
+    ) : (
+      <Button onClick={this._login}>Log in</Button>
     );
   }
 }
