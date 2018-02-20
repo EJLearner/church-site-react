@@ -13,7 +13,7 @@ class Admin extends Component {
     super(props);
 
     this.state = {
-      announcement: false,
+      isAnnouncement: false,
       followsWorship: false,
       name: '',
       date: '',
@@ -128,9 +128,9 @@ class Admin extends Component {
   _getOptionsList() {
     return [
       {
-        checked: this.state.announcement,
+        checked: this.state.isAnnouncement,
         label: 'Announcement',
-        value: 'announcement'
+        value: 'isAnnouncement'
       },
       {
         checked: this.state.followsWorship,
