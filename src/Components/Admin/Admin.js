@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, {Component} from 'react';
 
 import firebase, {auth, provider} from '../../firebase';
@@ -133,14 +134,62 @@ class Admin extends Component {
     }
   }
 
-  _removeItem() {
+  _removeItem(dateString, key) {
     // FBH get specific date reference from firebase using key
-    const dateRef = firebase.database().ref(`/dates/${this.state.removeKey}`);
-    dateRef.remove();
+    const dateRef = firebase
+      .database()
+      .ref(`/dates/${dateString}/events/${key}`);
+
+    dateRef.once('value', snapshot => {
+      const value = snapshot.val();
+
+      const title = typeof value === 'string' ? value : value.title;
+
+      if (
+        window.confirm(
+          `Are you sure you want to delete the event titled ${title}?`
+        )
+      ) {
+        dateRef.remove();
+      }
+    });
   }
 
   _renderItems() {
-    return <pre>{JSON.stringify(this.state.dates, null, 4)}</pre>;
+    const rows = [];
+
+    const getTime = dateTime => (dateTime ? dateTime.substring(11) : '');
+
+    _.forEach(this.state.dates, (date, dateString) => {
+      _.forEach(date.events, (event, key) => {
+        const eventObject = typeof event === 'string' ? {title: event} : event;
+        const {
+          title,
+          timeStart,
+          timeEnd,
+          shortDescription,
+          longDescription
+        } = eventObject;
+
+        rows.push(
+          <div className="event-item" key={dateString + title}>
+            <strong>{title}</strong>
+            <ul>
+              <li>Date: {dateString}</li>
+              <li>Start: {getTime(timeStart)}</li>
+              <li>End: {getTime(timeEnd)}</li>
+              <li>Short Description: {shortDescription}</li>
+              <li>Long Description: {longDescription}</li>
+            </ul>
+            <Button onClick={_.partial(this._removeItem, dateString, key)}>
+              Remove
+            </Button>
+          </div>
+        );
+      });
+    });
+
+    return <div>{rows}</div>;
   }
 
   _login() {
@@ -173,7 +222,8 @@ class Admin extends Component {
 
   render() {
     return this.state.user ? (
-      <div>
+      <div className="admin-page">
+        Logged in as {this.state.user.displayName}{' '}
         <Button onClick={this._logout}>Log out</Button>
         <p>Add Item</p>
         <Text
@@ -213,29 +263,21 @@ class Admin extends Component {
             value={this.state.longDescription}
           />
         </div>
-
         <Checklist
           checklistItems={this._getOptionsList()}
           id="options-checklist"
           label="Options"
           onChange={this._onChange}
         />
-
         <div>
           <Button onClick={this._submit}>Submit</Button>
         </div>
-        <p>Remove Item</p>
-        <Text
-          id="removeKey"
-          label="Key of Item To Remove"
-          onChange={this._onChange}
-          value={this.state.removeKey}
-        />
-        <Button onClick={this._removeItem}>Remove</Button>
         <div>{this._renderItems()}</div>
       </div>
     ) : (
-      <Button onClick={this._login}>Log in</Button>
+      <div className="admin-page">
+        <Button onClick={this._login}>Log in</Button>
+      </div>
     );
   }
 }
