@@ -159,6 +159,14 @@ class Admin extends Component {
     const rows = [];
 
     const getTime = dateTime => (dateTime ? dateTime.substring(11) : '');
+    const listOptions = event => {
+      const options = ['isAnnouncement', 'followsWorship'];
+      const enabledOptions = options.filter(option => {
+        return event[option];
+      });
+
+      return enabledOptions.join(', ');
+    };
 
     _.forEach(this.state.dates, (date, dateString) => {
       _.forEach(date.events, (event, key) => {
@@ -180,6 +188,7 @@ class Admin extends Component {
               <li>End: {getTime(timeEnd)}</li>
               <li>Short Description: {shortDescription}</li>
               <li>Long Description: {longDescription}</li>
+              <li>Options: {listOptions(event)}</li>
             </ul>
             <Button onClick={_.partial(this._removeItem, dateString, key)}>
               Remove
