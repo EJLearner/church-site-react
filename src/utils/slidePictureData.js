@@ -58,8 +58,8 @@ const allPictures = [
       'character and learn to put into practice the selfless truths taught by the Savior Himself. Quote from Robert Faust' +
       'Mother’s Day Service May 13' +
       'Father’s Day Service June 17',
-    displayBeg: '2018-02-25',
-    displayEnd: '2018-05-01',
+    displayBeg: '2018-05-01',
+    displayEnd: '2018-06-20',
     source: require('../assets/images/slides/christian-ed-home-mothers-fathers.png')
   },
   {
