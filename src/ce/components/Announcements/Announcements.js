@@ -105,7 +105,7 @@ class Announcements extends Component {
         <Link
           key={displayedDate}
           to={{
-            pathname: `calendar/day/`,
+            pathname: `/calendar/day`,
             state: {selectedDay: dateString}
           }}
         >

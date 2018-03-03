@@ -2,6 +2,8 @@ import {Link} from 'react-router-dom';
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import routePaths from '../../../routePaths';
+
 import Announcements from '../Announcements/Announcements.js';
 
 import './HomeSquares.css';
@@ -37,7 +39,7 @@ const HomeSquares = props => {
         <img alt="Children" src={kidsPic} />
       </HomeSquare>
 
-      <HomeSquare linkTo="/who" title="Leadership">
+      <HomeSquare linkTo={routePaths.CE_WHO} title="Leadership">
         <img alt="Leadership" src={leadershipPic} />
       </HomeSquare>
 

@@ -3,6 +3,8 @@ import {Route} from 'react-router-dom';
 
 import moment from 'moment';
 
+import routePaths from '../../../routePaths';
+
 import CalendarDay from './CalendarDay';
 import CalendarMonth from './CalendarMonth';
 import CalendarWeek from './CalendarWeek';
@@ -53,28 +55,28 @@ class Calendar extends Component {
 
     const linkData = [
       {
-        path: '/calendar/day',
+        path: routePaths.CE_CALENDAR_DAY,
         render: <CalendarDay />,
         text: 'Day View'
       },
       {
-        path: '/calendar/week',
+        path: routePaths.CE_CALENDAR_WEEK,
         render: <CalendarWeek />,
         text: `Week View`
       },
       {
         isDefault: true,
-        path: '/calendar/month',
+        path: routePaths.CE_CALENDAR_MONTH,
         render: <CalendarMonth />,
         text: `Month View`
       },
       {
-        path: '/calendar/year',
+        path: routePaths.CE_CALENDAR_YEAR,
         render: <CalendarYear />,
         text: 'Year View'
       },
       {
-        path: '/calendar/upcoming',
+        path: routePaths.CE_CALENDAR_UPCOMING,
         render: <CalendarUpcoming />,
         text: 'Upcoming'
       }

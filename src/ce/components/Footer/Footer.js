@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
+import routePaths from '../../../routePaths';
+
 import './Footer.css';
 
 class Footer extends Component {
@@ -15,13 +17,13 @@ class Footer extends Component {
               <h3>About Us</h3>
               <ul>
                 <li>
-                  <Link to="/who">Who We Are</Link>
+                  <Link to={routePaths.CE_WHO}>Who We Are</Link>
                 </li>
                 <li>
-                  <Link to="/why">Why We Are Here</Link>
+                  <Link to={routePaths.CE_WHY}>Why We Are Here</Link>
                 </li>
                 <li>
-                  <Link to="/where">Where Are We Going</Link>
+                  <Link to={routePaths.CE_WHERE}>Where Are We Going</Link>
                 </li>
               </ul>
             </div>
@@ -29,10 +31,10 @@ class Footer extends Component {
               <h3>Learn More</h3>
               <ul>
                 <li>
-                  <Link to="/what">What's In Store</Link>
+                  <Link to={routePaths.CE_WHAT}>What’s In Store</Link>
                 </li>
                 <li>
-                  <a href="http://www.thecitytemple.org/blog/">Pastor's Blog</a>
+                  <a href="http://www.thecitytemple.org/blog/">Pastor’s Blog</a>
                 </li>
                 <li>
                   <a href="http://www.thecitytemple.org/aboutpage.php?p=membership">
@@ -45,7 +47,9 @@ class Footer extends Component {
               <h3>Participate</h3>
               <ul>
                 <li>
-                  <Link to="/ideaform">Tell Us What You Think</Link>
+                  <Link to={routePaths.CE_IDEA_FORM}>
+                    Tell Us What You Think
+                  </Link>
                 </li>
                 <li>
                   <a href="http://www.thecitytemple.org/submenu.php?p=giving">

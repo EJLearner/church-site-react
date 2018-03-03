@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
+import routePaths from './routePaths';
+
 import Admin from './ce/components/Admin/Admin';
 import Calendar from './ce/components/Calendar/Calendar';
 import CcRegistrationChild from './ce/components/RegistrationPages/CcRegistrationChild';
@@ -33,19 +35,19 @@ class Routes extends Component {
         text: 'Home'
       },
       {
-        path: '/who',
+        path: routePaths.CE_WHO,
         text: `Who We are`
       },
       {
-        path: '/why',
+        path: routePaths.CE_WHY,
         text: `Why We Are Here`
       },
       {
-        path: '/where',
+        path: routePaths.CE_WHERE,
         text: `Where We Are Going`
       },
       {
-        path: '/ideaform',
+        path: routePaths.CE_IDEA_FORM,
         text: `Tell Us What You Think`
       }
     ];
@@ -88,39 +90,6 @@ class Routes extends Component {
             )}
           />
           <Route
-            path="/admin"
-            render={() => (
-              <BareCePage>
-                <Admin />
-              </BareCePage>
-            )}
-          />
-          <Route component={Calendar} path="/calendar" />
-          <Route
-            path="/cc-registration-child"
-            render={() => (
-              <BareCePage>
-                <CcRegistrationChild />
-              </BareCePage>
-            )}
-          />
-          <Route
-            path="/cc-registration-landing"
-            render={() => (
-              <BareCePage>
-                <CcRegistrationLanding />
-              </BareCePage>
-            )}
-          />
-          <Route
-            path="/cc-registration-volunteer"
-            render={() => (
-              <BareCePage>
-                <CcRegistrationVolunteer />
-              </BareCePage>
-            )}
-          />
-          <Route
             path="/christianedu.html"
             render={() => (
               <FullCePage>
@@ -129,7 +98,40 @@ class Routes extends Component {
             )}
           />
           <Route
-            path="/ideaform"
+            path={routePaths.ADMIN}
+            render={() => (
+              <BareCePage>
+                <Admin />
+              </BareCePage>
+            )}
+          />
+          <Route component={Calendar} path={routePaths.CE_CALENDAR} />
+          <Route
+            path={routePaths.CE_CC_REG_CHILD}
+            render={() => (
+              <BareCePage>
+                <CcRegistrationChild />
+              </BareCePage>
+            )}
+          />
+          <Route
+            path={routePaths.CE_CC_REG_LANDING}
+            render={() => (
+              <BareCePage>
+                <CcRegistrationLanding />
+              </BareCePage>
+            )}
+          />
+          <Route
+            path={routePaths.CE_CC_REG_VOLUNTEER}
+            render={() => (
+              <BareCePage>
+                <CcRegistrationVolunteer />
+              </BareCePage>
+            )}
+          />
+          <Route
+            path={routePaths.CE_IDEA_FORM}
             render={() => (
               <FullCePage>
                 <IdeaForm />
@@ -137,7 +139,7 @@ class Routes extends Component {
             )}
           />
           <Route
-            path="/vbs-registration-child"
+            path={routePaths.CE_VBS_REG_CHILD}
             render={() => (
               <BareCePage>
                 <VbsRegistrationChild />
@@ -145,7 +147,7 @@ class Routes extends Component {
             )}
           />
           <Route
-            path="/vbs-registration-landing"
+            path={routePaths.CE_VBS_REG_LANDING}
             render={() => (
               <BareCePage>
                 <VbsRegistrationLanding />
@@ -153,7 +155,7 @@ class Routes extends Component {
             )}
           />
           <Route
-            path="/vbs-registration-volunteer"
+            path={routePaths.CE_VBS_REG_VOLUNTEER}
             render={() => (
               <BareCePage>
                 <VbsRegistrationVolunteer />
@@ -161,7 +163,7 @@ class Routes extends Component {
             )}
           />
           <Route
-            path="/vision"
+            path={routePaths.CE_VISION}
             render={() => (
               <FullCePage>
                 <Vision />
@@ -169,7 +171,7 @@ class Routes extends Component {
             )}
           />
           <Route
-            path="/who"
+            path={routePaths.CE_WHO}
             render={() => (
               <FullCePage>
                 <WhoWeAre />
@@ -177,7 +179,7 @@ class Routes extends Component {
             )}
           />
           <Route
-            path="/why"
+            path={routePaths.CE_WHY}
             render={() => (
               <FullCePage>
                 <Why />
@@ -185,7 +187,7 @@ class Routes extends Component {
             )}
           />
           <Route
-            path="/where"
+            path={routePaths.CE_WHERE}
             render={() => (
               <FullCePage>
                 <Where />
@@ -193,7 +195,7 @@ class Routes extends Component {
             )}
           />
           <Route
-            path="/youth"
+            path={routePaths.CE_YOUTH}
             render={() => (
               <FullCePage>
                 <Youth />
