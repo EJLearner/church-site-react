@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Redirect} from 'react-router';
 
+import routePaths from '../../../routePaths';
+
 import moment from 'moment';
 import _ from 'lodash';
 
@@ -60,7 +62,7 @@ class CalendarYear extends Component {
       <Redirect
         push
         to={{
-          pathname: `/calendar/day`,
+          pathname: routePaths.CE_CALENDAR_DAY,
           state: {selectedDay: this.state.redirectDate}
         }}
       />

@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import routePaths from '../../../routePaths';
+
 import moment from 'moment';
 import _ from 'lodash';
 
@@ -105,7 +107,7 @@ class Announcements extends Component {
         <Link
           key={displayedDate}
           to={{
-            pathname: `/calendar/day`,
+            pathname: routePaths.CE_CALENDAR_DAY,
             state: {selectedDay: dateString}
           }}
         >

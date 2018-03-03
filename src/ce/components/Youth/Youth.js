@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import routePaths from '../../../routePaths';
+
 import CePageLayoutA from '../Reusable/CePageLayoutA';
 
 import Ushers from './Ushers';
@@ -17,27 +19,27 @@ class Youth extends Component {
     return [
       {
         isDefault: true,
-        path: '/youth/ushers',
+        path: routePaths.CE_YOUTH_USHERS,
         render: <Ushers />,
         text: 'Youth and Junior Usher Ministry'
       },
       {
-        path: '/youth/godsgifts',
+        path: routePaths.CE_YOUTH_GODS_GIFTS,
         render: <GodsGifts />,
         text: 'God’s Gifts'
       },
       {
-        path: '/youth/sundayschool',
+        path: routePaths.CE_YOUTH_SUNDAY_SCHOOL,
         render: <SundaySchool />,
         text: 'Sunday School'
       },
       {
-        path: '/youth/childrenschurch',
+        path: routePaths.CE_YOUTH_CHILDRENS_CHURCH,
         render: <ChildrensChurch />,
         text: 'Children’s Church'
       },
       {
-        path: '/youth/vacationbibleschool',
+        path: routePaths.CE_YOUTH_VACATION_BIBLE_SCHOOL,
         render: <VacationBibleSchool />,
         text: 'Vacation Bible School'
       }

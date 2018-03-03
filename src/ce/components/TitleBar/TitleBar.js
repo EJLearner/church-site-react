@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
+import routePaths from '../../../routePaths';
+
 import LoginControl from '../LoginControl/LoginControl';
 
 import './TitleBar.css';
@@ -10,7 +12,7 @@ class TitleBar extends Component {
     return (
       <div id="titlebar">
         <div id="website-title">
-          <Link to="/">
+          <Link to={routePaths.CE_HOME}>
             The City Temple of Baltimore (Baptist) Christian Education Ministry
           </Link>
         </div>

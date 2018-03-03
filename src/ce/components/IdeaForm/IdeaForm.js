@@ -3,6 +3,8 @@ import {Redirect} from 'react-router';
 
 import _ from 'lodash';
 
+import routePaths from '../../../routePaths';
+
 import Button from '../Reusable/Button/Button';
 import Text from '../Reusable/Text/Text';
 
@@ -259,7 +261,7 @@ class IdeaForm extends Component {
 
   render() {
     if (this.state.redirect) {
-      return <Redirect push to="/" />;
+      return <Redirect push to={routePaths.CE_HOME} />;
     }
 
     if (this.state.showThanksMessage) {

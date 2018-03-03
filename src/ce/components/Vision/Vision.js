@@ -4,6 +4,8 @@ import {Route, Switch} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 
+import routePaths from '../../../routePaths';
+
 import TheVision from './TheVision';
 import PowerPoint from './PowerPoint';
 import Participants2016 from './Participants2016';
@@ -18,21 +20,25 @@ class Vision extends Component {
     return [
       {
         isDefault: true,
-        path: '/vision/thevision',
+        path: `${routePaths.CE_VISION_THEVISION}`,
         render: <TheVision />,
         text: 'The Vision'
       },
       {
-        path: '/vision/powerpoint',
+        path: `${routePaths.CE_VISION_POWERPOINT}`,
         render: <PowerPoint />,
         text: 'PowerPoint'
       },
       {
-        path: '/vision/participants2016',
+        path: `${routePaths.CE_VISION_PARTICIPANTS_2016}`,
         render: <Participants2016 />,
         text: '2016 Leadership Retreat Participants'
       },
-      {path: '/vision/workgroups', render: <Workgroups />, text: 'Workgroups'}
+      {
+        path: `${routePaths.CE_VISION_WORKGROUPS}`,
+        render: <Workgroups />,
+        text: 'Workgroups'
+      }
     ];
   }
 

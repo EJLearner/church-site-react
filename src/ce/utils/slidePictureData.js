@@ -1,5 +1,7 @@
 import moment from 'moment';
 
+import routePaths from '../../routePaths';
+
 const getNextSaturdayBeforeFirstSunday = () => {
   const selectedSunday = moment().day(0);
 
@@ -45,7 +47,7 @@ const allPictures = [
   {
     altTag: 'Leadership prayer serviec: Every saturday before the first sunday',
     linkPath: {
-      pathname: '/calendar/day',
+      pathname: routePaths.CE_CALENDAR_DAY,
       state: {selectedDay: getNextSaturdayBeforeFirstSunday()}
     },
     source: require('../../assets/ce/images/slides/christian-ed-home-leadership-prayer.png')
