@@ -298,5 +298,3 @@ class VbsRegistrationChild extends Component {
 }
 
 export default VbsRegistrationChild;
-
-// TODO: Send the email also to Tiffany and Phyllis
