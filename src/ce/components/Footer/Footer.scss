@@ -1,0 +1,72 @@
+@import '../../../_variables.scss';
+
+// footer area
+#footerbar {
+  background-color: $gray180;
+}
+
+#footer {
+  width: 1000px;
+  margin: auto;
+  padding-bottom: 10px;
+  font-size: 70%;
+}
+
+#footerlinks {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  color: $gray77;
+  font-family: $calibri;
+}
+
+.footlinklist {
+  float: left;
+  margin: 0px 20px;
+
+  ul {
+    margin: 2px 5px;
+    padding: 0px;
+    list-style-type: none;
+
+    li {
+      margin: 0px;
+    }
+  }
+
+  h3 {
+    margin: 1em 5px 2px 5px;
+    font-size: 100%;
+    text-transform: uppercase;
+  }
+
+  a {
+    color: $gray77;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: $gray77;
+    text-decoration: none;
+  }
+}
+
+#socialcopyright {
+  margin-left: 800px;
+  padding-top: 15px;
+  font-family: $calibri;
+
+  i {
+    border-bottom: 1px solid blue;
+    padding: 3px;
+  }
+
+  p {
+    font-size: 65%;
+  }
+
+  a,
+  a:visited {
+    color: $black;
+  }
+}

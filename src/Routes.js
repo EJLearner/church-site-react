@@ -1,32 +1,32 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
-import Admin from './Components/Admin/Admin';
-import Calendar from './Components/Calendar/Calendar';
-import CcRegistrationChild from './Components/RegistrationPages/CcRegistrationChild';
-import CcRegistrationLanding from './Components/RegistrationPages/CcRegistrationLanding';
-import CcRegistrationVolunteer from './Components/RegistrationPages/CcRegistrationVolunteer';
-import CeLogo from './Components/CeLogo/CeLogo';
-import Footer from './Components/Footer/Footer';
-import Home from './Components/Home/Home';
-import IdeaForm from './Components/IdeaForm/IdeaForm';
-import MenuBar from './Components/MenuBar/MenuBar';
-import NotFound from './Components/NotFound/NotFound';
-import Quote from './Components/Quote/Quote';
-import TitleBar from './Components/TitleBar/TitleBar';
-import VbsRegistrationChild from './Components/RegistrationPages/VbsRegistrationChild';
-import VbsRegistrationLanding from './Components/RegistrationPages/VbsRegistrationLanding';
-import VbsRegistrationVolunteer from './Components/RegistrationPages/VbsRegistrationVolunteer';
-import Vision from './Components/Vision/Vision';
-import Where from './Components/Where/Where';
-import WhoWeAre from './Components/WhoWeAre/WhoWeAre';
-import Why from './Components/Why/Why';
-import Youth from './Components/Youth/Youth';
+import Admin from './ce/components/Admin/Admin';
+import Calendar from './ce/components/Calendar/Calendar';
+import CcRegistrationChild from './ce/components/RegistrationPages/CcRegistrationChild';
+import CcRegistrationLanding from './ce/components/RegistrationPages/CcRegistrationLanding';
+import CcRegistrationVolunteer from './ce/components/RegistrationPages/CcRegistrationVolunteer';
+import CeLogo from './ce/components/CeLogo/CeLogo';
+import Footer from './ce/components/Footer/Footer';
+import Home from './ce/components/Home/Home';
+import IdeaForm from './ce/components/IdeaForm/IdeaForm';
+import MenuBar from './ce/components/MenuBar/MenuBar';
+import NotFound from './ce/components/NotFound/NotFound';
+import Quote from './ce/components/Quote/Quote';
+import TitleBar from './ce/components/TitleBar/TitleBar';
+import VbsRegistrationChild from './ce/components/RegistrationPages/VbsRegistrationChild';
+import VbsRegistrationLanding from './ce/components/RegistrationPages/VbsRegistrationLanding';
+import VbsRegistrationVolunteer from './ce/components/RegistrationPages/VbsRegistrationVolunteer';
+import Vision from './ce/components/Vision/Vision';
+import Where from './ce/components/Where/Where';
+import WhoWeAre from './ce/components/WhoWeAre/WhoWeAre';
+import Why from './ce/components/Why/Why';
+import Youth from './ce/components/Youth/Youth';
 
 import './App.css';
 
 class Routes extends Component {
-  _renderFullPage(props) {
+  _renderFullCePage({children}) {
     const mainTopLinks = [
       {
         path: '/',
@@ -54,26 +54,26 @@ class Routes extends Component {
       <div id="top-react-div">
         <TitleBar />
         <MenuBar id="main-menu-bar" links={mainTopLinks} />
-        {props.children}
+        {children}
         <Quote />
         <Footer />
       </div>
     );
   }
 
-  _renderBarePage(props) {
+  _renderBareCePage({children}) {
     return (
       <div id="top-react-div">
         <TitleBar />
-        {props.children}
+        {children}
         <CeLogo />
       </div>
     );
   }
 
   render() {
-    const FullPage = this._renderFullPage;
-    const BarePage = this._renderBarePage;
+    const FullCePage = this._renderFullCePage;
+    const BareCePage = this._renderBareCePage;
 
     return (
       <BrowserRouter>
@@ -82,129 +82,129 @@ class Routes extends Component {
             exact
             path="/"
             render={() => (
-              <FullPage>
+              <FullCePage>
                 <Home />
-              </FullPage>
+              </FullCePage>
             )}
           />
           <Route
             path="/admin"
             render={() => (
-              <BarePage>
+              <BareCePage>
                 <Admin />
-              </BarePage>
+              </BareCePage>
             )}
           />
           <Route component={Calendar} path="/calendar" />
           <Route
             path="/cc-registration-child"
             render={() => (
-              <BarePage>
+              <BareCePage>
                 <CcRegistrationChild />
-              </BarePage>
+              </BareCePage>
             )}
           />
           <Route
             path="/cc-registration-landing"
             render={() => (
-              <BarePage>
+              <BareCePage>
                 <CcRegistrationLanding />
-              </BarePage>
+              </BareCePage>
             )}
           />
           <Route
             path="/cc-registration-volunteer"
             render={() => (
-              <BarePage>
+              <BareCePage>
                 <CcRegistrationVolunteer />
-              </BarePage>
+              </BareCePage>
             )}
           />
           <Route
             path="/christianedu.html"
             render={() => (
-              <FullPage>
+              <FullCePage>
                 <Home />
-              </FullPage>
+              </FullCePage>
             )}
           />
           <Route
             path="/ideaform"
             render={() => (
-              <FullPage>
+              <FullCePage>
                 <IdeaForm />
-              </FullPage>
+              </FullCePage>
             )}
           />
           <Route
             path="/vbs-registration-child"
             render={() => (
-              <BarePage>
+              <BareCePage>
                 <VbsRegistrationChild />
-              </BarePage>
+              </BareCePage>
             )}
           />
           <Route
             path="/vbs-registration-landing"
             render={() => (
-              <BarePage>
+              <BareCePage>
                 <VbsRegistrationLanding />
-              </BarePage>
+              </BareCePage>
             )}
           />
           <Route
             path="/vbs-registration-volunteer"
             render={() => (
-              <BarePage>
+              <BareCePage>
                 <VbsRegistrationVolunteer />
-              </BarePage>
+              </BareCePage>
             )}
           />
           <Route
             path="/vision"
             render={() => (
-              <FullPage>
+              <FullCePage>
                 <Vision />
-              </FullPage>
+              </FullCePage>
             )}
           />
           <Route
             path="/who"
             render={() => (
-              <FullPage>
+              <FullCePage>
                 <WhoWeAre />
-              </FullPage>
+              </FullCePage>
             )}
           />
           <Route
             path="/why"
             render={() => (
-              <FullPage>
+              <FullCePage>
                 <Why />
-              </FullPage>
+              </FullCePage>
             )}
           />
           <Route
             path="/where"
             render={() => (
-              <FullPage>
+              <FullCePage>
                 <Where />
-              </FullPage>
+              </FullCePage>
             )}
           />
           <Route
             path="/youth"
             render={() => (
-              <FullPage>
+              <FullCePage>
                 <Youth />
-              </FullPage>
+              </FullCePage>
             )}
           />
           <Route
             render={() => (
-              <FullPage>
+              <FullCePage>
                 <NotFound />
-              </FullPage>
+              </FullCePage>
             )}
           />
         </Switch>

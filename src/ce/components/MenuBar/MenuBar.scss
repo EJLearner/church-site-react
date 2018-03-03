@@ -1,0 +1,40 @@
+@import '../../../_variables.scss';
+
+.menu-bar {
+  align-items: center;
+  display: flex;
+  font-family: $calibri;
+  font-size: 20px;
+  justify-content: space-between;
+  min-width: 800px;
+  padding: 16px 16px;
+  flex: 0 0 auto;
+}
+
+.menu-bar ul {
+  align-content: center;
+  display: flex;
+  justify-content: space-between;
+  min-width: 800px;
+  margin: auto;
+  margin: 0;
+  padding: 3px 0;
+  list-style-type: none;
+  text-align: left;
+  width: 80%;
+}
+
+.menu-bar li {
+  display: flex;
+  margin-top: 0px;
+  padding: 0 8px;
+  text-align: center;
+}
+
+.logo {
+  width: 10%;
+}
+
+.logo img {
+  width: 100%;
+}

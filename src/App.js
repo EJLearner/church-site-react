@@ -4,8 +4,6 @@ import './polyfills';
 
 import Routes from './Routes';
 
-import './App.css';
-
 class App extends Component {
   render() {
     moment.updateLocale('en', {
