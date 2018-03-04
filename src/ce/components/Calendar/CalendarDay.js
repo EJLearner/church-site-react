@@ -29,11 +29,23 @@ class CalendarDay extends Component {
   }
 
   render() {
+    const currentDayMoment = moment();
+    const selectedDayMoment = moment(this.state.selectedDay, 'YYYY-MM-DD');
+
+    const currentDaySelected = selectedDayMoment.isSame(
+      currentDayMoment,
+      'day'
+    );
+
+    const pageTitle = currentDaySelected
+      ? 'Today’s Events'
+      : `Events for ${selectedDayMoment.format('MMMM DD, YYYY')}`;
+
     return (
       <EventsListPage
         dates={[this.state.selectedDay]}
         onDateChange={this._onDateChange}
-        pageTitle="Today’s Events"
+        pageTitle={pageTitle}
         selectedDay={this.state.selectedDay}
         storedDates={this.props.storedDates}
       />
