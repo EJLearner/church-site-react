@@ -35,7 +35,7 @@ const HomeSquares = props => {
         <Announcements />
       </HomeSquare>
 
-      <HomeSquare linkTo="/youth" title="Youth Ministries">
+      <HomeSquare linkTo={routePaths.CE_YOUTH} title="Youth Ministries">
         <img alt="Children" src={kidsPic} />
       </HomeSquare>
 
@@ -43,7 +43,7 @@ const HomeSquares = props => {
         <img alt="Leadership" src={leadershipPic} />
       </HomeSquare>
 
-      <HomeSquare linkTo="/calendar/month" title="Calendar">
+      <HomeSquare linkTo={routePaths.CE_CALENDAR_MONTH} title="Calendar">
         <img alt="Calendar" src={calendarPic} />
       </HomeSquare>
     </div>

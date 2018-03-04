@@ -11,21 +11,21 @@ const handler = {
 const MAIN_PATH_CONSTANTS = {
   ADMIN: '/admin',
 
-  CE_HOME: '/ce-home',
-  CE_CC_REG_CHILD: '/cc-registration-child',
-  CE_CC_REG_LANDING: '/cc-registration-landing',
-  CE_CC_REG_VOLUNTEER: '/cc-registration-volunteer',
-  CE_CALENDAR: '/calendar',
-  CE_IDEA_FORM: '/ideaform',
-  CE_VBS_REG_CHILD: '/vbs-registration-child',
-  CE_VBS_REG_LANDING: '/vbs-registration-landing',
-  CE_VBS_REG_VOLUNTEER: '/vbs-registration-volunteer',
-  CE_WHAT: '/what',
-  CE_WHERE: '/where',
-  CE_WHO: '/who',
-  CE_WHY: '/why',
-  CE_VISION: '/vision',
-  CE_YOUTH: '/youth'
+  CE_HOME: '/ce/',
+  CE_CC_REG_CHILD: '/ce/cc-registration-child',
+  CE_CC_REG_LANDING: '/ce/cc-registration-landing',
+  CE_CC_REG_VOLUNTEER: '/ce/cc-registration-volunteer',
+  CE_CALENDAR: '/ce/calendar',
+  CE_IDEA_FORM: '/ce/ideaform',
+  CE_VBS_REG_CHILD: '/ce/vbs-registration-child',
+  CE_VBS_REG_LANDING: '/ce/vbs-registration-landing',
+  CE_VBS_REG_VOLUNTEER: '/ce/vbs-registration-volunteer',
+  CE_WHAT: '/ce/what',
+  CE_WHERE: '/ce/where',
+  CE_WHO: '/ce/who',
+  CE_WHY: '/ce/why',
+  CE_VISION: '/ce/vision',
+  CE_YOUTH: '/ce/youth'
 };
 
 const {CE_CALENDAR} = MAIN_PATH_CONSTANTS;
@@ -45,23 +45,30 @@ const VISION_PATHS = {
   CE_VISION_WORKGROUPS: `${CE_VISION}/workgroups`
 };
 
-const {YOUTH} = MAIN_PATH_CONSTANTS;
-
+const {CE_YOUTH} = MAIN_PATH_CONSTANTS;
 const YOUTH_PATHS = {
-  CE_YOUTH_USHERS: `${YOUTH}/ushers`,
-  CE_YOUTH_GODS_GIFTS: `${YOUTH}/godsgifts`,
-  CE_YOUTH_SUNDAY_SCHOOL: `${YOUTH}/sundayschool`,
-  CE_YOUTH_CHILDRENS_CHURCH: `${YOUTH}/childrenschurch`,
-  CE_YOUTH_VACATION_BIBLE_SCHOOL: `${YOUTH}/vacationbibleschool`
+  CE_YOUTH_USHERS: `${CE_YOUTH}/ushers`,
+  CE_YOUTH_GODS_GIFTS: `${CE_YOUTH}/godsgifts`,
+  CE_YOUTH_SUNDAY_SCHOOL: `${CE_YOUTH}/sundayschool`,
+  CE_YOUTH_CHILDRENS_CHURCH: `${CE_YOUTH}/childrenschurch`,
+  CE_YOUTH_VACATION_BIBLE_SCHOOL: `${CE_YOUTH}/vacationbibleschool`
 };
 
-// todo who
+const {CE_WHO} = MAIN_PATH_CONSTANTS;
+const WHO_PATHS = {
+  CE_WHO_PASTOR: `${CE_WHO}/pastor`,
+  CE_WHO_CTBC: `${CE_WHO}/ctbc`,
+  CE_WHO_CHRISTIAN_ED_STAFF: `${CE_WHO}/christian-ed-staff`,
+  CE_WHO_DIACONATE: `${CE_WHO}/diaconate`,
+  CE_WHO_TRUSTEES: `${CE_WHO}/trustees`
+};
 
 const ALL_PATHS = Object.assign(
   {},
   MAIN_PATH_CONSTANTS,
   CALENDAR_PATHS,
   VISION_PATHS,
+  WHO_PATHS,
   YOUTH_PATHS
 );
 

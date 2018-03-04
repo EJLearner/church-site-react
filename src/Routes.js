@@ -31,7 +31,7 @@ class Routes extends Component {
   _renderFullCePage({children}) {
     const mainTopLinks = [
       {
-        path: '/',
+        path: routePaths.CE_HOME,
         text: 'Home'
       },
       {
@@ -91,6 +91,15 @@ class Routes extends Component {
           />
           <Route
             path="/christianedu.html"
+            render={() => (
+              <FullCePage>
+                <Home />
+              </FullCePage>
+            )}
+          />
+          <Route
+            exact
+            path={routePaths.CE_HOME}
             render={() => (
               <FullCePage>
                 <Home />

@@ -16,36 +16,38 @@ import '../../cePageStyles.css';
 
 class WhoWeAre extends Component {
   generateLinkData() {
-    const {CE_WHO} = routePaths;
-
     return [
       {
-        path: `${CE_WHO}/pastor`,
+        path: routePaths.CE_WHO_PASTOR,
         render: <Pastor />,
         text: 'Pastor Yeargin',
         isDefault: true
       },
       {
-        path: `${CE_WHO}/ctbc`,
+        path: routePaths.CE_WHO_CTBC,
         render: <MinisterialStaff />,
         text: 'CTBC Ministerial Staff'
       },
       {
-        path: `${CE_WHO}/christian-ed-staff`,
+        path: routePaths.CE_WHO_CHRISTIAN_ED_STAFF,
         render: <ChristianEdStaff />,
         text: 'Christian Education'
       },
-      {path: `${CE_WHO}/diaconate`, render: <Diaconate />, text: 'Diaconate'},
-      {path: `${CE_WHO}/trustees`, render: <Trustees />, text: 'Trustees'}
+      {
+        path: routePaths.CE_WHO_DIACONATE,
+        render: <Diaconate />,
+        text: 'Diaconate'
+      },
+      {path: routePaths.CE_WHO_TRUSTEES, render: <Trustees />, text: 'Trustees'}
 
       // This content won't be ready for a while. Left the code to remember that sublevels are possible
       // {
-      //   path: `${CE_WHO}/handbook`,
+      //   path: routePaths.CE_WHO_HANDBOOK,
       //   render: <Handbook />,
       //   text: 'Leadership Handbook',
       //   children: [
-      //     {path: `${CE_WHO}/finance`, render: <Finance />, text: 'Finance'},
-      //     {path: `${CE_WHO}/meetings`, render: <Meetings />, text: 'Church Meetings'}
+      //     {path: routePaths.CE_WHO_FINANCE, render: <Finance />, text: 'Finance'},
+      //     {path: routePaths.CE_WHO_MEETINGS`, render: <Meetings />, text: 'Church Meetings'}
       //   ]
       // }
     ];
