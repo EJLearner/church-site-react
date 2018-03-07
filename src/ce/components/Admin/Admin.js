@@ -10,6 +10,12 @@ import Checklist from '../Reusable/Checklist/Checklist';
 
 import './Admin.css';
 
+const TIME_FORMAT = {
+  SIMPLE_TIME: 'h:mm a',
+  DATE_TIME: 'YYYY-MM-DDTHH:mm:ss',
+  STD_DATE: 'YYYY-MM-DD'
+};
+
 class Admin extends Component {
   constructor(props) {
     super(props);
@@ -29,8 +35,11 @@ class Admin extends Component {
     };
 
     this._onChange = this._onChange.bind(this);
-    this._getTime = this._getTime.bind(this);
+    this._getDateTimeFromSimple = this._getDateTimeFromSimple.bind(this);
     this._submit = this._submit.bind(this);
+    this._editItem = this._editItem.bind(this);
+    this._cancelEdit = this._cancelEdit.bind(this);
+
     this._removeItem = this._removeItem.bind(this);
     this._login = this._login.bind(this);
     this._logout = this._logout.bind(this);
@@ -63,25 +72,33 @@ class Admin extends Component {
     this.setState({[id]: value});
   }
 
-  _getTime(type) {
-    const {date, timeStart, timeEnd} = this.state;
-
-    const time = type === 'start' ? timeStart : timeEnd;
-
+  _getDateTimeFromSimple(date, time) {
     if (time) {
-      const timeMoment = time ? moment(time, 'h:mm a', true) : null;
+      const timeMoment = time
+        ? moment(time, TIME_FORMAT.SIMPLE_TIME, true)
+        : null;
 
       if (timeMoment.isValid()) {
-        const dateTimeMoment = moment(date, 'YYYY-MM-DD').set({
+        const dateTimeMoment = moment(date, TIME_FORMAT.STD_DATE).set({
           hour: timeMoment.hour(),
           minute: timeMoment.minute()
         });
 
-        return dateTimeMoment.format('YYYY-MM-DDTHH:mm:ss');
+        return dateTimeMoment.format(TIME_FORMAT.DATE_TIME);
       }
     }
 
     return time ? false : null;
+  }
+
+  _getSimpleTimeFromDateTime(dateTimeString) {
+    if (dateTimeString) {
+      return moment(dateTimeString)
+        .format(TIME_FORMAT.SIMPLE_TIME)
+        .replace(/\./g, '');
+    }
+
+    return '';
   }
 
   _isValid(event) {
@@ -90,57 +107,110 @@ class Admin extends Component {
     return title && timeStart !== false && timeEnd !== false;
   }
 
-  _submit() {
+  _submit(isNew, key) {
     // FBH get 'dates' reference from firebase
     const {
+      originalDate,
       date,
+      timeEnd,
+      timeStart,
       title,
       longDescription,
       followsWorship,
       isAnnouncement
     } = this.state;
 
-    const hasValidDate = moment(date, 'YYYY-MM-DD', true).isValid();
+    const hasValidDate = moment(date, TIME_FORMAT.STD_DATE, true).isValid();
 
     // make new date object
     const event = {
       title: title,
-      timeStart: this._getTime('start'),
-      timeEnd: this._getTime('end'),
+      timeStart: this._getDateTimeFromSimple(date, timeStart),
+      timeEnd: this._getDateTimeFromSimple(date, timeEnd),
       longDescription: longDescription || null,
       followsWorship: followsWorship || null,
       isAnnouncement: isAnnouncement || null
     };
 
-    const isDataValid = this._isValid(event) && hasValidDate;
+    const dataIsValid = this._isValid(event) && hasValidDate;
 
-    if (isDataValid) {
-      const dateRef = firebase.database().ref(`dates/${date}/events`);
+    if (dataIsValid) {
+      if (isNew) {
+        const dateRef = firebase.database().ref(`dates/${date}/events`);
 
-      // push date object into 'dates' reference
+        // push date object into 'dates' reference
 
-      dateRef.push(event);
+        dateRef.push(event);
+        this._resetData();
+        this.setState({currentEdit: null});
+      } else {
+        const sameDate = date === originalDate;
 
-      // reset textboxes to empty
-      this.setState({
-        date: '',
-        title: '',
-        timeStart: '',
-        timeEnd: '',
-        longDescription: '',
-        followsWorship: false,
-        isAnnouncement: false
-      });
+        const eventRef = this._getEventRef(originalDate, key);
+        if (sameDate) {
+          eventRef.set(event);
+        } else {
+          eventRef.set(null);
+
+          const dateRef = firebase.database().ref(`dates/${date}/events`);
+          dateRef.push(event);
+        }
+      }
     }
+  }
+
+  _resetData() {
+    this.setState({
+      date: '',
+      title: '',
+      timeStart: '',
+      timeEnd: '',
+      longDescription: '',
+      followsWorship: false,
+      isAnnouncement: false
+    });
+  }
+
+  // FBH get specific date reference from firebase using key
+  _getEventRef(dateString, key) {
+    return firebase.database().ref(`/dates/${dateString}/events/${key}`);
+  }
+
+  _editItem(dateTitleKey, date, eventObject) {
+    const {
+      isAnnouncement,
+      followsWorship,
+      title,
+      timeStart,
+      timeEnd,
+      shortDescription,
+      longDescription
+    } = eventObject;
+
+    this.setState({
+      currentEdit: dateTitleKey,
+      originalDate: date,
+      date,
+      title,
+      timeStart: this._getSimpleTimeFromDateTime(timeStart),
+      timeEnd: this._getSimpleTimeFromDateTime(timeEnd),
+      shortDescription,
+      longDescription,
+      isAnnouncement,
+      followsWorship
+    });
+  }
+
+  _cancelEdit() {
+    this.setState({currentEdit: null});
+    this._resetData();
   }
 
   _removeItem(dateString, key) {
     // FBH get specific date reference from firebase using key
-    const dateRef = firebase
-      .database()
-      .ref(`/dates/${dateString}/events/${key}`);
+    const eventRef = this._getEventRef(dateString, key);
 
-    dateRef.once('value', snapshot => {
+    eventRef.once('value', snapshot => {
       const value = snapshot.val();
 
       const title = typeof value === 'string' ? value : value.title;
@@ -150,7 +220,7 @@ class Admin extends Component {
           `Are you sure you want to delete the event titled ${title}?`
         )
       ) {
-        dateRef.remove();
+        eventRef.remove();
       }
     });
   }
@@ -179,8 +249,11 @@ class Admin extends Component {
           longDescription
         } = eventObject;
 
+        const dateTitleKey = dateString + title;
+        const currentlyEditing = dateTitleKey === this.state.currentEdit;
+
         rows.push(
-          <div className="event-item" key={dateString + title}>
+          <div className="event-item" key={dateTitleKey}>
             <strong>{title}</strong>
             <ul>
               <li>Date: {dateString}</li>
@@ -190,9 +263,26 @@ class Admin extends Component {
               <li>Long Description: {longDescription}</li>
               <li>Options: {listOptions(event)}</li>
             </ul>
-            <Button onClick={_.partial(this._removeItem, dateString, key)}>
-              Remove
-            </Button>
+
+            {currentlyEditing ? (
+              <div>{this._renderEditInput(false, key)} </div>
+            ) : (
+              <div>
+                <Button
+                  onClick={_.partial(
+                    this._editItem,
+                    dateTitleKey,
+                    dateString,
+                    eventObject
+                  )}
+                >
+                  Edit
+                </Button>
+                <Button onClick={_.partial(this._removeItem, dateString, key)}>
+                  Remove
+                </Button>
+              </div>
+            )}
           </div>
         );
       });
@@ -214,27 +304,24 @@ class Admin extends Component {
     });
   }
 
-  _getOptionsList() {
+  _getOptionsList({isAnnouncement, followsWorship}) {
     return [
       {
-        checked: this.state.isAnnouncement,
+        checked: Boolean(isAnnouncement),
         label: 'Announcement',
         value: 'isAnnouncement'
       },
       {
-        checked: this.state.followsWorship,
+        checked: Boolean(followsWorship),
         label: 'Immediately Follows Worship',
         value: 'followsWorship'
       }
     ];
   }
 
-  render() {
-    return this.state.user ? (
-      <div className="admin-page">
-        Logged in as {this.state.user.displayName}{' '}
-        <Button onClick={this._logout}>Log out</Button>
-        <p>Add Item</p>
+  _renderEditInput(isNew, key) {
+    return (
+      <div>
         <Text
           id="date"
           label="Date"
@@ -269,18 +356,38 @@ class Admin extends Component {
             label="Long Description"
             onChange={this._onChange}
             textArea
-            value={this.state.longDescription}
+            value={this.state.longDescription || ''}
           />
         </div>
         <Checklist
-          checklistItems={this._getOptionsList()}
+          checklistItems={this._getOptionsList(this.state)}
           id="options-checklist"
           label="Options"
           onChange={this._onChange}
         />
         <div>
-          <Button onClick={this._submit}>Submit</Button>
+          <Button onClick={_.partial(this._submit, isNew, key)}>Submit</Button>
+          <Button onClick={this._cancelEdit}>Cancel</Button>
         </div>
+      </div>
+    );
+  }
+
+  render() {
+    const addingEvent = this.state.currentEdit === 'new';
+
+    const onAddItemClick = () => {
+      this.setState({currentEdit: 'new'});
+    };
+
+    return this.state.user ? (
+      <div className="admin-page">
+        Logged in as {this.state.user.displayName}{' '}
+        <Button onClick={this._logout}>Log out</Button>
+        <div>
+          <Button onClick={onAddItemClick}>Add Item</Button>
+        </div>
+        {addingEvent && this._renderEditInput(true)}
         <div>{this._renderItems()}</div>
       </div>
     ) : (

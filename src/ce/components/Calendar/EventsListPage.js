@@ -68,6 +68,7 @@ class EventsListPage extends Component {
         this.props.storedDates,
         date
       );
+
       const eventsForDateWithDateAddedAsProp = eventsForDate.map(event => {
         let eventWithDate;
         if (typeof event === 'object') {
