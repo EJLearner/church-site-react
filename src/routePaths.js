@@ -72,6 +72,7 @@ const ALL_PATHS = Object.assign(
   YOUTH_PATHS
 );
 
-const STRICT_PATH_CONSTANTS = new Proxy(ALL_PATHS, handler);
+const STRICT_PATH_CONSTANTS =
+  typeof Proxy !== 'undefined' ? new Proxy(ALL_PATHS, handler) : ALL_PATHS;
 
 export default STRICT_PATH_CONSTANTS;
