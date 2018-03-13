@@ -5,6 +5,7 @@ import routePaths from './routePaths';
 
 import Admin from './ce/components/Admin/Admin';
 import Calendar from './ce/components/Calendar/Calendar';
+import CcLogin from './ce/components/CcVbsLogin/CcLogin';
 import CcRegistrationChild from './ce/components/RegistrationPages/CcRegistrationChild';
 import CcRegistrationLanding from './ce/components/RegistrationPages/CcRegistrationLanding';
 import CcRegistrationVolunteer from './ce/components/RegistrationPages/CcRegistrationVolunteer';
@@ -111,6 +112,14 @@ class Routes extends Component {
             render={() => (
               <BareCePage>
                 <Admin />
+              </BareCePage>
+            )}
+          />
+          <Route
+            path={routePaths.CE_CC_SIGN_IN}
+            render={() => (
+              <BareCePage>
+                <CcLogin />
               </BareCePage>
             )}
           />

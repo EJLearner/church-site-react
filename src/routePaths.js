@@ -15,6 +15,7 @@ const MAIN_PATH_CONSTANTS = {
   CE_CC_REG_CHILD: '/ce/cc-registration-child',
   CE_CC_REG_LANDING: '/ce/cc-registration-landing',
   CE_CC_REG_VOLUNTEER: '/ce/cc-registration-volunteer',
+  CE_CC_SIGN_IN: '/ce/cc-log-in',
   CE_CALENDAR: '/ce/calendar',
   CE_IDEA_FORM: '/ce/ideaform',
   CE_VBS_REG_CHILD: '/ce/vbs-registration-child',
