@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {Redirect} from 'react-router';
 import {withRouter} from 'react-router-dom';
 
+import Button from '../Reusable/Button/Button';
 import Checklist from '../Reusable/Checklist/Checklist';
 
 import moment from 'moment';
@@ -14,53 +15,118 @@ class CcLogin extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      'child-select-Zuri Jones': {name: 'Zuri Jones', age: 6, isChild: true},
+      'child-select-Earl Jones': {name: 'Earl Jones', age: 36, isChild: true},
+      'child-select-April Jones': {name: 'April Jones', age: 36, isChild: true}
+    };
 
-    this._onChange = this._onChange.bind(this);
+    this._onChecklistChange = this._onChecklistChange.bind(this);
+    this._onSelectAllClick = this._onSelectAllClick.bind(this);
   }
 
-  _onChange(value, id) {
-    this.setState({[id]: value});
+  _onChecklistChange(value, id) {
+    const child = this.state[id];
+    child.checked = value;
+    this.setState({[id]: child});
   }
 
-  _listChildren(childrenFound) {
-    const checkListItems = childrenFound.map((child, index) => {
-      const checkboxId = `child${index}`;
+  _onSelectAllClick() {
+    const newState = {};
+
+    _.forEach(this._getChildStates(), (child, key) => {
+      child.checked = true;
+      newState[key] = child;
+    });
+
+    this.setState(newState);
+  }
+
+  _onCheckInClick(disabled) {
+    if (disabled) {
+      window.alert('You mus select at least one child');
+    } else {
+      console.log('check in action here');
+    }
+  }
+
+  _getChildStates() {
+    return _.reduce(
+      this.state,
+      (children, property, key) => {
+        if (_.get(property, 'isChild')) {
+          children[key] = property;
+        }
+        return children;
+      },
+      {}
+    );
+  }
+
+  _listChildren() {
+    const children = this._getChildStates();
+
+    const checkListItems = _.map(children, (child, index) => {
+      const {age, name} = child;
+      const checkboxId = `child-select-${name}`;
       return {
-        checked: this.state[checkboxId],
-        label: `${child.name}, age ${child.age}`,
+        checked: Boolean(this.state[checkboxId].checked),
+        label: `${name}, age ${age}`,
         value: checkboxId
       };
     });
 
     return (
-      <Checklist
-        checklistItems={checkListItems}
-        id="children-checklist"
-        label="Select Child"
-        onChange={this._onChange}
-        required
-      />
+      <div>
+        <Checklist
+          checklistItems={checkListItems}
+          id="children-checklist"
+          label="Select Child"
+          onChange={this._onChecklistChange}
+          required
+        />
+      </div>
     );
   }
 
+  _isAChildSelected() {
+    return _.some(this._getChildStates(), child => child.checked);
+  }
+
   render() {
-    const childrenFound = [
-      {name: 'Zuri Jones', age: 6},
-      {name: 'Earl Jones', age: 36},
-      {name: 'April Jones', age: 36}
-    ];
+    let checkInButtonClass = 'check-in-button';
+    let disabled = false;
+    if (!this._isAChildSelected()) {
+      checkInButtonClass += ' disabled';
+      disabled = true;
+    }
 
     return (
-      <div>
+      <div className="cc-login-page">
         <h1>Welcome Back</h1>
-        <div className="who-checking">Who are you checking in today?</div>
+        <p className="who-checking">Who are you checking in today?</p>
         <div className="instructions">
           You can select names individually or press{' '}
           <span className="select-all-text">Select All</span> to select every
           one listed below
         </div>
-        {childrenFound.length ? this._listChildren(childrenFound) : null}
+        {this._listChildren()}
+        <div className="button-div">
+          <Button
+            className="select-all-button"
+            onClick={this._onSelectAllClick}
+          >
+            Select All
+          </Button>
+        </div>
+        <div className="button-div">
+          <Button
+            className={checkInButtonClass}
+            onClick={_.partial(this._onCheckInClick, disabled)}
+          >
+            Check In
+          </Button>
+        </div>
       </div>
     );
   }

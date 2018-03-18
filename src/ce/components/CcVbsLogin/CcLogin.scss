@@ -1,0 +1,36 @@
+@import '../../../_variables';
+
+.cc-login-page {
+  h1 {
+    color: $green-50;
+  }
+
+  .who-checking {
+    font-weight: bold;
+  }
+
+  .select-all-text {
+    text-transform: uppercase;
+  }
+
+  .button-div {
+    display: inline-block;
+    width: 49%;
+
+    .select-all-button,
+    .check-in-button {
+      display: block;
+      margin: auto;
+    }
+
+    .check-in-button {
+      background-color: $green-50;
+      background-image: linear-gradient(lighten($green-50, 15), $green-50);
+    }
+
+    .disabled {
+      background-color: $gray217;
+      background-image: none;
+    }
+  }
+}
