@@ -8,6 +8,14 @@ const Text = props => {
     props.onChange(event.target.value, props.id, event);
   };
 
+  const _onKeyPress = event => {
+    const {id, onEnter} = props;
+
+    if (onEnter && event.key === 'Enter') {
+      onEnter(event.target.value, id, event);
+    }
+  };
+
   const labelId = `${props.id}-label`;
 
   const input = (
@@ -15,6 +23,7 @@ const Text = props => {
       aria-labelledby={labelId}
       id={props.id}
       onChange={_onChange}
+      onKeyPress={_onKeyPress}
       placeholder={props.placeholder}
       size={props.size}
       value={props.value}
@@ -27,6 +36,7 @@ const Text = props => {
       cols={props.columns}
       id={props.id}
       onChange={_onChange}
+      onKeyPress={_onKeyPress}
       placeholder={props.placeholder}
       rows={props.rows}
       value={props.value}
@@ -56,6 +66,7 @@ Text.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  onEnter: PropTypes.func,
   placeholder: PropTypes.string,
   required: PropTypes.bool,
   rows: PropTypes.number,
