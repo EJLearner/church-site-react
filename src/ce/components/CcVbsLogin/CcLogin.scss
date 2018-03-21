@@ -1,6 +1,8 @@
 @import '../../../_variables';
 
 .cc-login-page {
+  padding: 1em;
+
   h1 {
     color: $green-50;
   }
@@ -11,6 +13,10 @@
 
   .select-all-text {
     text-transform: uppercase;
+  }
+
+  .checkbox-pattern label {
+    color: $green-50;
   }
 
   .button-div {
