@@ -2,33 +2,57 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Redirect} from 'react-router';
 import {withRouter} from 'react-router-dom';
+import firebase, {auth, provider} from '../../../firebase';
+import moment from 'moment';
+import _ from 'lodash';
 
 import Button from '../Reusable/Button/Button';
 import Checklist from '../Reusable/Checklist/Checklist';
 import Text from '../Reusable/Text/Text';
 
-import firebase, {auth, provider} from '../../../firebase';
-import moment from 'moment';
-import _ from 'lodash';
+import utils from '../../../utils/commonUtils';
 
 import './CcLogin.css';
+
+const STATUS = {
+  LOGGED_IN: 'LOGGED_IN',
+  LOGGED_OUT: 'LOGGED_OUT',
+  ENTERING_PARENT_NAME: 'ENTERING_PARENT_NAME',
+  SELECT_CHILDREN: 'SELECT_CHILDREN',
+  SIGNING_CHILD_IN: 'SIGNING_CHILD_IN',
+  CHILDREN_SIGNED_IN: 'CHILDREN_SIGNED_IN'
+};
+
+const bindThese = function(functions, context) {
+  functions.forEach(func => {
+    context[func] = context[func].bind(context);
+  });
+};
 
 class CcLogin extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: '',
-      user: null,
       ccRegistered: [],
-      ccRegUsers: {}
+      ccRegUsers: {},
+      name: 'Earl Jones', // temporary
+      status: STATUS.ENTERING_PARENT_NAME,
+      user: null
     };
 
-    this._onChecklistChange = this._onChecklistChange.bind(this);
-    this._onChange = this._onChange.bind(this);
-    this._onSelectAllClick = this._onSelectAllClick.bind(this);
-    this._onSearch = this._onSearch.bind(this);
-    this._login = this._login.bind(this);
+    bindThese(
+      [
+        '_handleLoginClick',
+        '_startSearchAgain',
+        '_onChange',
+        '_onCheckInClick',
+        '_onChecklistChange',
+        '_onSearch',
+        '_onSelectAllClick'
+      ],
+      this
+    );
   }
 
   componentDidMount() {
@@ -52,6 +76,13 @@ class CcLogin extends Component {
       });
     });
 
+    const todaysLogRef = this._getTodaysLogRef();
+    todaysLogRef.on('value', snapshot => {
+      const signedInIds = _.map(snapshot.val(), 'ccRegisteredId');
+
+      this.setState({signedInIds});
+    });
+
     // keeps user logged in on a page refresh
     auth.onAuthStateChanged(user => {
       if (user) {
@@ -61,27 +92,45 @@ class CcLogin extends Component {
   }
 
   _onChecklistChange(value, id) {
-    const child = this.state[id];
+    const {childrenOfParent} = this.state;
+    const newChildrenOfParent = _.cloneDeep(childrenOfParent);
+    const child = newChildrenOfParent[id];
     child.checked = value;
-    this.setState({[id]: child});
+    this.setState({childrenOfParent: newChildrenOfParent});
   }
 
   _onSelectAllClick() {
-    const newState = {};
+    const newChildrenOfParent = _.cloneDeep(this.state.childrenOfParent);
 
-    _.forEach(this._getChildStates(), (child, key) => {
+    _.forEach(newChildrenOfParent, (child, key) => {
       child.checked = true;
-      newState[key] = child;
     });
 
-    this.setState(newState);
+    this.setState({childrenOfParent: newChildrenOfParent});
+  }
+
+  _getTodaysLogRef() {
+    const today = moment().format('YYYY-MM-DD');
+    return firebase.database().ref(`ccLogbook/${today}`);
   }
 
   _onCheckInClick(disabled) {
     if (disabled) {
       window.alert('You must select at least one child');
     } else {
-      console.log('check in action here');
+      const children = this._getSelectedChildren();
+
+      const childrenObjectsToAdd = _.cloneDeep(children).map(child => {
+        child.ccLogbookId = utils.generatePushID();
+        child.status = STATUS.LOGGED_IN;
+        return child;
+      });
+
+      const todaysLogRef = this._getTodaysLogRef();
+      todaysLogRef.push(...childrenObjectsToAdd);
+
+      // TODO: check for return from push
+      this.setState({status: STATUS.CHILDREN_SIGNED_IN});
     }
   }
 
@@ -90,45 +139,34 @@ class CcLogin extends Component {
   }
 
   _onSearch() {
-    const childrenOfParent = this._getChildrenOfParent();
-    this.setState({showSearchResults: true, ...childrenOfParent});
+    const childrenOfParent = _.cloneDeep(this.state.ccRegistered).filter(
+      child => {
+        return (
+          _.includes(child.parentNames, this.state.name) &&
+          !_.includes(this.state.signedInIds, child.ccRegisteredId)
+        );
+      }
+    );
+
+    this.setState({
+      status: STATUS.SELECT_CHILDREN,
+      childrenOfParent
+    });
   }
 
-  _login() {
+  _handleLoginClick() {
     auth.signInWithPopup(provider).then(result => {
       const {user} = result;
       this.setState({user});
     });
   }
 
-  _getChildStates() {
-    return _.reduce(
-      this.state,
-      (children, child = {}, index) => {
-        if (_.get(child, 'isChild')) {
-          children.push(child);
-        }
-
-        return children;
-      },
-      []
-    );
+  _startSearchAgain() {
+    this.setState({name: '', status: STATUS.ENTERING_PARENT_NAME});
   }
 
-  _getChildrenOfParent() {
-    return _.reduce(
-      this.state.ccRegistered,
-      (children, child = {}, index) => {
-        if (_.includes(child.parentNames, this.state.name)) {
-          const newChild = _.cloneDeep(child);
-          newChild.isChild = true;
-          children[`child-select-${child.name}`] = newChild;
-        }
-
-        return children;
-      },
-      {}
-    );
+  _getChildStates() {
+    return this.state.childrenOfParent;
   }
 
   _getAge(dob) {
@@ -137,15 +175,17 @@ class CcLogin extends Component {
   }
 
   _listChildren() {
-    const children = this._getChildStates();
+    const {childrenOfParent, signedInIds} = this.state;
+    const notSignedInChildren = childrenOfParent.filter(
+      child => !_.includes(signedInIds, child.ccRegistered)
+    );
 
-    const checkListItems = _.map(children, (child, index) => {
-      const {dob, name} = child;
-      const checkboxId = `child-select-${name}`;
+    const checkListItems = _.map(notSignedInChildren, child => {
+      const {dob, ccRegisteredId: id, name} = child;
       return {
-        checked: Boolean(this.state[checkboxId].checked),
+        checked: Boolean(notSignedInChildren[id].checked),
         label: `${name}, age ${this._getAge(dob)}`,
-        value: checkboxId
+        value: id
       };
     });
 
@@ -162,18 +202,21 @@ class CcLogin extends Component {
     );
   }
 
-  _isAChildSelected() {
-    return _.some(this._getChildStates(), child => child.checked);
+  _getSelectedChildren() {
+    return _.filter(this.state.childrenOfParent, child => child.checked);
   }
 
   _renderChildSelectDiv() {
     let checkInButtonClass = 'check-in-button';
     let disabled = false;
+    let atLeastOneChildSelected = this._getSelectedChildren().length;
 
-    if (!this._isAChildSelected()) {
+    if (!atLeastOneChildSelected) {
       checkInButtonClass += ' disabled';
       disabled = true;
     }
+
+    // TODO: Need to render something different when there are no children left
 
     return (
       <div>
@@ -219,13 +262,13 @@ class CcLogin extends Component {
   }
 
   _renderWhileLoggedIn() {
-    const {showSearchResults} = this.state;
+    const {status} = this.state;
 
     return (
       <div>
         <h1>Welcome Back</h1>
-        {!showSearchResults && this._renderNameInput()}
-        {showSearchResults && this._renderChildSelectDiv()}
+        {status === STATUS.ENTERING_PARENT_NAME && this._renderNameInput()}
+        {status === STATUS.SELECT_CHILDREN && this._renderChildSelectDiv()}
       </div>
     );
   }
@@ -235,34 +278,49 @@ class CcLogin extends Component {
       <div>
         {loggedIn ? (
           <div>
-            <h1>Please Login</h1>A Staff Member Must Log In Order To Enable
-            Registration
-          </div>
-        ) : (
-          <div>
             <h1>Insufficient Access</h1>You must log in as a member of the
             Children’s Church Staff
           </div>
+        ) : (
+          <div>
+            <h1>Please Login</h1>A Staff Member Must Log In Order To Enable
+            Registration
+          </div>
         )}
         <div className="admin-page">
-          <Button onClick={this._login}>Log in</Button>
+          <Button onClick={this._handleLoginClick}>Log in</Button>
         </div>
       </div>
     );
   }
 
-  render() {
-    const {user, ccRegUsers} = this.state;
+  _renderAfterLoginScreen() {
+    return (
+      <div>
+        <h1>Thanks for signing your child in!</h1>
+        <Button onClick={this._startSearchAgain}>Sign Another Child In</Button>
+      </div>
+    );
+  }
+
+  _renderProperScreen() {
+    const {ccRegUsers, user, status} = this.state;
 
     const memberOfCcLoginGroup = user && ccRegUsers[user.uid];
 
-    return (
-      <div className="cc-login-page">
-        {user && memberOfCcLoginGroup
-          ? this._renderWhileLoggedIn()
-          : this._renderLoginScreen(user)}
-      </div>
-    );
+    if (status === STATUS.CHILDREN_SIGNED_IN) {
+      return this._renderAfterLoginScreen();
+    }
+
+    if (user && memberOfCcLoginGroup) {
+      return this._renderWhileLoggedIn(user);
+    }
+
+    return this._renderLoginScreen();
+  }
+
+  render() {
+    return <div className="cc-login-page">{this._renderProperScreen()}</div>;
   }
 }
 
