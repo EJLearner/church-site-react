@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Redirect} from 'react-router';
-import {withRouter} from 'react-router-dom';
 import firebase, {auth, provider} from '../../../firebase';
 import moment from 'moment';
 import _ from 'lodash';
@@ -36,7 +34,7 @@ class CcLogin extends Component {
     this.state = {
       ccRegistered: [],
       ccRegUsers: {},
-      name: 'Earl Jones', // temporary
+      name: '',
       status: STATUS.ENTERING_PARENT_NAME,
       user: null
     };
@@ -119,17 +117,16 @@ class CcLogin extends Component {
       window.alert('You must select at least one child');
     } else {
       const children = this._getSelectedChildren();
+      const todaysLogRef = this._getTodaysLogRef();
 
-      const childrenObjectsToAdd = _.cloneDeep(children).map(child => {
+      _.forEach(children, child => {
         child.ccLogbookId = utils.generatePushID();
         child.status = STATUS.LOGGED_IN;
-        return child;
+
+        // TODO: check for return from push
+        todaysLogRef.push(child);
       });
 
-      const todaysLogRef = this._getTodaysLogRef();
-      todaysLogRef.push(...childrenObjectsToAdd);
-
-      // TODO: check for return from push
       this.setState({status: STATUS.CHILDREN_SIGNED_IN});
     }
   }
@@ -141,10 +138,7 @@ class CcLogin extends Component {
   _onSearch() {
     const childrenOfParent = _.cloneDeep(this.state.ccRegistered).filter(
       child => {
-        return (
-          _.includes(child.parentNames, this.state.name) &&
-          !_.includes(this.state.signedInIds, child.ccRegisteredId)
-        );
+        return _.includes(child.parentNames, this.state.name);
       }
     );
 
@@ -176,16 +170,26 @@ class CcLogin extends Component {
 
   _listChildren() {
     const {childrenOfParent, signedInIds} = this.state;
-    const notSignedInChildren = childrenOfParent.filter(
-      child => !_.includes(signedInIds, child.ccRegistered)
-    );
 
-    const checkListItems = _.map(notSignedInChildren, child => {
-      const {dob, ccRegisteredId: id, name} = child;
+    const checkListItems = _.map(childrenOfParent, child => {
+      const {dob, ccRegisteredId, name} = child;
+      const signedIn = _.includes(signedInIds, ccRegisteredId);
+
+      let checked = Boolean(childrenOfParent[ccRegisteredId].checked);
+      let disabled = false;
+      let label = `${name}, age ${this._getAge(dob)}`;
+
+      if (signedIn) {
+        checked = true;
+        disabled = true;
+        label += ' (already signed in)';
+      }
+
       return {
-        checked: Boolean(notSignedInChildren[id].checked),
-        label: `${name}, age ${this._getAge(dob)}`,
-        value: id
+        checked,
+        disabled,
+        label,
+        value: ccRegisteredId
       };
     });
 
@@ -207,6 +211,7 @@ class CcLogin extends Component {
   }
 
   _renderChildSelectDiv() {
+    const {childrenOfParent, name, signedInIds} = this.state;
     let checkInButtonClass = 'check-in-button';
     let disabled = false;
     let atLeastOneChildSelected = this._getSelectedChildren().length;
@@ -216,7 +221,44 @@ class CcLogin extends Component {
       disabled = true;
     }
 
-    // TODO: Need to render something different when there are no children left
+    if (!childrenOfParent.length) {
+      return (
+        <div>
+          No children found for name “{name}”. Please try a different name or
+          get staff assistance.
+          <div className="button-div">
+            <Button
+              className="select-all-button"
+              onClick={this._startSearchAgain}
+            >
+              Try Again
+            </Button>
+          </div>
+        </div>
+      );
+    }
+
+    const childrenOfParentThatAreNotSignedIn = _.filter(
+      childrenOfParent,
+      child => !_.includes(signedInIds, child.ccRegisteredId)
+    );
+
+    if (!childrenOfParentThatAreNotSignedIn.length) {
+      return (
+        <div>
+          <p>All of the children for this name are signed in already</p>
+          {this._listChildren()}
+          <div className="button-div">
+            <Button
+              className="select-all-button"
+              onClick={this._startSearchAgain}
+            >
+              Go Back To Search
+            </Button>
+          </div>
+        </div>
+      );
+    }
 
     return (
       <div>

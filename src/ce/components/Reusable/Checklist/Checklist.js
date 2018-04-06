@@ -10,11 +10,12 @@ const Checklist = props => {
 
   const renderedCheckboxes = props.checklistItems.map((checkbox, index) => {
     const ariaLabelledBy = index === 0 ? labelId : undefined;
-    const {checked, label, value} = checkbox;
+    const {checked, disabled, label, value} = checkbox;
     return (
       <Checkbox
         ariaLabelledBy={ariaLabelledBy}
         checked={checked}
+        disabled={disabled}
         id={value}
         key={value}
         label={label}
