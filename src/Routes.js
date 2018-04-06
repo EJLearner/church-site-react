@@ -5,7 +5,8 @@ import routePaths from './routePaths';
 
 import Admin from './ce/components/Admin/Admin';
 import Calendar from './ce/components/Calendar/Calendar';
-import CcLogin from './ce/components/CcVbsLogin/CcLogin';
+import CcCheckIn from './ce/components/CcVbsCheckInOut/CcVbsCheckin';
+// import CcCheckOut from './ce/components/CcVbsCheckInOut/CcCheckout';
 import CcRegistrationChild from './ce/components/RegistrationPages/CcRegistrationChild';
 import CcRegistrationLanding from './ce/components/RegistrationPages/CcRegistrationLanding';
 import CcRegistrationVolunteer from './ce/components/RegistrationPages/CcRegistrationVolunteer';
@@ -119,10 +120,18 @@ class Routes extends Component {
             path={routePaths.CE_CC_SIGN_IN}
             render={() => (
               <BareCePage>
-                <CcLogin />
+                <CcCheckIn />
               </BareCePage>
             )}
           />
+          {/* <Route
+            path={routePaths.CE_CC_SIGN_OUT}
+            render={() => (
+              <BareCePage>
+                <CcCheckOut />
+              </BareCePage>
+            )}
+          /> */}
           <Route component={Calendar} path={routePaths.CE_CALENDAR} />
           <Route
             path={routePaths.CE_CC_REG_CHILD}

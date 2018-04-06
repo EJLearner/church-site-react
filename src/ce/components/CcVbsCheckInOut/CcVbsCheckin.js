@@ -10,7 +10,7 @@ import Text from '../Reusable/Text/Text';
 
 import utils from '../../../utils/commonUtils';
 
-import './CcLogin.css';
+import './CcVbsCheckInOut.css';
 
 const STATUS = {
   LOGGED_IN: 'LOGGED_IN',
@@ -27,7 +27,7 @@ const bindThese = function(functions, context) {
   });
 };
 
-class CcLogin extends Component {
+class CcVbsCheckin extends Component {
   constructor(props) {
     super(props);
 
@@ -348,13 +348,13 @@ class CcLogin extends Component {
   _renderProperScreen() {
     const {ccRegUsers, user, status} = this.state;
 
-    const memberOfCcLoginGroup = user && ccRegUsers[user.uid];
+    const memberOfCcVbsCheckinGroup = user && ccRegUsers[user.uid];
 
     if (status === STATUS.CHILDREN_SIGNED_IN) {
       return this._renderAfterLoginScreen();
     }
 
-    if (user && memberOfCcLoginGroup) {
+    if (user && memberOfCcVbsCheckinGroup) {
       return this._renderWhileLoggedIn(user);
     }
 
@@ -366,12 +366,12 @@ class CcLogin extends Component {
   }
 }
 
-CcLogin.defaultProps = {
+CcVbsCheckin.defaultProps = {
   moreStuff: 'Default more stuff'
 };
 
-CcLogin.propTypes = {
+CcVbsCheckin.propTypes = {
   moreStuff: PropTypes.string
 };
 
-export default CcLogin;
+export default CcVbsCheckin;
