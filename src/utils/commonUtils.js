@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 // Modeled after base64 web-safe chars, but ordered by ASCII.
 const PUSH_CHARS =
   '-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz';
@@ -57,6 +59,16 @@ const utils = {
     if (id.length !== 20) throw new Error('Length should be 20.');
 
     return id;
+  },
+
+  /**
+   * Returns years as number for a given dob
+   * @param {string} dob - dob in format 'YYYY-MM-DD'
+   * @returns {number} - years old as number
+   */
+  getAge(dob) {
+    const dobMoment = moment(dob, 'YYYY-MM-DD');
+    return moment().diff(dobMoment, 'years');
   }
 };
 

@@ -68,18 +68,16 @@ class CcVbsCheckin extends Component {
     const regStaffRef = firebase
       .database()
       .ref(this.props.registryAccessRefName);
+
     regStaffRef.on('value', snapshot => {
       const regStaff = snapshot.val();
-
-      this.setState({
-        regStaff
-      });
+      this.setState({regStaff});
     });
 
     const todaysLogRef = this._getTodaysLogRef();
+
     todaysLogRef.on('value', snapshot => {
       const checkedinIds = _.map(snapshot.val(), this.props.registryIdName);
-
       this.setState({checkedinIds});
     });
 
@@ -161,15 +159,6 @@ class CcVbsCheckin extends Component {
     this.setState({name: '', status: STATUS.ENTERING_PARENT_NAME});
   }
 
-  _getChildStates() {
-    return this.state.childrenOfParent;
-  }
-
-  _getAge(dob) {
-    const dobMoment = moment(dob, 'YYYY-MM-DD');
-    return moment().diff(dobMoment, 'years');
-  }
-
   _listChildren() {
     const {childrenOfParent, checkedinIds} = this.state;
 
@@ -180,7 +169,7 @@ class CcVbsCheckin extends Component {
 
       let checked = Boolean(childrenOfParent[registeredId].checked);
       let disabled = false;
-      let label = `${name}, age ${this._getAge(dob)}`;
+      let label = `${name}, age ${utils.getAge(dob)}`;
 
       if (checkedIn) {
         checked = true;
