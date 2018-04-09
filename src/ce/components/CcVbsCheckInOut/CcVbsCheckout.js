@@ -25,9 +25,12 @@ class CcVbsCheckin extends Component {
     super(props);
 
     this.state = {
+      checkedinIds: [],
+      checkedinChildren: [],
+      childrenOfParent: {},
       registered: [],
       regStaff: {},
-      name: '',
+      name: 'Earl Jones',
       status: PAGE_STATUS.ENTERING_PARENT_NAME,
       user: null
     };
@@ -37,7 +40,7 @@ class CcVbsCheckin extends Component {
         '_handleLoginClick',
         '_startSearchAgain',
         '_onChange',
-        '_onCheckInClick',
+        '_onCheckoutClick',
         '_onChecklistChange',
         '_onSearch',
         '_onSelectAllClick'
@@ -70,8 +73,9 @@ class CcVbsCheckin extends Component {
     const todaysLogRef = this._getTodaysLogRef();
 
     todaysLogRef.on('value', snapshot => {
-      const checkedinIds = _.map(snapshot.val(), this.props.registryIdName);
-      this.setState({checkedinIds});
+      const checkedinChildren = _.map(snapshot.val(), child => child);
+      const checkedinIds = _.map(checkedinChildren, this.props.registryIdName);
+      this.setState({checkedinIds, checkedinChildren});
     });
 
     // keeps user logged in on a page refresh
@@ -105,7 +109,7 @@ class CcVbsCheckin extends Component {
     return firebase.database().ref(`ccLogbook/${today}`);
   }
 
-  _onCheckInClick(disabled) {
+  _onCheckoutClick(disabled) {
     if (disabled) {
       window.alert('You must select at least one child');
     } else {
@@ -113,14 +117,18 @@ class CcVbsCheckin extends Component {
       const todaysLogRef = this._getTodaysLogRef();
 
       _.forEach(children, child => {
-        const uploadChild = _.cloneDeep(child);
-        uploadChild.ccLogbookId = utils.generatePushID();
-        uploadChild.status = CHILD_STATUS.CHECKED_IN;
+        console.log(child.ccLogbookId);
 
-        delete uploadChild.checked;
+        // get key of child with the matching ccLogbookId
+        todaysLogRef
+          .orderByChild('ccLogbookId')
+          .equalTo(child.ccLogbookId)
+          .once('value', snapshot => {
+            console.log(snapshot.key);
+          });
 
         // TODO: check for return from push
-        todaysLogRef.push(uploadChild);
+        // todaysLogRef.push(uploadChild);
       });
       this.setState({status: PAGE_STATUS.CHILDREN_CHECKED_IN});
     }
@@ -131,11 +139,11 @@ class CcVbsCheckin extends Component {
   }
 
   _onSearch() {
-    const childrenOfParent = _.cloneDeep(this.state.registered).filter(
-      child => {
-        return _.includes(child.parentNames, this.state.name);
-      }
-    );
+    const childrenOfParent = {};
+
+    _.forEach(this.state.checkedinChildren, child => {
+      childrenOfParent[child.ccRegisteredId] = child;
+    });
 
     this.setState({
       status: PAGE_STATUS.SELECT_CHILDREN,
@@ -160,16 +168,18 @@ class CcVbsCheckin extends Component {
     const checkListItems = _.map(childrenOfParent, child => {
       const {dob, name} = child;
       const registeredId = child[this.props.registryIdName];
-      const checkedIn = _.includes(checkedinIds, registeredId);
+      const checkedIn = child.status === CHILD_STATUS.CHECKED_IN;
 
-      let checked = Boolean(childrenOfParent[registeredId].checked);
+      let checked = Boolean(
+        childrenOfParent[registeredId] && childrenOfParent[registeredId].checked
+      );
       let disabled = false;
       let label = `${name}, age ${utils.getAge(dob)}`;
 
-      if (checkedIn) {
+      if (!checkedIn) {
         checked = true;
         disabled = true;
-        label += ' (already checked in)';
+        label += ' (already checked out)';
       }
 
       return {
@@ -208,7 +218,7 @@ class CcVbsCheckin extends Component {
       disabled = true;
     }
 
-    if (!childrenOfParent.length) {
+    if (_.isEmpty(childrenOfParent)) {
       return (
         <div>
           No children found for name “{name}”. Please try a different name or
@@ -225,15 +235,15 @@ class CcVbsCheckin extends Component {
       );
     }
 
-    const childrenOfParentThatAreNotCheckedIn = _.filter(
+    const checkedInChildrenOfParent = _.filter(
       childrenOfParent,
-      child => !_.includes(checkedinIds, child[this.props.registryIdName])
+      child => child.status === CHILD_STATUS.CHECKED_IN
     );
 
-    if (!childrenOfParentThatAreNotCheckedIn.length) {
+    if (!checkedInChildrenOfParent.length) {
       return (
         <div>
-          <p>All of the children for this name are checked in already</p>
+          <p>All of the children for this name are checked out already</p>
           {this._listChildren()}
           <div className="button-div">
             <Button
@@ -249,7 +259,7 @@ class CcVbsCheckin extends Component {
 
     return (
       <div>
-        <p className="who-checking">Who are you checking in today?</p>
+        <p className="who-checking">Who are you checking out today?</p>
         <div className="instructions">
           You can select names individually or press{' '}
           <span className="select-all-text">Select All</span> to select every
@@ -267,7 +277,7 @@ class CcVbsCheckin extends Component {
         <div className="button-div">
           <Button
             className={checkInButtonClass}
-            onClick={_.partial(this._onCheckInClick, disabled)}
+            onClick={_.partial(this._onCheckoutClick, disabled)}
           >
             Check In
           </Button>
@@ -337,7 +347,7 @@ class CcVbsCheckin extends Component {
 
     const memberOfCcVbsCheckinGroup = user && regStaff[user.uid];
 
-    if (status === PAGE_STATUS.CHILDREN_CHECKED_IN) {
+    if (status === PAGE_STATUS.CHILDREN_CHECKED_OUT) {
       return this._renderAfterLoginScreen();
     }
 
