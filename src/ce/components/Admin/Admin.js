@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 
 import firebase, {auth, provider} from '../../../firebase';
 import moment from 'moment';
+import {Parser as HtmlToReactParser} from 'html-to-react';
 
 import Text from '../Reusable/Text/Text';
 import Button from '../Reusable/Button/Button';
@@ -240,51 +241,65 @@ class Admin extends Component {
 
     _.forEach(this.state.dates, (date, dateString) => {
       _.forEach(date.events, (event, key) => {
-        const eventObject = typeof event === 'string' ? {title: event} : event;
-        const {
-          title,
-          timeStart,
-          timeEnd,
-          shortDescription,
-          longDescription
-        } = eventObject;
+        if (event) {
+          const eventObject =
+            typeof event === 'string' ? {title: event} : event;
+          const {
+            title,
+            timeStart,
+            timeEnd,
+            shortDescription,
+            longDescription
+          } = eventObject;
 
-        const dateTitleKey = dateString + title;
-        const currentlyEditing = dateTitleKey === this.state.currentEdit;
+          const dateTitleKey = dateString + title;
+          const currentlyEditing = dateTitleKey === this.state.currentEdit;
+          const htmlToReactParser = new HtmlToReactParser();
+          const longDescriptionRender = htmlToReactParser.parse(
+            longDescription
+          );
 
-        rows.push(
-          <div className="event-item" key={dateTitleKey}>
-            <strong>{title}</strong>
-            <ul>
-              <li>Date: {dateString}</li>
-              <li>Start: {getTime(timeStart)}</li>
-              <li>End: {getTime(timeEnd)}</li>
-              <li>Short Description: {shortDescription}</li>
-              <li>Long Description: {longDescription}</li>
-              <li>Options: {listOptions(event)}</li>
-            </ul>
-
-            {currentlyEditing ? (
-              <div>{this._renderEditInput(false, key)} </div>
-            ) : (
-              <div>
-                <Button
-                  onClick={_.partial(
-                    this._editItem,
-                    dateTitleKey,
-                    dateString,
-                    eventObject
-                  )}
-                >
-                  Edit
-                </Button>
-                <Button onClick={_.partial(this._removeItem, dateString, key)}>
-                  Remove
-                </Button>
-              </div>
-            )}
-          </div>
-        );
+          rows.push(
+            <div className="event-item" key={dateTitleKey}>
+              <strong>{title}</strong>
+              <ul>
+                <li>Date: {dateString}</li>
+                <li>Start: {getTime(timeStart)}</li>
+                <li>End: {getTime(timeEnd)}</li>
+                <li>Short Description: {shortDescription}</li>
+                <li>Long Description: {longDescription}</li>
+                <li>Options: {listOptions(event)}</li>
+              </ul>
+              {longDescription ? (
+                <div>
+                  <p>Long description appearance</p>
+                  {longDescriptionRender}
+                </div>
+              ) : null}
+              {currentlyEditing ? (
+                <div>{this._renderEditInput(false, key)} </div>
+              ) : (
+                <div>
+                  <Button
+                    onClick={_.partial(
+                      this._editItem,
+                      dateTitleKey,
+                      dateString,
+                      eventObject
+                    )}
+                  >
+                    Edit
+                  </Button>
+                  <Button
+                    onClick={_.partial(this._removeItem, dateString, key)}
+                  >
+                    Remove
+                  </Button>
+                </div>
+              )}
+            </div>
+          );
+        }
       });
     });
 
