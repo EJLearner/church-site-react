@@ -1,11 +1,10 @@
 import _ from 'lodash';
 import React, {Component} from 'react';
-
 import firebase, {auth, provider} from '../../../firebase';
 import moment from 'moment';
 
-import Text from '../Reusable/Text/Text';
 import Button from '../Reusable/Button/Button';
+import Text from '../Reusable/Text/Text';
 import Checklist from '../Reusable/Checklist/Checklist';
 
 import './Admin.css';
