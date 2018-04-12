@@ -27,7 +27,7 @@ class CcVbsCheckin extends Component {
     this.state = {
       registered: [],
       regStaff: {},
-      name: '',
+      parentName: '',
       status: PAGE_STATUS.ENTERING_PARENT_NAME,
       user: null
     };
@@ -133,7 +133,7 @@ class CcVbsCheckin extends Component {
   _onSearch() {
     const childrenOfParent = _.cloneDeep(this.state.registered).filter(
       child => {
-        return _.includes(child.parentNames, this.state.name);
+        return _.includes(child.parentNames, this.state.parentName);
       }
     );
 
@@ -151,20 +151,20 @@ class CcVbsCheckin extends Component {
   }
 
   _startSearchAgain() {
-    this.setState({name: '', status: PAGE_STATUS.ENTERING_PARENT_NAME});
+    this.setState({parentName: '', status: PAGE_STATUS.ENTERING_PARENT_NAME});
   }
 
   _listChildren() {
     const {childrenOfParent, checkedinIds} = this.state;
 
     const checkListItems = _.map(childrenOfParent, child => {
-      const {dob, name} = child;
+      const {childDob, childName} = child;
       const registeredId = child[this.props.registryIdName];
       const checkedIn = _.includes(checkedinIds, registeredId);
 
       let checked = Boolean(childrenOfParent[registeredId].checked);
       let disabled = false;
-      let label = `${name}, age ${utils.getAge(dob)}`;
+      let label = `${childName}, age ${utils.getAge(childDob)}`;
 
       if (checkedIn) {
         checked = true;
@@ -198,7 +198,7 @@ class CcVbsCheckin extends Component {
   }
 
   _renderChildSelectDiv() {
-    const {childrenOfParent, name, checkedinIds} = this.state;
+    const {childrenOfParent, parentName, checkedinIds} = this.state;
     let checkInButtonClass = 'check-in-button';
     let disabled = false;
     let atLeastOneChildSelected = this._getSelectedChildren().length;
@@ -211,8 +211,8 @@ class CcVbsCheckin extends Component {
     if (!childrenOfParent.length) {
       return (
         <div>
-          No children found for name “{name}”. Please try a different name or
-          get staff assistance.
+          No children found for name “{parentName}”. Please try a different name
+          or get staff assistance.
           <div className="button-div">
             <Button
               className="select-all-button"
@@ -280,11 +280,11 @@ class CcVbsCheckin extends Component {
     return (
       <div>
         <Text
-          id="name"
+          id="parentName"
           label="Name"
           onChange={this._onChange}
           onEnter={this._onSearch}
-          value={this.state.name}
+          value={this.state.parentName}
         />
       </div>
     );
