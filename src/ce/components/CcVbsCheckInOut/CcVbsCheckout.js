@@ -20,18 +20,16 @@ const bindThese = function(functions, context) {
   });
 };
 
-class CcVbsCheckin extends Component {
+class CcVbsCheckout extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      checkedinIds: [],
-      checkedinChildren: [],
       childrenOfParent: {},
-      registered: [],
+      parentName: '',
       regStaff: {},
-      parentName: 'Earl Jones',
       status: PAGE_STATUS.ENTERING_PARENT_NAME,
+      todaysLogbook: {},
       user: null
     };
 
@@ -50,16 +48,6 @@ class CcVbsCheckin extends Component {
   }
 
   componentDidMount() {
-    // update registered state based on firebase data status
-    const registeredRef = firebase
-      .database()
-      .ref(this.props.registeredChildrenRefName);
-
-    registeredRef.on('value', snapshot => {
-      const registered = snapshot.val();
-      this.setState({registered});
-    });
-
     // update regStaff state based on firebase data status
     const regStaffRef = firebase
       .database()
@@ -73,9 +61,8 @@ class CcVbsCheckin extends Component {
     const todaysLogRef = this._getTodaysLogRef();
 
     todaysLogRef.on('value', snapshot => {
-      const checkedinChildren = _.map(snapshot.val(), child => child);
-      const checkedinIds = _.map(checkedinChildren, this.props.registryIdName);
-      this.setState({checkedinIds, checkedinChildren});
+      const todaysLogbook = snapshot.val();
+      this.setState({todaysLogbook});
     });
 
     // keeps user logged in on a page refresh
@@ -106,6 +93,7 @@ class CcVbsCheckin extends Component {
 
   _getTodaysLogRef() {
     const today = moment().format('YYYY-MM-DD');
+    // TODO ccLogbook should be a react parameter
     return firebase.database().ref(`ccLogbook/${today}`);
   }
 
@@ -114,23 +102,19 @@ class CcVbsCheckin extends Component {
       window.alert('You must select at least one child');
     } else {
       const children = this._getSelectedChildren();
+      const selectedChildrenLogbookIds = _.map(children, 'ccLogbookId');
       const todaysLogRef = this._getTodaysLogRef();
+      const {todaysLogbook} = this.state;
 
-      _.forEach(children, child => {
-        console.log(child.ccLogbookId);
+      _.forEach(todaysLogbook, (loggedChild, key) => {
+        if (_.includes(selectedChildrenLogbookIds, loggedChild.ccLogbookId)) {
+          const childRef = todaysLogRef.child(key);
+          // TODO: check for return from update
 
-        // get key of child with the matching ccLogbookId
-        todaysLogRef
-          .orderByChild('ccLogbookId')
-          .equalTo(child.ccLogbookId)
-          .once('value', snapshot => {
-            console.log(snapshot.key);
-          });
-
-        // TODO: check for return from push
-        // todaysLogRef.push(uploadChild);
+          childRef.update({status: CHILD_STATUS.CHECKED_OUT});
+        }
       });
-      this.setState({status: PAGE_STATUS.CHILDREN_CHECKED_IN});
+      this.setState({status: PAGE_STATUS.CHILDREN_CHECKED_OUT});
     }
   }
 
@@ -139,10 +123,13 @@ class CcVbsCheckin extends Component {
   }
 
   _onSearch() {
+    const {parentName} = this.state;
     const childrenOfParent = {};
 
-    _.forEach(this.state.checkedinChildren, child => {
-      childrenOfParent[child.ccRegisteredId] = child;
+    _.forEach(this.state.todaysLogbook, child => {
+      if (_.includes(child.parentNames, parentName)) {
+        childrenOfParent[child.ccRegisteredId] = child;
+      }
     });
 
     this.setState({
@@ -163,16 +150,14 @@ class CcVbsCheckin extends Component {
   }
 
   _listChildren() {
-    const {childrenOfParent, checkedinIds} = this.state;
+    const {childrenOfParent} = this.state;
 
     const checkListItems = _.map(childrenOfParent, child => {
       const {childDob, childName} = child;
       const registeredId = child[this.props.registryIdName];
       const checkedIn = child.status === CHILD_STATUS.CHECKED_IN;
 
-      let checked = Boolean(
-        childrenOfParent[registeredId] && childrenOfParent[registeredId].checked
-      );
+      let checked = Boolean(_.get(childrenOfParent, `${registeredId}.checked`));
       let disabled = false;
       let label = `${childName}, age ${utils.getAge(childDob)}`;
 
@@ -208,7 +193,7 @@ class CcVbsCheckin extends Component {
   }
 
   _renderChildSelectDiv() {
-    const {childrenOfParent, parentName, checkedinIds} = this.state;
+    const {childrenOfParent, parentName} = this.state;
     let checkInButtonClass = 'check-in-button';
     let disabled = false;
     let atLeastOneChildSelected = this._getSelectedChildren().length;
@@ -279,7 +264,7 @@ class CcVbsCheckin extends Component {
             className={checkInButtonClass}
             onClick={_.partial(this._onCheckoutClick, disabled)}
           >
-            Check In
+            Check Out
           </Button>
         </div>
       </div>
@@ -336,8 +321,10 @@ class CcVbsCheckin extends Component {
   _renderAfterLoginScreen() {
     return (
       <div>
-        <h1>Thanks for checking your child in!</h1>
-        <Button onClick={this._startSearchAgain}>Check Another Child In</Button>
+        <h1>Thanks for checking your child out!</h1>
+        <Button onClick={this._startSearchAgain}>
+          Check Another Child Out
+        </Button>
       </div>
     );
   }
@@ -365,16 +352,14 @@ class CcVbsCheckin extends Component {
   }
 }
 
-CcVbsCheckin.defaultProps = {
-  registeredChildrenRefName: 'ccRegistered',
+CcVbsCheckout.defaultProps = {
   registryAccessRefName: 'user_groups/ccRegAccess',
   registryIdName: 'ccRegisteredId'
 };
 
-CcVbsCheckin.propTypes = {
-  registeredChildrenRefName: PropTypes.string.isRequired,
+CcVbsCheckout.propTypes = {
   registryAccessRefName: PropTypes.string.isRequired,
   registryIdName: PropTypes.string.isRequired
 };
 
-export default CcVbsCheckin;
+export default CcVbsCheckout;
