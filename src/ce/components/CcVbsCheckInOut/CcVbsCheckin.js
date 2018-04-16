@@ -131,11 +131,13 @@ class CcVbsCheckin extends Component {
   }
 
   _onSearch() {
-    const childrenOfParent = _.cloneDeep(this.state.registered).filter(
-      child => {
-        return _.includes(child.parentNames, this.state.parentName);
+    const childrenOfParent = {};
+
+    _.forEach(_.cloneDeep(this.state.registered), child => {
+      if (_.includes(child.parentNames, this.state.parentName)) {
+        childrenOfParent[child[this.props.registryIdName]] = child;
       }
-    );
+    });
 
     this.setState({
       status: PAGE_STATUS.SELECT_CHILDREN,
@@ -208,7 +210,7 @@ class CcVbsCheckin extends Component {
       disabled = true;
     }
 
-    if (!childrenOfParent.length) {
+    if (_.isEmpty(childrenOfParent)) {
       return (
         <div>
           No children found for name “{parentName}”. Please try a different name
