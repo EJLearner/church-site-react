@@ -1,13 +1,20 @@
+// TODO: Ages aren't right for everyone - Check Januarie Mins children
+// TODO: convert this page for public use
+
+import _ from 'lodash';
+import firebase, {auth, provider} from '../../../firebase';
 import React, {Component} from 'react';
 import moment from 'moment';
+import {post} from 'jquery';
 
+import Button from '../Reusable/Button/Button';
 import Checkbox from '../Reusable/Checklist/Checkbox';
 import Text from '../Reusable/Text/Text';
-import Button from '../Reusable/Button/Button';
 
 import fieldValidators from './fieldValidators';
 import registrationUtils from './registrationUtils';
-import {post} from 'jquery';
+
+import utils from '../../../utils/commonUtils';
 
 import './Registration.css';
 
@@ -20,6 +27,15 @@ class CcRegistrationChild extends Component {
     this._renderFormFields = this._renderFormFields.bind(this);
     this._setErrors = this._setErrors.bind(this);
     this._submitData = this._submitData.bind(this);
+  }
+
+  componentDidMount() {
+    // keeps user logged in on a page refresh
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        this.setState({user});
+      }
+    });
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -61,10 +77,11 @@ class CcRegistrationChild extends Component {
   _submitData() {
     const {childDob} = this.state;
 
-    const data = {
+    const child = {
       childName: this.state.childName,
       childDob: childDob,
       childAge: this._getYearsFromToday(childDob),
+      city: this.state.city || null,
       parentEmail: this.state.parentEmail,
       parentName: this.state.parentName,
       parentPhone: this.state.parentPhone,
@@ -76,18 +93,19 @@ class CcRegistrationChild extends Component {
       knownAllergies: this.state.knownAllergies
     };
 
-    post(
-      'ccRegistrationFormChildProcess.php',
-      data,
-      response => {
-        if (response.success) {
-          this._postSubmitSuccess();
-        } else {
-          this.setState({postStatus: 'failure'});
-        }
-      },
-      'json'
-    );
+    const childForDb = _.cloneDeep(child);
+    childForDb.parentNames = [child.parentName];
+    childForDb.ccRegisteredId = utils.generatePushID();
+    delete childForDb.childAge;
+
+    const ccRegisteredRef = firebase.database().ref('ccRegistered');
+    ccRegisteredRef.push(childForDb, err => {
+      if (err) {
+        this.setState({postStatus: 'failure'});
+      } else {
+        this._postSubmitSuccess();
+      }
+    });
   }
 
   _setErrors() {
