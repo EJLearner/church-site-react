@@ -17,21 +17,12 @@ const getNextSaturdayBeforeFirstSunday = () => {
 
 const allPictures = [
   {
-    altTag:
-      'Celebrate Holy week with us: Psalm Sunday March 25, 2018 at 9am, ' +
-      'Maunday Thursday March 29, 2018 at 7pm, Easter Service APril 1, 2018 at 9am',
-    displayBeg: '2018-02-25',
-    displayEnd: '2018-05-01',
-    source: require('../../assets/ce/images/slides/christian-ed-home-holy-week.png')
-  },
-  {
     altTag: 'Christ Is Risen: Celebrate the Savior',
     annual: true,
     displayBeg: '2018-03-01',
     displayEnd: '2018-05-01',
     source: require('../../assets/ce/images/slides/christian-ed-home-christ-risen.png')
   },
-
   {
     altTag:
       'o be a good father and mother requires that the parents defer many of ' +
