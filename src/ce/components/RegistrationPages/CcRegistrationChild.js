@@ -1,8 +1,4 @@
-// TODO: Ages aren't right for everyone - Check Januarie Mins children
-// TODO: convert this page for public use
-
-import _ from 'lodash';
-import firebase, {auth} from '../../../firebase';
+import firebase from '../../../firebase';
 import React, {Component} from 'react';
 import moment from 'moment';
 
@@ -29,15 +25,6 @@ class CcRegistrationChild extends Component {
     this._submitData = this._submitData.bind(this);
   }
 
-  componentDidMount() {
-    // keeps user logged in on a page refresh
-    auth.onAuthStateChanged(user => {
-      if (user) {
-        this.setState({user});
-      }
-    });
-  }
-
   componentDidUpdate(prevProps, prevState) {
     if (!prevState.postStatus && this.state.postStatus) {
       const successBox = document.getElementById('success-error-box');
@@ -47,17 +34,17 @@ class CcRegistrationChild extends Component {
 
   _getFreshState() {
     return {
-      childName: 'Test Child',
-      childDob: '01/01/2018',
+      childName: '',
+      childDob: '',
       parentEmail: '',
-      parentName: 'TestName',
-      parentPhone: '410-944-0396',
-      address1: '1111 Address',
+      parentName: '',
+      parentPhone: '',
+      address1: '',
       address2: '',
-      state: 'MD',
-      zip: '21111',
+      state: '',
+      zip: '',
       subscribe: false,
-      knownAllergies: 'none',
+      knownAllergies: '',
 
       errors: []
     };
@@ -74,11 +61,12 @@ class CcRegistrationChild extends Component {
     ).format(constants.INTERNAL_DATE_FORMAT);
 
     const child = {
+      ccRegisteredId: utils.generatePushID(),
       childName: this.state.childName,
       childDob: standardChildDob,
       city: this.state.city || null,
       parentEmail: this.state.parentEmail,
-      parentName: this.state.parentName,
+      parentNames: [this.state.parentName],
       parentPhone: this.state.parentPhone,
       address1: this.state.address1,
       address2: this.state.address2,
@@ -88,15 +76,10 @@ class CcRegistrationChild extends Component {
       knownAllergies: this.state.knownAllergies
     };
 
-    const childForDb = _.cloneDeep(child);
-    childForDb.parentNames = [child.parentName];
-    childForDb.ccRegisteredId = utils.generatePushID();
-    delete childForDb.childAge;
-
     const ccRegisteredRef = firebase.database().ref('ccRegistered');
-    ccRegisteredRef.push(childForDb, err => {
-      if (err) {
-        this.setState({postStatus: 'failure'});
+    ccRegisteredRef.push(child, responseError => {
+      if (responseError) {
+        this.setState({postStatus: 'failure', responseError});
       } else {
         this._postSubmitSuccess();
       }
@@ -302,7 +285,8 @@ class CcRegistrationChild extends Component {
         {this._renderFormFields()}
         {registrationUtils.renderStatusMessage(
           this.state.postStatus,
-          this.state.errors
+          this.state.errors,
+          this.state.responseError
         )}
       </div>
     );
