@@ -1,5 +1,7 @@
 import moment from 'moment';
 
+import constants from '../../../utils/constants';
+
 const validDateFormats = ['M/D/YY', 'M/D/YYYY', 'M-D-YYYY', 'M-D-YY'];
 
 const fieldValidators = {
@@ -10,7 +12,11 @@ const fieldValidators = {
   },
 
   isDate: (value, label) => {
-    const valid = moment(value, validDateFormats, true).isValid();
+    const valid = moment(
+      value,
+      constants.VALID_INPUT_DATE_FORMATS,
+      true
+    ).isValid();
     if (value && !valid) {
       return `${label} is not a valid date`;
     }

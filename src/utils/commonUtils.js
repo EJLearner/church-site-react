@@ -1,5 +1,7 @@
 import moment from 'moment';
 
+import constants from '../utils/constants';
+
 // Modeled after base64 web-safe chars, but ordered by ASCII.
 const PUSH_CHARS =
   '-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz';
@@ -67,7 +69,7 @@ const utils = {
    * @returns {number} - years old as number
    */
   getAge(dob) {
-    const dobMoment = moment(dob, 'YYYY-MM-DD');
+    const dobMoment = moment(dob, constants.INTERNAL_DATE_FORMAT);
     return moment().diff(dobMoment, 'years');
   }
 };

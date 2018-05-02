@@ -2,10 +2,9 @@
 // TODO: convert this page for public use
 
 import _ from 'lodash';
-import firebase, {auth, provider} from '../../../firebase';
+import firebase, {auth} from '../../../firebase';
 import React, {Component} from 'react';
 import moment from 'moment';
-import {post} from 'jquery';
 
 import Button from '../Reusable/Button/Button';
 import Checkbox from '../Reusable/Checklist/Checkbox';
@@ -14,6 +13,7 @@ import Text from '../Reusable/Text/Text';
 import fieldValidators from './fieldValidators';
 import registrationUtils from './registrationUtils';
 
+import constants from '../../../utils/constants';
 import utils from '../../../utils/commonUtils';
 
 import './Registration.css';
@@ -47,17 +47,17 @@ class CcRegistrationChild extends Component {
 
   _getFreshState() {
     return {
-      childName: '',
-      childDob: '',
+      childName: 'Test Child',
+      childDob: '01/01/2018',
       parentEmail: '',
-      parentName: '',
-      parentPhone: '',
-      address1: '',
+      parentName: 'TestName',
+      parentPhone: '410-944-0396',
+      address1: '1111 Address',
       address2: '',
-      state: '',
-      zip: '',
+      state: 'MD',
+      zip: '21111',
       subscribe: false,
-      knownAllergies: '',
+      knownAllergies: 'none',
 
       errors: []
     };
@@ -67,20 +67,15 @@ class CcRegistrationChild extends Component {
     this.setState({[id]: value, postStatus: undefined});
   }
 
-  _getYearsFromToday(dobString) {
-    return moment().diff(
-      moment(this.state.childDob, fieldValidators.validDateFormats),
-      'years'
-    );
-  }
-
   _submitData() {
-    const {childDob} = this.state;
+    const standardChildDob = moment(
+      this.state.childDob,
+      constants.VALID_INPUT_DATE_FORMATS
+    ).format(constants.INTERNAL_DATE_FORMAT);
 
     const child = {
       childName: this.state.childName,
-      childDob: childDob,
-      childAge: this._getYearsFromToday(childDob),
+      childDob: standardChildDob,
       city: this.state.city || null,
       parentEmail: this.state.parentEmail,
       parentName: this.state.parentName,
