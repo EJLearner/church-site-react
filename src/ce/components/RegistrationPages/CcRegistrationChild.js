@@ -6,7 +6,6 @@ class CcRegistrationChild extends Component {
   _renderHeaderContent() {
     return (
       <div>
-        {' '}
         <h1>Children’s Church</h1>
         <h2>Child Registration</h2>
         <p>

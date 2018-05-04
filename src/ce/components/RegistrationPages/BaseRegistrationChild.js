@@ -42,6 +42,7 @@ class VbsRegistrationChild extends Component {
       parentPhone: '',
       address1: '',
       address2: '',
+      city: '',
       state: '',
       zip: '',
       subscribe: false,
@@ -54,6 +55,7 @@ class VbsRegistrationChild extends Component {
       // parentPhone: '000-000-0000',
       // address1: 'sdfsdff',
       // address2: '',
+      // city: 'bestCity',
       // state: 'sdf',
       // zip: '00000',
       // subscribe: false,
@@ -68,28 +70,36 @@ class VbsRegistrationChild extends Component {
   }
 
   _submitData() {
+    const {refName} = this.props;
+
     const standardChildDob = moment(
       this.state.childDob,
       constants.VALID_INPUT_DATE_FORMATS
     ).format(constants.INTERNAL_DATE_FORMAT);
 
     const child = {
-      [this.props.refName + 'Id']: utils.generatePushID(),
-      childName: this.state.childName,
+      [refName + 'Id']: utils.generatePushID(),
       childDob: standardChildDob,
-      city: this.state.city || null,
-      parentEmail: this.state.parentEmail,
-      parentNames: [this.state.parentName],
-      parentPhone: this.state.parentPhone,
-      address1: this.state.address1,
-      address2: this.state.address2,
-      state: this.state.state,
-      zip: this.state.zip,
-      subscribe: this.state.subscribe,
-      knownAllergies: this.state.knownAllergies
+      parentNames: [this.state.parentName]
     };
 
-    const firebaseRef = firebase.database().ref(this.props.refName);
+    [
+      'childName',
+      'city',
+      'parentEmail',
+      'parentPhone',
+      'address1',
+      'address2',
+      'state',
+      'zip',
+      'subscribe',
+      'knownAllergies'
+    ].forEach(field => {
+      child[field] = this.state[field];
+    });
+
+    const firebaseRef = firebase.database().ref(refName);
+
     firebaseRef.push(child, responseError => {
       if (responseError) {
         this.setState({postStatus: 'failure', responseError});
@@ -141,6 +151,15 @@ class VbsRegistrationChild extends Component {
         ]
       },
       {
+        id: 'city',
+        label: 'City',
+        fieldRules: [
+          fieldValidators.isAllLetters,
+          fieldValidators.isNotEmpty,
+          fieldValidators.isAtLeastTwoCharacters
+        ]
+      },
+      {
         id: 'state',
         label: 'State',
         fieldRules: [
@@ -174,6 +193,8 @@ class VbsRegistrationChild extends Component {
   }
 
   _renderFormFields() {
+    const widthBase = 15;
+
     return (
       <div id="form-fields">
         <Text
@@ -181,104 +202,107 @@ class VbsRegistrationChild extends Component {
           label="Child’s Name"
           onChange={this._onChangeInput}
           required
-          size={20}
+          size={2 * widthBase}
           value={this.state.childName}
         />
         <Text
           id={'childDob'}
           label="Child’s Date of Birth"
           onChange={this._onChangeInput}
+          placeholder="mm/dd/yyyy"
           required
-          size={10}
+          size={1 * widthBase}
           value={this.state.childDob}
         />
-
         <h3>Parent/Guardian Information</h3>
-
-        <div>
-          <Text
-            id={'parentEmail'}
-            label="Email Address"
-            onChange={this._onChangeInput}
-            size={20}
-            value={this.state.parentEmail}
-          />
-        </div>
-        <div>
-          <Text
-            id={'parentName'}
-            label="Name"
-            onChange={this._onChangeInput}
-            required
-            size={20}
-            value={this.state.parentName}
-          />
-          <Text
-            id={'parentPhone'}
-            label="Best Phone Number to Reach You"
-            onChange={this._onChangeInput}
-            required
-            size={10}
-            value={this.state.parentPhone}
-          />
-        </div>
-        <div>
-          <Text
-            id={'address1'}
-            label="Address Line 1"
-            onChange={this._onChangeInput}
-            required
-            size={40}
-            value={this.state.address1}
-          />
-        </div>
-        <div>
-          <Text
-            id={'address2'}
-            label="Address Line 2"
-            onChange={this._onChangeInput}
-            size={40}
-            value={this.state.address2}
-          />
-        </div>
-        <div>
-          <Text
-            id={'state'}
-            label="State"
-            onChange={this._onChangeInput}
-            required
-            size={20}
-            value={this.state.state}
-          />
-          <Text
-            id={'zip'}
-            label="ZIP Code"
-            onChange={this._onChangeInput}
-            required
-            size={8}
-            value={this.state.zip}
-          />
-          <Checkbox
-            checked={this.state.subscribe}
-            className="registration-checkbox"
-            id="subscribe"
-            label="I'd like to know what other exciting events you have going on in the Temple!"
-            onChange={this._onChangeInput}
-            value="subscribe"
-          />
-        </div>
         <Text
+          id={'parentEmail'}
+          label="Email Address"
+          onChange={this._onChangeInput}
+          size={2 * widthBase}
+          value={this.state.parentEmail}
+        />
+        <br />
+        <Text
+          id={'parentName'}
+          label="Name"
+          onChange={this._onChangeInput}
+          required
+          size={2 * widthBase}
+          value={this.state.parentName}
+        />
+        <Text
+          id={'parentPhone'}
+          label="Best Phone Number to Reach You"
+          onChange={this._onChangeInput}
+          required
+          size={1 * widthBase}
+          value={this.state.parentPhone}
+        />
+        <br />
+        <Text
+          id={'address1'}
+          label="Address Line 1"
+          onChange={this._onChangeInput}
+          required
+          size={4 * widthBase}
+          value={this.state.address1}
+        />
+        <br />
+        <Text
+          id={'address2'}
+          label="Address Line 2"
+          onChange={this._onChangeInput}
+          size={4 * widthBase}
+          value={this.state.address2}
+        />
+        <br />
+        <Text
+          id={'city'}
+          label="City"
+          onChange={this._onChangeInput}
+          required
+          size={1.5 * widthBase}
+          value={this.state.city}
+        />
+        <Text
+          id={'state'}
+          label="State"
+          onChange={this._onChangeInput}
+          required
+          size={1.5 * widthBase}
+          value={this.state.state}
+        />
+        <br />
+        <Text
+          id={'zip'}
+          label="ZIP Code"
+          onChange={this._onChangeInput}
+          required
+          size={Math.floor(0.8 * widthBase)}
+          value={this.state.zip}
+        />
+        <Checkbox
+          checked={this.state.subscribe}
+          className="registration-checkbox"
+          id="subscribe"
+          label="I'd like to know what other exciting events you have going on in the Temple!"
+          onChange={this._onChangeInput}
+          value="subscribe"
+        />
+        <br />
+        <Text
+          columns={4 * widthBase}
           id="knownAllergies"
           label="List any known food allergies. Mark N/A if none."
           onChange={this._onChangeInput}
           required
-          size={50}
+          size={200}
           textArea
           value={this.state.knownAllergies}
         />
-        <div>
-          <Button onClick={this._setErrors}>Submit</Button>
-        </div>
+        <br />
+        <Button onClick={this._setErrors}>Submit</Button>
       </div>
     );
   }

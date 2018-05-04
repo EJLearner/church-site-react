@@ -18,7 +18,7 @@ const fieldValidators = {
       true
     ).isValid();
     if (value && !valid) {
-      return `${label} is not a valid date`;
+      return `${label} is not in format mm/dd/yyyy`;
     }
   },
 
