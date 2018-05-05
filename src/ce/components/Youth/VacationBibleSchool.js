@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router';
 
+import routePaths from '../../../routePaths';
+
 import ContactLine from '../Reusable/ContactLine';
 
 import VolunteerSect from './Shared/VolunteerSect';
@@ -18,7 +20,7 @@ class VacationBibleSchool extends Component {
 
   render() {
     if (this.state.redirect) {
-      return <Redirect push to={'/' + this.state.redirect} />;
+      return <Redirect push to={this.state.redirect} />;
     }
 
     return (
@@ -56,11 +58,11 @@ class VacationBibleSchool extends Component {
           name="VBS"
           registerButtonOnClick={this._setPageState.bind(
             null,
-            'vbs-registration-child'
+            routePaths.CE_VBS_REG_CHILD
           )}
           volunteerButtonOnClick={this._setPageState.bind(
             null,
-            'vbs-registration-volunteer'
+            routePaths.CE_VBS_REG_VOLUNTEER
           )}
         />
       </div>

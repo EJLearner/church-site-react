@@ -210,7 +210,7 @@ class VbsRegistrationVolunteer extends Component {
             id={'email'}
             label="Email Address"
             onChange={this._onChangeInput}
-            size="20"
+            size={20}
             value={this.state.email}
           />
         </div>
@@ -220,7 +220,7 @@ class VbsRegistrationVolunteer extends Component {
             label="Name"
             onChange={this._onChangeInput}
             required
-            size="20"
+            size={20}
             value={this.state.name}
           />
           <Text
@@ -228,7 +228,7 @@ class VbsRegistrationVolunteer extends Component {
             label="Date of Birth"
             onChange={this._onChangeInput}
             required
-            size="10"
+            size={10}
             value={this.state.dob}
           />
         </div>
@@ -238,7 +238,7 @@ class VbsRegistrationVolunteer extends Component {
             label="Address Line 1"
             onChange={this._onChangeInput}
             required
-            size="40"
+            size={40}
             value={this.state.address1}
           />
         </div>
@@ -247,7 +247,7 @@ class VbsRegistrationVolunteer extends Component {
             id={'address2'}
             label="Address Line 2"
             onChange={this._onChangeInput}
-            size="40"
+            size={40}
             value={this.state.address2}
           />
         </div>
@@ -257,7 +257,7 @@ class VbsRegistrationVolunteer extends Component {
             label="City"
             onChange={this._onChangeInput}
             required
-            size="20"
+            size={20}
             value={this.state.city}
           />
           <Text
@@ -265,7 +265,7 @@ class VbsRegistrationVolunteer extends Component {
             label="State"
             onChange={this._onChangeInput}
             required
-            size="20"
+            size={20}
             value={this.state.state}
           />
           <Text
@@ -273,7 +273,7 @@ class VbsRegistrationVolunteer extends Component {
             label="ZIP Code"
             onChange={this._onChangeInput}
             required
-            size="8"
+            size={8}
             value={this.state.zip}
           />
         </div>
@@ -282,14 +282,14 @@ class VbsRegistrationVolunteer extends Component {
             id={'mobile'}
             label="Mobile Phone"
             onChange={this._onChangeInput}
-            size="10"
+            size={10}
             value={this.state.mobile}
           />
           <Text
             id={'home'}
             label="Home Phone"
             onChange={this._onChangeInput}
-            size="10"
+            size={10}
             value={this.state.home}
           />
         </div>

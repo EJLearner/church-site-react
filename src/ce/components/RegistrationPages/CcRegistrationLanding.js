@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router';
 
+import routePaths from '../../../routePaths';
+
 import BaseRegistrationLanding from './BaseRegistrationLanding.js';
 
 import leftPicture from './ccregpicture.png';
@@ -25,10 +27,13 @@ class CcRegistrationLanding extends Component {
     return (
       <BaseRegistrationLanding
         imgPath={leftPicture}
-        onClickAttend={this._setPageState.bind(null, 'cc-registration-child')}
+        onClickAttend={this._setPageState.bind(
+          null,
+          routePaths.CE_CC_REG_CHILD
+        )}
         onClickVolunteer={this._setPageState.bind(
           null,
-          'cc-registration-volunteer'
+          routePaths.CE_CC_REG_VOLUNTEER
         )}
         type={BaseRegistrationLanding.TYPES.CHILDRENS_CHURCH}
       />

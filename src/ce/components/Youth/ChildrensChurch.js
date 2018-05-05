@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router';
 
+import routePaths from '../../../routePaths';
+
 import ContactLine from '../Reusable/ContactLine';
 
 import VolunteerSect from './Shared/VolunteerSect';
@@ -18,7 +20,7 @@ class ChildrensChurch extends Component {
 
   render() {
     if (this.state.redirect) {
-      return <Redirect push to={'/' + this.state.redirect} />;
+      return <Redirect push to={this.state.redirect} />;
     }
 
     return (
@@ -51,11 +53,11 @@ class ChildrensChurch extends Component {
           name="Children’s Church"
           registerButtonOnClick={this._setPageState.bind(
             null,
-            'cc-registration-child'
+            routePaths.CE_CC_REG_CHILD
           )}
           volunteerButtonOnClick={this._setPageState.bind(
             null,
-            'cc-registration-volunteer'
+            routePaths.CE_CC_REG_VOLUNTEER
           )}
         />
       </div>

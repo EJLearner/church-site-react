@@ -53,7 +53,7 @@ const YOUTH_PATHS = {
   CE_YOUTH_GODS_GIFTS: `${CE_YOUTH}/godsgifts`,
   CE_YOUTH_SUNDAY_SCHOOL: `${CE_YOUTH}/sundayschool`,
   CE_YOUTH_CHILDRENS_CHURCH: `${CE_YOUTH}/childrenschurch`,
-  CE_YOUTH_VACATION_BIBLE_SCHOOL: `${CE_YOUTH}/vacationbibleschool`
+  CE_YOUTH_VACATION_BIBLE_SCHOOL: `${CE_YOUTH}/vbs`
 };
 
 const {CE_WHO} = MAIN_PATH_CONSTANTS;

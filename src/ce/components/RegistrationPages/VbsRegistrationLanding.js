@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router';
 
+import routePaths from '../../../routePaths';
+
 import BaseRegistrationLanding from './BaseRegistrationLanding.js';
 
 import leftPicture from './vbsregpicture.png';
@@ -19,16 +21,19 @@ class VbsRegistrationLanding extends Component {
 
   render() {
     if (this.state.redirect) {
-      return <Redirect push to={'/' + this.state.redirect} />;
+      return <Redirect push to={this.state.redirect} />;
     }
 
     return (
       <BaseRegistrationLanding
         imgPath={leftPicture}
-        onClickAttend={this._setPageState.bind(null, 'vbs-registration-child')}
+        onClickAttend={this._setPageState.bind(
+          null,
+          routePaths.CE_VBS_REG_CHILD
+        )}
         onClickVolunteer={this._setPageState.bind(
           null,
-          'vbs-registration-volunteer'
+          routePaths.CE_VBS_REG_VOLUNTEER
         )}
         type={BaseRegistrationLanding.TYPES.VACATION_BIBLE}
       />
