@@ -21,7 +21,7 @@ class CcRegistrationLanding extends Component {
 
   render() {
     if (this.state.redirect) {
-      return <Redirect push to={'/' + this.state.redirect} />;
+      return <Redirect push to={this.state.redirect} />;
     }
 
     return (

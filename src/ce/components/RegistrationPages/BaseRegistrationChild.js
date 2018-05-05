@@ -1,6 +1,7 @@
 import firebase from '../../../firebase';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
+import {Redirect} from 'react-router';
 import moment from 'moment';
 
 import Button from '../Reusable/Button/Button';
@@ -11,6 +12,7 @@ import fieldValidators from './fieldValidators';
 import registrationUtils from './registrationUtils';
 
 import constants from '../../../utils/constants';
+import routePaths from '../../../routePaths';
 import utils from '../../../utils/commonUtils';
 
 import './Registration.css';
@@ -61,7 +63,8 @@ class VbsRegistrationChild extends Component {
       // subscribe: false,
       // knownAllergies: 'sdfsd',
 
-      errors: []
+      errors: [],
+      redirect: false
     };
   }
 
@@ -189,7 +192,7 @@ class VbsRegistrationChild extends Component {
   }
 
   _postSubmitSuccess() {
-    this.setState({postStatus: 'success', ...this._getFreshState()});
+    this.setState({redirect: true});
   }
 
   _renderFormFields() {
@@ -308,6 +311,22 @@ class VbsRegistrationChild extends Component {
   }
 
   render() {
+    if (this.state.redirect) {
+      const state = {
+        forMessage: 'you for registering.'
+      };
+
+      return (
+        <Redirect
+          push
+          to={{
+            pathname: routePaths.CE_THANK_YOU,
+            state
+          }}
+        />
+      );
+    }
+
     return (
       <div className={this.props.className}>
         {this.props.headerContent}

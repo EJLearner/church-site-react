@@ -18,6 +18,7 @@ import MenuBar from './ce/components/MenuBar/MenuBar';
 import NotFound from './ce/components/NotFound/NotFound';
 import Quote from './ce/components/Quote/Quote';
 import TitleBar from './ce/components/TitleBar/TitleBar';
+import ThankYouPage from './ce/components/Reusable/ThankYouPage/ThankYouPage';
 import VbsRegistrationChild from './ce/components/RegistrationPages/VbsRegistrationChild';
 import VbsRegistrationLanding from './ce/components/RegistrationPages/VbsRegistrationLanding';
 import VbsRegistrationVolunteer from './ce/components/RegistrationPages/VbsRegistrationVolunteer';
@@ -187,6 +188,14 @@ class Routes extends Component {
               <BareCePage>
                 <VbsRegistrationVolunteer />
               </BareCePage>
+            )}
+          />
+          <Route
+            path={routePaths.CE_THANK_YOU}
+            render={() => (
+              <FullCePage>
+                <ThankYouPage />
+              </FullCePage>
             )}
           />
           <Route
