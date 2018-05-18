@@ -4,15 +4,18 @@ const registrationUtils = {
   getPageErrors(state = {}, rules = []) {
     const errors = [];
     rules.forEach(rule => {
-      const {fieldRules, id, label} = rule;
-      const value = state[id];
+      // will transition everything to use fieldId property name
+      const deprecatedIdProp = rule.id;
+
+      const {fieldRules = [], fieldId = deprecatedIdProp, label} = rule;
+      const value = state[fieldId];
 
       fieldRules.forEach(checkFunc => {
         const message = checkFunc(value, label);
 
         if (message) {
           errors.push({
-            id,
+            fieldId,
             message
           });
         }

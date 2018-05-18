@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 import firebase from '../../../firebase';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
@@ -6,6 +8,7 @@ import moment from 'moment';
 
 import Button from '../Reusable/Button/Button';
 import Checkbox from '../Reusable/Checklist/Checkbox';
+import Modal from '../Reusable/Modal/Modal';
 import Text from '../Reusable/Text/Text';
 
 import fieldValidators from './fieldValidators';
@@ -17,15 +20,98 @@ import utils from '../../../utils/commonUtils';
 
 import './Registration.css';
 
+const FIELDS_INFO = {
+  childName: {
+    fieldId: 'childName',
+    dbId: 'childName',
+    label: 'Child’s name',
+    fieldRules: [
+      fieldValidators.isNotEmpty,
+      fieldValidators.isAtLeastTwoCharacters
+    ]
+  },
+  childDob: {
+    fieldId: 'childDob',
+    dbId: 'childDob',
+    label: 'Child’s Date of Birth',
+    fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate]
+  },
+  parentEmail: {
+    fieldId: 'parentEmail',
+    dbId: 'parentEmail',
+    label: 'Email Address',
+    fieldRules: [fieldValidators.isValidEmail]
+  },
+  parentName: {
+    fieldId: 'parentName',
+    dbId: 'parentName',
+    label: 'Parent’s Name',
+    fieldRules: [
+      fieldValidators.isNotEmpty,
+      fieldValidators.isAtLeastTwoCharacters
+    ]
+  },
+  parentPhone: {
+    fieldId: 'parentPhone',
+    dbId: 'parentPhone',
+    label: 'Phone Number',
+    fieldRules: [fieldValidators.isPhoneNumber, fieldValidators.isNotEmpty]
+  },
+  address1: {
+    fieldId: 'address1',
+    dbId: 'address1',
+    label: 'Address Line 1',
+    fieldRules: [
+      fieldValidators.isNotEmpty,
+      fieldValidators.isAtLeastTwoCharacters
+    ]
+  },
+  address2: {fieldId: 'address2', dbId: 'address2', label: 'Address Line 2'},
+  city: {
+    fieldId: 'city',
+    dbId: 'city',
+    label: 'City',
+    fieldRules: [
+      fieldValidators.isAllLetters,
+      fieldValidators.isNotEmpty,
+      fieldValidators.isAtLeastTwoCharacters
+    ]
+  },
+  state: {
+    fieldId: 'state',
+    dbId: 'state',
+    label: 'State',
+    fieldRules: [
+      fieldValidators.isAllLetters,
+      fieldValidators.isNotEmpty,
+      fieldValidators.isAtLeastTwoCharacters
+    ]
+  },
+  zip: {
+    fieldId: 'zip',
+    dbId: 'zip',
+    label: 'ZIP Code',
+    fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isValidZip]
+  },
+  subscribe: {fieldId: 'subscribe', label: 'Subscribe', dbId: 'subscribe'},
+  knownAllergies: {
+    fieldId: 'knownAllergies',
+    dbId: 'knownAllergies',
+    label: 'Known Allergies',
+    fieldRules: [fieldValidators.isNotEmpty]
+  }
+};
+
 class VbsRegistrationChild extends Component {
   constructor(props) {
     super(props);
-    this.state = this._getFreshState();
+    this.state = this._getState();
 
     this._onChangeInput = this._onChangeInput.bind(this);
     this._renderFormFields = this._renderFormFields.bind(this);
-    this._setErrors = this._setErrors.bind(this);
+    this._validateAndSubmit = this._validateAndSubmit.bind(this);
     this._submitData = this._submitData.bind(this);
+    this._toggleModal = this._toggleModal.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -35,36 +121,41 @@ class VbsRegistrationChild extends Component {
     }
   }
 
-  _getFreshState() {
+  _getState() {
     return {
-      childName: '',
-      childDob: '',
-      parentEmail: '',
-      parentName: '',
-      parentPhone: '',
-      address1: '',
-      address2: '',
-      city: '',
-      state: '',
-      zip: '',
-      subscribe: false,
-      knownAllergies: '',
+      // form data
+      [FIELDS_INFO.childName.fieldId]: '',
+      [FIELDS_INFO.childDob.fieldId]: '',
+      [FIELDS_INFO.parentEmail.fieldId]: '',
+      [FIELDS_INFO.parentName.fieldId]: '',
+      [FIELDS_INFO.parentPhone.fieldId]: '',
+      [FIELDS_INFO.address1.fieldId]: '',
+      [FIELDS_INFO.address2.fieldId]: '',
+      [FIELDS_INFO.city.fieldId]: '',
+      [FIELDS_INFO.state.fieldId]: '',
+      [FIELDS_INFO.zip.fieldId]: '',
+      [FIELDS_INFO.subscribe.fieldId]: false,
+      [FIELDS_INFO.knownAllergies.fieldId]: '',
 
-      // childName: 'Test Child',
-      // childDob: '01/01/2018',
-      // parentEmail: '',
-      // parentName: 'sdfsd',
-      // parentPhone: '000-000-0000',
-      // address1: 'sdfsdff',
-      // address2: '',
-      // city: 'bestCity',
-      // state: 'sdf',
-      // zip: '00000',
-      // subscribe: false,
-      // knownAllergies: 'sdfsd',
+      // testing data
 
+      // [FIELDS_INFO.childName.fieldId]: 'Test Child',
+      // [FIELDS_INFO.childDob.fieldId]: '01/01/2018',
+      // [FIELDS_INFO.parentEmail.fieldId]: '',
+      // [FIELDS_INFO.parentName.fieldId]: 'sdfsd',
+      // [FIELDS_INFO.parentPhone.fieldId]: '000-000-0000',
+      // [FIELDS_INFO.address1.fieldId]: 'sdfsdff',
+      // [FIELDS_INFO.address2.fieldId]: '',
+      // [FIELDS_INFO.city.fieldId]: 'bestCity',
+      // [FIELDS_INFO.state.fieldId]: 'sdf',
+      // [FIELDS_INFO.zip.fieldId]: '00000',
+      // [FIELDS_INFO.subscribe.fieldId]: false,
+      // [FIELDS_INFO.knownAllergies.fieldId]: 'sdfsd',
+
+      // other
       errors: [],
-      redirect: false
+      redirect: false,
+      showModal: false
     };
   }
 
@@ -86,19 +177,9 @@ class VbsRegistrationChild extends Component {
       parentNames: [this.state.parentName]
     };
 
-    [
-      'childName',
-      'city',
-      'parentEmail',
-      'parentPhone',
-      'address1',
-      'address2',
-      'state',
-      'zip',
-      'subscribe',
-      'knownAllergies'
-    ].forEach(field => {
-      child[field] = this.state[field];
+    _.values(FIELDS_INFO).forEach(field => {
+      const {fieldId, dbId} = field;
+      child[dbId] = this.state[fieldId];
     });
 
     const firebaseRef = firebase.database().ref(refName);
@@ -112,80 +193,14 @@ class VbsRegistrationChild extends Component {
     });
   }
 
-  _setErrors() {
-    const allRules = [
-      {
-        id: 'childName',
-        label: 'Child’s name',
-        fieldRules: [
-          fieldValidators.isNotEmpty,
-          fieldValidators.isAtLeastTwoCharacters
-        ]
-      },
-      {
-        id: 'childDob',
-        label: 'Child’s Date of Birth',
-        fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate]
-      },
-      {
-        id: 'parentEmail',
-        label: 'Email Address',
-        fieldRules: [fieldValidators.isValidEmail]
-      },
-      {
-        id: 'parentName',
-        label: 'Parent’s Name',
-        fieldRules: [
-          fieldValidators.isNotEmpty,
-          fieldValidators.isAtLeastTwoCharacters
-        ]
-      },
-      {
-        id: 'parentPhone',
-        label: 'Phone Number',
-        fieldRules: [fieldValidators.isPhoneNumber, fieldValidators.isNotEmpty]
-      },
-      {
-        id: 'address1',
-        label: 'Address Line 1',
-        fieldRules: [
-          fieldValidators.isNotEmpty,
-          fieldValidators.isAtLeastTwoCharacters
-        ]
-      },
-      {
-        id: 'city',
-        label: 'City',
-        fieldRules: [
-          fieldValidators.isAllLetters,
-          fieldValidators.isNotEmpty,
-          fieldValidators.isAtLeastTwoCharacters
-        ]
-      },
-      {
-        id: 'state',
-        label: 'State',
-        fieldRules: [
-          fieldValidators.isAllLetters,
-          fieldValidators.isNotEmpty,
-          fieldValidators.isAtLeastTwoCharacters
-        ]
-      },
-      {
-        id: 'zip',
-        label: 'ZIP Code',
-        fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isValidZip]
-      },
-      {
-        id: 'knownAllergies',
-        label: 'Known Allergies',
-        fieldRules: [fieldValidators.isNotEmpty]
-      }
-    ];
+  _validateAndSubmit() {
+    const errors = registrationUtils.getPageErrors(
+      this.state,
+      _.values(FIELDS_INFO)
+    );
 
-    const errors = registrationUtils.getPageErrors(this.state, allRules);
     if (!errors.length) {
-      this._submitData();
+      this._toggleModal();
     }
 
     this.setState({errors});
@@ -195,13 +210,17 @@ class VbsRegistrationChild extends Component {
     this.setState({redirect: true});
   }
 
+  _toggleModal() {
+    this.setState({showModal: !this.state.showModal});
+  }
+
   _renderFormFields() {
     const widthBase = 15;
 
     return (
       <div id="form-fields">
         <Text
-          id={'childName'}
+          id="childName"
           label="Child’s Name"
           onChange={this._onChangeInput}
           required
@@ -209,7 +228,7 @@ class VbsRegistrationChild extends Component {
           value={this.state.childName}
         />
         <Text
-          id={'childDob'}
+          id="childDob"
           label="Child’s Date of Birth"
           onChange={this._onChangeInput}
           placeholder="mm/dd/yyyy"
@@ -219,7 +238,7 @@ class VbsRegistrationChild extends Component {
         />
         <h3>Parent/Guardian Information</h3>
         <Text
-          id={'parentEmail'}
+          id="parentEmail"
           label="Email Address"
           onChange={this._onChangeInput}
           size={2 * widthBase}
@@ -227,7 +246,7 @@ class VbsRegistrationChild extends Component {
         />
         <br />
         <Text
-          id={'parentName'}
+          id="parentName"
           label="Name"
           onChange={this._onChangeInput}
           required
@@ -235,7 +254,7 @@ class VbsRegistrationChild extends Component {
           value={this.state.parentName}
         />
         <Text
-          id={'parentPhone'}
+          id="parentPhone"
           label="Best Phone Number to Reach You"
           onChange={this._onChangeInput}
           required
@@ -244,7 +263,7 @@ class VbsRegistrationChild extends Component {
         />
         <br />
         <Text
-          id={'address1'}
+          id="address1"
           label="Address Line 1"
           onChange={this._onChangeInput}
           required
@@ -253,7 +272,7 @@ class VbsRegistrationChild extends Component {
         />
         <br />
         <Text
-          id={'address2'}
+          id="address2"
           label="Address Line 2"
           onChange={this._onChangeInput}
           size={4 * widthBase}
@@ -261,7 +280,7 @@ class VbsRegistrationChild extends Component {
         />
         <br />
         <Text
-          id={'city'}
+          id="city"
           label="City"
           onChange={this._onChangeInput}
           required
@@ -269,7 +288,7 @@ class VbsRegistrationChild extends Component {
           value={this.state.city}
         />
         <Text
-          id={'state'}
+          id="state"
           label="State"
           onChange={this._onChangeInput}
           required
@@ -278,7 +297,7 @@ class VbsRegistrationChild extends Component {
         />
         <br />
         <Text
-          id={'zip'}
+          id="zip"
           label="ZIP Code"
           onChange={this._onChangeInput}
           required
@@ -305,16 +324,38 @@ class VbsRegistrationChild extends Component {
           value={this.state.knownAllergies}
         />
         <br />
-        <Button onClick={this._setErrors}>Submit</Button>
+        <Button onClick={this._validateAndSubmit}>Submit</Button>
       </div>
     );
   }
 
+  _renderSummaryModal() {
+    const fieldSummaryItems = _.values(FIELDS_INFO).map(field => {
+      const {fieldId, label} = field;
+      const value = String(this.state[fieldId]) || 'EMPTY';
+
+      return (
+        <li key={fieldId}>
+          {label}: {value}
+        </li>
+      );
+    });
+
+    return (
+      <Modal onCloseClick={this._toggleModal}>
+        <h2>Please take a moment to confirm your data</h2>
+        <ul>{fieldSummaryItems}</ul>
+        <Button onClick={this._submitData}>Confirm</Button>
+        <Button onClick={this._toggleModal}>Edit</Button>
+      </Modal>
+    );
+  }
+
   render() {
-    if (this.state.redirect) {
-      const state = {
-        forMessage: 'you for registering.'
-      };
+    const {redirect, postStatus, errors, responseError, showModal} = this.state;
+
+    if (redirect) {
+      const state = {forMessage: 'you for registering.'};
 
       return (
         <Redirect
@@ -327,17 +368,22 @@ class VbsRegistrationChild extends Component {
       );
     }
 
+    const renderedErrors = registrationUtils.renderErrors(errors);
+    const formFields = this._renderFormFields();
+    const statusMessage = registrationUtils.renderStatusMessage(
+      postStatus,
+      errors,
+      responseError
+    );
+    const modal = showModal && this._renderSummaryModal();
+
     return (
       <div className={this.props.className}>
         {this.props.headerContent}
-
-        {registrationUtils.renderErrors(this.state.errors)}
-        {this._renderFormFields()}
-        {registrationUtils.renderStatusMessage(
-          this.state.postStatus,
-          this.state.errors,
-          this.state.responseError
-        )}
+        {renderedErrors}
+        {formFields}
+        {statusMessage}
+        {modal}
       </div>
     );
   }
