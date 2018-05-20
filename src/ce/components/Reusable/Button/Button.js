@@ -10,9 +10,10 @@ const STYLES = {
 
 class Button extends Component {
   render() {
-    const {className, onClick, children, style} = this.props;
+    const {className, onClick, children, buttonShape} = this.props;
+
     let computedClassName =
-      style === STYLES.RECT ? 'rect-button' : 'oval-button';
+      buttonShape === STYLES.RECT ? 'rect-button' : 'oval-button';
 
     if (className) {
       computedClassName += ` ${className}`;
@@ -27,14 +28,14 @@ class Button extends Component {
 }
 
 Button.defaultProps = {
-  style: STYLES.OVAL
+  buttonShape: STYLES.OVAL
 };
 
 Button.propTypes = {
+  buttonShape: PropTypes.oneOf(Object.keys(STYLES).map(key => STYLES[key])),
   children: PropTypes.any,
   className: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
-  style: PropTypes.string
+  onClick: PropTypes.func.isRequired
 };
 
 Button.STYLES = STYLES;

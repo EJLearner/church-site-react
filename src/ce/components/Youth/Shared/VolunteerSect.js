@@ -38,16 +38,16 @@ class VolunteerSect extends Component {
         </ul>
         <div className="volunt-reg-buttons">
           <Button
+            buttonShape={Button.STYLES.RECT}
             className={`left-button ${buttonClass}`}
             onClick={volunteerButtonOnClick}
-            style={Button.STYLES.RECT}
           >
             Volunteer
           </Button>
           <Button
+            buttonShape={Button.STYLES.RECT}
             className={`right-button ${buttonClass}`}
             onClick={registerButtonOnClick}
-            style={Button.STYLES.RECT}
           >
             Register
           </Button>
