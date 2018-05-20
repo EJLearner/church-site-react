@@ -24,12 +24,14 @@ class Modal extends Component {
     );
   }
   render() {
+    const modalContentClass = [this.props.className, 'modal-content'].join(' ');
+
     return (
       <div>
         <div className="modal-overlay" />
         <div className="modal-box">
           <div
-            className="modal-content"
+            className={modalContentClass}
             ref={node => (this._modal = node)}
             tabIndex="0"
           >
@@ -44,6 +46,8 @@ class Modal extends Component {
 
 Modal.propTypes = {
   children: PropTypes.node,
+  // will be used on the div surrounding the content box
+  className: PropTypes.string,
   onCloseClick: PropTypes.func.isRequired
 };
 

@@ -84,4 +84,19 @@
   .registration-checkbox > label {
     color: $green-50;
   }
+
+  .registration-modal {
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        line-height: 1.5;
+      }
+    }
+
+    button {
+      margin-right: 1em;
+    }
+  }
 }

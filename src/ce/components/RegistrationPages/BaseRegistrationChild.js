@@ -336,13 +336,13 @@ class VbsRegistrationChild extends Component {
 
       return (
         <li key={fieldId}>
-          {label}: {value}
+          <span className="bold">{label}</span>: {value}
         </li>
       );
     });
 
     return (
-      <Modal onCloseClick={this._toggleModal}>
+      <Modal className="registration-modal" onCloseClick={this._toggleModal}>
         <h2>Please take a moment to confirm your data</h2>
         <ul>{fieldSummaryItems}</ul>
         <Button onClick={this._submitData}>Confirm</Button>
