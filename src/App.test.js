@@ -1,18 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import App from './App';
+import {shallow} from 'enzyme';
 
+// const moment = require.requireActual('moment');
 import moment from 'moment';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+it('sets updateLocal function for moment', () => {
+  moment.updateLocale = jest.fn();
+  shallow(<App />);
+
+  expect(moment.updateLocale).toHaveBeenCalledTimes(1);
+
+  expect(moment.updateLocale.mock.calls[0][0]).toBe('en');
+
+  const meridiemFunction = moment.updateLocale.mock.calls[0][1].meridiem;
+  expect(meridiemFunction(5)).toBe('a.m.');
+  expect(meridiemFunction(12)).toBe('p.m.');
+  expect(meridiemFunction(22)).toBe('p.m.');
 });
 
-it('sets updateLocal function for moment (am)', () => {
-  expect(moment('2017-08-27T08:00:00').format('a')).toBe('a.m.');
-});
-
-it('sets updateLocal function for moment (pm)', () => {
-  expect(moment('2017-08-27T15:00:00').format('a')).toBe('p.m.');
+it('should render Routes', () => {
+  const wrapper = shallow(<App />);
+  expect(wrapper.find('Routes').exists()).toBeTruthy();
 });

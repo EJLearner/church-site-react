@@ -102,7 +102,7 @@ const FIELDS_INFO = {
   }
 };
 
-class VbsRegistrationChild extends Component {
+class BaseRegistrationChild extends Component {
   constructor(props) {
     super(props);
     this.state = this._getState();
@@ -389,10 +389,10 @@ class VbsRegistrationChild extends Component {
   }
 }
 
-VbsRegistrationChild.propTypes = {
+BaseRegistrationChild.propTypes = {
   className: PropTypes.string,
   headerContent: PropTypes.node,
   refName: PropTypes.string.isRequired
 };
 
-export default VbsRegistrationChild;
+export default BaseRegistrationChild;
