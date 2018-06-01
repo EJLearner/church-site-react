@@ -199,11 +199,11 @@ class BaseRegistrationChild extends Component {
       _.values(FIELDS_INFO)
     );
 
-    if (!errors.length) {
-      this._toggleModal();
-    }
-
-    this.setState({errors});
+    this.setState({
+      postStatus: undefined,
+      showModal: !errors.length,
+      errors
+    });
   }
 
   _postSubmitSuccess() {
@@ -375,7 +375,8 @@ class BaseRegistrationChild extends Component {
       errors,
       responseError
     );
-    const modal = showModal && this._renderSummaryModal();
+    const modal =
+      showModal && postStatus !== 'failure' && this._renderSummaryModal();
 
     return (
       <div className={this.props.className}>
