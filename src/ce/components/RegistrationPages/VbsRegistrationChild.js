@@ -23,7 +23,7 @@ class VbsRegistrationChild extends Component {
       <BaseRegistrationChild
         className="registration-page"
         headerContent={this._renderHeaderContent()}
-        refName="vbsRegistered"
+        refName="vbsRegisteredChildren"
       />
     );
   }

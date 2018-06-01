@@ -358,7 +358,7 @@ class CcVbsCheckin extends Component {
 }
 
 CcVbsCheckin.defaultProps = {
-  registeredChildrenRefName: 'ccRegistered',
+  registeredChildrenRefName: 'ccRegisteredChildren',
   registryAccessRefName: 'user_groups/ccRegAccess',
   registryIdName: 'ccRegisteredId'
 };

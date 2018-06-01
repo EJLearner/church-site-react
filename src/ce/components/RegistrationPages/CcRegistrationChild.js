@@ -22,7 +22,7 @@ class CcRegistrationChild extends Component {
       <BaseRegistrationChild
         className="registration-page"
         headerContent={this._renderHeaderContent()}
-        refName="ccRegistered"
+        refName="ccRegisteredChildren"
       />
     );
   }
