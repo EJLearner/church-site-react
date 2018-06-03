@@ -12,7 +12,6 @@ import Text from '../Reusable/Text/Text';
 import fieldValidators from './fieldValidators';
 import registrationUtils from './registrationUtils';
 
-import constants from '../../../utils/constants';
 import routePaths from '../../../routePaths';
 import utils from '../../../utils/commonUtils';
 
@@ -174,29 +173,30 @@ class BaseRegistrationChild extends Component {
   _getState() {
     return {
       // form data
-      // [FIELDS_INFO.email.fieldId]: '',
-      // [FIELDS_INFO.name.fieldId]: '',
-      // [FIELDS_INFO.dob.fieldId]: '',
-      // [FIELDS_INFO.address1.fieldId]: '',
-      // [FIELDS_INFO.address2.fieldId]: '',
-      // [FIELDS_INFO.city.fieldId]: '',
-      // [FIELDS_INFO.state.fieldId]: '',
-      // [FIELDS_INFO.zip.fieldId]: '',
-      // [FIELDS_INFO.mobilePhone.fieldId]: '',
-      // [FIELDS_INFO.homePhone.fieldId]: '',
-      // [FIELDS_INFO.teacher.fieldId]: false,
-      // [FIELDS_INFO.admin.fieldId]: false,
-      // [FIELDS_INFO.assistantMentor.fieldId]: false,
-      // [FIELDS_INFO.kitchen.fieldId]: false,
-      // [FIELDS_INFO.sundaySchool.fieldId]: false,
-      // [FIELDS_INFO.bibleSchool.fieldId]: false,
-      // [FIELDS_INFO.youthMinistry.fieldId]: false,
-      // [FIELDS_INFO.pastTeacher.fieldId]: false,
-      // [FIELDS_INFO.pastAdmin.fieldId]: false,
-      // [FIELDS_INFO.pastTransition.fieldId]: false,
-      // [FIELDS_INFO.pastKitchen.fieldId]: false,
-      // [FIELDS_INFO.pastChaperone.fieldId]: false,
+      [FIELDS_INFO.email.fieldId]: '',
+      [FIELDS_INFO.name.fieldId]: '',
+      [FIELDS_INFO.dob.fieldId]: '',
+      [FIELDS_INFO.address1.fieldId]: '',
+      [FIELDS_INFO.address2.fieldId]: '',
+      [FIELDS_INFO.city.fieldId]: '',
+      [FIELDS_INFO.state.fieldId]: '',
+      [FIELDS_INFO.zip.fieldId]: '',
+      [FIELDS_INFO.mobilePhone.fieldId]: '',
+      [FIELDS_INFO.homePhone.fieldId]: '',
+      [FIELDS_INFO.teacher.fieldId]: false,
+      [FIELDS_INFO.admin.fieldId]: false,
+      [FIELDS_INFO.assistantMentor.fieldId]: false,
+      [FIELDS_INFO.kitchen.fieldId]: false,
+      [FIELDS_INFO.sundaySchool.fieldId]: false,
+      [FIELDS_INFO.bibleSchool.fieldId]: false,
+      [FIELDS_INFO.youthMinistry.fieldId]: false,
+      [FIELDS_INFO.pastTeacher.fieldId]: false,
+      [FIELDS_INFO.pastAdmin.fieldId]: false,
+      [FIELDS_INFO.pastTransition.fieldId]: false,
+      [FIELDS_INFO.pastKitchen.fieldId]: false,
+      [FIELDS_INFO.pastChaperone.fieldId]: false,
 
+      // testing data
       [FIELDS_INFO.email.fieldId]: 'lskdjf@sdklfjsd.com',
       [FIELDS_INFO.name.fieldId]: 'test name',
       [FIELDS_INFO.dob.fieldId]: '01/01/2018',
@@ -235,7 +235,8 @@ class BaseRegistrationChild extends Component {
     const {refName} = this.props;
 
     const volunteer = {
-      [refName + 'Id']: utils.generatePushID()
+      [refName + 'Id']: utils.generatePushID(),
+      timeChanged: new Date().toISOString()
     };
 
     _.values(FIELDS_INFO).forEach(field => {
@@ -455,17 +456,70 @@ class BaseRegistrationChild extends Component {
     );
   }
 
-  _renderSummaryModal() {
-    const fieldSummaryItems = _.values(FIELDS_INFO).map(field => {
-      const {fieldId, label} = field;
-      const value = String(this.state[fieldId]) || 'EMPTY';
+  _makeSubGroup(id, fieldIds, header) {
+    const items = fieldIds.reduce((items, fieldId) => {
+      if (this.state[fieldId]) {
+        items.push(
+          <li key={fieldId}>
+            <span>{FIELDS_INFO[fieldId].label}</span>
+          </li>
+        );
+      }
+      return items;
+    }, []);
 
-      return (
-        <li key={fieldId}>
-          <span className="bold">{label}</span>: {value}
-        </li>
-      );
-    });
+    return (
+      Boolean(items.length) && (
+        <div className="check-list-summary" key={id}>
+          <br />
+          {header}
+          {items}
+        </div>
+      )
+    );
+  }
+
+  _renderSummaryModal() {
+    let fieldSummaryItems = _.values(FIELDS_INFO).reduce((items, field) => {
+      const {fieldId, label} = field;
+      const value = this.state[fieldId];
+
+      if (value && typeof value === 'string') {
+        items.push(
+          <li key={fieldId}>
+            <span className="bold">{label}</span>: {value}
+          </li>
+        );
+      }
+
+      return items;
+    }, []);
+
+    const groupFields = {
+      roles: ['teacher', 'admin', 'assistantMentor', 'kitchen'],
+      pastGroups: ['sundaySchool', 'bibleSchool', 'youthMinistry'],
+      pastRoles: [
+        'pastTeacher',
+        'pastAdmin',
+        'pastTransition',
+        'pastKitchen',
+        'pastChaperone'
+      ]
+    };
+
+    fieldSummaryItems = fieldSummaryItems.concat(
+      this._makeSubGroup('roles', groupFields.roles, 'Roles volunteering for:'),
+      this._makeSubGroup(
+        'pastGroups',
+        groupFields.pastGroups,
+        'Areas volunteered for in the past:'
+      ),
+      this._makeSubGroup(
+        'pastRoles',
+        groupFields.pastRoles,
+        'Roles volunteered for in the past:'
+      )
+    );
 
     return (
       <Modal className="registration-modal" onCloseClick={this._toggleModal}>
