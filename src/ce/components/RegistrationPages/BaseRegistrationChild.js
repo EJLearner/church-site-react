@@ -330,22 +330,24 @@ class BaseRegistrationChild extends Component {
   }
 
   _renderSummaryModal() {
-    const fieldSummaryItems = _.values(FIELDS_INFO).map(field => {
+    const fieldSummaryItems = _.values(FIELDS_INFO).reduce((items, field) => {
       const {fieldId, label} = field;
 
       let value = this.state[fieldId];
       if (typeof value === 'boolean') {
         value = value ? 'Yes' : 'No';
-      } else if (!value) {
-        value = 'EMPTY';
       }
 
-      return (
-        <li key={fieldId}>
-          <span className="bold">{label}</span>: {value}
-        </li>
-      );
-    });
+      if (value) {
+        items.push(
+          <li key={fieldId}>
+            <span className="bold">{label}</span>: {value}
+          </li>
+        );
+      }
+
+      return items;
+    }, []);
 
     return (
       <Modal className="registration-modal" onCloseClick={this._toggleModal}>
