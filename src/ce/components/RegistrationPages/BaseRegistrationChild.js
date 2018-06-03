@@ -332,7 +332,13 @@ class BaseRegistrationChild extends Component {
   _renderSummaryModal() {
     const fieldSummaryItems = _.values(FIELDS_INFO).map(field => {
       const {fieldId, label} = field;
-      const value = String(this.state[fieldId]) || 'EMPTY';
+
+      let value = this.state[fieldId];
+      if (typeof value === 'boolean') {
+        value = value ? 'Yes' : 'No';
+      } else if (!value) {
+        value = 'EMPTY';
+      }
 
       return (
         <li key={fieldId}>
