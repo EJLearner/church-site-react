@@ -19,6 +19,7 @@ class ChristianEdStaff extends Component {
         </ul>
         <ul className="ce-list-half">
           <li>Iris Ford</li>
+          <li>Januarie Mins</li>
           <li>Emily Tilghman</li>
           <li>Min. Patricia A. Yeargin</li>
         </ul>
