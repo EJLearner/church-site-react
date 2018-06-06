@@ -109,6 +109,11 @@ const FIELDS_INFO = {
     fieldId: 'kitchen',
     label: 'Kitchen Staff'
   },
+  otherText: {
+    dbId: 'otherText',
+    fieldId: 'otherText',
+    label: 'Other Role'
+  },
   sundaySchool: {
     dbId: 'sundaySchool',
     fieldId: 'sundaySchool',
@@ -187,6 +192,7 @@ class BaseRegistrationChild extends Component {
       [FIELDS_INFO.admin.fieldId]: false,
       [FIELDS_INFO.assistantMentor.fieldId]: false,
       [FIELDS_INFO.kitchen.fieldId]: false,
+      [FIELDS_INFO.otherText.fieldId]: '',
       [FIELDS_INFO.sundaySchool.fieldId]: false,
       [FIELDS_INFO.bibleSchool.fieldId]: false,
       [FIELDS_INFO.youthMinistry.fieldId]: false,
@@ -211,6 +217,7 @@ class BaseRegistrationChild extends Component {
       // [FIELDS_INFO.admin.fieldId]: true,
       // [FIELDS_INFO.assistantMentor.fieldId]: true,
       // [FIELDS_INFO.kitchen.fieldId]: true,
+      // [FIELDS_INFO.otherText.fieldId]: 'Something else',
       // [FIELDS_INFO.sundaySchool.fieldId]: true,
       // [FIELDS_INFO.bibleSchool.fieldId]: true,
       // [FIELDS_INFO.youthMinistry.fieldId]: true,
@@ -395,6 +402,15 @@ class BaseRegistrationChild extends Component {
           label="I am interested in volunteering in the role of:"
           onChange={this._onChangeInput}
         />
+        <br />
+
+        <Text
+          id="otherText"
+          label="Other Role"
+          onChange={this._onChangeInput}
+          size={1 * widthBase}
+          value={this.state.otherText}
+        />
         <Checklist
           checklistItems={[
             {
@@ -468,6 +484,16 @@ class BaseRegistrationChild extends Component {
       return items;
     }, []);
 
+    // add the otherText data in the summary with the roles
+    const fieldId = 'otherText';
+    if (id === 'roles' && this.state[fieldId]) {
+      items.push(
+        <li key={fieldId}>
+          <span>{this.state[fieldId]}</span>
+        </li>
+      );
+    }
+
     return (
       Boolean(items.length) && (
         <div className="check-list-summary" key={id}>
@@ -484,7 +510,8 @@ class BaseRegistrationChild extends Component {
       const {fieldId, label} = field;
       const value = this.state[fieldId];
 
-      if (value && typeof value === 'string') {
+      // make sure otherText doesn't show up with the other text fields
+      if (value && typeof value === 'string' && fieldId !== 'otherText') {
         items.push(
           <li key={fieldId}>
             <span className="bold">{label}</span>: {value}
