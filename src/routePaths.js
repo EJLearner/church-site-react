@@ -61,9 +61,7 @@ const {CE_WHO} = MAIN_PATH_CONSTANTS;
 const WHO_PATHS = {
   CE_WHO_PASTOR: `${CE_WHO}/pastor`,
   CE_WHO_CTBC: `${CE_WHO}/ctbc`,
-  CE_WHO_CHRISTIAN_ED_STAFF: `${CE_WHO}/christian-ed-staff`,
-  CE_WHO_DIACONATE: `${CE_WHO}/diaconate`,
-  CE_WHO_TRUSTEES: `${CE_WHO}/trustees`
+  CE_WHO_CHRISTIAN_ED_STAFF: `${CE_WHO}/christian-ed-staff`
 };
 
 const ALL_PATHS = Object.assign(

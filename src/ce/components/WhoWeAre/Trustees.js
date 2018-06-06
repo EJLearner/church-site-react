@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import ContactLine from '../Reusable/ContactLine';
 
+/**
+ * This component is currently not being used but will be a part of the
+ * main CT site when it's converted to React
+ */
 class Trustees extends Component {
   render() {
     return (

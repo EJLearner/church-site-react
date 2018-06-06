@@ -8,9 +8,7 @@ import routePaths from '../../../routePaths';
 
 import ChristianEdStaff from './ChristianEdStaff';
 import Pastor from './Pastor';
-import Diaconate from './Diaconate';
 import MinisterialStaff from './MinisterialStaff';
-import Trustees from './Trustees';
 
 import '../../cePageStyles.css';
 
@@ -32,13 +30,13 @@ class WhoWeAre extends Component {
         path: routePaths.CE_WHO_CHRISTIAN_ED_STAFF,
         render: <ChristianEdStaff />,
         text: 'Christian Education'
-      },
-      {
-        path: routePaths.CE_WHO_DIACONATE,
-        render: <Diaconate />,
-        text: 'Diaconate'
-      },
-      {path: routePaths.CE_WHO_TRUSTEES, render: <Trustees />, text: 'Trustees'}
+      }
+      // {
+      //   path: routePaths.CE_WHO_DIACONATE,
+      //   render: <Diaconate />,
+      //   text: 'Diaconate'
+      // },
+      // {path: routePaths.CE_WHO_TRUSTEES, render: <Trustees />, text: 'Trustees'}
 
       // This content won't be ready for a while. Left the code to remember that sublevels are possible
       // {
