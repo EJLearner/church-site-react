@@ -31,23 +31,6 @@ class WhoWeAre extends Component {
         render: <ChristianEdStaff />,
         text: 'Christian Education'
       }
-      // {
-      //   path: routePaths.CE_WHO_DIACONATE,
-      //   render: <Diaconate />,
-      //   text: 'Diaconate'
-      // },
-      // {path: routePaths.CE_WHO_TRUSTEES, render: <Trustees />, text: 'Trustees'}
-
-      // This content won't be ready for a while. Left the code to remember that sublevels are possible
-      // {
-      //   path: routePaths.CE_WHO_HANDBOOK,
-      //   render: <Handbook />,
-      //   text: 'Leadership Handbook',
-      //   children: [
-      //     {path: routePaths.CE_WHO_FINANCE, render: <Finance />, text: 'Finance'},
-      //     {path: routePaths.CE_WHO_MEETINGS`, render: <Meetings />, text: 'Church Meetings'}
-      //   ]
-      // }
     ];
   }
 
