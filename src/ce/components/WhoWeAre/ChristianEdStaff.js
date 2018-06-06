@@ -16,11 +16,9 @@ class ChristianEdStaff extends Component {
             Linda Alexander<span className="title">Treasurer</span>
           </li>
           <li>Violet Churn</li>
-          <li>Iris Ford</li>
         </ul>
         <ul className="ce-list-half">
-          <li>Tyres Jones, Sr.</li>
-          <li>Janet Stewart</li>
+          <li>Iris Ford</li>
           <li>Emily Tilghman</li>
           <li>Min. Patricia A. Yeargin</li>
         </ul>
