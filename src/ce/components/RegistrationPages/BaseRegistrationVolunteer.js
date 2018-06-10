@@ -38,7 +38,7 @@ const FIELDS_INFO = {
     fieldId: 'dob',
     dbId: 'dob',
     label: 'Date of Birth',
-    fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate]
+    fieldRules: [fieldValidators.isDate]
   },
 
   address1: {
@@ -203,34 +203,35 @@ class BaseRegistrationChild extends Component {
       [FIELDS_INFO.pastChaperone.fieldId]: false,
 
       // testing data
-      // [FIELDS_INFO.email.fieldId]: 'lskdjf@sdklfjsd.com',
-      // [FIELDS_INFO.name.fieldId]: 'test name',
-      // [FIELDS_INFO.dob.fieldId]: '01/01/2018',
-      // [FIELDS_INFO.address1.fieldId]: 'test address 1',
-      // [FIELDS_INFO.address2.fieldId]: 'test address 2',
-      // [FIELDS_INFO.city.fieldId]: 'test',
-      // [FIELDS_INFO.state.fieldId]: 'test state',
-      // [FIELDS_INFO.zip.fieldId]: '20103',
-      // [FIELDS_INFO.mobilePhone.fieldId]: '000-000-0123',
-      // [FIELDS_INFO.homePhone.fieldId]: '000-000-1111',
-      // [FIELDS_INFO.teacher.fieldId]: true,
-      // [FIELDS_INFO.admin.fieldId]: true,
-      // [FIELDS_INFO.assistantMentor.fieldId]: true,
-      // [FIELDS_INFO.kitchen.fieldId]: true,
-      // [FIELDS_INFO.otherText.fieldId]: 'Something else',
-      // [FIELDS_INFO.sundaySchool.fieldId]: true,
-      // [FIELDS_INFO.bibleSchool.fieldId]: true,
-      // [FIELDS_INFO.youthMinistry.fieldId]: true,
-      // [FIELDS_INFO.pastTeacher.fieldId]: true,
-      // [FIELDS_INFO.pastAdmin.fieldId]: true,
-      // [FIELDS_INFO.pastTransition.fieldId]: true,
-      // [FIELDS_INFO.pastKitchen.fieldId]: true,
-      // [FIELDS_INFO.pastChaperone.fieldId]: true,
+      [FIELDS_INFO.email.fieldId]: 'lskdjf@sdklfjsd.com',
+      [FIELDS_INFO.name.fieldId]: 'test name',
+      [FIELDS_INFO.dob.fieldId]: '01/01/2018',
+      [FIELDS_INFO.address1.fieldId]: 'test address 1',
+      [FIELDS_INFO.address2.fieldId]: 'test address 2',
+      [FIELDS_INFO.city.fieldId]: 'test',
+      [FIELDS_INFO.state.fieldId]: 'test state',
+      [FIELDS_INFO.zip.fieldId]: '20103',
+      [FIELDS_INFO.mobilePhone.fieldId]: '000-000-0123',
+      [FIELDS_INFO.homePhone.fieldId]: '000-000-1111',
+      [FIELDS_INFO.teacher.fieldId]: true,
+      [FIELDS_INFO.admin.fieldId]: true,
+      [FIELDS_INFO.assistantMentor.fieldId]: true,
+      [FIELDS_INFO.kitchen.fieldId]: true,
+      [FIELDS_INFO.otherText.fieldId]: 'Something else',
+      [FIELDS_INFO.sundaySchool.fieldId]: true,
+      [FIELDS_INFO.bibleSchool.fieldId]: true,
+      [FIELDS_INFO.youthMinistry.fieldId]: true,
+      [FIELDS_INFO.pastTeacher.fieldId]: true,
+      [FIELDS_INFO.pastAdmin.fieldId]: true,
+      [FIELDS_INFO.pastTransition.fieldId]: true,
+      [FIELDS_INFO.pastKitchen.fieldId]: true,
+      [FIELDS_INFO.pastChaperone.fieldId]: true,
 
       // other
       errors: [],
       redirect: false,
-      showModal: false
+      showModal: false,
+      showOther: false
     };
   }
 
@@ -310,7 +311,6 @@ class BaseRegistrationChild extends Component {
           label="Date of Birth"
           onChange={this._onChangeInput}
           placeholder="mm/dd/yyyy"
-          required
           size={1 * widthBase}
           value={this.state.dob}
         />
@@ -396,6 +396,11 @@ class BaseRegistrationChild extends Component {
               label: 'Kitchen Staff',
               value: 'kitchen',
               checked: this.state.kitchen
+            },
+            {
+              label: 'Other',
+              value: 'showOther',
+              checked: this.state.showOther
             }
           ]}
           id="role"
@@ -404,13 +409,15 @@ class BaseRegistrationChild extends Component {
         />
         <br />
 
-        <Text
-          id="otherText"
-          label="Other Role"
-          onChange={this._onChangeInput}
-          size={1 * widthBase}
-          value={this.state.otherText}
-        />
+        {this.state.showOther && (
+          <Text
+            id="otherText"
+            label="Other Role"
+            onChange={this._onChangeInput}
+            size={1 * widthBase}
+            value={this.state.otherText}
+          />
+        )}
         <Checklist
           checklistItems={[
             {
@@ -430,7 +437,7 @@ class BaseRegistrationChild extends Component {
             }
           ]}
           id="past-volunteer-area"
-          label="Have you volunteered at City Temple before? Check all that apply."
+          label="Select areas that you have volunteered for at City Temple in the past"
           onChange={this._onChangeInput}
         />
         <Checklist
