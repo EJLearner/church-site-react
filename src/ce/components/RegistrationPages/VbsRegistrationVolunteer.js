@@ -15,6 +15,7 @@ class VbsRegistrationChild extends Component {
   render() {
     return (
       <BaseRegistrationVolunteer
+        askAvailability
         className="registration-page"
         headerContent={this._renderHeaderContent()}
         refName="vbsRegisteredVolunteers"

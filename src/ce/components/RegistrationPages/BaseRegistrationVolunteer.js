@@ -21,13 +21,11 @@ import Checklist from '../Reusable/Checklist/Checklist';
 const FIELDS_INFO = {
   email: {
     fieldId: 'email',
-    dbId: 'email',
     label: 'Email Address',
     fieldRules: [fieldValidators.isValidEmail]
   },
   name: {
     fieldId: 'name',
-    dbId: 'name',
     label: 'Name',
     fieldRules: [
       fieldValidators.isNotEmpty,
@@ -36,14 +34,12 @@ const FIELDS_INFO = {
   },
   dob: {
     fieldId: 'dob',
-    dbId: 'dob',
     label: 'Date of Birth',
     fieldRules: [fieldValidators.isDate]
   },
 
   address1: {
     fieldId: 'address1',
-    dbId: 'address1',
     label: 'Address Line 1',
     fieldRules: [
       fieldValidators.isNotEmpty,
@@ -53,7 +49,6 @@ const FIELDS_INFO = {
   address2: {fieldId: 'address2', dbId: 'address2', label: 'Address Line 2'},
   city: {
     fieldId: 'city',
-    dbId: 'city',
     label: 'City',
     fieldRules: [
       fieldValidators.isAllLetters,
@@ -63,7 +58,6 @@ const FIELDS_INFO = {
   },
   state: {
     fieldId: 'state',
-    dbId: 'state',
     label: 'State',
     fieldRules: [
       fieldValidators.isAllLetters,
@@ -73,86 +67,90 @@ const FIELDS_INFO = {
   },
   zip: {
     fieldId: 'zip',
-    dbId: 'zip',
     label: 'ZIP Code',
     fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isValidZip]
   },
   mobilePhone: {
     fieldId: 'mobilePhone',
-    dbId: 'mobilePhone',
     label: 'Mobile Phone',
     fieldRules: [fieldValidators.isPhoneNumber]
   },
   homePhone: {
     fieldId: 'homePhone',
-    dbId: 'homePhone',
     label: 'Home Phone',
     fieldRules: [fieldValidators.isPhoneNumber]
   },
   teacher: {
-    dbId: 'teacher',
     fieldId: 'teacher',
     label: 'Teacher'
   },
   admin: {
-    dbId: 'admin',
     fieldId: 'admin',
     label: 'Administrative Staff'
   },
   assistantMentor: {
-    dbId: 'assistantMentor',
     fieldId: 'assistantMentor',
     label: 'Class Assistant/Hallway Monitor'
   },
   kitchen: {
-    dbId: 'kitchen',
     fieldId: 'kitchen',
     label: 'Kitchen Staff'
   },
   otherText: {
-    dbId: 'otherText',
     fieldId: 'otherText',
     label: 'Other Role'
   },
   sundaySchool: {
-    dbId: 'sundaySchool',
     fieldId: 'sundaySchool',
     label: 'Sunday School'
   },
   bibleSchool: {
-    dbId: 'bibleSchool',
     fieldId: 'bibleSchool',
     label: 'Vacation Bible School'
   },
   youthMinistry: {
-    dbId: 'youthMinistry',
     fieldId: 'youthMinistry',
     label: 'Youth Ministory'
   },
   pastTeacher: {
-    dbId: 'pastTeacher',
     fieldId: 'pastTeacher',
     label: 'Teacher'
   },
   pastAdmin: {
-    dbId: 'pastAdmin',
     fieldId: 'pastAdmin',
     label: 'Administrative Staff'
   },
   pastTransition: {
-    dbId: 'pastTransition',
     fieldId: 'pastTransition',
     label: 'Transition Team'
   },
   pastKitchen: {
-    dbId: 'pastKitchen',
     fieldId: 'pastKitchen',
     label: 'Kitchen Staff'
   },
   pastChaperone: {
-    dbId: 'pastChaperone',
     fieldId: 'pastChaperone',
     label: 'Chaperon'
+  },
+  monday: {
+    fieldId: 'monday',
+    label: 'Monday'
+  },
+  tuesday: {
+    fieldId: 'tuesday',
+    label: 'Tuesday'
+  },
+  wednesday: {
+    fieldId: 'wednesday',
+    label: 'Wednesday'
+  },
+  thursday: {
+    fieldId: 'thursday',
+    label: 'Thursday'
+  },
+  friday: {
+    fieldId: 'friday',
+    label: 'Friday'
   }
 };
 
@@ -201,31 +199,41 @@ class BaseRegistrationChild extends Component {
       [FIELDS_INFO.pastTransition.fieldId]: false,
       [FIELDS_INFO.pastKitchen.fieldId]: false,
       [FIELDS_INFO.pastChaperone.fieldId]: false,
+      [FIELDS_INFO.monday.fieldId]: false,
+      [FIELDS_INFO.tuesday.fieldId]: false,
+      [FIELDS_INFO.wednesday.fieldId]: false,
+      [FIELDS_INFO.thursday.fieldId]: false,
+      [FIELDS_INFO.friday.fieldId]: false,
 
       // testing data
-      [FIELDS_INFO.email.fieldId]: 'lskdjf@sdklfjsd.com',
-      [FIELDS_INFO.name.fieldId]: 'test name',
-      [FIELDS_INFO.dob.fieldId]: '01/01/2018',
-      [FIELDS_INFO.address1.fieldId]: 'test address 1',
-      [FIELDS_INFO.address2.fieldId]: 'test address 2',
-      [FIELDS_INFO.city.fieldId]: 'test',
-      [FIELDS_INFO.state.fieldId]: 'test state',
-      [FIELDS_INFO.zip.fieldId]: '20103',
-      [FIELDS_INFO.mobilePhone.fieldId]: '000-000-0123',
-      [FIELDS_INFO.homePhone.fieldId]: '000-000-1111',
-      [FIELDS_INFO.teacher.fieldId]: true,
-      [FIELDS_INFO.admin.fieldId]: true,
-      [FIELDS_INFO.assistantMentor.fieldId]: true,
-      [FIELDS_INFO.kitchen.fieldId]: true,
-      [FIELDS_INFO.otherText.fieldId]: 'Something else',
-      [FIELDS_INFO.sundaySchool.fieldId]: true,
-      [FIELDS_INFO.bibleSchool.fieldId]: true,
-      [FIELDS_INFO.youthMinistry.fieldId]: true,
-      [FIELDS_INFO.pastTeacher.fieldId]: true,
-      [FIELDS_INFO.pastAdmin.fieldId]: true,
-      [FIELDS_INFO.pastTransition.fieldId]: true,
-      [FIELDS_INFO.pastKitchen.fieldId]: true,
-      [FIELDS_INFO.pastChaperone.fieldId]: true,
+      // [FIELDS_INFO.email.fieldId]: 'lskdjf@sdklfjsd.com',
+      // [FIELDS_INFO.name.fieldId]: 'test name',
+      // [FIELDS_INFO.dob.fieldId]: '01/01/2018',
+      // [FIELDS_INFO.address1.fieldId]: 'test address 1',
+      // [FIELDS_INFO.address2.fieldId]: 'test address 2',
+      // [FIELDS_INFO.city.fieldId]: 'test',
+      // [FIELDS_INFO.state.fieldId]: 'test state',
+      // [FIELDS_INFO.zip.fieldId]: '20103',
+      // [FIELDS_INFO.mobilePhone.fieldId]: '000-000-0123',
+      // [FIELDS_INFO.homePhone.fieldId]: '000-000-1111',
+      // [FIELDS_INFO.teacher.fieldId]: true,
+      // [FIELDS_INFO.admin.fieldId]: true,
+      // [FIELDS_INFO.assistantMentor.fieldId]: true,
+      // [FIELDS_INFO.kitchen.fieldId]: true,
+      // [FIELDS_INFO.otherText.fieldId]: 'Something else',
+      // [FIELDS_INFO.sundaySchool.fieldId]: true,
+      // [FIELDS_INFO.bibleSchool.fieldId]: true,
+      // [FIELDS_INFO.youthMinistry.fieldId]: true,
+      // [FIELDS_INFO.pastTeacher.fieldId]: true,
+      // [FIELDS_INFO.pastAdmin.fieldId]: true,
+      // [FIELDS_INFO.pastTransition.fieldId]: true,
+      // [FIELDS_INFO.pastKitchen.fieldId]: true,
+      // [FIELDS_INFO.pastChaperone.fieldId]: true,
+      // [FIELDS_INFO.monday.fieldId]: true,
+      // [FIELDS_INFO.tuesday.fieldId]: true,
+      // [FIELDS_INFO.wednesday.fieldId]: true,
+      // [FIELDS_INFO.thursday.fieldId]: true,
+      // [FIELDS_INFO.friday.fieldId]: true,
 
       // other
       errors: [],
@@ -248,8 +256,8 @@ class BaseRegistrationChild extends Component {
     };
 
     _.values(FIELDS_INFO).forEach(field => {
-      const {fieldId, dbId} = field;
-      volunteer[dbId] = this.state[fieldId];
+      const {fieldId} = field;
+      volunteer[fieldId] = this.state[fieldId];
     });
 
     const firebaseRef = firebase.database().ref(refName);
@@ -474,6 +482,45 @@ class BaseRegistrationChild extends Component {
         />
         <br />
 
+        {this.props.askAvailability && (
+          <div>
+            <Checklist
+              checklistItems={[
+                {
+                  label: 'M',
+                  value: 'monday',
+                  checked: this.state.monday
+                },
+                {
+                  label: 'T',
+                  value: 'tuesday',
+                  checked: this.state.tuesday
+                },
+                {
+                  label: 'W',
+                  value: 'wednesday',
+                  checked: this.state.wednesday
+                },
+                {
+                  label: 'Th',
+                  value: 'thursday',
+                  checked: this.state.thursday
+                },
+                {
+                  label: 'F',
+                  value: 'friday',
+                  checked: this.state.friday
+                }
+              ]}
+              horizontal
+              id="available-day"
+              label="Availability:"
+              onChange={this._onChangeInput}
+            />
+
+            <br />
+          </div>
+        )}
         <Button onClick={this._validateAndSubmit}>Submit</Button>
       </div>
     );
@@ -538,7 +585,8 @@ class BaseRegistrationChild extends Component {
         'pastTransition',
         'pastKitchen',
         'pastChaperone'
-      ]
+      ],
+      availability: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday']
     };
 
     fieldSummaryItems = fieldSummaryItems.concat(
@@ -552,6 +600,11 @@ class BaseRegistrationChild extends Component {
         'pastRoles',
         groupFields.pastRoles,
         'Roles volunteered for in the past:'
+      ),
+      this._makeSubGroup(
+        'available-days',
+        groupFields.availability,
+        'Available Days'
       )
     );
 
@@ -604,7 +657,12 @@ class BaseRegistrationChild extends Component {
   }
 }
 
+BaseRegistrationChild.defaultProps = {
+  askAvailability: false
+};
+
 BaseRegistrationChild.propTypes = {
+  askAvailability: PropTypes.bool,
   className: PropTypes.string,
   headerContent: PropTypes.node,
   refName: PropTypes.string.isRequired

@@ -17,6 +17,7 @@ const Checklist = props => {
         checked={checked}
         disabled={disabled}
         id={value}
+        inline={props.horizontal}
         key={value}
         label={label}
         onChange={props.onChange}
@@ -36,6 +37,11 @@ const Checklist = props => {
   );
 };
 
+Checklist.defaultProps = {
+  horizontal: false,
+  required: false
+};
+
 Checklist.propTypes = {
   checklistItems: PropTypes.arrayOf(
     PropTypes.shape({
@@ -44,6 +50,7 @@ Checklist.propTypes = {
       value: PropTypes.string.isRequired
     })
   ).isRequired,
+  horizontal: PropTypes.bool,
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
