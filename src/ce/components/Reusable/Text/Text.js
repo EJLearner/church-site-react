@@ -4,54 +4,60 @@ import PropTypes from 'prop-types';
 import './Text.css';
 
 const Text = props => {
+  const {
+    columns,
+    id,
+    instructions,
+    label,
+    onChange,
+    onEnter,
+    placeholder,
+    required,
+    rows,
+    size,
+    textArea,
+    value
+  } = props;
+
   const _onChange = event => {
-    props.onChange(event.target.value, props.id, event);
+    onChange(event.target.value, id, event);
   };
 
   const _onKeyPress = event => {
-    const {id, onEnter} = props;
-
     if (onEnter && event.key === 'Enter') {
       onEnter(event.target.value, id, event);
     }
   };
 
-  const labelId = `${props.id}-label`;
+  const labelId = `${id}-label`;
+  const instructionsId = instructions ? `${id}-instructions` : null;
+  const labelledBy = [labelId, instructionsId].filter(id => id).join(' ');
 
-  const input = (
-    <input
-      aria-labelledby={labelId}
-      id={props.id}
-      onChange={_onChange}
-      onKeyPress={_onKeyPress}
-      placeholder={props.placeholder}
-      size={props.size}
-      value={props.value}
-    />
+  const inputProps = {
+    'aria-labelledby': labelledBy,
+    cols: columns,
+    id: id,
+    onChange: _onChange,
+    onKeyPress: _onKeyPress,
+    placeholder: placeholder,
+    rows: rows,
+    size: size,
+    value: value
+  };
+
+  const inputOrTextarea = textArea ? (
+    <textarea {...inputProps} />
+  ) : (
+    <input {...inputProps} />
   );
-
-  const textArea = (
-    <textarea
-      aria-labelledby={labelId}
-      cols={props.columns}
-      id={props.id}
-      onChange={_onChange}
-      onKeyPress={_onKeyPress}
-      placeholder={props.placeholder}
-      rows={props.rows}
-      value={props.value}
-    />
-  );
-
-  const inputOrTextarea = props.textArea ? textArea : input;
 
   return (
     <div className="text-box-pattern">
-      <label htmlFor={props.id} id={labelId}>
-        {props.label}
-        {props.required ? '*' : undefined}
+      {instructions && <p id={instructionsId}>{instructions}</p>}
+      <label htmlFor={id} id={labelId}>
+        {label}
+        {required && '*'}
       </label>
-
       {inputOrTextarea}
     </div>
   );
@@ -64,6 +70,7 @@ Text.defaultProps = {
 Text.propTypes = {
   columns: PropTypes.number,
   id: PropTypes.string,
+  instructions: PropTypes.node,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   onEnter: PropTypes.func,
