@@ -93,25 +93,29 @@ class CcVbsCheckout extends Component {
 
   _getTodaysLogRef() {
     const today = moment().format('YYYY-MM-DD');
-    // TODO ccLogbook should be a react parameter
-    return firebase.database().ref(`ccLogbook/${today}`);
+    return firebase.database().ref(`${this.props.logbookRefName}/${today}`);
   }
 
   _onCheckoutClick(disabled) {
+    const idKey = `${this.props.logbookRefName}Id`;
+
     if (disabled) {
       window.alert('You must select at least one child');
     } else {
       const children = this._getSelectedChildren();
-      const selectedChildrenLogbookIds = _.map(children, 'ccLogbookId');
+      const selectedChildrenLogbookIds = _.map(children, idKey);
       const todaysLogRef = this._getTodaysLogRef();
       const {todaysLogbook} = this.state;
 
       _.forEach(todaysLogbook, (loggedChild, key) => {
-        if (_.includes(selectedChildrenLogbookIds, loggedChild.ccLogbookId)) {
+        if (_.includes(selectedChildrenLogbookIds, loggedChild[idKey])) {
           const childRef = todaysLogRef.child(key);
           // TODO: check for return from update
 
-          childRef.update({status: CHILD_STATUS.CHECKED_OUT});
+          childRef.update({
+            checkOutTime: new Date().toISOString(),
+            status: CHILD_STATUS.CHECKED_OUT
+          });
         }
       });
       this.setState({status: PAGE_STATUS.CHILDREN_CHECKED_OUT});
@@ -128,7 +132,7 @@ class CcVbsCheckout extends Component {
 
     _.forEach(this.state.todaysLogbook, child => {
       if (_.includes(child.parentNames, parentName)) {
-        childrenOfParent[child.ccRegisteredId] = child;
+        childrenOfParent[child[this.props.registryIdName]] = child;
       }
     });
 
@@ -276,9 +280,11 @@ class CcVbsCheckout extends Component {
       <div>
         <Text
           id="parentName"
-          label="Name"
+          instructions="Please enter parent/guardian’s name below to check children out"
+          label="Parent Name"
           onChange={this._onChange}
           onEnter={this._onSearch}
+          placeholder="First Last"
           value={this.state.parentName}
         />
       </div>
@@ -290,7 +296,7 @@ class CcVbsCheckout extends Component {
 
     return (
       <div>
-        <h1>Welcome Back</h1>
+        <h1>Thanks for attending {this.props.welcomeName}</h1>
         {status === PAGE_STATUS.ENTERING_PARENT_NAME && this._renderNameInput()}
         {status === PAGE_STATUS.SELECT_CHILDREN && this._renderChildSelectDiv()}
       </div>
@@ -353,13 +359,17 @@ class CcVbsCheckout extends Component {
 }
 
 CcVbsCheckout.defaultProps = {
+  logbookRefName: 'ccLogbook',
   registryAccessRefName: 'user_groups/ccRegAccess',
-  registryIdName: 'ccRegisteredId'
+  registryIdName: 'ccRegisteredId',
+  welcomeName: 'Children’s Church'
 };
 
 CcVbsCheckout.propTypes = {
+  logbookRefName: PropTypes.string.isRequired,
   registryAccessRefName: PropTypes.string.isRequired,
-  registryIdName: PropTypes.string.isRequired
+  registryIdName: PropTypes.string.isRequired,
+  welcomeName: PropTypes.string.isRequired
 };
 
 export default CcVbsCheckout;

@@ -102,7 +102,7 @@ class CcVbsCheckin extends Component {
 
   _getTodaysLogRef() {
     const today = moment().format('YYYY-MM-DD');
-    return firebase.database().ref(`ccLogbook/${today}`);
+    return firebase.database().ref(`${this.props.logbookRefName}/${today}`);
   }
 
   _onCheckInClick(disabled) {
@@ -114,7 +114,8 @@ class CcVbsCheckin extends Component {
 
       _.forEach(children, child => {
         const uploadChild = _.cloneDeep(child);
-        uploadChild.ccLogbookId = utils.generatePushID();
+        uploadChild[`${this.props.logbookRefName}Id`] = utils.generatePushID();
+        uploadChild.checkInTime = new Date().toISOString();
         uploadChild.status = CHILD_STATUS.CHECKED_IN;
 
         delete uploadChild.checked;
@@ -283,9 +284,11 @@ class CcVbsCheckin extends Component {
       <div>
         <Text
           id="parentName"
-          label="Name"
+          instructions="Please enter parent/guardian’s name below to check children in"
+          label="Parent Name"
           onChange={this._onChange}
           onEnter={this._onSearch}
+          placeholder="First Last"
           value={this.state.parentName}
         />
       </div>
@@ -297,7 +300,7 @@ class CcVbsCheckin extends Component {
 
     return (
       <div>
-        <h1>Welcome Back</h1>
+        <h1>Welcome Back to {this.props.welcomeName}</h1>
         {status === PAGE_STATUS.ENTERING_PARENT_NAME && this._renderNameInput()}
         {status === PAGE_STATUS.SELECT_CHILDREN && this._renderChildSelectDiv()}
       </div>
@@ -358,15 +361,19 @@ class CcVbsCheckin extends Component {
 }
 
 CcVbsCheckin.defaultProps = {
+  logbookRefName: 'ccLogbook',
   registeredChildrenRefName: 'ccRegisteredChildren',
   registryAccessRefName: 'user_groups/ccRegAccess',
-  registryIdName: 'ccRegisteredId'
+  registryIdName: 'ccRegisteredId',
+  welcomeName: 'Children’s Church'
 };
 
 CcVbsCheckin.propTypes = {
+  logbookRefName: PropTypes.string.isRequired,
   registeredChildrenRefName: PropTypes.string.isRequired,
   registryAccessRefName: PropTypes.string.isRequired,
-  registryIdName: PropTypes.string.isRequired
+  registryIdName: PropTypes.string.isRequired,
+  welcomeName: PropTypes.string.isRequired
 };
 
 export default CcVbsCheckin;
