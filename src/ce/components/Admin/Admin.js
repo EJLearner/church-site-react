@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import React, {Component} from 'react';
+import {withRouter} from 'react-router-dom';
 import firebase, {auth, provider} from '../../../firebase';
 import moment from 'moment';
 import {Parser as HtmlToReactParser} from 'html-to-react';
@@ -9,6 +10,9 @@ import Text from '../Reusable/Text/Text';
 import Checklist from '../Reusable/Checklist/Checklist';
 
 import './Admin.css';
+import MenuBar from '../MenuBar/MenuBar';
+import Switch from 'react-router-dom/Switch';
+import {Route} from 'react-router-dom';
 
 const TIME_FORMAT = {
   SIMPLE_TIME: 'h:mm a',
@@ -58,6 +62,15 @@ class Admin extends Component {
       this.setState({
         dates
       });
+    });
+
+    // update adminUsers state based on firebase data status
+    const adminUsersRef = firebase.database().ref('user_groups/admins');
+
+    adminUsersRef.on('value', snapshot => {
+      const adminUsers = snapshot.val();
+      console.log(adminUsers);
+      this.setState({adminUsers});
     });
 
     // keeps user logged in on a page refresh
@@ -387,22 +400,62 @@ class Admin extends Component {
     );
   }
 
-  render() {
+  _adminPage() {
     const addingEvent = this.state.currentEdit === 'new';
-
     const onAddItemClick = () => {
       this.setState({currentEdit: 'new'});
     };
 
-    return this.state.user ? (
-      <div className="admin-page">
-        Logged in as {this.state.user.displayName}{' '}
-        <Button onClick={this._logout}>Log out</Button>
+    return (
+      <div>
         <div>
           <Button onClick={onAddItemClick}>Add Item</Button>
         </div>
         {addingEvent && this._renderEditInput(true)}
         <div>{this._renderItems()}</div>
+      </div>
+    );
+  }
+
+  _ccAdminPage() {
+    return <div>Children’s Church Admin Page Coming Soon</div>;
+  }
+
+  _vbsAdminPage() {
+    return <div>VBS Admin Page Coming Soon</div>;
+  }
+
+  _generateLinks() {
+    const paths = [];
+    const {uid} = this.state.user;
+    const isAdmin = this.state.adminUsers && this.state.adminUsers[uid];
+
+    if (isAdmin) {
+      paths.push({path: 'events-admin', text: 'Events'});
+    }
+
+    if (isAdmin || (this.state.ccRegAccess && this.state.ccRegAccess[uid])) {
+      paths.push({path: 'cc-admin', text: 'Children’s Church'});
+    }
+
+    if (isAdmin || (this.state.vbsRegAccess && this.state.vbsRegAccess[uid])) {
+      paths.push({path: 'vbs-admin', text: 'VBS'});
+    }
+
+    return paths;
+  }
+
+  render() {
+    return this.state.user ? (
+      <div className="admin-page">
+        <MenuBar links={this._generateLinks()} />
+        Logged in as {this.state.user.displayName}{' '}
+        <Button onClick={this._logout}>Log out</Button>
+        <Switch>
+          <Route path="/admin/events-admin" render={() => this._adminPage()} />
+          <Route path="/admin/cc-admin" render={() => this._ccAdminPage()} />
+          <Route path="/admin/vbs-admin" render={() => this._vbsAdminPage()} />
+        </Switch>
       </div>
     ) : (
       <div className="admin-page">
@@ -412,4 +465,4 @@ class Admin extends Component {
   }
 }
 
-export default Admin;
+export default withRouter(Admin);
