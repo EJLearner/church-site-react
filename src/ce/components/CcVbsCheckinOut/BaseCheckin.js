@@ -10,9 +10,9 @@ import Text from '../Reusable/Text/Text';
 
 import utils from '../../../utils/commonUtils';
 
-import {CHILD_STATUS, PAGE_STATUS} from './ccVbsCheckInOutConstants';
+import {CHILD_STATUS, PAGE_STATUS} from './BaseCheckinOutConstants';
 
-import './CcVbsCheckInOut.css';
+import './BaseCheckinOut.css';
 
 const bindThese = function(functions, context) {
   functions.forEach(func => {
@@ -20,7 +20,7 @@ const bindThese = function(functions, context) {
   });
 };
 
-class CcVbsCheckin extends Component {
+class BaseCheckin extends Component {
   constructor(props) {
     super(props);
 
@@ -340,13 +340,13 @@ class CcVbsCheckin extends Component {
   _renderProperScreen() {
     const {regStaff, user, status} = this.state;
 
-    const memberOfCcVbsCheckinGroup = user && regStaff[user.uid];
+    const memberOfBaseCheckinGroup = user && regStaff[user.uid];
 
     if (status === PAGE_STATUS.CHILDREN_CHECKED_IN) {
       return this._renderAfterLoginScreen();
     }
 
-    if (user && memberOfCcVbsCheckinGroup) {
+    if (user && memberOfBaseCheckinGroup) {
       return this._renderWhileLoggedIn(user);
     }
 
@@ -360,7 +360,7 @@ class CcVbsCheckin extends Component {
   }
 }
 
-CcVbsCheckin.defaultProps = {
+BaseCheckin.defaultProps = {
   logbookRefName: 'ccLogbook',
   registeredChildrenRefName: 'ccRegisteredChildren',
   registryAccessRefName: 'user_groups/ccRegAccess',
@@ -368,7 +368,7 @@ CcVbsCheckin.defaultProps = {
   welcomeName: 'Children’s Church'
 };
 
-CcVbsCheckin.propTypes = {
+BaseCheckin.propTypes = {
   logbookRefName: PropTypes.string.isRequired,
   registeredChildrenRefName: PropTypes.string.isRequired,
   registryAccessRefName: PropTypes.string.isRequired,
@@ -376,4 +376,4 @@ CcVbsCheckin.propTypes = {
   welcomeName: PropTypes.string.isRequired
 };
 
-export default CcVbsCheckin;
+export default BaseCheckin;

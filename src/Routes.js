@@ -5,8 +5,8 @@ import routePaths from './routePaths';
 
 import Admin from './ce/components/Admin/Admin';
 import Calendar from './ce/components/Calendar/Calendar';
-import CcCheckIn from './ce/components/CcVbsCheckInOut/CcVbsCheckin';
-import CcCheckOut from './ce/components/CcVbsCheckInOut/CcVbsCheckout';
+import CcCheckIn from './ce/components/CcVbsCheckinOut/CcCheckin';
+import CcCheckOut from './ce/components/CcVbsCheckinOut/CcCheckout';
 import CcRegistrationChild from './ce/components/RegistrationPages/CcRegistrationChild';
 import CcRegistrationLanding from './ce/components/RegistrationPages/CcRegistrationLanding';
 import CcRegistrationVolunteer from './ce/components/RegistrationPages/CcRegistrationVolunteer';

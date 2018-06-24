@@ -3,7 +3,7 @@ import React from 'react';
 import {mount, shallow} from 'enzyme';
 import slidePictureData from '../../utils/slidePictureData';
 
-import CcVbsCheckin from './CcVbsCheckin';
+import BaseCheckin from './BaseCheckin';
 import {MemoryRouter} from 'react-router';
 
 describe('#constructor', () => {
@@ -14,7 +14,7 @@ describe('#render', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<CcVbsCheckin />);
+    wrapper = shallow(<BaseCheckin />);
   });
 
   it('renders', () => {
