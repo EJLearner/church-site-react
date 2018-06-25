@@ -249,7 +249,7 @@ class BaseRegistrationChild extends Component {
         <br />
         <Text
           id="parentName"
-          label="Name"
+          label="Parent Name"
           onChange={this._onChangeInput}
           required
           size={2 * widthBase}
