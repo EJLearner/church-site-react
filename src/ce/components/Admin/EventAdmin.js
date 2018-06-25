@@ -265,18 +265,13 @@ class EventAdmin extends Component {
               ) : (
                 <div>
                   <Button
-                    onClick={_.partial(
-                      this._editItem,
-                      dateTitleKey,
-                      dateString,
-                      eventObject
-                    )}
+                    onClick={() =>
+                      this._editItem(dateTitleKey, dateString, eventObject)
+                    }
                   >
                     Edit
-                  </Button>
-                  <Button
-                    onClick={_.partial(this._removeItem, dateString, key)}
-                  >
+                  </Button>{' '}
+                  <Button onClick={() => this._removeItem(dateString, key)}>
                     Remove
                   </Button>
                 </div>
@@ -352,7 +347,9 @@ class EventAdmin extends Component {
           onChange={this._onChange}
         />
         <div>
-          <Button onClick={_.partial(this._submit, isNew, key)}>Submit</Button>
+          <Button onClick={event => this._submit(isNew, key, event)}>
+            Submit
+          </Button>
           <Button onClick={this._cancelEdit}>Cancel</Button>
         </div>
       </div>
