@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
 import firebase from '../../../firebase';
+import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import {Redirect} from 'react-router';
@@ -14,6 +15,7 @@ import registrationUtils from './registrationUtils';
 
 import routePaths from '../../../routePaths';
 import utils from '../../../utils/commonUtils';
+import constants from '../../../utils/constants';
 
 import './Registration.css';
 import Checklist from '../Reusable/Checklist/Checklist';
@@ -259,6 +261,13 @@ class BaseRegistrationChild extends Component {
       const {fieldId} = field;
       volunteer[fieldId] = this.state[fieldId];
     });
+
+    const standardDob = moment(
+      this.state.dob,
+      constants.VALID_INPUT_DATE_FORMATS
+    ).format(constants.INTERNAL_DATE_FORMAT);
+
+    volunteer.dob = standardDob;
 
     const firebaseRef = firebase.database().ref(refName);
 

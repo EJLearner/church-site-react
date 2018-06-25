@@ -19,6 +19,8 @@ import NotFound from './ce/components/NotFound/NotFound';
 import Quote from './ce/components/Quote/Quote';
 import TitleBar from './ce/components/TitleBar/TitleBar';
 import ThankYouPage from './ce/components/Reusable/ThankYouPage/ThankYouPage';
+import VbsCheckIn from './ce/components/CcVbsCheckinOut/VbsCheckin';
+import VbsCheckOut from './ce/components/CcVbsCheckinOut/VbsCheckout';
 import VbsRegistrationChild from './ce/components/RegistrationPages/VbsRegistrationChild';
 import VbsRegistrationLanding from './ce/components/RegistrationPages/VbsRegistrationLanding';
 import VbsRegistrationVolunteer from './ce/components/RegistrationPages/VbsRegistrationVolunteer';
@@ -133,6 +135,24 @@ class Routes extends Component {
               </BareCePage>
             )}
           />
+          <Route
+            path={routePaths.CE_VBS_CHECKIN}
+            render={() => (
+              <BareCePage>
+                <VbsCheckIn />
+              </BareCePage>
+            )}
+          />
+          <Route
+            path={routePaths.CE_VBS_CHECKOUT}
+            render={() => (
+              <BareCePage>
+                <VbsCheckOut />
+              </BareCePage>
+            )}
+          />
+
+
           <Route component={Calendar} path={routePaths.CE_CALENDAR} />
           <Route
             path={routePaths.CE_CC_REG_CHILD}

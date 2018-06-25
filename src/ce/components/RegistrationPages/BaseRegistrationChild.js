@@ -166,14 +166,9 @@ class BaseRegistrationChild extends Component {
   _submitData() {
     const {refName} = this.props;
 
-    const standardChildDob = moment(
-      this.state.childDob,
-      constants.VALID_INPUT_DATE_FORMATS
-    ).format(constants.INTERNAL_DATE_FORMAT);
-
     const child = {
       [refName + 'Id']: utils.generatePushID(),
-      childDob: standardChildDob,
+      registerTime: new Date().toISOString(),
       parentNames: [this.state.parentName]
     };
 
@@ -181,6 +176,13 @@ class BaseRegistrationChild extends Component {
       const {fieldId, dbId} = field;
       child[dbId] = this.state[fieldId];
     });
+
+    const standardChildDob = moment(
+      this.state.childDob,
+      constants.VALID_INPUT_DATE_FORMATS
+    ).format(constants.INTERNAL_DATE_FORMAT);
+
+    child.childDob = standardChildDob;
 
     const firebaseRef = firebase.database().ref(refName);
 

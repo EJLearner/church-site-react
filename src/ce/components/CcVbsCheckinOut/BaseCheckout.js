@@ -20,7 +20,7 @@ const bindThese = function(functions, context) {
   });
 };
 
-class CcVbsCheckout extends Component {
+class BaseCheckout extends Component {
   constructor(props) {
     super(props);
 
@@ -358,18 +358,18 @@ class CcVbsCheckout extends Component {
   }
 }
 
-CcVbsCheckout.defaultProps = {
+BaseCheckout.defaultProps = {
   logbookRefName: 'ccLogbook',
   registryAccessRefName: 'user_groups/ccRegAccess',
   registryIdName: 'ccRegisteredId',
   welcomeName: 'Children’s Church'
 };
 
-CcVbsCheckout.propTypes = {
+BaseCheckout.propTypes = {
   logbookRefName: PropTypes.string.isRequired,
   registryAccessRefName: PropTypes.string.isRequired,
   registryIdName: PropTypes.string.isRequired,
   welcomeName: PropTypes.string.isRequired
 };
 
-export default CcVbsCheckout;
+export default BaseCheckout;
