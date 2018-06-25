@@ -360,14 +360,6 @@ class BaseCheckin extends Component {
   }
 }
 
-BaseCheckin.defaultProps = {
-  logbookRefName: 'ccLogbook',
-  registeredChildrenRefName: 'ccRegisteredChildren',
-  registryAccessRefName: 'user_groups/ccRegAccess',
-  registryIdName: 'ccRegisteredId',
-  welcomeName: 'Children’s Church'
-};
-
 BaseCheckin.propTypes = {
   logbookRefName: PropTypes.string.isRequired,
   registeredChildrenRefName: PropTypes.string.isRequired,

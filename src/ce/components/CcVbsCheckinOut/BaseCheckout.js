@@ -358,13 +358,6 @@ class BaseCheckout extends Component {
   }
 }
 
-BaseCheckout.defaultProps = {
-  logbookRefName: 'ccLogbook',
-  registryAccessRefName: 'user_groups/ccRegAccess',
-  registryIdName: 'ccRegisteredId',
-  welcomeName: 'Children’s Church'
-};
-
 BaseCheckout.propTypes = {
   logbookRefName: PropTypes.string.isRequired,
   registryAccessRefName: PropTypes.string.isRequired,
