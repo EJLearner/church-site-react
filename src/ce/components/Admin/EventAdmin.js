@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
-import firebase, {auth, provider} from '../../../firebase';
+import firebase from '../../../firebase';
 import moment from 'moment';
 import {Parser as HtmlToReactParser} from 'html-to-react';
 

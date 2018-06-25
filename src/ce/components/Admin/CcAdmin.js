@@ -6,7 +6,7 @@ import {withRouter} from 'react-router-dom';
 import moment from 'moment';
 import _ from 'lodash';
 
-class Template extends Component {
+class CcAdmin extends Component {
   constructor(props) {
     super(props);
 
@@ -22,12 +22,12 @@ class Template extends Component {
   }
 }
 
-Template.defaultProps = {
+CcAdmin.defaultProps = {
   moreStuff: 'Default more stuff'
 };
 
-Template.propTypes = {
+CcAdmin.propTypes = {
   moreStuff: PropTypes.string
 };
 
-export default withRouter(Template);
+export default withRouter(CcAdmin);

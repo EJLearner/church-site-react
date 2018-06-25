@@ -1,5 +1,16 @@
 .admin-page {
   padding: 2em;
+
+  table {
+    border-collapse: collapse;
+    border: 1px solid black;
+
+    td,
+    th {
+      border: 1px solid black;
+      padding: 0.5em;
+    }
+  }
 }
 
 .event-item {
