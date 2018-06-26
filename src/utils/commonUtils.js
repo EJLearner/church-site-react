@@ -71,6 +71,25 @@ const utils = {
   getAge(dob) {
     const dobMoment = moment(dob, constants.INTERNAL_DATE_FORMAT);
     return moment().diff(dobMoment, 'years');
+  },
+
+  /**
+   * Formats a string containing ten digits into a phone number
+   * disregarding anything that is not a digit
+   * @param {string} number - ten digit phone number
+   */
+  formatPhoneNumber(number) {
+    const onlyDigits = number.replace(/[^0-9]/g, '');
+    const valid = onlyDigits.length === 10;
+    if (onlyDigits && valid) {
+      const firstThree = onlyDigits.substr(0, 3);
+      const secondThree = onlyDigits.substr(3, 3);
+      const lastFour = onlyDigits.substr(6);
+
+      return `(${firstThree}) ${secondThree}-${lastFour}`;
+    }
+
+    return number;
   }
 };
 
