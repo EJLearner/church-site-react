@@ -25,32 +25,72 @@ class VbsAdmin extends Component {
 
       snapshot.forEach(childSnapShot => {
         const volunteerObject = childSnapShot.val();
-        tableRows.push({
-          id: childSnapShot.key,
-          name: volunteerObject.name,
-          homePhone: commonUtils.formatPhoneNumber(volunteerObject.homePhone),
-          mobilePhone: commonUtils.formatPhoneNumber(
-            volunteerObject.mobilePhone
-          ),
-          email: volunteerObject.email,
-          address: (
-            <div>
-              {volunteerObject.address1}
-              {Boolean(volunteerObject.address2) && (
-                <div>{volunteerObject.address2}</div>
-              )}
-              <div>
-                {volunteerObject.city}, {volunteerObject.state}{' '}
-                {volunteerObject.zip}
-              </div>
-            </div>
-          ),
-          availability: this._getDaysAvailableString(volunteerObject)
-        });
+        tableRows.push(this._generateRowObject(childSnapShot, volunteerObject));
       });
 
       this.setState({tableRows});
     });
+  }
+
+  _generateRowObject(childSnapShot, volunteerObject) {
+    const {
+      homePhone,
+      mobilePhone,
+      email,
+      address1,
+      address2,
+      city,
+      state,
+      zip
+    } = volunteerObject;
+
+    return {
+      id: childSnapShot.key,
+      name: volunteerObject.name,
+      homePhone: commonUtils.formatPhoneNumber(homePhone),
+      mobilePhone: commonUtils.formatPhoneNumber(mobilePhone),
+      email: email,
+      address: (
+        <div>
+          {address1}
+          {Boolean(address2) && <div>{address2}</div>}
+          <div>
+            {city}, {state} {zip}
+          </div>
+        </div>
+      ),
+      availability: this._getDaysAvailableString(volunteerObject),
+      interestedIn: this._generateInterestedInString(volunteerObject)
+    };
+
+    /* TODO data
+
+    bibleSchool Vaction Bible School;
+    sundaySchool
+    youthMinistry
+
+    updateTime
+    dob;
+    past
+      teacher
+      admin Administrative Staff
+      transition Transition Team
+      kitchen Kitchen Staff
+      chaperone
+    */
+  }
+
+  _generateInterestedInString(volunteerObject) {
+    return [
+      volunteerObject.teacher && 'Teacher',
+      volunteerObject.admin && 'Administrative Staff',
+      volunteerObject.assistantMentor && 'Assistant/Hallway Monitor',
+      volunteerObject.admin && 'Administrative Staff',
+      volunteerObject.kitchen && 'Kitchen Staff',
+      volunteerObject.otherText
+    ]
+      .filter(role => role)
+      .join(', ');
   }
 
   _getDaysAvailableString(volunteerObject) {
@@ -81,7 +121,8 @@ class VbsAdmin extends Component {
       {label: 'Mobile Phone', name: 'mobilePhone'},
       {label: 'Email', name: 'email'},
       {label: 'Address', name: 'address'},
-      {label: 'Availability', name: 'availability'}
+      {label: 'Availability', name: 'availability'},
+      {label: 'Interested In', name: 'interestedIn'}
     ];
   }
 
