@@ -12,7 +12,7 @@ class VbsAdmin extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {tableRows: []};
+    this.state = {childrenTableRows: [], volunteerTableRows: []};
   }
 
   componentDidMount() {
@@ -20,15 +20,42 @@ class VbsAdmin extends Component {
       .database()
       .ref(`${this.props.stringPrefix}RegisteredVolunteers`);
 
-    volunteersRef.on('value', snapshot => {
-      const tableRows = [];
+    const childrenRef = firebase
+      .database()
+      .ref(`${this.props.stringPrefix}RegisteredChildren`);
 
-      snapshot.forEach(childSnapShot => {
-        const volunteerObject = childSnapShot.val();
-        tableRows.push(this._generateRowObject(childSnapShot, volunteerObject));
+    volunteersRef.on('value', snapshot => {
+      const volunteerTableRows = [];
+
+      snapshot.forEach(volunteerSnapShot => {
+        const volunteerObject = volunteerSnapShot.val();
+        volunteerTableRows.push(
+          this._generateVolunteerRowObject(volunteerSnapShot, volunteerObject)
+        );
       });
 
-      this.setState({tableRows});
+      this.setState({volunteerTableRows});
+    });
+
+    console.log('bah');
+
+    childrenRef.on('value', snapshot => {
+      console.log('evaluating children ref');
+
+      console.log(snapshot.val());
+
+      const childrenTableRows = [];
+
+      snapshot.forEach(childSnapShot => {
+        const childObject = childSnapShot.val();
+        childrenTableRows.push(
+          this._generateChildRowObject(childSnapShot, childObject)
+        );
+      });
+
+      console.log(childrenTableRows);
+
+      this.setState({childrenTableRows});
     });
   }
 
@@ -96,7 +123,7 @@ class VbsAdmin extends Component {
     }, '');
   }
 
-  _generateRowObject(childSnapShot, volunteerObject) {
+  _generateVolunteerRowObject(volunteerSnapShot, volunteerObject) {
     const {
       homePhone,
       mobilePhone,
@@ -109,7 +136,7 @@ class VbsAdmin extends Component {
     } = volunteerObject;
 
     return {
-      id: childSnapShot.key,
+      id: volunteerSnapShot.key,
       name: volunteerObject.name,
       homePhone: commonUtils.formatPhoneNumber(homePhone, true),
       mobilePhone: commonUtils.formatPhoneNumber(mobilePhone, true),
@@ -132,7 +159,7 @@ class VbsAdmin extends Component {
     };
   }
 
-  _getColumns() {
+  _getVolunteerTableColumns() {
     return [
       {label: 'Name', name: 'name'},
       {label: 'Home Phone', name: 'homePhone'},
@@ -148,11 +175,71 @@ class VbsAdmin extends Component {
     ];
   }
 
+  _generateChildRowObject(childSnapShot, childObject) {
+    const {
+      address1,
+      address2,
+      childDob,
+      childName,
+      city,
+      knownAllergies,
+      parentEmail,
+      parentName,
+      parentPhone,
+      state,
+      subscribe,
+      timeChanged,
+      zip
+    } = childObject;
+
+    return {
+      id: childSnapShot.key,
+      childName: childName,
+      parentPhone: commonUtils.formatPhoneNumber(parentPhone, true),
+      parentEmail: parentEmail,
+      parentName: parentName,
+      address: (
+        <div>
+          {address1}
+          {Boolean(address2) && <div>{address2}</div>}
+          <div>
+            {city}, {state} {zip}
+          </div>
+        </div>
+      ),
+      allergies: knownAllergies,
+      subscribed: subscribe ? 'Yes' : 'No',
+      childDob: childDob,
+      updateTime: timeChanged
+    };
+  }
+
+  _getChildrenTableColumns() {
+    return [
+      {label: 'Child Name', name: 'childName'},
+      {label: 'Parent Name', name: 'parentName'},
+      {label: 'Parent Phone', name: 'parentPhone'},
+      {label: 'Parent Email', name: 'parentEmail'},
+      {label: 'Address', name: 'address'},
+      {label: 'Known Allergies', name: 'allergies'},
+      {label: 'Subscribed', name: 'subscribed'},
+      {label: 'Child DOB', name: 'childDob'}
+    ];
+  }
+
   render() {
     return (
       <div>
-        <h1>Volunteers</h1>
-        <Table rows={this.state.tableRows} columns={this._getColumns()} />
+        <h2>Volunteers</h2>
+        {/* <Table
+          rows={this.state.volunteerTableRows}
+          columns={this._getVolunteerTableColumns()}
+        /> */}
+        <h2>Children</h2>
+        <Table
+          rows={this.state.childrenTableRows}
+          columns={this._getChildrenTableColumns()}
+        />
       </div>
     );
   }

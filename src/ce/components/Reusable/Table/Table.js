@@ -10,7 +10,7 @@ class Table extends Component {
     });
   }
 
-  _renderVolunteersTableRows(keys) {
+  _renderTableRows() {
     return this.props.rows.map(row => {
       return <tr key={row.id}>{this._renderRowCells(row)}</tr>;
     });
@@ -28,7 +28,7 @@ class Table extends Component {
         <thead>
           <tr>{this._renderHeaderCells()}</tr>
         </thead>
-        <tbody>{this._renderVolunteersTableRows()}</tbody>
+        <tbody>{this._renderTableRows()}</tbody>
       </table>
     );
   }
@@ -37,8 +37,8 @@ class Table extends Component {
 Table.defaultProps = {};
 
 Table.propTypes = {
-  column: PropTypes.array,
-  rows: PropTypes.array,
+  column: PropTypes.array.isRequired,
+  rows: PropTypes.array.isRequired,
   className: PropTypes.string
 };
 
