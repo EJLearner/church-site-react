@@ -77,8 +77,9 @@ const utils = {
    * Formats a string containing ten digits into a phone number
    * disregarding anything that is not a digit
    * @param {string} number - ten digit phone number
+   * @param {bool} nonbreaking - use nonbreaking spaces when truthy
    */
-  formatPhoneNumber(number) {
+  formatPhoneNumber(number, nonbreaking) {
     const onlyDigits = number.replace(/[^0-9]/g, '');
     const valid = onlyDigits.length === 10;
     if (onlyDigits && valid) {
@@ -86,7 +87,10 @@ const utils = {
       const secondThree = onlyDigits.substr(3, 3);
       const lastFour = onlyDigits.substr(6);
 
-      return `(${firstThree}) ${secondThree}-${lastFour}`;
+      const space = nonbreaking ? String.fromCharCode(160) : ' ';
+      const hyphen = nonbreaking ? String.fromCharCode(8209) : '-';
+
+      return `(${firstThree})${space}${secondThree}${hyphen}${lastFour}`;
     }
 
     return number;

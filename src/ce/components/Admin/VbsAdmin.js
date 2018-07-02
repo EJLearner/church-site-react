@@ -32,65 +32,47 @@ class VbsAdmin extends Component {
     });
   }
 
-  _generateRowObject(childSnapShot, volunteerObject) {
-    const {
-      homePhone,
-      mobilePhone,
-      email,
-      address1,
-      address2,
-      city,
-      state,
-      zip
-    } = volunteerObject;
-
-    return {
-      id: childSnapShot.key,
-      name: volunteerObject.name,
-      homePhone: commonUtils.formatPhoneNumber(homePhone),
-      mobilePhone: commonUtils.formatPhoneNumber(mobilePhone),
-      email: email,
-      address: (
-        <div>
-          {address1}
-          {Boolean(address2) && <div>{address2}</div>}
-          <div>
-            {city}, {state} {zip}
-          </div>
-        </div>
-      ),
-      availability: this._getDaysAvailableString(volunteerObject),
-      interestedIn: this._generateInterestedInString(volunteerObject)
-    };
-
-    /* TODO data
-
-    bibleSchool Vaction Bible School;
-    sundaySchool
-    youthMinistry
-
-    updateTime
-    dob;
-    past
-      teacher
-      admin Administrative Staff
-      transition Transition Team
-      kitchen Kitchen Staff
-      chaperone
-    */
+  _makeString(keysAndLabels, volunteerObject) {
+    return keysAndLabels
+      .reduce((strings, [key, label]) => {
+        volunteerObject[key] && strings.push(label);
+        return strings;
+      }, [])
+      .join(', ');
   }
 
   _generateInterestedInString(volunteerObject) {
-    return [
-      volunteerObject.teacher && 'Teacher',
-      volunteerObject.admin && 'Administrative Staff',
-      volunteerObject.assistantMentor && 'Assistant/Hallway Monitor',
-      volunteerObject.admin && 'Administrative Staff',
-      volunteerObject.kitchen && 'Kitchen Staff',
-      volunteerObject.otherText
-    ]
-      .filter(role => role)
-      .join(', ');
+    const keysAndLabels = [
+      ['teacher', 'Teacher'],
+      ['admin', 'Administrative Staff'],
+      ['assistantMentor', 'Assistant/Hallway Monitor'],
+      ['kitchen', 'Kitchen Staff'],
+      ['otherText']
+    ];
+
+    return this._makeString(keysAndLabels, volunteerObject);
+  }
+
+  _generatePastAreaString(volunteerObject) {
+    const keysAndLabels = [
+      ['bibleSchool', 'Bible School'],
+      ['sundaySchool', 'Sunday School'],
+      ['youthMinistry', 'Youth Ministry']
+    ];
+
+    return this._makeString(keysAndLabels, volunteerObject);
+  }
+
+  _generatePastRolesString(volunteerObject) {
+    const keysAndLabels = [
+      ['pastTeacher', 'Teacher'],
+      ['pastAdmin', 'Administrative Staff'],
+      ['pastTransition', 'Transition Team'],
+      ['pastKitchen', 'Kitchen Staff'],
+      ['pastChaperone', 'Chaperone']
+    ];
+
+    return this._makeString(keysAndLabels, volunteerObject);
   }
 
   _getDaysAvailableString(volunteerObject) {
@@ -114,6 +96,42 @@ class VbsAdmin extends Component {
     }, '');
   }
 
+  _generateRowObject(childSnapShot, volunteerObject) {
+    const {
+      homePhone,
+      mobilePhone,
+      email,
+      address1,
+      address2,
+      city,
+      state,
+      zip
+    } = volunteerObject;
+
+    return {
+      id: childSnapShot.key,
+      name: volunteerObject.name,
+      homePhone: commonUtils.formatPhoneNumber(homePhone, true),
+      mobilePhone: commonUtils.formatPhoneNumber(mobilePhone, true),
+      email: email,
+      address: (
+        <div>
+          {address1}
+          {Boolean(address2) && <div>{address2}</div>}
+          <div>
+            {city}, {state} {zip}
+          </div>
+        </div>
+      ),
+      availability: this._getDaysAvailableString(volunteerObject),
+      interestedIn: this._generateInterestedInString(volunteerObject),
+      pastAreas: this._generatePastAreaString(volunteerObject),
+      pastRoles: this._generatePastRolesString(volunteerObject),
+      dob: volunteerObject.dob,
+      updateTime: volunteerObject.timeChanged
+    };
+  }
+
   _getColumns() {
     return [
       {label: 'Name', name: 'name'},
@@ -122,7 +140,11 @@ class VbsAdmin extends Component {
       {label: 'Email', name: 'email'},
       {label: 'Address', name: 'address'},
       {label: 'Availability', name: 'availability'},
-      {label: 'Interested In', name: 'interestedIn'}
+      {label: 'Interested In', name: 'interestedIn'},
+      {label: 'Past Areas', name: 'pastAreas'},
+      {label: 'Past Roles', name: 'pastRoles'},
+      {label: 'Update Time', name: 'updateTime'},
+      {label: 'DOB', name: 'dob'}
     ];
   }
 
