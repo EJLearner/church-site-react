@@ -4,47 +4,86 @@ import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom';
 
 import commonUtils from '../../../utils/commonUtils';
+import {CHILD_STATUS} from '../CcVbsCheckinOut/BaseCheckinOutConstants';
 import Table from '../Reusable/Table/Table';
 
 class VbsAdmin extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {childrenTableRows: [], volunteerTableRows: []};
+    this.state = {
+      childrenTableRows: [],
+      volunteerTableRows: []
+    };
   }
 
   componentDidMount() {
     this.convertFbObjectToState(
-      this,
       `${this.props.stringPrefix}RegisteredVolunteers`,
       'volunteerTableRows',
-      this._generateVolunteerRowObject.bind(this)
+      this._generateVolunteerRowObject
     );
 
     this.convertFbObjectToState(
-      this,
       `${this.props.stringPrefix}RegisteredChildren`,
       'childrenTableRows',
-      this._generateChildRowObject.bind(this)
+      this._generateChildRowObject
+    );
+
+    this.convertFbObjectWithSubObjectsToState(
+      `${this.props.stringPrefix}Logbook`,
+      'checkinTableRows',
+      this._generateCheckinRowObject,
+      true
     );
   }
 
-  convertFbObjectToState(instance, refPath, stateName, generateRowObject) {
+  convertFbObjectToState(refPath, stateName, generateRowObject) {
     firebase
       .database()
       .ref(refPath)
       .on('value', snapshot => {
-        const tableRows = [];
+        const tableRows = this.getRowsFromSnapshot(
+          snapshot,
+          generateRowObject,
+          this
+        );
+        this.setState({[stateName]: tableRows});
+      });
+  }
+
+  convertFbObjectWithSubObjectsToState(refPath, stateName, generateRowObject) {
+    firebase
+      .database()
+      .ref(refPath)
+      .on('value', snapshot => {
+        const props = {};
 
         snapshot.forEach(snapshotItem => {
-          const object = snapshotItem.val();
-          tableRows.push(
-            generateRowObject.bind(instance)(snapshotItem, object)
+          const key = `${stateName}-${snapshotItem.key}`;
+          const tableRows = this.getRowsFromSnapshot(
+            snapshotItem,
+            generateRowObject,
+            this
           );
+
+          props[key] = tableRows;
         });
 
-        instance.setState.bind(instance)({[stateName]: tableRows});
+        this.setState(props);
       });
+  }
+
+  getRowsFromSnapshot(snapshot, generateRowObject, instance) {
+    const tableRows = [];
+    snapshot.forEach(snapshotItem => {
+      const object = snapshotItem.val();
+      tableRows.push(
+        generateRowObject.bind(instance)(snapshotItem.key, object)
+      );
+    });
+
+    return tableRows;
   }
 
   _makeString(keysAndLabels, volunteerObject) {
@@ -111,7 +150,7 @@ class VbsAdmin extends Component {
     }, '');
   }
 
-  _generateVolunteerRowObject(volunteerSnapShot, volunteerObject) {
+  _generateVolunteerRowObject(key, volunteerObject) {
     const {
       homePhone,
       mobilePhone,
@@ -124,7 +163,7 @@ class VbsAdmin extends Component {
     } = volunteerObject;
 
     return {
-      id: volunteerSnapShot.key,
+      id: key,
       name: volunteerObject.name,
       homePhone: commonUtils.formatPhoneNumber(homePhone, true),
       mobilePhone: commonUtils.formatPhoneNumber(mobilePhone, true),
@@ -143,7 +182,7 @@ class VbsAdmin extends Component {
       pastAreas: this._generatePastAreaString(volunteerObject),
       pastRoles: this._generatePastRolesString(volunteerObject),
       dob: volunteerObject.dob,
-      updateTime: volunteerObject.timeChanged
+      updateTime: commonUtils.formatTime(volunteerObject.timeChanged)
     };
   }
 
@@ -163,7 +202,7 @@ class VbsAdmin extends Component {
     ];
   }
 
-  _generateChildRowObject(childSnapShot, childObject) {
+  _generateChildRowObject(key, childObject) {
     const {
       address1,
       address2,
@@ -181,7 +220,7 @@ class VbsAdmin extends Component {
     } = childObject;
 
     return {
-      id: childSnapShot.key,
+      id: key,
       childName: childName,
       parentPhone: commonUtils.formatPhoneNumber(parentPhone, true),
       parentEmail: parentEmail,
@@ -197,7 +236,7 @@ class VbsAdmin extends Component {
       ),
       allergies: knownAllergies,
       subscribed: subscribe ? 'Yes' : 'No',
-      childDob: childDob,
+      age: commonUtils.getAge(childDob),
       updateTime: timeChanged
     };
   }
@@ -211,12 +250,50 @@ class VbsAdmin extends Component {
       {label: 'Address', name: 'address'},
       {label: 'Known Allergies', name: 'allergies'},
       {label: 'Subscribed', name: 'subscribed'},
-      {label: 'Child DOB', name: 'childDob'}
+      {label: 'Age', name: 'age'}
+    ];
+  }
+
+  _generateCheckinRowObject(key, checkinObject) {
+    return {
+      id: key,
+      childName: checkinObject.childName,
+      status:
+        checkinObject.status === CHILD_STATUS.CHECKED_IN
+          ? 'Checked In'
+          : 'Checked Out',
+      parentName: checkinObject.parentName,
+      age: commonUtils.getAge(checkinObject.childDob),
+      allergies: checkinObject.knownAllergies,
+      parentEmail: checkinObject.parentEmail,
+      parentPhone: commonUtils.formatPhoneNumber(
+        checkinObject.parentPhone,
+        true
+      ),
+      checkInTime: commonUtils.formatTime(checkinObject.checkInTime),
+      checkOutTime: commonUtils.formatTime(checkinObject.checkOutTime)
+    };
+  }
+
+  _getCheckinTableColumns() {
+    return [
+      {label: 'Child Name', name: 'childName'},
+      {label: 'Parent Name', name: 'parentName'},
+      {label: 'Age', name: 'age'},
+      {label: 'Allergies', name: 'allergies'},
+      {label: 'Parent Email', name: 'parentEmail'},
+      {label: 'Parent Phone', name: 'parentPhone'},
+      {label: 'Status', name: 'status'},
+      {label: 'Check In Time', name: 'checkInTime'},
+      {label: 'Check Out Time', name: 'checkOutTime'}
     ];
   }
 
   render() {
     return (
+      // TODO: Make dropdown that has user switch from one
+      // sign in date to another instead of listing all of them
+
       <div>
         <h2>Volunteers</h2>
         <Table
@@ -228,6 +305,20 @@ class VbsAdmin extends Component {
           columns={this._getChildrenTableColumns()}
           rows={this.state.childrenTableRows}
         />
+        <h2>Sign In</h2>
+        {Object.keys(this.state).reduce((tables, stateName) => {
+          if (stateName.includes('checkinTableRows')) {
+            tables.push(
+              <Table
+                columns={this._getCheckinTableColumns()}
+                key={stateName}
+                rows={this.state[stateName] || []}
+              />
+            );
+          }
+
+          return tables;
+        }, [])}
       </div>
     );
   }

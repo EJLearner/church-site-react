@@ -94,6 +94,14 @@ const utils = {
     }
 
     return number;
+  },
+
+  /**
+   * Converts Time in iso format to a more readable one
+   * @param {string} time - in iso format
+   */
+  formatTime(time) {
+    return time ? moment(time).format('M/D/YY h:mm a') : '';
   }
 };
 
