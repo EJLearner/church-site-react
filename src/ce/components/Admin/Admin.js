@@ -30,7 +30,6 @@ class Admin extends Component {
 
     adminUsersRef.on('value', snapshot => {
       const adminUsers = snapshot.val();
-      console.log(adminUsers);
       this.setState({adminUsers});
     });
 

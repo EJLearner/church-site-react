@@ -1,5 +1,3 @@
-import _ from 'lodash';
-import moment from 'moment';
 import React, {Component} from 'react';
 import firebase from '../../../firebase';
 import PropTypes from 'prop-types';
@@ -16,47 +14,37 @@ class VbsAdmin extends Component {
   }
 
   componentDidMount() {
-    const volunteersRef = firebase
+    this.convertFbObjectToState(
+      this,
+      `${this.props.stringPrefix}RegisteredVolunteers`,
+      'volunteerTableRows',
+      this._generateVolunteerRowObject.bind(this)
+    );
+
+    this.convertFbObjectToState(
+      this,
+      `${this.props.stringPrefix}RegisteredChildren`,
+      'childrenTableRows',
+      this._generateChildRowObject.bind(this)
+    );
+  }
+
+  convertFbObjectToState(instance, refPath, stateName, generateRowObject) {
+    firebase
       .database()
-      .ref(`${this.props.stringPrefix}RegisteredVolunteers`);
+      .ref(refPath)
+      .on('value', snapshot => {
+        const tableRows = [];
 
-    const childrenRef = firebase
-      .database()
-      .ref(`${this.props.stringPrefix}RegisteredChildren`);
+        snapshot.forEach(snapshotItem => {
+          const object = snapshotItem.val();
+          tableRows.push(
+            generateRowObject.bind(instance)(snapshotItem, object)
+          );
+        });
 
-    volunteersRef.on('value', snapshot => {
-      const volunteerTableRows = [];
-
-      snapshot.forEach(volunteerSnapShot => {
-        const volunteerObject = volunteerSnapShot.val();
-        volunteerTableRows.push(
-          this._generateVolunteerRowObject(volunteerSnapShot, volunteerObject)
-        );
+        instance.setState.bind(instance)({[stateName]: tableRows});
       });
-
-      this.setState({volunteerTableRows});
-    });
-
-    console.log('bah');
-
-    childrenRef.on('value', snapshot => {
-      console.log('evaluating children ref');
-
-      console.log(snapshot.val());
-
-      const childrenTableRows = [];
-
-      snapshot.forEach(childSnapShot => {
-        const childObject = childSnapShot.val();
-        childrenTableRows.push(
-          this._generateChildRowObject(childSnapShot, childObject)
-        );
-      });
-
-      console.log(childrenTableRows);
-
-      this.setState({childrenTableRows});
-    });
   }
 
   _makeString(keysAndLabels, volunteerObject) {
@@ -231,14 +219,14 @@ class VbsAdmin extends Component {
     return (
       <div>
         <h2>Volunteers</h2>
-        {/* <Table
-          rows={this.state.volunteerTableRows}
+        <Table
           columns={this._getVolunteerTableColumns()}
-        /> */}
+          rows={this.state.volunteerTableRows}
+        />
         <h2>Children</h2>
         <Table
-          rows={this.state.childrenTableRows}
           columns={this._getChildrenTableColumns()}
+          rows={this.state.childrenTableRows}
         />
       </div>
     );

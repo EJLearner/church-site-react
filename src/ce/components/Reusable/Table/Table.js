@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
-import commonUtils from '../../../../utils/commonUtils';
 
 class Table extends Component {
   _renderRowCells(row) {
@@ -37,9 +35,8 @@ class Table extends Component {
 Table.defaultProps = {};
 
 Table.propTypes = {
-  column: PropTypes.array.isRequired,
-  rows: PropTypes.array.isRequired,
-  className: PropTypes.string
+  columns: PropTypes.array.isRequired,
+  rows: PropTypes.array.isRequired
 };
 
 export default Table;
