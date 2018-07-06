@@ -39,6 +39,7 @@ class Droplist extends Component {
 
 Droplist.propTypes = {
   id: PropTypes.string,
+  // is called onChange with value, id, event as arguments
   onChange: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(
     PropTypes.shape({

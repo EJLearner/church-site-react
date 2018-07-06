@@ -80,8 +80,8 @@ const utils = {
    * @param {bool} nonbreaking - use nonbreaking spaces when truthy
    */
   formatPhoneNumber(number, nonbreaking) {
-    const onlyDigits = number.replace(/[^0-9]/g, '');
-    const valid = onlyDigits.length === 10;
+    const onlyDigits = number && number.replace(/[^0-9]/g, '');
+    const valid = onlyDigits && onlyDigits.length === 10;
     if (onlyDigits && valid) {
       const firstThree = onlyDigits.substr(0, 3);
       const secondThree = onlyDigits.substr(3, 3);
@@ -94,6 +94,14 @@ const utils = {
     }
 
     return number;
+  },
+
+  /**
+   * Converts Time in iso format to a more readable one
+   * @param {string} date - in iso format
+   */
+  formatDate(date) {
+    return date ? moment(date).format('M/D/YY') : '';
   },
 
   /**

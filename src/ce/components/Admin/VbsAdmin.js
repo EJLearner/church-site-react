@@ -6,10 +6,11 @@ import {withRouter} from 'react-router-dom';
 import commonUtils from '../../../utils/commonUtils';
 import {CHILD_STATUS} from '../CcVbsCheckinOut/BaseCheckinOutConstants';
 import Table from '../Reusable/Table/Table';
+import Droplist from '../Reusable/Droplist/Droplist';
 
 class VbsAdmin extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       childrenTableRows: [],
@@ -289,36 +290,81 @@ class VbsAdmin extends Component {
     ];
   }
 
-  render() {
-    return (
-      // TODO: Make dropdown that has user switch from one
-      // sign in date to another instead of listing all of them
+  _getSignInDates() {
+    return Object.keys(this.state).reduce((signinDates, stateName) => {
+      if (stateName.includes('checkinTableRows')) {
+        const date = this.getDateFromStateName(stateName);
+        signinDates.push(date);
+      }
 
+      return signinDates;
+    }, []);
+  }
+
+  getDateFromStateName(stateName) {
+    return stateName.replace('checkinTableRows-', '');
+  }
+
+  getStateFromDateName(date) {
+    return 'checkinTableRows-' + date;
+  }
+
+  _daySelectDropdown(dates, selectedDate) {
+    const options = dates.map(date => {
+      return {
+        label: commonUtils.formatDate(date),
+        value: date
+      };
+    });
+
+    return (
+      <Droplist
+        onChange={value => {
+          this.setState({currentSigninDate: value});
+        }}
+        options={options}
+        value={selectedDate}
+      />
+    );
+  }
+
+  _renderSigninTableAndDroplist(signinDates) {
+    const {currentSigninDate} = this.state;
+
+    const dateForTable =
+      currentSigninDate || signinDates[signinDates.length - 1];
+    const stateForTable = this.getStateFromDateName(dateForTable);
+
+    return (
+      <div>
+        <h2>Sign In</h2>
+        {this._daySelectDropdown(signinDates, dateForTable)}
+        <Table
+          columns={this._getCheckinTableColumns()}
+          rows={this.state[stateForTable] || []}
+        />
+      </div>
+    );
+  }
+
+  render() {
+    const {childrenTableRows, volunteerTableRows} = this.state;
+    const signinDates = this._getSignInDates();
+
+    return (
       <div>
         <h2>Volunteers</h2>
         <Table
           columns={this._getVolunteerTableColumns()}
-          rows={this.state.volunteerTableRows}
+          rows={volunteerTableRows}
         />
         <h2>Children</h2>
         <Table
           columns={this._getChildrenTableColumns()}
-          rows={this.state.childrenTableRows}
+          rows={childrenTableRows}
         />
-        <h2>Sign In</h2>
-        {Object.keys(this.state).reduce((tables, stateName) => {
-          if (stateName.includes('checkinTableRows')) {
-            tables.push(
-              <Table
-                columns={this._getCheckinTableColumns()}
-                key={stateName}
-                rows={this.state[stateName] || []}
-              />
-            );
-          }
-
-          return tables;
-        }, [])}
+        {Boolean(signinDates.length) &&
+          this._renderSigninTableAndDroplist(signinDates)}
       </div>
     );
   }
