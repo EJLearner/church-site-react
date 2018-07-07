@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
+import './Table.css';
+
 class Table extends Component {
   _renderRowCells(row) {
     return this.props.columns.map(column => {
@@ -9,9 +11,19 @@ class Table extends Component {
   }
 
   _renderTableRows() {
-    return this.props.rows.map(row => {
-      return <tr key={row.id}>{this._renderRowCells(row)}</tr>;
-    });
+    const {rows} = this.props;
+
+    return rows.length ? (
+      rows.map(row => {
+        return <tr key={row.id}>{this._renderRowCells(row)}</tr>;
+      })
+    ) : (
+      <tr>
+        <td className="no-rows-message" colSpan={this.props.columns.length}>
+          No Rows
+        </td>
+      </tr>
+    );
   }
 
   _renderHeaderCells() {

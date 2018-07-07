@@ -373,8 +373,12 @@ class CcVbsAdminBase extends Component {
           columns={this._getChildrenTableColumns()}
           rows={childrenTableRows}
         />
-        {Boolean(signinDates.length) &&
-          this._renderSigninTableAndDroplist(signinDates)}
+        <h3>Sign in and out Records</h3>
+        {signinDates.length ? (
+          this._renderSigninTableAndDroplist(signinDates)
+        ) : (
+          <p>No Records To List</p>
+        )}
       </div>
     );
   }
