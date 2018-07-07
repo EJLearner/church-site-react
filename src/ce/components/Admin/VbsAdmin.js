@@ -188,19 +188,33 @@ class VbsAdmin extends Component {
   }
 
   _getVolunteerTableColumns() {
-    return [
+    const firstGroup = [
       {label: 'Name', name: 'name'},
       {label: 'Home Phone', name: 'homePhone'},
       {label: 'Mobile Phone', name: 'mobilePhone'},
       {label: 'Email', name: 'email'},
-      {label: 'Address', name: 'address'},
-      {label: 'Availability', name: 'availability'},
+      {label: 'Address', name: 'address'}
+    ];
+
+    const availability = {label: 'Availability', name: 'availability'};
+
+    const lastGroup = [
       {label: 'Interested In', name: 'interestedIn'},
       {label: 'Past Areas', name: 'pastAreas'},
       {label: 'Past Roles', name: 'pastRoles'},
       {label: 'Update Time', name: 'updateTime'},
       {label: 'DOB', name: 'dob'}
     ];
+
+    const allColumns = firstGroup;
+
+    if (this.props.showAvailability) {
+      allColumns.push(availability);
+    }
+
+    allColumns.push(...lastGroup);
+
+    return allColumns;
   }
 
   _generateChildRowObject(key, childObject) {
@@ -371,10 +385,13 @@ class VbsAdmin extends Component {
 }
 
 VbsAdmin.defaultProps = {
+  showAvailability: true,
   stringPrefix: 'vbs'
 };
 
 VbsAdmin.propTypes = {
+  // show mon-fri property values from volunteer data
+  showAvailability: PropTypes.bool,
   stringPrefix: PropTypes.string
 };
 
