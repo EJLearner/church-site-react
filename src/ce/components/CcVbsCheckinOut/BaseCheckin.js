@@ -13,6 +13,7 @@ import utils from '../../../utils/commonUtils';
 import {CHILD_STATUS, PAGE_STATUS} from './BaseCheckinOutConstants';
 
 import './BaseCheckinOut.css';
+import {Link} from 'react-router-dom';
 
 const bindThese = function(functions, context) {
   functions.forEach(func => {
@@ -284,13 +285,19 @@ class BaseCheckin extends Component {
       <div>
         <Text
           id="parentName"
-          instructions="Please enter parent/guardian’s name below to check children in"
-          label="Parent Name"
+          instructions="If you are registered, please enter parent/guardian’s name below to check children in"
+          label="Parent/Guardian Name"
           onChange={this._onChange}
           onEnter={this._onSearch}
           placeholder="First Last"
           value={this.state.parentName}
         />
+
+        <p>
+          If your children are not registered. Please click the link below to
+          register.
+        </p>
+        <Link to={this.props.registerLink}>Child Registration</Link>
       </div>
     );
   }
@@ -374,6 +381,7 @@ class BaseCheckin extends Component {
 
 BaseCheckin.propTypes = {
   logbookRefName: PropTypes.string.isRequired,
+  registerLink: PropTypes.string.isRequired,
   registeredChildrenRefName: PropTypes.string.isRequired,
   registryAccessRefName: PropTypes.string.isRequired,
   registryIdName: PropTypes.string.isRequired,

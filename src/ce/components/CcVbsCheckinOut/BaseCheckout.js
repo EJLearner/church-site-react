@@ -281,7 +281,7 @@ class BaseCheckout extends Component {
         <Text
           id="parentName"
           instructions="Please enter parent/guardian’s name below to check children out"
-          label="Parent Name"
+          label="Parent/Guardian Name"
           onChange={this._onChange}
           onEnter={this._onSearch}
           placeholder="First Last"
