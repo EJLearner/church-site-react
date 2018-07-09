@@ -228,7 +228,7 @@ class CcVbsAdminBase extends Component {
       parentPhone,
       state,
       subscribe,
-      timeChanged,
+      registerTime,
       zip
     } = childObject;
 
@@ -248,7 +248,7 @@ class CcVbsAdminBase extends Component {
       allergies: knownAllergies,
       subscribed: subscribe ? 'Yes' : 'No',
       age: commonUtils.getAge(childDob),
-      updateTime: timeChanged
+      registerTime: commonUtils.formatTime(registerTime)
     };
   }
 
@@ -261,7 +261,8 @@ class CcVbsAdminBase extends Component {
       {label: 'Address', name: 'address'},
       {label: 'Known Allergies', name: 'allergies'},
       {label: 'Subscribed', name: 'subscribed'},
-      {label: 'Age', name: 'age'}
+      {label: 'Age', name: 'age'},
+      {label: 'Registered Time', name: 'registerTime'}
     ];
   }
 
