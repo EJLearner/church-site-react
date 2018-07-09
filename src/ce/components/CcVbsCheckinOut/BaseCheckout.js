@@ -299,6 +299,18 @@ class BaseCheckout extends Component {
         <h1>Thanks for attending {this.props.welcomeName}</h1>
         {status === PAGE_STATUS.ENTERING_PARENT_NAME && this._renderNameInput()}
         {status === PAGE_STATUS.SELECT_CHILDREN && this._renderChildSelectDiv()}
+        <div className="logged-in-name">
+          Logged in under {this.state.user.displayName}{' '}
+          <Button
+            onClick={() => {
+              auth.signOut().then(() => {
+                this.setState({user: null});
+              });
+            }}
+          >
+            Log Out
+          </Button>
+        </div>
       </div>
     );
   }

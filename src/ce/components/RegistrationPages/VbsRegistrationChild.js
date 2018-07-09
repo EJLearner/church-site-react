@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import BaseRegistrationChild from './BaseRegistrationChild';
+import constants from '../../../utils/constants';
 
 class VbsRegistrationChild extends Component {
   _renderHeaderContent() {
@@ -21,9 +22,10 @@ class VbsRegistrationChild extends Component {
   render() {
     return (
       <BaseRegistrationChild
+        childIdPropName={constants.VBS_REGISTERED_CHILD_ID_PROP}
         className="registration-page"
         headerContent={this._renderHeaderContent()}
-        refName="vbsRegisteredChildren"
+        refName={constants.VBS_REGISTERED_CHILDREN_REF_NAME}
       />
     );
   }

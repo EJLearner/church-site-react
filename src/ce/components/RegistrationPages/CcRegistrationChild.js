@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import BaseRegistrationChild from './BaseRegistrationChild';
+import constants from '../../../utils/constants';
 
 class CcRegistrationChild extends Component {
   _renderHeaderContent() {
@@ -20,9 +21,10 @@ class CcRegistrationChild extends Component {
   render() {
     return (
       <BaseRegistrationChild
+        childIdPropName={constants.CC_REGISTERED_CHILD_ID_PROP}
         className="registration-page"
         headerContent={this._renderHeaderContent()}
-        refName="ccRegisteredChildren"
+        refName={constants.CC_REGISTERED_CHILDREN_REF_NAME}
       />
     );
   }

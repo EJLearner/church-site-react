@@ -164,10 +164,10 @@ class BaseRegistrationChild extends Component {
   }
 
   _submitData() {
-    const {refName} = this.props;
+    const {childIdPropName, refName} = this.props;
 
     const child = {
-      [refName + 'Id']: utils.generatePushID(),
+      [childIdPropName]: utils.generatePushID(),
       registerTime: new Date().toISOString(),
       parentNames: [this.state.parentName]
     };
@@ -401,6 +401,7 @@ class BaseRegistrationChild extends Component {
 }
 
 BaseRegistrationChild.propTypes = {
+  childIdPropName: PropTypes.string.isRequired,
   className: PropTypes.string,
   headerContent: PropTypes.node,
   refName: PropTypes.string.isRequired
