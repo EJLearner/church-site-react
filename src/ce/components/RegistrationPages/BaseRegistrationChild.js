@@ -161,6 +161,36 @@ class BaseRegistrationChild extends Component {
     };
   }
 
+  _getFieldsInfo() {
+    const {childCount} = this.state;
+
+    const fieldInfo = _.cloneDeep(FIELDS_INFO);
+
+    for (let i = 1; i++; i < childCount) {
+      console.log(i);
+      console.log(childCount);
+      console.log('adding something to fieldInfo');
+      fieldInfo[`childName-${i}`] = {
+        fieldId: `childName-${i}`,
+        dbId: 'childName',
+        label: 'Child’s name',
+        fieldRules: [
+          fieldValidators.isNotEmpty,
+          fieldValidators.isAtLeastTwoCharacters
+        ]
+      };
+
+      fieldInfo[`childDob-${i}`] = {
+        fieldId: `childDob-${i}`,
+        dbId: 'childDob',
+        label: 'Child’s Date of Birth',
+        fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate]
+      };
+    }
+
+    return fieldInfo;
+  }
+
   _onChangeInput(value, id) {
     this.setState({[id]: value, postStatus: undefined});
   }
@@ -220,14 +250,14 @@ class BaseRegistrationChild extends Component {
 
   _renderChildInfoInput(index) {
     return (
-      <div key="index">
+      <div key={index}>
         <Text
           id={`childName-${index}`}
           label="Child’s Name"
           onChange={this._onChangeInput}
           required
           size={2 * WIDTH_BASE}
-          value={this.state[`childName-${index}`]}
+          value={this.state[`childName-${index}`] || ''}
         />
         <Text
           id={`childDob-${index}`}
@@ -236,7 +266,7 @@ class BaseRegistrationChild extends Component {
           placeholder="mm/dd/yyyy"
           required
           size={1 * WIDTH_BASE}
-          value={this.state[`childDob-${index}`]}
+          value={this.state[`childDob-${index}`] || ''}
         />
       </div>
     );
@@ -360,24 +390,26 @@ class BaseRegistrationChild extends Component {
   }
 
   _renderSummaryModal() {
-    const fieldSummaryItems = _.values(FIELDS_INFO).reduce((items, field) => {
-      const {fieldId, label} = field;
+    const fieldSummaryItems = _
+      .values(this._getFieldsInfo())
+      .reduce((items, field) => {
+        const {fieldId, label} = field;
 
-      let value = this.state[fieldId];
-      if (typeof value === 'boolean') {
-        value = value ? 'Yes' : 'No';
-      }
+        let value = this.state[fieldId];
+        if (typeof value === 'boolean') {
+          value = value ? 'Yes' : 'No';
+        }
 
-      if (value) {
-        items.push(
-          <li key={fieldId}>
-            <span className="bold">{label}</span>: {value}
-          </li>
-        );
-      }
+        if (value) {
+          items.push(
+            <li key={fieldId}>
+              <span className="bold">{label}</span>: {value}
+            </li>
+          );
+        }
 
-      return items;
-    }, []);
+        return items;
+      }, []);
 
     return (
       <Modal className="registration-modal" onCloseClick={this._toggleModal}>
