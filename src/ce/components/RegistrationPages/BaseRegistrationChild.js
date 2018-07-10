@@ -209,7 +209,9 @@ class BaseRegistrationChild extends Component {
   }
 
   _postSubmitSuccess() {
-    this.setState({redirect: true});
+    // not redirectiring for this branch for quicker data entry
+    // this.setState({redirect: true});
+    this.setState({showModal: false, postStatus: 'success'});
   }
 
   _toggleModal() {
