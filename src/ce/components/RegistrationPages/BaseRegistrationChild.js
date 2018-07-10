@@ -157,7 +157,7 @@ class BaseRegistrationChild extends Component {
       errors: [],
       redirect: false,
       showModal: false,
-      childCount: 0
+      childCount: 1
     };
   }
 
@@ -218,9 +218,9 @@ class BaseRegistrationChild extends Component {
     this.setState({showModal: !this.state.showModal});
   }
 
-  _renderChildInfoInputs(index) {
+  _renderChildInfoInput(index) {
     return (
-      <div>
+      <div key="index">
         <Text
           id={`childName-${index}`}
           label="Child’s Name"
@@ -242,10 +242,30 @@ class BaseRegistrationChild extends Component {
     );
   }
 
+  _renderAllChildrenInputs(childrenAmount) {
+    return _.range(0, childrenAmount).map(index => {
+      return this._renderChildInfoInput(index);
+    });
+  }
+
   _renderFormFields() {
+    const {childCount} = this.state;
+
     return (
       <div id="form-fields">
-        {this._renderChildInfoInputs(0)}
+        {this._renderAllChildrenInputs(childCount)}
+        <Button onClick={() => this.setState({childCount: childCount + 1})}>
+          Add a Child
+        </Button>{' '}
+        <Button
+          onClick={() =>
+            this.setState({
+              childCount: childCount > 1 ? childCount - 1 : childCount
+            })
+          }
+        >
+          Remove a Child
+        </Button>
         <h3>Parent/Guardian Information</h3>
         <Text
           id="parentEmail"
