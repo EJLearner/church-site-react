@@ -19,10 +19,11 @@ import routePaths from '../../../routePaths';
 import utils from '../../../utils/commonUtils';
 
 import './Registration.css';
+const WIDTH_BASE = 15;
 
 const FIELDS_INFO = {
-  childName: {
-    fieldId: 'childName',
+  'childName-0': {
+    fieldId: 'childName-0',
     dbId: 'childName',
     label: 'Child’s name',
     fieldRules: [
@@ -30,8 +31,8 @@ const FIELDS_INFO = {
       fieldValidators.isAtLeastTwoCharacters
     ]
   },
-  childDob: {
-    fieldId: 'childDob',
+  'childDob-0': {
+    fieldId: 'childDob-0',
     dbId: 'childDob',
     label: 'Child’s Date of Birth',
     fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate]
@@ -124,38 +125,39 @@ class BaseRegistrationChild extends Component {
   _getState() {
     return {
       // form data
-      [FIELDS_INFO.childName.fieldId]: '',
-      [FIELDS_INFO.childDob.fieldId]: '',
-      [FIELDS_INFO.parentEmail.fieldId]: '',
-      [FIELDS_INFO.parentName.fieldId]: '',
-      [FIELDS_INFO.parentPhone.fieldId]: '',
-      [FIELDS_INFO.address1.fieldId]: '',
-      [FIELDS_INFO.address2.fieldId]: '',
-      [FIELDS_INFO.city.fieldId]: '',
-      [FIELDS_INFO.state.fieldId]: '',
-      [FIELDS_INFO.zip.fieldId]: '',
-      [FIELDS_INFO.subscribe.fieldId]: false,
-      [FIELDS_INFO.knownAllergies.fieldId]: '',
+      // [FIELDS_INFO['childName-0'].fieldId]: '',
+      // [FIELDS_INFO['childDob-0'].fieldId]: '',
+      // [FIELDS_INFO.parentEmail.fieldId]: '',
+      // [FIELDS_INFO.parentName.fieldId]: '',
+      // [FIELDS_INFO.parentPhone.fieldId]: '',
+      // [FIELDS_INFO.address1.fieldId]: '',
+      // [FIELDS_INFO.address2.fieldId]: '',
+      // [FIELDS_INFO.city.fieldId]: '',
+      // [FIELDS_INFO.state.fieldId]: '',
+      // [FIELDS_INFO.zip.fieldId]: '',
+      // [FIELDS_INFO.subscribe.fieldId]: false,
+      // [FIELDS_INFO.knownAllergies.fieldId]: '',
 
       // testing data
 
-      // [FIELDS_INFO.childName.fieldId]: 'Test Child',
-      // [FIELDS_INFO.childDob.fieldId]: '01/01/2018',
-      // [FIELDS_INFO.parentEmail.fieldId]: '',
-      // [FIELDS_INFO.parentName.fieldId]: 'sdfsd',
-      // [FIELDS_INFO.parentPhone.fieldId]: '000-000-0000',
-      // [FIELDS_INFO.address1.fieldId]: 'sdfsdff',
-      // [FIELDS_INFO.address2.fieldId]: '',
-      // [FIELDS_INFO.city.fieldId]: 'bestCity',
-      // [FIELDS_INFO.state.fieldId]: 'sdf',
-      // [FIELDS_INFO.zip.fieldId]: '00000',
-      // [FIELDS_INFO.subscribe.fieldId]: false,
-      // [FIELDS_INFO.knownAllergies.fieldId]: 'sdfsd',
+      [FIELDS_INFO['childName-0'].fieldId]: 'Test Child',
+      [FIELDS_INFO['childDob-0'].fieldId]: '01/01/2018',
+      [FIELDS_INFO.parentEmail.fieldId]: '',
+      [FIELDS_INFO.parentName.fieldId]: 'sdfsd',
+      [FIELDS_INFO.parentPhone.fieldId]: '000-000-0000',
+      [FIELDS_INFO.address1.fieldId]: 'sdfsdff',
+      [FIELDS_INFO.address2.fieldId]: '',
+      [FIELDS_INFO.city.fieldId]: 'bestCity',
+      [FIELDS_INFO.state.fieldId]: 'sdf',
+      [FIELDS_INFO.zip.fieldId]: '00000',
+      [FIELDS_INFO.subscribe.fieldId]: false,
+      [FIELDS_INFO.knownAllergies.fieldId]: 'sdfsd',
 
       // other
       errors: [],
       redirect: false,
-      showModal: false
+      showModal: false,
+      childCount: 0
     };
   }
 
@@ -216,34 +218,40 @@ class BaseRegistrationChild extends Component {
     this.setState({showModal: !this.state.showModal});
   }
 
-  _renderFormFields() {
-    const widthBase = 15;
-
+  _renderChildInfoInputs(index) {
     return (
-      <div id="form-fields">
+      <div>
         <Text
-          id="childName"
+          id={`childName-${index}`}
           label="Child’s Name"
           onChange={this._onChangeInput}
           required
-          size={2 * widthBase}
-          value={this.state.childName}
+          size={2 * WIDTH_BASE}
+          value={this.state[`childName-${index}`]}
         />
         <Text
-          id="childDob"
+          id={`childDob-${index}`}
           label="Child’s Date of Birth"
           onChange={this._onChangeInput}
           placeholder="mm/dd/yyyy"
           required
-          size={1 * widthBase}
-          value={this.state.childDob}
+          size={1 * WIDTH_BASE}
+          value={this.state[`childDob-${index}`]}
         />
+      </div>
+    );
+  }
+
+  _renderFormFields() {
+    return (
+      <div id="form-fields">
+        {this._renderChildInfoInputs(0)}
         <h3>Parent/Guardian Information</h3>
         <Text
           id="parentEmail"
           label="Email Address"
           onChange={this._onChangeInput}
-          size={2 * widthBase}
+          size={2 * WIDTH_BASE}
           value={this.state.parentEmail}
         />
         <br />
@@ -252,7 +260,7 @@ class BaseRegistrationChild extends Component {
           label="Parent Name"
           onChange={this._onChangeInput}
           required
-          size={2 * widthBase}
+          size={2 * WIDTH_BASE}
           value={this.state.parentName}
         />
         <Text
@@ -260,7 +268,7 @@ class BaseRegistrationChild extends Component {
           label="Best Phone Number to Reach You"
           onChange={this._onChangeInput}
           required
-          size={1 * widthBase}
+          size={1 * WIDTH_BASE}
           value={this.state.parentPhone}
         />
         <br />
@@ -269,7 +277,7 @@ class BaseRegistrationChild extends Component {
           label="Address Line 1"
           onChange={this._onChangeInput}
           required
-          size={4 * widthBase}
+          size={4 * WIDTH_BASE}
           value={this.state.address1}
         />
         <br />
@@ -277,7 +285,7 @@ class BaseRegistrationChild extends Component {
           id="address2"
           label="Address Line 2"
           onChange={this._onChangeInput}
-          size={4 * widthBase}
+          size={4 * WIDTH_BASE}
           value={this.state.address2}
         />
         <br />
@@ -286,7 +294,7 @@ class BaseRegistrationChild extends Component {
           label="City"
           onChange={this._onChangeInput}
           required
-          size={1.5 * widthBase}
+          size={1.5 * WIDTH_BASE}
           value={this.state.city}
         />
         <Text
@@ -294,7 +302,7 @@ class BaseRegistrationChild extends Component {
           label="State"
           onChange={this._onChangeInput}
           required
-          size={1.5 * widthBase}
+          size={1.5 * WIDTH_BASE}
           value={this.state.state}
         />
         <br />
@@ -303,7 +311,7 @@ class BaseRegistrationChild extends Component {
           label="ZIP Code"
           onChange={this._onChangeInput}
           required
-          size={Math.floor(0.8 * widthBase)}
+          size={Math.floor(0.8 * WIDTH_BASE)}
           value={this.state.zip}
         />
         <Checkbox
@@ -316,7 +324,7 @@ class BaseRegistrationChild extends Component {
         />
         <br />
         <Text
-          columns={4 * widthBase}
+          columns={4 * WIDTH_BASE}
           id="knownAllergies"
           label="List any known food allergies. Mark N/A if none."
           onChange={this._onChangeInput}
