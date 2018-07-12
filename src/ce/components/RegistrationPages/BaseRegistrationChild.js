@@ -110,8 +110,8 @@ class BaseRegistrationChild extends Component {
 
     this._onChangeInput = this._onChangeInput.bind(this);
     this._renderFormFields = this._renderFormFields.bind(this);
-    this._validateAndSubmit = this._validateAndSubmit.bind(this);
-    this._submitData = this._submitData.bind(this);
+    this._validateAndSubmit = this._onSubmitClick.bind(this);
+    this._submitData = this._pushToFirebase.bind(this);
     this._toggleModal = this._toggleModal.bind(this);
   }
 
@@ -192,7 +192,7 @@ class BaseRegistrationChild extends Component {
     this.setState({[id]: value, postStatus: undefined});
   }
 
-  _submitData() {
+  _pushToFirebase() {
     const {childIdPropName, refName} = this.props;
 
     const child = {
@@ -219,12 +219,12 @@ class BaseRegistrationChild extends Component {
       if (responseError) {
         this.setState({postStatus: 'failure', responseError});
       } else {
-        this._postSubmitSuccess();
+        this.setState({redirect: true});
       }
     });
   }
 
-  _validateAndSubmit() {
+  _onSubmitClick() {
     const errors = registrationUtils.getPageErrors(
       this.state,
       _.values(this._getFieldsInfo())
@@ -235,10 +235,6 @@ class BaseRegistrationChild extends Component {
       showModal: !errors.length,
       errors
     });
-  }
-
-  _postSubmitSuccess() {
-    this.setState({redirect: true});
   }
 
   _toggleModal() {
@@ -381,7 +377,7 @@ class BaseRegistrationChild extends Component {
           value={this.state.knownAllergies}
         />
         <br />
-        <Button onClick={this._validateAndSubmit}>Submit</Button>
+        <Button onClick={this._onSubmitClick}>Submit</Button>
       </div>
     );
   }
@@ -412,7 +408,7 @@ class BaseRegistrationChild extends Component {
       <Modal className="registration-modal" onCloseClick={this._toggleModal}>
         <h2>Please take a moment to confirm your data</h2>
         <ul>{fieldSummaryItems}</ul>
-        <Button onClick={this._submitData}>Confirm</Button>
+        <Button onClick={this._pushToFirebase}>Confirm</Button>
         <Button onClick={this._toggleModal}>Edit</Button>
       </Modal>
     );
