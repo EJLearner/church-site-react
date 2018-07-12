@@ -21,22 +21,22 @@ import utils from '../../../utils/commonUtils';
 import './Registration.css';
 const WIDTH_BASE = 15;
 
-const FIELDS_INFO = {
-  'childName-0': {
-    fieldId: 'childName-0',
-    dbId: 'childName',
-    label: 'Child’s name',
-    fieldRules: [
-      fieldValidators.isNotEmpty,
-      fieldValidators.isAtLeastTwoCharacters
-    ]
-  },
-  'childDob-0': {
-    fieldId: 'childDob-0',
-    dbId: 'childDob',
-    label: 'Child’s Date of Birth',
-    fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate]
-  },
+const STATIC_FIELDS_INFO = {
+  // 'childName-0': {
+  //   fieldId: 'childName-0',
+  //   dbId: 'childName',
+  //   label: 'Child’s name',
+  //   fieldRules: [
+  //     fieldValidators.isNotEmpty,
+  //     fieldValidators.isAtLeastTwoCharacters
+  //   ]
+  // },
+  // 'childDob-0': {
+  //   fieldId: 'childDob-0',
+  //   dbId: 'childDob',
+  //   label: 'Child’s Date of Birth',
+  //   fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate]
+  // },
   parentEmail: {
     fieldId: 'parentEmail',
     dbId: 'parentEmail',
@@ -125,33 +125,29 @@ class BaseRegistrationChild extends Component {
   _getState() {
     return {
       // form data
-      // [FIELDS_INFO['childName-0'].fieldId]: '',
-      // [FIELDS_INFO['childDob-0'].fieldId]: '',
-      // [FIELDS_INFO.parentEmail.fieldId]: '',
-      // [FIELDS_INFO.parentName.fieldId]: '',
-      // [FIELDS_INFO.parentPhone.fieldId]: '',
-      // [FIELDS_INFO.address1.fieldId]: '',
-      // [FIELDS_INFO.address2.fieldId]: '',
-      // [FIELDS_INFO.city.fieldId]: '',
-      // [FIELDS_INFO.state.fieldId]: '',
-      // [FIELDS_INFO.zip.fieldId]: '',
-      // [FIELDS_INFO.subscribe.fieldId]: false,
-      // [FIELDS_INFO.knownAllergies.fieldId]: '',
+      // [STATIC_FIELDS_INFO.parentEmail.fieldId]: '',
+      // [STATIC_FIELDS_INFO.parentName.fieldId]: '',
+      // [STATIC_FIELDS_INFO.parentPhone.fieldId]: '',
+      // [STATIC_FIELDS_INFO.address1.fieldId]: '',
+      // [STATIC_FIELDS_INFO.address2.fieldId]: '',
+      // [STATIC_FIELDS_INFO.city.fieldId]: '',
+      // [STATIC_FIELDS_INFO.state.fieldId]: '',
+      // [STATIC_FIELDS_INFO.zip.fieldId]: '',
+      // [STATIC_FIELDS_INFO.subscribe.fieldId]: false,
+      // [STATIC_FIELDS_INFO.knownAllergies.fieldId]: '',
 
       // testing data
 
-      [FIELDS_INFO['childName-0'].fieldId]: 'Test Child',
-      [FIELDS_INFO['childDob-0'].fieldId]: '01/01/2018',
-      [FIELDS_INFO.parentEmail.fieldId]: '',
-      [FIELDS_INFO.parentName.fieldId]: 'sdfsd',
-      [FIELDS_INFO.parentPhone.fieldId]: '000-000-0000',
-      [FIELDS_INFO.address1.fieldId]: 'sdfsdff',
-      [FIELDS_INFO.address2.fieldId]: '',
-      [FIELDS_INFO.city.fieldId]: 'bestCity',
-      [FIELDS_INFO.state.fieldId]: 'sdf',
-      [FIELDS_INFO.zip.fieldId]: '00000',
-      [FIELDS_INFO.subscribe.fieldId]: false,
-      [FIELDS_INFO.knownAllergies.fieldId]: 'sdfsd',
+      [STATIC_FIELDS_INFO.parentEmail.fieldId]: '',
+      [STATIC_FIELDS_INFO.parentName.fieldId]: 'sdfsd',
+      [STATIC_FIELDS_INFO.parentPhone.fieldId]: '000-000-0000',
+      [STATIC_FIELDS_INFO.address1.fieldId]: 'sdfsdff',
+      [STATIC_FIELDS_INFO.address2.fieldId]: '',
+      [STATIC_FIELDS_INFO.city.fieldId]: 'bestCity',
+      [STATIC_FIELDS_INFO.state.fieldId]: 'sdf',
+      [STATIC_FIELDS_INFO.zip.fieldId]: '00000',
+      [STATIC_FIELDS_INFO.subscribe.fieldId]: false,
+      [STATIC_FIELDS_INFO.knownAllergies.fieldId]: 'sdfsd',
 
       // other
       errors: [],
@@ -164,12 +160,10 @@ class BaseRegistrationChild extends Component {
   _getFieldsInfo() {
     const {childCount} = this.state;
 
-    const fieldInfo = _.cloneDeep(FIELDS_INFO);
+    const fieldInfo = {};
 
-    for (let i = 1; i++; i < childCount) {
-      console.log(i);
-      console.log(childCount);
-      console.log('adding something to fieldInfo');
+    // add fieldInfo for name and dob variable amount fields
+    for (let i = 0; i < childCount; i++) {
       fieldInfo[`childName-${i}`] = {
         fieldId: `childName-${i}`,
         dbId: 'childName',
@@ -188,6 +182,9 @@ class BaseRegistrationChild extends Component {
       };
     }
 
+    // add fieldInfo for the rest of the fields
+    _.forEach(STATIC_FIELDS_INFO, (value, key) => (fieldInfo[key] = value));
+
     return fieldInfo;
   }
 
@@ -204,7 +201,7 @@ class BaseRegistrationChild extends Component {
       parentNames: [this.state.parentName]
     };
 
-    _.values(FIELDS_INFO).forEach(field => {
+    _.values(STATIC_FIELDS_INFO).forEach(field => {
       const {fieldId, dbId} = field;
       child[dbId] = this.state[fieldId];
     });
@@ -230,7 +227,7 @@ class BaseRegistrationChild extends Component {
   _validateAndSubmit() {
     const errors = registrationUtils.getPageErrors(
       this.state,
-      _.values(FIELDS_INFO)
+      _.values(this._getFieldsInfo())
     );
 
     this.setState({
