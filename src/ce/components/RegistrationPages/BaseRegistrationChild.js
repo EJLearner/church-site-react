@@ -110,8 +110,8 @@ class BaseRegistrationChild extends Component {
 
     this._onChangeInput = this._onChangeInput.bind(this);
     this._renderFormFields = this._renderFormFields.bind(this);
-    this._validateAndSubmit = this._onSubmitClick.bind(this);
-    this._submitData = this._pushToFirebase.bind(this);
+    this._onSubmitClick = this._onSubmitClick.bind(this);
+    this._pushToFirebase = this._pushToFirebase.bind(this);
     this._toggleModal = this._toggleModal.bind(this);
   }
 
