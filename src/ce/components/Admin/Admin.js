@@ -85,15 +85,15 @@ class Admin extends Component {
     const isAdmin = this.state.adminUsers && this.state.adminUsers[uid];
 
     if (isAdmin) {
-      paths.push({path: 'events-admin', text: 'Events'});
+      paths.push({path: '/admin/events-admin', text: 'Events'});
     }
 
     if (isAdmin || (this.state.ccRegAccess && this.state.ccRegAccess[uid])) {
-      paths.push({path: 'cc-admin', text: 'Children’s Church'});
+      paths.push({path: '/admin/cc-admin', text: 'Children’s Church'});
     }
 
     if (isAdmin || (this.state.vbsRegAccess && this.state.vbsRegAccess[uid])) {
-      paths.push({path: 'vbs-admin', text: 'VBS'});
+      paths.push({path: '/admin/vbs-admin', text: 'VBS'});
     }
 
     return paths;
