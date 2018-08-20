@@ -201,9 +201,8 @@ class BaseRegistrationChild extends Component {
       parentNames: [this.state.parentName]
     };
 
-    _.values(STATIC_FIELDS_INFO).forEach(field => {
-      const {fieldId, dbId} = field;
-      child[dbId] = this.state[fieldId];
+    _.forEach(STATIC_FIELDS_INFO, field => {
+      child[field.dbId] = this.state[field.fieldId];
     });
 
     const standardChildDob = moment(
