@@ -18,6 +18,12 @@ import constants from '../../../utils/constants';
 import routePaths from '../../../routePaths';
 import utils from '../../../utils/commonUtils';
 
+import {
+  saveRegistrationData,
+  getRegistrationData,
+  resetRegistrationData
+} from '../../../stores/lastSubmittedRegistration';
+
 import './Registration.css';
 const WIDTH_BASE = 15;
 
@@ -109,6 +115,14 @@ class BaseRegistrationChild extends Component {
   }
 
   _getState() {
+    const registrationData = getRegistrationData();
+
+    if (registrationData) {
+      // TODO: get state info from registrationData
+
+      resetRegistrationData();
+    }
+
     return {
       // form data
       // [STATIC_FIELDS_INFO.parentEmail.fieldId]: '',
@@ -205,6 +219,7 @@ class BaseRegistrationChild extends Component {
       if (responseError) {
         this.setState({postStatus: 'failure', responseError});
       } else {
+        saveRegistrationData(child, this.props.routePath);
         this.setState({redirect: true});
       }
     });
@@ -431,7 +446,8 @@ BaseRegistrationChild.propTypes = {
   childIdPropName: PropTypes.string.isRequired,
   className: PropTypes.string,
   headerContent: PropTypes.node,
-  refName: PropTypes.string.isRequired
+  refName: PropTypes.string.isRequired,
+  routePath: PropTypes.string.isRequired
 };
 
 export default BaseRegistrationChild;

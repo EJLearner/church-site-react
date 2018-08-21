@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import BaseRegistrationChild from './BaseRegistrationChild';
 import constants from '../../../utils/constants';
+import routePaths from '../../../routePaths';
 
 class CcRegistrationChild extends Component {
   _renderHeaderContent() {
@@ -25,6 +26,7 @@ class CcRegistrationChild extends Component {
         className="registration-page"
         headerContent={this._renderHeaderContent()}
         refName={constants.CC_REGISTERED_CHILDREN_REF_NAME}
+        routePath={routePaths.CE_CC_REG_CHILD}
       />
     );
   }

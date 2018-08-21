@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import BaseRegistrationChild from './BaseRegistrationChild';
 import constants from '../../../utils/constants';
+import routePaths from '../../../routePaths';
 
 class VbsRegistrationChild extends Component {
   _renderHeaderContent() {
@@ -26,6 +27,7 @@ class VbsRegistrationChild extends Component {
         className="registration-page"
         headerContent={this._renderHeaderContent()}
         refName={constants.VBS_REGISTERED_CHILDREN_REF_NAME}
+        routePath={routePaths.CE_VBS_REG_CHILD}
       />
     );
   }
