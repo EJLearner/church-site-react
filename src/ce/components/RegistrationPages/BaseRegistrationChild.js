@@ -22,21 +22,7 @@ import './Registration.css';
 const WIDTH_BASE = 15;
 
 const STATIC_FIELDS_INFO = {
-  // 'childName-0': {
-  //   fieldId: 'childName-0',
-  //   dbId: 'childName',
-  //   label: 'Child’s name',
-  //   fieldRules: [
-  //     fieldValidators.isNotEmpty,
-  //     fieldValidators.isAtLeastTwoCharacters
-  //   ]
-  // },
-  // 'childDob-0': {
-  //   fieldId: 'childDob-0',
-  //   dbId: 'childDob',
-  //   label: 'Child’s Date of Birth',
-  //   fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate]
-  // },
+  // child name and child dob are added during _getFieldsInfo
   parentEmail: {
     fieldId: 'parentEmail',
     dbId: 'parentEmail',
@@ -153,6 +139,7 @@ class BaseRegistrationChild extends Component {
       errors: [],
       redirect: false,
       showModal: false,
+      // may be possible to list multiple children in future versions
       childCount: 1
     };
   }
@@ -192,7 +179,7 @@ class BaseRegistrationChild extends Component {
     this.setState({[id]: value, postStatus: undefined});
   }
 
-  _pushToFirebase() {
+  _pushToFirebase(childIndex) {
     const {childIdPropName, refName} = this.props;
 
     const child = {
@@ -201,12 +188,12 @@ class BaseRegistrationChild extends Component {
       parentNames: [this.state.parentName]
     };
 
-    _.forEach(STATIC_FIELDS_INFO, field => {
+    _.forEach(this._getFieldsInfo(), field => {
       child[field.dbId] = this.state[field.fieldId];
     });
 
     const standardChildDob = moment(
-      this.state.childDob,
+      this.state[`childDob-${childIndex}`],
       constants.VALID_INPUT_DATE_FORMATS
     ).format(constants.INTERNAL_DATE_FORMAT);
 
@@ -276,18 +263,6 @@ class BaseRegistrationChild extends Component {
     return (
       <div id="form-fields">
         {this._renderAllChildrenInputs(childCount)}
-        <Button onClick={() => this.setState({childCount: childCount + 1})}>
-          Add a Child
-        </Button>{' '}
-        <Button
-          onClick={() =>
-            this.setState({
-              childCount: childCount > 1 ? childCount - 1 : childCount
-            })
-          }
-        >
-          Remove a Child
-        </Button>
         <h3>Parent/Guardian Information</h3>
         <Text
           id="parentEmail"
@@ -407,7 +382,7 @@ class BaseRegistrationChild extends Component {
       <Modal className="registration-modal" onCloseClick={this._toggleModal}>
         <h2>Please take a moment to confirm your data</h2>
         <ul>{fieldSummaryItems}</ul>
-        <Button onClick={this._pushToFirebase}>Confirm</Button>
+        <Button onClick={() => this._pushToFirebase(0)}>Confirm</Button>
         <Button onClick={this._toggleModal}>Edit</Button>
       </Modal>
     );
