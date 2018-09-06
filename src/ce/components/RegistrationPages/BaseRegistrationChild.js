@@ -180,7 +180,7 @@ class BaseRegistrationChild extends Component {
     this.setState({[id]: value, postStatus: undefined});
   }
 
-  _pushToFirebase(childIndex) {
+  _pushToFirebase() {
     const {childIdPropName, refName} = this.props;
 
     const child = {
@@ -194,7 +194,7 @@ class BaseRegistrationChild extends Component {
     });
 
     const standardChildDob = moment(
-      this.state[`childDob-${childIndex}`],
+      this.state.childDob,
       constants.VALID_INPUT_DATE_FORMATS
     ).format(constants.INTERNAL_DATE_FORMAT);
 
@@ -238,7 +238,7 @@ class BaseRegistrationChild extends Component {
           onChange={this._onChangeInput}
           required
           size={2 * WIDTH_BASE}
-          value={this.state[`childName`] || ''}
+          value={this.state.childName}
         />
         <Text
           id="childDob"
@@ -247,7 +247,7 @@ class BaseRegistrationChild extends Component {
           placeholder="mm/dd/yyyy"
           required
           size={1 * WIDTH_BASE}
-          value={this.state[`childDob`] || ''}
+          value={this.state.childDob}
         />
         <h3>Parent/Guardian Information</h3>
         <Text
@@ -366,7 +366,7 @@ class BaseRegistrationChild extends Component {
       <Modal className="registration-modal" onCloseClick={this._toggleModal}>
         <h2>Please take a moment to confirm your data</h2>
         <ul>{fieldSummaryItems}</ul>
-        <Button onClick={() => this._pushToFirebase(0)}>Confirm</Button>
+        <Button onClick={this._pushToFirebase}>Confirm</Button>
         <Button onClick={this._toggleModal}>Edit</Button>
       </Modal>
     );
