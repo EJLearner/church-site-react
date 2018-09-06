@@ -27,8 +27,24 @@ import {
 import './Registration.css';
 const WIDTH_BASE = 15;
 
-const STATIC_FIELDS_INFO = {
-  // child name and child dob are added during _getFieldsInfo
+const FIELDS_INFO = {
+  [`childName`]: {
+    fieldId: `childName`,
+    dbId: 'childName',
+    label: 'Child’s name',
+    fieldRules: [
+      fieldValidators.isNotEmpty,
+      fieldValidators.isAtLeastTwoCharacters
+    ]
+  },
+
+  [`childDob`]: {
+    fieldId: `childDob`,
+    dbId: 'childDob',
+    label: 'Child’s Date of Birth',
+    fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate]
+  },
+
   parentEmail: {
     fieldId: 'parentEmail',
     dbId: 'parentEmail',
@@ -125,68 +141,39 @@ class BaseRegistrationChild extends Component {
 
     return {
       // form data
-      // [STATIC_FIELDS_INFO.parentEmail.fieldId]: '',
-      // [STATIC_FIELDS_INFO.parentName.fieldId]: '',
-      // [STATIC_FIELDS_INFO.parentPhone.fieldId]: '',
-      // [STATIC_FIELDS_INFO.address1.fieldId]: '',
-      // [STATIC_FIELDS_INFO.address2.fieldId]: '',
-      // [STATIC_FIELDS_INFO.city.fieldId]: '',
-      // [STATIC_FIELDS_INFO.state.fieldId]: '',
-      // [STATIC_FIELDS_INFO.zip.fieldId]: '',
-      // [STATIC_FIELDS_INFO.subscribe.fieldId]: false,
-      // [STATIC_FIELDS_INFO.knownAllergies.fieldId]: '',
+      [FIELDS_INFO.childName.fieldId]: '',
+      [FIELDS_INFO.childDob.fieldId]: '',
+      [FIELDS_INFO.parentEmail.fieldId]: '',
+      [FIELDS_INFO.parentName.fieldId]: '',
+      [FIELDS_INFO.parentPhone.fieldId]: '',
+      [FIELDS_INFO.address1.fieldId]: '',
+      [FIELDS_INFO.address2.fieldId]: '',
+      [FIELDS_INFO.city.fieldId]: '',
+      [FIELDS_INFO.state.fieldId]: '',
+      [FIELDS_INFO.zip.fieldId]: '',
+      [FIELDS_INFO.subscribe.fieldId]: false,
+      [FIELDS_INFO.knownAllergies.fieldId]: '',
 
       // testing data
 
-      [STATIC_FIELDS_INFO.parentEmail.fieldId]: '',
-      [STATIC_FIELDS_INFO.parentName.fieldId]: 'sdfsd',
-      [STATIC_FIELDS_INFO.parentPhone.fieldId]: '000-000-0000',
-      [STATIC_FIELDS_INFO.address1.fieldId]: 'sdfsdff',
-      [STATIC_FIELDS_INFO.address2.fieldId]: '',
-      [STATIC_FIELDS_INFO.city.fieldId]: 'bestCity',
-      [STATIC_FIELDS_INFO.state.fieldId]: 'sdf',
-      [STATIC_FIELDS_INFO.zip.fieldId]: '00000',
-      [STATIC_FIELDS_INFO.subscribe.fieldId]: false,
-      [STATIC_FIELDS_INFO.knownAllergies.fieldId]: 'sdfsd',
+      // [FIELDS_INFO.childName.fieldId]: 'Delete Me',
+      // [FIELDS_INFO.childDob.fieldId]: '03/01/2012',
+      // [FIELDS_INFO.parentEmail.fieldId]: '',
+      // [FIELDS_INFO.parentName.fieldId]: 'sdfsd',
+      // [FIELDS_INFO.parentPhone.fieldId]: '000-000-0000',
+      // [FIELDS_INFO.address1.fieldId]: 'sdfsdff',
+      // [FIELDS_INFO.address2.fieldId]: '',
+      // [FIELDS_INFO.city.fieldId]: 'bestCity',
+      // [FIELDS_INFO.state.fieldId]: 'sdf',
+      // [FIELDS_INFO.zip.fieldId]: '00000',
+      // [FIELDS_INFO.subscribe.fieldId]: false,
+      // [FIELDS_INFO.knownAllergies.fieldId]: 'sdfsd',
 
       // other
       errors: [],
       redirect: false,
-      showModal: false,
-      // may be possible to list multiple children in future versions
-      childCount: 1
+      showModal: false
     };
-  }
-
-  _getFieldsInfo() {
-    const {childCount} = this.state;
-
-    const fieldInfo = {};
-
-    // add fieldInfo for name and dob variable amount fields
-    for (let i = 0; i < childCount; i++) {
-      fieldInfo[`childName-${i}`] = {
-        fieldId: `childName-${i}`,
-        dbId: 'childName',
-        label: 'Child’s name',
-        fieldRules: [
-          fieldValidators.isNotEmpty,
-          fieldValidators.isAtLeastTwoCharacters
-        ]
-      };
-
-      fieldInfo[`childDob-${i}`] = {
-        fieldId: `childDob-${i}`,
-        dbId: 'childDob',
-        label: 'Child’s Date of Birth',
-        fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate]
-      };
-    }
-
-    // add fieldInfo for the rest of the fields
-    _.forEach(STATIC_FIELDS_INFO, (value, key) => (fieldInfo[key] = value));
-
-    return fieldInfo;
   }
 
   _onChangeInput(value, id) {
@@ -202,7 +189,7 @@ class BaseRegistrationChild extends Component {
       parentNames: [this.state.parentName]
     };
 
-    _.forEach(this._getFieldsInfo(), field => {
+    _.forEach(FIELDS_INFO, field => {
       child[field.dbId] = this.state[field.fieldId];
     });
 
@@ -228,7 +215,7 @@ class BaseRegistrationChild extends Component {
   _onSubmitClick() {
     const errors = registrationUtils.getPageErrors(
       this.state,
-      _.values(this._getFieldsInfo())
+      _.values(FIELDS_INFO)
     );
 
     this.setState({
@@ -242,42 +229,26 @@ class BaseRegistrationChild extends Component {
     this.setState({showModal: !this.state.showModal});
   }
 
-  _renderChildInfoInput(index) {
+  _renderFormFields() {
     return (
-      <div key={index}>
+      <div id="form-fields">
         <Text
-          id={`childName-${index}`}
+          id="childName"
           label="Child’s Name"
           onChange={this._onChangeInput}
           required
           size={2 * WIDTH_BASE}
-          value={this.state[`childName-${index}`] || ''}
+          value={this.state[`childName`] || ''}
         />
         <Text
-          id={`childDob-${index}`}
+          id="childDob"
           label="Child’s Date of Birth"
           onChange={this._onChangeInput}
           placeholder="mm/dd/yyyy"
           required
           size={1 * WIDTH_BASE}
-          value={this.state[`childDob-${index}`] || ''}
+          value={this.state[`childDob`] || ''}
         />
-      </div>
-    );
-  }
-
-  _renderAllChildrenInputs(childrenAmount) {
-    return _.range(0, childrenAmount).map(index => {
-      return this._renderChildInfoInput(index);
-    });
-  }
-
-  _renderFormFields() {
-    const {childCount} = this.state;
-
-    return (
-      <div id="form-fields">
-        {this._renderAllChildrenInputs(childCount)}
         <h3>Parent/Guardian Information</h3>
         <Text
           id="parentEmail"
@@ -372,26 +343,24 @@ class BaseRegistrationChild extends Component {
   }
 
   _renderSummaryModal() {
-    const fieldSummaryItems = _
-      .values(this._getFieldsInfo())
-      .reduce((items, field) => {
-        const {fieldId, label} = field;
+    const fieldSummaryItems = _.values(FIELDS_INFO).reduce((items, field) => {
+      const {fieldId, label} = field;
 
-        let value = this.state[fieldId];
-        if (typeof value === 'boolean') {
-          value = value ? 'Yes' : 'No';
-        }
+      let value = this.state[fieldId];
+      if (typeof value === 'boolean') {
+        value = value ? 'Yes' : 'No';
+      }
 
-        if (value) {
-          items.push(
-            <li key={fieldId}>
-              <span className="bold">{label}</span>: {value}
-            </li>
-          );
-        }
+      if (value) {
+        items.push(
+          <li key={fieldId}>
+            <span className="bold">{label}</span>: {value}
+          </li>
+        );
+      }
 
-        return items;
-      }, []);
+      return items;
+    }, []);
 
     return (
       <Modal className="registration-modal" onCloseClick={this._toggleModal}>
