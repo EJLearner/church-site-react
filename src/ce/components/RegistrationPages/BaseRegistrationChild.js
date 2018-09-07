@@ -102,7 +102,12 @@ const FIELDS_INFO = {
     label: 'ZIP Code',
     fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isValidZip]
   },
-  subscribe: {fieldId: 'subscribe', label: 'Subscribe', dbId: 'subscribe'},
+  subscribe: {
+    fieldId: 'subscribe',
+    default: false,
+    dbId: 'subscribe',
+    label: 'Subscribe'
+  },
   knownAllergies: {
     fieldId: 'knownAllergies',
     dbId: 'knownAllergies',
@@ -131,45 +136,44 @@ class BaseRegistrationChild extends Component {
   }
 
   _getState() {
-    const registrationData = getRegistrationData();
+    const registrationData = getRegistrationData(true) || {};
+    resetRegistrationData();
 
-    if (registrationData) {
-      // TODO: get state info from registrationData
+    const testData = {
+      childName: 'Delete Me',
+      childDob: '01/01/2000',
+      parentEmail: '',
+      parentName: 'Test Parent',
+      parentPhone: '000-000-0000',
+      address1: '0000 Test Address',
+      address2: 'Test Floor',
+      city: 'Apalooza',
+      state: 'MD',
+      zip: '00000',
+      subscribe: true,
+      knownAllergies: 'Things I am allergic to'
+    };
 
-      resetRegistrationData();
-    }
+    const useTestData = false;
+
+    const fieldStates = {};
+    _.forEach(FIELDS_INFO, fieldData => {
+      const {fieldId} = fieldData;
+      let value = registrationData[fieldId] || '';
+
+      if (value === '' && fieldData.default !== undefined) {
+        value = fieldData.default;
+      }
+
+      if (value === '' && useTestData) {
+        value = testData[fieldId];
+      }
+
+      fieldStates[fieldId] = value;
+    });
 
     return {
-      // form data
-      [FIELDS_INFO.childName.fieldId]: '',
-      [FIELDS_INFO.childDob.fieldId]: '',
-      [FIELDS_INFO.parentEmail.fieldId]: '',
-      [FIELDS_INFO.parentName.fieldId]: '',
-      [FIELDS_INFO.parentPhone.fieldId]: '',
-      [FIELDS_INFO.address1.fieldId]: '',
-      [FIELDS_INFO.address2.fieldId]: '',
-      [FIELDS_INFO.city.fieldId]: '',
-      [FIELDS_INFO.state.fieldId]: '',
-      [FIELDS_INFO.zip.fieldId]: '',
-      [FIELDS_INFO.subscribe.fieldId]: false,
-      [FIELDS_INFO.knownAllergies.fieldId]: '',
-
-      // testing data
-
-      // [FIELDS_INFO.childName.fieldId]: 'Delete Me',
-      // [FIELDS_INFO.childDob.fieldId]: '03/01/2012',
-      // [FIELDS_INFO.parentEmail.fieldId]: '',
-      // [FIELDS_INFO.parentName.fieldId]: 'sdfsd',
-      // [FIELDS_INFO.parentPhone.fieldId]: '000-000-0000',
-      // [FIELDS_INFO.address1.fieldId]: 'sdfsdff',
-      // [FIELDS_INFO.address2.fieldId]: '',
-      // [FIELDS_INFO.city.fieldId]: 'bestCity',
-      // [FIELDS_INFO.state.fieldId]: 'sdf',
-      // [FIELDS_INFO.zip.fieldId]: '00000',
-      // [FIELDS_INFO.subscribe.fieldId]: false,
-      // [FIELDS_INFO.knownAllergies.fieldId]: 'sdfsd',
-
-      // other
+      ...fieldStates,
       errors: [],
       redirect: false,
       showModal: false

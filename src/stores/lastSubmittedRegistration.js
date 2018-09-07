@@ -1,8 +1,19 @@
 let _lastSubmittedRegistration;
 let _lastRoutePath;
 
-const getRegistrationData = () => {
-  return _lastSubmittedRegistration;
+/**
+ * Return the registration data that was saved
+ * @param {bool} removeNameAndDob - returns data that does not includes child's name and dob
+ */
+const getRegistrationData = removeNameAndDob => {
+  let returnedData = Object.assign({}, _lastSubmittedRegistration);
+
+  if (removeNameAndDob) {
+    delete returnedData.childName;
+    delete returnedData.childDob;
+  }
+
+  return returnedData;
 };
 
 const getRoutePath = () => {
