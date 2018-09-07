@@ -28,7 +28,7 @@ import './Registration.css';
 const WIDTH_BASE = 15;
 
 const FIELDS_INFO = {
-  [`childName`]: {
+  childName: {
     fieldId: `childName`,
     dbId: 'childName',
     label: 'Child’s name',
@@ -38,7 +38,7 @@ const FIELDS_INFO = {
     ]
   },
 
-  [`childDob`]: {
+  childDob: {
     fieldId: `childDob`,
     dbId: 'childDob',
     label: 'Child’s Date of Birth',
