@@ -155,8 +155,8 @@ class BaseRegistrationChild extends Component {
     };
 
     const useTestData = false;
-
     const fieldStates = {};
+
     _.forEach(FIELDS_INFO, fieldData => {
       const {fieldId} = fieldData;
       let value = registrationData[fieldId] || '';

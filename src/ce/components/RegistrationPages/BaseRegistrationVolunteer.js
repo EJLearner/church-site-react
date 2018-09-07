@@ -83,18 +83,22 @@ const FIELDS_INFO = {
     fieldRules: [fieldValidators.isPhoneNumber]
   },
   teacher: {
+    default: false,
     fieldId: 'teacher',
     label: 'Teacher'
   },
   admin: {
+    default: false,
     fieldId: 'admin',
     label: 'Administrative Staff'
   },
   assistantMentor: {
+    default: false,
     fieldId: 'assistantMentor',
     label: 'Class Assistant/Hallway Monitor'
   },
   kitchen: {
+    default: false,
     fieldId: 'kitchen',
     label: 'Kitchen Staff'
   },
@@ -103,54 +107,67 @@ const FIELDS_INFO = {
     label: 'Other Role'
   },
   sundaySchool: {
+    default: false,
     fieldId: 'sundaySchool',
     label: 'Sunday School'
   },
   bibleSchool: {
+    default: false,
     fieldId: 'bibleSchool',
     label: 'Vacation Bible School'
   },
   youthMinistry: {
+    default: false,
     fieldId: 'youthMinistry',
     label: 'Youth Ministory'
   },
   pastTeacher: {
+    default: false,
     fieldId: 'pastTeacher',
     label: 'Teacher'
   },
   pastAdmin: {
+    default: false,
     fieldId: 'pastAdmin',
     label: 'Administrative Staff'
   },
   pastTransition: {
+    default: false,
     fieldId: 'pastTransition',
     label: 'Transition Team'
   },
   pastKitchen: {
+    default: false,
     fieldId: 'pastKitchen',
     label: 'Kitchen Staff'
   },
   pastChaperone: {
+    default: false,
     fieldId: 'pastChaperone',
     label: 'Chaperon'
   },
   monday: {
+    default: false,
     fieldId: 'monday',
     label: 'Monday'
   },
   tuesday: {
+    default: false,
     fieldId: 'tuesday',
     label: 'Tuesday'
   },
   wednesday: {
+    default: false,
     fieldId: 'wednesday',
     label: 'Wednesday'
   },
   thursday: {
+    default: false,
     fieldId: 'thursday',
     label: 'Thursday'
   },
   friday: {
+    default: false,
     fieldId: 'friday',
     label: 'Friday'
   }
@@ -176,68 +193,57 @@ class BaseRegistrationChild extends Component {
   }
 
   _getState() {
+    const testData = {
+      email: 'lskdjf@sdklfjsd.com',
+      name: 'test name',
+      dob: '01/01/2018',
+      address1: 'test address 1',
+      address2: 'test address 2',
+      city: 'test',
+      state: 'test state',
+      zip: '20103',
+      mobilePhone: '000-000-0123',
+      homePhone: '000-000-1111',
+      teacher: true,
+      admin: true,
+      assistantMentor: true,
+      kitchen: true,
+      otherText: 'Something else',
+      sundaySchool: true,
+      bibleSchool: true,
+      youthMinistry: true,
+      pastTeacher: true,
+      pastAdmin: true,
+      pastTransition: true,
+      pastKitchen: true,
+      pastChaperone: true,
+      monday: true,
+      tuesday: true,
+      wednesday: true,
+      thursday: true,
+      friday: true
+    };
+
+    const useTestData = true;
+    const fieldStates = {};
+
+    _.forEach(FIELDS_INFO, fieldData => {
+      const {fieldId} = fieldData;
+      let value = '';
+
+      if (fieldData.default !== undefined) {
+        value = fieldData.default;
+      }
+
+      if (value === '' && useTestData) {
+        value = testData[fieldId];
+      }
+
+      fieldStates[fieldId] = value;
+    });
+
     return {
-      // form data
-      [FIELDS_INFO.email.fieldId]: '',
-      [FIELDS_INFO.name.fieldId]: '',
-      [FIELDS_INFO.dob.fieldId]: '',
-      [FIELDS_INFO.address1.fieldId]: '',
-      [FIELDS_INFO.address2.fieldId]: '',
-      [FIELDS_INFO.city.fieldId]: '',
-      [FIELDS_INFO.state.fieldId]: '',
-      [FIELDS_INFO.zip.fieldId]: '',
-      [FIELDS_INFO.mobilePhone.fieldId]: '',
-      [FIELDS_INFO.homePhone.fieldId]: '',
-      [FIELDS_INFO.teacher.fieldId]: false,
-      [FIELDS_INFO.admin.fieldId]: false,
-      [FIELDS_INFO.assistantMentor.fieldId]: false,
-      [FIELDS_INFO.kitchen.fieldId]: false,
-      [FIELDS_INFO.otherText.fieldId]: '',
-      [FIELDS_INFO.sundaySchool.fieldId]: false,
-      [FIELDS_INFO.bibleSchool.fieldId]: false,
-      [FIELDS_INFO.youthMinistry.fieldId]: false,
-      [FIELDS_INFO.pastTeacher.fieldId]: false,
-      [FIELDS_INFO.pastAdmin.fieldId]: false,
-      [FIELDS_INFO.pastTransition.fieldId]: false,
-      [FIELDS_INFO.pastKitchen.fieldId]: false,
-      [FIELDS_INFO.pastChaperone.fieldId]: false,
-      [FIELDS_INFO.monday.fieldId]: false,
-      [FIELDS_INFO.tuesday.fieldId]: false,
-      [FIELDS_INFO.wednesday.fieldId]: false,
-      [FIELDS_INFO.thursday.fieldId]: false,
-      [FIELDS_INFO.friday.fieldId]: false,
-
-      // testing data
-      // [FIELDS_INFO.email.fieldId]: 'lskdjf@sdklfjsd.com',
-      // [FIELDS_INFO.name.fieldId]: 'test name',
-      // [FIELDS_INFO.dob.fieldId]: '01/01/2018',
-      // [FIELDS_INFO.address1.fieldId]: 'test address 1',
-      // [FIELDS_INFO.address2.fieldId]: 'test address 2',
-      // [FIELDS_INFO.city.fieldId]: 'test',
-      // [FIELDS_INFO.state.fieldId]: 'test state',
-      // [FIELDS_INFO.zip.fieldId]: '20103',
-      // [FIELDS_INFO.mobilePhone.fieldId]: '000-000-0123',
-      // [FIELDS_INFO.homePhone.fieldId]: '000-000-1111',
-      // [FIELDS_INFO.teacher.fieldId]: true,
-      // [FIELDS_INFO.admin.fieldId]: true,
-      // [FIELDS_INFO.assistantMentor.fieldId]: true,
-      // [FIELDS_INFO.kitchen.fieldId]: true,
-      // [FIELDS_INFO.otherText.fieldId]: 'Something else',
-      // [FIELDS_INFO.sundaySchool.fieldId]: true,
-      // [FIELDS_INFO.bibleSchool.fieldId]: true,
-      // [FIELDS_INFO.youthMinistry.fieldId]: true,
-      // [FIELDS_INFO.pastTeacher.fieldId]: true,
-      // [FIELDS_INFO.pastAdmin.fieldId]: true,
-      // [FIELDS_INFO.pastTransition.fieldId]: true,
-      // [FIELDS_INFO.pastKitchen.fieldId]: true,
-      // [FIELDS_INFO.pastChaperone.fieldId]: true,
-      // [FIELDS_INFO.monday.fieldId]: true,
-      // [FIELDS_INFO.tuesday.fieldId]: true,
-      // [FIELDS_INFO.wednesday.fieldId]: true,
-      // [FIELDS_INFO.thursday.fieldId]: true,
-      // [FIELDS_INFO.friday.fieldId]: true,
-
-      // other
+      ...fieldStates,
       errors: [],
       redirect: false,
       showModal: false,
