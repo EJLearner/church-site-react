@@ -33,6 +33,13 @@ const MAIN_PATH_CONSTANTS = {
   CE_YOUTH: '/ce/youth'
 };
 
+const {ADMIN} = MAIN_PATH_CONSTANTS;
+const ADMIN_PATHS = {
+  ADMIN_EVENTS: `${ADMIN}/events`,
+  ADMIN_CC: `${ADMIN}/cc`,
+  ADMIN_VBS: `${ADMIN}/vbs`
+};
+
 const {CE_CALENDAR} = MAIN_PATH_CONSTANTS;
 const CALENDAR_PATHS = {
   CE_CALENDAR_DAY: `${CE_CALENDAR}/day`,
@@ -66,14 +73,14 @@ const WHO_PATHS = {
   CE_WHO_CHRISTIAN_ED_STAFF: `${CE_WHO}/christian-ed-staff`
 };
 
-const ALL_PATHS = Object.assign(
-  {},
-  MAIN_PATH_CONSTANTS,
-  CALENDAR_PATHS,
-  VISION_PATHS,
-  WHO_PATHS,
-  YOUTH_PATHS
-);
+const ALL_PATHS = {
+  ...MAIN_PATH_CONSTANTS,
+  ...ADMIN_PATHS,
+  ...CALENDAR_PATHS,
+  ...VISION_PATHS,
+  ...WHO_PATHS,
+  ...YOUTH_PATHS
+};
 
 const STRICT_PATH_CONSTANTS =
   typeof Proxy !== 'undefined' ? new Proxy(ALL_PATHS, handler) : ALL_PATHS;
