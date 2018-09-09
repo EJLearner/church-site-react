@@ -7,10 +7,12 @@ import CcAdmin from './CcAdmin';
 import EventAdmin from './EventAdmin';
 import VbsAdmin from './VbsAdmin';
 
-import './Admin.css';
 import MenuBar from '../MenuBar/MenuBar';
+import routePaths from '../../../routePaths';
 import Switch from 'react-router-dom/Switch';
 import {Route} from 'react-router-dom';
+
+import './Admin.css';
 
 class Admin extends Component {
   constructor(props) {
@@ -71,29 +73,21 @@ class Admin extends Component {
     );
   }
 
-  _ccAdminPage() {
-    return <div>Children’s Church Admin Page Coming Soon</div>;
-  }
-
-  _vbsAdminPage() {
-    return <div>VBS Admin Page Coming Soon</div>;
-  }
-
   _generateLinks() {
     const paths = [];
     const {uid} = this.state.user;
     const isAdmin = this.state.adminUsers && this.state.adminUsers[uid];
 
     if (isAdmin) {
-      paths.push({path: '/admin/events-admin', text: 'Events'});
+      paths.push({path: routePaths.ADMIN_EVENTS, text: 'Events'});
     }
 
     if (isAdmin || (this.state.ccRegAccess && this.state.ccRegAccess[uid])) {
-      paths.push({path: '/admin/cc-admin', text: 'Children’s Church'});
+      paths.push({path: routePaths.ADMIN_CC, text: 'Children’s Church'});
     }
 
     if (isAdmin || (this.state.vbsRegAccess && this.state.vbsRegAccess[uid])) {
-      paths.push({path: '/admin/vbs-admin', text: 'VBS'});
+      paths.push({path: routePaths.ADMIN_VBS, text: 'VBS'});
     }
 
     return paths;
@@ -106,9 +100,9 @@ class Admin extends Component {
         Logged in as {this.state.user.displayName}{' '}
         <Button onClick={this._logout}>Log out</Button>
         <Switch>
-          <Route path="/admin/events-admin" render={EventAdmin} />
-          <Route path="/admin/cc-admin" render={CcAdmin} />
-          <Route path="/admin/vbs-admin" render={VbsAdmin} />
+          <Route path={routePaths.ADMIN_EVENTS} render={EventAdmin} />
+          <Route path={routePaths.ADMIN_CC} render={CcAdmin} />
+          <Route path={routePaths.ADMIN_VBS} render={VbsAdmin} />
         </Switch>
       </div>
     ) : (
