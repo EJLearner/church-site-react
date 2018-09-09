@@ -39,8 +39,9 @@ class ChildrensChurch extends Component {
           after class is completed and before Sunday School begins.
         </p>
         <p>
-          Children’s Church meets every <strong>second</strong> Sunday beginning
-          at 9 am downstairs in the undercroft.
+          Children’s Church meets every <strong>second</strong> and{' '}
+          <strong>third</strong> Sunday beginning at 9 am downstairs in the
+          undercroft.
         </p>
         <p>
           <span className="bold">
