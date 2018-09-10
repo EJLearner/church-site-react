@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import BaseRegistrationChild from './BaseRegistrationChild';
 import constants from '../../../utils/constants';
 import routePaths from '../../../routePaths';
+import utils from '../../../utils/commonUtils';
 
 class CcRegistrationChild extends Component {
   _renderHeaderContent() {
@@ -20,12 +21,14 @@ class CcRegistrationChild extends Component {
   }
 
   render() {
+    const ccYear = utils.getCcDbYear();
+
     return (
       <BaseRegistrationChild
         childIdPropName={constants.CC_REGISTERED_CHILD_ID_PROP}
         className="registration-page"
         headerContent={this._renderHeaderContent()}
-        refName={constants.CC_REGISTERED_CHILDREN_REF_NAME}
+        refName={`${constants.CC_REGISTERED_CHILDREN_REF_NAME}/${ccYear}`}
         routePath={routePaths.CE_CC_REG_CHILD}
       />
     );
