@@ -13,16 +13,6 @@ import {
 import './ThankYouPage.css';
 
 class ThankYouPage extends Component {
-  constructor(props) {
-    super(props);
-
-    this._renderMoreStuff = this._renderMoreStuff.bind(this);
-  }
-
-  _renderMoreStuff() {
-    return <div>{this.props.moreStuff}</div>;
-  }
-
   render() {
     const registrationData = getRegistrationData();
     const routePath = getRoutePath();
@@ -45,13 +35,8 @@ class ThankYouPage extends Component {
   }
 }
 
-ThankYouPage.defaultProps = {
-  moreStuff: 'Default more stuff'
-};
-
 ThankYouPage.propTypes = {
-  location: PropTypes.object,
-  moreStuff: PropTypes.string
+  location: PropTypes.object
 };
 
 export default withRouter(ThankYouPage);
