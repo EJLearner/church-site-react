@@ -20,13 +20,13 @@ class CcVbsAdminBase extends Component {
 
   componentDidMount() {
     this.convertFbObjectToState(
-      `${this.props.stringPrefix}RegisteredVolunteers`,
+      `${this.props.stringPrefix}RegisteredVolunteers/2018`,
       'volunteerTableRows',
       this._generateVolunteerRowObject
     );
 
     this.convertFbObjectToState(
-      `${this.props.stringPrefix}RegisteredChildren`,
+      `${this.props.stringPrefix}RegisteredChildren/2018`,
       'childrenTableRows',
       this._generateChildRowObject
     );
