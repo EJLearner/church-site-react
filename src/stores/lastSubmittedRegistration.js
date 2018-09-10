@@ -6,14 +6,18 @@ let _lastRoutePath;
  * @param {bool} removeNameAndDob - returns data that does not includes child's name and dob
  */
 const getRegistrationData = removeNameAndDob => {
-  let returnedData = Object.assign({}, _lastSubmittedRegistration);
+  if (_lastSubmittedRegistration) {
+    let returnedData = Object.assign({}, _lastSubmittedRegistration);
 
-  if (removeNameAndDob) {
-    delete returnedData.childName;
-    delete returnedData.childDob;
+    if (removeNameAndDob) {
+      delete returnedData.childName;
+      delete returnedData.childDob;
+    }
+
+    return returnedData;
   }
 
-  return returnedData;
+  return _lastSubmittedRegistration;
 };
 
 const getRoutePath = () => {
