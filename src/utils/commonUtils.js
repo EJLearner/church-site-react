@@ -110,6 +110,26 @@ const utils = {
    */
   formatTime(time) {
     return time ? moment(time).format('M/D/YY h:mm a') : '';
+  },
+
+  getCcDbYear() {
+    const currentMoment = moment();
+    const currentYear = currentMoment.year();
+    // moment/date months start at 0, adding 1 to avoid my confusion
+    const currentMonth = currentMoment.month + 1;
+
+    // if date is in July or later, return the current year
+    if (currentMonth >= 7) {
+      return currentYear - 1;
+    }
+
+    // else return the previous year
+    return currentYear;
+  },
+
+  getVbsDbYear() {
+    // for now, just always return the current year
+    return moment().year();
   }
 };
 
