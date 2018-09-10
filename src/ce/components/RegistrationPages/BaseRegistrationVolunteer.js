@@ -224,7 +224,7 @@ class BaseRegistrationChild extends Component {
       friday: true
     };
 
-    const useTestData = true;
+    const useTestData = false;
     const fieldStates = {};
 
     _.forEach(FIELDS_INFO, fieldData => {
