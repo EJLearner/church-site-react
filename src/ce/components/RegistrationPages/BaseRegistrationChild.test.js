@@ -1,5 +1,6 @@
 import BaseRegistrationChild from './BaseRegistrationChild';
 import {shallow} from 'enzyme';
+import {expect} from 'chai';
 import React from 'react';
 import routePaths from '../../../routePaths';
 import registrationUtils from './registrationUtils';
@@ -32,10 +33,10 @@ describe('BaseRegistrationChild', () => {
 
     const redirect = wrapper.find('Redirect');
 
-    expect(redirect.exists()).toBeTruthy();
-    expect(redirect.props().push).toEqual(true);
-    expect(redirect.props().to.pathname).toEqual(routePaths.CE_THANK_YOU);
-    expect(redirect.props().to.state.forMessage).toEqual(
+    expect(redirect.exists()).to.be.true;
+    expect(redirect.props().push).to.equal(true);
+    expect(redirect.props().to.pathname).to.equal(routePaths.CE_THANK_YOU);
+    expect(redirect.props().to.state.forMessage).to.equal(
       'you for registering.'
     );
   });
@@ -43,20 +44,20 @@ describe('BaseRegistrationChild', () => {
   it('should render outer div with className from prop', () => {
     const wrapper = shallow(<BaseRegistrationChild {...props} />);
 
-    expect(wrapper.find(`div.${props.className}`).exists()).toEqual(true);
+    expect(wrapper.find(`div.${props.className}`).exists()).to.equal(true);
   });
 
   it('renders headerContent', () => {
     const wrapper = shallow(<BaseRegistrationChild {...props} />);
 
-    expect(wrapper.containsMatchingElement(props.headerContent)).toEqual(true);
+    expect(wrapper.containsMatchingElement(props.headerContent)).to.equal(true);
   });
 
   it('renders errors', () => {
     const wrapper = shallow(<BaseRegistrationChild {...props} />);
 
-    expect(registrationUtils.renderErrors).toHaveBeenCalledTimes(1);
+    expect(registrationUtils.renderErrors.mock.calls).to.have.length(1);
 
-    expect(wrapper.containsMatchingElement(props.headerContent)).toEqual(true);
+    expect(wrapper.containsMatchingElement(props.headerContent)).to.equal(true);
   });
 });

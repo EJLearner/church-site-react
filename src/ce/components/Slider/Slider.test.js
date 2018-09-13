@@ -1,6 +1,8 @@
 import React from 'react';
 
 import {mount, shallow} from 'enzyme';
+import {expect} from 'chai';
+
 import slidePictureData from '../../utils/slidePictureData';
 
 import Slider from './Slider';
@@ -22,7 +24,7 @@ describe('#constructor', () => {
       .find(Slider)
       .dive();
 
-    expect(wrapper.state().slideIndex).toBe(0);
+    expect(wrapper.state().slideIndex).to.equal(0);
   });
 
   it('should set slideShowIsOn state to true if more than one picture exists', () => {
@@ -34,11 +36,11 @@ describe('#constructor', () => {
       .find(Slider)
       .dive();
 
-    expect(wrapper.state().slideShowIsOn).toBe(true);
+    expect(wrapper.state().slideShowIsOn).to.equal(true);
   });
 
   it.skip('should call savePictureHeight on window resize', () => {
-    expect(window.onresize).toBe(undefined);
+    expect(window.onresize).to.equal(undefined);
     const wrapper = shallow(
       <MemoryRouter>
         <Slider pictures={pictures} />
@@ -52,7 +54,7 @@ describe('#constructor', () => {
 
     // window.onresize();
 
-    expect(wrapper.instance().savePictureHeight).toBeCalled();
+    expect(wrapper.instance().savePictureHeight).to.beCalled();
   });
 
   it('should set slideShowIsOn state to false if only one picture exists', () => {
@@ -64,7 +66,7 @@ describe('#constructor', () => {
       .find(Slider)
       .dive();
 
-    expect(wrapper.state().slideShowIsOn).toBe(false);
+    expect(wrapper.state().slideShowIsOn).to.equal(false);
   });
 });
 
@@ -80,8 +82,8 @@ describe('#render', () => {
 
     const outerDiv = wrapper.find('#leftcontent');
 
-    expect(outerDiv.props().className).toBe('slider-chris');
-    expect(outerDiv.props().id).toBe('leftcontent');
+    expect(outerDiv.props().className).to.equal('slider-chris');
+    expect(outerDiv.props().id).to.equal('leftcontent');
   });
 
   it('makes _sliderDiv as ref to self', () => {
@@ -91,7 +93,7 @@ describe('#render', () => {
       </MemoryRouter>
     ).find(Slider);
 
-    expect(wrapper.instance()._sliderDiv.id).toEqual('leftcontent');
+    expect(wrapper.instance()._sliderDiv.id).to.equal('leftcontent');
   });
 
   it('renders _renderSlideShowButtons if there is more than one picture', () => {
@@ -105,8 +107,8 @@ describe('#render', () => {
 
     const SlideShowButtons = wrapper.instance()._renderSlideShowButtons;
 
-    expect(pictures.length).toBeGreaterThan(1);
-    expect(wrapper.find(SlideShowButtons).exists()).toBeTruthy();
+    expect(pictures.length).greaterThan(1);
+    expect(wrapper.find(SlideShowButtons).exists()).to.be.ok;
   });
 
   it('does not render _renderSlideShowButtons if there is one picture', () => {
@@ -120,7 +122,7 @@ describe('#render', () => {
 
     const SlideShowButtons = wrapper.instance()._renderSlideShowButtons;
 
-    expect(wrapper.find(SlideShowButtons).exists()).toBe(false);
+    expect(wrapper.find(SlideShowButtons).exists()).to.equal(false);
   });
 
   it('renders SlideShowPictures', () => {
@@ -134,6 +136,6 @@ describe('#render', () => {
 
     const SlideShowPictures = wrapper.instance()._renderSlideShowPictures;
 
-    expect(wrapper.find(SlideShowPictures).exists()).toBe(true);
+    expect(wrapper.find(SlideShowPictures).exists()).to.equal(true);
   });
 });

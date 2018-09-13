@@ -18,11 +18,11 @@ describe('#render', () => {
   });
 
   it('renders', () => {
-    expect(wrapper.exists()).toBe(true);
+    expect(wrapper.exists()).to.be(true);
   });
 
   it('has sign in text box', () => {
     const nameTextBox = wrapper.find('Text').find({label: 'Sign In'});
-    expect(nameTextBox.exists()).toBe(true);
+    expect(nameTextBox.exists()).to.be(true);
   });
 });
