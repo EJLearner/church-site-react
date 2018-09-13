@@ -14,9 +14,11 @@ describe('BaseRegistrationChild', () => {
     jest.mock('./registrationUtils.js');
 
     props = {
+      childIdPropName: 'testId',
       className: 'test-class',
       headerContent: <h1 id="header-content">test-header</h1>,
-      refName: 'test-ref-name'
+      refName: 'test-ref-name',
+      routePath: '/test/path'
     };
   });
 
