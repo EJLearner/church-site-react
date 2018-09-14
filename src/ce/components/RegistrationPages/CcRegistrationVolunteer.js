@@ -15,13 +15,13 @@ class CcRegistrationVolunteer extends Component {
   }
 
   render() {
-    const vbsYear = utils.getVbsDbYear();
+    const ccYear = utils.getCcDbYear();
 
     return (
       <BaseRegistrationVolunteer
         className="registration-page"
         headerContent={this._renderHeaderContent()}
-        refName={`${constants.CC_REGISTERED_VOLUNTEER_REF_NAME}/${vbsYear}`}
+        refName={`${constants.CC_REGISTERED_VOLUNTEER_REF_NAME}/${ccYear}`}
       />
     );
   }
