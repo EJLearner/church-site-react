@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import BaseRegistrationChild from './BaseRegistrationChild';
 import constants from '../../../utils/constants';
 import routePaths from '../../../routePaths';
+import utils from '../../../utils/commonUtils';
 
 class VbsRegistrationChild extends Component {
   _renderHeaderContent() {
@@ -21,12 +22,14 @@ class VbsRegistrationChild extends Component {
   }
 
   render() {
+    const vbsYear = utils.getVbsDbYear();
+
     return (
       <BaseRegistrationChild
         childIdPropName={constants.VBS_REGISTERED_CHILD_ID_PROP}
         className="registration-page"
         headerContent={this._renderHeaderContent()}
-        refName={constants.VBS_REGISTERED_CHILDREN_REF_NAME}
+        refName={`${constants.VBS_REGISTERED_CHILDREN_REF_NAME}/${vbsYear}`}
         routePath={routePaths.CE_VBS_REG_CHILD}
       />
     );
