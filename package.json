@@ -33,7 +33,7 @@
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "test": "react-scripts test --env=jsdom",
     "coverage": "react-scripts test --env=jsdom --coverage",
-    "watch": "react-scripts test --env=jsdom --watch --coverage",
+    "watch": "react-scripts test --env=jsdom --watch",
     "eject": "react-scripts eject"
   },
   "jest": {

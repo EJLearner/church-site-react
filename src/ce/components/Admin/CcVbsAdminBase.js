@@ -18,7 +18,7 @@ class CcVbsAdminBase extends Component {
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.convertFbObjectToState(
       `${this.props.stringPrefix}RegisteredVolunteers/2018`,
       'volunteerTableRows',
