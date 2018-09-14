@@ -173,7 +173,7 @@ const FIELDS_INFO = {
   }
 };
 
-class BaseRegistrationChild extends Component {
+class BaseRegistrationVolunteer extends Component {
   constructor(props) {
     super(props);
     this.state = this._getState();
@@ -680,15 +680,15 @@ class BaseRegistrationChild extends Component {
   }
 }
 
-BaseRegistrationChild.defaultProps = {
+BaseRegistrationVolunteer.defaultProps = {
   askAvailability: false
 };
 
-BaseRegistrationChild.propTypes = {
+BaseRegistrationVolunteer.propTypes = {
   askAvailability: PropTypes.bool,
   className: PropTypes.string,
   headerContent: PropTypes.node,
   refName: PropTypes.string.isRequired
 };
 
-export default BaseRegistrationChild;
+export default BaseRegistrationVolunteer;
