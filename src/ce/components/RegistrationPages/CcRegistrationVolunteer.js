@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 
-import BaseRegistrationChild from './BaseRegistrationVolunteer';
+import BaseRegistrationVolunteer from './BaseRegistrationVolunteer';
 import constants from '../../../utils/constants';
 import utils from '../../../utils/commonUtils';
 
-class CcRegistrationChild extends Component {
+class CcRegistrationVolunteer extends Component {
   _renderHeaderContent() {
     return (
       <div>
@@ -18,7 +18,7 @@ class CcRegistrationChild extends Component {
     const vbsYear = utils.getVbsDbYear();
 
     return (
-      <BaseRegistrationChild
+      <BaseRegistrationVolunteer
         className="registration-page"
         headerContent={this._renderHeaderContent()}
         refName={`${constants.CC_REGISTERED_VOLUNTEER_REF_NAME}/${vbsYear}`}
@@ -27,4 +27,4 @@ class CcRegistrationChild extends Component {
   }
 }
 
-export default CcRegistrationChild;
+export default CcRegistrationVolunteer;

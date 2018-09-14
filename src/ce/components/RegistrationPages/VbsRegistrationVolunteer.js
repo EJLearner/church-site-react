@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 
 import BaseRegistrationVolunteer from './BaseRegistrationVolunteer';
+import constants from '../../../utils/constants';
+import utils from '../../../utils/commonUtils';
 
-class VbsRegistrationChild extends Component {
+class VbsRegistrationVolunteer extends Component {
   _renderHeaderContent() {
     return (
       <div>
@@ -13,15 +15,17 @@ class VbsRegistrationChild extends Component {
   }
 
   render() {
+    const vbsYear = utils.getVbsDbYear();
+
     return (
       <BaseRegistrationVolunteer
         askAvailability
         className="registration-page"
         headerContent={this._renderHeaderContent()}
-        refName="vbsRegisteredVolunteers"
+        refName={`${constants.VBS_REGISTERED_VOLUNTEER_REF_NAME}/${vbsYear}`}
       />
     );
   }
 }
 
-export default VbsRegistrationChild;
+export default VbsRegistrationVolunteer;
