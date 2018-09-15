@@ -23,6 +23,7 @@ class VbsRegistrationVolunteer extends Component {
         className="registration-page"
         headerContent={this._renderHeaderContent()}
         refName={`${constants.VBS_REGISTERED_VOLUNTEER_REF_NAME}/${vbsYear}`}
+        volunteerIdPropName={constants.VBS_REGISTERED_VOLUNTEER_ID_PROP}
       />
     );
   }

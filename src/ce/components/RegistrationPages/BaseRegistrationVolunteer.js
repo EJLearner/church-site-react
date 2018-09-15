@@ -256,18 +256,10 @@ class BaseRegistrationVolunteer extends Component {
   }
 
   _submitData() {
-    const {refName} = this.props;
-
-    // TODO: really need two separate props, one for id and one for ref
-    // and vbs and cc need to pass down information the same
-    // for now, we'll strip the year from the refName if it includes that
-    // so that we can add an id
-    // should make blahblah/2018 into blahblah-Id
-    const regex = /\/[0-9]{4}/;
-    const idKey = refName.replace(regex, 'Id');
+    const {refName, volunteerIdPropName} = this.props;
 
     const volunteer = {
-      [idKey]: utils.generatePushID(),
+      [volunteerIdPropName]: utils.generatePushID(),
       timeChanged: new Date().toISOString()
     };
 
@@ -688,7 +680,8 @@ BaseRegistrationVolunteer.propTypes = {
   askAvailability: PropTypes.bool,
   className: PropTypes.string,
   headerContent: PropTypes.node,
-  refName: PropTypes.string.isRequired
+  refName: PropTypes.string.isRequired,
+  volunteerIdPropName: PropTypes.string.isRequired
 };
 
 export default BaseRegistrationVolunteer;

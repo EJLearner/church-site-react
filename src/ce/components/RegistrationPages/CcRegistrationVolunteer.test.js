@@ -30,6 +30,10 @@ describe('CcRegistrationVolunteer', () => {
       'registration-page'
     );
 
+    expect(baseRegistrationChild.props().volunteerIdPropName).to.equal(
+      constants.CC_REGISTERED_VOLUNTEER_ID_PROP
+    );
+
     expect(baseRegistrationChild.props().headerContent).to.equal(
       wrapper.instance()._renderHeaderContent()
     );

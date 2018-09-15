@@ -22,6 +22,7 @@ class CcRegistrationVolunteer extends Component {
         className="registration-page"
         headerContent={this._renderHeaderContent()}
         refName={`${constants.CC_REGISTERED_VOLUNTEER_REF_NAME}/${ccYear}`}
+        volunteerIdPropName={constants.CC_REGISTERED_VOLUNTEER_ID_PROP}
       />
     );
   }
