@@ -25,12 +25,15 @@ describe('VbsRegistrationVolunteer', () => {
     const baseRegistrationChild = wrapper.find('BaseRegistrationVolunteer');
 
     expect(baseRegistrationChild.props().askAvailability).to.be.true;
+
     expect(baseRegistrationChild.props().className).to.equal(
       'registration-page'
     );
+
     expect(baseRegistrationChild.props().headerContent).to.equal(
       wrapper.instance()._renderHeaderContent()
     );
+
     expect(baseRegistrationChild.props().refName).to.equal(
       `${constants.VBS_REGISTERED_VOLUNTEER_REF_NAME}/${testYear}`
     );

@@ -25,12 +25,15 @@ describe('CcRegistrationVolunteer', () => {
     const baseRegistrationChild = wrapper.find('BaseRegistrationVolunteer');
 
     expect(baseRegistrationChild.props().askAvailability).to.not.be.ok;
+
     expect(baseRegistrationChild.props().className).to.equal(
       'registration-page'
     );
+
     expect(baseRegistrationChild.props().headerContent).to.equal(
       wrapper.instance()._renderHeaderContent()
     );
+
     expect(baseRegistrationChild.props().refName).to.equal(
       `${constants.CC_REGISTERED_VOLUNTEER_REF_NAME}/${testYear}`
     );
