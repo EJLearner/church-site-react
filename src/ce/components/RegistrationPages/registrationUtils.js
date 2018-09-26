@@ -1,9 +1,9 @@
 import React from 'react';
 
 const registrationUtils = {
-  getPageErrors(state = {}, rules = []) {
+  getPageErrors(state = {}, fieldInfo = []) {
     const errors = [];
-    rules.forEach(rule => {
+    fieldInfo.forEach(rule => {
       const deprecatedIdProp = rule.id;
 
       const {fieldRules = [], fieldId = deprecatedIdProp, label} = rule;
