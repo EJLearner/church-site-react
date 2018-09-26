@@ -80,7 +80,10 @@ const FIELDS_INFO = {
   homePhone: {
     fieldId: 'homePhone',
     label: 'Home Phone',
-    fieldRules: [fieldValidators.isPhoneNumber]
+    fieldRules: [
+      fieldValidators.isPhoneNumber,
+      registrationUtils.requireQuickContact
+    ]
   },
   teacher: {
     default: false,
@@ -224,7 +227,7 @@ class BaseRegistrationVolunteer extends Component {
       friday: true
     };
 
-    const useTestData = false;
+    const useTestData = true;
     const fieldStates = {};
 
     _.forEach(FIELDS_INFO, fieldData => {
