@@ -4,14 +4,22 @@ const registrationUtils = {
   getPageErrors(state = {}, rules = []) {
     const errors = [];
     rules.forEach(rule => {
-      // will transition everything to use fieldId property name
       const deprecatedIdProp = rule.id;
 
       const {fieldRules = [], fieldId = deprecatedIdProp, label} = rule;
+      // TODO transition everything to use fieldId property name
+      if (deprecatedIdProp || !fieldId) {
+        console.log(
+          '`id` provided for rule instead of `fieldId` for ',
+          deprecatedIdProp,
+          '. Use `fieldId` instead'
+        );
+      }
+
       const value = state[fieldId];
 
       fieldRules.forEach(checkFunc => {
-        const message = checkFunc(value, label);
+        const message = checkFunc(value, label, state);
 
         if (message) {
           errors.push({
@@ -55,7 +63,8 @@ const registrationUtils = {
         className = 'failure';
         message = (
           <div>
-            Submission failed<br />
+            Submission failed
+            <br />
             Code: {err.code}
             <br />
             Message: {err.message}
@@ -67,7 +76,8 @@ const registrationUtils = {
         className = 'failure';
         message = (
           <div>
-            Invalid data entered<br />
+            Invalid data entered
+            <br />
             Please check your fields and the error at the top of the page.
           </div>
         );
@@ -81,6 +91,13 @@ const registrationUtils = {
     }
 
     return null;
+  },
+
+  requireQuickContact(value, row, state) {
+    const {email, homePhone, mobilePhone} = state;
+    if (!(email || homePhone || mobilePhone)) {
+      return 'Email, home phone or mobile phone must be provided';
+    }
   }
 };
 
