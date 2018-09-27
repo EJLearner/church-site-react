@@ -1,4 +1,4 @@
-import BaseRegistrationChild from './BaseRegistrationChild';
+import BaseRegistrationStudent from './BaseRegistrationStudent';
 import {shallow} from 'enzyme';
 import {expect} from 'chai';
 import React from 'react';
@@ -7,7 +7,7 @@ import registrationUtils from './registrationUtils';
 jest.mock('firebase');
 jest.mock('./registrationUtils.js');
 
-describe('BaseRegistrationChild', () => {
+describe('BaseRegistrationStudent', () => {
   let props;
 
   beforeEach(() => {
@@ -28,7 +28,7 @@ describe('BaseRegistrationChild', () => {
   });
 
   it('should redirect if redirect state is truthy', () => {
-    const wrapper = shallow(<BaseRegistrationChild {...props} />);
+    const wrapper = shallow(<BaseRegistrationStudent {...props} />);
     wrapper.setState({redirect: true});
 
     const redirect = wrapper.find('Redirect');
@@ -42,19 +42,19 @@ describe('BaseRegistrationChild', () => {
   });
 
   it('should render outer div with className from prop', () => {
-    const wrapper = shallow(<BaseRegistrationChild {...props} />);
+    const wrapper = shallow(<BaseRegistrationStudent {...props} />);
 
     expect(wrapper.find(`div.${props.className}`).exists()).to.equal(true);
   });
 
   it('renders headerContent', () => {
-    const wrapper = shallow(<BaseRegistrationChild {...props} />);
+    const wrapper = shallow(<BaseRegistrationStudent {...props} />);
 
     expect(wrapper.containsMatchingElement(props.headerContent)).to.equal(true);
   });
 
   it('renders errors', () => {
-    const wrapper = shallow(<BaseRegistrationChild {...props} />);
+    const wrapper = shallow(<BaseRegistrationStudent {...props} />);
 
     expect(registrationUtils.renderErrors.mock.calls).to.have.length(1);
 

@@ -8,13 +8,13 @@ import utils from '../../../utils/commonUtils';
 jest.mock('../../../utils/commonUtils.js');
 
 describe('VbsRegistrationChild', () => {
-  it('render BaseRegistrationChild', () => {
+  it('render BaseRegistrationStudent', () => {
     const wrapper = shallow(<VbsRegistrationChild />);
 
-    expect(wrapper.find('BaseRegistrationChild').exists()).to.be.true;
+    expect(wrapper.find('BaseRegistrationStudent').exists()).to.be.true;
   });
 
-  it('BaseRegistrationChild has correct props', () => {
+  it('BaseRegistrationStudent has correct props', () => {
     VbsRegistrationChild.prototype._renderHeaderContent = jest.fn(
       () => 'Header Content'
     );
@@ -23,7 +23,7 @@ describe('VbsRegistrationChild', () => {
     utils.getVbsDbYear = jest.fn(() => testYear);
 
     const wrapper = shallow(<VbsRegistrationChild />);
-    const baseRegistrationChild = wrapper.find('BaseRegistrationChild');
+    const baseRegistrationChild = wrapper.find('BaseRegistrationStudent');
 
     expect(baseRegistrationChild.props().childIdPropName).to.equal(
       constants.VBS_REGISTERED_CHILD_ID_PROP

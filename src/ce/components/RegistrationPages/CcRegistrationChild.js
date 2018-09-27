@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import BaseRegistrationChild from './BaseRegistrationChild';
+import BaseRegistrationStudent from './BaseRegistrationStudent';
 import constants from '../../../utils/constants';
 import routePaths from '../../../routePaths';
 import utils from '../../../utils/commonUtils';
@@ -24,7 +24,7 @@ class CcRegistrationChild extends Component {
     const ccYear = utils.getCcDbYear();
 
     return (
-      <BaseRegistrationChild
+      <BaseRegistrationStudent
         childIdPropName={constants.CC_REGISTERED_CHILD_ID_PROP}
         className="registration-page"
         headerContent={this._renderHeaderContent()}

@@ -116,7 +116,7 @@ const FIELDS_INFO = {
   }
 };
 
-class BaseRegistrationChild extends Component {
+class BaseRegistrationStudent extends Component {
   constructor(props) {
     super(props);
     this.state = this._getState();
@@ -415,7 +415,7 @@ class BaseRegistrationChild extends Component {
   }
 }
 
-BaseRegistrationChild.propTypes = {
+BaseRegistrationStudent.propTypes = {
   childIdPropName: PropTypes.string.isRequired,
   className: PropTypes.string,
   headerContent: PropTypes.node,
@@ -423,4 +423,4 @@ BaseRegistrationChild.propTypes = {
   routePath: PropTypes.string.isRequired
 };
 
-export default BaseRegistrationChild;
+export default BaseRegistrationStudent;

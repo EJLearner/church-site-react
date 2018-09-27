@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import BaseRegistrationChild from './BaseRegistrationChild';
+import BaseRegistrationStudent from './BaseRegistrationStudent';
 import constants from '../../../utils/constants';
 import routePaths from '../../../routePaths';
 import utils from '../../../utils/commonUtils';
@@ -10,7 +10,7 @@ class VbsRegistrationChild extends Component {
     return (
       <div>
         <h1 className="vbs-header">Vacation Bible School</h1>
-        <h2 className="vbs-header">Child Registration</h2>
+        <h2 className="vbs-header">Student Registration</h2>
         <p>
           Complete the following form to register your child(ren) for Vacation
           Bible School. For timely enrollment, please double-check your
@@ -25,7 +25,7 @@ class VbsRegistrationChild extends Component {
     const vbsYear = utils.getVbsDbYear();
 
     return (
-      <BaseRegistrationChild
+      <BaseRegistrationStudent
         childIdPropName={constants.VBS_REGISTERED_CHILD_ID_PROP}
         className="registration-page"
         headerContent={this._renderHeaderContent()}
