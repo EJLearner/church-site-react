@@ -48,7 +48,7 @@ const FIELDS_INFO = {
       fieldValidators.isAtLeastTwoCharacters
     ]
   },
-  address2: {fieldId: 'address2', dbId: 'address2', label: 'Address Line 2'},
+  address2: {fieldId: 'address2', label: 'Address Line 2'},
   city: {
     fieldId: 'city',
     label: 'City',
@@ -227,7 +227,7 @@ class BaseRegistrationVolunteer extends Component {
       friday: true
     };
 
-    const useTestData = true;
+    const useTestData = false;
     const fieldStates = {};
 
     _.forEach(FIELDS_INFO, fieldData => {
@@ -266,8 +266,7 @@ class BaseRegistrationVolunteer extends Component {
       timeChanged: new Date().toISOString()
     };
 
-    _.values(FIELDS_INFO).forEach(field => {
-      const {fieldId} = field;
+    _.values(FIELDS_INFO).forEach(({fieldId}) => {
       volunteer[fieldId] = this.state[fieldId];
     });
 

@@ -3,6 +3,7 @@ import React from 'react';
 const registrationUtils = {
   getPageErrors(state = {}, fieldInfo = []) {
     const errors = [];
+
     fieldInfo.forEach(rule => {
       const deprecatedIdProp = rule.id;
 
@@ -42,7 +43,7 @@ const registrationUtils = {
       return (
         <div className="error-list">
           <i className="fa fa-exclamation-triangle" />
-          {'Oops, there were some errors!'}
+          Oops, there were some errors!
           <ul>{errorList}</ul>
         </div>
       );

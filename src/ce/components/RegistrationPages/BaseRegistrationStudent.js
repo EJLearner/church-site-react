@@ -30,7 +30,6 @@ const WIDTH_BASE = 15;
 const FIELDS_INFO = {
   childName: {
     fieldId: `childName`,
-    dbId: 'childName',
     label: 'Child’s name',
     fieldRules: [
       fieldValidators.isNotEmpty,
@@ -40,20 +39,17 @@ const FIELDS_INFO = {
 
   childDob: {
     fieldId: `childDob`,
-    dbId: 'childDob',
     label: 'Child’s Date of Birth',
     fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate]
   },
 
   parentEmail: {
     fieldId: 'parentEmail',
-    dbId: 'parentEmail',
     label: 'Email Address',
     fieldRules: [fieldValidators.isValidEmail]
   },
   parentName: {
     fieldId: 'parentName',
-    dbId: 'parentName',
     label: 'Parent’s Name',
     fieldRules: [
       fieldValidators.isNotEmpty,
@@ -62,23 +58,20 @@ const FIELDS_INFO = {
   },
   parentPhone: {
     fieldId: 'parentPhone',
-    dbId: 'parentPhone',
     label: 'Phone Number',
     fieldRules: [fieldValidators.isPhoneNumber, fieldValidators.isNotEmpty]
   },
   address1: {
     fieldId: 'address1',
-    dbId: 'address1',
     label: 'Address Line 1',
     fieldRules: [
       fieldValidators.isNotEmpty,
       fieldValidators.isAtLeastTwoCharacters
     ]
   },
-  address2: {fieldId: 'address2', dbId: 'address2', label: 'Address Line 2'},
+  address2: {fieldId: 'address2', label: 'Address Line 2'},
   city: {
     fieldId: 'city',
-    dbId: 'city',
     label: 'City',
     fieldRules: [
       fieldValidators.isAllLetters,
@@ -88,7 +81,6 @@ const FIELDS_INFO = {
   },
   state: {
     fieldId: 'state',
-    dbId: 'state',
     label: 'State',
     fieldRules: [
       fieldValidators.isAllLetters,
@@ -98,19 +90,16 @@ const FIELDS_INFO = {
   },
   zip: {
     fieldId: 'zip',
-    dbId: 'zip',
     label: 'ZIP Code',
     fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isValidZip]
   },
   subscribe: {
     fieldId: 'subscribe',
     default: false,
-    dbId: 'subscribe',
     label: 'Subscribe'
   },
   knownAllergies: {
     fieldId: 'knownAllergies',
-    dbId: 'knownAllergies',
     label: 'Known Allergies',
     fieldRules: [fieldValidators.isNotEmpty]
   }
@@ -193,8 +182,8 @@ class BaseRegistrationStudent extends Component {
       parentNames: [this.state.parentName]
     };
 
-    _.forEach(FIELDS_INFO, field => {
-      child[field.dbId] = this.state[field.fieldId];
+    _.forEach(FIELDS_INFO, ({fieldId}) => {
+      child[fieldId] = this.state[fieldId];
     });
 
     const standardChildDob = moment(
