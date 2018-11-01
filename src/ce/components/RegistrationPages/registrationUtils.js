@@ -5,18 +5,7 @@ const registrationUtils = {
     const errors = [];
 
     fieldInfo.forEach(rule => {
-      const deprecatedIdProp = rule.id;
-
-      const {fieldRules = [], fieldId = deprecatedIdProp, label} = rule;
-      // TODO transition everything to use fieldId property name
-      if (deprecatedIdProp || !fieldId) {
-        console.log(
-          '`id` provided for rule instead of `fieldId` for ',
-          deprecatedIdProp,
-          '. Use `fieldId` instead'
-        );
-      }
-
+      const {fieldRules = [], fieldId, label} = rule;
       const value = state[fieldId];
 
       fieldRules.forEach(checkFunc => {
