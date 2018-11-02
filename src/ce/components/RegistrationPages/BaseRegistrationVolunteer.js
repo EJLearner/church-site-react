@@ -19,6 +19,8 @@ import constants from '../../../utils/constants';
 
 import './Registration.css';
 import Checklist from '../Reusable/Checklist/Checklist';
+import ErrorList from '../Common/ErrorList';
+import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
 
 const FIELDS_INFO = {
   email: {
@@ -652,22 +654,24 @@ class BaseRegistrationVolunteer extends Component {
       );
     }
 
-    const renderedErrors = registrationUtils.renderErrors(errors);
+    const hasErrors = Boolean(errors.length);
+
     const formFields = this._renderFormFields();
-    const statusMessage = registrationUtils.renderStatusMessage(
-      postStatus,
-      errors,
-      responseError
-    );
     const modal =
       showModal && postStatus !== 'failure' && this._renderSummaryModal();
 
     return (
       <div className={this.props.className}>
         {this.props.headerContent}
-        {renderedErrors}
+        {hasErrors && <ErrorList errors={errors} />}
         {formFields}
-        {statusMessage}
+        {Boolean(hasErrors || postStatus) && (
+          <PostSubmitStatusMessage
+            errors={errors}
+            postStatus={postStatus}
+            responseError={responseError}
+          />
+        )}
         {modal}
       </div>
     );

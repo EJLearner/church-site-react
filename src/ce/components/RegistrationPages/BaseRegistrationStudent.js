@@ -25,6 +25,9 @@ import {
 } from '../../../stores/lastSubmittedRegistration';
 
 import './Registration.css';
+import ErrorList from '../Common/ErrorList';
+import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
+
 const WIDTH_BASE = 15;
 
 const FIELDS_INFO = {
@@ -382,22 +385,22 @@ class BaseRegistrationStudent extends Component {
       );
     }
 
-    const renderedErrors = registrationUtils.renderErrors(errors);
     const formFields = this._renderFormFields();
-    const statusMessage = registrationUtils.renderStatusMessage(
-      postStatus,
-      errors,
-      responseError
-    );
     const modal =
       showModal && postStatus !== 'failure' && this._renderSummaryModal();
+    const hasErrors = Boolean(errors.length);
 
     return (
       <div className={this.props.className}>
         {this.props.headerContent}
-        {renderedErrors}
+        {hasErrors && <ErrorList errors={errors} />}
         {formFields}
-        {statusMessage}
+        {Boolean(hasErrors || postStatus) && (
+          <PostSubmitStatusMessage
+            postStatus={postStatus}
+            responseError={responseError}
+          />
+        )}
         {modal}
       </div>
     );
