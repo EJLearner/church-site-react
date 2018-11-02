@@ -25,12 +25,14 @@ import {
 } from '../../../stores/lastSubmittedRegistration';
 
 import './Registration.css';
+import ErrorList from '../Common/ErrorList';
+import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
+
 const WIDTH_BASE = 15;
 
 const FIELDS_INFO = {
   childName: {
     fieldId: `childName`,
-    dbId: 'childName',
     label: 'Child’s name',
     fieldRules: [
       fieldValidators.isNotEmpty,
@@ -40,20 +42,17 @@ const FIELDS_INFO = {
 
   childDob: {
     fieldId: `childDob`,
-    dbId: 'childDob',
     label: 'Child’s Date of Birth',
     fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate]
   },
 
   parentEmail: {
     fieldId: 'parentEmail',
-    dbId: 'parentEmail',
     label: 'Email Address',
     fieldRules: [fieldValidators.isValidEmail]
   },
   parentName: {
     fieldId: 'parentName',
-    dbId: 'parentName',
     label: 'Parent’s Name',
     fieldRules: [
       fieldValidators.isNotEmpty,
@@ -62,23 +61,20 @@ const FIELDS_INFO = {
   },
   parentPhone: {
     fieldId: 'parentPhone',
-    dbId: 'parentPhone',
     label: 'Phone Number',
     fieldRules: [fieldValidators.isPhoneNumber, fieldValidators.isNotEmpty]
   },
   address1: {
     fieldId: 'address1',
-    dbId: 'address1',
     label: 'Address Line 1',
     fieldRules: [
       fieldValidators.isNotEmpty,
       fieldValidators.isAtLeastTwoCharacters
     ]
   },
-  address2: {fieldId: 'address2', dbId: 'address2', label: 'Address Line 2'},
+  address2: {fieldId: 'address2', label: 'Address Line 2'},
   city: {
     fieldId: 'city',
-    dbId: 'city',
     label: 'City',
     fieldRules: [
       fieldValidators.isAllLetters,
@@ -88,7 +84,6 @@ const FIELDS_INFO = {
   },
   state: {
     fieldId: 'state',
-    dbId: 'state',
     label: 'State',
     fieldRules: [
       fieldValidators.isAllLetters,
@@ -98,25 +93,22 @@ const FIELDS_INFO = {
   },
   zip: {
     fieldId: 'zip',
-    dbId: 'zip',
     label: 'ZIP Code',
     fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isValidZip]
   },
   subscribe: {
     fieldId: 'subscribe',
     default: false,
-    dbId: 'subscribe',
     label: 'Subscribe'
   },
   knownAllergies: {
     fieldId: 'knownAllergies',
-    dbId: 'knownAllergies',
     label: 'Known Allergies',
     fieldRules: [fieldValidators.isNotEmpty]
   }
 };
 
-class BaseRegistrationChild extends Component {
+class BaseRegistrationStudent extends Component {
   constructor(props) {
     super(props);
     this.state = this._getState();
@@ -193,8 +185,8 @@ class BaseRegistrationChild extends Component {
       parentNames: [this.state.parentName]
     };
 
-    _.forEach(FIELDS_INFO, field => {
-      child[field.dbId] = this.state[field.fieldId];
+    _.forEach(FIELDS_INFO, ({fieldId}) => {
+      child[fieldId] = this.state[fieldId];
     });
 
     const standardChildDob = moment(
@@ -393,29 +385,29 @@ class BaseRegistrationChild extends Component {
       );
     }
 
-    const renderedErrors = registrationUtils.renderErrors(errors);
     const formFields = this._renderFormFields();
-    const statusMessage = registrationUtils.renderStatusMessage(
-      postStatus,
-      errors,
-      responseError
-    );
     const modal =
       showModal && postStatus !== 'failure' && this._renderSummaryModal();
+    const hasErrors = Boolean(errors.length);
 
     return (
       <div className={this.props.className}>
         {this.props.headerContent}
-        {renderedErrors}
+        {hasErrors && <ErrorList errors={errors} />}
         {formFields}
-        {statusMessage}
+        {Boolean(hasErrors || postStatus) && (
+          <PostSubmitStatusMessage
+            postStatus={postStatus}
+            responseError={responseError}
+          />
+        )}
         {modal}
       </div>
     );
   }
 }
 
-BaseRegistrationChild.propTypes = {
+BaseRegistrationStudent.propTypes = {
   childIdPropName: PropTypes.string.isRequired,
   className: PropTypes.string,
   headerContent: PropTypes.node,
@@ -423,4 +415,4 @@ BaseRegistrationChild.propTypes = {
   routePath: PropTypes.string.isRequired
 };
 
-export default BaseRegistrationChild;
+export default BaseRegistrationStudent;

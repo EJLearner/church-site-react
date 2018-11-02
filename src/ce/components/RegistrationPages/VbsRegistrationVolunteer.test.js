@@ -30,6 +30,10 @@ describe('VbsRegistrationVolunteer', () => {
       'registration-page'
     );
 
+    expect(baseRegistrationChild.props().volunteerIdPropName).to.equal(
+      constants.VBS_REGISTERED_VOLUNTEER_ID_PROP
+    );
+
     expect(baseRegistrationChild.props().headerContent).to.equal(
       wrapper.instance()._renderHeaderContent()
     );

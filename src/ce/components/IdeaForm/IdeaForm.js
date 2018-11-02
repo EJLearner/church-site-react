@@ -11,10 +11,12 @@ import Text from '../Reusable/Text/Text';
 import fieldValidators from '../RegistrationPages/fieldValidators';
 import registrationUtils from '../RegistrationPages/registrationUtils';
 import {post} from 'jquery';
+import ErrorList from '../Common/ErrorList';
+import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
 
 class IdeaForm extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = this._getFreshState();
 
     this._onChangeRadio = this._onChangeRadio.bind(this);
@@ -23,13 +25,6 @@ class IdeaForm extends Component {
     this._setErrors = this._setErrors.bind(this);
     this._setPageState = this._setPageState.bind(this);
     this._submitData = this._submitData.bind(this);
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (!prevState.postStatus && this.state.postStatus) {
-      const successBox = document.getElementById('success-error-box');
-      successBox.focus();
-    }
   }
 
   _setPageState() {
@@ -72,8 +67,8 @@ class IdeaForm extends Component {
     post(
       'ceIdeaFormProcess.php',
       data,
-      response => {
-        if (response.success) {
+      responseError => {
+        if (responseError.success) {
           this._postSubmitSuccess();
         } else {
           this.setState({
@@ -82,23 +77,23 @@ class IdeaForm extends Component {
         }
       },
       'json'
-    ).fail(response => {
+    ).fail(responseError => {
       this.setState({
         postStatus: 'failure',
-        response
+        responseError
       });
     });
   }
 
   _setErrors() {
-    const allRules = [
+    const fieldInfo = [
       {
-        id: 'ideaType',
+        fieldId: 'ideaType',
         label: 'Idea Type',
         fieldRules: [fieldValidators.isNotEmpty]
       },
       {
-        id: 'ideaDesc',
+        fieldId: 'ideaDesc',
         label: 'Idea Description',
         fieldRules: [
           fieldValidators.isNotEmpty,
@@ -106,23 +101,23 @@ class IdeaForm extends Component {
         ]
       },
       {
-        id: 'name',
+        fieldId: 'name',
         label: 'Name',
         fieldRules: [fieldValidators.isAtLeastTwoCharacters]
       },
       {
-        id: 'email',
+        fieldId: 'email',
         label: 'Email',
         fieldRules: [fieldValidators.isValidEmail]
       },
       {
-        id: 'phone',
+        fieldId: 'phone',
         label: 'Phone Number',
         fieldRules: [fieldValidators.isPhoneNumber]
       }
     ];
 
-    const errors = registrationUtils.getPageErrors(this.state, allRules);
+    const errors = registrationUtils.getPageErrors(this.state, fieldInfo);
     if (!errors.length) {
       this._submitData();
     }
@@ -139,7 +134,8 @@ class IdeaForm extends Component {
       <div>
         <p>
           <label htmlFor="institute">
-            This idea is for:<span className="mandatory">*</span>
+            This idea is for:
+            <span className="mandatory">*</span>
           </label>
           <br />
 
@@ -260,11 +256,21 @@ class IdeaForm extends Component {
   }
 
   render() {
-    if (this.state.redirect) {
+    const {
+      errors,
+      postStatus,
+      redirect,
+      showThanksMessage,
+      responseError
+    } = this.state;
+
+    if (redirect) {
       return <Redirect push to={routePaths.CE_HOME} />;
     }
 
-    if (this.state.showThanksMessage) {
+    const hasErrors = Boolean(errors.length);
+
+    if (showThanksMessage) {
       return (
         <div className="registration-page">
           <h2>Thanks for submitting your idea!</h2>
@@ -280,12 +286,13 @@ class IdeaForm extends Component {
         <h1>
           Tell Us What You <span>Think!</span>
         </h1>
-        {registrationUtils.renderErrors(this.state.errors)}
+        {hasErrors && <ErrorList errors={errors} />}
         {this._renderFormFields()}
-        {registrationUtils.renderStatusMessage(
-          this.state.postStatus,
-          this.state.errors,
-          this.state.response
+        {Boolean(postStatus || hasErrors) && (
+          <PostSubmitStatusMessage
+            postStatus={postStatus}
+            responseError={responseError}
+          />
         )}
       </div>
     );

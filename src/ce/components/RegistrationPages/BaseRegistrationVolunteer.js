@@ -19,6 +19,8 @@ import constants from '../../../utils/constants';
 
 import './Registration.css';
 import Checklist from '../Reusable/Checklist/Checklist';
+import ErrorList from '../Common/ErrorList';
+import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
 
 const FIELDS_INFO = {
   email: {
@@ -48,7 +50,7 @@ const FIELDS_INFO = {
       fieldValidators.isAtLeastTwoCharacters
     ]
   },
-  address2: {fieldId: 'address2', dbId: 'address2', label: 'Address Line 2'},
+  address2: {fieldId: 'address2', label: 'Address Line 2'},
   city: {
     fieldId: 'city',
     label: 'City',
@@ -80,7 +82,10 @@ const FIELDS_INFO = {
   homePhone: {
     fieldId: 'homePhone',
     label: 'Home Phone',
-    fieldRules: [fieldValidators.isPhoneNumber]
+    fieldRules: [
+      fieldValidators.isPhoneNumber,
+      registrationUtils.requireQuickContact
+    ]
   },
   teacher: {
     default: false,
@@ -256,23 +261,14 @@ class BaseRegistrationVolunteer extends Component {
   }
 
   _submitData() {
-    const {refName} = this.props;
-
-    // TODO: really need two separate props, one for id and one for ref
-    // and vbs and cc need to pass down information the same
-    // for now, we'll strip the year from the refName if it includes that
-    // so that we can add an id
-    // should make blahblah/2018 into blahblah-Id
-    const regex = /\/[0-9]{4}/;
-    const idKey = refName.replace(regex, 'Id');
+    const {refName, volunteerIdPropName} = this.props;
 
     const volunteer = {
-      [idKey]: utils.generatePushID(),
+      [volunteerIdPropName]: utils.generatePushID(),
       timeChanged: new Date().toISOString()
     };
 
-    _.values(FIELDS_INFO).forEach(field => {
-      const {fieldId} = field;
+    _.values(FIELDS_INFO).forEach(({fieldId}) => {
       volunteer[fieldId] = this.state[fieldId];
     });
 
@@ -658,22 +654,24 @@ class BaseRegistrationVolunteer extends Component {
       );
     }
 
-    const renderedErrors = registrationUtils.renderErrors(errors);
+    const hasErrors = Boolean(errors.length);
+
     const formFields = this._renderFormFields();
-    const statusMessage = registrationUtils.renderStatusMessage(
-      postStatus,
-      errors,
-      responseError
-    );
     const modal =
       showModal && postStatus !== 'failure' && this._renderSummaryModal();
 
     return (
       <div className={this.props.className}>
         {this.props.headerContent}
-        {renderedErrors}
+        {hasErrors && <ErrorList errors={errors} />}
         {formFields}
-        {statusMessage}
+        {Boolean(hasErrors || postStatus) && (
+          <PostSubmitStatusMessage
+            errors={errors}
+            postStatus={postStatus}
+            responseError={responseError}
+          />
+        )}
         {modal}
       </div>
     );
@@ -688,7 +686,8 @@ BaseRegistrationVolunteer.propTypes = {
   askAvailability: PropTypes.bool,
   className: PropTypes.string,
   headerContent: PropTypes.node,
-  refName: PropTypes.string.isRequired
+  refName: PropTypes.string.isRequired,
+  volunteerIdPropName: PropTypes.string.isRequired
 };
 
 export default BaseRegistrationVolunteer;
