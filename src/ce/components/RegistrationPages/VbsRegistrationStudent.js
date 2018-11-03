@@ -232,10 +232,9 @@ class VbsRegistrationStudent extends Component {
         <h1 className="vbs-header">Vacation Bible School</h1>
         <h2 className="vbs-header">Student Registration</h2>
         <p>
-          Complete the following form to register your child(ren) for Vacation
-          Bible School. For timely enrollment, please double-check your
-          responses before clicking the <span className="bold">Submit</span>{' '}
-          button.
+          Complete the following form to register for Vacation Bible School. For
+          timely enrollment, please double-check your responses before clicking
+          the <span className="bold">Submit</span> button.
         </p>
       </div>
     );
