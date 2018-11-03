@@ -23,6 +23,7 @@ import VbsCheckIn from './ce/components/CcVbsCheckinOut/VbsCheckin';
 import VbsCheckOut from './ce/components/CcVbsCheckinOut/VbsCheckout';
 import VbsRegistrationChild from './ce/components/RegistrationPages/VbsRegistrationChild';
 import VbsRegistrationLanding from './ce/components/RegistrationPages/VbsRegistrationLanding';
+import VbsRegistrationStudent from './ce/components/RegistrationPages/VbsRegistrationStudent';
 import VbsRegistrationVolunteer from './ce/components/RegistrationPages/VbsRegistrationVolunteer';
 import Vision from './ce/components/Vision/Vision';
 import Where from './ce/components/Where/Where';
@@ -152,7 +153,6 @@ class Routes extends Component {
             )}
           />
 
-
           <Route component={Calendar} path={routePaths.CE_CALENDAR} />
           <Route
             path={routePaths.CE_CC_REG_CHILD}
@@ -187,10 +187,10 @@ class Routes extends Component {
             )}
           />
           <Route
-            path={routePaths.CE_VBS_REG_CHILD}
+            path={routePaths.CE_CC_REG_STUDENT}
             render={() => (
               <BareCePage>
-                <VbsRegistrationChild />
+                <VbsRegistrationStudent />
               </BareCePage>
             )}
           />

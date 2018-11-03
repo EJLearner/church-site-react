@@ -58,7 +58,7 @@ class VacationBibleSchool extends Component {
           name="VBS"
           registerButtonOnClick={this._setPageState.bind(
             null,
-            routePaths.CE_VBS_REG_CHILD
+            routePaths.CE_CC_REG_STUDENT
           )}
           volunteerButtonOnClick={this._setPageState.bind(
             null,

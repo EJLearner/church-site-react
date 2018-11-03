@@ -12,7 +12,7 @@ class VbsCheckin extends Component {
     return (
       <BaseCheckin
         logbookRefName={constants.VBS_LOGBOOK_REF_NAME}
-        registerLink={routePaths.CE_VBS_REG_CHILD}
+        registerLink={routePaths.CE_CC_REG_STUDENT}
         registeredChildrenRefName={`${
           constants.VBS_REGISTERED_CHILDREN_REF_NAME
         }/${year}`}

@@ -29,7 +29,7 @@ class VbsRegistrationLanding extends Component {
         imgPath={leftPicture}
         onClickAttend={this._setPageState.bind(
           null,
-          routePaths.CE_VBS_REG_CHILD
+          routePaths.CE_CC_REG_STUDENT
         )}
         onClickVolunteer={this._setPageState.bind(
           null,
