@@ -1,6 +1,7 @@
 import _ from 'lodash';
 
 import firebase from '../../../firebase';
+import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import {Redirect} from 'react-router';
 import moment from 'moment';
@@ -28,6 +29,11 @@ import ErrorList from '../Common/ErrorList';
 import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
 
 const WIDTH_BASE = 15;
+
+const PAGE_TYPES = {
+  CHILD: 'CHILD',
+  ADULT: 'ADULT'
+};
 
 const FIELDS_INFO = {
   childName: {
@@ -245,7 +251,7 @@ class VbsRegistrationStudent extends Component {
       <div id="form-fields">
         <Text
           id="childName"
-          label="Child’s Name"
+          label="Student’s Name"
           onChange={this._onChangeInput}
           required
           size={2 * WIDTH_BASE}
@@ -422,4 +428,9 @@ class VbsRegistrationStudent extends Component {
   }
 }
 
+VbsRegistrationStudent.propTypes = {
+  studentType: PropTypes.oneOf(Object.values(PAGE_TYPES))
+};
+
+export {PAGE_TYPES};
 export default VbsRegistrationStudent;
