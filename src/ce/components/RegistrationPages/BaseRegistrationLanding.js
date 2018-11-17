@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import _ from 'lodash';
-
 import './RegistrationLanding.css';
 
 const types = {
@@ -42,7 +40,7 @@ RegistrationLanding.propTypes = {
   imgPath: PropTypes.string,
   onClickAttend: PropTypes.func.isRequired,
   onClickVolunteer: PropTypes.func.isRequired,
-  type: PropTypes.oneOf(_.values(types))
+  type: PropTypes.oneOf(Object.values(types))
 };
 
 RegistrationLanding.TYPES = types;

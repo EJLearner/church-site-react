@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -60,7 +59,7 @@ class PostSubmitStatusMessage extends React.Component {
 }
 
 PostSubmitStatusMessage.propTypes = {
-  postStatus: PropTypes.oneOf(_.values(POST_STATUSES)),
+  postStatus: PropTypes.oneOf(Object.values(POST_STATUSES)),
   responseError: PropTypes.object
 };
 
