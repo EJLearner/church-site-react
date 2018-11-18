@@ -30,7 +30,7 @@ import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
 
 const WIDTH_BASE = 15;
 
-const PAGE_TYPES = {
+const STUDENT_TYPES = {
   CHILD: 'CHILD',
   ADULT: 'ADULT'
 };
@@ -114,6 +114,14 @@ const FIELDS_INFO = {
 };
 
 class VbsRegistrationStudent extends Component {
+  static propTypes = {
+    studentType: PropTypes.oneOf(Object.values(STUDENT_TYPES))
+  };
+
+  static defaultProps = {
+    studentType: STUDENT_TYPES.CHILD
+  };
+
   constructor(props) {
     super(props);
     this.state = this._getState();
@@ -428,9 +436,5 @@ class VbsRegistrationStudent extends Component {
   }
 }
 
-VbsRegistrationStudent.propTypes = {
-  studentType: PropTypes.oneOf(Object.values(PAGE_TYPES))
-};
-
-export {PAGE_TYPES};
+export {STUDENT_TYPES};
 export default VbsRegistrationStudent;
