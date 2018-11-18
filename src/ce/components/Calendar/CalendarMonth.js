@@ -8,7 +8,6 @@ import Droplist from '../Reusable/Droplist/Droplist';
 import withDatesSubscription from '../Hocs/withDatesSubscription';
 
 import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
-import classNames from 'classnames';
 
 import './Calendar.css';
 
@@ -101,9 +100,9 @@ class CalendarMonth extends Component {
         'month'
       );
 
-      const tdClassName = classNames('date-cell', {
-        'other-month': isOtherMonth
-      });
+      const tdClassName = ['date-cell', isOtherMonth && 'other-month']
+        .filter(name => name)
+        .join(' ');
 
       return (
         <td
@@ -202,13 +201,13 @@ class CalendarMonth extends Component {
             {this._renderMonthDropDown()}
           </div>
           <div className="month-arrows">
-            <a onClick={this._monthBack}>
+            <button onClick={this._monthBack}>
               <i className="fa fa-caret-left fa-lg" title="Previous Month" />
-            </a>
+            </button>
             <h2>{this.state.selectedMoment.format('MMMM')}</h2>
-            <a onClick={this._monthForward}>
+            <button onClick={this._monthForward}>
               <i className="fa fa-caret-right fa-lg" title="Next Month" />
-            </a>
+            </button>
           </div>
           <div className="empty-space" />
         </div>

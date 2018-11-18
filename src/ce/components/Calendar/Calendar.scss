@@ -91,6 +91,15 @@ h1 {
   .empty-space {
     width: 300px;
   }
+  button {
+    // would rather use "initial" but that doesn't work for IE11
+    background-color: $standard-background;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .month-calendar-table {
@@ -99,7 +108,7 @@ h1 {
 
   th,
   td {
-    border: 3px solid $white;
+    border: 3px solid $standard-background;
     padding: 5px;
   }
 
