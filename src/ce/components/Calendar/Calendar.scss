@@ -92,7 +92,8 @@ h1 {
     width: 300px;
   }
   button {
-    background-color: inherit;
+    // would rather use "initial" but that doesn't work for IE11
+    background-color: $standard-background;
     border: none;
 
     &:hover {
@@ -107,7 +108,7 @@ h1 {
 
   th,
   td {
-    border: 3px solid $white;
+    border: 3px solid $standard-background;
     padding: 5px;
   }
 
