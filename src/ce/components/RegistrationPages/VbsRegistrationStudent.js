@@ -265,16 +265,20 @@ class VbsRegistrationStudent extends Component {
           size={2 * WIDTH_BASE}
           value={this.state.childName}
         />
-        <Text
-          id="childDob"
-          label="Child’s Date of Birth"
-          onChange={this._onChangeInput}
-          placeholder="mm/dd/yyyy"
-          required
-          size={1 * WIDTH_BASE}
-          value={this.state.childDob}
-        />
-        <h3>Parent/Guardian Information</h3>
+        {this.props.studentType === STUDENT_TYPES.CHILD && (
+          <>
+            <Text
+              id="childDob"
+              label="Child’s Date of Birth"
+              onChange={this._onChangeInput}
+              placeholder="mm/dd/yyyy"
+              required
+              size={1 * WIDTH_BASE}
+              value={this.state.childDob}
+            />
+            <h3>Parent/Guardian Information</h3>
+          </>
+        )}
         <Text
           id="parentEmail"
           label="Email Address"
@@ -282,15 +286,19 @@ class VbsRegistrationStudent extends Component {
           size={2 * WIDTH_BASE}
           value={this.state.parentEmail}
         />
-        <br />
-        <Text
-          id="parentName"
-          label="Parent Name"
-          onChange={this._onChangeInput}
-          required
-          size={2 * WIDTH_BASE}
-          value={this.state.parentName}
-        />
+        {this.props.studentType === STUDENT_TYPES.CHILD && (
+          <>
+            <br />
+            <Text
+              id="parentName"
+              label="Parent Name"
+              onChange={this._onChangeInput}
+              required
+              size={2 * WIDTH_BASE}
+              value={this.state.parentName}
+            />
+          </>
+        )}
         <Text
           id="parentPhone"
           label="Best Phone Number to Reach You"
