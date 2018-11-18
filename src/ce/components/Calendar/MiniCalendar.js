@@ -5,7 +5,6 @@ import moment from 'moment';
 import _ from 'lodash';
 
 import calendarDatesUtils from '../../utils/calendarDatesUtils';
-import classNames from 'classnames';
 
 import './MiniCalendar.css';
 import withDatesSubscription from '../Hocs/withDatesSubscription';
@@ -89,13 +88,19 @@ class MiniCalendar extends Component {
       const isSelectedDay = dayMoment.isSame(selectedDay, 'day');
       const isSelectedWeek = dayMoment.isSame(selectedDay, 'week');
 
-      const tdClassName = classNames('date-cell', {
-        'has-events': daysEventsCount,
-        clickable: daysEventsCount || allDatesClickable,
-        'other-month': isOtherMonth,
-        'selected-day': highlightSelectedDay && !highlightWeek && isSelectedDay,
-        'selected-week': highlightWeek && isSelectedWeek
-      });
+      const tdClassName = [
+        'date-cell',
+        daysEventsCount && 'has-events',
+        (daysEventsCount || allDatesClickable) && 'clickable',
+        isOtherMonth && 'other-month',
+        highlightSelectedDay &&
+          !highlightWeek &&
+          isSelectedDay &&
+          'selected-day',
+        highlightWeek && isSelectedWeek && 'selected-week'
+      ]
+        .filter(text => text)
+        .join(' ');
 
       let daysEventsMessage = '';
       if (daysEventsCount) {

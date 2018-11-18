@@ -25,6 +25,9 @@ $maroon: maroon;
 $green: green;
 $gray: gray;
 
+$standard-background: $white;
+$standard-text: $black;
+
 @mixin content-widths() {
   width: 80%;
   min-width: 800px;
