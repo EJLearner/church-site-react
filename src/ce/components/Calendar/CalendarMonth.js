@@ -8,7 +8,6 @@ import Droplist from '../Reusable/Droplist/Droplist';
 import withDatesSubscription from '../Hocs/withDatesSubscription';
 
 import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
-import classNames from 'classnames';
 
 import './Calendar.css';
 
@@ -101,9 +100,9 @@ class CalendarMonth extends Component {
         'month'
       );
 
-      const tdClassName = classNames('date-cell', {
-        'other-month': isOtherMonth
-      });
+      const tdClassName = ['date-cell', isOtherMonth && 'other-month']
+        .filter(name => name)
+        .join(' ');
 
       return (
         <td
