@@ -202,13 +202,13 @@ class CalendarMonth extends Component {
             {this._renderMonthDropDown()}
           </div>
           <div className="month-arrows">
-            <a onClick={this._monthBack}>
+            <button onClick={this._monthBack}>
               <i className="fa fa-caret-left fa-lg" title="Previous Month" />
-            </a>
+            </button>
             <h2>{this.state.selectedMoment.format('MMMM')}</h2>
-            <a onClick={this._monthForward}>
+            <button onClick={this._monthForward}>
               <i className="fa fa-caret-right fa-lg" title="Next Month" />
-            </a>
+            </button>
           </div>
           <div className="empty-space" />
         </div>
