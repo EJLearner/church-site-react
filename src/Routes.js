@@ -21,9 +21,10 @@ import TitleBar from './ce/components/TitleBar/TitleBar';
 import ThankYouPage from './ce/components/Reusable/ThankYouPage/ThankYouPage';
 import VbsCheckIn from './ce/components/CcVbsCheckinOut/VbsCheckin';
 import VbsCheckOut from './ce/components/CcVbsCheckinOut/VbsCheckout';
-import VbsRegistrationChild from './ce/components/RegistrationPages/VbsRegistrationChild';
 import VbsRegistrationLanding from './ce/components/RegistrationPages/VbsRegistrationLanding';
-import VbsRegistrationStudent from './ce/components/RegistrationPages/VbsRegistrationStudent';
+import VbsRegistrationStudent, {
+  STUDENT_TYPES as regStudentTypes
+} from './ce/components/RegistrationPages/VbsRegistrationStudent';
 import VbsRegistrationVolunteer from './ce/components/RegistrationPages/VbsRegistrationVolunteer';
 import Vision from './ce/components/Vision/Vision';
 import Where from './ce/components/Where/Where';
@@ -187,10 +188,18 @@ class Routes extends Component {
             )}
           />
           <Route
-            path={routePaths.CE_CC_REG_STUDENT}
+            path={routePaths.CE_VBS_REG_ADULT}
             render={() => (
               <BareCePage>
-                <VbsRegistrationStudent />
+                <VbsRegistrationStudent studentType={regStudentTypes.ADULT} />
+              </BareCePage>
+            )}
+          />
+          <Route
+            path={routePaths.CE_VBS_REG_CHILD}
+            render={() => (
+              <BareCePage>
+                <VbsRegistrationStudent studentType={regStudentTypes.CHILD} />
               </BareCePage>
             )}
           />

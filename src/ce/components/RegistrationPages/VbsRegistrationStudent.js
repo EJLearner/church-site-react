@@ -217,7 +217,7 @@ class VbsRegistrationStudent extends Component {
       if (responseError) {
         this.setState({postStatus: 'failure', responseError});
       } else {
-        saveRegistrationData(child, routePaths.CE_CC_REG_STUDENT);
+        saveRegistrationData(child, routePaths.CE_VBS_REG_STUDENT);
         this.setState({redirect: true});
       }
     });

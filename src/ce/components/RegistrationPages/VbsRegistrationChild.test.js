@@ -42,7 +42,7 @@ describe('VbsRegistrationChild', () => {
     );
 
     expect(baseRegistrationChild.props().routePath).to.equal(
-      routePaths.CE_CC_REG_STUDENT
+      routePaths.CE_VBS_REG_CHILD
     );
   });
 });

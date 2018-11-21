@@ -30,7 +30,7 @@ class VbsRegistrationChild extends Component {
         className="registration-page"
         headerContent={this._renderHeaderContent()}
         refName={`${constants.VBS_REGISTERED_CHILDREN_REF_NAME}/${vbsYear}`}
-        routePath={routePaths.CE_CC_REG_STUDENT}
+        routePath={routePaths.CE_VBS_REG_CHILD}
       />
     );
   }

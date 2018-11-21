@@ -12,24 +12,27 @@ const MAIN_PATH_CONSTANTS = {
   ADMIN: '/admin',
 
   CE_HOME: '/ce/',
+
+  CE_CALENDAR: '/ce/calendar',
   CE_CC_CHECKIN: '/ce/cc-checkin',
   CE_CC_CHECKOUT: '/ce/cc-checkout',
   CE_CC_REG_CHILD: '/ce/cc-registration-child',
   CE_CC_REG_LANDING: '/ce/cc-registration-landing',
   CE_CC_REG_VOLUNTEER: '/ce/cc-registration-volunteer',
-  CE_CALENDAR: '/ce/calendar',
   CE_IDEA_FORM: '/ce/ideaform',
   CE_THANK_YOU: '/ce/thank-you',
   CE_VBS_CHECKIN: '/ce/vbs-checkin',
   CE_VBS_CHECKOUT: '/ce/vbs-checkout',
+  CE_VBS_REG_ADULT: '/ce/vbs-registration-adult',
+  CE_VBS_REG_CHILD: '/ce/vbs-registration-child',
   CE_VBS_REG_LANDING: '/ce/vbs-registration-landing',
-  CE_CC_REG_STUDENT: '/ce/vbs-registration-student',
+  CE_VBS_REG_STUDENT: '/ce/vbs-registration-student',
   CE_VBS_REG_VOLUNTEER: '/ce/vbs-registration-volunteer',
+  CE_VISION: '/ce/vision',
   CE_WHAT: '/ce/what',
   CE_WHERE: '/ce/where',
   CE_WHO: '/ce/who',
   CE_WHY: '/ce/why',
-  CE_VISION: '/ce/vision',
   CE_YOUTH: '/ce/youth'
 };
 

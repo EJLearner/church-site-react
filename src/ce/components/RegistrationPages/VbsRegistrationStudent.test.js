@@ -1,9 +1,7 @@
 import VbsRegistrationStudent, {STUDENT_TYPES} from './VbsRegistrationStudent';
-import constants from '../../../utils/constants';
 import {shallow} from 'enzyme';
 import {expect} from 'chai';
 import React from 'react';
-import utils from '../../../utils/commonUtils';
 jest.mock('../../../utils/commonUtils.js');
 
 describe('VbsRegistrationStudent', () => {
