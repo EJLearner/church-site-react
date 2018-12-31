@@ -122,7 +122,7 @@ class VbsRegistrationStudent extends Component {
 
   constructor(props) {
     super(props);
-    this.state = this._getState();
+    this.state = this._getInitialState();
 
     this._onChangeInput = this._onChangeInput.bind(this);
     this._renderFormFields = this._renderFormFields.bind(this);
@@ -138,7 +138,7 @@ class VbsRegistrationStudent extends Component {
     }
   }
 
-  _getState() {
+  _getInitialState() {
     const registrationData = getRegistrationData(true) || {};
     resetRegistrationData();
 
