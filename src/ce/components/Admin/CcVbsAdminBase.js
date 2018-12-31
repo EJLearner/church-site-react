@@ -16,22 +16,20 @@ class CcVbsAdminBase extends Component {
       childrenTableRows: [],
       volunteerTableRows: []
     };
-  }
 
-  componentWillMount() {
-    this.convertFbObjectToState(
+    this._convertFbObjectToState(
       `${this.props.stringPrefix}RegisteredVolunteers/2018`,
       'volunteerTableRows',
       this._generateVolunteerRowObject
     );
 
-    this.convertFbObjectToState(
+    this._convertFbObjectToState(
       `${this.props.stringPrefix}RegisteredChildren/2018`,
       'childrenTableRows',
       this._generateChildRowObject
     );
 
-    this.convertFbObjectWithSubObjectsToState(
+    this._convertFbObjectWithSubObjectsToState(
       `${this.props.stringPrefix}Logbook`,
       'checkinTableRows',
       this._generateCheckinRowObject,
@@ -39,12 +37,12 @@ class CcVbsAdminBase extends Component {
     );
   }
 
-  convertFbObjectToState(refPath, stateName, generateRowObject) {
+  _convertFbObjectToState(refPath, stateName, generateRowObject) {
     firebase
       .database()
       .ref(refPath)
       .on('value', snapshot => {
-        const tableRows = this.getRowsFromSnapshot(
+        const tableRows = this._getRowsFromSnapshot(
           snapshot,
           generateRowObject,
           this
@@ -53,7 +51,7 @@ class CcVbsAdminBase extends Component {
       });
   }
 
-  convertFbObjectWithSubObjectsToState(refPath, stateName, generateRowObject) {
+  _convertFbObjectWithSubObjectsToState(refPath, stateName, generateRowObject) {
     firebase
       .database()
       .ref(refPath)
@@ -62,7 +60,7 @@ class CcVbsAdminBase extends Component {
 
         snapshot.forEach(snapshotItem => {
           const key = `${stateName}-${snapshotItem.key}`;
-          const tableRows = this.getRowsFromSnapshot(
+          const tableRows = this._getRowsFromSnapshot(
             snapshotItem,
             generateRowObject,
             this
@@ -75,7 +73,7 @@ class CcVbsAdminBase extends Component {
       });
   }
 
-  getRowsFromSnapshot(snapshot, generateRowObject, instance) {
+  _getRowsFromSnapshot(snapshot, generateRowObject, instance) {
     const tableRows = [];
     snapshot.forEach(snapshotItem => {
       const object = snapshotItem.val();
