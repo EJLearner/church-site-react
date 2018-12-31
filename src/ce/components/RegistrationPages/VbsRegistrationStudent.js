@@ -27,7 +27,7 @@ import ErrorList from '../Common/ErrorList';
 import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
 
 const WIDTH_BASE = 15;
-const USE_TEST_DATA = true;
+const USE_TEST_DATA = false;
 
 const STUDENT_TYPES = {
   CHILD: 'CHILD',
@@ -50,8 +50,8 @@ const FIELDS_INFO = {
     fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate]
   },
 
-  parentEmail: {
-    fieldId: 'parentEmail',
+  email: {
+    fieldId: 'email',
     label: 'Email Address',
     fieldRules: [fieldValidators.isValidEmail]
   },
@@ -63,8 +63,8 @@ const FIELDS_INFO = {
       fieldValidators.isAtLeastTwoCharacters
     ]
   },
-  parentPhone: {
-    fieldId: 'parentPhone',
+  phone: {
+    fieldId: 'phone',
     label: 'Phone Number',
     fieldRules: [fieldValidators.isPhoneNumber, fieldValidators.isNotEmpty]
   },
@@ -133,9 +133,9 @@ class VbsRegistrationStudent extends Component {
     const testData = {
       studentName: 'Delete Me',
       childDob: '01/01/2000',
-      parentEmail: '',
+      email: '',
       parentName: 'Test Parent',
-      parentPhone: '000-000-0000',
+      phone: '000-000-0000',
       address1: '0000 Test Address',
       address2: 'Test Floor',
       city: 'Apalooza',
@@ -295,11 +295,11 @@ class VbsRegistrationStudent extends Component {
           </>
         )}
         <Text
-          id="parentEmail"
+          id="email"
           label="Email Address"
           onChange={(value, id) => this._onChangeInput(value, id)}
           size={2 * WIDTH_BASE}
-          value={this.state.parentEmail}
+          value={this.state.email}
         />
         {this.props.studentType === STUDENT_TYPES.CHILD && (
           <>
@@ -308,12 +308,12 @@ class VbsRegistrationStudent extends Component {
           </>
         )}
         <Text
-          id="parentPhone"
+          id="phone"
           label="Best Phone Number to Reach You"
           onChange={(value, id) => this._onChangeInput(value, id)}
           required
           size={1 * WIDTH_BASE}
-          value={this.state.parentPhone}
+          value={this.state.phone}
         />
         <br />
         <Text
