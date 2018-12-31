@@ -188,6 +188,7 @@ class VbsRegistrationStudent extends Component {
       student[fieldId] = this.state[fieldId];
     });
 
+    let regAnotherStudentPath;
     if (studentType === STUDENT_TYPES.CHILD) {
       const standardChildDob = moment(
         this.state.childDob,
@@ -196,6 +197,14 @@ class VbsRegistrationStudent extends Component {
 
       student.childDob = standardChildDob;
       student.parentNames = [this.state.parentName];
+
+      regAnotherStudentPath = routePaths.CE_VBS_REG_CHILD;
+    } else {
+      delete student.childDob;
+      delete student.parentNames;
+      delete student.parentName;
+
+      regAnotherStudentPath = routePaths.CE_VBS_REG_ADULT;
     }
 
     const firebaseRef = firebase.database().ref(refName);
@@ -204,7 +213,7 @@ class VbsRegistrationStudent extends Component {
       if (responseError) {
         this.setState({postStatus: 'failure', responseError});
       } else {
-        saveRegistrationData(student, routePaths.CE_VBS_REG_STUDENT);
+        saveRegistrationData(student, regAnotherStudentPath);
         this.setState({redirect: true});
       }
     });
