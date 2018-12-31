@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 import firebase from '../../../firebase';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
@@ -162,7 +160,7 @@ class VbsRegistrationStudent extends Component {
     const useTestData = false;
     const fieldStates = {};
 
-    _.forEach(FIELDS_INFO, fieldData => {
+    Object.values(FIELDS_INFO).forEach(fieldData => {
       const {fieldId} = fieldData;
       let value = registrationData[fieldId] || '';
 
@@ -200,7 +198,7 @@ class VbsRegistrationStudent extends Component {
       parentNames: [this.state.parentName]
     };
 
-    _.forEach(FIELDS_INFO, ({fieldId}) => {
+    Object.values(FIELDS_INFO).forEach(({fieldId}) => {
       child[fieldId] = this.state[fieldId];
     });
 
@@ -226,7 +224,7 @@ class VbsRegistrationStudent extends Component {
   _onSubmitClick() {
     const errors = registrationUtils.getPageErrors(
       this.state,
-      _.values(FIELDS_INFO)
+      Object.values(FIELDS_INFO)
     );
 
     this.setState({
@@ -376,7 +374,8 @@ class VbsRegistrationStudent extends Component {
   }
 
   _renderSummaryModal() {
-    const fieldSummaryItems = _.values(FIELDS_INFO).reduce((items, field) => {
+    const fieldSummaryItems = Object.values(FIELDS_INFO).reduce(
+      (items, field) => {
       const {fieldId, label} = field;
 
       let value = this.state[fieldId];
@@ -393,7 +392,9 @@ class VbsRegistrationStudent extends Component {
       }
 
       return items;
-    }, []);
+      },
+      []
+    );
 
     return (
       <Modal className="registration-modal" onCloseClick={this._toggleModal}>
