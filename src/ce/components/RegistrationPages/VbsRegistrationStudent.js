@@ -189,11 +189,11 @@ class VbsRegistrationStudent extends Component {
 
   _pushToFirebase() {
     const vbsYear = utils.getVbsDbYear();
-    const childIdPropName = constants.VBS_REGISTERED_CHILD_ID_PROP;
+    const studentIdPropName = constants.VBS_REGISTERED_CHILD_ID_PROP;
     const refName = `${constants.VBS_REGISTERED_CHILDREN_REF_NAME}/${vbsYear}`;
 
     const child = {
-      [childIdPropName]: utils.generatePushID(),
+      [studentIdPropName]: utils.generatePushID(),
       registerTime: new Date().toISOString(),
       parentNames: [this.state.parentName]
     };
