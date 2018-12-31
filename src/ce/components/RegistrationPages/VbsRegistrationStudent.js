@@ -117,15 +117,7 @@ class VbsRegistrationStudent extends Component {
     studentType: PropTypes.oneOf(Object.values(STUDENT_TYPES))
   };
 
-  constructor(props) {
-    super(props);
-    this.state = this._getInitialState();
-
-    this._onChangeInput = this._onChangeInput.bind(this);
-    this._renderFormFields = this._renderFormFields.bind(this);
-    this._onSubmitClick = this._onSubmitClick.bind(this);
-    this._toggleModal = this._toggleModal.bind(this);
-  }
+  state = this._getInitialState();
 
   componentDidUpdate(prevProps, prevState) {
     if (!prevState.postStatus && this.state.postStatus) {
@@ -254,7 +246,7 @@ class VbsRegistrationStudent extends Component {
       <Text
         id="childDob"
         label="Child’s Date of Birth"
-        onChange={this._onChangeInput}
+        onChange={(value, id) => this._onChangeInput(value, id)}
         placeholder="mm/dd/yyyy"
         required
         size={1 * WIDTH_BASE}
@@ -268,7 +260,7 @@ class VbsRegistrationStudent extends Component {
       <Text
         id="parentName"
         label="Parent Name"
-        onChange={this._onChangeInput}
+        onChange={(value, id) => this._onChangeInput(value, id)}
         required
         size={2 * WIDTH_BASE}
         value={this.state.parentName}
@@ -282,7 +274,7 @@ class VbsRegistrationStudent extends Component {
         <Text
           id="studentName"
           label="Student’s Name"
-          onChange={this._onChangeInput}
+          onChange={(value, id) => this._onChangeInput(value, id)}
           required
           size={2 * WIDTH_BASE}
           value={this.state.studentName}
@@ -296,7 +288,7 @@ class VbsRegistrationStudent extends Component {
         <Text
           id="parentEmail"
           label="Email Address"
-          onChange={this._onChangeInput}
+          onChange={(value, id) => this._onChangeInput(value, id)}
           size={2 * WIDTH_BASE}
           value={this.state.parentEmail}
         />
@@ -309,7 +301,7 @@ class VbsRegistrationStudent extends Component {
         <Text
           id="parentPhone"
           label="Best Phone Number to Reach You"
-          onChange={this._onChangeInput}
+          onChange={(value, id) => this._onChangeInput(value, id)}
           required
           size={1 * WIDTH_BASE}
           value={this.state.parentPhone}
@@ -318,7 +310,7 @@ class VbsRegistrationStudent extends Component {
         <Text
           id="address1"
           label="Address Line 1"
-          onChange={this._onChangeInput}
+          onChange={(value, id) => this._onChangeInput(value, id)}
           required
           size={4 * WIDTH_BASE}
           value={this.state.address1}
@@ -327,7 +319,7 @@ class VbsRegistrationStudent extends Component {
         <Text
           id="address2"
           label="Address Line 2"
-          onChange={this._onChangeInput}
+          onChange={(value, id) => this._onChangeInput(value, id)}
           size={4 * WIDTH_BASE}
           value={this.state.address2}
         />
@@ -335,7 +327,7 @@ class VbsRegistrationStudent extends Component {
         <Text
           id="city"
           label="City"
-          onChange={this._onChangeInput}
+          onChange={(value, id) => this._onChangeInput(value, id)}
           required
           size={1.5 * WIDTH_BASE}
           value={this.state.city}
@@ -343,7 +335,7 @@ class VbsRegistrationStudent extends Component {
         <Text
           id="state"
           label="State"
-          onChange={this._onChangeInput}
+          onChange={(value, id) => this._onChangeInput(value, id)}
           required
           size={1.5 * WIDTH_BASE}
           value={this.state.state}
@@ -352,7 +344,7 @@ class VbsRegistrationStudent extends Component {
         <Text
           id="zip"
           label="ZIP Code"
-          onChange={this._onChangeInput}
+          onChange={(value, id) => this._onChangeInput(value, id)}
           required
           size={Math.floor(0.8 * WIDTH_BASE)}
           value={this.state.zip}
@@ -362,7 +354,7 @@ class VbsRegistrationStudent extends Component {
           className="registration-checkbox"
           id="subscribe"
           label="I'd like to know what other exciting events you have going on in the Temple!"
-          onChange={this._onChangeInput}
+          onChange={(value, id) => this._onChangeInput(value, id)}
           value="subscribe"
         />
         <br />
@@ -370,14 +362,14 @@ class VbsRegistrationStudent extends Component {
           columns={4 * WIDTH_BASE}
           id="knownAllergies"
           label="List any known food allergies. Mark N/A if none."
-          onChange={this._onChangeInput}
+          onChange={(value, id) => this._onChangeInput(value, id)}
           required
           size={200}
           textArea
           value={this.state.knownAllergies}
         />
         <br />
-        <Button onClick={this._onSubmitClick}>Submit</Button>
+        <Button onClick={() => this._onSubmitClick()}>Submit</Button>
       </div>
     );
   }
@@ -407,13 +399,16 @@ class VbsRegistrationStudent extends Component {
     );
 
     return (
-      <Modal className="registration-modal" onCloseClick={this._toggleModal}>
+      <Modal
+        className="registration-modal"
+        onCloseClick={() => this._toggleModal()}
+      >
         <h2>Please take a moment to confirm your data</h2>
         <ul>{fieldSummaryItems}</ul>
         <Button onClick={() => this._pushToFirebase(studentType)}>
           Confirm
         </Button>
-        <Button onClick={this._toggleModal}>Edit</Button>
+        <Button onClick={() => this._toggleModal()}>Edit</Button>
       </Modal>
     );
   }
@@ -435,23 +430,20 @@ class VbsRegistrationStudent extends Component {
       );
     }
 
-    const formFields = this._renderFormFields();
-    const modal =
-      showModal && postStatus !== 'failure' && this._renderSummaryModal();
     const hasErrors = Boolean(errors.length);
 
     return (
       <div className="registration-page">
         {this._renderHeaderContent()}
         {hasErrors && <ErrorList errors={errors} />}
-        {formFields}
+        {this._renderFormFields()}
         {Boolean(hasErrors || postStatus) && (
           <PostSubmitStatusMessage
             postStatus={postStatus}
             responseError={responseError}
           />
         )}
-        {modal}
+        {showModal && postStatus !== 'failure' && this._renderSummaryModal()}
       </div>
     );
   }
