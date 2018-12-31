@@ -192,14 +192,14 @@ class VbsRegistrationStudent extends Component {
     const studentIdPropName = constants.VBS_REGISTERED_STUDENT_ID_PROP;
     const refName = `${constants.VBS_REGISTERED_STUDENT_REF_NAME}/${vbsYear}`;
 
-    const child = {
+    const student = {
       [studentIdPropName]: utils.generatePushID(),
       registerTime: new Date().toISOString(),
       parentNames: [this.state.parentName]
     };
 
     Object.values(FIELDS_INFO).forEach(({fieldId}) => {
-      child[fieldId] = this.state[fieldId];
+      student[fieldId] = this.state[fieldId];
     });
 
     const standardChildDob = moment(
@@ -207,15 +207,15 @@ class VbsRegistrationStudent extends Component {
       constants.VALID_INPUT_DATE_FORMATS
     ).format(constants.INTERNAL_DATE_FORMAT);
 
-    child.childDob = standardChildDob;
+    student.childDob = standardChildDob;
 
     const firebaseRef = firebase.database().ref(refName);
 
-    firebaseRef.push(child, responseError => {
+    firebaseRef.push(student, responseError => {
       if (responseError) {
         this.setState({postStatus: 'failure', responseError});
       } else {
-        saveRegistrationData(child, routePaths.CE_VBS_REG_STUDENT);
+        saveRegistrationData(student, routePaths.CE_VBS_REG_STUDENT);
         this.setState({redirect: true});
       }
     });
