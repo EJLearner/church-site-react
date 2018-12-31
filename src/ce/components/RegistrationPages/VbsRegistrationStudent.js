@@ -36,7 +36,7 @@ const STUDENT_TYPES = {
 const FIELDS_INFO = {
   studentName: {
     fieldId: `studentName`,
-    label: 'Child’s name',
+    label: 'Student’s name',
     fieldRules: [
       fieldValidators.isNotEmpty,
       fieldValidators.isAtLeastTwoCharacters
