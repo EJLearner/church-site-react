@@ -15,7 +15,7 @@ class VbsCheckin extends Component {
     return (
       <BaseCheckin
         logbookRefName={constants.VBS_LOGBOOK_REF_NAME}
-        registerLink={routePaths.CE_VBS_REG_STUDENT}
+        registerLink={routePaths.CE_VBS_REG_LANDING}
         registeredChildrenRefName={registeredChildrenRefName}
         registryAccessRefName={constants.VBS_REGISTRY_ACCESS_REF_NAME}
         registryIdName={constants.VBS_REGISTERED_CHILD_ID_PROP}
