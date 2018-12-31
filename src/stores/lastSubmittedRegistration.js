@@ -10,7 +10,7 @@ const getRegistrationData = removeNameAndDob => {
     let returnedData = Object.assign({}, _lastSubmittedRegistration);
 
     if (removeNameAndDob) {
-      delete returnedData.childName;
+      delete returnedData.studentName;
       delete returnedData.childDob;
     }
 
