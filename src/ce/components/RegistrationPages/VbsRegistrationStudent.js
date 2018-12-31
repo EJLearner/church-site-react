@@ -27,7 +27,7 @@ import ErrorList from '../Common/ErrorList';
 import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
 
 const WIDTH_BASE = 15;
-const USE_TEST_DATA = false;
+const USE_TEST_DATA = true;
 
 const STUDENT_TYPES = {
   CHILD: 'CHILD',
@@ -124,7 +124,6 @@ class VbsRegistrationStudent extends Component {
     this._onChangeInput = this._onChangeInput.bind(this);
     this._renderFormFields = this._renderFormFields.bind(this);
     this._onSubmitClick = this._onSubmitClick.bind(this);
-    this._pushToFirebase = this._pushToFirebase.bind(this);
     this._toggleModal = this._toggleModal.bind(this);
   }
 
@@ -183,27 +182,29 @@ class VbsRegistrationStudent extends Component {
     this.setState({[id]: value, postStatus: undefined});
   }
 
-  _pushToFirebase() {
+  _pushToFirebase(studentType) {
     const vbsYear = utils.getVbsDbYear();
     const studentIdPropName = constants.VBS_REGISTERED_STUDENT_ID_PROP;
     const refName = `${constants.VBS_REGISTERED_STUDENT_REF_NAME}/${vbsYear}`;
 
     const student = {
       [studentIdPropName]: utils.generatePushID(),
-      registerTime: new Date().toISOString(),
-      parentNames: [this.state.parentName]
+      registerTime: new Date().toISOString()
     };
 
     Object.values(FIELDS_INFO).forEach(({fieldId}) => {
       student[fieldId] = this.state[fieldId];
     });
 
-    const standardChildDob = moment(
-      this.state.childDob,
-      constants.VALID_INPUT_DATE_FORMATS
-    ).format(constants.INTERNAL_DATE_FORMAT);
+    if (studentType === STUDENT_TYPES.CHILD) {
+      const standardChildDob = moment(
+        this.state.childDob,
+        constants.VALID_INPUT_DATE_FORMATS
+      ).format(constants.INTERNAL_DATE_FORMAT);
 
-    student.childDob = standardChildDob;
+      student.childDob = standardChildDob;
+      student.parentNames = [this.state.parentName];
+    }
 
     const firebaseRef = firebase.database().ref(refName);
 
@@ -382,6 +383,7 @@ class VbsRegistrationStudent extends Component {
   }
 
   _renderSummaryModal() {
+    const {studentType} = this.props;
     const fieldSummaryItems = Object.values(FIELDS_INFO).reduce(
       (items, field) => {
         const {fieldId, label} = field;
@@ -408,7 +410,9 @@ class VbsRegistrationStudent extends Component {
       <Modal className="registration-modal" onCloseClick={this._toggleModal}>
         <h2>Please take a moment to confirm your data</h2>
         <ul>{fieldSummaryItems}</ul>
-        <Button onClick={this._pushToFirebase}>Confirm</Button>
+        <Button onClick={() => this._pushToFirebase(studentType)}>
+          Confirm
+        </Button>
         <Button onClick={this._toggleModal}>Edit</Button>
       </Modal>
     );
