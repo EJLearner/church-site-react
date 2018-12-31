@@ -288,7 +288,7 @@ class VbsRegistrationStudent extends Component {
         />
         {this.props.studentType === STUDENT_TYPES.CHILD && (
           <>
-            this._renderChildNameInput()
+            {this._renderChildNameInput()}
             <h3>Parent/Guardian Information</h3>
           </>
         )}
@@ -302,7 +302,7 @@ class VbsRegistrationStudent extends Component {
         {this.props.studentType === STUDENT_TYPES.CHILD && (
           <>
             <br />
-            this._renderParentNameInput()
+            {this._renderParentNameInput()}
           </>
         )}
         <Text
