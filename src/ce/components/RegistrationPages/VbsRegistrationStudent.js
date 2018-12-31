@@ -116,10 +116,6 @@ class VbsRegistrationStudent extends Component {
     studentType: PropTypes.oneOf(Object.values(STUDENT_TYPES))
   };
 
-  static defaultProps = {
-    studentType: STUDENT_TYPES.CHILD
-  };
-
   constructor(props) {
     super(props);
     this.state = this._getInitialState();
@@ -252,6 +248,33 @@ class VbsRegistrationStudent extends Component {
     );
   }
 
+  _renderChildNameInput() {
+    return (
+      <Text
+        id="childDob"
+        label="Child’s Date of Birth"
+        onChange={this._onChangeInput}
+        placeholder="mm/dd/yyyy"
+        required
+        size={1 * WIDTH_BASE}
+        value={this.state.childDob}
+      />
+    );
+  }
+
+  _renderParentNameInput() {
+    return (
+      <Text
+        id="parentName"
+        label="Parent Name"
+        onChange={this._onChangeInput}
+        required
+        size={2 * WIDTH_BASE}
+        value={this.state.parentName}
+      />
+    );
+  }
+
   _renderFormFields() {
     return (
       <div id="form-fields">
@@ -265,15 +288,7 @@ class VbsRegistrationStudent extends Component {
         />
         {this.props.studentType === STUDENT_TYPES.CHILD && (
           <>
-            <Text
-              id="childDob"
-              label="Child’s Date of Birth"
-              onChange={this._onChangeInput}
-              placeholder="mm/dd/yyyy"
-              required
-              size={1 * WIDTH_BASE}
-              value={this.state.childDob}
-            />
+            this._renderChildNameInput()
             <h3>Parent/Guardian Information</h3>
           </>
         )}
@@ -287,14 +302,7 @@ class VbsRegistrationStudent extends Component {
         {this.props.studentType === STUDENT_TYPES.CHILD && (
           <>
             <br />
-            <Text
-              id="parentName"
-              label="Parent Name"
-              onChange={this._onChangeInput}
-              required
-              size={2 * WIDTH_BASE}
-              value={this.state.parentName}
-            />
+            this._renderParentNameInput()
           </>
         )}
         <Text
