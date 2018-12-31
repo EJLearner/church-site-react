@@ -27,6 +27,7 @@ import ErrorList from '../Common/ErrorList';
 import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
 
 const WIDTH_BASE = 15;
+const USE_TEST_DATA = false;
 
 const STUDENT_TYPES = {
   CHILD: 'CHILD',
@@ -153,7 +154,6 @@ class VbsRegistrationStudent extends Component {
       knownAllergies: 'Things I am allergic to'
     };
 
-    const useTestData = false;
     const fieldStates = {};
 
     Object.values(FIELDS_INFO).forEach(fieldData => {
@@ -164,7 +164,7 @@ class VbsRegistrationStudent extends Component {
         value = fieldData.default;
       }
 
-      if (value === '' && useTestData) {
+      if (value === '' && USE_TEST_DATA) {
         value = testData[fieldId];
       }
 
