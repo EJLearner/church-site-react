@@ -34,8 +34,8 @@ const STUDENT_TYPES = {
 };
 
 const FIELDS_INFO = {
-  childName: {
-    fieldId: `childName`,
+  studentName: {
+    fieldId: `studentName`,
     label: 'Child’s name',
     fieldRules: [
       fieldValidators.isNotEmpty,
@@ -143,7 +143,7 @@ class VbsRegistrationStudent extends Component {
     resetRegistrationData();
 
     const testData = {
-      childName: 'Delete Me',
+      studentName: 'Delete Me',
       childDob: '01/01/2000',
       parentEmail: '',
       parentName: 'Test Parent',
@@ -256,12 +256,12 @@ class VbsRegistrationStudent extends Component {
     return (
       <div id="form-fields">
         <Text
-          id="childName"
+          id="studentName"
           label="Student’s Name"
           onChange={this._onChangeInput}
           required
           size={2 * WIDTH_BASE}
-          value={this.state.childName}
+          value={this.state.studentName}
         />
         {this.props.studentType === STUDENT_TYPES.CHILD && (
           <>
@@ -376,22 +376,22 @@ class VbsRegistrationStudent extends Component {
   _renderSummaryModal() {
     const fieldSummaryItems = Object.values(FIELDS_INFO).reduce(
       (items, field) => {
-      const {fieldId, label} = field;
+        const {fieldId, label} = field;
 
-      let value = this.state[fieldId];
-      if (typeof value === 'boolean') {
-        value = value ? 'Yes' : 'No';
-      }
+        let value = this.state[fieldId];
+        if (typeof value === 'boolean') {
+          value = value ? 'Yes' : 'No';
+        }
 
-      if (value) {
-        items.push(
-          <li key={fieldId}>
-            <span className="bold">{label}</span>: {value}
-          </li>
-        );
-      }
+        if (value) {
+          items.push(
+            <li key={fieldId}>
+              <span className="bold">{label}</span>: {value}
+            </li>
+          );
+        }
 
-      return items;
+        return items;
       },
       []
     );
