@@ -34,90 +34,12 @@ const STUDENT_TYPES = {
   ADULT: 'ADULT'
 };
 
-const FIELDS_INFO = {
-  studentName: {
-    fieldId: `studentName`,
-    label: 'Student’s name',
-    fieldRules: [
-      fieldValidators.isNotEmpty,
-      fieldValidators.isAtLeastTwoCharacters
-    ]
-  },
-
-  childDob: {
-    fieldId: `childDob`,
-    label: 'Child’s Date of Birth',
-    fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate]
-  },
-
-  email: {
-    fieldId: 'email',
-    label: 'Email Address',
-    fieldRules: [fieldValidators.isValidEmail]
-  },
-  parentName: {
-    fieldId: 'parentName',
-    label: 'Parent’s Name',
-    fieldRules: [
-      fieldValidators.isNotEmpty,
-      fieldValidators.isAtLeastTwoCharacters
-    ]
-  },
-  phone: {
-    fieldId: 'phone',
-    label: 'Phone Number',
-    fieldRules: [fieldValidators.isPhoneNumber, fieldValidators.isNotEmpty]
-  },
-  address1: {
-    fieldId: 'address1',
-    label: 'Address Line 1',
-    fieldRules: [
-      fieldValidators.isNotEmpty,
-      fieldValidators.isAtLeastTwoCharacters
-    ]
-  },
-  address2: {fieldId: 'address2', label: 'Address Line 2'},
-  city: {
-    fieldId: 'city',
-    label: 'City',
-    fieldRules: [
-      fieldValidators.isAllLetters,
-      fieldValidators.isNotEmpty,
-      fieldValidators.isAtLeastTwoCharacters
-    ]
-  },
-  state: {
-    fieldId: 'state',
-    label: 'State',
-    fieldRules: [
-      fieldValidators.isAllLetters,
-      fieldValidators.isNotEmpty,
-      fieldValidators.isAtLeastTwoCharacters
-    ]
-  },
-  zip: {
-    fieldId: 'zip',
-    label: 'ZIP Code',
-    fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isValidZip]
-  },
-  subscribe: {
-    fieldId: 'subscribe',
-    default: false,
-    label: 'Subscribe'
-  },
-  knownAllergies: {
-    fieldId: 'knownAllergies',
-    label: 'Known Allergies',
-    fieldRules: [fieldValidators.isNotEmpty]
-  }
-};
-
 class VbsRegistrationStudent extends Component {
   static propTypes = {
     studentType: PropTypes.oneOf(Object.values(STUDENT_TYPES))
   };
 
-  state = this._getInitialState();
+  state = this._initialState;
 
   componentDidUpdate(prevProps, prevState) {
     if (!prevState.postStatus && this.state.postStatus) {
@@ -126,7 +48,93 @@ class VbsRegistrationStudent extends Component {
     }
   }
 
-  _getInitialState() {
+  get _fieldsInfo() {
+    const fieldObject = {
+      studentName: {
+        fieldId: `studentName`,
+        label: 'Student’s name',
+        fieldRules: [
+          fieldValidators.isNotEmpty,
+          fieldValidators.isAtLeastTwoCharacters
+        ]
+      },
+
+      childDob: {
+        fieldId: `childDob`,
+        label: 'Child’s Date of Birth',
+        fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate]
+      },
+
+      email: {
+        fieldId: 'email',
+        label: 'Email Address',
+        fieldRules: [fieldValidators.isValidEmail]
+      },
+      parentName: {
+        fieldId: 'parentName',
+        label: 'Parent’s Name',
+        fieldRules: [
+          fieldValidators.isNotEmpty,
+          fieldValidators.isAtLeastTwoCharacters
+        ]
+      },
+      phone: {
+        fieldId: 'phone',
+        label: 'Phone Number',
+        fieldRules: [fieldValidators.isPhoneNumber, fieldValidators.isNotEmpty]
+      },
+      address1: {
+        fieldId: 'address1',
+        label: 'Address Line 1',
+        fieldRules: [
+          fieldValidators.isNotEmpty,
+          fieldValidators.isAtLeastTwoCharacters
+        ]
+      },
+      address2: {fieldId: 'address2', label: 'Address Line 2'},
+      city: {
+        fieldId: 'city',
+        label: 'City',
+        fieldRules: [
+          fieldValidators.isAllLetters,
+          fieldValidators.isNotEmpty,
+          fieldValidators.isAtLeastTwoCharacters
+        ]
+      },
+      state: {
+        fieldId: 'state',
+        label: 'State',
+        fieldRules: [
+          fieldValidators.isAllLetters,
+          fieldValidators.isNotEmpty,
+          fieldValidators.isAtLeastTwoCharacters
+        ]
+      },
+      zip: {
+        fieldId: 'zip',
+        label: 'ZIP Code',
+        fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isValidZip]
+      },
+      subscribe: {
+        fieldId: 'subscribe',
+        default: false,
+        label: 'Subscribe'
+      },
+      knownAllergies: {
+        fieldId: 'knownAllergies',
+        label: 'Known Allergies',
+        fieldRules: [fieldValidators.isNotEmpty]
+      }
+    };
+    if (this.props.studentType === STUDENT_TYPES.ADULT) {
+      delete fieldObject.parentName;
+      delete fieldObject.childDob;
+    }
+
+    return fieldObject;
+  }
+
+  get _initialState() {
     const registrationData = getRegistrationData(true) || {};
     resetRegistrationData();
 
@@ -147,7 +155,8 @@ class VbsRegistrationStudent extends Component {
 
     const fieldStates = {};
 
-    Object.values(FIELDS_INFO).forEach(fieldData => {
+    // setting values for field states
+    Object.values(this._fieldsInfo).forEach(fieldData => {
       const {fieldId} = fieldData;
       let value = registrationData[fieldId] || '';
 
@@ -184,7 +193,7 @@ class VbsRegistrationStudent extends Component {
       registerTime: new Date().toISOString()
     };
 
-    Object.values(FIELDS_INFO).forEach(({fieldId}) => {
+    Object.values(this._fieldsInfo).forEach(({fieldId}) => {
       student[fieldId] = this.state[fieldId];
     });
 
@@ -201,7 +210,6 @@ class VbsRegistrationStudent extends Component {
       regAnotherStudentPath = routePaths.CE_VBS_REG_CHILD;
     } else {
       delete student.childDob;
-      delete student.parentNames;
       delete student.parentName;
 
       regAnotherStudentPath = routePaths.CE_VBS_REG_ADULT;
@@ -222,7 +230,7 @@ class VbsRegistrationStudent extends Component {
   _onSubmitClick() {
     const errors = registrationUtils.getPageErrors(
       this.state,
-      Object.values(FIELDS_INFO)
+      Object.values(this._fieldsInfo)
     );
 
     this.setState({
@@ -278,6 +286,7 @@ class VbsRegistrationStudent extends Component {
   }
 
   _renderFormFields() {
+    const isChild = this.props.studentType === STUDENT_TYPES.CHILD;
     return (
       <div id="form-fields">
         <Text
@@ -288,7 +297,7 @@ class VbsRegistrationStudent extends Component {
           size={2 * WIDTH_BASE}
           value={this.state.studentName}
         />
-        {this.props.studentType === STUDENT_TYPES.CHILD && (
+        {isChild && (
           <>
             {this._renderChildNameInput()}
             <h3>Parent/Guardian Information</h3>
@@ -301,7 +310,7 @@ class VbsRegistrationStudent extends Component {
           size={2 * WIDTH_BASE}
           value={this.state.email}
         />
-        {this.props.studentType === STUDENT_TYPES.CHILD && (
+        {isChild && (
           <>
             <br />
             {this._renderParentNameInput()}
@@ -385,7 +394,7 @@ class VbsRegistrationStudent extends Component {
 
   _renderSummaryModal() {
     const {studentType} = this.props;
-    const fieldSummaryItems = Object.values(FIELDS_INFO).reduce(
+    const fieldSummaryItems = Object.values(this._fieldsInfo).reduce(
       (items, field) => {
         const {fieldId, label} = field;
 
