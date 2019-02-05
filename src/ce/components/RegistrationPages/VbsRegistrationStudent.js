@@ -197,6 +197,8 @@ class VbsRegistrationStudent extends Component {
       student[fieldId] = this.state[fieldId];
     });
 
+    student.type = studentType;
+
     let regAnotherStudentPath;
     if (studentType === STUDENT_TYPES.CHILD) {
       const standardChildDob = moment(
