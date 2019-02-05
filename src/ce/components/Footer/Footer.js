@@ -23,7 +23,7 @@ class Footer extends Component {
                   <Link to={routePaths.CE_WHY}>Why We Are Here</Link>
                 </li>
                 <li>
-                  <Link to={routePaths.CE_WHERE}>Where Are We Going</Link>
+                  <Link to={routePaths.CE_YOUTH}>Programs</Link>
                 </li>
               </ul>
             </div>

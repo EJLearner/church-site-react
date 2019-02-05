@@ -25,7 +25,6 @@ import VbsRegistrationChild from './ce/components/RegistrationPages/VbsRegistrat
 import VbsRegistrationLanding from './ce/components/RegistrationPages/VbsRegistrationLanding';
 import VbsRegistrationVolunteer from './ce/components/RegistrationPages/VbsRegistrationVolunteer';
 import Vision from './ce/components/Vision/Vision';
-import Where from './ce/components/Where/Where';
 import WhoWeAre from './ce/components/WhoWeAre/WhoWeAre';
 import Why from './ce/components/Why/Why';
 import Youth from './ce/components/Youth/Youth';
@@ -48,8 +47,8 @@ class Routes extends Component {
         text: `Why We Are Here`
       },
       {
-        path: routePaths.CE_WHERE,
-        text: `Where We Are Going`
+        path: routePaths.CE_YOUTH,
+        text: `Programs`
       },
       {
         path: routePaths.CE_IDEA_FORM,
@@ -152,7 +151,6 @@ class Routes extends Component {
             )}
           />
 
-
           <Route component={Calendar} path={routePaths.CE_CALENDAR} />
           <Route
             path={routePaths.CE_CC_REG_CHILD}
@@ -243,10 +241,10 @@ class Routes extends Component {
             )}
           />
           <Route
-            path={routePaths.CE_WHERE}
+            path="/ce/where"
             render={() => (
               <FullCePage>
-                <Where />
+                <Youth />
               </FullCePage>
             )}
           />

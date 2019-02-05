@@ -26,7 +26,6 @@ const MAIN_PATH_CONSTANTS = {
   CE_VBS_REG_LANDING: '/ce/vbs-registration-landing',
   CE_VBS_REG_VOLUNTEER: '/ce/vbs-registration-volunteer',
   CE_WHAT: '/ce/what',
-  CE_WHERE: '/ce/where',
   CE_WHO: '/ce/who',
   CE_WHY: '/ce/why',
   CE_VISION: '/ce/vision',
