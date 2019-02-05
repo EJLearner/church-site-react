@@ -35,7 +35,10 @@ const HomeSquares = props => {
         <Announcements />
       </HomeSquare>
 
-      <HomeSquare linkTo={routePaths.CE_YOUTH} title="Youth Ministries">
+      <HomeSquare
+        linkTo={routePaths.CE_YOUTH_CHILDRENS_CHURCH}
+        title="Children’s Church"
+      >
         <img alt="Children" src={kidsPic} />
       </HomeSquare>
 
