@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import _ from 'lodash';
-
 import './RegistrationLanding.css';
 
 const types = {
@@ -21,18 +19,30 @@ const RegistrationLanding = props => {
           <span className="first-part">Register </span>
           <span className="rest-of-sentence">for a Class</span>
         </div>
-        <button onClick={props.onClickAttend}>
-          I want to attend {props.type}.
-        </button>
+        <div className="button-div">
+          {props.onClickAdultAttend && (
+            <>
+              <button onClick={props.onClickAdultAttend}>
+                I want to attend {props.type}.
+              </button>
+              <br />
+            </>
+          )}
+          <button onClick={props.onClickChildAttend}>
+            I want my child to attend {props.type}.
+          </button>
+        </div>
       </div>
       <div className="right-side">
         <div className="sentence">
           <span className="first-part">Sign Up </span>
           <span className="rest-of-sentence">to Volunteer</span>
         </div>
-        <button onClick={props.onClickVolunteer}>
-          I want to be a volunteer.
-        </button>
+        <div className="button-div">
+          <button onClick={props.onClickVolunteer}>
+            I want to be a volunteer.
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -40,9 +50,10 @@ const RegistrationLanding = props => {
 
 RegistrationLanding.propTypes = {
   imgPath: PropTypes.string,
-  onClickAttend: PropTypes.func.isRequired,
+  onClickAdultAttend: PropTypes.func,
+  onClickChildAttend: PropTypes.func.isRequired,
   onClickVolunteer: PropTypes.func.isRequired,
-  type: PropTypes.oneOf(_.values(types))
+  type: PropTypes.oneOf(Object.values(types))
 };
 
 RegistrationLanding.TYPES = types;

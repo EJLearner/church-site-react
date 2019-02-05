@@ -22,7 +22,7 @@ class ThankYouPage extends Component {
         <h1>Thank you for {this.props.location.state.forMessage}</h1>
         <h2>
           {registrationData && (
-            <Link to={routePath}>Register another child</Link>
+            <Link to={routePath}>Register another student</Link>
           )}
         </h2>
         <h2>

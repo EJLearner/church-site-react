@@ -8,11 +8,7 @@ import ContactLine from '../Reusable/ContactLine';
 import VolunteerSect from './Shared/VolunteerSect';
 
 class VacationBibleSchool extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-    this._setPageState = this._setPageState.bind(this);
-  }
+  state = {};
 
   _setPageState(path) {
     this.setState({redirect: path});
@@ -56,14 +52,15 @@ class VacationBibleSchool extends Component {
         <VolunteerSect
           buttonClass="vbs"
           name="VBS"
-          registerButtonOnClick={this._setPageState.bind(
-            null,
-            routePaths.CE_VBS_REG_CHILD
-          )}
-          volunteerButtonOnClick={this._setPageState.bind(
-            null,
-            routePaths.CE_VBS_REG_VOLUNTEER
-          )}
+          registerAdultButtonOnClick={() =>
+            this._setPageState(routePaths.CE_VBS_REG_ADULT)
+          }
+          registerChildButtonOnClick={() =>
+            this._setPageState(routePaths.CE_VBS_REG_CHILD)
+          }
+          volunteerButtonOnClick={() =>
+            this._setPageState(routePaths.CE_VBS_REG_VOLUNTEER)
+          }
         />
       </div>
     );
