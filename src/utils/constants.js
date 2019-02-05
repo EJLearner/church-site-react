@@ -6,6 +6,8 @@ const constants = {
   VBS_REGISTRY_ACCESS_REF_NAME: 'user_groups/vbsRegAccess',
   VBS_REGISTERED_CHILD_ID_PROP: 'vbsRegisteredChildrenId',
   VBS_REGISTERED_CHILDREN_REF_NAME: 'vbsRegisteredChildren',
+  VBS_REGISTERED_STUDENT_ID_PROP: 'vbsRegisteredStudentId',
+  VBS_REGISTERED_STUDENT_REF_NAME: 'vbsRegisteredStudents',
   VBS_REGISTERED_VOLUNTEER_ID_PROP: 'vbsRegisteredVolunteersId',
   VBS_REGISTERED_VOLUNTEER_REF_NAME: 'vbsRegisteredVolunteers',
 

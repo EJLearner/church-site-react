@@ -8,11 +8,7 @@ import ContactLine from '../Reusable/ContactLine';
 import VolunteerSect from './Shared/VolunteerSect';
 
 class ChildrensChurch extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-    this._setPageState = this._setPageState.bind(this);
-  }
+  state = {};
 
   _setPageState(path) {
     this.setState({redirect: path});
@@ -52,14 +48,12 @@ class ChildrensChurch extends Component {
         <VolunteerSect
           buttonClass="childrens-church"
           name="Children’s Church"
-          registerButtonOnClick={this._setPageState.bind(
-            null,
-            routePaths.CE_CC_REG_CHILD
-          )}
-          volunteerButtonOnClick={this._setPageState.bind(
-            null,
-            routePaths.CE_CC_REG_VOLUNTEER
-          )}
+          registerChildButtonOnClick={() =>
+            this._setPageState(routePaths.CE_CC_REG_CHILD)
+          }
+          volunteerButtonOnClick={() =>
+            this._setPageState(routePaths.CE_CC_REG_VOLUNTEER)
+          }
         />
       </div>
     );

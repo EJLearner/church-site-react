@@ -32,12 +32,11 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
-  buttonShape: PropTypes.oneOf(Object.keys(STYLES).map(key => STYLES[key])),
+  buttonShape: PropTypes.oneOf(Object.values(STYLES)),
   children: PropTypes.any,
   className: PropTypes.string,
   onClick: PropTypes.func.isRequired
 };
 
-Button.STYLES = STYLES;
-
+export {STYLES};
 export default Button;

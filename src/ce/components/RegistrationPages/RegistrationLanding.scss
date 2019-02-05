@@ -5,17 +5,24 @@
   flex-grow: 2;
   position: relative;
 
-  button {
+  .button-div {
     position: absolute;
+    background-color: transparent;
+    color: inherit;
+    display: block;
+    margin: 0 auto;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 20%;
+  }
+
+  button {
     background-color: transparent;
     border: 1px solid;
     color: inherit;
     display: block;
     padding: 1.5em;
     margin: 0 auto;
-    left: 50%;
-    transform: translate(-50%);
-    bottom: 20%;
   }
 }
 

@@ -8,12 +8,7 @@ import BaseRegistrationLanding from './BaseRegistrationLanding.js';
 import leftPicture from './ccregpicture.png';
 
 class CcRegistrationLanding extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-
-    this._setPageState = this._setPageState.bind(this);
-  }
+  state = {};
 
   _setPageState(path) {
     this.setState({redirect: path});
@@ -27,14 +22,12 @@ class CcRegistrationLanding extends Component {
     return (
       <BaseRegistrationLanding
         imgPath={leftPicture}
-        onClickAttend={this._setPageState.bind(
-          null,
-          routePaths.CE_CC_REG_CHILD
-        )}
-        onClickVolunteer={this._setPageState.bind(
-          null,
-          routePaths.CE_CC_REG_VOLUNTEER
-        )}
+        onClickChildAttend={() =>
+          this._setPageState(routePaths.CE_CC_REG_CHILD)
+        }
+        onClickVolunteer={() =>
+          this._setPageState(routePaths.CE_CC_REG_VOLUNTEER)
+        }
         type={BaseRegistrationLanding.TYPES.CHILDRENS_CHURCH}
       />
     );

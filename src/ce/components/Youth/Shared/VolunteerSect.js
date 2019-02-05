@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import Button from '../../Reusable/Button/Button';
+import Button, {STYLES as BUTTON_STYLES} from '../../Reusable/Button/Button';
 
 class VolunteerSect extends Component {
   render() {
     const {
       buttonClass,
       name,
-      registerButtonOnClick,
+      registerChildButtonOnClick,
+      registerAdultButtonOnClick,
       volunteerButtonOnClick
     } = this.props;
 
@@ -38,18 +39,27 @@ class VolunteerSect extends Component {
         </ul>
         <div className="volunt-reg-buttons">
           <Button
-            buttonShape={Button.STYLES.RECT}
+            buttonShape={BUTTON_STYLES.RECT}
             className={`left-button ${buttonClass}`}
             onClick={volunteerButtonOnClick}
           >
             Volunteer
           </Button>
+          {registerAdultButtonOnClick && (
+            <Button
+              buttonShape={BUTTON_STYLES.RECT}
+              className={`right-button ${buttonClass}`}
+              onClick={registerAdultButtonOnClick}
+            >
+              Register Adult
+            </Button>
+          )}
           <Button
-            buttonShape={Button.STYLES.RECT}
+            buttonShape={BUTTON_STYLES.RECT}
             className={`right-button ${buttonClass}`}
-            onClick={registerButtonOnClick}
+            onClick={registerChildButtonOnClick}
           >
-            Register
+            Register A Child
           </Button>
         </div>
       </div>
@@ -60,7 +70,8 @@ class VolunteerSect extends Component {
 VolunteerSect.propTypes = {
   buttonClass: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  registerButtonOnClick: PropTypes.func.isRequired,
+  registerAdultButtonOnClick: PropTypes.func,
+  registerChildButtonOnClick: PropTypes.func.isRequired,
   volunteerButtonOnClick: PropTypes.func.isRequired
 };
 
