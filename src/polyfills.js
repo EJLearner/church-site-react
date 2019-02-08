@@ -1,4 +1,7 @@
 /* eslint-disable no-extend-native */
+
+const lodashValues = require('lodash/values');
+
 // https://tc39.github.io/ecma262/#sec-array.prototype.find
 // used in multiple places
 if (!Array.prototype.find) {
@@ -45,10 +48,9 @@ if (!Array.prototype.find) {
   });
 }
 
-// used in firebase code
-if (!String.prototype.startsWith) {
-  String.prototype.startsWith = function(search, pos) {
-    return this.substr(!pos || pos < 0 ? 0 : +pos, search.length) === search;
+if (!Object.values) {
+  Object.values = function values(object) {
+    return lodashValues(object);
   };
 }
 
