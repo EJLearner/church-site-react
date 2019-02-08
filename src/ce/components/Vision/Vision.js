@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import {Route, Switch} from 'react-router-dom';
-import _ from 'lodash';
-
-import routePaths from '../../../routePaths';
 
 import TheVision from './TheVision';
 import PowerPoint from './PowerPoint';
@@ -19,22 +16,22 @@ class Vision extends Component {
     return [
       {
         isDefault: true,
-        path: `${routePaths.CE_VISION_THEVISION}`,
+        pathKey: 'CE_VISION_THE_VISION',
         render: <TheVision />,
         text: 'The Vision'
       },
       {
-        path: `${routePaths.CE_VISION_POWERPOINT}`,
+        pathKey: 'CE_VISION_POWERPOINT',
         render: <PowerPoint />,
         text: 'PowerPoint'
       },
       {
-        path: `${routePaths.CE_VISION_PARTICIPANTS_2016}`,
+        pathKey: 'CE_VISION_PARTICIPANTS_2016',
         render: <Participants2016 />,
         text: '2016 Leadership Retreat Participants'
       },
       {
-        path: `${routePaths.CE_VISION_WORKGROUPS}`,
+        pathKey: 'CE_VISION_WORKGROUPS',
         render: <Workgroups />,
         text: 'Workgroups'
       }
@@ -45,11 +42,7 @@ class Vision extends Component {
     const routes = [];
     routeData.forEach(route => {
       routes.push(
-        <Route
-          key={route.path}
-          path={route.path}
-          render={_.constant(route.render)}
-        />
+        <Route key={route.path} path={route.path} render={() => route.render} />
       );
 
       if (route.children) {

@@ -19,7 +19,7 @@ const MAIN_PATH_CONSTANTS = {
   CE_CC_REG_CHILD: '/ce/cc-registration-child',
   CE_CC_REG_LANDING: '/ce/cc-registration-landing',
   CE_CC_REG_VOLUNTEER: '/ce/cc-registration-volunteer',
-  CE_IDEA_FORM: '/ce/ideaform',
+  CE_IDEA_FORM: '/ce/idea-form',
   CE_THANK_YOU: '/ce/thank-you',
   CE_VBS_CHECKIN: '/ce/vbs-checkin',
   CE_VBS_CHECKOUT: '/ce/vbs-checkout',
@@ -32,7 +32,8 @@ const MAIN_PATH_CONSTANTS = {
   CE_WHAT: '/ce/what',
   CE_WHO: '/ce/who',
   CE_WHY: '/ce/why',
-  CE_YOUTH: '/ce/youth'
+  CE_YOUTH: '/ce/youth',
+  OLD_PATHS_CE_IDEA_FORM: ['/ce/ideaform']
 };
 
 const {ADMIN} = MAIN_PATH_CONSTANTS;
@@ -53,10 +54,12 @@ const CALENDAR_PATHS = {
 
 const {CE_VISION} = MAIN_PATH_CONSTANTS;
 const VISION_PATHS = {
-  CE_VISION_THE_VISION: `${CE_VISION}/thevision`,
+  CE_VISION_THE_VISION: `${CE_VISION}/the-vision`,
   CE_VISION_POWERPOINT: `${CE_VISION}/powerpoint`,
-  CE_VISION_PARTICIPANTS_2016: `${CE_VISION}/participants2016`,
-  CE_VISION_WORKGROUPS: `${CE_VISION}/workgroups`
+  CE_VISION_PARTICIPANTS_2016: `${CE_VISION}/participants-2016`,
+  CE_VISION_WORKGROUPS: `${CE_VISION}/workgroups`,
+  OLD_PATHS_CE_VISION_PARTICIPANTS_2016: [`${CE_VISION}/participants2016`],
+  OLD_PATHS_CE_VISION_THE_VISION: [`${CE_VISION}/thevision`]
 };
 
 const {CE_YOUTH} = MAIN_PATH_CONSTANTS;

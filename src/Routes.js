@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
 
 import routePaths from './routePaths';
 
@@ -178,6 +178,15 @@ class Routes extends Component {
               </BareCePage>
             )}
           />
+          {routePaths.OLD_PATHS_CE_IDEA_FORM.map(oldPath => {
+            return (
+              <Redirect
+                from={oldPath}
+                key={oldPath}
+                to={routePaths.CE_IDEA_FORM}
+              />
+            );
+          })}
           <Route
             path={routePaths.CE_IDEA_FORM}
             render={() => (
