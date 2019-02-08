@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom';
 
 import routePaths from '../../../routePaths';
 
-import CePageLayoutA from '../Reusable/CePageLayout';
+import CePageLayout from '../Reusable/CePageLayout';
 
 import ChildrensChurch from './ChildrensChurch';
 import GodsGifts from './GodsGifts';
@@ -49,7 +49,7 @@ class Youth extends Component {
     const linkData = this.generateLinkData();
 
     return (
-      <CePageLayoutA
+      <CePageLayout
         headerBeginning="CE"
         headerEmph="Programs"
         linkData={linkData}

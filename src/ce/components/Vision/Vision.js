@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import {Route, Switch} from 'react-router-dom';
-import PropTypes from 'prop-types';
 import _ from 'lodash';
 
 import routePaths from '../../../routePaths';
@@ -11,7 +10,7 @@ import PowerPoint from './PowerPoint';
 import Participants2016 from './Participants2016';
 import Workgroups from './Workgroups';
 
-import CePageLayoutA from '../Reusable/CePageLayout';
+import CePageLayout from '../Reusable/CePageLayout';
 
 import '../../cePageStyles.scss';
 
@@ -63,7 +62,7 @@ class Vision extends Component {
   render() {
     const linkData = this.generateLinkData();
     return (
-      <CePageLayoutA
+      <CePageLayout
         headerBeginning="2020"
         headerEmph="Vision"
         linkData={linkData}
@@ -71,9 +70,5 @@ class Vision extends Component {
     );
   }
 }
-
-Vision.propTypes = {
-  location: PropTypes.object
-};
 
 export default withRouter(Vision);

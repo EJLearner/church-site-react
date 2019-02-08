@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 
-import CePageLayoutA from '../Reusable/CePageLayout';
+import CePageLayout from '../Reusable/CePageLayout';
 
 import routePaths from '../../../routePaths';
 
@@ -36,7 +36,7 @@ class WhoWeAre extends Component {
   render() {
     const linkData = this.generateLinkData();
     return (
-      <CePageLayoutA
+      <CePageLayout
         headerBeginning="Who We"
         headerEmph="Are"
         linkData={linkData}
