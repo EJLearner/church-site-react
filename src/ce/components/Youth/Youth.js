@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 import routePaths from '../../../routePaths';
 
-import CePageLayoutA from '../Reusable/CePageLayoutA';
+import CePageLayoutA from '../Reusable/CePageLayout';
 
 import Ushers from './Ushers';
 import GodsGifts from './GodsGifts';
@@ -51,16 +50,12 @@ class Youth extends Component {
 
     return (
       <CePageLayoutA
-        headerBeginning="Youth"
-        headerEmph="Ministries"
+        headerBeginning="CE"
+        headerEmph="Programs"
         linkData={linkData}
       />
     );
   }
 }
-
-Youth.propTypes = {
-  location: PropTypes.object
-};
 
 export default withRouter(Youth);

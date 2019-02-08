@@ -7,7 +7,7 @@ import SubPageSwitch from './SubPageSwitch/SubPageSwitch';
 
 import '../../cePageStyles.scss';
 
-class CePageLayoutA extends Component {
+class CePageLayout extends Component {
   render() {
     return (
       <div id="ce-page">
@@ -31,7 +31,7 @@ class CePageLayoutA extends Component {
   }
 }
 
-CePageLayoutA.propTypes = {
+CePageLayout.propTypes = {
   // first part of h1 for page title
   headerBeginning: PropTypes.string.isRequired,
   // second part of h1 for page title
@@ -49,4 +49,4 @@ CePageLayoutA.propTypes = {
   location: PropTypes.object
 };
 
-export default withRouter(CePageLayoutA);
+export default withRouter(CePageLayout);

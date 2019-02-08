@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
-import PropTypes from 'prop-types';
 
-import CePageLayoutA from '../Reusable/CePageLayoutA';
+import CePageLayoutA from '../Reusable/CePageLayout';
 
 import routePaths from '../../../routePaths';
 
@@ -45,9 +44,5 @@ class WhoWeAre extends Component {
     );
   }
 }
-
-WhoWeAre.propTypes = {
-  location: PropTypes.object
-};
 
 export default withRouter(WhoWeAre);

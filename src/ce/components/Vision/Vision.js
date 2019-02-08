@@ -11,7 +11,7 @@ import PowerPoint from './PowerPoint';
 import Participants2016 from './Participants2016';
 import Workgroups from './Workgroups';
 
-import CePageLayoutA from '../Reusable/CePageLayoutA';
+import CePageLayoutA from '../Reusable/CePageLayout';
 
 import '../../cePageStyles.scss';
 
