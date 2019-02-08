@@ -1,5 +1,7 @@
 import moment from 'moment';
 
+import routePaths from '../routePaths';
+
 import constants from '../utils/constants';
 
 // Modeled after base64 web-safe chars, but ordered by ASCII.
@@ -130,6 +132,20 @@ const utils = {
   getVbsDbYear() {
     // for now, just always return the current year
     return moment().year();
+  },
+
+  getComputedPath(path, pathKey) {
+    if (path) {
+      return path;
+    }
+
+    if (routePaths.hasOwnProperty(pathKey)) {
+      return routePaths[pathKey];
+    }
+
+    throw new Error(
+      `Can not get valid route from path ${path} and pathKey ${pathKey}`
+    );
   }
 };
 

@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 
+import commonUtils from '../../../../utils/commonUtils';
+
 import './LeftLink.css';
 
 const LeftLinks = props => {
@@ -10,18 +12,24 @@ const LeftLinks = props => {
       return null;
     }
 
-    const isRoot = !linkData.find(link => link.path === pathname);
+    const isRoot = !linkData.find(({path, pathKey}) => {
+      return commonUtils.getComputedPath(path, pathKey) === pathname;
+    });
 
     const listItems = linkData.map(link => {
-      const {path, text, isDefault} = link;
-      const currentPage = pathname === path || (isRoot && isDefault);
+      const {path, pathKey, text, isDefault} = link;
+      const computedPath = commonUtils.getComputedPath(path, pathKey);
+      const currentPage = pathname === computedPath || (isRoot && isDefault);
       const className = currentPage ? 'current-page-link' : null;
-      return [
-        <li className={className} key={path}>
-          <Link to={path}>{text}</Link>
-        </li>,
-        renderLinks(link.children, pathname)
-      ];
+
+      return (
+        <React.Fragment key={computedPath}>
+          <li className={className}>
+            <Link to={computedPath}>{text}</Link>
+          </li>
+          {renderLinks(link.children, pathname)}
+        </React.Fragment>
+      );
     });
 
     return <ul>{listItems}</ul>;
@@ -37,7 +45,8 @@ const LeftLinks = props => {
 LeftLinks.propTypes = {
   linkData: PropTypes.arrayOf(
     PropTypes.shape({
-      path: PropTypes.string.isRequired,
+      path: PropTypes.string,
+      pathKey: PropTypes.string,
       text: PropTypes.string.isRequired
     })
   ),
