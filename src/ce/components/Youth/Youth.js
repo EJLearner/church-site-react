@@ -5,6 +5,7 @@ import routePaths from '../../../routePaths';
 
 import CePageLayout from '../Reusable/CePageLayout';
 
+import BibleStudy from './BibleStudy';
 import ChildrensChurch from './ChildrensChurch';
 import GodsGifts from './GodsGifts';
 import SundaySchool from './SundaySchool';
@@ -18,6 +19,11 @@ class Youth extends Component {
     return [
       {
         isDefault: true,
+        path: routePaths.CE_YOUTH_BIBLE_STUDY,
+        render: <BibleStudy />,
+        text: 'Bible Study'
+      },
+      {
         path: routePaths.CE_YOUTH_CHILDRENS_CHURCH,
         render: <ChildrensChurch />,
         text: 'Children’s Church'
