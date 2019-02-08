@@ -5,10 +5,10 @@ import routePaths from '../../../routePaths';
 
 import CePageLayoutA from '../Reusable/CePageLayout';
 
-import Ushers from './Ushers';
+import ChildrensChurch from './ChildrensChurch';
 import GodsGifts from './GodsGifts';
 import SundaySchool from './SundaySchool';
-import ChildrensChurch from './ChildrensChurch';
+import Ushers from './Ushers';
 import VacationBibleSchool from './VacationBibleSchool';
 
 import '../../cePageStyles.scss';
@@ -18,9 +18,9 @@ class Youth extends Component {
     return [
       {
         isDefault: true,
-        path: routePaths.CE_YOUTH_USHERS,
-        render: <Ushers />,
-        text: 'Youth and Junior Usher Ministry'
+        path: routePaths.CE_YOUTH_CHILDRENS_CHURCH,
+        render: <ChildrensChurch />,
+        text: 'Children’s Church'
       },
       {
         path: routePaths.CE_YOUTH_GODS_GIFTS,
@@ -33,14 +33,14 @@ class Youth extends Component {
         text: 'Sunday School'
       },
       {
-        path: routePaths.CE_YOUTH_CHILDRENS_CHURCH,
-        render: <ChildrensChurch />,
-        text: 'Children’s Church'
-      },
-      {
         path: routePaths.CE_YOUTH_VACATION_BIBLE_SCHOOL,
         render: <VacationBibleSchool />,
         text: 'Vacation Bible School'
+      },
+      {
+        path: routePaths.CE_YOUTH_USHERS,
+        render: <Ushers />,
+        text: 'Youth and Junior Usher Ministry'
       }
     ];
   }
