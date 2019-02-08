@@ -70,7 +70,7 @@ const allPictures = [
   }
 ];
 
-const _filterAndLimit = function(pictures, maxPics) {
+const _filterAndLimit = function(maxPics) {
   return allPictures
     .filter(picture => {
       let {annual, displayBeg, displayEnd} = picture;
@@ -100,7 +100,7 @@ const _filterAndLimit = function(pictures, maxPics) {
 };
 
 const slidePictureData = {
-  getPictures: () => _filterAndLimit(allPictures, 5)
+  getPictures: () => _filterAndLimit(5)
 };
 
 export default slidePictureData;
