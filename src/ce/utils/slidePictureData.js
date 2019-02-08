@@ -52,7 +52,7 @@ const allPictures = [
   },
   {
     altTag: 'City Temple 2020 Vision',
-    linkPath: '/vision/thevision',
+    linkPath: routePaths.CE_VISION,
     source: require('../../assets/ce/images/slides/christian-ed-home-banner-2020.png')
   },
   {
