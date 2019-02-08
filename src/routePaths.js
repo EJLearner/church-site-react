@@ -61,10 +61,11 @@ const VISION_PATHS = {
 
 const {CE_YOUTH} = MAIN_PATH_CONSTANTS;
 const YOUTH_PATHS = {
-  CE_YOUTH_USHERS: `${CE_YOUTH}/ushers`,
+  CE_YOUTH_BIBLE_STUDY: `${CE_YOUTH}/bible-study`,
+  CE_YOUTH_CHILDRENS_CHURCH: `${CE_YOUTH}/childrenschurch`,
   CE_YOUTH_GODS_GIFTS: `${CE_YOUTH}/godsgifts`,
   CE_YOUTH_SUNDAY_SCHOOL: `${CE_YOUTH}/sundayschool`,
-  CE_YOUTH_CHILDRENS_CHURCH: `${CE_YOUTH}/childrenschurch`,
+  CE_YOUTH_USHERS: `${CE_YOUTH}/ushers`,
   CE_YOUTH_VACATION_BIBLE_SCHOOL: `${CE_YOUTH}/vbs`
 };
 
