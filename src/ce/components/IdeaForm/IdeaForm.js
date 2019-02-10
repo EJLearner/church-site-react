@@ -65,7 +65,7 @@ class IdeaForm extends Component {
     };
 
     post(
-      'ceIdeaFormProcess.php',
+      '/ceIdeaFormProcess.php',
       data,
       responseError => {
         if (responseError.success) {
