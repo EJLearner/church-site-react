@@ -9,8 +9,8 @@ import Table from '../Reusable/Table/Table';
 import Droplist from '../Reusable/Droplist/Droplist';
 
 class CcVbsAdminBase extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       childrenTableRows: [],
