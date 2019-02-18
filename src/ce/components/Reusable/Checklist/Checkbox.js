@@ -30,7 +30,7 @@ const Checkbox = props => {
         id={props.id}
         onChange={_onChange}
         type="checkbox"
-        value={props.value}
+        value={props.value || props.id}
       />
       <label htmlFor={props.id} id={labelId}>
         {props.label}
@@ -51,7 +51,7 @@ Checkbox.propTypes = {
   inline: PropTypes.bool,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired
+  value: PropTypes.string
 };
 
 export default Checkbox;
