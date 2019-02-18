@@ -26,7 +26,7 @@ describe('#render', () => {
     );
 
     expect(baseCheckin.props().registerLink).to.equal(
-      routePaths.CE_VBS_REG_STUDENT
+      routePaths.CE_VBS_REG_LANDING
     );
 
     expect(baseCheckin.props().registeredChildrenRefName).to.equal(
