@@ -1,10 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Checkbox from '../Reusable/Checklist/Checkbox';
 
-const DisclaimerCheckbox = props => {
-  const label = (
-    <>
+const DisclaimerCheckbox = ({checked, id: inputId, onChange}) => {
+  const labelId = `${inputId}-label`;
+
+  const _onChange = event => {
+    onChange(event.target.checked, inputId, event);
+  };
+
+  return (
+    <div className="registration-disclaimer">
       <p>
         The City Temple of Baltimore (Baptist) reserves the right to use any
         photograph/video taken at any event sponsored by City Temple, without
@@ -38,13 +43,21 @@ const DisclaimerCheckbox = props => {
       </p>
 
       <p>Thank you for your understanding and cooperation!</p>
-    </>
-  );
 
-  const {checked, id, onChange} = props;
-
-  return (
-    <Checkbox checked={checked} id={id} label={label} onChange={onChange} />
+      <input
+        aria-labelledby={labelId}
+        checked={checked}
+        id={inputId}
+        onChange={_onChange}
+        type="checkbox"
+        value={inputId}
+      />
+      <label htmlFor={inputId} id={labelId}>
+        Check here to indicate that you have read and agree to the above terms.
+      </label>
+      <br />
+      <br />
+    </div>
   );
 };
 
