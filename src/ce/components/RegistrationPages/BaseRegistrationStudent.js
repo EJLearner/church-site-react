@@ -27,6 +27,7 @@ import {
 import './Registration.css';
 import ErrorList from '../Common/ErrorList';
 import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
+import DisclaimerCheckbox from './DisclaimerCheckbox';
 
 const WIDTH_BASE = 15;
 
@@ -168,7 +169,8 @@ class BaseRegistrationStudent extends Component {
       ...fieldStates,
       errors: [],
       redirect: false,
-      showModal: false
+      showModal: false,
+      agreementChecked: false
     };
   }
 
@@ -333,6 +335,12 @@ class BaseRegistrationStudent extends Component {
           value={this.state.knownAllergies}
         />
         <br />
+        <DisclaimerCheckbox
+          checked={this.state.agreementChecked}
+          id="agreementChecked"
+          onChange={this._onChangeInput}
+        />
+
         <Button onClick={this._onSubmitClick}>Submit</Button>
       </div>
     );

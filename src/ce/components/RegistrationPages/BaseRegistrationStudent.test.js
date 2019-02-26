@@ -1,6 +1,5 @@
 import BaseRegistrationStudent from './BaseRegistrationStudent';
 import {shallow} from 'enzyme';
-import {expect} from 'chai';
 import React from 'react';
 import routePaths from '../../../routePaths';
 import ErrorList from '../Common/ErrorList';
@@ -29,24 +28,22 @@ describe('BaseRegistrationStudent', () => {
 
     const redirect = wrapper.find('Redirect');
 
-    expect(redirect.exists()).to.be.true;
-    expect(redirect.props().push).to.equal(true);
-    expect(redirect.props().to.pathname).to.equal(routePaths.CE_THANK_YOU);
-    expect(redirect.props().to.state.forMessage).to.equal(
-      'you for registering.'
-    );
+    expect(redirect.exists()).toBe(true);
+    expect(redirect.props().push).toBe(true);
+    expect(redirect.props().to.pathname).toBe(routePaths.CE_THANK_YOU);
+    expect(redirect.props().to.state.forMessage).toBe('you for registering.');
   });
 
   it('should render outer div with className from prop', () => {
     const wrapper = shallow(<BaseRegistrationStudent {...props} />);
 
-    expect(wrapper.find(`div.${props.className}`).exists()).to.equal(true);
+    expect(wrapper.find(`div.${props.className}`).exists()).toBe(true);
   });
 
   it('renders headerContent', () => {
     const wrapper = shallow(<BaseRegistrationStudent {...props} />);
 
-    expect(wrapper.containsMatchingElement(props.headerContent)).to.equal(true);
+    expect(wrapper.containsMatchingElement(props.headerContent)).toBe(true);
   });
 
   it('render errors when error state is not empty', () => {
@@ -57,7 +54,7 @@ describe('BaseRegistrationStudent', () => {
       wrapper.containsMatchingElement(
         <ErrorList errors={wrapper.state().errors} />
       )
-    ).to.be.true;
+    ).toBe(true);
   });
 
   it('does not render errors when error state is empty', () => {
@@ -68,11 +65,23 @@ describe('BaseRegistrationStudent', () => {
       wrapper.containsMatchingElement(
         <ErrorList errors={wrapper.state().errors} />
       )
-    ).to.not.be.true;
+    ).not.toBe(true);
   });
 
-  it('render headerContent prop', () => {
+  it.only('renders functional DisclaimerCheckbox', () => {
     const wrapper = shallow(<BaseRegistrationStudent {...props} />);
-    expect(wrapper.containsMatchingElement(props.headerContent)).to.equal(true);
+    const disclaimerCheckbox = wrapper.find('DisclaimerCheckbox');
+    const checkboxId = 'agreementChecked';
+
+    expect(disclaimerCheckbox.exists()).toBe(true);
+    expect(disclaimerCheckbox.props().id).toBe(checkboxId);
+
+    expect(disclaimerCheckbox.props().checked).toBeFalsy();
+
+    disclaimerCheckbox.props().onChange(true, checkboxId);
+    expect(wrapper.find('DisclaimerCheckbox').props().checked).toBeTruthy();
+
+    disclaimerCheckbox.props().onChange(false, checkboxId);
+    expect(wrapper.find('DisclaimerCheckbox').props().checked).toBeFalsy();
   });
 });
