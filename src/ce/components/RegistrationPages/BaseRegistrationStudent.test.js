@@ -68,7 +68,7 @@ describe('BaseRegistrationStudent', () => {
     ).not.toBe(true);
   });
 
-  it.only('renders functional DisclaimerCheckbox', () => {
+  it('renders functional DisclaimerCheckbox', () => {
     const wrapper = shallow(<BaseRegistrationStudent {...props} />);
     const disclaimerCheckbox = wrapper.find('DisclaimerCheckbox');
     const checkboxId = 'agreementChecked';

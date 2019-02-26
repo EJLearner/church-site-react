@@ -80,4 +80,21 @@ describe('VbsRegistrationStudent', () => {
       expect(wrapper.text()).to.include('Guardian Information');
     });
   });
+
+  it('renders functional DisclaimerCheckbox', () => {
+    const wrapper = shallow(<VbsRegistrationStudent {...props} />);
+    const disclaimerCheckbox = wrapper.find('DisclaimerCheckbox');
+    const checkboxId = 'agreement-checked';
+
+    expect(disclaimerCheckbox.exists()).toBe(true);
+    expect(disclaimerCheckbox.props().id).toBe(checkboxId);
+
+    expect(disclaimerCheckbox.props().checked).toBeFalsy();
+
+    disclaimerCheckbox.props().onChange(true, checkboxId);
+    expect(wrapper.find('DisclaimerCheckbox').props().checked).toBeTruthy();
+
+    disclaimerCheckbox.props().onChange(false, checkboxId);
+    expect(wrapper.find('DisclaimerCheckbox').props().checked).toBeFalsy();
+  });
 });

@@ -21,6 +21,7 @@ import './Registration.css';
 import Checklist from '../Reusable/Checklist/Checklist';
 import ErrorList from '../Common/ErrorList';
 import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
+import DisclaimerCheckbox from './DisclaimerCheckbox';
 
 const FIELDS_INFO = {
   email: {
@@ -178,6 +179,7 @@ const FIELDS_INFO = {
   }
 };
 
+const agreementCheckedId = 'agreement-checked';
 class BaseRegistrationVolunteer extends Component {
   constructor(props) {
     super(props);
@@ -252,7 +254,8 @@ class BaseRegistrationVolunteer extends Component {
       errors: [],
       redirect: false,
       showModal: false,
-      showOther: false
+      showOther: false,
+      [agreementCheckedId]: false
     };
   }
 
@@ -540,6 +543,12 @@ class BaseRegistrationVolunteer extends Component {
             <br />
           </div>
         )}
+        <DisclaimerCheckbox
+          checked={this.state[agreementCheckedId]}
+          id={agreementCheckedId}
+          onChange={this._onChangeInput}
+        />
+
         <Button onClick={this._validateAndSubmit}>Submit</Button>
       </div>
     );

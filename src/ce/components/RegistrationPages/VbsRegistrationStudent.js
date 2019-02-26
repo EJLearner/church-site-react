@@ -25,6 +25,7 @@ import {
 import './Registration.css';
 import ErrorList from '../Common/ErrorList';
 import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
+import DisclaimerCheckbox from './DisclaimerCheckbox';
 
 const WIDTH_BASE = 15;
 const USE_TEST_DATA = false;
@@ -33,6 +34,8 @@ const STUDENT_TYPES = {
   CHILD: 'CHILD',
   ADULT: 'ADULT'
 };
+
+const agreementCheckedId = 'agreement-checked';
 
 class VbsRegistrationStudent extends Component {
   static propTypes = {
@@ -179,9 +182,9 @@ class VbsRegistrationStudent extends Component {
     };
   }
 
-  _onChangeInput(value, id) {
+  _onChangeInput = (value, id) => {
     this.setState({[id]: value, postStatus: undefined});
-  }
+  };
 
   _pushToFirebase(studentType) {
     const vbsYear = utils.getVbsDbYear();
@@ -389,6 +392,11 @@ class VbsRegistrationStudent extends Component {
           value={this.state.knownAllergies}
         />
         <br />
+        <DisclaimerCheckbox
+          checked={this.state[agreementCheckedId]}
+          id={agreementCheckedId}
+          onChange={this._onChangeInput}
+        />
         <Button onClick={() => this._onSubmitClick()}>Submit</Button>
       </div>
     );
