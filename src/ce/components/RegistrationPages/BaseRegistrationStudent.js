@@ -213,7 +213,7 @@ class BaseRegistrationStudent extends Component {
   _onSubmitClick() {
     const errors = registrationUtils.getPageErrors(
       this.state,
-      _.values(FIELDS_INFO)
+      Object.values(FIELDS_INFO)
     );
 
     this.setState({
@@ -347,24 +347,27 @@ class BaseRegistrationStudent extends Component {
   }
 
   _renderSummaryModal() {
-    const fieldSummaryItems = _.values(FIELDS_INFO).reduce((items, field) => {
-      const {fieldId, label} = field;
+    const fieldSummaryItems = Object.values(FIELDS_INFO).reduce(
+      (items, field) => {
+        const {fieldId, label} = field;
 
-      let value = this.state[fieldId];
-      if (typeof value === 'boolean') {
-        value = value ? 'Yes' : 'No';
-      }
+        let value = this.state[fieldId];
+        if (typeof value === 'boolean') {
+          value = value ? 'Yes' : 'No';
+        }
 
-      if (value) {
-        items.push(
-          <li key={fieldId}>
-            <span className="bold">{label}</span>: {value}
-          </li>
-        );
-      }
+        if (value) {
+          items.push(
+            <li key={fieldId}>
+              <span className="bold">{label}</span>: {value}
+            </li>
+          );
+        }
 
-      return items;
-    }, []);
+        return items;
+      },
+      []
+    );
 
     return (
       <Modal className="registration-modal" onCloseClick={this._toggleModal}>
