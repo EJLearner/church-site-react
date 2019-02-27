@@ -1,5 +1,3 @@
-// src/firebase.js
-
 import firebase from 'firebase';
 
 const config = {
