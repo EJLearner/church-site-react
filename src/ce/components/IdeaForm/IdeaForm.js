@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router';
 
-import _ from 'lodash';
-
 import routePaths from '../../../routePaths';
 
 import Button from '../Reusable/Button/Button';
@@ -51,8 +49,8 @@ class IdeaForm extends Component {
     this.setState({[id]: value, postStatus: undefined});
   }
 
-  _onChangeRadio(value, event) {
-    this.setState({ideaType: value, postStatus: undefined});
+  _onChangeRadio(event) {
+    this.setState({ideaType: event.target.value, postStatus: undefined});
   }
 
   _submitData() {
@@ -143,7 +141,7 @@ class IdeaForm extends Component {
             <input
               id="institute"
               name="idea"
-              onChange={_.partial(this._onChangeRadio, 'institute')}
+              onChange={event => this._onChangeRadio(event)}
               required
               type="radio"
               value="institute"
@@ -156,7 +154,7 @@ class IdeaForm extends Component {
             <input
               id="class"
               name="idea"
-              onChange={_.partial(this._onChangeRadio, 'class')}
+              onChange={event => this._onChangeRadio(event)}
               required
               type="radio"
               value="class"
@@ -169,7 +167,7 @@ class IdeaForm extends Component {
             <input
               id="retreat"
               name="idea"
-              onChange={_.partial(this._onChangeRadio, 'retreat')}
+              onChange={event => this._onChangeRadio(event)}
               required
               type="radio"
               value="retreat"
@@ -182,7 +180,7 @@ class IdeaForm extends Component {
             <input
               id="workshop"
               name="idea"
-              onChange={_.partial(this._onChangeRadio, 'workshop')}
+              onChange={event => this._onChangeRadio(event)}
               required
               type="radio"
               value="workshop"
@@ -195,7 +193,7 @@ class IdeaForm extends Component {
             <input
               id="other"
               name="idea"
-              onChange={_.partial(this._onChangeRadio, 'other')}
+              onChange={event => this._onChangeRadio(event)}
               required
               type="radio"
               value="other"
@@ -206,14 +204,13 @@ class IdeaForm extends Component {
 
         <div>
           <Text
-            cols="41"
+            columns={75}
             id="ideaDesc"
             label="Describe your idea here"
             maxLength="1000"
             onChange={this._onChangeTextInput}
             required
-            rows={5}
-            size={50}
+            rows={17}
             textArea
             value={this.state.ideaDesc}
           />
