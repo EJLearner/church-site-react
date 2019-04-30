@@ -180,11 +180,12 @@ class BaseRegistrationStudent extends Component {
 
   _pushToFirebase() {
     const {childIdPropName, refName} = this.props;
+    const {childDob, parentName, subscribe, parentEmail} = this.state;
 
     const child = {
       [childIdPropName]: utils.generatePushID(),
       registerTime: new Date().toISOString(),
-      parentNames: [this.state.parentName]
+      parentNames: [parentName]
     };
 
     _.forEach(FIELDS_INFO, ({fieldId}) => {
@@ -192,7 +193,7 @@ class BaseRegistrationStudent extends Component {
     });
 
     const standardChildDob = moment(
-      this.state.childDob,
+      childDob,
       constants.VALID_INPUT_DATE_FORMATS
     ).format(constants.INTERNAL_DATE_FORMAT);
 
