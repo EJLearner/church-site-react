@@ -178,7 +178,8 @@ class VbsRegistrationStudent extends Component {
       ...fieldStates,
       errors: [],
       redirect: false,
-      showModal: false
+      showModal: false,
+      [agreementCheckedId]: false
     };
   }
 

@@ -1,6 +1,5 @@
 import VbsRegistrationStudent, {STUDENT_TYPES} from './VbsRegistrationStudent';
 import {shallow} from 'enzyme';
-import {expect} from 'chai';
 import React from 'react';
 jest.mock('../../../utils/commonUtils.js');
 
@@ -26,7 +25,7 @@ describe('VbsRegistrationStudent', () => {
           .find('Text')
           .find({id: 'childDob'})
           .exists()
-      ).to.be.false;
+      ).toBe(false);
     });
 
     it('does not ask for parent name', () => {
@@ -37,13 +36,13 @@ describe('VbsRegistrationStudent', () => {
           .find('Text')
           .find({id: 'parentName'})
           .exists()
-      ).to.be.false;
+      ).toBe(false);
     });
 
     it('does not have parent/guardian information header', () => {
       const wrapper = shallow(<VbsRegistrationStudent {...props} />);
 
-      expect(wrapper.text()).to.not.include('Guardian Information');
+      expect(wrapper.text()).not.toMatch('Guardian Information');
     });
   });
 
@@ -60,7 +59,7 @@ describe('VbsRegistrationStudent', () => {
           .find('Text')
           .find({id: 'childDob'})
           .exists()
-      ).to.be.true;
+      ).toBe(true);
     });
 
     it('asks for parent name', () => {
@@ -71,13 +70,13 @@ describe('VbsRegistrationStudent', () => {
           .find('Text')
           .find({id: 'parentName'})
           .exists()
-      ).to.be.true;
+      ).toBe(true);
     });
 
     it('has parent/guardian information header', () => {
       const wrapper = shallow(<VbsRegistrationStudent {...props} />);
 
-      expect(wrapper.text()).to.include('Guardian Information');
+      expect(wrapper.text()).toMatch('Guardian Information');
     });
   });
 
