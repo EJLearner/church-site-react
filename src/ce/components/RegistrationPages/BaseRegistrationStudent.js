@@ -28,6 +28,7 @@ import './Registration.css';
 import ErrorList from '../Common/ErrorList';
 import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
 import DisclaimerCheckbox from './DisclaimerCheckbox';
+import pushToSubscribedList from '../../../utils/pushEmailToDb';
 
 const WIDTH_BASE = 15;
 
@@ -201,14 +202,19 @@ class BaseRegistrationStudent extends Component {
 
     const firebaseRef = firebase.database().ref(refName);
 
-    firebaseRef.push(child, responseError => {
-      if (responseError) {
-        this.setState({postStatus: 'failure', responseError});
-      } else {
+    firebaseRef
+      .push(child)
+      .then(() => {
         saveRegistrationData(child, this.props.routePath);
         this.setState({redirect: true});
-      }
-    });
+      })
+      .catch(responseError => {
+        this.setState({postStatus: 'failure', responseError});
+      });
+
+    if (subscribe && parentEmail) {
+      pushToSubscribedList(parentEmail, 'CC Child Registration');
+    }
   }
 
   _onSubmitClick() {
