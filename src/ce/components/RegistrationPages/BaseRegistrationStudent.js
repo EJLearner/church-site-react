@@ -135,7 +135,7 @@ class BaseRegistrationStudent extends Component {
     const testData = {
       childName: 'Delete Me',
       childDob: '01/01/2000',
-      parentEmail: '',
+      parentEmail: 'test@email.com',
       parentName: 'Test Parent',
       parentPhone: '000-000-0000',
       address1: '0000 Test Address',
@@ -158,7 +158,7 @@ class BaseRegistrationStudent extends Component {
         value = fieldData.default;
       }
 
-      if (value === '' && useTestData) {
+      if (useTestData && testData[fieldId]) {
         value = testData[fieldId];
       }
 
