@@ -16,7 +16,9 @@ const constants = {
   CC_REGISTERED_CHILD_ID_PROP: 'ccRegisteredId',
   CC_REGISTERED_CHILDREN_REF_NAME: 'ccRegisteredChildren',
   CC_REGISTERED_VOLUNTEER_ID_PROP: 'ccRegisteredVolunteersId',
-  CC_REGISTERED_VOLUNTEER_REF_NAME: 'ccRegisteredVolunteers'
+  CC_REGISTERED_VOLUNTEER_REF_NAME: 'ccRegisteredVolunteers',
+
+  SUBSCRIBED_EMAILS_REF_NAME: 'subscribedEmails'
 };
 
 export default constants;
