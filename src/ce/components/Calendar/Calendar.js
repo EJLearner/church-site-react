@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Route} from 'react-router-dom';
 
 import moment from 'moment';
 
@@ -27,32 +26,6 @@ class Calendar extends Component {
   }
 
   render() {
-    const makeRoutes = linkData => {
-      const routes = [];
-      linkData.forEach(route => {
-        routes.push(
-          <Route
-            key={route.path}
-            path={route.path}
-            render={() => route.render}
-          />
-        );
-
-        if (route.children) {
-          routes.push(...makeRoutes(route.children));
-        }
-      });
-
-      const defaultRoute = linkData.find(route => route.isDefault);
-      if (defaultRoute) {
-        routes.push(
-          <Route key={'defaultRoute'} render={() => defaultRoute.render} />
-        );
-      }
-
-      return routes;
-    };
-
     const linkData = [
       {
         path: routePaths.CE_CALENDAR_DAY,
