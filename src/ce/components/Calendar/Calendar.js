@@ -35,13 +35,13 @@ class Calendar extends Component {
       {
         path: routePaths.CE_CALENDAR_WEEK,
         render: <CalendarWeek />,
-        text: `Week View`
+        text: 'Week View'
       },
       {
         isDefault: true,
         path: routePaths.CE_CALENDAR_MONTH,
         render: <CalendarMonth />,
-        text: `Month View`
+        text: 'Month View'
       },
       {
         path: routePaths.CE_CALENDAR_YEAR,

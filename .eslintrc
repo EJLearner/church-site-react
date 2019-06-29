@@ -1,12 +1,13 @@
 {
   "extends": ["react-app", "eslint:recommended", "plugin:react/recommended"],
   "rules": {
-    "semi": "error",
+    "no-useless-computed-key": "error",
+    "quotes": ["error", "single"],
     "react/jsx-sort-props": "error",
     "react/sort-prop-types": "error",
     "react/sort-comp": "error",
     "react/prop-types": "error",
     "react/no-unused-prop-types": "error",
-    "no-useless-computed-key": "error"
+    "semi": "error"
   }
 }
