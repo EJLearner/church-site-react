@@ -15,12 +15,6 @@ const pushToSubscribedList = function(email, subscribeSource) {
     subscribeTime: new Date().toISOString(),
     subscribeSource
   });
-
-  /*
-
-  firebase.database().ref(constants.SUBSCRIBED_EMAILS_REF_NAME).child(emailFireBaseKey).set({});
-
-  */
 };
 
 export default pushToSubscribedList;
