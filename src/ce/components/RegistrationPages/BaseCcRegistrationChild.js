@@ -107,6 +107,12 @@ const FIELDS_INFO = {
     fieldId: 'knownAllergies',
     label: 'Known Allergies',
     fieldRules: [fieldValidators.isNotEmpty]
+  },
+  agreementChecked: {
+    fieldId: 'agreementChecked',
+    label: 'Terms Agreement Checkbox',
+    fieldRules: [fieldValidators.disclaimerIsChecked],
+    showInConfirmation: false
   }
 };
 
@@ -326,7 +332,7 @@ class BaseCcRegistrationChild extends Component {
           checked={this.state.subscribe}
           className="registration-checkbox"
           id="subscribe"
-          label="I'd like to know what other exciting events you have going on in the Temple!"
+          label="I’d like to know what other exciting events you have going on in the Temple!"
           onChange={this._onChangeInput}
           value="subscribe"
         />
@@ -357,6 +363,10 @@ class BaseCcRegistrationChild extends Component {
     const fieldSummaryItems = Object.values(FIELDS_INFO).reduce(
       (items, field) => {
         const {fieldId, label} = field;
+        // do not add term agreement to confirmation modal
+        if (fieldId === 'agreementChecked') {
+          return items;
+        }
 
         let value = this.state[fieldId];
         if (typeof value === 'boolean') {

@@ -5,6 +5,12 @@ import constants from '../../../utils/constants';
 const validDateFormats = ['M/D/YY', 'M/D/YYYY', 'M-D-YYYY', 'M-D-YY'];
 
 const fieldValidators = {
+  disclaimerIsChecked: (value, label) => {
+    if (value !== true) {
+      return 'Please indicate that you agree to the terms.';
+    }
+  },
+
   isNotEmpty: (value, label) => {
     if (!value) {
       return `${label} is required`;
