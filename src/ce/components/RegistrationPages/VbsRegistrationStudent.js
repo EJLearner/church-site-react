@@ -54,7 +54,7 @@ class VbsRegistrationStudent extends Component {
   get _fieldsInfo() {
     const fieldObject = {
       studentName: {
-        fieldId: `studentName`,
+        fieldId: 'studentName',
         label: 'Student’s name',
         fieldRules: [
           fieldValidators.isNotEmpty,
@@ -63,7 +63,7 @@ class VbsRegistrationStudent extends Component {
       },
 
       childDob: {
-        fieldId: `childDob`,
+        fieldId: 'childDob',
         label: 'Child’s Date of Birth',
         fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate]
       },

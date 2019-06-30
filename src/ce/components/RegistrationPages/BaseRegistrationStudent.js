@@ -34,7 +34,7 @@ const WIDTH_BASE = 15;
 
 const FIELDS_INFO = {
   childName: {
-    fieldId: `childName`,
+    fieldId: 'childName',
     label: 'Child’s name',
     fieldRules: [
       fieldValidators.isNotEmpty,
@@ -43,7 +43,7 @@ const FIELDS_INFO = {
   },
 
   childDob: {
-    fieldId: `childDob`,
+    fieldId: 'childDob',
     label: 'Child’s Date of Birth',
     fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate]
   },
