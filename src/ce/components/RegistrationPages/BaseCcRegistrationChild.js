@@ -28,7 +28,7 @@ import './Registration.css';
 import ErrorList from '../Common/ErrorList';
 import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
 import DisclaimerCheckbox from './DisclaimerCheckbox';
-import pushToSubscribedList from '../../../utils/pushEmailToDb';
+import pushToSubscribedList from '../../../utils/pushToSubscribedList';
 
 const WIDTH_BASE = 15;
 

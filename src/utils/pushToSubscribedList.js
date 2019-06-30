@@ -1,5 +1,5 @@
 import firebase from '../firebase';
-import constants from '../utils/constants';
+import constants from './constants';
 
 const pushToSubscribedList = function(email, subscribeSource) {
   const emailFireBaseKey = email.replace(/\./g, ',');

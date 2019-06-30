@@ -1,5 +1,5 @@
 import firebase from '../firebase';
-import pushToSubscribedList from './pushEmailToDb';
+import pushToSubscribedList from './pushToSubscribedList';
 import constants from './constants';
 jest.mock('firebase');
 
