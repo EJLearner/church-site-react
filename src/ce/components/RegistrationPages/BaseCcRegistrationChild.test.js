@@ -1,4 +1,4 @@
-import BaseRegistrationStudent from './BaseRegistrationStudent';
+import BaseCcRegistrationChild from './BaseCcRegistrationChild';
 import {shallow} from 'enzyme';
 import React from 'react';
 import routePaths from '../../../routePaths';
@@ -6,7 +6,7 @@ import ErrorList from '../Common/ErrorList';
 jest.mock('firebase');
 jest.mock('./registrationUtils.js');
 
-describe('BaseRegistrationStudent', () => {
+describe('BaseCcRegistrationChild', () => {
   let props;
 
   beforeEach(() => {
@@ -23,7 +23,7 @@ describe('BaseRegistrationStudent', () => {
   });
 
   it('should redirect if redirect state is truthy', () => {
-    const wrapper = shallow(<BaseRegistrationStudent {...props} />);
+    const wrapper = shallow(<BaseCcRegistrationChild {...props} />);
     wrapper.setState({redirect: true});
 
     const redirect = wrapper.find('Redirect');
@@ -35,19 +35,19 @@ describe('BaseRegistrationStudent', () => {
   });
 
   it('should render outer div with className from prop', () => {
-    const wrapper = shallow(<BaseRegistrationStudent {...props} />);
+    const wrapper = shallow(<BaseCcRegistrationChild {...props} />);
 
     expect(wrapper.find(`div.${props.className}`).exists()).toBe(true);
   });
 
   it('renders headerContent', () => {
-    const wrapper = shallow(<BaseRegistrationStudent {...props} />);
+    const wrapper = shallow(<BaseCcRegistrationChild {...props} />);
 
     expect(wrapper.containsMatchingElement(props.headerContent)).toBe(true);
   });
 
   it('render errors when error state is not empty', () => {
-    const wrapper = shallow(<BaseRegistrationStudent {...props} />);
+    const wrapper = shallow(<BaseCcRegistrationChild {...props} />);
     wrapper.setState({errors: ['one', 'two']});
 
     expect(
@@ -58,7 +58,7 @@ describe('BaseRegistrationStudent', () => {
   });
 
   it('does not render errors when error state is empty', () => {
-    const wrapper = shallow(<BaseRegistrationStudent {...props} />);
+    const wrapper = shallow(<BaseCcRegistrationChild {...props} />);
     wrapper.setState({errors: []});
 
     expect(
@@ -69,7 +69,7 @@ describe('BaseRegistrationStudent', () => {
   });
 
   it('renders functional DisclaimerCheckbox', () => {
-    const wrapper = shallow(<BaseRegistrationStudent {...props} />);
+    const wrapper = shallow(<BaseCcRegistrationChild {...props} />);
     const disclaimerCheckbox = wrapper.find('DisclaimerCheckbox');
     const checkboxId = 'agreementChecked';
 

@@ -8,13 +8,13 @@ import utils from '../../../utils/commonUtils';
 jest.mock('../../../utils/commonUtils.js');
 
 describe('CcRegistrationChild', () => {
-  it('render BaseRegistrationStudent', () => {
+  it('render BaseCcRegistrationChild', () => {
     const wrapper = shallow(<CcRegistrationChild />);
 
-    expect(wrapper.find('BaseRegistrationStudent').exists()).to.be.true;
+    expect(wrapper.find('BaseCcRegistrationChild').exists()).to.be.true;
   });
 
-  it('BaseRegistrationStudent has correct props', () => {
+  it('BaseCcRegistrationChild has correct props', () => {
     CcRegistrationChild.prototype._renderHeaderContent = jest.fn(
       () => 'Header Content'
     );
@@ -23,7 +23,7 @@ describe('CcRegistrationChild', () => {
     utils.getCcDbYear = jest.fn(() => testYear);
 
     const wrapper = shallow(<CcRegistrationChild />);
-    const baseRegistrationChild = wrapper.find('BaseRegistrationStudent');
+    const baseRegistrationChild = wrapper.find('BaseCcRegistrationChild');
 
     expect(baseRegistrationChild.props().childIdPropName).to.equal(
       constants.CC_REGISTERED_CHILD_ID_PROP

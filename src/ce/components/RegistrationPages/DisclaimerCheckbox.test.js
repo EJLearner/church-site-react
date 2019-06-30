@@ -20,18 +20,30 @@ describe('DisclaimerCheckbox', () => {
 
   it('checkbox has correct props', () => {
     const disclaimerCheckbox = shallow(<DisclaimerCheckbox {...props} />);
-    expect(disclaimerCheckbox.props().checked).toEqual(props.checked);
-    expect(disclaimerCheckbox.props().id).toEqual(props.id);
-    expect(disclaimerCheckbox.props().label).toBeDefined();
+    const input = disclaimerCheckbox.find('input');
+
+    expect(input.props().checked).toEqual(props.checked);
+    expect(input.props().id).toEqual(props.id);
+  });
+
+  it('has label', () => {
+    const disclaimerCheckbox = shallow(<DisclaimerCheckbox {...props} />);
+
+    expect(disclaimerCheckbox.find('label').exists()).toBeTrue;
   });
 
   it('calls onChange prop function on change', () => {
     const disclaimerCheckbox = shallow(<DisclaimerCheckbox {...props} />);
-    const testEvent = {};
+    const input = disclaimerCheckbox.find('input');
+    const testEvent = {target: {}};
 
-    disclaimerCheckbox.simulate('change', testEvent);
+    input.simulate('change', testEvent);
 
     expect(props.onChange).toHaveBeenCalledTimes(1);
-    expect(props.onChange).toHaveBeenCalledWith(testEvent);
+    expect(props.onChange.mock.calls[0]).toEqual([
+      testEvent.target.checked,
+      props.id,
+      testEvent
+    ]);
   });
 });
