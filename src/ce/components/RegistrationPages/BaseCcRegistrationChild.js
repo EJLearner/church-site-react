@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 import firebase from '../../../firebase';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
@@ -157,7 +155,7 @@ class BaseCcRegistrationChild extends Component {
     const useTestData = false;
     const fieldStates = {};
 
-    _.forEach(FIELDS_INFO, fieldData => {
+    Object.values(FIELDS_INFO).forEach(fieldData => {
       const {fieldId} = fieldData;
       let value = registrationData[fieldId] || '';
 
@@ -195,7 +193,7 @@ class BaseCcRegistrationChild extends Component {
       parentNames: [parentName]
     };
 
-    _.forEach(FIELDS_INFO, ({fieldId}) => {
+    Object.values(FIELDS_INFO).forEach(({fieldId}) => {
       child[fieldId] = this.state[fieldId];
     });
 
