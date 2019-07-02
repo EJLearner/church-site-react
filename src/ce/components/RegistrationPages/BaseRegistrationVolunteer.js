@@ -188,7 +188,7 @@ class BaseRegistrationVolunteer extends Component {
     this._onChangeInput = this._onChangeInput.bind(this);
     this._renderFormFields = this._renderFormFields.bind(this);
     this._validateAndSubmit = this._validateAndSubmit.bind(this);
-    this._submitData = this._submitData.bind(this);
+    this._pushToFirebase = this._pushToFirebase.bind(this);
     this._toggleModal = this._toggleModal.bind(this);
   }
 
@@ -263,7 +263,7 @@ class BaseRegistrationVolunteer extends Component {
     this.setState({[id]: value, postStatus: undefined});
   }
 
-  _submitData() {
+  _pushToFirebase() {
     const {refName, volunteerIdPropName} = this.props;
 
     const volunteer = {
@@ -284,13 +284,14 @@ class BaseRegistrationVolunteer extends Component {
 
     const firebaseRef = firebase.database().ref(refName);
 
-    firebaseRef.push(volunteer, responseError => {
-      if (responseError) {
-        this.setState({postStatus: 'failure', responseError});
-      } else {
+    firebaseRef
+      .push(volunteer)
+      .then(() => {
         this._postSubmitSuccess();
-      }
-    });
+      })
+      .catch(responseError => {
+        this.setState({postStatus: 'failure', responseError});
+      });
   }
 
   _validateAndSubmit() {
@@ -640,7 +641,7 @@ class BaseRegistrationVolunteer extends Component {
       <Modal className="registration-modal" onCloseClick={this._toggleModal}>
         <h2>Please take a moment to confirm your data</h2>
         <ul>{fieldSummaryItems}</ul>
-        <Button onClick={this._submitData}>Confirm</Button>
+        <Button onClick={this._pushToFirebase}>Confirm</Button>
         <Button onClick={this._toggleModal}>Edit</Button>
       </Modal>
     );
