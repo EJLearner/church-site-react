@@ -183,7 +183,6 @@ const FIELDS_INFO = {
   }
 };
 
-const agreementCheckedId = 'agreement-checked';
 class BaseRegistrationVolunteer extends Component {
   constructor(props) {
     super(props);
@@ -235,7 +234,7 @@ class BaseRegistrationVolunteer extends Component {
       friday: true
     };
 
-    const useTestData = false;
+    const useTestData = true;
     const fieldStates = {};
 
     Object.values(FIELDS_INFO).forEach(fieldData => {
@@ -259,7 +258,7 @@ class BaseRegistrationVolunteer extends Component {
       redirect: false,
       showModal: false,
       showOther: false,
-      [agreementCheckedId]: false
+      [FIELDS_INFO.agreementChecked.fieldId]: false
     };
   }
 
@@ -549,8 +548,8 @@ class BaseRegistrationVolunteer extends Component {
           </div>
         )}
         <DisclaimerCheckbox
-          checked={this.state[agreementCheckedId]}
-          id={agreementCheckedId}
+          checked={this.state[FIELDS_INFO.agreementChecked.fieldId]}
+          id={FIELDS_INFO.agreementChecked.fieldId}
           onChange={this._onChangeInput}
         />
 
@@ -598,7 +597,7 @@ class BaseRegistrationVolunteer extends Component {
         const {fieldId, label} = field;
 
         // do not add term agreement to confirmation modal
-        if (fieldId === 'agreementChecked') {
+        if (fieldId === FIELDS_INFO.agreementChecked.fieldId) {
           return items;
         }
 
