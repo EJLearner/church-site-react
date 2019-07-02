@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 import firebase from '../../../firebase';
 import moment from 'moment';
 import PropTypes from 'prop-types';
@@ -176,6 +174,12 @@ const FIELDS_INFO = {
     default: false,
     fieldId: 'friday',
     label: 'Friday'
+  },
+  agreementChecked: {
+    fieldId: 'agreementChecked',
+    label: 'Terms Agreement Checkbox',
+    fieldRules: [fieldValidators.disclaimerIsChecked],
+    showInConfirmation: false
   }
 };
 
@@ -234,7 +238,7 @@ class BaseRegistrationVolunteer extends Component {
     const useTestData = false;
     const fieldStates = {};
 
-    _.forEach(FIELDS_INFO, fieldData => {
+    Object.values(FIELDS_INFO).forEach(fieldData => {
       const {fieldId} = fieldData;
       let value = '';
 
@@ -271,7 +275,7 @@ class BaseRegistrationVolunteer extends Component {
       timeChanged: new Date().toISOString()
     };
 
-    _.values(FIELDS_INFO).forEach(({fieldId}) => {
+    Object.values(FIELDS_INFO).forEach(({fieldId}) => {
       volunteer[fieldId] = this.state[fieldId];
     });
 
@@ -297,7 +301,7 @@ class BaseRegistrationVolunteer extends Component {
   _validateAndSubmit() {
     const errors = registrationUtils.getPageErrors(
       this.state,
-      _.values(FIELDS_INFO)
+      Object.values(FIELDS_INFO)
     );
 
     this.setState({
@@ -589,21 +593,30 @@ class BaseRegistrationVolunteer extends Component {
   }
 
   _renderSummaryModal() {
-    let fieldSummaryItems = _.values(FIELDS_INFO).reduce((items, field) => {
-      const {fieldId, label} = field;
-      const value = this.state[fieldId];
+    let fieldSummaryItems = Object.values(FIELDS_INFO).reduce(
+      (items, field) => {
+        const {fieldId, label} = field;
 
-      // make sure otherText doesn't show up with the other text fields
-      if (value && typeof value === 'string' && fieldId !== 'otherText') {
-        items.push(
-          <li key={fieldId}>
-            <span className="bold">{label}</span>: {value}
-          </li>
-        );
-      }
+        // do not add term agreement to confirmation modal
+        if (fieldId === 'agreementChecked') {
+          return items;
+        }
 
-      return items;
-    }, []);
+        const value = this.state[fieldId];
+
+        // make sure otherText doesn't show up with the other text fields
+        if (value && typeof value === 'string' && fieldId !== 'otherText') {
+          items.push(
+            <li key={fieldId}>
+              <span className="bold">{label}</span>: {value}
+            </li>
+          );
+        }
+
+        return items;
+      },
+      []
+    );
 
     const groupFields = {
       roles: ['teacher', 'admin', 'assistantMentor', 'kitchen'],
