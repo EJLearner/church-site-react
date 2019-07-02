@@ -20,6 +20,8 @@ import Checklist from '../Reusable/Checklist/Checklist';
 import ErrorList from '../Common/ErrorList';
 import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
 import DisclaimerCheckbox from './DisclaimerCheckbox';
+import pushToSubscribedList from '../../../utils/pushToSubscribedList';
+import Checkbox from '../Reusable/Checklist/Checkbox';
 
 const FIELDS_INFO = {
   email: {
@@ -175,6 +177,11 @@ const FIELDS_INFO = {
     fieldId: 'friday',
     label: 'Friday'
   },
+  subscribe: {
+    fieldId: 'subscribe',
+    default: false,
+    label: 'Subscribe'
+  },
   agreementChecked: {
     fieldId: 'agreementChecked',
     label: 'Terms Agreement Checkbox',
@@ -268,6 +275,7 @@ class BaseRegistrationVolunteer extends Component {
 
   _pushToFirebase() {
     const {refName, volunteerIdPropName} = this.props;
+    const {subscribe, email} = this.state;
 
     const volunteer = {
       [volunteerIdPropName]: utils.generatePushID(),
@@ -286,6 +294,10 @@ class BaseRegistrationVolunteer extends Component {
     volunteer.dob = standardDob;
 
     const firebaseRef = firebase.database().ref(refName);
+
+    if (subscribe && email) {
+      pushToSubscribedList(email, 'Volunteer Registration');
+    }
 
     firebaseRef
       .push(volunteer)
@@ -546,6 +558,16 @@ class BaseRegistrationVolunteer extends Component {
 
             <br />
           </div>
+        )}
+        {this.state.email && (
+          <Checkbox
+            checked={this.state.subscribe}
+            className="registration-checkbox"
+            id="subscribe"
+            label="Send emails about exciting events going on in the Temple!"
+            onChange={this._onChangeInput}
+            value="subscribe"
+          />
         )}
         <DisclaimerCheckbox
           checked={this.state[FIELDS_INFO.agreementChecked.fieldId]}
