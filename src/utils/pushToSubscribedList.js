@@ -10,11 +10,15 @@ const pushToSubscribedList = function(email, subscribeSource) {
 
   const newEmail = subscribedEmailsDbRef.child(emailFireBaseKey);
 
-  newEmail.set({
-    email,
-    subscribeTime: new Date().toISOString(),
-    subscribeSource
-  });
+  newEmail
+    .set({
+      email,
+      subscribeTime: new Date().toISOString(),
+      subscribeSource
+    })
+    .catch(() => {
+      // email likely exists already
+    });
 };
 
 export default pushToSubscribedList;
