@@ -26,6 +26,7 @@ import './Registration.css';
 import ErrorList from '../Common/ErrorList';
 import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
 import DisclaimerCheckbox from './DisclaimerCheckbox';
+import pushToSubscribedList from '../../../utils/pushToSubscribedList';
 
 const WIDTH_BASE = 15;
 const USE_TEST_DATA = true;
@@ -197,6 +198,7 @@ class VbsRegistrationStudent extends Component {
     const vbsYear = utils.getVbsDbYear();
     const studentIdPropName = constants.VBS_REGISTERED_STUDENT_ID_PROP;
     const refName = `${constants.VBS_REGISTERED_STUDENT_REF_NAME}/${vbsYear}`;
+    const {childDob, subscribe, email, parentName} = this.state;
 
     const student = {
       [studentIdPropName]: utils.generatePushID(),
@@ -212,12 +214,12 @@ class VbsRegistrationStudent extends Component {
     let regAnotherStudentPath;
     if (studentType === STUDENT_TYPES.CHILD) {
       const standardChildDob = moment(
-        this.state.childDob,
+        childDob,
         constants.VALID_INPUT_DATE_FORMATS
       ).format(constants.INTERNAL_DATE_FORMAT);
 
       student.childDob = standardChildDob;
-      student.parentNames = [this.state.parentName];
+      student.parentNames = [parentName];
 
       regAnotherStudentPath = routePaths.CE_VBS_REG_CHILD;
     } else {
@@ -238,6 +240,10 @@ class VbsRegistrationStudent extends Component {
       .catch(responseError => {
         this.setState({postStatus: 'failure', responseError});
       });
+
+    if (subscribe && email) {
+      pushToSubscribedList(email, 'VBS Student Registration');
+    }
   }
 
   _onSubmitClick() {
