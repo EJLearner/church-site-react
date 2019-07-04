@@ -241,7 +241,7 @@ class BaseRegistrationVolunteer extends Component {
       friday: true
     };
 
-    const useTestData = true;
+    const useTestData = false;
     const fieldStates = {};
 
     Object.values(FIELDS_INFO).forEach(fieldData => {
