@@ -390,7 +390,7 @@ class VbsRegistrationStudent extends Component {
           checked={this.state.subscribe}
           className="registration-checkbox"
           id="subscribe"
-          label="I'd like to know what other exciting events you have going on in the Temple!"
+          label="Send emails about exciting events going on in the Temple!"
           onChange={(value, id) => this._onChangeInput(value, id)}
           value="subscribe"
         />
