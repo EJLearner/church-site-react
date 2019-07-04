@@ -28,7 +28,7 @@ import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
 import DisclaimerCheckbox from './DisclaimerCheckbox';
 
 const WIDTH_BASE = 15;
-const USE_TEST_DATA = false;
+const USE_TEST_DATA = true;
 
 const STUDENT_TYPES = {
   CHILD: 'CHILD',
@@ -127,6 +127,12 @@ class VbsRegistrationStudent extends Component {
         fieldId: 'knownAllergies',
         label: 'Known Allergies',
         fieldRules: [fieldValidators.isNotEmpty]
+      },
+      agreementChecked: {
+        fieldId: agreementCheckedId,
+        label: 'Terms Agreement Checkbox',
+        fieldRules: [fieldValidators.disclaimerIsChecked],
+        showInConfirmation: false
       }
     };
     if (this.props.studentType === STUDENT_TYPES.ADULT) {
@@ -409,6 +415,11 @@ class VbsRegistrationStudent extends Component {
     const fieldSummaryItems = Object.values(this._fieldsInfo).reduce(
       (items, field) => {
         const {fieldId, label} = field;
+
+        // do not add term agreement to confirmation modal
+        if (fieldId === agreementCheckedId) {
+          return items;
+        }
 
         let value = this.state[fieldId];
         if (typeof value === 'boolean') {
