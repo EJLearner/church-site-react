@@ -223,14 +223,15 @@ class VbsRegistrationStudent extends Component {
 
     const firebaseRef = firebase.database().ref(refName);
 
-    firebaseRef.push(student, responseError => {
-      if (responseError) {
-        this.setState({postStatus: 'failure', responseError});
-      } else {
+    firebaseRef
+      .push(student)
+      .then(() => {
         saveRegistrationData(student, regAnotherStudentPath);
         this.setState({redirect: true});
-      }
-    });
+      })
+      .catch(responseError => {
+        this.setState({postStatus: 'failure', responseError});
+      });
   }
 
   _onSubmitClick() {
