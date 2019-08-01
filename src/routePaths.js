@@ -38,6 +38,7 @@ const MAIN_PATH_CONSTANTS = {
 
 const {ADMIN} = MAIN_PATH_CONSTANTS;
 const ADMIN_PATHS = {
+  ADMIN_EMAIL_SUBSCRIBERS: `${ADMIN}/email-subscribers`,
   ADMIN_EVENTS: `${ADMIN}/events`,
   ADMIN_CC: `${ADMIN}/cc`,
   ADMIN_VBS: `${ADMIN}/vbs`
