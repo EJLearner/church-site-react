@@ -74,38 +74,59 @@ class Admin extends Component {
   }
 
   _generateLinks() {
+    const {
+      adminUsers,
+      ccRegAccess,
+      emailSubscribersAccess,
+      vbsRegAccess,
+      user
+    } = this.state;
+
     const paths = [];
-    const {uid} = this.state.user;
-    const isAdmin = this.state.adminUsers && this.state.adminUsers[uid];
+    const {uid} = user;
+    const isAdmin = adminUsers && adminUsers[uid];
 
     if (isAdmin) {
       paths.push({path: routePaths.ADMIN_EVENTS, text: 'Events'});
     }
 
-    if (isAdmin || (this.state.ccRegAccess && this.state.ccRegAccess[uid])) {
+    if (isAdmin || (ccRegAccess && ccRegAccess[uid])) {
       paths.push({path: routePaths.ADMIN_CC, text: 'Children’s Church'});
     }
 
-    if (isAdmin || (this.state.vbsRegAccess && this.state.vbsRegAccess[uid])) {
+    if (isAdmin || (vbsRegAccess && vbsRegAccess[uid])) {
       paths.push({path: routePaths.ADMIN_VBS, text: 'VBS'});
+    }
+
+    if (isAdmin || (emailSubscribersAccess && emailSubscribersAccess[uid])) {
+      paths.push({
+        path: routePaths.ADMIN_EMAIL_SUBSCRIBERS,
+        text: 'Email Subscribers List'
+      });
     }
 
     return paths;
   }
 
   render() {
-    return this.state.user ? (
-      <div className="admin-page">
-        <MenuBar links={this._generateLinks()} />
-        Logged in as {this.state.user.displayName}{' '}
-        <Button onClick={this._logout}>Log out</Button>
-        <Switch>
-          <Route path={routePaths.ADMIN_EVENTS} render={EventAdmin} />
-          <Route path={routePaths.ADMIN_CC} render={CcAdmin} />
-          <Route path={routePaths.ADMIN_VBS} render={VbsAdmin} />
-        </Switch>
-      </div>
-    ) : (
+    const {user} = this.state;
+
+    if (user) {
+      return (
+        <div className="admin-page">
+          <MenuBar links={this._generateLinks()} />
+          Logged in as {user.displayName}{' '}
+          <Button onClick={this._logout}>Log out</Button>
+          <Switch>
+            <Route path={routePaths.ADMIN_EVENTS} render={EventAdmin} />
+            <Route path={routePaths.ADMIN_CC} render={CcAdmin} />
+            <Route path={routePaths.ADMIN_VBS} render={VbsAdmin} />
+          </Switch>
+        </div>
+      );
+    }
+
+    return (
       <div className="admin-page">
         <Button onClick={this._login}>Log in</Button>
       </div>
