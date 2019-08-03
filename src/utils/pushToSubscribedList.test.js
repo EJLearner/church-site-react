@@ -1,37 +1,14 @@
 import firebase from '../firebase';
 import pushToSubscribedList from './pushToSubscribedList';
 import constants from './constants';
-jest.mock('firebase');
 
 describe('pushToSubscribedList', () => {
   let testEmail;
   let testSource;
-  let setMethodMock;
-  let childMethodMock;
-  let refMethodMock;
 
   beforeEach(() => {
     testEmail = 'test@email.com';
     testSource = 'test source';
-    setMethodMock = jest.fn();
-
-    childMethodMock = jest.fn(() => {
-      return {
-        set: setMethodMock
-      };
-    });
-
-    refMethodMock = jest.fn(() => {
-      return {
-        child: childMethodMock
-      };
-    });
-
-    firebase.database = jest.fn(() => {
-      return {
-        ref: refMethodMock
-      };
-    });
   });
 
   it('firebase.database is called', () => {
