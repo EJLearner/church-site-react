@@ -3,9 +3,8 @@ import {withRouter} from 'react-router-dom';
 import firebase, {auth, provider} from '../../../firebase';
 
 import Button from '../Reusable/Button/Button';
-import CcAdmin from './CcAdmin';
+import CcVbsAdminBase from './CcVbsAdminBase';
 import EventAdmin from './EventAdmin';
-import VbsAdmin from './VbsAdmin';
 
 import MenuBar from '../MenuBar/MenuBar';
 import routePaths from '../../../routePaths';
@@ -118,9 +117,18 @@ class Admin extends Component {
           Logged in as {user.displayName}{' '}
           <Button onClick={this._logout}>Log out</Button>
           <Switch>
-            <Route path={routePaths.ADMIN_EVENTS} render={EventAdmin} />
-            <Route path={routePaths.ADMIN_CC} render={CcAdmin} />
-            <Route path={routePaths.ADMIN_VBS} render={VbsAdmin} />
+            <Route
+              path={routePaths.ADMIN_EVENTS}
+              render={() => <EventAdmin />}
+            />
+            <Route
+              path={routePaths.ADMIN_CC}
+              render={() => <CcVbsAdminBase stringPrefix="cc" />}
+            />
+            <Route
+              path={routePaths.ADMIN_VBS}
+              render={() => <CcVbsAdminBase stringPrefix="vbs" />}
+            />
           </Switch>
         </div>
       );
