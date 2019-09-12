@@ -9,22 +9,41 @@ import Table from '../Reusable/Table/Table';
 import Droplist from '../Reusable/Droplist/Droplist';
 
 class CcVbsAdminBase extends Component {
+  static propTypes = {
+    // show mon-fri property values from volunteer data
+    showAvailability: PropTypes.bool,
+    stringPrefix: PropTypes.string.isRequired
+  };
+
   constructor(props) {
     super(props);
 
     this.state = {
       childrenTableRows: [],
-      volunteerTableRows: []
+      volunteerTableRows: [],
+      dataYear: '2019'
     };
 
+    this._getInfoFromFirebase();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const yearChanged = prevState.dataYear !== this.state.dataYear;
+    const pageChanged = prevProps.stringPrefix !== this.props.stringPrefix;
+    if (yearChanged || pageChanged) {
+      this._getInfoFromFirebase();
+    }
+  }
+
+  _getInfoFromFirebase() {
     this._convertFbObjectToState(
-      `${this.props.stringPrefix}RegisteredVolunteers/2018`,
+      'volunteers',
       'volunteerTableRows',
       this._generateVolunteerRowObject
     );
 
     this._convertFbObjectToState(
-      `${this.props.stringPrefix}RegisteredChildren/2018`,
+      'students',
       'childrenTableRows',
       this._generateChildRowObject
     );
@@ -37,7 +56,17 @@ class CcVbsAdminBase extends Component {
     );
   }
 
-  _convertFbObjectToState(refPath, stateName, generateRowObject) {
+  _convertFbObjectToState(type, stateName, generateRowObject) {
+    let refPath;
+
+    if (type === 'volunteers') {
+      refPath = `${this.props.stringPrefix}RegisteredVolunteers/${this.state.dataYear}`;
+    } else if (type === 'students') {
+      refPath = `${this.props.stringPrefix}RegisteredChildren/${this.state.dataYear}`;
+    } else {
+      throw new Error('invalid type provided');
+    }
+
     firebase
       .database()
       .ref(refPath)
@@ -318,6 +347,26 @@ class CcVbsAdminBase extends Component {
     return 'checkinTableRows-' + date;
   }
 
+  _yearSelectDropdown() {
+    const options = ['2017', '2018', '2019'].map(year => {
+      return {
+        label: year,
+        value: year
+      };
+    });
+
+    return (
+      <Droplist
+        onChange={value => {
+          this.setState({dataYear: value});
+        }}
+        options={options}
+        title="Select Data Year"
+        value={this.state.dataYear}
+      />
+    );
+  }
+
   _daySelectDropdown(dates, selectedDate) {
     const options = dates.map(date => {
       return {
@@ -332,6 +381,7 @@ class CcVbsAdminBase extends Component {
           this.setState({currentSigninDate: value});
         }}
         options={options}
+        title="Select Sign In Date"
         value={selectedDate}
       />
     );
@@ -362,6 +412,7 @@ class CcVbsAdminBase extends Component {
 
     return (
       <div>
+        {this._yearSelectDropdown()}
         <h2>Volunteers</h2>
         <Table
           columns={this._getVolunteerTableColumns()}
@@ -382,11 +433,5 @@ class CcVbsAdminBase extends Component {
     );
   }
 }
-
-CcVbsAdminBase.propTypes = {
-  // show mon-fri property values from volunteer data
-  showAvailability: PropTypes.bool,
-  stringPrefix: PropTypes.string.isRequired
-};
 
 export default withRouter(CcVbsAdminBase);
