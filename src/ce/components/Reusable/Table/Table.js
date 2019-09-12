@@ -4,6 +4,20 @@ import PropTypes from 'prop-types';
 import './Table.css';
 
 class Table extends Component {
+  static propTypes = {
+    columns: PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired
+      })
+    ).isRequired,
+    rows: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired
+      })
+    ).isRequired
+  };
+
   _renderRowCells(row) {
     return this.props.columns.map(column => {
       return <td key={row.id + column.name}>{row[column.name]}</td>;
@@ -43,12 +57,5 @@ class Table extends Component {
     );
   }
 }
-
-Table.defaultProps = {};
-
-Table.propTypes = {
-  columns: PropTypes.array.isRequired,
-  rows: PropTypes.array.isRequired
-};
 
 export default Table;
