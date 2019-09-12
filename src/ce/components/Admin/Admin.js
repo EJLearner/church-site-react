@@ -12,6 +12,7 @@ import Switch from 'react-router-dom/Switch';
 import {Route} from 'react-router-dom';
 
 import './Admin.css';
+import SubscribedEmailsAdmin from './SubscribedEmailsAdmin';
 
 class Admin extends Component {
   constructor(props) {
@@ -128,6 +129,10 @@ class Admin extends Component {
             <Route
               path={routePaths.ADMIN_VBS}
               render={() => <CcVbsAdminBase stringPrefix="vbs" />}
+            />
+            <Route
+              component={SubscribedEmailsAdmin}
+              path={routePaths.ADMIN_EMAIL_SUBSCRIBERS}
             />
           </Switch>
         </div>
