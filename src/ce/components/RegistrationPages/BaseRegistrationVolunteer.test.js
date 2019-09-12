@@ -14,7 +14,7 @@ describe('BaseRegistrationVolunteer', () => {
   it('renders functional DisclaimerCheckbox', () => {
     const wrapper = shallow(<BaseRegistrationVolunteer {...props} />);
     const disclaimerCheckbox = wrapper.find('DisclaimerCheckbox');
-    const checkboxId = 'agreement-checked';
+    const checkboxId = 'agreementChecked';
 
     expect(disclaimerCheckbox.exists()).toBe(true);
     expect(disclaimerCheckbox.props().id).toBe(checkboxId);
@@ -26,5 +26,11 @@ describe('BaseRegistrationVolunteer', () => {
 
     disclaimerCheckbox.props().onChange(false, checkboxId);
     expect(wrapper.find('DisclaimerCheckbox').props().checked).toBeFalsy();
+  });
+
+  it('is not using test data', () => {
+    const wrapper = shallow(<BaseRegistrationVolunteer {...props} />);
+
+    expect(wrapper.state().address1).toBe('');
   });
 });

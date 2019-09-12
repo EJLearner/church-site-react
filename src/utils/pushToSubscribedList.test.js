@@ -1,47 +1,26 @@
 import firebase from '../firebase';
 import pushToSubscribedList from './pushToSubscribedList';
 import constants from './constants';
-jest.mock('firebase');
 
 describe('pushToSubscribedList', () => {
   let testEmail;
   let testSource;
-  let setMethodMock;
-  let childMethodMock;
-  let refMethodMock;
+  let testName;
 
   beforeEach(() => {
     testEmail = 'test@email.com';
     testSource = 'test source';
-    setMethodMock = jest.fn();
-
-    childMethodMock = jest.fn(() => {
-      return {
-        set: setMethodMock
-      };
-    });
-
-    refMethodMock = jest.fn(() => {
-      return {
-        child: childMethodMock
-      };
-    });
-
-    firebase.database = jest.fn(() => {
-      return {
-        ref: refMethodMock
-      };
-    });
+    testName = 'test name';
   });
 
   it('firebase.database is called', () => {
-    pushToSubscribedList(testEmail, testSource);
+    pushToSubscribedList(testEmail, testSource, testName);
 
     expect(firebase.database).toBeCalled();
   });
 
   it('firebase.database().ref to be called with emails ref name', () => {
-    pushToSubscribedList(testEmail, testSource);
+    pushToSubscribedList(testEmail, testSource, testName);
 
     expect(firebase.database().ref).toBeCalledWith(
       constants.SUBSCRIBED_EMAILS_REF_NAME
@@ -50,13 +29,13 @@ describe('pushToSubscribedList', () => {
 
   describe('child key', () => {
     it('firebase.database().ref().child to be called correct key (case 1)', () => {
-      pushToSubscribedList('test@email.com', testSource);
+      pushToSubscribedList('test@email.com', testSource, testName);
 
       expect(firebase.database().ref().child).toBeCalledWith('test@email,com');
     });
 
     it('firebase.database().ref().child to be called correct key (case 2)', () => {
-      pushToSubscribedList('test@mail.somewhere.com', testSource);
+      pushToSubscribedList('test@mail.somewhere.com', testSource, testName);
 
       expect(firebase.database().ref().child).toBeCalledWith(
         'test@mail,somewhere,com'
@@ -64,7 +43,11 @@ describe('pushToSubscribedList', () => {
     });
 
     it('firebase.database().ref().child to be called correct key (case 3)', () => {
-      pushToSubscribedList('a.person-here@mail.somewhere.com', testSource);
+      pushToSubscribedList(
+        'a.person-here@mail.somewhere.com',
+        testSource,
+        testName
+      );
 
       expect(firebase.database().ref().child).toBeCalledWith(
         'a,person-here@mail,somewhere,com'
@@ -76,7 +59,7 @@ describe('pushToSubscribedList', () => {
     let setObject;
 
     beforeEach(() => {
-      pushToSubscribedList(testEmail, testSource);
+      pushToSubscribedList(testEmail, testSource, testName);
 
       setObject = firebase
         .database()
@@ -89,14 +72,18 @@ describe('pushToSubscribedList', () => {
     });
 
     it('uses current time', () => {
-      // dddd-dd-ddTdd:dd:dd
+      // dddd-dd-ddTdd:dd:dd.dddZ
       expect(setObject.subscribeTime).toMatch(
-        /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/
+        /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/
       );
     });
 
     it('uses subscribeSource', () => {
       expect(setObject.subscribeSource).toBe(testSource);
+    });
+
+    it('uses name', () => {
+      expect(setObject.name).toBe(testName);
     });
   });
 });

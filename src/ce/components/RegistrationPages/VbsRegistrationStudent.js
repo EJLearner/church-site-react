@@ -198,7 +198,7 @@ class VbsRegistrationStudent extends Component {
     const vbsYear = utils.getVbsDbYear();
     const studentIdPropName = constants.VBS_REGISTERED_STUDENT_ID_PROP;
     const refName = `${constants.VBS_REGISTERED_STUDENT_REF_NAME}/${vbsYear}`;
-    const {childDob, subscribe, email, parentName} = this.state;
+    const {childDob, subscribe, email, parentName, studentName} = this.state;
 
     const student = {
       [studentIdPropName]: utils.generatePushID(),
@@ -212,6 +212,7 @@ class VbsRegistrationStudent extends Component {
     student.type = studentType;
 
     let regAnotherStudentPath;
+    let emailSubscribeName;
     if (studentType === STUDENT_TYPES.CHILD) {
       const standardChildDob = moment(
         childDob,
@@ -222,11 +223,13 @@ class VbsRegistrationStudent extends Component {
       student.parentNames = [parentName];
 
       regAnotherStudentPath = routePaths.CE_VBS_REG_CHILD;
+      emailSubscribeName = parentName;
     } else {
       delete student.childDob;
       delete student.parentName;
 
       regAnotherStudentPath = routePaths.CE_VBS_REG_ADULT;
+      emailSubscribeName = studentName;
     }
 
     const firebaseRef = firebase.database().ref(refName);
@@ -242,7 +245,11 @@ class VbsRegistrationStudent extends Component {
       });
 
     if (subscribe && email) {
-      pushToSubscribedList(email, 'VBS Student Registration');
+      pushToSubscribedList(
+        email,
+        'VBS Student Registration',
+        emailSubscribeName
+      );
     }
   }
 

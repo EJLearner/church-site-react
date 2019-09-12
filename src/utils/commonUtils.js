@@ -4,6 +4,13 @@ import routePaths from '../routePaths';
 
 import constants from '../utils/constants';
 
+const {
+  INTERNAL_DATE_FORMAT,
+  INTERNAL_TIMESTAMP_FORMAT,
+  DISPLAY_DATE_FORMAT,
+  DISPLAY_TIME_FORMAT
+} = constants;
+
 // Modeled after base64 web-safe chars, but ordered by ASCII.
 const PUSH_CHARS =
   '-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz';
@@ -71,7 +78,7 @@ const utils = {
    * @returns {number} - years old as number
    */
   getAge(dob) {
-    const dobMoment = moment(dob, constants.INTERNAL_DATE_FORMAT);
+    const dobMoment = moment(dob, INTERNAL_DATE_FORMAT);
     return moment().diff(dobMoment, 'years');
   },
 
@@ -103,15 +110,25 @@ const utils = {
    * @param {string} date - in iso format
    */
   formatDate(date) {
-    return date ? moment(date).format('M/D/YY') : '';
+    if (!date) {
+      return '';
+    }
+
+    return moment(date, INTERNAL_DATE_FORMAT).format(DISPLAY_DATE_FORMAT);
   },
 
   /**
    * Converts Time in iso format to a more readable one
    * @param {string} time - in iso format
    */
-  formatTime(time) {
-    return time ? moment(time).format('M/D/YY h:mm a') : '';
+  formatTime(timeStamp) {
+    if (!timeStamp) {
+      return '';
+    }
+
+    return moment(timeStamp, INTERNAL_TIMESTAMP_FORMAT, true).format(
+      DISPLAY_TIME_FORMAT
+    );
   },
 
   getCcDbYear() {

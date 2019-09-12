@@ -275,7 +275,7 @@ class BaseRegistrationVolunteer extends Component {
 
   _pushToFirebase() {
     const {refName, volunteerIdPropName} = this.props;
-    const {subscribe, email} = this.state;
+    const {subscribe, email, name} = this.state;
 
     const volunteer = {
       [volunteerIdPropName]: utils.generatePushID(),
@@ -296,7 +296,7 @@ class BaseRegistrationVolunteer extends Component {
     const firebaseRef = firebase.database().ref(refName);
 
     if (subscribe && email) {
-      pushToSubscribedList(email, 'Volunteer Registration');
+      pushToSubscribedList(email, 'Volunteer Registration', name);
     }
 
     firebaseRef

@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import React, {Component} from 'react';
-import {withRouter} from 'react-router-dom';
 import firebase from '../../../firebase';
 import moment from 'moment';
 import {Parser as HtmlToReactParser} from 'html-to-react';
@@ -374,4 +373,4 @@ class EventAdmin extends Component {
   }
 }
 
-export default withRouter(EventAdmin);
+export default EventAdmin;
