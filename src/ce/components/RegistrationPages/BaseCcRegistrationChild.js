@@ -217,7 +217,7 @@ class BaseCcRegistrationChild extends Component {
       });
 
     if (subscribe && parentEmail) {
-      pushToSubscribedList(parentEmail, 'CC Child Registration');
+      pushToSubscribedList(parentEmail, 'CC Child Registration', parentName);
     }
   }
 
