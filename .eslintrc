@@ -1,6 +1,13 @@
 {
   "extends": ["react-app", "eslint:recommended", "plugin:react/recommended"],
   "rules": {
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "VariableDeclarator[id.name='USE_TEST_DATA'][init.value=true]",
+        "message": "Disable test field generators before commit"
+      }
+    ],
     "no-useless-computed-key": "error",
     "prefer-template": "error",
     "quotes": ["error", "single"],
