@@ -23,6 +23,8 @@ import DisclaimerCheckbox from './DisclaimerCheckbox';
 import pushToSubscribedList from '../../../utils/pushToSubscribedList';
 import Checkbox from '../Reusable/Checklist/Checkbox';
 
+const USE_TEST_DATA = false;
+
 const FIELDS_INFO = {
   email: {
     fieldId: 'email',
@@ -241,7 +243,6 @@ class BaseRegistrationVolunteer extends Component {
       friday: true
     };
 
-    const useTestData = false;
     const fieldStates = {};
 
     Object.values(FIELDS_INFO).forEach(fieldData => {
@@ -252,7 +253,7 @@ class BaseRegistrationVolunteer extends Component {
         value = fieldData.default;
       }
 
-      if (value === '' && useTestData) {
+      if (value === '' && USE_TEST_DATA) {
         value = testData[fieldId];
       }
 

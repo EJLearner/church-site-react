@@ -1,5 +1,4 @@
 import {Component} from 'react';
-import PropTypes from 'prop-types';
 
 import './Contact.css';
 
@@ -20,10 +19,6 @@ class Contact extends Component {
     return null;
   }
 }
-
-Contact.propTypes = {
-  address: PropTypes.object.isRequired
-};
 
 Contact.ADDRESSES = ADRESSES;
 

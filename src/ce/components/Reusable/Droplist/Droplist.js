@@ -27,10 +27,13 @@ class Droplist extends Component {
   }
 
   render() {
+    const {options, value, title} = this.props;
+
     return (
       <div className="select-outer-div">
-        <select onChange={this._onChange} value={this.props.value}>
-          {this._renderedOptions(this.props.options)}
+        {title && <div>{title}</div>}
+        <select onChange={this._onChange} value={value}>
+          {this._renderedOptions(options)}
         </select>
       </div>
     );
@@ -47,6 +50,7 @@ Droplist.propTypes = {
       value: PropTypes.string.isRequired
     })
   ),
+  title: PropTypes.string,
   value: PropTypes.string
 };
 

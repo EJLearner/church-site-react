@@ -2,6 +2,7 @@
   "extends": ["react-app", "eslint:recommended", "plugin:react/recommended"],
   "rules": {
     "no-useless-computed-key": "error",
+    "prefer-template": "error",
     "quotes": ["error", "single"],
     "react/jsx-sort-props": "error",
     "react/sort-prop-types": "error",

@@ -6,7 +6,7 @@ class TopLogo extends Component {
     return (
       <div id="header">
         <div>
-          <img src={churchLogo} alt="" />
+          <img alt="" src={churchLogo} />
         </div>
       </div>
     );

@@ -29,7 +29,7 @@ import DisclaimerCheckbox from './DisclaimerCheckbox';
 import pushToSubscribedList from '../../../utils/pushToSubscribedList';
 
 const WIDTH_BASE = 15;
-const USE_TEST_DATA = true;
+const USE_TEST_DATA = false;
 
 const STUDENT_TYPES = {
   CHILD: 'CHILD',
