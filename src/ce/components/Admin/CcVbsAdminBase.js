@@ -57,15 +57,18 @@ class CcVbsAdminBase extends Component {
   }
 
   _convertFbObjectToState(type, stateName, generateRowObject) {
-    let refPath;
-
+    let registerTypeString;
     if (type === 'volunteers') {
-      refPath = `${this.props.stringPrefix}RegisteredVolunteers/${this.state.dataYear}`;
+      registerTypeString = 'Volunteers';
     } else if (type === 'students') {
-      refPath = `${this.props.stringPrefix}RegisteredChildren/${this.state.dataYear}`;
-    } else {
+      registerTypeString = 'Children';
+    }
+
+    if (!registerTypeString) {
       throw new Error('invalid type provided');
     }
+
+    const refPath = `${this.props.stringPrefix}Registered${registerTypeString}/${this.state.dataYear}`;
 
     firebase
       .database()
@@ -344,7 +347,7 @@ class CcVbsAdminBase extends Component {
   }
 
   getStateFromDateName(date) {
-    return 'checkinTableRows-' + date;
+    return `checkinTableRows-${date}`;
   }
 
   _yearSelectDropdown() {

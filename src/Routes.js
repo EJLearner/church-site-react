@@ -42,19 +42,19 @@ class Routes extends Component {
       },
       {
         path: routePaths.CE_WHO,
-        text: `Who We are`
+        text: 'Who We are'
       },
       {
         path: routePaths.CE_WHY,
-        text: `Why We Are Here`
+        text: 'Why We Are Here'
       },
       {
         path: routePaths.CE_YOUTH,
-        text: `Programs`
+        text: 'Programs'
       },
       {
         path: routePaths.CE_IDEA_FORM,
-        text: `Tell Us What You Think`
+        text: 'Tell Us What You Think'
       }
     ];
 

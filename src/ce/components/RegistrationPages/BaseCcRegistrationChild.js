@@ -29,6 +29,7 @@ import DisclaimerCheckbox from './DisclaimerCheckbox';
 import pushToSubscribedList from '../../../utils/pushToSubscribedList';
 
 const WIDTH_BASE = 15;
+const USE_TEST_DATA = false;
 
 const FIELDS_INFO = {
   childName: {
@@ -152,7 +153,6 @@ class BaseCcRegistrationChild extends Component {
       knownAllergies: 'Things I am allergic to'
     };
 
-    const useTestData = false;
     const fieldStates = {};
 
     Object.values(FIELDS_INFO).forEach(fieldData => {
@@ -163,7 +163,7 @@ class BaseCcRegistrationChild extends Component {
         value = fieldData.default;
       }
 
-      if (useTestData && testData[fieldId]) {
+      if (USE_TEST_DATA && testData[fieldId]) {
         value = testData[fieldId];
       }
 

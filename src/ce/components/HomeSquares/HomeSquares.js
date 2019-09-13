@@ -16,7 +16,7 @@ const HomeSquare = props => {
   const {children, linkTo, scroll, title} = props;
 
   const scrollClass = scroll ? ' scroll' : '';
-  const classNames = 'home-square' + scrollClass;
+  const classNames = `home-square${  scrollClass}`;
 
   return (
     <div className={classNames}>
