@@ -12,7 +12,7 @@ import CcRegistrationLanding from './ce/components/RegistrationPages/CcRegistrat
 import CcRegistrationVolunteer from './ce/components/RegistrationPages/CcRegistrationVolunteer';
 import CeLogo from './ce/components/CeLogo/CeLogo';
 import Footer from './ce/components/Footer/Footer';
-import Home from './ce/components/Home/Home';
+import CeHome from './ce/components/Home/CeHome';
 import IdeaForm from './ce/components/IdeaForm/IdeaForm';
 import MenuBar from './ce/components/MenuBar/MenuBar';
 import NotFound from './ce/components/NotFound/NotFound';
@@ -91,7 +91,7 @@ class Routes extends Component {
             path="/"
             render={() => (
               <FullCePage>
-                <Home />
+                <CeHome />
               </FullCePage>
             )}
           />
@@ -99,7 +99,7 @@ class Routes extends Component {
             path="/christianedu.html"
             render={() => (
               <FullCePage>
-                <Home />
+                <CeHome />
               </FullCePage>
             )}
           />
@@ -108,7 +108,7 @@ class Routes extends Component {
             path={routePaths.CE_HOME}
             render={() => (
               <FullCePage>
-                <Home />
+                <CeHome />
               </FullCePage>
             )}
           />
