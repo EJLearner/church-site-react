@@ -1,7 +1,6 @@
 import CcRegistrationVolunteer from './CcRegistrationVolunteer';
 import constants from '../../../utils/constants';
 import {shallow} from 'enzyme';
-import {expect} from 'chai';
 import React from 'react';
 import utils from '../../../utils/commonUtils';
 jest.mock('../../../utils/commonUtils.js');
@@ -10,7 +9,7 @@ describe('CcRegistrationVolunteer', () => {
   it('render BaseRegistrationVolunteer', () => {
     const wrapper = shallow(<CcRegistrationVolunteer />);
 
-    expect(wrapper.find('BaseRegistrationVolunteer').exists()).to.be.true;
+    expect(wrapper.find('BaseRegistrationVolunteer').exists()).toBe(true);
   });
 
   it('BaseRegistrationVolunteer has correct props', () => {
@@ -24,21 +23,19 @@ describe('CcRegistrationVolunteer', () => {
     const wrapper = shallow(<CcRegistrationVolunteer />);
     const baseRegistrationChild = wrapper.find('BaseRegistrationVolunteer');
 
-    expect(baseRegistrationChild.props().askAvailability).to.not.be.ok;
+    expect(baseRegistrationChild.props().askAvailability).toBeFalsy();
 
-    expect(baseRegistrationChild.props().className).to.equal(
-      'registration-page'
-    );
+    expect(baseRegistrationChild.props().className).toBe('registration-page');
 
-    expect(baseRegistrationChild.props().volunteerIdPropName).to.equal(
+    expect(baseRegistrationChild.props().volunteerIdPropName).toBe(
       constants.CC_REGISTERED_VOLUNTEER_ID_PROP
     );
 
-    expect(baseRegistrationChild.props().headerContent).to.equal(
+    expect(baseRegistrationChild.props().headerContent).toBe(
       wrapper.instance()._renderHeaderContent()
     );
 
-    expect(baseRegistrationChild.props().refName).to.equal(
+    expect(baseRegistrationChild.props().refName).toBe(
       `${constants.CC_REGISTERED_VOLUNTEER_REF_NAME}/${testYear}`
     );
   });

@@ -1,7 +1,6 @@
 import CcRegistrationChild from './CcRegistrationChild';
 import constants from '../../../utils/constants';
 import {shallow} from 'enzyme';
-import {expect} from 'chai';
 import React from 'react';
 import routePaths from '../../../routePaths';
 import utils from '../../../utils/commonUtils';
@@ -11,7 +10,7 @@ describe('CcRegistrationChild', () => {
   it('render BaseCcRegistrationChild', () => {
     const wrapper = shallow(<CcRegistrationChild />);
 
-    expect(wrapper.find('BaseCcRegistrationChild').exists()).to.be.true;
+    expect(wrapper.find('BaseCcRegistrationChild').exists()).toBe(true);
   });
 
   it('BaseCcRegistrationChild has correct props', () => {
@@ -25,23 +24,21 @@ describe('CcRegistrationChild', () => {
     const wrapper = shallow(<CcRegistrationChild />);
     const baseRegistrationChild = wrapper.find('BaseCcRegistrationChild');
 
-    expect(baseRegistrationChild.props().childIdPropName).to.equal(
+    expect(baseRegistrationChild.props().childIdPropName).toBe(
       constants.CC_REGISTERED_CHILD_ID_PROP
     );
 
-    expect(baseRegistrationChild.props().className).to.equal(
-      'registration-page'
-    );
+    expect(baseRegistrationChild.props().className).toBe('registration-page');
 
-    expect(baseRegistrationChild.props().headerContent).to.equal(
+    expect(baseRegistrationChild.props().headerContent).toBe(
       wrapper.instance()._renderHeaderContent()
     );
 
-    expect(baseRegistrationChild.props().refName).to.equal(
+    expect(baseRegistrationChild.props().refName).toBe(
       `${constants.CC_REGISTERED_CHILDREN_REF_NAME}/${testYear}`
     );
 
-    expect(baseRegistrationChild.props().routePath).to.equal(
+    expect(baseRegistrationChild.props().routePath).toBe(
       routePaths.CE_CC_REG_CHILD
     );
   });

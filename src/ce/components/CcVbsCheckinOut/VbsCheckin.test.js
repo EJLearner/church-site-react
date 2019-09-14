@@ -5,13 +5,12 @@ import routePaths from '../../../routePaths';
 import {shallow} from 'enzyme';
 
 import VbsCheckin from './VbsCheckin';
-import {expect} from 'chai';
 import utils from '../../../utils/commonUtils';
 
 describe('#render', () => {
   it('renders BaseCheckin', () => {
     const wrapper = shallow(<VbsCheckin />);
-    expect(wrapper.find('BaseCheckin').exists()).to.be.true;
+    expect(wrapper.find('BaseCheckin').exists()).toBe(true);
   });
 
   it('BaseCheckin has correct properties', () => {
@@ -21,26 +20,26 @@ describe('#render', () => {
     const wrapper = shallow(<VbsCheckin />);
     const baseCheckin = wrapper.find('BaseCheckin');
 
-    expect(baseCheckin.props().logbookRefName).to.equal(
+    expect(baseCheckin.props().logbookRefName).toBe(
       constants.VBS_LOGBOOK_REF_NAME
     );
 
-    expect(baseCheckin.props().registerLink).to.equal(
+    expect(baseCheckin.props().registerLink).toBe(
       routePaths.CE_VBS_REG_LANDING
     );
 
-    expect(baseCheckin.props().registeredChildrenRefName).to.equal(
+    expect(baseCheckin.props().registeredChildrenRefName).toBe(
       `${constants.VBS_REGISTERED_CHILDREN_REF_NAME}/${testYear}`
     );
 
-    expect(baseCheckin.props().registryAccessRefName).to.equal(
+    expect(baseCheckin.props().registryAccessRefName).toBe(
       constants.VBS_REGISTRY_ACCESS_REF_NAME
     );
 
-    expect(baseCheckin.props().registryIdName).to.equal(
+    expect(baseCheckin.props().registryIdName).toBe(
       constants.VBS_REGISTERED_CHILD_ID_PROP
     );
 
-    expect(baseCheckin.props().welcomeName).to.equal('Vacation Bible School');
+    expect(baseCheckin.props().welcomeName).toBe('Vacation Bible School');
   });
 });

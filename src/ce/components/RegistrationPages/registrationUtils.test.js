@@ -1,4 +1,3 @@
-import {expect} from 'chai';
 import registrationUtils from './registrationUtils';
 
 describe('registrationUtils', () => {
@@ -20,7 +19,7 @@ describe('registrationUtils', () => {
 
       expect(
         registrationUtils.requireQuickContact(undefined, undefined, testState)
-      ).to.exist;
+      ).toBeDefined();
     });
 
     it('does not return error when email is provided', () => {
@@ -29,7 +28,7 @@ describe('registrationUtils', () => {
 
       expect(
         registrationUtils.requireQuickContact(undefined, undefined, testState)
-      ).to.not.exist;
+      ).not.toBeDefined();
     });
 
     it('does not return error when homePhone is provided', () => {
@@ -38,7 +37,7 @@ describe('registrationUtils', () => {
 
       expect(
         registrationUtils.requireQuickContact(undefined, undefined, testState)
-      ).to.not.exist;
+      ).not.toBeDefined();
     });
 
     it('does not return error when mobilePhone is provided', () => {
@@ -47,7 +46,7 @@ describe('registrationUtils', () => {
 
       expect(
         registrationUtils.requireQuickContact(undefined, undefined, testState)
-      ).to.not.exist;
+      ).not.toBeDefined();
     });
   });
 });

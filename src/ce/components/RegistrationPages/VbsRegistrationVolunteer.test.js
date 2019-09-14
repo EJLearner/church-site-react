@@ -1,7 +1,6 @@
 import VbsRegistrationVolunteer from './VbsRegistrationVolunteer';
 import constants from '../../../utils/constants';
 import {shallow} from 'enzyme';
-import {expect} from 'chai';
 import React from 'react';
 import utils from '../../../utils/commonUtils';
 jest.mock('../../../utils/commonUtils.js');
@@ -10,7 +9,7 @@ describe('VbsRegistrationVolunteer', () => {
   it('render BaseRegistrationVolunteer', () => {
     const wrapper = shallow(<VbsRegistrationVolunteer />);
 
-    expect(wrapper.find('BaseRegistrationVolunteer').exists()).to.be.true;
+    expect(wrapper.find('BaseRegistrationVolunteer').exists()).toBe(true);
   });
 
   it('BaseRegistrationVolunteer has correct props', () => {
@@ -24,21 +23,19 @@ describe('VbsRegistrationVolunteer', () => {
     const wrapper = shallow(<VbsRegistrationVolunteer />);
     const baseRegistrationChild = wrapper.find('BaseRegistrationVolunteer');
 
-    expect(baseRegistrationChild.props().askAvailability).to.be.true;
+    expect(baseRegistrationChild.props().askAvailability).toBe(true);
 
-    expect(baseRegistrationChild.props().className).to.equal(
-      'registration-page'
-    );
+    expect(baseRegistrationChild.props().className).toBe('registration-page');
 
-    expect(baseRegistrationChild.props().volunteerIdPropName).to.equal(
+    expect(baseRegistrationChild.props().volunteerIdPropName).toBe(
       constants.VBS_REGISTERED_VOLUNTEER_ID_PROP
     );
 
-    expect(baseRegistrationChild.props().headerContent).to.equal(
+    expect(baseRegistrationChild.props().headerContent).toBe(
       wrapper.instance()._renderHeaderContent()
     );
 
-    expect(baseRegistrationChild.props().refName).to.equal(
+    expect(baseRegistrationChild.props().refName).toBe(
       `${constants.VBS_REGISTERED_VOLUNTEER_REF_NAME}/${testYear}`
     );
   });

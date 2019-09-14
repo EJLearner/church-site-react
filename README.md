@@ -999,7 +999,7 @@ import App from './App';
 it('renders welcome message', () => {
   const wrapper = shallow(<App />);
   const welcome = <h2>Welcome to React</h2>;
-  // expect(wrapper.contains(welcome)).to.equal(true);
+  // expect(wrapper.contains(welcome)).toBe(true);
   expect(wrapper.contains(welcome)).toEqual(true);
 });
 ```
@@ -1516,17 +1516,17 @@ When you build the project, Create React App will place the `public` folder cont
 2. Install `serve` by running `npm install --save serve`.
 
 3. Add this line to `scripts` in `package.json`:
-    
+
     ```
     "now-start": "serve build/",
     ```
-    
+
 4. Run `now` from your project directory. You will see a **now.sh** URL in your output like this:
-    
+
     ```
     > Ready! https://your-project-dirname-tpspyhtdtk.now.sh (copied to clipboard)
     ```
-    
+
     Paste that URL into your browser when the build is complete, and you will see your deployed app.
 
 Details are available in [this article.](https://zeit.co/blog/now-static)

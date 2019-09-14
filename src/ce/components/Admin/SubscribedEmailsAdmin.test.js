@@ -1,5 +1,4 @@
 import {shallow} from 'enzyme';
-import {expect} from 'chai';
 import React from 'react';
 import SubscribedEmailsAdmin from './SubscribedEmailsAdmin';
 
@@ -7,6 +6,6 @@ describe('', () => {
   it('render', () => {
     const wrapper = shallow(<SubscribedEmailsAdmin />);
 
-    expect(wrapper.exists()).to.be.true;
+    expect(wrapper.exists()).toBe(true);
   });
 });
