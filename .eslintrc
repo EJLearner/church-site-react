@@ -17,5 +17,13 @@
     "react/prop-types": "error",
     "react/no-unused-prop-types": "error",
     "semi": "error"
-  }
+  },
+  "overrides": [
+    {
+      "files": "*.test.js",
+      "rules": {
+        "no-unused-expressions": "off"
+      }
+    }
+  ]
 }

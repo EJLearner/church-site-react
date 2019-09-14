@@ -156,6 +156,7 @@ const utils = {
       return path;
     }
 
+    // eslint-disable-next-line no-prototype-builtins
     if (routePaths.hasOwnProperty(pathKey)) {
       return routePaths[pathKey];
     }

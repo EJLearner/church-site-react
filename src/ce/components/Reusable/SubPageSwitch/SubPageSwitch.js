@@ -19,6 +19,7 @@ const SubPageSwitch = props => {
 
       if (pathKey) {
         const oldPathNamesKey = `OLD_PATHS_${pathKey}`;
+        // eslint-disable-next-line no-prototype-builtins
         if (routePaths.hasOwnProperty(oldPathNamesKey)) {
           routePaths[oldPathNamesKey].forEach(oldPath => {
             routes.push(
