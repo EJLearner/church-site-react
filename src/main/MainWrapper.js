@@ -1,16 +1,20 @@
 import React from 'react';
+import MainMenubar from './MainMenubar';
 
 class MainHome extends React.Component {
   render() {
     return (
       <>
         <p>Forms/MemberLogin links</p>
-        <p>Menu Bar</p>
-        <p>Slideshow</p>
-        <p>Stream Box</p>
-        <p>Two pictures and calendar</p>
-        <p>Daily devotional</p>
-        <p>Upcoming Events</p>
+        <MainMenubar />
+        Within Switch:
+        <ul>
+          <li>Slideshow</li>
+          <li>Stream Box</li>
+          <li>Two pictures and calendar</li>
+          <li>Daily devotional</li>
+          <li>Upcoming Events</li>
+        </ul>
         <p>Footer</p>
       </>
     );

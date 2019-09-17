@@ -84,7 +84,7 @@ const WHO_PATHS = {
 };
 
 const ALL_PATHS = {
-  MAIN_HOME: '/home',
+  MAIN_HOME: '/',
   ...MAIN_PATH_CONSTANTS,
   ...ADMIN_PATHS,
   ...CALENDAR_PATHS,

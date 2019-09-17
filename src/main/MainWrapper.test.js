@@ -7,5 +7,9 @@ describe('MainHome', () => {
     expect(shallow(<MainWrapper />).exists()).toBe(true);
   });
 
-  it('renders ', () => {});
+  it('renders menu bar', () => {
+    const wrapper = shallow(<MainWrapper />);
+
+    expect(wrapper.find('MainMenubar').exists()).toBe(true);
+  });
 });

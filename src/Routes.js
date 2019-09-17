@@ -89,6 +89,11 @@ class Routes extends Component {
         <Switch>
           <Route exact path="/" render={() => <MainWrapper />} />
           <Route
+            exact
+            path={routePaths.MAIN_HOME}
+            render={() => <MainWrapper />}
+          />
+          <Route
             path="/christianedu.html"
             render={() => (
               <FullCePage>
