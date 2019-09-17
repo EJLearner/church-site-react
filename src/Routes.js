@@ -14,6 +14,7 @@ import CeLogo from './ce/components/CeLogo/CeLogo';
 import Footer from './ce/components/Footer/Footer';
 import CeHome from './ce/components/Home/CeHome';
 import IdeaForm from './ce/components/IdeaForm/IdeaForm';
+import MainWrapper from './main/MainWrapper';
 import MenuBar from './ce/components/MenuBar/MenuBar';
 import NotFound from './ce/components/NotFound/NotFound';
 import Quote from './ce/components/Quote/Quote';
@@ -86,15 +87,7 @@ class Routes extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => (
-              <FullCePage>
-                <CeHome />
-              </FullCePage>
-            )}
-          />
+          <Route exact path="/" render={() => <MainWrapper />} />
           <Route
             path="/christianedu.html"
             render={() => (
