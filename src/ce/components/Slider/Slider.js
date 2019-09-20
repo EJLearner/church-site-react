@@ -47,7 +47,7 @@ class Slider extends Component {
   savePictureHeight() {
     if (_.size(this.props.pictures)) {
       const pictureHeight = this.slideShowImage.offsetHeight;
-      this._sliderDiv.style.height = `${pictureHeight  }px`;
+      this._sliderDiv.style.height = `${pictureHeight}px`;
     }
   }
 
@@ -212,7 +212,7 @@ class Slider extends Component {
       );
 
       return (
-        <div className={`slide-picture${  currentSuffix  }${instant}`} key={index}>
+        <div className={`slide-picture${currentSuffix}${instant}`} key={index}>
           {linkPath ? (
             <Link to={linkPath}>{renderedImage}</Link>
           ) : (
