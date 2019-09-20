@@ -1,4 +1,5 @@
 import React from 'react';
+import MainFooter from './MainFooter';
 import MainMenubar from './MainMenubar';
 
 class MainHome extends React.Component {
@@ -15,7 +16,7 @@ class MainHome extends React.Component {
           <li>Daily devotional</li>
           <li>Upcoming Events</li>
         </ul>
-        <p>Footer</p>
+        <MainFooter />
       </>
     );
   }
