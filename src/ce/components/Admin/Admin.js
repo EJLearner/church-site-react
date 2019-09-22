@@ -7,8 +7,7 @@ import EventAdmin from './EventAdmin';
 
 import MenuBar from '../MenuBar/MenuBar';
 import routePaths from '../../../routePaths';
-import Switch from 'react-router-dom/Switch';
-import {Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 
 import './Admin.css';
 import SubscribedEmailsAdmin from './SubscribedEmailsAdmin';

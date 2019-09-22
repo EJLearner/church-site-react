@@ -1,6 +1,10 @@
 import React from 'react';
+import {Route, Switch} from 'react-router-dom';
+
+import MainContent from './MainContent';
 import MainFooter from './MainFooter';
 import MainMenubar from './MainMenubar';
+import routePaths from '../routePaths';
 
 class MainHome extends React.Component {
   render() {
@@ -9,13 +13,9 @@ class MainHome extends React.Component {
         <p>Forms/MemberLogin links</p>
         <MainMenubar />
         Within Switch:
-        <ul>
-          <li>Slideshow</li>
-          <li>Stream Box</li>
-          <li>Two pictures and calendar</li>
-          <li>Daily devotional</li>
-          <li>Upcoming Events</li>
-        </ul>
+        <Switch>
+          <Route component={MainContent} path={routePaths.MAIN_HOME} />
+        </Switch>
         <MainFooter />
       </>
     );
