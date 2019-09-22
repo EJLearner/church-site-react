@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {withRouter} from 'react-router-dom';
 import firebase, {auth, provider} from '../../../firebase';
 
 import Button from '../Reusable/Button/Button';
@@ -147,4 +146,4 @@ class Admin extends Component {
   }
 }
 
-export default withRouter(Admin);
+export default Admin;
