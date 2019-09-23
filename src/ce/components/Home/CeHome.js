@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import slidePictureData from '../../utils/slidePictureData';
 
-import Slider from '../Slider/Slider';
+import Slider from '../../../common/Slider';
 import HomeSquares from '../HomeSquares/HomeSquares';
 
 class Home extends Component {
