@@ -2,9 +2,10 @@ import {Link} from 'react-router-dom';
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import _ from 'lodash';
-
 import './Slider.css';
+
+const NEXT_SLIDE_CONTROL = 'next';
+const PREVIOUS_SLIDE_CONTROL = 'previous';
 
 class Slider extends Component {
   static propTypes = {
@@ -66,7 +67,7 @@ class Slider extends Component {
     if (isOn) {
       this.slideShowTimer = setInterval(() => {
         this.setState({
-          slideIndex: this.getNextNumber(
+          slideIndex: this.getNextSlideIndex(
             this.state.slideIndex,
             this.props.pictures.length
           ),
@@ -76,20 +77,20 @@ class Slider extends Component {
     }
   }
 
-  getNextNumber(currentNumber, length, reverse) {
-    let nextNumber = currentNumber;
+  getNextSlideIndex(currentSlideIndex, length, reverse) {
+    let nextSlideIndex = currentSlideIndex;
     const lastSlideIndex = length - 1;
     const firstSlideIndex = 0;
-    const onLastSlide = nextNumber === lastSlideIndex;
-    const onFirstSlide = nextNumber === firstSlideIndex;
+    const onLastSlide = nextSlideIndex === lastSlideIndex;
+    const onFirstSlide = nextSlideIndex === firstSlideIndex;
 
     if (reverse) {
-      nextNumber = onFirstSlide ? lastSlideIndex : --nextNumber;
+      nextSlideIndex = onFirstSlide ? lastSlideIndex : --nextSlideIndex;
     } else {
-      nextNumber = onLastSlide ? firstSlideIndex : ++nextNumber;
+      nextSlideIndex = onLastSlide ? firstSlideIndex : ++nextSlideIndex;
     }
 
-    return nextNumber;
+    return nextSlideIndex;
   }
 
   showPicture(control) {
@@ -98,21 +99,15 @@ class Slider extends Component {
 
     let newIndex;
     switch (control) {
-      case 'next':
-        newIndex = this.getNextNumber(slideIndex, slidesCount);
+      case NEXT_SLIDE_CONTROL:
+        newIndex = this.getNextSlideIndex(slideIndex, slidesCount);
         break;
-      case 'previous':
-        newIndex = this.getNextNumber(slideIndex, slidesCount, true);
+      case PREVIOUS_SLIDE_CONTROL:
+        newIndex = this.getNextSlideIndex(slideIndex, slidesCount, true);
         break;
       default:
-        if (
-          typeof control === 'number' &&
-          0 <= control &&
-          control < slidesCount
-        ) {
-          this.slideShow(this.state.slideShowIsOn);
-          newIndex = control;
-        }
+        this.slideShow(this.state.slideShowIsOn);
+        newIndex = control;
     }
 
     if (newIndex !== slideIndex) {
@@ -135,7 +130,7 @@ class Slider extends Component {
         <button
           className={`picture-select-button fa-stack ${currentOrHidden}`}
           key={index}
-          onClick={_.bind(this.showPicture, this, index)}
+          onClick={() => this.showPicture(index)}
           type="button"
         >
           <i
@@ -148,7 +143,7 @@ class Slider extends Component {
     });
   }
 
-  renderSlideShowButtons = () => {
+  renderSlideShowButtons() {
     const {showPictureSelectButtons} = this.props;
 
     let playPauseClassname;
@@ -165,7 +160,7 @@ class Slider extends Component {
       <div className="slider-control-buttons">
         <button
           className="pic-control-button prev fa fa-angle-left"
-          onClick={_.bind(this.showPicture, this, 'previous')}
+          onClick={() => this.showPicture(PREVIOUS_SLIDE_CONTROL)}
           type="button"
         >
           <i className="fa fa-circle fa-stack-1x" />
@@ -173,7 +168,7 @@ class Slider extends Component {
         </button>
         <button
           className="pic-control-button next fa fa-angle-right"
-          onClick={_.bind(this.showPicture, this, 'next')}
+          onClick={() => this.showPicture(NEXT_SLIDE_CONTROL)}
           type="button"
         >
           <i className="fa fa-circle fa-stack-1x" />
@@ -193,7 +188,7 @@ class Slider extends Component {
         </div>
       </div>
     );
-  };
+  }
 
   renderSlideShowPictures() {
     const picturesElements = this.props.pictures.map((picture, index) => {
@@ -216,13 +211,16 @@ class Slider extends Component {
         />
       );
 
+      let wrappedImage;
+      if (linkPath) {
+        wrappedImage = <Link to={linkPath}>{renderedImage}</Link>;
+      } else {
+        wrappedImage = <div>{renderedImage}</div>;
+      }
+
       return (
         <div className={`slide-picture${currentSuffix}${instant}`} key={index}>
-          {linkPath ? (
-            <Link to={linkPath}>{renderedImage}</Link>
-          ) : (
-            <div>{renderedImage}</div>
-          )}
+          {wrappedImage}
         </div>
       );
     });

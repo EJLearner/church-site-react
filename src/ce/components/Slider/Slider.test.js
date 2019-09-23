@@ -2,131 +2,164 @@ import React from 'react';
 
 import {mount, shallow} from 'enzyme';
 
-import slidePictureData from '../../utils/slidePictureData';
-
 import Slider from './Slider';
 import {MemoryRouter} from 'react-router';
 
-const pictures = slidePictureData.getPictures();
+describe('Slider', () => {
+  let pictures;
 
-describe('#constructor', () => {
   beforeEach(() => {
-    window.onresize = undefined;
+    pictures = [
+      {altTag: 'Picture 1', source: '/test-source-1'},
+      {altTag: 'Picture 2', source: '/test-source-2'},
+      {altTag: 'Picture 3', linkPath: '/fake-path-3', source: '/test-source-3'}
+    ];
   });
 
-  it('should set the slideIndex state to 0', () => {
-    const wrapper = shallow(
-      <MemoryRouter>
-        <Slider pictures={pictures} />
-      </MemoryRouter>
-    )
-      .find(Slider)
-      .dive();
+  describe('#constructor', () => {
+    beforeEach(() => {
+      window.onresize = undefined;
+    });
 
-    expect(wrapper.state().slideIndex).toBe(0);
+    it('should set the slideIndex state to 0', () => {
+      const wrapper = shallow(<Slider pictures={pictures} />);
+
+      expect(wrapper.state().slideIndex).toBe(0);
+    });
+
+    it('should set slideShowIsOn state to true if more than one picture exists', () => {
+      const wrapper = shallow(<Slider pictures={pictures} />);
+
+      expect(wrapper.state().slideShowIsOn).toBe(true);
+    });
+
+    it.skip('should call savePictureHeight on window resize', () => {
+      expect(window.onresize).toBe(undefined);
+      const wrapper = shallow(<Slider pictures={pictures} />);
+
+      wrapper.instance().savePictureHeight = jest.fn();
+      wrapper.update();
+
+      expect(wrapper.instance().savePictureHeight).to.beCalled();
+    });
+
+    it('should set slideShowIsOn state to false if only one picture exists', () => {
+      const wrapper = shallow(<Slider pictures={[pictures[0]]} />);
+
+      expect(wrapper.state().slideShowIsOn).toBe(false);
+    });
   });
 
-  it('should set slideShowIsOn state to true if more than one picture exists', () => {
-    const wrapper = shallow(
-      <MemoryRouter>
-        <Slider pictures={pictures} />
-      </MemoryRouter>
-    )
-      .find(Slider)
-      .dive();
+  describe('#render', () => {
+    it('renders with proper class and id', () => {
+      const wrapper = shallow(<Slider pictures={pictures} />);
 
-    expect(wrapper.state().slideShowIsOn).toBe(true);
+      const outerDiv = wrapper.find('#leftcontent');
+
+      expect(outerDiv.props().className).toBe('slider-chris');
+      expect(outerDiv.props().id).toBe('leftcontent');
+    });
+
+    it('makes _sliderDiv as ref to self', () => {
+      const wrapper = mount(
+        <MemoryRouter>
+          <Slider pictures={pictures} />
+        </MemoryRouter>
+      ).find(Slider);
+
+      expect(wrapper.instance()._sliderDiv.id).toBe('leftcontent');
+    });
+
+    it('renders renderSlideShowButtons if there is more than one picture', () => {
+      const wrapper = shallow(<Slider pictures={pictures} />);
+
+      expect(pictures.length).toBeGreaterThan(1);
+      expect(wrapper.find('.slider-control-buttons').exists()).toBeTruthy();
+    });
+
+    it('does not render renderSlideShowButtons if there is one picture', () => {
+      const wrapper = shallow(<Slider pictures={[pictures[0]]} />);
+
+      expect(wrapper.find('.sliderControlButtons').exists()).toBe(false);
+    });
+
+    it('renders SlideShowPictures', () => {
+      const wrapper = shallow(<Slider pictures={[pictures[0]]} />);
+
+      expect(wrapper.find('.slideshow').exists()).toBe(true);
+    });
+
+    it('renders pause button when slideshow is on', () => {
+      const wrapper = shallow(<Slider pictures={pictures} />);
+      expect(wrapper.state().slideShowIsOn).toBe(true);
+
+      const pauseButton = wrapper.find('.fa-pause');
+      expect(pauseButton.exists()).toBe(true);
+    });
+
+    it('renders play button when slideshow is on', () => {
+      const wrapper = shallow(<Slider pictures={pictures} />);
+      wrapper.setState({slideShowIsOn: false});
+
+      const playButton = wrapper.find('.fa-play');
+      expect(playButton.exists()).toBe(true);
+    });
   });
 
-  it.skip('should call savePictureHeight on window resize', () => {
-    expect(window.onresize).toBe(undefined);
-    const wrapper = shallow(
-      <MemoryRouter>
-        <Slider pictures={pictures} />
-      </MemoryRouter>
-    )
-      .find(Slider)
-      .dive();
+  describe('actions', () => {
+    it('goes to next picture if next button is pressed', () => {
+      const wrapper = shallow(<Slider pictures={pictures} />);
+      expect(wrapper.state().slideIndex).toBe(0);
 
-    wrapper.instance().savePictureHeight = jest.fn();
-    wrapper.update();
+      const nextButton = wrapper.find('.next');
+      expect(nextButton.exists()).toBe(true);
 
-    expect(wrapper.instance().savePictureHeight).to.beCalled();
-  });
+      nextButton.simulate('click');
+      expect(wrapper.state().slideIndex).toBe(1);
+    });
 
-  it('should set slideShowIsOn state to false if only one picture exists', () => {
-    const wrapper = shallow(
-      <MemoryRouter>
-        <Slider pictures={[pictures[0]]} />
-      </MemoryRouter>
-    )
-      .find(Slider)
-      .dive();
+    it('goes to prev picture if prev button is pressed', () => {
+      const wrapper = shallow(<Slider pictures={pictures} />);
+      wrapper.setState({slideIndex: 2});
 
-    expect(wrapper.state().slideShowIsOn).toBe(false);
-  });
-});
+      const prevButton = wrapper.find('.prev');
+      expect(prevButton.exists()).toBe(true);
 
-describe('#render', () => {
-  it('renders with proper class and id', () => {
-    const wrapper = shallow(
-      <MemoryRouter>
-        <Slider pictures={pictures} />
-      </MemoryRouter>
-    )
-      .find(Slider)
-      .dive();
+      prevButton.simulate('click');
+      expect(wrapper.state().slideIndex).toBe(1);
+    });
 
-    const outerDiv = wrapper.find('#leftcontent');
+    it('goes directly to slide if picture select button is pressed', () => {
+      const wrapper = shallow(<Slider pictures={pictures} />);
+      expect(wrapper.state().slideIndex).toBe(0);
 
-    expect(outerDiv.props().className).toBe('slider-chris');
-    expect(outerDiv.props().id).toBe('leftcontent');
-  });
+      const pictureSelectButtons = wrapper.find('.picture-select-button');
 
-  it('makes _sliderDiv as ref to self', () => {
-    const wrapper = mount(
-      <MemoryRouter>
-        <Slider pictures={pictures} />
-      </MemoryRouter>
-    ).find(Slider);
+      pictureSelectButtons.at(2).simulate('click');
 
-    expect(wrapper.instance()._sliderDiv.id).toBe('leftcontent');
-  });
+      expect(wrapper.state().slideIndex).toBe(2);
+    });
 
-  it('renders renderSlideShowButtons if there is more than one picture', () => {
-    const wrapper = shallow(
-      <MemoryRouter>
-        <Slider pictures={pictures} />
-      </MemoryRouter>
-    )
-      .find(Slider)
-      .dive();
+    it('goes directly to slide if picture select button is pressed', () => {
+      const wrapper = shallow(<Slider pictures={pictures} />);
+      expect(wrapper.state().slideIndex).toBe(0);
 
-    expect(pictures.length).toBeGreaterThan(1);
-    expect(wrapper.find('.slider-control-buttons').exists()).toBeTruthy();
-  });
+      const pictureSelectButtons = wrapper.find('.picture-select-button');
 
-  it('does not render renderSlideShowButtons if there is one picture', () => {
-    const wrapper = shallow(
-      <MemoryRouter>
-        <Slider pictures={[pictures[0]]} />
-      </MemoryRouter>
-    )
-      .find(Slider)
-      .dive();
+      pictureSelectButtons.at(2).simulate('click');
 
-    expect(wrapper.find('.sliderControlButtons').exists()).toBe(false);
-  });
+      expect(wrapper.state().slideIndex).toBe(2);
+    });
 
-  it('renders SlideShowPictures', () => {
-    const wrapper = shallow(
-      <MemoryRouter>
-        <Slider pictures={[pictures[0]]} />
-      </MemoryRouter>
-    )
-      .find(Slider)
-      .dive();
+    it('does nothing if button is pressed for current picture', () => {
+      const wrapper = shallow(<Slider pictures={pictures} />);
+      expect(wrapper.state().slideIndex).toBe(0);
 
-    expect(wrapper.find('.slideshow').exists()).toBe(true);
+      const pictureSelectButtons = wrapper.find('.picture-select-button');
+
+      pictureSelectButtons.at(0).simulate('click');
+
+      expect(wrapper.state().slideIndex).toBe(0);
+    });
   });
 });
