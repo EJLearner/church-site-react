@@ -7,23 +7,30 @@ import _ from 'lodash';
 import './Slider.css';
 
 class Slider extends Component {
+  static propTypes = {
+    pictures: PropTypes.arrayOf(
+      PropTypes.shape({
+        altTag: PropTypes.string.isRequired,
+        source: PropTypes.string.isRequired
+      })
+    ).isRequired,
+    showPictureSelectButtons: PropTypes.bool
+  };
+
+  static defaultProps = {
+    showPictureSelectButtons: true
+  };
+
   constructor(props) {
     super(props);
 
-    const moreThanOnePicture = _.size(this.props.pictures) > 1;
+    const moreThanOnePicture = this.props.pictures.length > 1;
     const slideShowIsOn = moreThanOnePicture ? true : false;
 
     this.state = {
       slideIndex: 0,
       slideShowIsOn
     };
-
-    this._renderSlideShowButtons = this._renderSlideShowButtons.bind(this);
-    this._renderPictureSelectButtons = this._renderPictureSelectButtons.bind(
-      this
-    );
-    this._renderSlideShowPictures = this._renderSlideShowPictures.bind(this);
-    this.savePictureHeight = this.savePictureHeight.bind(this);
   }
 
   componentDidMount() {
@@ -44,24 +51,24 @@ class Slider extends Component {
     window.removeEventListener('onresize', this.savePictureHeight);
   }
 
-  savePictureHeight() {
-    if (_.size(this.props.pictures)) {
+  savePictureHeight = () => {
+    if (this.props.pictures.length) {
       const pictureHeight = this.slideShowImage.offsetHeight;
       this._sliderDiv.style.height = `${pictureHeight}px`;
     }
-  }
+  };
 
-  slideShow(on) {
+  slideShow(isOn) {
     const timePerSlide = 8000;
     // always reset the slideShow
     this.slideShowTimer && clearInterval(this.slideShowTimer);
 
-    if (on) {
+    if (isOn) {
       this.slideShowTimer = setInterval(() => {
         this.setState({
           slideIndex: this.getNextNumber(
             this.state.slideIndex,
-            _.size(this.props.pictures)
+            this.props.pictures.length
           ),
           instantChange: false
         });
@@ -87,23 +94,21 @@ class Slider extends Component {
 
   showPicture(control) {
     const {slideIndex} = this.state;
+    const slidesCount = this.props.pictures.length;
+
     let newIndex;
     switch (control) {
       case 'next':
-        newIndex = this.getNextNumber(slideIndex, _.size(this.props.pictures));
+        newIndex = this.getNextNumber(slideIndex, slidesCount);
         break;
       case 'previous':
-        newIndex = this.getNextNumber(
-          slideIndex,
-          _.size(this.props.pictures),
-          true
-        );
+        newIndex = this.getNextNumber(slideIndex, slidesCount, true);
         break;
       default:
         if (
           typeof control === 'number' &&
           0 <= control &&
-          control < _.size(this.props.pictures)
+          control < slidesCount
         ) {
           this.slideShow(this.state.slideShowIsOn);
           newIndex = control;
@@ -118,11 +123,11 @@ class Slider extends Component {
     }
   }
 
-  toggleSlideShow() {
+  toggleSlideShow = () => {
     this.setState({slideShowIsOn: !this.state.slideShowIsOn});
-  }
+  };
 
-  _renderPictureSelectButtons() {
+  renderPictureSelectButtons() {
     return this.props.pictures.map((picture, index) => {
       const isCurrentPicture = index === this.state.slideIndex;
       const currentOrHidden = isCurrentPicture ? 'current' : 'hidden';
@@ -143,7 +148,9 @@ class Slider extends Component {
     });
   }
 
-  _renderSlideShowButtons() {
+  renderSlideShowButtons = () => {
+    const {showPictureSelectButtons} = this.props;
+
     let playPauseClassname;
     let playOrPauseLabel;
     if (this.state.slideShowIsOn) {
@@ -173,13 +180,11 @@ class Slider extends Component {
           <i className="fa fa-angle-right fa-stack-1x white" />
         </button>
         <div className="select-and-pause-controls">
-          {this.props.showPictureSelectButtons
-            ? this._renderPictureSelectButtons()
-            : null}
+          {showPictureSelectButtons && this.renderPictureSelectButtons()}
           <button
             className="fa-stack"
             id="play-pause-button"
-            onClick={this.toggleSlideShow.bind(this)}
+            onClick={this.toggleSlideShow}
             type="button"
           >
             <i className="fa fa-circle fa-stack-2x gray" />
@@ -188,9 +193,9 @@ class Slider extends Component {
         </div>
       </div>
     );
-  }
+  };
 
-  _renderSlideShowPictures() {
+  renderSlideShowPictures() {
     const picturesElements = this.props.pictures.map((picture, index) => {
       const {source, altTag, linkPath} = picture;
       const {slideIndex, instantChange} = this.state;
@@ -226,34 +231,17 @@ class Slider extends Component {
   }
 
   render() {
-    const SlideShowButtons = this._renderSlideShowButtons;
-    const SlideShowPictures = this._renderSlideShowPictures;
-
     return (
       <div
         className="slider-chris"
         id="leftcontent"
         ref={node => (this._sliderDiv = node)}
       >
-        {this.props.pictures.length > 1 ? <SlideShowButtons /> : null}
-        <SlideShowPictures />
+        {this.props.pictures.length > 1 && this.renderSlideShowButtons()}
+        {this.renderSlideShowPictures()}
       </div>
     );
   }
 }
-
-Slider.propTypes = {
-  pictures: PropTypes.arrayOf(
-    PropTypes.shape({
-      altTag: PropTypes.string.isRequired,
-      source: PropTypes.string.isRequired
-    })
-  ).isRequired,
-  showPictureSelectButtons: PropTypes.bool
-};
-
-Slider.defaultProps = {
-  showPictureSelectButtons: true
-};
 
 export default Slider;

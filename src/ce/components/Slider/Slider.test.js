@@ -93,7 +93,7 @@ describe('#render', () => {
     expect(wrapper.instance()._sliderDiv.id).toBe('leftcontent');
   });
 
-  it('renders _renderSlideShowButtons if there is more than one picture', () => {
+  it('renders renderSlideShowButtons if there is more than one picture', () => {
     const wrapper = shallow(
       <MemoryRouter>
         <Slider pictures={pictures} />
@@ -102,13 +102,11 @@ describe('#render', () => {
       .find(Slider)
       .dive();
 
-    const SlideShowButtons = wrapper.instance()._renderSlideShowButtons;
-
     expect(pictures.length).toBeGreaterThan(1);
-    expect(wrapper.find(SlideShowButtons).exists()).toBeTruthy();
+    expect(wrapper.find('.slider-control-buttons').exists()).toBeTruthy();
   });
 
-  it('does not render _renderSlideShowButtons if there is one picture', () => {
+  it('does not render renderSlideShowButtons if there is one picture', () => {
     const wrapper = shallow(
       <MemoryRouter>
         <Slider pictures={[pictures[0]]} />
@@ -117,9 +115,7 @@ describe('#render', () => {
       .find(Slider)
       .dive();
 
-    const SlideShowButtons = wrapper.instance()._renderSlideShowButtons;
-
-    expect(wrapper.find(SlideShowButtons).exists()).toBe(false);
+    expect(wrapper.find('.sliderControlButtons').exists()).toBe(false);
   });
 
   it('renders SlideShowPictures', () => {
@@ -131,8 +127,6 @@ describe('#render', () => {
       .find(Slider)
       .dive();
 
-    const SlideShowPictures = wrapper.instance()._renderSlideShowPictures;
-
-    expect(wrapper.find(SlideShowPictures).exists()).toBe(true);
+    expect(wrapper.find('.slideshow').exists()).toBe(true);
   });
 });
