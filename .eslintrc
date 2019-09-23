@@ -8,6 +8,7 @@
         "message": "Disable test field generators before commit"
       }
     ],
+    "multiline-ternary": ["warn", "never"],
     "no-useless-computed-key": "error",
     "prefer-template": "error",
     "quotes": ["error", "single"],

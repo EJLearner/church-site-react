@@ -6,4 +6,6 @@ describe('MainContent', () => {
   it('renders', () => {
     expect(shallow(<MainContent />).exists()).toBe(true);
   });
+
+  it('renders slideshow', () => {});
 });
