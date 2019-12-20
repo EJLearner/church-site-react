@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders renders correctly when lines are react nodes 1`] = `
+<div
+  className="event-area"
+>
+  <div
+    className="event-date"
+  >
+    May.
+    <br />
+    10
+  </div>
+  <div
+    className="event-title"
+  >
+    test title
+  </div>
+  <div
+    className="other-lines"
+  >
+    <div
+      className="other-line"
+    >
+      <span>
+        Line 1T
+      </span>
+    </div>
+    <div
+      className="other-line"
+    >
+      <span>
+        Line 2T
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders renders correctly when lines are strings 1`] = `
+<div
+  className="event-area"
+>
+  <div
+    className="event-date"
+  >
+    May.
+    <br />
+    10
+  </div>
+  <div
+    className="event-title"
+  >
+    test title
+  </div>
+  <div
+    className="other-lines"
+  >
+    <div
+      className="other-line"
+    >
+      line 1
+    </div>
+    <div
+      className="other-line"
+    >
+      line 2
+    </div>
+  </div>
+</div>
+`;
