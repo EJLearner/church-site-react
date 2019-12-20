@@ -14,3 +14,17 @@
     font-size: 12px;
   }
 }
+
+.three-boxes {
+  display: flex;
+  justify-content: center;
+
+  div {
+    flex: 1 1 auto;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

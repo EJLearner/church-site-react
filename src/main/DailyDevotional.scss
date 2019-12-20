@@ -1,0 +1,30 @@
+@import '../variables';
+
+.daily-devotional-section {
+  color: $gray95;
+  font-size: 80%;
+  width: 66%;
+
+  h3 {
+    color: $light-blue;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  p:first-of-type {
+    margin-top: 4px;
+  }
+
+  p {
+    margin-bottom: 8px;
+    margin-top: 8px;
+    line-height: 150%;
+  }
+
+  .v {
+    vertical-align: super;
+    font-size: 10px;
+  }
+}

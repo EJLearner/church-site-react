@@ -12,7 +12,6 @@ class MainHome extends React.Component {
       <>
         <p>Forms/MemberLogin links</p>
         <MainMenubar />
-        Within Switch:
         <Switch>
           <Route component={MainContent} path={routePaths.MAIN_HOME} />
         </Switch>

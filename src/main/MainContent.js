@@ -1,10 +1,14 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Slider from '../common/Slider';
+import mainCalendarSquare from '../assets/main/images/main-calendar-square.png';
+import mainOutReachSquare from '../assets/main/images/main-outreach-square.png';
+import mainGrowSquare from '../assets/main/images/main-grow-square.png';
 
 import routePaths from '../routePaths';
 
 import './MainContent.css';
+import DailyDevotional from './DailyDevotional';
 
 const allPictures = [
   {
@@ -50,9 +54,25 @@ class MainContent extends React.Component {
             </span>
           </Link>
         </div>
+        <div className="three-boxes">
+          <div>
+            <Link to={routePaths.MAIN_OUTREACH}>
+              <img alt="Outreach" src={mainOutReachSquare} />
+            </Link>
+          </div>
+          <div>
+            <Link to={routePaths.CE_HOME}>
+              <img alt="Grow" src={mainGrowSquare} />
+            </Link>
+          </div>
+          <div>
+            <Link to={routePaths.MAIN_CALENDAR}>
+              <img alt="Calendar" src={mainCalendarSquare} />
+            </Link>
+          </div>
+        </div>
         <ul>
-          <li>Two pictures and calendar</li>
-          <li>Daily devotional</li>
+          <DailyDevotional />
           <li>Upcoming Events</li>
         </ul>
       </>
