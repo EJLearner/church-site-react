@@ -87,12 +87,8 @@ class Routes extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" render={() => <MainWrapper />} />
-          <Route
-            exact
-            path={routePaths.MAIN_HOME}
-            render={() => <MainWrapper />}
-          />
+          <Route component={MainWrapper} exact path="/" />
+          <Route component={MainWrapper} exact path={routePaths.MAIN_HOME} />
           <Route
             path="/christianedu.html"
             render={() => (

@@ -29,6 +29,15 @@
   }
 }
 
+.upcoming-events-area {
+  h3 {
+    color: $red;
+    text-align: center;
+    font-size: 200%;
+    margin-bottom: 1em;
+  }
+}
+
 .all-events {
   display: flex;
   flex: 1 0 0;

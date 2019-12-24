@@ -13,7 +13,7 @@ UpcomingEvent.propTypes = {
 function UpcomingEvent(props) {
   function renderLines(lines) {
     return lines.map((line, index) => (
-      <div className="other-line" key={index}>
+      <div className="event-line" key={index}>
         {line}
       </div>
     ));
@@ -21,13 +21,15 @@ function UpcomingEvent(props) {
 
   return (
     <div className="event-area">
-      <div className="event-date">
-        {moment(props.date).format('MMM.')}
-        <br />
-        {moment(props.date).format('D')}
+      <div className="event-date-container">
+        <p>
+          {moment(props.date).format('MMM.')}
+          <br />
+          {moment(props.date).format('D')}
+        </p>
       </div>
       <div className="event-title">{props.title}</div>
-      <div className="other-lines">{renderLines(props.lines)}</div>
+      <div className="event-lines">{renderLines(props.lines)}</div>
     </div>
   );
 }

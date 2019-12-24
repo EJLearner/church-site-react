@@ -5,11 +5,13 @@ exports[`renders renders correctly when lines are react nodes 1`] = `
   className="event-area"
 >
   <div
-    className="event-date"
+    className="event-date-container"
   >
-    May.
-    <br />
-    10
+    <p>
+      May.
+      <br />
+      10
+    </p>
   </div>
   <div
     className="event-title"
@@ -17,17 +19,17 @@ exports[`renders renders correctly when lines are react nodes 1`] = `
     test title
   </div>
   <div
-    className="other-lines"
+    className="event-lines"
   >
     <div
-      className="other-line"
+      className="event-line"
     >
       <span>
         Line 1T
       </span>
     </div>
     <div
-      className="other-line"
+      className="event-line"
     >
       <span>
         Line 2T
@@ -42,11 +44,13 @@ exports[`renders renders correctly when lines are strings 1`] = `
   className="event-area"
 >
   <div
-    className="event-date"
+    className="event-date-container"
   >
-    May.
-    <br />
-    10
+    <p>
+      May.
+      <br />
+      10
+    </p>
   </div>
   <div
     className="event-title"
@@ -54,15 +58,15 @@ exports[`renders renders correctly when lines are strings 1`] = `
     test title
   </div>
   <div
-    className="other-lines"
+    className="event-lines"
   >
     <div
-      className="other-line"
+      className="event-line"
     >
       line 1
     </div>
     <div
-      className="other-line"
+      className="event-line"
     >
       line 2
     </div>

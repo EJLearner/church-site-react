@@ -2,16 +2,15 @@
 
 .event-area {
   text-align: center;
-  width: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 25px 0 25px;
   flex: 1 0 auto;
+  justify-content: space-around;
 }
 
-.event-date {
-  border: 1px solid black;
+.event-date-container {
+  border: 2px solid $light-blue;
   border-radius: 50%;
   width: 80px;
   height: 80px;
@@ -20,6 +19,7 @@
 
 .event-title {
   color: $red;
+  font-weight: bolder;
 }
 
 .event-title,
