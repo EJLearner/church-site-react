@@ -16,7 +16,6 @@ import CeHome from './ce/components/Home/CeHome';
 import IdeaForm from './ce/components/IdeaForm/IdeaForm';
 import MainWrapper from './main/MainWrapper';
 import MenuBar from './ce/components/MenuBar/MenuBar';
-import NotFound from './ce/components/NotFound/NotFound';
 import Quote from './ce/components/Quote/Quote';
 import TitleBar from './ce/components/TitleBar/TitleBar';
 import ThankYouPage from './ce/components/Reusable/ThankYouPage/ThankYouPage';
@@ -87,7 +86,7 @@ class Routes extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route component={MainWrapper} exact path="/" />
+          <Route component={MainWrapper} path="/" />
           <Route component={MainWrapper} exact path={routePaths.MAIN_HOME} />
           <Route
             path="/christianedu.html"
@@ -266,13 +265,6 @@ class Routes extends Component {
             render={() => (
               <FullCePage>
                 <Youth />
-              </FullCePage>
-            )}
-          />
-          <Route
-            render={() => (
-              <FullCePage>
-                <NotFound />
               </FullCePage>
             )}
           />

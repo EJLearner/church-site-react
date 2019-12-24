@@ -1,6 +1,7 @@
 {
   "extends": ["react-app", "eslint:recommended", "plugin:react/recommended"],
   "rules": {
+    "comma-dangle": ["error", "never"],
     "no-restricted-syntax": [
       "error",
       {
@@ -9,10 +10,15 @@
       }
     ],
     "multiline-ternary": ["warn", "never"],
+    "no-underscore-dangle": "warn",
     "no-useless-computed-key": "error",
+    "object-curly-spacing": ["error", "never"],
+    "object-curly-newline": ["error", {"consistent": true}],
+    "operator-linebreak": ["error", "after"],
     "prefer-template": "error",
     "quotes": ["error", "single"],
     "react/jsx-sort-props": "error",
+    "react/jsx-filename-extension": "warn",
     "react/sort-prop-types": "error",
     "react/sort-comp": "error",
     "react/prop-types": "error",
@@ -23,7 +29,8 @@
     {
       "files": "*.test.js",
       "rules": {
-        "no-unused-expressions": "off"
+        "no-unused-expressions": "off",
+        "react/jsx-props-no-spreading": "warn"
       }
     }
   ]

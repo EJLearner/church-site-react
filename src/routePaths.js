@@ -30,7 +30,8 @@ const MAIN_ROOT_PATHS = {
   MAIN_NEWCOMERS: `${MAIN_HOME_PATH}newcomers/`,
   MAIN_OUR_STORY: `${MAIN_HOME_PATH}our-story/`,
   MAIN_OUTREACH: `${MAIN_HOME_PATH}outreach/`,
-  MAIN_STREAM: `${MAIN_HOME_PATH}stream/`
+  MAIN_STREAM: `${MAIN_HOME_PATH}stream/`,
+  MAIN_WELCOME: `${MAIN_HOME_PATH}welcome/`
 };
 
 const CE_ROOT_PATHS = {
