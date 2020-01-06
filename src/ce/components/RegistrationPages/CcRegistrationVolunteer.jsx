@@ -5,7 +5,7 @@ import constants from '../../../utils/constants';
 import utils from '../../../utils/commonUtils';
 
 class CcRegistrationVolunteer extends Component {
-  _renderHeaderContent() {
+  renderHeaderContent() {
     return (
       <div>
         <h1>Children’s Church</h1>
@@ -20,7 +20,7 @@ class CcRegistrationVolunteer extends Component {
     return (
       <BaseRegistrationVolunteer
         className="registration-page"
-        headerContent={this._renderHeaderContent()}
+        headerContent={this.renderHeaderContent()}
         refName={`${constants.CC_REGISTERED_VOLUNTEER_REF_NAME}/${ccYear}`}
         volunteerIdPropName={constants.CC_REGISTERED_VOLUNTEER_ID_PROP}
       />
