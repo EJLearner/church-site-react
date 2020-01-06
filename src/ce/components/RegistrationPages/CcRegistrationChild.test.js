@@ -14,7 +14,7 @@ describe('CcRegistrationChild', () => {
   });
 
   it('BaseCcRegistrationChild has correct props', () => {
-    CcRegistrationChild.prototype._renderHeaderContent = jest.fn(
+    CcRegistrationChild.prototype.renderHeaderContent = jest.fn(
       () => 'Header Content'
     );
 
@@ -31,7 +31,7 @@ describe('CcRegistrationChild', () => {
     expect(baseRegistrationChild.props().className).toBe('registration-page');
 
     expect(baseRegistrationChild.props().headerContent).toBe(
-      wrapper.instance()._renderHeaderContent()
+      wrapper.instance().renderHeaderContent()
     );
 
     expect(baseRegistrationChild.props().refName).toBe(

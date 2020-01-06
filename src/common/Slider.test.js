@@ -60,14 +60,14 @@ describe('Slider', () => {
       expect(outerDiv.props().id).toBe('leftcontent');
     });
 
-    it('makes _sliderDiv as ref to self', () => {
+    it('makes sliderDiv as ref to self', () => {
       const wrapper = mount(
         <MemoryRouter>
           <Slider pictures={pictures} />
         </MemoryRouter>
       ).find(Slider);
 
-      expect(wrapper.instance()._sliderDiv.id).toBe('leftcontent');
+      expect(wrapper.instance().sliderDiv.id).toBe('leftcontent');
     });
 
     it('renders renderSlideShowButtons if there is more than one picture', () => {

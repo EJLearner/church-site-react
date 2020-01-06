@@ -20,8 +20,8 @@ class Admin extends Component {
       user: null
     };
 
-    this._login = this._login.bind(this);
-    this._logout = this._logout.bind(this);
+    this.login = this.login.bind(this);
+    this.logout = this.logout.bind(this);
   }
 
   componentDidMount() {
@@ -41,20 +41,20 @@ class Admin extends Component {
     });
   }
 
-  _login() {
+  login() {
     auth.signInWithPopup(provider).then(result => {
       const {user} = result;
       this.setState({user});
     });
   }
 
-  _logout() {
+  logout() {
     auth.signOut().then(() => {
       this.setState({user: null});
     });
   }
 
-  _eventAdminPage() {
+  eventAdminPage() {
     const addingEvent = this.state.currentEdit === 'new';
     const onAddItemClick = () => {
       this.setState({currentEdit: 'new'});
@@ -71,7 +71,7 @@ class Admin extends Component {
     );
   }
 
-  _generateLinks() {
+  generateLinks() {
     const {
       adminUsers,
       ccRegAccess,
@@ -112,9 +112,9 @@ class Admin extends Component {
     if (user) {
       return (
         <div className="admin-page">
-          <MenuBar links={this._generateLinks()} />
+          <MenuBar links={this.generateLinks()} />
           Logged in as {user.displayName}{' '}
-          <Button onClick={this._logout}>Log out</Button>
+          <Button onClick={this.logout}>Log out</Button>
           <Switch>
             <Route
               path={routePaths.ADMIN_EVENTS}
@@ -139,7 +139,7 @@ class Admin extends Component {
 
     return (
       <div className="admin-page">
-        <Button onClick={this._login}>Log in</Button>
+        <Button onClick={this.login}>Log in</Button>
       </div>
     );
   }

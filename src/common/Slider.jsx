@@ -55,7 +55,7 @@ class Slider extends Component {
   savePictureHeight = () => {
     if (this.props.pictures.length) {
       const pictureHeight = this.slideShowImage.offsetHeight;
-      this._sliderDiv.style.height = `${pictureHeight}px`;
+      this.sliderDiv.style.height = `${pictureHeight}px`;
     }
   };
 
@@ -233,7 +233,7 @@ class Slider extends Component {
       <div
         className="slider-chris"
         id="leftcontent"
-        ref={node => (this._sliderDiv = node)}
+        ref={node => (this.sliderDiv = node)}
       >
         {this.props.pictures.length > 1 && this.renderSlideShowButtons()}
         {this.renderSlideShowPictures()}

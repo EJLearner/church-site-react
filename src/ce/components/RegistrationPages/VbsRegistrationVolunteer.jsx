@@ -5,7 +5,7 @@ import constants from '../../../utils/constants';
 import utils from '../../../utils/commonUtils';
 
 class VbsRegistrationVolunteer extends Component {
-  _renderHeaderContent() {
+  renderHeaderContent() {
     return (
       <div>
         <h1 className="vbs-header">Vacation Bible School</h1>
@@ -21,7 +21,7 @@ class VbsRegistrationVolunteer extends Component {
       <BaseRegistrationVolunteer
         askAvailability
         className="registration-page"
-        headerContent={this._renderHeaderContent()}
+        headerContent={this.renderHeaderContent()}
         refName={`${constants.VBS_REGISTERED_VOLUNTEER_REF_NAME}/${vbsYear}`}
         volunteerIdPropName={constants.VBS_REGISTERED_VOLUNTEER_ID_PROP}
       />

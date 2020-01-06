@@ -13,7 +13,7 @@ describe('CcRegistrationVolunteer', () => {
   });
 
   it('BaseRegistrationVolunteer has correct props', () => {
-    CcRegistrationVolunteer.prototype._renderHeaderContent = jest.fn(
+    CcRegistrationVolunteer.prototype.renderHeaderContent = jest.fn(
       () => 'Header Content'
     );
 
@@ -32,7 +32,7 @@ describe('CcRegistrationVolunteer', () => {
     );
 
     expect(baseRegistrationChild.props().headerContent).toBe(
-      wrapper.instance()._renderHeaderContent()
+      wrapper.instance().renderHeaderContent()
     );
 
     expect(baseRegistrationChild.props().refName).toBe(

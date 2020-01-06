@@ -9,7 +9,6 @@
         "message": "Disable test field generators before commit"
       }
     ],
-    "multiline-ternary": ["warn", "never"],
     "no-underscore-dangle": "warn",
     "no-useless-computed-key": "error",
     "object-curly-spacing": ["error", "never"],
@@ -29,7 +28,8 @@
       "files": "*.test.js",
       "rules": {
         "no-unused-expressions": "off",
-        "react/jsx-props-no-spreading": "warn"
+        "react/jsx-props-no-spreading": "off",
+        "react/jsx-filename-extension": "off"
       }
     }
   ]

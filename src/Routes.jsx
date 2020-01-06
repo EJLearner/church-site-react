@@ -32,7 +32,7 @@ import Why from './ce/components/Why/Why';
 import Youth from './ce/components/Youth/Youth';
 
 class Routes extends Component {
-  _renderFullCePage({children}) {
+  renderFullCePage({children}) {
     const mainTopLinks = [
       {
         path: routePaths.CE_HOME,
@@ -67,7 +67,7 @@ class Routes extends Component {
     );
   }
 
-  _renderBareCePage({children}) {
+  renderBareCePage({children}) {
     return (
       <div id="top-react-div">
         <TitleBar />
@@ -78,13 +78,12 @@ class Routes extends Component {
   }
 
   render() {
-    const FullCePage = this._renderFullCePage;
-    const BareCePage = this._renderBareCePage;
+    const FullCePage = this.renderFullCePage;
+    const BareCePage = this.renderBareCePage;
 
     return (
       <BrowserRouter>
         <Switch>
-          <Route component={MainWrapper} path="/" />
           <Route component={MainWrapper} exact path={routePaths.MAIN_HOME} />
           <Route
             path="/christianedu.html"
@@ -266,6 +265,7 @@ class Routes extends Component {
               </FullCePage>
             )}
           />
+          <Route component={MainWrapper} path="/" />
         </Switch>
       </BrowserRouter>
     );

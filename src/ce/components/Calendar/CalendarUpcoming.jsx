@@ -14,15 +14,15 @@ class CalendarUpcoming extends Component {
     super(props);
     this.state = {selectedDay: moment().format('YYYY-MM-DD')};
 
-    this._getDates = this._getDates.bind(this);
-    this._onDateChange = this._onDateChange.bind(this);
+    this.getDates = this.getDates.bind(this);
+    this.onDateChange = this.onDateChange.bind(this);
   }
 
-  _onDateChange(dayString) {
+  onDateChange(dayString) {
     this.setState({selectedDay: dayString});
   }
 
-  _getDates(maxEvents) {
+  getDates(maxEvents) {
     let dates = [];
 
     let eventCount = 0;
@@ -53,8 +53,8 @@ class CalendarUpcoming extends Component {
   render() {
     return (
       <EventsListPage
-        dates={this._getDates(10)}
-        onDateChange={this._onDateChange}
+        dates={this.getDates(10)}
+        onDateChange={this.onDateChange}
         pageTitle="Upcoming Events"
         selectedDay={this.state.selectedDay}
         storedDates={this.props.storedDates}

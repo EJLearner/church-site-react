@@ -1,6 +1,6 @@
 let memo = {};
 
-const _resetCache = () => {
+const resetCache = () => {
   memo = {};
 };
 
@@ -30,6 +30,6 @@ const getVerseInfo = (query, cb) => {
   }
 };
 
-export {_resetCache};
+export {resetCache as _resetCache};
 
 export default getVerseInfo;

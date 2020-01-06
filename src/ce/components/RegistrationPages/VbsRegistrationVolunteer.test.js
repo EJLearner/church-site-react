@@ -13,7 +13,7 @@ describe('VbsRegistrationVolunteer', () => {
   });
 
   it('BaseRegistrationVolunteer has correct props', () => {
-    VbsRegistrationVolunteer.prototype._renderHeaderContent = jest.fn(
+    VbsRegistrationVolunteer.prototype.renderHeaderContent = jest.fn(
       () => 'Header Content'
     );
 
@@ -32,7 +32,7 @@ describe('VbsRegistrationVolunteer', () => {
     );
 
     expect(baseRegistrationChild.props().headerContent).toBe(
-      wrapper.instance()._renderHeaderContent()
+      wrapper.instance().renderHeaderContent()
     );
 
     expect(baseRegistrationChild.props().refName).toBe(

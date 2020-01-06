@@ -24,39 +24,39 @@ class CcVbsAdminBase extends Component {
       dataYear: '2019'
     };
 
-    this._getInfoFromFirebase();
+    this.getInfoFromFirebase();
   }
 
   componentDidUpdate(prevProps, prevState) {
     const yearChanged = prevState.dataYear !== this.state.dataYear;
     const pageChanged = prevProps.stringPrefix !== this.props.stringPrefix;
     if (yearChanged || pageChanged) {
-      this._getInfoFromFirebase();
+      this.getInfoFromFirebase();
     }
   }
 
-  _getInfoFromFirebase() {
-    this._convertFbObjectToState(
+  getInfoFromFirebase() {
+    this.convertFbObjectToState(
       'volunteers',
       'volunteerTableRows',
-      this._generateVolunteerRowObject
+      this.generateVolunteerRowObject
     );
 
-    this._convertFbObjectToState(
+    this.convertFbObjectToState(
       'students',
       'childrenTableRows',
-      this._generateChildRowObject
+      this.generateChildRowObject
     );
 
-    this._convertFbObjectWithSubObjectsToState(
+    this.convertFbObjectWithSubObjectsToState(
       `${this.props.stringPrefix}Logbook`,
       'checkinTableRows',
-      this._generateCheckinRowObject,
+      this.generateCheckinRowObject,
       true
     );
   }
 
-  _convertFbObjectToState(type, stateName, generateRowObject) {
+  convertFbObjectToState(type, stateName, generateRowObject) {
     let registerTypeString;
     if (type === 'volunteers') {
       registerTypeString = 'Volunteers';
@@ -74,7 +74,7 @@ class CcVbsAdminBase extends Component {
       .database()
       .ref(refPath)
       .on('value', snapshot => {
-        const tableRows = this._getRowsFromSnapshot(
+        const tableRows = this.getRowsFromSnapshot(
           snapshot,
           generateRowObject,
           this
@@ -83,7 +83,7 @@ class CcVbsAdminBase extends Component {
       });
   }
 
-  _convertFbObjectWithSubObjectsToState(refPath, stateName, generateRowObject) {
+  convertFbObjectWithSubObjectsToState(refPath, stateName, generateRowObject) {
     firebase
       .database()
       .ref(refPath)
@@ -92,7 +92,7 @@ class CcVbsAdminBase extends Component {
 
         snapshot.forEach(snapshotItem => {
           const key = `${stateName}-${snapshotItem.key}`;
-          const tableRows = this._getRowsFromSnapshot(
+          const tableRows = this.getRowsFromSnapshot(
             snapshotItem,
             generateRowObject,
             this
@@ -105,7 +105,7 @@ class CcVbsAdminBase extends Component {
       });
   }
 
-  _getRowsFromSnapshot(snapshot, generateRowObject, instance) {
+  getRowsFromSnapshot(snapshot, generateRowObject, instance) {
     const tableRows = [];
     snapshot.forEach(snapshotItem => {
       const object = snapshotItem.val();
@@ -117,7 +117,7 @@ class CcVbsAdminBase extends Component {
     return tableRows;
   }
 
-  _makeString(keysAndLabels, volunteerObject) {
+  makeString(keysAndLabels, volunteerObject) {
     return keysAndLabels
       .reduce((strings, [key, label]) => {
         volunteerObject[key] && strings.push(label);
@@ -126,7 +126,7 @@ class CcVbsAdminBase extends Component {
       .join(', ');
   }
 
-  _generateInterestedInString(volunteerObject) {
+  generateInterestedInString(volunteerObject) {
     const keysAndLabels = [
       ['teacher', 'Teacher'],
       ['admin', 'Administrative Staff'],
@@ -135,20 +135,20 @@ class CcVbsAdminBase extends Component {
       ['otherText']
     ];
 
-    return this._makeString(keysAndLabels, volunteerObject);
+    return this.makeString(keysAndLabels, volunteerObject);
   }
 
-  _generatePastAreaString(volunteerObject) {
+  generatePastAreaString(volunteerObject) {
     const keysAndLabels = [
       ['bibleSchool', 'Bible School'],
       ['sundaySchool', 'Sunday School'],
       ['youthMinistry', 'Youth Ministry']
     ];
 
-    return this._makeString(keysAndLabels, volunteerObject);
+    return this.makeString(keysAndLabels, volunteerObject);
   }
 
-  _generatePastRolesString(volunteerObject) {
+  generatePastRolesString(volunteerObject) {
     const keysAndLabels = [
       ['pastTeacher', 'Teacher'],
       ['pastAdmin', 'Administrative Staff'],
@@ -157,10 +157,10 @@ class CcVbsAdminBase extends Component {
       ['pastChaperone', 'Chaperone']
     ];
 
-    return this._makeString(keysAndLabels, volunteerObject);
+    return this.makeString(keysAndLabels, volunteerObject);
   }
 
-  _getDaysAvailableString(volunteerObject) {
+  getDaysAvailableString(volunteerObject) {
     const days = [
       {key: 'monday', short: 'M'},
       {key: 'tuesday', short: 'T'},
@@ -181,7 +181,7 @@ class CcVbsAdminBase extends Component {
     }, '');
   }
 
-  _generateVolunteerRowObject(key, volunteerObject) {
+  generateVolunteerRowObject(key, volunteerObject) {
     const {
       homePhone,
       mobilePhone,
@@ -206,16 +206,16 @@ class CcVbsAdminBase extends Component {
           <div>{`${city}, ${state} ${zip}`}</div>
         </div>
       ),
-      availability: this._getDaysAvailableString(volunteerObject),
-      interestedIn: this._generateInterestedInString(volunteerObject),
-      pastAreas: this._generatePastAreaString(volunteerObject),
-      pastRoles: this._generatePastRolesString(volunteerObject),
+      availability: this.getDaysAvailableString(volunteerObject),
+      interestedIn: this.generateInterestedInString(volunteerObject),
+      pastAreas: this.generatePastAreaString(volunteerObject),
+      pastRoles: this.generatePastRolesString(volunteerObject),
       dob: volunteerObject.dob,
       updateTime: commonUtils.formatTime(volunteerObject.timeChanged)
     };
   }
 
-  _getVolunteerTableColumns() {
+  getVolunteerTableColumns() {
     const firstGroup = [
       {label: 'Name', name: 'name'},
       {label: 'Home Phone', name: 'homePhone'},
@@ -245,7 +245,7 @@ class CcVbsAdminBase extends Component {
     return allColumns;
   }
 
-  _generateChildRowObject(key, childObject) {
+  generateChildRowObject(key, childObject) {
     const {
       address1,
       address2,
@@ -282,7 +282,7 @@ class CcVbsAdminBase extends Component {
     };
   }
 
-  _getChildrenTableColumns() {
+  getChildrenTableColumns() {
     return [
       {label: 'Child Name', name: 'childName'},
       {label: 'Parent Name', name: 'parentName'},
@@ -296,7 +296,7 @@ class CcVbsAdminBase extends Component {
     ];
   }
 
-  _generateCheckinRowObject(key, checkinObject) {
+  generateCheckinRowObject(key, checkinObject) {
     return {
       id: key,
       childName: checkinObject.childName,
@@ -317,7 +317,7 @@ class CcVbsAdminBase extends Component {
     };
   }
 
-  _getCheckinTableColumns() {
+  getCheckinTableColumns() {
     return [
       {label: 'Child Name', name: 'childName'},
       {label: 'Parent Name', name: 'parentName'},
@@ -331,7 +331,7 @@ class CcVbsAdminBase extends Component {
     ];
   }
 
-  _getSignInDates() {
+  getSignInDates() {
     return Object.keys(this.state).reduce((signinDates, stateName) => {
       if (stateName.includes('checkinTableRows')) {
         const date = this.getDateFromStateName(stateName);
@@ -350,7 +350,7 @@ class CcVbsAdminBase extends Component {
     return `checkinTableRows-${date}`;
   }
 
-  _yearSelectDropdown() {
+  yearSelectDropdown() {
     const options = ['2017', '2018', '2019'].map(year => {
       return {
         label: year,
@@ -370,7 +370,7 @@ class CcVbsAdminBase extends Component {
     );
   }
 
-  _daySelectDropdown(dates, selectedDate) {
+  daySelectDropdown(dates, selectedDate) {
     const options = dates.map(date => {
       return {
         label: commonUtils.formatDate(date),
@@ -390,7 +390,7 @@ class CcVbsAdminBase extends Component {
     );
   }
 
-  _renderSigninTableAndDroplist(signinDates) {
+  renderSigninTableAndDroplist(signinDates) {
     const {currentSigninDate} = this.state;
 
     const dateForTable =
@@ -400,9 +400,9 @@ class CcVbsAdminBase extends Component {
     return (
       <div>
         <h2>Sign In</h2>
-        {this._daySelectDropdown(signinDates, dateForTable)}
+        {this.daySelectDropdown(signinDates, dateForTable)}
         <Table
-          columns={this._getCheckinTableColumns()}
+          columns={this.getCheckinTableColumns()}
           rows={this.state[stateForTable] || []}
         />
       </div>
@@ -411,24 +411,24 @@ class CcVbsAdminBase extends Component {
 
   render() {
     const {childrenTableRows, volunteerTableRows} = this.state;
-    const signinDates = this._getSignInDates();
+    const signinDates = this.getSignInDates();
 
     return (
       <div>
-        {this._yearSelectDropdown()}
+        {this.yearSelectDropdown()}
         <h2>Volunteers</h2>
         <Table
-          columns={this._getVolunteerTableColumns()}
+          columns={this.getVolunteerTableColumns()}
           rows={volunteerTableRows}
         />
         <h2>Children</h2>
         <Table
-          columns={this._getChildrenTableColumns()}
+          columns={this.getChildrenTableColumns()}
           rows={childrenTableRows}
         />
         <h3>Sign in and out Records</h3>
         {signinDates.length ? (
-          this._renderSigninTableAndDroplist(signinDates)
+          this.renderSigninTableAndDroplist(signinDates)
         ) : (
           <p>No Records To List</p>
         )}
