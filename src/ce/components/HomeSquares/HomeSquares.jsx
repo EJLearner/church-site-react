@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import routePaths from '../../../routePaths';
 
-import Announcements from '../Announcements/Announcements.js';
+import Announcements from '../Announcements/Announcements.jsx';
 
 import './HomeSquares.css';
 
@@ -16,7 +16,7 @@ const HomeSquare = props => {
   const {children, linkTo, scroll, title} = props;
 
   const scrollClass = scroll ? ' scroll' : '';
-  const classNames = `home-square${  scrollClass}`;
+  const classNames = `home-square${scrollClass}`;
 
   return (
     <div className={classNames}>

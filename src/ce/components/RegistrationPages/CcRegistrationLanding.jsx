@@ -3,7 +3,7 @@ import {Redirect} from 'react-router';
 
 import routePaths from '../../../routePaths';
 
-import BaseRegistrationLanding from './BaseRegistrationLanding.js';
+import BaseRegistrationLanding from './BaseRegistrationLanding.jsx';
 
 import leftPicture from './ccregpicture.png';
 
