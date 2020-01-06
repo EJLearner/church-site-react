@@ -24,11 +24,11 @@ const MAIN_HOME_PATH = '/';
 const MAIN_ROOT_PATHS = {
   MAIN_HOME: MAIN_HOME_PATH,
   MAIN_CALENDAR: `${MAIN_HOME_PATH}calendar/`,
-  MAIN_CONNECT: `${MAIN_HOME_PATH}connect/`,
-  MAIN_DONATE: `${MAIN_HOME_PATH}donate/`,
+  MAIN_CONTACT: `${MAIN_HOME_PATH}contact/`,
+  MAIN_GIVING: `${MAIN_HOME_PATH}giving/`,
+  MAIN_MEMBERS_ONLY: `${MAIN_HOME_PATH}members-only/`,
   MAIN_MINISTRIES: `${MAIN_HOME_PATH}ministries/`,
-  MAIN_NEWCOMERS: `${MAIN_HOME_PATH}newcomers/`,
-  MAIN_OUR_STORY: `${MAIN_HOME_PATH}our-story/`,
+  MAIN_ABOUT_US: `${MAIN_HOME_PATH}about-us/`,
   MAIN_OUTREACH: `${MAIN_HOME_PATH}outreach/`,
   MAIN_STREAM: `${MAIN_HOME_PATH}stream/`,
   MAIN_WELCOME: `${MAIN_HOME_PATH}welcome/`

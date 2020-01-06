@@ -1,26 +1,36 @@
 @import '../variables';
 
+.main-top-title {
+  align-items: center;
+  color: $ct-text-on-primary;
+  background-color: $ct-primary;
+  display: flex;
+  min-height: 3em;
+  padding: 0 3em;
+  text-transform: uppercase;
+
+  img {
+    height: 2em;
+  }
+
+  .ct-title-text {
+    margin-left: 8px;
+  }
+}
+
 .main-menu-bar {
+  background-color: rgba(0, 0, 0, 0.4);
   display: flex;
   font-size: 12px;
-  justify-content: space-between;
   text-transform: uppercase;
-  width: 100%;
+  padding: 0 3em;
 
   & > div {
     margin: 0 16px;
     padding: 16px 8px;
   }
 
-  & > div:last-child {
-    color: $white;
-    background-color: $red;
-    a {
-      color: $white;
-    }
-  }
-
   a {
-    color: $gray95;
+    color: $text-on-dark;
   }
 }
