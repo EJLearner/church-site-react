@@ -23,6 +23,7 @@ const STYLES = {
     GRAY180: 'rgb(180, 180, 180)',
     GRAY217: 'rgb(217, 217, 217)',
     LIGHT_BLUE: '#5b9bd5',
+    LIGHTER_BLUE: 'rgb(190,215,239)',
     BLACK: 'black',
     WHITE: 'white',
     RED: 'red',

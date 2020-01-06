@@ -18,6 +18,8 @@ $gray95: #5f5f5f;
 $gray180: rgb(180, 180, 180);
 $gray217: rgb(217, 217, 217);
 $light-blue: #5b9bd5;
+$lighter-blue: rgb(190, 215, 239);
+$blue-50: rgb(157, 195, 230);
 $black: black;
 $white: white;
 $red: red;
@@ -28,6 +30,11 @@ $gray: gray;
 
 $standard-background: $white;
 $standard-text: $black;
+
+$ct-primary: #c00000;
+$ct-accent: #00bae2;
+$ct-second: #ff9b71;
+$ct-third: #d2b48c;
 
 @mixin content-widths() {
   width: 80%;

@@ -31,8 +31,6 @@ import WhoWeAre from './ce/components/WhoWeAre/WhoWeAre';
 import Why from './ce/components/Why/Why';
 import Youth from './ce/components/Youth/Youth';
 
-import './App.css';
-
 class Routes extends Component {
   _renderFullCePage({children}) {
     const mainTopLinks = [

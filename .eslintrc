@@ -14,7 +14,6 @@
     "no-useless-computed-key": "error",
     "object-curly-spacing": ["error", "never"],
     "object-curly-newline": ["error", {"consistent": true}],
-    "operator-linebreak": ["error", "after"],
     "prefer-template": "error",
     "quotes": ["error", "single"],
     "react/jsx-sort-props": "error",

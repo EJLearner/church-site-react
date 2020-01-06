@@ -109,6 +109,16 @@ a:hover {
   }
 }
 
+.fancy-title {
+  color: $blue-50;
+  text-transform: uppercase;
+
+  &::first-letter {
+    font-family: Brush Script MT, cursive;
+    font-size: 220%;
+  }
+}
+
 .float-left-image {
   float: left;
   margin-right: 0.5em;
