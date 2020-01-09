@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 import MainContent from './MainContent';
 import MainFooter from './MainFooter';
-import MainMenubar from './MainMenubar';
 import routePaths from '../routePaths';
 import NotFound from '../ce/components/NotFound/NotFound';
 import MainAboutUs from './AboutUs';
@@ -14,15 +13,14 @@ import Calendar from './Calendar';
 import MembersOnly from './MembersOnly';
 import Contact from './Contact';
 
-const MainWrapper = styled.div`
+const WrapperDiv = styled.div`
   max-width: 80%;
   margin: auto;
 `;
 
-function MainHome() {
+function MainWrapper() {
   return (
-    <MainWrapper>
-      <MainMenubar />
+    <WrapperDiv>
       <Switch>
         <Route component={MainContent} exact path={routePaths.MAIN_HOME} />
         <Route component={MainAboutUs} path={routePaths.MAIN_ABOUT_US} />
@@ -34,8 +32,8 @@ function MainHome() {
         <Route component={NotFound} />
       </Switch>
       <MainFooter />
-    </MainWrapper>
+    </WrapperDiv>
   );
 }
 
-export default MainHome;
+export default MainWrapper;

@@ -114,6 +114,7 @@ a:hover {
   text-transform: uppercase;
 
   &::first-letter {
+    // TOOD: use variable if this doesn't get deleted
     font-family: Brush Script MT, cursive;
     font-size: 220%;
   }

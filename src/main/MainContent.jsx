@@ -1,105 +1,94 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import moment from 'moment';
-import mainCalendarSquare from '../assets/main/images/main-calendar-square.png';
-import mainOutReachSquare from '../assets/main/images/main-outreach-square.png';
-import mainGrowSquare from '../assets/main/images/main-grow-square.png';
+import styled from 'styled-components';
 
-import routePaths from '../routePaths';
+import churchExterior from '../assets/main/images/church-exterior.png';
 
-import './MainContent.css';
-import DailyDevotional from './DailyDevotional';
-import UpcomingEvent from './UpcomingEvent';
+import MainMenubar from './MainMenubar';
+import {LOGICAL_COLORS, FONT_FAMILIES} from '../utils/styleVariables';
+
+const MenuBarAndPictureDiv = styled.div`
+  background-image: url(${churchExterior});
+  background-repeat: no-repeat;
+  background-size: cover;
+`;
+
+const AnnouncementBox = styled.div`
+  margin: 64px 0 0 64px;
+  width: 50%;
+`;
+
+const TitleAndContent = styled.div`
+  background-color: ${LOGICAL_COLORS.CT_PRIMARY};
+  color: ${LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};
+  padding: 1em;
+  max-width: 500px;
+`;
+
+const TitlesDiv = styled.div`
+  display: inline-block;
+`;
+
+const FirstLine = styled.h1`
+  font-family: ${FONT_FAMILIES.BRUSH_SCRIPT};
+  margin-bottom: 0;
+  line-height: 0.7;
+  text-align: right;
+`;
+
+const Numbers = styled.span`
+  font-size: 160%;
+`;
+
+const SecondLine = styled.h2`
+  font-style: italic;
+  margin-top: 0;
+  text-align: right;
+`;
+
+const ArrowAndLearnmore = styled.div`
+  display: inline-block;
+  height: 2em;
+`;
+
+const ArrowBox = styled.div`
+  background-color: ${LOGICAL_COLORS.$CT_ACCENT};
+  display: inline-block;
+  height: 100%;
+`;
+const LearnMoreBox = styled.div`
+  background-color: ${LOGICAL_COLORS.CT_PRIMARY};
+  display: inline-block;
+  height: 100%;
+`;
 
 function MainContent() {
-  const upcomingEvents = [
-    {
-      date: '2019-03-17',
-      title: 'Sunday Service',
-      lines: ['Every Sunday', '9 am - 11 am']
-    },
-    {
-      date: '2020-03-17',
-      title: 'Children’s Church',
-      lines: ['Every Sunday', '9 am - 11 am']
-    },
-    {
-      date: '2020-03-17',
-      title: 'Palm Sunday Service',
-      lines: ['Every Sunday', '9 am - 11 am']
-    },
-    {
-      date: '2020-03-17',
-      title: 'Sunday Service',
-      lines: ['Every Sunday', '9 am - 11 am']
-    },
-    {
-      date: '2020-03-17',
-      title: 'Sunday Service',
-      lines: ['Every Sunday', '9 am - 11 am']
-    },
-    {
-      date: '2020-03-17',
-      title: 'Sunday Service',
-      lines: ['Every Sunday', '9 am - 11 am']
-    },
-    {
-      date: '2020-03-17',
-      title: 'Sunday Service',
-      lines: ['Every Sunday', '9 am - 11 am']
-    }
-  ];
-
-  const eventsToShow = 4;
-  const allUpComingEvents = upcomingEvents.reduce(
-    (currentUpcomingEvents, eventInfo, index) => {
-      const atDisplayLimit = currentUpcomingEvents.length >= eventsToShow;
-      const dateIsAfterToday = eventInfo.date > moment().format('YYYY-MM-DD');
-
-      if (!atDisplayLimit && dateIsAfterToday) {
-        currentUpcomingEvents.push(
-          <UpcomingEvent key="index" {...eventInfo} />
-        );
-      }
-
-      return currentUpcomingEvents;
-    },
-    []
-  );
-
   return (
     <>
-      <div className="stream-services">
-        <Link to={routePaths.MAIN_HOME}>
-          Missed A Sunday? Stream Our services
-          <br />
-          <span className="further-info">
-            Stream current Sunday service or download past sermons.
-          </span>
-        </Link>
-      </div>
-      <div className="three-boxes">
-        <div>
-          <Link to={routePaths.MAIN_OUTREACH}>
-            <img alt="Outreach" src={mainOutReachSquare} />
-          </Link>
-        </div>
-        <div>
-          <Link to={routePaths.CE_HOME}>
-            <img alt="Grow" src={mainGrowSquare} />
-          </Link>
-        </div>
-        <div>
-          <Link to={routePaths.MAIN_CALENDAR}>
-            <img alt="Calendar" src={mainCalendarSquare} />
-          </Link>
-        </div>
-      </div>
-      <DailyDevotional />
-      <div className="upcoming-events-area">
-        <h3>Upcoming Events</h3>
-        <div className="all-events">{allUpComingEvents}</div>
-      </div>
+      <MenuBarAndPictureDiv className="menu-bar-and-picture">
+        <MainMenubar />
+        <AnnouncementBox>
+          <TitleAndContent>
+            <TitlesDiv>
+              <FirstLine>
+                <Numbers>
+                  50<sup>th</sup>
+                </Numbers>{' '}
+                Anniversary Celebration
+              </FirstLine>
+              <SecondLine>Year of Jubilee!</SecondLine>
+            </TitlesDiv>
+            <p>
+              2020 marks an important milestone in the life of our church. Join
+              us each Sunday as we celebrate and thank God for 50 years of
+              worship, outreach, and praise!
+            </p>
+          </TitleAndContent>
+          <ArrowAndLearnmore>
+            <ArrowBox>&gt;</ArrowBox>
+            <LearnMoreBox>Learn More</LearnMoreBox>
+          </ArrowAndLearnmore>
+        </AnnouncementBox>
+      </MenuBarAndPictureDiv>
     </>
   );
 }
