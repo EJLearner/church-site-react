@@ -1,10 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import {faAngleRight} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 import churchExterior from '../assets/main/images/church-exterior.png';
 
 import MainMenubar from './MainMenubar';
 import {LOGICAL_COLORS, FONT_FAMILIES} from '../utils/styleVariables';
+import ScrollingEventsText from './ScrollingEventsText';
+import ContentSelectBoxes from './ContentSelectBoxes';
 
 const MenuBarAndPictureDiv = styled.div`
   background-image: url(${churchExterior});
@@ -46,19 +50,43 @@ const SecondLine = styled.h2`
 `;
 
 const ArrowAndLearnmore = styled.div`
-  display: inline-block;
-  height: 2em;
+  display: inline-flex;
+  align-items: stretch;
 `;
 
 const ArrowBox = styled.div`
   background-color: ${LOGICAL_COLORS.$CT_ACCENT};
-  display: inline-block;
-  height: 100%;
+  color: ${LOGICAL_COLORS.CT_PRIMARY}
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0.5em;
 `;
+
 const LearnMoreBox = styled.div`
   background-color: ${LOGICAL_COLORS.CT_PRIMARY};
-  display: inline-block;
-  height: 100%;
+  color: ${LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 120%;
+  font-weight: bold;
+  justify-content: center;
+  padding: 0 0.5em;
+  text-transform: uppercase;
+`;
+
+const UpcomingEvents = styled.div`
+  background-color: ${LOGICAL_COLORS.$CT_SECOND};
+  display: flex;
+  align-items: center;
+  padding: 48px 64px;
+`;
+
+const SaveTheDate = styled.div`
+  color: ${LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};
+  font-size: 300%;
+  font-weight: bold;
+  text-transform: uppercase;
 `;
 
 function MainContent() {
@@ -84,11 +112,23 @@ function MainContent() {
             </p>
           </TitleAndContent>
           <ArrowAndLearnmore>
-            <ArrowBox>&gt;</ArrowBox>
-            <LearnMoreBox>Learn More</LearnMoreBox>
+            <ArrowBox>
+              <div>
+                <FontAwesomeIcon icon={faAngleRight} size="4x" />
+              </div>
+            </ArrowBox>
+            <LearnMoreBox>
+              <div>Learn More</div>
+            </LearnMoreBox>
           </ArrowAndLearnmore>
         </AnnouncementBox>
       </MenuBarAndPictureDiv>
+      <UpcomingEvents>
+        <SaveTheDate>Save The Date</SaveTheDate>
+        <ScrollingEventsText />
+        <UpcomingEvents />
+        <ContentSelectBoxes />
+      </UpcomingEvents>
     </>
   );
 }

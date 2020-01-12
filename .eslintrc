@@ -14,7 +14,7 @@
     "object-curly-spacing": ["error", "never"],
     "object-curly-newline": ["error", {"consistent": true}],
     "prefer-template": "error",
-    "quotes": ["error", "single"],
+    "quotes": ["error", "single", {"avoidEscape": true}],
     "react/jsx-sort-props": "error",
     "react/jsx-filename-extension": "warn",
     "react/sort-prop-types": "error",

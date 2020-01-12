@@ -7,12 +7,6 @@ describe('MainWrapper', () => {
     expect(shallow(<MainWrapper />).exists()).toBe(true);
   });
 
-  it('renders menu bar', () => {
-    const wrapper = shallow(<MainWrapper />);
-
-    expect(wrapper.find('MainMenubar').exists()).toBe(true);
-  });
-
   it('renders footer', () => {
     const wrapper = shallow(<MainWrapper />);
 

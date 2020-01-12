@@ -1,12 +1,12 @@
 const FONT_FAMILIES = {
   ARIAL: 'arial, helvetica, sans_serif',
-  BRUSH_SCRIPT: '\'Brush Script MT\', cursive',
-  CALIBRI: 'Calibri, \'Segoe UI\', Candara, Segoe, Optima, Arial, sans_serif',
-  CAMBRIA: 'cambria, georgia, \'bookman old style\', \'times new roman\', serif',
-  CENTURY_GOTHIC: '\'Century Gothic\', CenturyGothic, AppleGothic, sans_serif',
+  BRUSH_SCRIPT: "'Brush Script MT', cursive",
+  CALIBRI: "Calibri, 'Segoe UI', Candara, Segoe, Optima, Arial, sans_serif",
+  CAMBRIA: "cambria, georgia, 'bookman old style', 'times new roman', serif",
+  CENTURY_GOTHIC: "'Century Gothic', CenturyGothic, AppleGothic, sans_serif",
   GARAMOND:
-    '\'Adobe Garamond Pro\', Garamond, Baskerville, \'Baskerville Old Face\',' +
-    '\'Hoefler Text\', \'Times New Roman\', serif'
+    "'Adobe Garamond Pro', Garamond, Baskerville, 'Baskerville Old Face'," +
+    "'Hoefler Text', 'Times New Roman', serif"
 };
 const COLORS = {
   GREEN_20: 'rgb(146, 208, 80)',
@@ -37,6 +37,7 @@ const LOGICAL_COLORS = {
   STANDARD_TEXT: COLORS.BLACK,
   CT_PRIMARY: COLORS.MAROON,
   CT_TEXT_ON_PRIMARY: COLORS.WHITE,
+  CT_TEXT_ON_SECONDARY: COLORS.WHITE,
   $CT_ACCENT: '#00bae2',
   $CT_SECOND: '#ff9b71',
   $CT_THIRD: '#d2b48c'
