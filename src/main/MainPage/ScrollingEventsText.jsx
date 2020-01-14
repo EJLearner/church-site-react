@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 import styled from 'styled-components';
 import {LOGICAL_COLORS} from '../../utils/styleVariables';
+import {events} from './mainPageData';
 
 const FADE_OUT_TIME_MS = 500;
 const FADE_IN_TIME_MS = 750;
@@ -21,35 +22,6 @@ const ScrollingEvents = styled.div`
 const Title = styled.span`
   font-weight: bold;
 `;
-
-const events = [
-  {date: '2025-11-28', title: 'Earl’s Birthday', path: 'https://earljones.dev'},
-  {
-    date: '2019-08-12',
-    title: 'April’s Birthday',
-    path: 'https://rainyaprilday.com'
-  },
-  {
-    date: '2019-11-28',
-    title: 'Earl’s Birthday 2',
-    path: 'https://earljones.dev'
-  },
-  {
-    date: '2019-11-28',
-    title: 'Earl’s Birthday 3',
-    path: 'https://earljones.dev'
-  },
-  {
-    date: '2019-11-28',
-    title: 'Earl’s Birthday 4',
-    path: 'https://earljones.dev'
-  },
-  {
-    date: '2019-11-28',
-    title: 'Earl’s Birthday 5',
-    path: 'https://earljones.dev'
-  }
-];
 
 function renderOrderedEvent(eventIndex) {
   const sortedEvents = events.sort((a, b) => a.date.localeCompare(b.date));
