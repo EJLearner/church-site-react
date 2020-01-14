@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 
 import styled from 'styled-components';
 import {LOGICAL_COLORS} from '../../utils/styleVariables';
-import {events} from './mainPageData';
+import {scrollingEventsTextInfo} from './mainPageData';
 import EventText from './EventText';
 
 const FADE_OUT_TIME_MS = 500;
@@ -21,7 +21,9 @@ const ScrollingEvents = styled.div`
 `;
 
 const ScrollingEventsText = () => {
-  const sortedEvents = events.sort((a, b) => a.date.localeCompare(b.date));
+  const sortedEvents = scrollingEventsTextInfo.sort((a, b) =>
+    a.date.localeCompare(b.date)
+  );
 
   const [eventIndex, setEventIndex] = useState(0);
   const [fadeOut, setFadeOut] = useState(false);

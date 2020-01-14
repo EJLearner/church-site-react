@@ -1,4 +1,4 @@
-const events = [
+const scrollingEventsTextInfo = [
   {date: '2025-11-28', title: 'Earl’s Birthday', path: 'https://earljones.dev'},
   {
     date: '2019-08-12',
@@ -27,4 +27,4 @@ const events = [
   }
 ];
 
-export {events};
+export {scrollingEventsTextInfo};
