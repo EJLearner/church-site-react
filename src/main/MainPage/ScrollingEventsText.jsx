@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import {LOGICAL_COLORS} from '../../utils/styleVariables';
 import {events} from './mainPageData';
+import EventText from './EventText';
 
 const FADE_OUT_TIME_MS = 500;
 const FADE_IN_TIME_MS = 750;
@@ -18,25 +19,6 @@ const ScrollingEvents = styled.div`
       ? `.${FADE_OUT_TIME_MS - 50}s ease-out`
       : `.${FADE_IN_TIME_MS}s ease-in`};
 `;
-
-const Title = styled.span`
-  font-weight: bold;
-`;
-
-function renderOrderedEvent(eventIndex) {
-  const sortedEvents = events.sort((a, b) => a.date.localeCompare(b.date));
-  const {title, path, date} = sortedEvents[eventIndex];
-
-  const header = <Title>{title}</Title>;
-
-  return (
-    <div key={title}>
-      {path ? <a href={path}>{header}</a> : header}
-      <br />
-      {date}
-    </div>
-  );
-}
 
 const ScrollingEventsText = () => {
   const sortedEvents = events.sort((a, b) => a.date.localeCompare(b.date));
@@ -79,7 +61,7 @@ const ScrollingEventsText = () => {
 
   return (
     <ScrollingEvents fadeIn={fadeIn} fadeOut={fadeOut}>
-      {renderOrderedEvent(eventIndex)}
+      <EventText event={sortedEvents[eventIndex]} />
     </ScrollingEvents>
   );
 };
