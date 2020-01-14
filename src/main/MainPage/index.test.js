@@ -1,9 +1,9 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import MainContent from '.';
+import MainPage from '.';
 
-describe('MainContent', () => {
+describe('MainPage', () => {
   it('renders', () => {
-    expect(shallow(<MainContent />).exists()).toBe(true);
+    expect(shallow(<MainPage />).exists()).toBe(true);
   });
 });
