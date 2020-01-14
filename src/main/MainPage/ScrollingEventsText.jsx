@@ -59,9 +59,11 @@ const ScrollingEventsText = () => {
     return () => clearInterval(eventTimer);
   }, [sortedEvents.length]);
 
+  const {date, path, title} = sortedEvents[eventIndex];
+
   return (
     <ScrollingEvents fadeIn={fadeIn} fadeOut={fadeOut}>
-      <EventText event={sortedEvents[eventIndex]} />
+      <EventText date={date} path={path} title={title} />
     </ScrollingEvents>
   );
 };
