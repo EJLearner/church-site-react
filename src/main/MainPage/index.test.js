@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import MainContent from './MainContent';
+import MainContent from '.';
 
 describe('MainContent', () => {
   it('renders', () => {

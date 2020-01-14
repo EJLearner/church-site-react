@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import {faAngleRight} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
-import churchExterior from '../assets/main/images/church-exterior.png';
+import churchExterior from '../../assets/main/images/church-exterior.png';
 
-import MainMenubar from './MainMenubar';
-import {LOGICAL_COLORS, FONT_FAMILIES} from '../utils/styleVariables';
+import MainMenubar from '../MainMenubar';
+import {LOGICAL_COLORS, FONT_FAMILIES} from '../../utils/styleVariables';
 import ScrollingEventsText from './ScrollingEventsText';
 import ContentSelectBoxes from './ContentSelectBoxes';
 

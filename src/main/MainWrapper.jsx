@@ -2,7 +2,7 @@ import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 import styled from 'styled-components';
 
-import MainContent from './MainContent';
+import MainContent from './MainPage';
 import MainFooter from './MainFooter';
 import routePaths from '../routePaths';
 import NotFound from '../ce/components/NotFound/NotFound';
