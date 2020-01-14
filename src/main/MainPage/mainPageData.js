@@ -1,3 +1,6 @@
+import JubileeContent from './JubileeContent';
+import eventContentTemplate from '../../assets/main/images/event-content-template.png';
+
 const scrollingEventsTextInfo = [
   {date: '2025-11-28', title: 'Earl’s Birthday', path: 'https://earljones.dev'},
   {
@@ -27,4 +30,22 @@ const scrollingEventsTextInfo = [
   }
 ];
 
-export {scrollingEventsTextInfo};
+const contentSelectInfo = [
+  {
+    render: JubileeContent,
+    showUntil: '2021-01-01',
+    title: '50th Anniversary Celebration',
+    thumbnail: eventContentTemplate
+  },
+  {
+    title: 'Performing Arts Dunday'
+  },
+  {
+    title: 'Christian Education'
+  },
+  {
+    title: 'Sacrificial Sowing'
+  }
+];
+
+export {contentSelectInfo, scrollingEventsTextInfo};
