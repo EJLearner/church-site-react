@@ -2,6 +2,7 @@
   "extends": ["react-app", "eslint:recommended", "plugin:react/recommended"],
   "rules": {
     "comma-dangle": ["error", "never"],
+    "no-console": "error",
     "no-restricted-syntax": [
       "error",
       {
