@@ -36,7 +36,6 @@ const ContentSelectBoxes = () => {
   const [contentIndex] = useState(0);
 
   const {title, thumbnail} = contentSelectInfo[contentIndex];
-  console.log('TCL: ContentSelectBoxes -> thumbnail', thumbnail);
 
   return (
     <ContentSelectBoxesWrapper>

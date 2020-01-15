@@ -84,7 +84,6 @@ function MainContent() {
       <UpcomingEvents>
         <SaveTheDate>Save The Date</SaveTheDate>
         <ScrollingEventsText />
-        <UpcomingEvents />
         <ContentSelectBoxes />
       </UpcomingEvents>
     </>
