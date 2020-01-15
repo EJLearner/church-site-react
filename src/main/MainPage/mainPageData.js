@@ -38,13 +38,19 @@ const contentSelectInfo = [
     thumbnail: eventContentTemplate
   },
   {
-    title: 'Performing Arts Dunday'
+    render: JubileeContent,
+    title: 'Performing Arts Sunday',
+    thumbnail: eventContentTemplate
   },
   {
-    title: 'Christian Education'
+    render: JubileeContent,
+    title: 'Christian Education',
+    thumbnail: eventContentTemplate
   },
   {
-    title: 'Sacrificial Sowing'
+    render: JubileeContent,
+    title: 'Sacrificial Sowing',
+    thumbnail: eventContentTemplate
   }
 ];
 

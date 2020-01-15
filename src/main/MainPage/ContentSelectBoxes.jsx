@@ -1,18 +1,13 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import {faAngleLeft, faAngleRight} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 import {contentSelectInfo} from './mainPageData';
 import {LOGICAL_COLORS} from '../../utils/styleVariables';
+import ContentSelectArrow from './ContentSelectArrow';
 
 const ContentSelectBoxesWrapper = styled.div`
   display: flex;
   align-items: center;
-`;
-
-const ArrowIcon = styled.div`
-  margin: 3em;
 `;
 
 const EventBox = styled.div`
@@ -33,26 +28,44 @@ const Thumbnail = styled.img`
 `;
 
 const ContentSelectBoxes = () => {
-  const [contentIndex] = useState(0);
+  const [firstDisplayedEventIndex, setFirstDisplayedEventIndex] = useState(0);
+  const eventBoxesToShow = 3;
 
-  const {title, thumbnail} = contentSelectInfo[contentIndex];
+  const currentlyDisplayedBoxes = contentSelectInfo.slice(
+    firstDisplayedEventIndex,
+    firstDisplayedEventIndex + eventBoxesToShow
+  );
+
+  const showLeftArrow = firstDisplayedEventIndex !== 0;
+  const showRightArrow =
+    contentSelectInfo.length > firstDisplayedEventIndex + eventBoxesToShow;
+
+  const moveBoxesLeft = () => {
+    setFirstDisplayedEventIndex(firstDisplayedEventIndex - 1);
+  };
+
+  const moveBoxesRight = () => {
+    setFirstDisplayedEventIndex(firstDisplayedEventIndex + 1);
+  };
 
   return (
     <ContentSelectBoxesWrapper>
-      <ArrowIcon>
-        <FontAwesomeIcon icon={faAngleLeft} size="4x" />
-      </ArrowIcon>
-      <EventBox>
-        <Thumbnail src={thumbnail} />
-        {title}
-      </EventBox>
-      <EventBox>
-        <Thumbnail src={thumbnail} />
-        {title}
-      </EventBox>
-      <ArrowIcon>
-        <FontAwesomeIcon icon={faAngleRight} size="4x" />
-      </ArrowIcon>
+      <ContentSelectArrow
+        onClick={moveBoxesLeft}
+        show={showLeftArrow}
+        type="left"
+      />
+      {currentlyDisplayedBoxes.map(contentSelect => (
+        <EventBox key={contentSelect.title}>
+          <Thumbnail src={contentSelect.thumbnail} />
+          {contentSelect.title}
+        </EventBox>
+      ))}
+      <ContentSelectArrow
+        onClick={moveBoxesRight}
+        show={showRightArrow}
+        type="right"
+      />
     </ContentSelectBoxesWrapper>
   );
 };

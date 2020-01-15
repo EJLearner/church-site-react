@@ -49,9 +49,9 @@ const LearnMoreBox = styled.div`
 `;
 
 const UpcomingEvents = styled.div`
+  align-items: center;
   background-color: ${LOGICAL_COLORS.$CT_SECOND};
   display: flex;
-  align-items: center;
   padding: 48px 64px;
 `;
 
