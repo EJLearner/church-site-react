@@ -19,10 +19,11 @@ const EventBox = styled.div`
   background-color: ${LOGICAL_COLORS.CT_PRIMARY};
   color: ${LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};
   font-weight: bold;
+  font-size: 90%;
   margin: 0 0.5em;
-  min-height: 180px;
+  min-height: 150px;
   padding: 1em 1em 0 1em;
-  width: 160px;
+  width: 120px;
   text-transform: uppercase;
 `;
 
