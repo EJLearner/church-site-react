@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import {faAngleRight} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -9,7 +9,7 @@ import MainMenubar from '../MainMenubar';
 import {LOGICAL_COLORS} from '../../utils/styleVariables';
 import ScrollingEventsText from './ScrollingEventsText';
 import ContentSelectBoxes from './ContentSelectBoxes';
-import JubileeContent from './JubileeContent';
+import {contentSelectInfo} from './mainPageData';
 
 const MenuBarAndPictureDiv = styled.div`
   background-image: url(${churchExterior});
@@ -28,7 +28,7 @@ const ArrowAndLearnmore = styled.div`
 `;
 
 const ArrowBox = styled.div`
-  background-color: ${LOGICAL_COLORS.$CT_ACCENT};
+  background-color: ${LOGICAL_COLORS.CT_ACCENT};
   color: ${LOGICAL_COLORS.CT_PRIMARY}
   display: inline-flex;
   flex-direction: column;
@@ -50,7 +50,7 @@ const LearnMoreBox = styled.div`
 
 const UpcomingEvents = styled.div`
   align-items: center;
-  background-color: ${LOGICAL_COLORS.$CT_SECOND};
+  background-color: ${LOGICAL_COLORS.CT_SECOND};
   display: flex;
   padding: 48px 64px;
 `;
@@ -63,12 +63,16 @@ const SaveTheDate = styled.div`
 `;
 
 function MainContent() {
+  const [contentIndex, setContentIndex] = useState(0);
+
+  const ContentComponent = contentSelectInfo[contentIndex].render;
+
   return (
     <>
       <MenuBarAndPictureDiv className="menu-bar-and-picture">
         <MainMenubar />
         <AnnouncementBox>
-          <JubileeContent />
+          <ContentComponent />
           <ArrowAndLearnmore>
             <ArrowBox>
               <div>
@@ -84,7 +88,10 @@ function MainContent() {
       <UpcomingEvents>
         <SaveTheDate>Save The Date</SaveTheDate>
         <ScrollingEventsText />
-        <ContentSelectBoxes />
+        <ContentSelectBoxes
+          contentIndex={contentIndex}
+          onContentSelect={index => setContentIndex(index)}
+        />
       </UpcomingEvents>
     </>
   );

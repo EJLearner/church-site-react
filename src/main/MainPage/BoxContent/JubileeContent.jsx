@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {LOGICAL_COLORS, FONT_FAMILIES} from '../../utils/styleVariables';
+import {LOGICAL_COLORS, FONT_FAMILIES} from '../../../utils/styleVariables';
 
 const TitleAndContent = styled.div`
   background-color: ${LOGICAL_COLORS.CT_PRIMARY};

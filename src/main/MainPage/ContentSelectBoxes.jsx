@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import {contentSelectInfo} from './mainPageData';
 import {LOGICAL_COLORS} from '../../utils/styleVariables';
@@ -11,15 +12,26 @@ const ContentSelectBoxesWrapper = styled.div`
 `;
 
 const EventBox = styled.div`
-  background-color: ${LOGICAL_COLORS.CT_PRIMARY};
+  background-color: ${props =>
+    props.selected ? LOGICAL_COLORS.CT_ACCENT : LOGICAL_COLORS.CT_PRIMARY};
+  box-sizing: content-box;
   color: ${LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};
+  cursor: pointer;
   font-weight: bold;
   font-size: 90%;
   margin: 0 0.5em;
   min-height: 150px;
   padding: 1em 1em 0 1em;
-  width: 120px;
   text-transform: uppercase;
+  width: 120px;
+
+  &:focus {
+    outline: 2px solid blue;
+  }
+
+  &:hover {
+    opacity: 0.85;
+  }
 `;
 
 const Thumbnail = styled.img`
@@ -27,7 +39,17 @@ const Thumbnail = styled.img`
   height: auto;
 `;
 
-const ContentSelectBoxes = () => {
+function handleKeyPress(onContentSelect, index) {
+  return event => {
+    const keyIsHandled = ['Enter', ' '].includes(event.key);
+    if (keyIsHandled) {
+      onContentSelect(index);
+      event.preventDefault();
+    }
+  };
+}
+
+const ContentSelectBoxes = ({contentIndex, onContentSelect}) => {
   const [firstDisplayedEventIndex, setFirstDisplayedEventIndex] = useState(0);
   const eventBoxesToShow = 3;
 
@@ -55,8 +77,15 @@ const ContentSelectBoxes = () => {
         show={showLeftArrow}
         type="left"
       />
-      {currentlyDisplayedBoxes.map(contentSelect => (
-        <EventBox key={contentSelect.title}>
+      {currentlyDisplayedBoxes.map((contentSelect, index) => (
+        <EventBox
+          key={contentSelect.title}
+          onClick={() => onContentSelect(index)}
+          onKeyPress={handleKeyPress(onContentSelect, index)}
+          role="button"
+          selected={index === contentIndex}
+          tabIndex="0"
+        >
           <Thumbnail src={contentSelect.thumbnail} />
           {contentSelect.title}
         </EventBox>
@@ -68,6 +97,11 @@ const ContentSelectBoxes = () => {
       />
     </ContentSelectBoxesWrapper>
   );
+};
+
+ContentSelectBoxes.propTypes = {
+  contentIndex: PropTypes.number.isRequired,
+  onContentSelect: PropTypes.func.isRequired
 };
 
 export default ContentSelectBoxes;
