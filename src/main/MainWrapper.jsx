@@ -3,7 +3,6 @@ import {Route, Switch} from 'react-router-dom';
 import styled from 'styled-components';
 
 import MainContent from './MainPage';
-import MainFooter from './MainFooter';
 import routePaths from '../routePaths';
 import NotFound from '../ce/components/NotFound/NotFound';
 import MainAboutUs from './AboutUs';
@@ -31,7 +30,6 @@ function MainWrapper() {
         <Route component={Contact} path={routePaths.MAIN_CONTACT} />
         <Route component={NotFound} />
       </Switch>
-      <MainFooter />
     </WrapperDiv>
   );
 }

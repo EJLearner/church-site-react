@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import getVerseInfo from '../stores/getVerseInfo';
+import getVerseInfo from '../src/stores/getVerseInfo';
 
 import './DailyDevotional.css';
 
