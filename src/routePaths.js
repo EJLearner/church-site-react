@@ -30,6 +30,8 @@ const MAIN_ROOT_PATHS = {
   MAIN_MINISTRIES: `${MAIN_HOME_PATH}ministries/`,
   MAIN_ABOUT_US: `${MAIN_HOME_PATH}about-us/`,
   MAIN_OUTREACH: `${MAIN_HOME_PATH}outreach/`,
+  MAIN_SCHOLARSHIP: `${MAIN_HOME_PATH}scholarship`,
+  MAIN_SERVICE_INFO: `${MAIN_HOME_PATH}service-info`,
   MAIN_STREAM: `${MAIN_HOME_PATH}stream/`,
   MAIN_WELCOME: `${MAIN_HOME_PATH}welcome/`
 };
@@ -109,7 +111,7 @@ const ALL_PATHS = {
   ...CE_YOUTH_PATHS
 };
 
-const STRICT_PATH_CONSTANTS =
+const routePaths =
   typeof Proxy !== 'undefined' ? new Proxy(ALL_PATHS, handler) : ALL_PATHS;
 
-export default STRICT_PATH_CONSTANTS;
+export default routePaths;
