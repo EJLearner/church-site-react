@@ -13,6 +13,8 @@ import MembersOnly from './MembersOnly';
 import Contact from './Contact';
 import ScholarshipPage from './ScholarshipPage';
 import ServiceInfoPage from './ServiceInfoPage';
+import JubileePage from './JubileePage';
+import MainFooter from './commonComponents/MainFooter';
 
 const WrapperDiv = styled.div`
   max-width: 80%;
@@ -28,6 +30,7 @@ function MainWrapper() {
         <Route component={Contact} path={routePaths.MAIN_CONTACT} />
         <Route component={Contact} path={routePaths.MAIN_CONTACT} />
         <Route component={Giving} path={routePaths.MAIN_GIVING} />
+        <Route component={JubileePage} path={routePaths.MAIN_JUBILEE_PAGE} />
         <Route component={MainContent} exact path={routePaths.MAIN_HOME} />
         <Route component={MembersOnly} path={routePaths.MAIN_MEMBERS_ONLY} />
         <Route component={Ministries} path={routePaths.MAIN_MINISTRIES} />
@@ -39,6 +42,7 @@ function MainWrapper() {
 
         <Route component={NotFound} />
       </Switch>
+      <MainFooter />
     </WrapperDiv>
   );
 }

@@ -10,7 +10,6 @@ import {LOGICAL_COLORS} from '../../utils/styleVariables';
 import ScrollingEventsText from './ScrollingEventsText';
 import ContentSelectBoxes from './ContentSelectBoxes';
 import {contentSelectInfo} from './mainPageData';
-import MainFooter from '../commonComponents/MainFooter';
 
 const sidePadding = '64px';
 
@@ -96,7 +95,6 @@ function MainContent() {
           onContentSelect={index => setContentIndex(index)}
         />
       </UpcomingEvents>
-      <MainFooter />
     </>
   );
 }
