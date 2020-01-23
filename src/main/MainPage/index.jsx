@@ -10,6 +10,7 @@ import {LOGICAL_COLORS} from '../../utils/styleVariables';
 import ScrollingEventsText from './ScrollingEventsText';
 import ContentSelectBoxes from './ContentSelectBoxes';
 import {contentSelectInfo} from './mainPageData';
+import AnnouncementBox from '../commonComponents/AnnouncementBox';
 
 const sidePadding = '64px';
 
@@ -17,11 +18,6 @@ const MenuBarAndPictureDiv = styled.div`
   background-image: url(${churchExterior});
   background-repeat: no-repeat;
   background-size: cover;
-`;
-
-const AnnouncementBox = styled.div`
-  margin: ${sidePadding} 0 0 ${sidePadding};
-  width: 50%;
 `;
 
 const ArrowAndLearnmore = styled.div`
