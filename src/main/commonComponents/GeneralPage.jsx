@@ -48,10 +48,15 @@ const ContentButton = styled.button`
   text-align: left;
 `;
 
+const MenuTitle = styled.h2`
+  font-size: 110%;
+  text-transform: uppercase;
+`;
+
 const SideMenu = ({onClick, menuData, title}) => {
   return (
     <LeftSide>
-      <h2>{title}</h2>
+      <MenuTitle>{title}</MenuTitle>
       <ul>
         {menuData.map(({id, title}) => (
           <li key={id} onClick={() => onClick(id)}>
@@ -83,10 +88,7 @@ const GeneralPage = ({topBoxContent, bottomContentData, menuTitle}) => {
           title={menuTitle}
         />
         <Content>
-          {
-            bottomContentData.find(menuItem => menuItem.id === contentId)
-              .content
-          }
+          {bottomContentData.find(({id}) => id === contentId).content}
         </Content>
       </MenuAndContent>
     </div>
