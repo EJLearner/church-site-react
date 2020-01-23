@@ -2,47 +2,35 @@ import React from 'react';
 
 import GeneralPage from '../commonComponents/GeneralPage';
 
-const contentIds = {
-  ANNIVERSARY: '50thAnniversary',
-  CALENDAR: 'calendar',
-  STORE: 'store'
-};
-
-const sampleContent = (
-  <>
+const anniversaryContent = `
     Anniversary, ipsum dolor sit amet consectetur adipisicing elit. Tempore
     officia necessitatibus atque molestiae? Eveniet debitis itaque ad iure.
     Cumque reiciendis eveniet quia fugiat eius nostrum vel doloremque
     dignissimos, quisquam atque.
-  </>
-);
+  `;
 
-const calendarContent = (
-  <>
+const calendarContent = `
     Calendar, ipsum dolor sit amet consectetur adipisicing elit. Tempore officia
     necessitatibus atque molestiae? Eveniet debitis itaque ad iure. Cumque
     reiciendis eveniet quia fugiat eius nostrum vel doloremque dignissimos,
     quisquam atque.
-  </>
-);
+  `;
 
-const storeContent = (
-  <>
+const storeContent = `
     Store, ipsum dolor sit amet consectetur adipisicing elit. Tempore officia
     necessitatibus atque molestiae? Eveniet debitis itaque ad iure. Cumque
     reiciendis eveniet quia fugiat eius nostrum vel doloremque dignissimos,
     quisquam atque.
-  </>
-);
+  `;
 
 const bottomContentData = [
   {
     title: '50th Anniversary Celebration',
-    id: contentIds.ANNIVERSARY,
-    content: sampleContent
+    id: '50thAnniversary',
+    content: anniversaryContent
   },
-  {title: 'Event Calendar', id: contentIds.CALENDAR, content: calendarContent},
-  {title: 'Store', id: contentIds.STORE, content: storeContent}
+  {title: 'Event Calendar', id: 'calendar', content: calendarContent},
+  {title: 'Store', id: 'store', content: storeContent}
 ];
 
 const topBoxContent = (
