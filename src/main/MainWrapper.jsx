@@ -15,6 +15,7 @@ import ScholarshipPage from './ScholarshipPage';
 import ServiceInfoPage from './ServiceInfoPage';
 import JubileePage from './JubileePage';
 import MainFooter from './commonComponents/MainFooter';
+import MusicMinistryPage from './MusicMinistryPage';
 
 const WrapperDiv = styled.div`
   max-width: 80%;
@@ -34,6 +35,10 @@ function MainWrapper() {
         <Route component={MainContent} exact path={routePaths.MAIN_HOME} />
         <Route component={MembersOnly} path={routePaths.MAIN_MEMBERS_ONLY} />
         <Route component={Ministries} path={routePaths.MAIN_MINISTRIES} />
+        <Route
+          component={MusicMinistryPage}
+          path={routePaths.MAIN_MUSIC_MINISTRY}
+        />
         <Route component={ScholarshipPage} path={routePaths.MAIN_SCHOLARSHIP} />
         <Route
           component={ServiceInfoPage}
