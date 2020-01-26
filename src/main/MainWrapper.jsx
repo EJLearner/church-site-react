@@ -5,12 +5,12 @@ import styled from 'styled-components';
 import MainContent from './MainPage';
 import routePaths from '../routePaths';
 import NotFound from '../ce/components/NotFound/NotFound';
-import AboutUs from './AboutUs';
-import Ministries from './Ministries';
-import Giving from './Giving';
+import AboutUsPage from './AboutUsPage';
+import MinistriesPage from './MinistriesPage';
+import GivingPage from './GivingPage';
 import Calendar from './Calendar';
 import MembersOnly from './MembersOnly';
-import Contact from './Contact';
+import ContactPage from './ContactPage';
 import ScholarshipPage from './ScholarshipPage';
 import ServiceInfoPage from './ServiceInfoPage';
 import JubileePage from './JubileePage';
@@ -26,15 +26,14 @@ function MainWrapper() {
   return (
     <WrapperDiv>
       <Switch>
-        <Route component={AboutUs} path={routePaths.MAIN_ABOUT_US} />
+        <Route component={AboutUsPage} path={routePaths.MAIN_ABOUT_US} />
         <Route component={Calendar} path={routePaths.MAIN_CALENDAR} />
-        <Route component={Contact} path={routePaths.MAIN_CONTACT} />
-        <Route component={Contact} path={routePaths.MAIN_CONTACT} />
-        <Route component={Giving} path={routePaths.MAIN_GIVING} />
+        <Route component={ContactPage} path={routePaths.MAIN_CONTACT} />
+        <Route component={GivingPage} path={routePaths.MAIN_GIVING} />
         <Route component={JubileePage} path={routePaths.MAIN_JUBILEE_PAGE} />
         <Route component={MainContent} exact path={routePaths.MAIN_HOME} />
         <Route component={MembersOnly} path={routePaths.MAIN_MEMBERS_ONLY} />
-        <Route component={Ministries} path={routePaths.MAIN_MINISTRIES} />
+        <Route component={MinistriesPage} path={routePaths.MAIN_MINISTRIES} />
         <Route
           component={MusicMinistryPage}
           path={routePaths.MAIN_MUSIC_MINISTRY}

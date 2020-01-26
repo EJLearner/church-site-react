@@ -54,7 +54,7 @@ const topBoxContent = (
   </div>
 );
 
-const Ministries = () => {
+const MinistriesPage = () => {
   return (
     <GeneralPageTemplate
       bottomContentData={bottomContentData}
@@ -64,4 +64,4 @@ const Ministries = () => {
   );
 };
 
-export default Ministries;
+export default MinistriesPage;
