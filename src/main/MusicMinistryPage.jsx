@@ -1,6 +1,8 @@
 import React from 'react';
 import GeneralPage from './commonComponents/GeneralPage';
 
+import styled from 'styled-components';
+
 const pocContent = `
     POC, ipsum dolor sit amet consectetur adipisicing elit. Tempore
     officia necessitatibus atque molestiae? Eveniet debitis itaque ad iure.
@@ -40,6 +42,22 @@ const bottomContentData = [
   }
 ];
 
+const StyledUpcomingEvents = styled.div`
+  font-size: 150%;
+  font-weight: bold;
+  text-transform: uppercase;
+`;
+
+const upcomingEvents = (
+  <>
+    <StyledUpcomingEvents>Upcoming Events</StyledUpcomingEvents>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum voluptates
+    doloremque sed numquam excepturi fugiat, ducimus quisquam, repellat eos
+    doloribus officiis incidunt asperiores itaque sequi quam consequuntur animi
+    neque rem.
+  </>
+);
+
 const topBoxContent = (
   <div>
     <div>
@@ -60,7 +78,7 @@ const MusicMinistryPage = () => {
       bottomContentData={bottomContentData}
       menuTitle="Music Ministry"
       topBoxContent={topBoxContent}
-      topRightContent="Upcoming Events"
+      topRightContent={upcomingEvents}
     />
   );
 };

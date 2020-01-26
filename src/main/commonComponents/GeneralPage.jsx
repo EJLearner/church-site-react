@@ -8,23 +8,29 @@ import PropTypes from 'prop-types';
 import AnnouncementBox from './AnnouncementBox.jsx';
 
 const StyledAnnouncementBoxWrapper = styled.div`
+  justify-content: space-between;
   margin: ${WIDTHS.SIDE_CONTENT_PADDING};
 
   display: flex;
+
+  .announcement-box {
+    min-width: 50%;
+  }
+
+  .more-content {
+    margin-left: 1em;
+  }
 `;
 
-const TopRightContent = styled.div``;
-
 const MenuAndContent = styled.div`
-  border: 1px solid black;
   display: flex;
+  padding: 0 ${WIDTHS.SIDE_CONTENT_PADDING}
   flex-direction: row;
 `;
 
 const LeftSide = styled.div`
-  border: 1px solid black;
+  border: 1px solid gray;
   padding: 1em;
-  width: 30%;
 
   h2 {
     margin-top: 0;
@@ -40,7 +46,7 @@ const LeftSide = styled.div`
 `;
 
 const Content = styled.div`
-  border: 1px solid black;
+  border: 1px solid gray;
   padding: 1em;
   width: 70%;
 `;
@@ -94,11 +100,11 @@ const GeneralPage = ({
     <div className="menu-bar-and-picture">
       <MainMenubar />
       <StyledAnnouncementBoxWrapper>
-        <AnnouncementBox>{topBoxContent}</AnnouncementBox>
+        <AnnouncementBox className="announcement-box">
+          {topBoxContent}
+        </AnnouncementBox>
         {topRightContent && (
-          <div>
-            <TopRightContent>{topRightContent}</TopRightContent>
-          </div>
+          <div className="more-content">{topRightContent}</div>
         )}
       </StyledAnnouncementBoxWrapper>
       <MenuAndContent>
