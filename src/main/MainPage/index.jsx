@@ -17,6 +17,11 @@ const StyledAnnouncementBoxWrapper = styled.div`
   width: 50%;
 `;
 
+const StyledContentComponentWrapper = styled.div`
+  height: 200px;
+  overflow-y: auto;
+`;
+
 const MenuBarAndPictureDiv = styled.div`
   background-image: url(${churchExterior});
   background-repeat: no-repeat;
@@ -74,7 +79,9 @@ function MainContent() {
         <MainMenubar />
         <StyledAnnouncementBoxWrapper>
           <AnnouncementBox>
-            <ContentComponent />
+            <StyledContentComponentWrapper>
+              <ContentComponent />
+            </StyledContentComponentWrapper>
             <ArrowAndLearnmore>
               <ArrowBox>
                 <div>
