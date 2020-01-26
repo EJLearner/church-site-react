@@ -1,12 +1,7 @@
 import styled from 'styled-components';
 import {LOGICAL_COLORS, FONT_FAMILIES} from '../../utils/styleVariables';
 
-const sidePadding = '64px';
-
 const AnnouncementBox = styled.div`
-  margin: ${sidePadding} 0 ${sidePadding} ${sidePadding};
-  width: 50%;
-
   & > div:first-of-type {
     background-color: ${LOGICAL_COLORS.CT_PRIMARY};
     color: ${LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};

@@ -2,10 +2,18 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 
 import MainMenubar from '../MainMenubar';
-import {LOGICAL_COLORS} from '../../utils/styleVariables';
+import {LOGICAL_COLORS, WIDTHS} from '../../utils/styleVariables';
 
 import PropTypes from 'prop-types';
 import AnnouncementBox from './AnnouncementBox.jsx';
+
+const StyledAnnouncementBoxWrapper = styled.div`
+  margin: ${WIDTHS.SIDE_CONTENT_PADDING};
+
+  display: flex;
+`;
+
+const TopRightContent = styled.div``;
 
 const MenuAndContent = styled.div`
   border: 1px solid black;
@@ -74,13 +82,25 @@ SideMenu.propTypes = {
   title: PropTypes.func.isRequired
 };
 
-const GeneralPage = ({topBoxContent, bottomContentData, menuTitle}) => {
+const GeneralPage = ({
+  topBoxContent,
+  bottomContentData,
+  menuTitle,
+  topRightContent
+}) => {
   const [contentId, setContentId] = useState(bottomContentData[0].id);
 
   return (
     <div className="menu-bar-and-picture">
       <MainMenubar />
-      <AnnouncementBox>{topBoxContent}</AnnouncementBox>
+      <StyledAnnouncementBoxWrapper>
+        <AnnouncementBox>{topBoxContent}</AnnouncementBox>
+        {topRightContent && (
+          <div>
+            <TopRightContent>{topRightContent}</TopRightContent>
+          </div>
+        )}
+      </StyledAnnouncementBoxWrapper>
       <MenuAndContent>
         <SideMenu
           menuData={bottomContentData}
@@ -98,7 +118,8 @@ const GeneralPage = ({topBoxContent, bottomContentData, menuTitle}) => {
 GeneralPage.propTypes = {
   bottomContentData: PropTypes.array.isRequired,
   menuTitle: PropTypes.string.isRequired,
-  topBoxContent: PropTypes.node.isRequired
+  topBoxContent: PropTypes.node.isRequired,
+  topRightContent: PropTypes.node
 };
 
 export default GeneralPage;

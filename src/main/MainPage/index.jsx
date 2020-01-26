@@ -6,13 +6,16 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import churchExterior from '../../assets/main/images/church-exterior.png';
 
 import MainMenubar from '../MainMenubar';
-import {LOGICAL_COLORS} from '../../utils/styleVariables';
+import {LOGICAL_COLORS, WIDTHS} from '../../utils/styleVariables';
 import ScrollingEventsText from './ScrollingEventsText';
 import ContentSelectBoxes from './ContentSelectBoxes';
 import {contentSelectInfo} from './mainPageData';
 import AnnouncementBox from '../commonComponents/AnnouncementBox';
 
-const sidePadding = '64px';
+const StyledAnnouncementBoxWrapper = styled.div`
+  margin: ${WIDTHS.SIDE_CONTENT_PADDING} 0 0 ${WIDTHS.SIDE_CONTENT_PADDING};
+  width: 50%;
+`;
 
 const MenuBarAndPictureDiv = styled.div`
   background-image: url(${churchExterior});
@@ -50,7 +53,7 @@ const UpcomingEvents = styled.div`
   align-items: center;
   background-color: ${LOGICAL_COLORS.CT_SECOND};
   display: flex;
-  padding: 48px ${sidePadding};
+  padding: 48px ${WIDTHS.SIDE_CONTENT_PADDING};
 `;
 
 const SaveTheDate = styled.div`
@@ -69,19 +72,21 @@ function MainContent() {
     <>
       <MenuBarAndPictureDiv className="menu-bar-and-picture">
         <MainMenubar />
-        <AnnouncementBox>
-          <ContentComponent />
-          <ArrowAndLearnmore>
-            <ArrowBox>
-              <div>
-                <FontAwesomeIcon icon={faAngleRight} size="4x" />
-              </div>
-            </ArrowBox>
-            <LearnMoreBox>
-              <div>Learn More</div>
-            </LearnMoreBox>
-          </ArrowAndLearnmore>
-        </AnnouncementBox>
+        <StyledAnnouncementBoxWrapper>
+          <AnnouncementBox>
+            <ContentComponent />
+            <ArrowAndLearnmore>
+              <ArrowBox>
+                <div>
+                  <FontAwesomeIcon icon={faAngleRight} size="4x" />
+                </div>
+              </ArrowBox>
+              <LearnMoreBox>
+                <div>Learn More</div>
+              </LearnMoreBox>
+            </ArrowAndLearnmore>
+          </AnnouncementBox>
+        </StyledAnnouncementBoxWrapper>
       </MenuBarAndPictureDiv>
       <UpcomingEvents>
         <SaveTheDate>Save The Date</SaveTheDate>

@@ -4,7 +4,48 @@ import routePaths from '../../src/routePaths';
 
 import logo from '../assets/main/images/logo-ct-circle-white-cropped.png';
 
-import './MainMenubar.css';
+import styled from 'styled-components';
+import {LOGICAL_COLORS, WIDTHS} from '../utils/styleVariables';
+
+const StyledMainTopTitle = styled.div`
+  align-items: center;
+  color: ${LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};
+  background-color: ${LOGICAL_COLORS.CT_PRIMARY};
+  display: flex;
+  min-height: 3em;
+  padding: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
+  text-transform: uppercase;
+
+  img {
+    height: 2em;
+  }
+
+  .ct-title-text {
+    margin-left: 8px;
+  }
+`;
+
+const StyledMainMenuBar = styled.div`
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
+
+  & > div {
+    margin: 0 16px;
+    padding: 16px 8px;
+  }
+
+  & > div:first-child {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  a {
+    color: ${LOGICAL_COLORS.CT_TEXT_ON_DARK};
+  }
+`;
 
 const MainMenubar = () => {
   const menuItems = [
@@ -27,15 +68,17 @@ const MainMenubar = () => {
 
   return (
     <>
-      <div className="main-top-title">
+      <StyledMainTopTitle>
         <div>
           <img alt="City Temple Church Logo" height="115px" src={logo} />
         </div>
         <div className="ct-title-text">
           The City Temple of Baltimore (Baptist)
         </div>
-      </div>
-      <div className="main-menu-bar">{renderedMenuItems}</div>
+      </StyledMainTopTitle>
+      <StyledMainMenuBar className="main-menu-bar">
+        {renderedMenuItems}
+      </StyledMainMenuBar>
     </>
   );
 };

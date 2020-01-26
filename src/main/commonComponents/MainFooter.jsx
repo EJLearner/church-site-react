@@ -2,10 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
-import {LOGICAL_COLORS} from '../../utils/styleVariables';
+import {LOGICAL_COLORS, WIDTHS} from '../../utils/styleVariables';
 import routePaths from '../../routePaths';
-
-const sidePadding = '64px';
 
 const footerData = [
   {
@@ -37,7 +35,7 @@ const footerData = [
 
 const Footer = styled.div`
   display: flex;
-  padding: 24px ${sidePadding};
+  padding: 24px ${WIDTHS.SIDE_CONTENT_PADDING};
 `;
 
 const FooterItem = styled.div`
