@@ -2,10 +2,11 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 
 import MainMenubar from '../MainMenubar';
-import {LOGICAL_COLORS, WIDTHS} from '../../utils/styleVariables';
+import {WIDTHS} from '../../utils/styleVariables';
 
 import PropTypes from 'prop-types';
 import AnnouncementBox from './AnnouncementBox.jsx';
+import PlainButton from './PlainButton';
 
 const StyledAnnouncementBoxWrapper = styled.div`
   justify-content: space-between;
@@ -51,15 +52,9 @@ const Content = styled.div`
   width: 70%;
 `;
 
-const ContentButton = styled.button`
-  background-color: ${LOGICAL_COLORS.STANDARD_BACKGROUND};
-  border: none;
-  cursor: pointer;
+const ContentButton = styled(PlainButton)`
   display: block;
   line-height: 150%;
-  margin: 0;
-  padding: 0;
-  text-align: left;
 `;
 
 const MenuTitle = styled.h2`
