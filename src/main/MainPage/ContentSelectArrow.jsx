@@ -11,6 +11,10 @@ const StyledVisibleIcon = styled(PlainButton)`
   color: ${LOGICAL_COLORS.CT_TEXT_ON_SECONDARY};
   visibility: ${props => (props.show ? null : 'hidden')};
   margin: 1em;
+
+  &:hover {
+    color: ${LOGICAL_COLORS.CT_LIGHTENED_ACCENT};
+  }
 `;
 
 function ContentSelectArrow({onClick, type, show}) {
