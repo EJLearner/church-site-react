@@ -1,5 +1,5 @@
 import React from 'react';
-import GeneralPage from './commonComponents/GeneralPage';
+import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
 
 const ministry1Content = `
     Ministry 1, ipsum dolor sit amet consectetur adipisicing elit. Tempore
@@ -56,7 +56,7 @@ const topBoxContent = (
 
 const Ministries = () => {
   return (
-    <GeneralPage
+    <GeneralPageTemplate
       bottomContentData={bottomContentData}
       menuTitle="Ministries"
       topBoxContent={topBoxContent}

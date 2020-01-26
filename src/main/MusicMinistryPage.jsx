@@ -1,5 +1,5 @@
 import React from 'react';
-import GeneralPage from './commonComponents/GeneralPage';
+import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
 
 import styled from 'styled-components';
 
@@ -74,7 +74,7 @@ const topBoxContent = (
 
 const MusicMinistryPage = () => {
   return (
-    <GeneralPage
+    <GeneralPageTemplate
       bottomContentData={bottomContentData}
       menuTitle="Music Ministry"
       topBoxContent={topBoxContent}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import GeneralPage from '../commonComponents/GeneralPage';
+import GeneralPageTemplate from '../commonComponents/GeneralPageTemplate';
 
 const anniversaryContent = `
     Anniversary, ipsum dolor sit amet consectetur adipisicing elit. Tempore
@@ -49,7 +49,7 @@ const topBoxContent = (
 
 function JubileePage() {
   return (
-    <GeneralPage
+    <GeneralPageTemplate
       bottomContentData={bottomContentData}
       menuTitle="Anniversary"
       topBoxContent={topBoxContent}

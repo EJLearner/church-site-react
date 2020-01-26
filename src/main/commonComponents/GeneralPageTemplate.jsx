@@ -83,7 +83,7 @@ SideMenu.propTypes = {
   title: PropTypes.func.isRequired
 };
 
-const GeneralPage = ({
+const GeneralPageTemplate = ({
   topBoxContent,
   bottomContentData,
   menuTitle,
@@ -116,11 +116,11 @@ const GeneralPage = ({
   );
 };
 
-GeneralPage.propTypes = {
+GeneralPageTemplate.propTypes = {
   bottomContentData: PropTypes.array.isRequired,
   menuTitle: PropTypes.string.isRequired,
   topBoxContent: PropTypes.node.isRequired,
   topRightContent: PropTypes.node
 };
 
-export default GeneralPage;
+export default GeneralPageTemplate;
