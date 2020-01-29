@@ -7,7 +7,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import churchExterior from '../../assets/main/images/church-exterior.png';
 
 import MainMenubar from '../MainMenubar';
-import {LOGICAL_COLORS, WIDTHS} from '../../utils/styleVariables';
+import {LOGICAL_COLORS, WIDTHS, COLORS} from '../../utils/styleVariables';
 import ScrollingEventsText from './ScrollingEventsText';
 import ContentSelectBoxes from './ContentSelectBoxes';
 import {contentSelectInfo} from './mainPageData';
@@ -53,6 +53,10 @@ const LearnMoreBox = styled.div`
   justify-content: center;
   padding: 0 0.5em;
   text-transform: uppercase;
+
+  a {
+    color: ${COLORS.WHITE};
+  }
 `;
 
 const UpcomingEvents = styled.div`
@@ -91,9 +95,7 @@ function MainContent() {
                 </div>
               </ArrowBox>
               <LearnMoreBox>
-                <div>
-                  <Link to={currentContent.linkPath}>Learn more</Link>
-                </div>
+                <Link to={currentContent.linkPath}>Learn more</Link>
               </LearnMoreBox>
             </ArrowAndLearnmore>
           </AnnouncementBox>
