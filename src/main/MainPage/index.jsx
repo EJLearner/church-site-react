@@ -58,12 +58,12 @@ const UpcomingEvents = styled.div`
   align-items: center;
   background-color: ${LOGICAL_COLORS.CT_SECOND};
   display: flex;
-  padding: 48px ${WIDTHS.SIDE_CONTENT_PADDING};
+  padding: 32px ${WIDTHS.SIDE_CONTENT_PADDING};
 `;
 
 const SaveTheDate = styled.div`
   color: ${LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};
-  font-size: 300%;
+  font-size: 200%;
   font-weight: bold;
   text-transform: uppercase;
 `;
