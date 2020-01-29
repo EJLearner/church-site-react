@@ -5,10 +5,10 @@ function ChristianEducation() {
     <div>
       <h1>Christian Education</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-        asperiores, dolore fugiat at adipisci nisi distinctio rem ut tenetur,
-        saepe ex delectus tempora natus animi eaque ipsa. Error, necessitatibus
-        officia.
+        Christian Education provides opportunities for spiritual growth in order
+        to support the church’s vision of “becoming a spiritually mature
+        Christian fellowship in order to provide an effective witness for Christ
+        in this world.” Learn how you and your family can get involved.
       </p>
     </div>
   );
