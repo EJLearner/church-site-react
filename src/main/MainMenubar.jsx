@@ -25,8 +25,9 @@ const StyledMainTopTitle = styled.div`
   }
 `;
 
-const StyledMainMenuBar = styled.div`
+const StyledMainMenuBar = styled.nav`
   background-color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 64px;
   display: flex;
   font-size: 12px;
   text-transform: uppercase;
@@ -67,7 +68,7 @@ const MainMenubar = () => {
   });
 
   return (
-    <>
+    <header>
       <StyledMainTopTitle>
         <div>
           <img alt="City Temple Church Logo" height="115px" src={logo} />
@@ -79,7 +80,7 @@ const MainMenubar = () => {
       <StyledMainMenuBar className="main-menu-bar">
         {renderedMenuItems}
       </StyledMainMenuBar>
-    </>
+    </header>
   );
 };
 

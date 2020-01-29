@@ -89,7 +89,7 @@ const GeneralPageTemplate = props => {
   const [contentId, setContentId] = useState(bottomContentData?.[0].id);
 
   return (
-    <div className="menu-bar-and-picture">
+    <div>
       <MainMenubar />
       <StyledAnnouncementBoxWrapper>
         <AnnouncementBox className="announcement-box">

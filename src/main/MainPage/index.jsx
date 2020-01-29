@@ -14,7 +14,7 @@ import {contentSelectInfo} from './mainPageData';
 import AnnouncementBox from '../commonComponents/AnnouncementBox';
 
 const StyledAnnouncementBoxWrapper = styled.div`
-  margin: ${WIDTHS.SIDE_CONTENT_PADDING} 0 0 ${WIDTHS.SIDE_CONTENT_PADDING};
+  margin: 0 0 0 ${WIDTHS.SIDE_CONTENT_PADDING};
   width: 50%;
 `;
 

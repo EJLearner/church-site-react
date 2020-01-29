@@ -33,7 +33,7 @@ const footerData = [
   }
 ];
 
-const Footer = styled.div`
+const NavStyleWrapper = styled.nav`
   display: flex;
   padding: 24px ${WIDTHS.SIDE_CONTENT_PADDING};
 `;
@@ -54,16 +54,18 @@ const FooterItem = styled.div`
 
 const MainFooter = () => {
   return (
-    <Footer>
-      {footerData.map(({path, actionWord, subject}) => (
-        <FooterItem key={actionWord}>
-          <Link to={path}>
-            <div>{actionWord}</div>
-            <div>{subject}</div>
-          </Link>
-        </FooterItem>
-      ))}
-    </Footer>
+    <footer>
+      <NavStyleWrapper>
+        {footerData.map(({path, actionWord, subject}) => (
+          <FooterItem key={actionWord}>
+            <Link to={path}>
+              <div>{actionWord}</div>
+              <div>{subject}</div>
+            </Link>
+          </FooterItem>
+        ))}
+      </NavStyleWrapper>
+    </footer>
   );
 };
 
