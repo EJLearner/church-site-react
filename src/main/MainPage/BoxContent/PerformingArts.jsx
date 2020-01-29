@@ -5,9 +5,11 @@ function PerformingArts() {
     <div>
       <h1>Performing Arts Sunday</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, est
-        velit minus qui in expedita blanditiis hic maxime sapiente nulla sit
-        incidunt quo animi? Tempore suscipit fugit illo necessitatibus soluta?
+        Each fourth Sunday, City Temple will showcase talented artists to
+        enhance our worship experience. Categories of artistic talent include
+        solo or ensemble sacred, classical, spiritual, or hymnal jazz vocal and
+        instrument; dance; theater; and dramatic readings. Learn more to find
+        out how you can participate or make a referral.
       </p>
     </div>
   );
