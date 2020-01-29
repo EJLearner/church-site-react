@@ -3,7 +3,7 @@ import eventContentTemplate from '../../assets/main/images/event-content-templat
 import JubileeContent from './BoxContent/JubileeContent';
 import PerformingArts from './BoxContent/PerformingArts';
 import ChristianEducation from './BoxContent/ChristianEducation';
-import SacrificialSowing from './BoxContent/SacrificialSowing';
+import routePaths from '../../routePaths';
 
 const scrollingEventsTextInfo = [
   {date: '2025-11-28', title: 'Earl’s Birthday', path: 'https://earljones.dev'},
@@ -36,24 +36,22 @@ const scrollingEventsTextInfo = [
 
 const contentSelectInfo = [
   {
+    linkPath: routePaths.MAIN_JUBILEE_PAGE,
     render: JubileeContent,
     showUntil: '2021-01-01',
     title: '50th Anniversary Celebration',
     thumbnail: eventContentTemplate
   },
   {
+    linkPath: routePaths.MAIN_PERFORMING_ARTS_PAGE,
     render: PerformingArts,
     title: 'Performing Arts Sunday',
     thumbnail: eventContentTemplate
   },
   {
+    linkPath: routePaths.CE_HOME,
     render: ChristianEducation,
     title: 'Christian Education',
-    thumbnail: eventContentTemplate
-  },
-  {
-    render: SacrificialSowing,
-    title: 'Sacrificial Sowing',
     thumbnail: eventContentTemplate
   }
 ];

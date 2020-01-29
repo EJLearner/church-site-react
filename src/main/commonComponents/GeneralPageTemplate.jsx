@@ -80,16 +80,13 @@ const SideMenu = ({onClick, menuData, title}) => {
 SideMenu.propTypes = {
   menuData: PropTypes.array.isRequired,
   onClick: PropTypes.func.isRequired,
-  title: PropTypes.func.isRequired
+  title: PropTypes.string.isRequired
 };
 
-const GeneralPageTemplate = ({
-  topBoxContent,
-  bottomContentData,
-  menuTitle,
-  topRightContent
-}) => {
-  const [contentId, setContentId] = useState(bottomContentData[0].id);
+const GeneralPageTemplate = props => {
+  const {topBoxContent, bottomContentData, menuTitle, topRightContent} = props;
+
+  const [contentId, setContentId] = useState(bottomContentData?.[0].id);
 
   return (
     <div className="menu-bar-and-picture">
@@ -102,23 +99,25 @@ const GeneralPageTemplate = ({
           <div className="more-content">{topRightContent}</div>
         )}
       </StyledAnnouncementBoxWrapper>
-      <MenuAndContent>
-        <SideMenu
-          menuData={bottomContentData}
-          onClick={id => setContentId(id)}
-          title={menuTitle}
-        />
-        <Content>
-          {bottomContentData.find(({id}) => id === contentId).content}
-        </Content>
-      </MenuAndContent>
+      {Boolean(menuTitle && bottomContentData) && (
+        <MenuAndContent>
+          <SideMenu
+            menuData={bottomContentData}
+            onClick={id => setContentId(id)}
+            title={menuTitle}
+          />
+          <Content>
+            {bottomContentData.find(({id}) => id === contentId).content}
+          </Content>
+        </MenuAndContent>
+      )}
     </div>
   );
 };
 
 GeneralPageTemplate.propTypes = {
-  bottomContentData: PropTypes.array.isRequired,
-  menuTitle: PropTypes.string.isRequired,
+  bottomContentData: PropTypes.array,
+  menuTitle: PropTypes.string,
   topBoxContent: PropTypes.node.isRequired,
   topRightContent: PropTypes.node
 };

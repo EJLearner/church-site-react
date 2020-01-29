@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import {faAngleRight} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -71,7 +72,8 @@ const SaveTheDate = styled.div`
 function MainContent() {
   const [contentIndex, setContentIndex] = useState(0);
 
-  const ContentComponent = contentSelectInfo[contentIndex].render;
+  const currentContent = contentSelectInfo[contentIndex];
+  const ContentComponent = currentContent.render;
 
   return (
     <>
@@ -89,7 +91,9 @@ function MainContent() {
                 </div>
               </ArrowBox>
               <LearnMoreBox>
-                <div>Learn More</div>
+                <div>
+                  <Link to={currentContent.linkPath}>Learn more</Link>
+                </div>
               </LearnMoreBox>
             </ArrowAndLearnmore>
           </AnnouncementBox>
