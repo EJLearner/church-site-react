@@ -3,7 +3,11 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import {contentSelectInfo} from './mainPageData';
-import {LOGICAL_COLORS, FONT_FAMILIES} from '../../utils/styleVariables';
+import {
+  LOGICAL_COLORS,
+  FONT_FAMILIES,
+  COLORS
+} from '../../utils/styleVariables';
 import ContentSelectArrow from './ContentSelectArrow';
 
 const ContentSelectBoxesWrapper = styled.div`
@@ -13,9 +17,12 @@ const ContentSelectBoxesWrapper = styled.div`
 
 const EventBox = styled.div`
   background-color: ${props =>
-    props.selected ? LOGICAL_COLORS.CT_ACCENT : LOGICAL_COLORS.CT_PRIMARY};
+    props.selected ? COLORS.WHITE : LOGICAL_COLORS.CT_PRIMARY};
   box-sizing: content-box;
-  color: ${LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};
+  color: ${props =>
+    props.selected
+      ? LOGICAL_COLORS.CT_PRIMARY
+      : LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};
   cursor: pointer;
   font-family: ${FONT_FAMILIES.MULI};
   font-weight: bold;
@@ -31,7 +38,7 @@ const EventBox = styled.div`
   }
 
   &:hover {
-    opacity: 0.85;
+    opacity: 0.9;
   }
 `;
 
