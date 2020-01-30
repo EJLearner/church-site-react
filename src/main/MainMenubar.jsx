@@ -5,7 +5,7 @@ import routePaths from '../../src/routePaths';
 import logo from '../assets/main/images/logo-ct-circle-white-cropped.png';
 
 import styled from 'styled-components';
-import {LOGICAL_COLORS, WIDTHS} from '../utils/styleVariables';
+import {LOGICAL_COLORS, WIDTHS, FONT_FAMILIES} from '../utils/styleVariables';
 
 const StyledMainTopTitle = styled.div`
   align-items: center;
@@ -26,6 +26,7 @@ const StyledMainTopTitle = styled.div`
 `;
 
 const StyledMainMenuBar = styled.nav`
+  font-family: ${FONT_FAMILIES.MULI};
   background-color: rgba(0, 0, 0, 0.4);
   margin-bottom: 64px;
   display: flex;

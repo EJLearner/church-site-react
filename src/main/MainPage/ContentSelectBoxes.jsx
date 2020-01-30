@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 import {contentSelectInfo} from './mainPageData';
-import {LOGICAL_COLORS} from '../../utils/styleVariables';
+import {LOGICAL_COLORS, FONT_FAMILIES} from '../../utils/styleVariables';
 import ContentSelectArrow from './ContentSelectArrow';
 
 const ContentSelectBoxesWrapper = styled.div`
@@ -17,13 +17,14 @@ const EventBox = styled.div`
   box-sizing: content-box;
   color: ${LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};
   cursor: pointer;
+  font-family: ${FONT_FAMILIES.MULI};
   font-weight: bold;
-  font-size: 90%;
+  font-size: 70%;
   margin: 0 0.5em;
-  min-height: 150px;
-  padding: 1em 1em 0 1em;
+  min-height: 130px;
+  padding: 0.5em 0.5em 0 0.5em;
   text-transform: uppercase;
-  width: 120px;
+  width: 100px;
 
   &:focus {
     outline: 2px solid blue;

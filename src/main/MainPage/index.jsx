@@ -48,7 +48,7 @@ const LearnMoreBox = styled.div`
   color: ${LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};
   display: inline-flex;
   flex-direction: column;
-  font-size: 120%;
+  font-size: 15px;
   font-weight: bold;
   justify-content: center;
   padding: 0 0.5em;
