@@ -1,5 +1,6 @@
 const FONT_FAMILIES = {
   ARIAL: 'arial, helvetica, sans_serif',
+  MULI: 'Muli, arial, helvetica, sans_serif',
   BRUSH_SCRIPT: "'Brush Script MT', cursive",
   CALIBRI: "Calibri, 'Segoe UI', Candara, Segoe, Optima, Arial, sans_serif",
   CAMBRIA: "cambria, georgia, 'bookman old style', 'times new roman', serif",
@@ -35,7 +36,8 @@ const COLORS = {
 const LOGICAL_COLORS = {
   STANDARD_BACKGROUND: COLORS.WHITE,
   STANDARD_TEXT: COLORS.BLACK,
-  CT_PRIMARY: COLORS.MAROON,
+  CT_PRIMARY: '#8E131B',
+  CT_MAIN_YELLOW: '#edde19',
   CT_TEXT_ON_PRIMARY: COLORS.WHITE,
   CT_TEXT_ON_SECONDARY: COLORS.WHITE,
   CT_TEXT_ON_DARK: COLORS.WHITE,

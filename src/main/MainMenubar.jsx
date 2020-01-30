@@ -5,7 +5,11 @@ import routePaths from '../../src/routePaths';
 import logo from '../assets/main/images/logo-ct-circle-white-cropped.png';
 
 import styled from 'styled-components';
-import {LOGICAL_COLORS, WIDTHS} from '../utils/styleVariables';
+import {LOGICAL_COLORS, WIDTHS, FONT_FAMILIES} from '../utils/styleVariables';
+
+const StyledHeader = styled.header`
+  margin: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
+`;
 
 const StyledMainTopTitle = styled.div`
   align-items: center;
@@ -13,7 +17,7 @@ const StyledMainTopTitle = styled.div`
   background-color: ${LOGICAL_COLORS.CT_PRIMARY};
   display: flex;
   min-height: 3em;
-  padding: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
+  padding: 0 1em;
   text-transform: uppercase;
 
   img {
@@ -26,12 +30,12 @@ const StyledMainTopTitle = styled.div`
 `;
 
 const StyledMainMenuBar = styled.nav`
+  font-family: ${FONT_FAMILIES.MULI};
   background-color: rgba(0, 0, 0, 0.4);
   margin-bottom: 64px;
   display: flex;
   font-size: 12px;
   text-transform: uppercase;
-  padding: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
 
   & > div {
     margin: 0 16px;
@@ -40,7 +44,7 @@ const StyledMainMenuBar = styled.nav`
 
   & > div:first-child {
     margin-left: 0;
-    padding-left: 0;
+    padding-left: 1.3em;
   }
 
   a {
@@ -68,7 +72,7 @@ const MainMenubar = () => {
   });
 
   return (
-    <header>
+    <StyledHeader>
       <StyledMainTopTitle>
         <div>
           <img alt="City Temple Church Logo" height="115px" src={logo} />
@@ -80,7 +84,7 @@ const MainMenubar = () => {
       <StyledMainMenuBar className="main-menu-bar">
         {renderedMenuItems}
       </StyledMainMenuBar>
-    </header>
+    </StyledHeader>
   );
 };
 

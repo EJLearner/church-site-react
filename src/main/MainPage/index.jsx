@@ -4,29 +4,24 @@ import styled from 'styled-components';
 import {faAngleRight} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
-import churchExterior from '../../assets/main/images/church-exterior.png';
-
 import MainMenubar from '../MainMenubar';
 import {LOGICAL_COLORS, WIDTHS, COLORS} from '../../utils/styleVariables';
-import ScrollingEventsText from './ScrollingEventsText';
 import ContentSelectBoxes from './ContentSelectBoxes';
 import {contentSelectInfo} from './mainPageData';
 import AnnouncementBox from '../commonComponents/AnnouncementBox';
 
+const PageWrapper = styled.div``;
+
+const MenuBarAndPictureDiv = styled.div``;
+
 const StyledAnnouncementBoxWrapper = styled.div`
-  margin: 0 0 0 ${WIDTHS.SIDE_CONTENT_PADDING};
+  margin: 0 0 2em ${WIDTHS.SIDE_CONTENT_PADDING};
   width: 50%;
 `;
 
 const StyledContentComponentWrapper = styled.div`
-  height: 200px;
+  height: 300px;
   overflow-y: auto;
-`;
-
-const MenuBarAndPictureDiv = styled.div`
-  background-image: url(${churchExterior});
-  background-repeat: no-repeat;
-  background-size: cover;
 `;
 
 const ArrowAndLearnmore = styled.div`
@@ -48,7 +43,7 @@ const LearnMoreBox = styled.div`
   color: ${LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};
   display: inline-flex;
   flex-direction: column;
-  font-size: 120%;
+  font-size: 15px;
   font-weight: bold;
   justify-content: center;
   padding: 0 0.5em;
@@ -59,19 +54,19 @@ const LearnMoreBox = styled.div`
   }
 `;
 
-const UpcomingEvents = styled.div`
-  align-items: center;
-  background-color: ${LOGICAL_COLORS.CT_SECOND};
-  display: flex;
-  padding: 32px ${WIDTHS.SIDE_CONTENT_PADDING};
-`;
+// const UpcomingEvents = styled.div`
+//   align-items: center;
+//   background-color: ${LOGICAL_COLORS.CT_SECOND};
+//   display: flex;
+//   padding: 32px ${WIDTHS.SIDE_CONTENT_PADDING};
+// `;
 
-const SaveTheDate = styled.div`
-  color: ${LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};
-  font-size: 200%;
-  font-weight: bold;
-  text-transform: uppercase;
-`;
+// const SaveTheDate = styled.div`
+//   color: ${LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};
+//   font-size: 200%;
+//   font-weight: bold;
+//   text-transform: uppercase;
+// `;
 
 function MainContent() {
   const [contentIndex, setContentIndex] = useState(0);
@@ -80,7 +75,7 @@ function MainContent() {
   const ContentComponent = currentContent.render;
 
   return (
-    <>
+    <PageWrapper>
       <MenuBarAndPictureDiv className="menu-bar-and-picture">
         <MainMenubar />
         <StyledAnnouncementBoxWrapper>
@@ -91,7 +86,7 @@ function MainContent() {
             <ArrowAndLearnmore>
               <ArrowBox>
                 <div>
-                  <FontAwesomeIcon icon={faAngleRight} size="4x" />
+                  <FontAwesomeIcon icon={faAngleRight} size="2x" />
                 </div>
               </ArrowBox>
               <LearnMoreBox>
@@ -101,15 +96,11 @@ function MainContent() {
           </AnnouncementBox>
         </StyledAnnouncementBoxWrapper>
       </MenuBarAndPictureDiv>
-      <UpcomingEvents>
-        <SaveTheDate>Save The Date</SaveTheDate>
-        <ScrollingEventsText />
-        <ContentSelectBoxes
-          contentIndex={contentIndex}
-          onContentSelect={index => setContentIndex(index)}
-        />
-      </UpcomingEvents>
-    </>
+      <ContentSelectBoxes
+        contentIndex={contentIndex}
+        onContentSelect={index => setContentIndex(index)}
+      />
+    </PageWrapper>
   );
 }
 

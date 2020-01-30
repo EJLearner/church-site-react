@@ -33,7 +33,14 @@ const footerData = [
   }
 ];
 
+const Styledfooter = styled.footer`
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+`;
+
 const NavStyleWrapper = styled.nav`
+  background-color: ${LOGICAL_COLORS.CT_MAIN_YELLOW};
   display: flex;
   padding: 24px ${WIDTHS.SIDE_CONTENT_PADDING};
 `;
@@ -54,7 +61,7 @@ const FooterItem = styled.div`
 
 const MainFooter = () => {
   return (
-    <footer>
+    <Styledfooter>
       <NavStyleWrapper>
         {footerData.map(({path, actionWord, subject}) => (
           <FooterItem key={actionWord}>
@@ -65,7 +72,7 @@ const MainFooter = () => {
           </FooterItem>
         ))}
       </NavStyleWrapper>
-    </footer>
+    </Styledfooter>
   );
 };
 

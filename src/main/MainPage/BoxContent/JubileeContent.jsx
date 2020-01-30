@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const TitlesDiv = styled.div`
-  display: inline-block;
-`;
+const TitlesDiv = styled.div``;
 
 const FirstLine = styled.h1`
   text-align: right;
 `;
 
 const Numbers = styled.span`
-  font-size: 160%;
+  sup {
+    font-size: 40%;
+  }
 `;
 
 const SecondLine = styled.h2`
