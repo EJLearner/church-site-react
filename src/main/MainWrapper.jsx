@@ -17,10 +17,14 @@ import JubileePage from './JubileePage';
 import MainFooter from './commonComponents/MainFooter';
 import MusicMinistryPage from './MusicMinistryPage';
 import PerformingArtsPage from './PerformingArtsPage';
+import mainBackgroundStore from '../stores/mainBackgroundStore';
 
 const WrapperDiv = styled.div`
-  max-width: 80%;
-  margin: auto;
+  padding-bottom: 150px;
+  constpagewrapper=styled.div;
+  background-image: url(${mainBackgroundStore.getBackground()});
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 function MainWrapper() {
