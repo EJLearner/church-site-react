@@ -19,7 +19,7 @@ const StyledAnnouncementBoxWrapper = styled.div`
 `;
 
 const StyledContentComponentWrapper = styled.div`
-  height: 200px;
+  height: 300px;
   overflow-y: auto;
 `;
 
