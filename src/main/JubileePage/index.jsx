@@ -36,8 +36,7 @@ const bottomContentData = [
 const topBoxContent = (
   <div>
     <div>
-      <h1>Performing Arts</h1>
-      <h2>Year of Jubilee!</h2>
+      <h1>JUBILEE ANNIVERSARY</h1>
     </div>
     <p>
       2020 marks an important milestone in the life of our church. Join us each
