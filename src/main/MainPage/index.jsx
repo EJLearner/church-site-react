@@ -91,7 +91,7 @@ function MainContent() {
             <ArrowAndLearnmore>
               <ArrowBox>
                 <div>
-                  <FontAwesomeIcon icon={faAngleRight} size="4x" />
+                  <FontAwesomeIcon icon={faAngleRight} size="2x" />
                 </div>
               </ArrowBox>
               <LearnMoreBox>
