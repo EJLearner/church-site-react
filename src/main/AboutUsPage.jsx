@@ -104,12 +104,326 @@ const membershipContent = (
   </p>
 );
 
-const historyContent = `
-    History, ipsum dolor sit amet consectetur adipisicing elit. Tempore officia
-    necessitatibus atque molestiae? Eveniet debitis itaque ad iure. Cumque
-    reiciendis eveniet quia fugiat eius nostrum vel doloremque dignissimos,
-    quisquam atque.
-  `;
+const historyContent = (
+  <p>
+    <p>
+      The City Temple of Baltimore (Baptist) is a historic landmark and should
+      be preserved. The church was built in 1868 - 1871 and is the only
+      structure in Baltimore designed by Thomas U. Walter, architect of the Dome
+      and the House and Senate wings of the United States Capitol, and a founder
+      of the American Institute of Architects.
+    </p>
+    <p>
+      Declared one of the 13 landmark buildings in Baltimore City, the Temple’s
+      majestic Gothic structure and its spire does much to add attractiveness
+      and historic value to the neighborhood. As an integral part of the
+      Baltimore City community, the Temple has provided an array of services
+      through its Inner City Ministry program. The doors of the Temple were
+      opened to the sorrowful; thousands of meals have been served to the
+      hungry, clothing has been given to the needy, the homeless have been
+      assisted in finding shelter, visitations have been made to hospitals and
+      jails.
+    </p>
+    <p>The Impossible Dream (1970-1981)</p>
+    <p>
+      Reverend William W. Payne, led by the Holy Spirit on June 20, 1970,
+      announced his intent to resign from a congregation of twenty-three years
+      to inaugurate a ministry to show spiritual and social concern for the
+      rejected and neglected of the Inner City. In this “Impossible Dream”
+      Pastor Payne envisioned a ministry in which the hungry would be fed, the
+      naked would be clothed, the homeless would be sheltered, and the
+      alcoholics and the drug addicts would be served and loved.
+    </p>
+    <p>
+      Several members of the former congregation expressed their desire to share
+      this ministry of love and concern, and met with the pastor to pledge their
+      support in the pursuit of this “Impossible Dream” in a meeting in the home
+      of Pastor William Payne.
+    </p>
+    <p>
+      A temporary place of worship was secured by Mrs. Elizabeth Logan, which
+      became known as the Upper Room, at 745 W. Baltimore Street. At a meeting
+      held on September 29, 1970, Pastor Payne suggested, and it was agreed,
+      that the name of the congregation would be The City Temple of Baltimore
+      (Baptist). The congregation suggested that the pastor would be the
+      Reverend William W. Payne. It was also stated at this meeting that strong
+      emphasis would be placed on Worship, Study, Soul Winning, Tithing and
+      Giving Service to Those In Need. All members in this ministry were urged
+      to enroll in Sunday School.
+    </p>
+    <p>
+      Reverend Payne stated that part of this dream was a settlement house. The
+      settlement house would be called “A House of Hope” where all people could
+      come. The House would be a separate entity from the church. Mrs. Zadie
+      Simon proceeded to look for a place to begin the clothing distribution.
+      She was instrumental in securing the vacant Summers Norwood Florist Shop,
+      where Mr. Carl Norwood, a Deacon at Faith Baptist Church, donated the
+      florist shop for the clothing ministry free of charge.
+    </p>
+    <p>
+      In the meantime worship services were held at the Old University Hall. The
+      first officers were: (Deacons) Mr. William Boyd, Mr. Clifton White, Mr.
+      David Rather, Mr. Royster Gant, Mr. William Taylor, Mr. Reginald Trusty
+      and Mr. William Coleman; (Trustees) Mr. George D. Brown, Mr. Felix Hughey,
+      Mr. Elmore Bowler, Mr. Samuel Washington, Mr. Walter McCants, Mr. Viller
+      Brown, Mr. Herman C. Johnson and Mr. Jim Ivey.
+    </p>
+    <p>
+      After much time, energy and prayer, the impossible became possible. The
+      Lord touched not only the hearts of this small fellowship, but people from
+      all walks of life who literally poured money into this new venture and
+      within ninety days more than $30,000 was raised.
+    </p>
+    <p>
+      The pulpit furniture was completely decayed; Mr. William Johnson, assisted
+      by his son, Mr. Herman Johnson, restored and upholstered each chair with
+      hobnails and trimmings. Mrs. Marjorie Roberson made all of the cushions
+      for the pews. Shortly thereafter, The City Temple of Baltimore (Baptist)
+      was incorporated. The corporation included: Rev. William W. Payne,
+      President; William H. Boyd, Secretary; Walter B. McCants, Treasurer; David
+      Rather, Director; Royster Gant, Director. The newly formed congregation
+      was duly chartered and incorporated as a body corporate under the laws of
+      the State of Maryland.
+    </p>
+    <p>
+      On Thanksgiving Day, November 26, 1970, the congregation of The City
+      Temple of Baltimore (Baptist) made its triumphant entry into the current
+      house of worship at Eutaw Place and Dolphin Street. Upon the invitation to
+      Christian discipleship, more than 50 persons came forth. Within a few
+      months, the Sunday School had an enrollment of 350 and the Sunday worship
+      service averaged 700. The House of Hope at 1900 Eutaw Place was purchased
+      from the Mitchell Funeral Home. The House of Hope relocated at 20th and
+      Wolfe Streets on July 11, 1983.
+    </p>
+    <p>
+      By 1981, 1,638+ souls had been added to our numbers and 750 candidates had
+      been baptized. The doors of the Temple had been opened to the sorrowful to
+      be given the comfort of the gospel without regard to race or creed.
+      Thousands of meals had been given to the hungry by Mrs. Phyllis Womack,
+      Mrs. Florine Trusty, Mr. John Segal, Mrs. Shirley Rice and Mr. William
+      Boyd. Clothing had been given to the needy, initiated by Mrs. Zadie Simon
+      and continued by Mrs. Mary Rich. The homeless were assisted in finding
+      shelter; visitations were made to hospitals and jails; the addicts, the
+      alcoholics and the emotionally disturbed were embraced in our Christian
+      fellowship. The Eutaw Place Day Nursery was set up by Mrs. Elizabeth D.
+      Logan and large numbers of children were enrolled as a courtesy to working
+      mothers employed by the State and other agencies. Mrs. Logan also used her
+      expertise in getting much of the legal litigation of the corporation done
+      free of charge.
+    </p>
+    <p>
+      Mid-week, mid-city, mid-day worship services were held at the City Temple
+      of Baltimore (Baptist) each Wednesday at 12:05 PM for all people who
+      desired to unite with God and enjoy the fellowship of others who found
+      these services uplifting, both spiritually and emotionally. The Lord
+      blessed the Temple materially, also. The lot next door to the building was
+      purchased from the City at a cost of $2,100. Necessary repairs were made
+      to the roof and the ladies restroom was renovated. The funds were raised
+      by Just We Few, with Mrs. Dora Hardee as Group Leader. Our mortgage was
+      completely liquidated on December 14, 1981.
+    </p>
+    <p>The Dream Continues (1982-1984)</p>
+    <p>
+      A Restoration and Planning Corporation was formed in 1983 to meet the
+      requirements of the State. The City Temple of Baltimore (Baptist) is a
+      historical landmark and the church was blessed materially with a matching
+      fund grant from the State of Maryland of $100,000 for the restoration of
+      the exterior of the building. Because the Constitution states that
+      churches cannot use State money for religious purposes, Pastor Payne
+      appointed the following persons to work with the Corporation: Mr. William
+      Harrington, Mrs. Lorena Branch, Mrs. Christine Moore, Mr. Viller Brown,
+      Mr. Edward Holden, Mr. Charles Davenport, Mr. Herman C. Johnson and Mr.
+      Francis White (President).
+    </p>
+    <p>
+      On March 15, 1983, due to failing health, our Pastor and Founder of the
+      “Impossible Dream” rendered his resignation as Pastor of the City Temple
+      of Baltimore (Baptist). In this meeting, requested by Reverend William W.
+      Payne, he became Pastor Emeritus; and, on June 26, 1983, a tribute was
+      given in his honor.
+    </p>
+    <p>
+      Following the retirement of Pastor William W. Payne, the “Impossible
+      Dream” seemed a bit shattered due to decline in membership, spiritual
+      nourishment and financial contributions. But, God was not through with the
+      Temple yet. Reverend Cecil McClary accepted the challenge and was chosen
+      Pastor of City Temple. He resigned after serving one year.
+    </p>
+    <p>
+      On November 24, 1984 a Pulpit Committee was selected to seek out a
+      suitable pastor to be presented to the City Temple congregation. Because
+      of Deacon William Boyd’s experience, as chairman of the Official Board
+      (although he had retired as Board Chairman), he was asked to serve as
+      interim Chairman of the Board, and Reverend William W. Payne was asked to
+      serve as interim Pastor during the period of the pulpit vacancy. Deacon
+      Boyd and Reverend Payne accepted the appointments as Interim Chairman of
+      the Board and Interim Pastor, respectively. But, due to the illness of
+      Reverend W. W. Payne, Reverend Randolph Taylor, an associate minister of
+      City Temple, actually served during the vacancy of the pulpit, with
+      assistance from the Evangelists of City Temple and visiting ministers. On
+      July 9, 1985, in a duly called Church wide Meeting of the congregation,
+      Mr. Lewis Carr was elected Chairman of the Official Board and Mr. Charles
+      Davenport was elected as the Vice Chairman.
+    </p>
+    <p>Thy Will be Done (1985-1990)</p>
+    <p>
+      In a duly called Church wide Meeting, September 10, 1985, Reverend Grady
+      A. Yeargin, Jr. was unanimously elected as Pastor of The City Temple of
+      Baltimore (Baptist). He was officially installed on January 20, 1986 at
+      5:00 PM. Reverend Grady A. Yeargin, Jr. came to City Temple with the
+      anointing of the Holy Spirit and experience of nine years in the Ministry.
+      His sensitive spirit and servant heart has brought us a new dimension of
+      spiritual nourishment and growth through worship, study and action.
+    </p>
+    <p>
+      The state of the economy imposed greater demands on the Outreach Ministry
+      sponsored by City Temple for assistance to the needy under the direction
+      of Deacon Lewis Carr. By the grace of God and with the volunteers of Mrs.
+      Pearl Giles and Mr. James McCoy in the Temple Soup Kitchen at 317 Dolphin
+      Street, and Mrs. Shirley Rice, in the House of Hope Soup Kitchen at 906
+      Wolfe Street, 200 persons or more were fed daily. Mrs. Pearl Cartwright, a
+      volunteer in the clothing program, distributed 100 articles of clothing
+      weekly free of charge. Mrs. Zadie Simon and Mrs. Betty Johnson volunteered
+      in the social service area of the ministry. Many other parishioners and
+      friends volunteered with the Outreach Program which, since the sale of the
+      House of Hope, has moved in its entirety to City Temple.
+    </p>
+    <p>
+      The Restoration and Planning Committee completed the restoration of the
+      exterior of City Temple in November, 1987 under the leadership of Pastor
+      Grady A. Yeargin. Mrs. Lorena Branch and Mr. Edward B. Holden chaired the
+      committee. The completion and restoration project of the Temple Organ was
+      celebrated November 15, 1987 with a Dedicatorial Recital presented by
+      Kenneth M. Dean, Jr., Minister of Music at that time.
+    </p>
+    <p>
+      The Building Committee, the B.U.I.L.D. Action Team and the Cultural and
+      Fine Arts Committee are part of the continuing dream. In addition, the
+      Board of Christian Education and Scholarship Committees were developed by
+      Pastor Grady A. Yeargin, Jr., in January 1988.
+    </p>
+    <p>
+      Realizing that there is a need to meet the increasing needs of our church
+      and the greater Baltimore community, we felt that there was a new and
+      greater challenge before us. It was with this need in mind that the church
+      voted to become involved in a Capital Stewardship Improvement Program for
+      a three year commitment by members of the congregation.
+    </p>
+    <p>We Continue (1991-1995)</p>
+    <p>
+      On May 21, 1995 a street sign honoring Rev. William W. Payne was unveiled
+      at the corner of Dolphin and Eutaw following a brief ceremony in the
+      church sanctuary. The sign reads “Rev. William W. Payne Way” and was
+      unveiled at 10:51 AM by Bro. Herman Johnson.
+    </p>
+    <p>
+      This project was sponsored by the Young At Heart Seniors Ministry.
+      Representatives from the Mayor’s Office, City Council and State Government
+      were in attendance (Mary Pat Clarke, Julian Lapides, Carl Stokes, etc.) A
+      resolution from the City Council was read by Mary Pat Clarke. During the
+      same event, Sis. Delores Royster made a presentation to Dea. Mattie
+      Gladney and Bro. Herman Johnson for dedicated service.
+    </p>
+    <p>
+      A special committee of church members was formed to raise money for the
+      restoration of the church’s pipe organ. This committee sold fish and
+      chicken dinners for several weeks during the months of January through
+      May, 1995 and on May 21, 1995 a financial report was presented to the
+      congregation by Gladys Smith: $8,107.93 was collected ($ 1916.95 was used
+      to install a new fryer; $618.00 was donated to the Concert Choir and
+      $5573.48 was used for the organ).
+    </p>
+    <p>
+      On June 11, 1995 the church celebrated Pastor’s Appreciation Day and Rev.
+      Grady A. Yeargin, Jr. was honored for 25 years in the ministry. One
+      worship service was held at 10:00AM and was sponsored by The Pastor’s Aid.
+      The guest speaker was Rev. Dr. Fred L. Steen of Oberlin, Ohio (City Temple
+      took 5 busloads to visit Rev. Steen’s congregation in 1992). Rev. W.W.
+      Payne was in attendance. “A 25-Year Journey” of Rev. Yeargin was presented
+      by Mrs. Betty Johnson. Two presentations were made: Dea. Mattie Gladney
+      made a presentation to the elevator and Rev. Yeargin and Gladys Smith
+      (Trustees) presented $500 to the Organ Fund.
+    </p>
+    <p>
+      On November 5, 1995, being led by the Holy Spirit, Rev. Grady A. Yeargin,
+      Jr., Pastor, Rev. W. W. Payne, Pastor Emeritus, founders, sons/daughters,
+      officers and members (100+) met on the Governor’s Club parking lot to
+      re-enact the march into City Temple as it took place 25 years ago.
+    </p>
+    <p>
+      Leading us in song of praises were Rev. Yeargin and Bro. Frank White; then
+      the march began up Eutaw Place with Rev. Yeargin, Rev. W.W. Payne,
+      sons/daughters of founders who have passed on, officers. Following from
+      that point came the members of the congregation singing “Marching to Zion”
+      on this glorious crisp, sun shining fall morning. The history was given by
+      Norman Johnson and Barreda Howell paid tribute and recognized the founders
+      of City Temple. The congregation was then introduced to the 25th
+      Anniversary Committee.
+    </p>
+    <p>A Community of Spiritual Maturity (1996 - )</p>
+    <p>
+      Due to the efforts of The Perpetual Organ Fund of The City Temple of
+      Baltimore (Baptist) the restoration and upgrade of the church’s pipe organ
+      was completed. At the culmination of the organ upgrade, a Recital,
+      featuring Ms. Diane Bish, was coordinated by Lois E. Smith, Minister of
+      Music. This great instrument, with many voices and many builders across
+      many years, has joined our hearts, hands and voices to also include a
+      strong and comprehensive music ministry. We resoundingly accepted a new
+      mission at the Temple - We will become a spiritually mature Christian
+      fellowship, in order to provide an effective witness for Christ in this
+      world.
+    </p>
+    <p>
+      The City Temple Development Corporation (CTDC) was formed to develop and
+      implement educational, community programs, services and economic
+      development projects for persons who require such support and services;
+      encouraging independent living and improving quality of life to the extent
+      of each person’s capability. The first task of the Corporation was to
+      construct the W. W. Payne Educational and Community Center. A
+      multi-purpose building located on the parking lot adjacent to The Temple,
+      the space is to be used to continue and expand existing services and
+      develop new programs and services for the community.
+    </p>
+    <p>
+      As we move ever-forward in our quest to fulfill the Vision, we continue
+      our Inner City Ministry program (feed the hungry, clothe the naked). We
+      have expanded this outreach to teach the unlearned. Preaching, music,
+      bible study, Sunday school, Christian education, visitations and making a
+      joyful noise unto the Lord brings us ever closer to becoming spiritually
+      mature Christians and effective witnesses for Christ in this world.
+    </p>
+    <p>The Original 27</p>
+    <ul>
+      <li>Rev. William Washington Payne, Jr.</li>
+      <li>Walter Allen</li>
+      <li>Marjorie P. Austin</li>
+      <li>William Boyd</li>
+      <li>Royster Gant</li>
+      <li>Gladys Higginbotham</li>
+      <li>Glover Holman</li>
+      <li>Lillian Hughey</li>
+      <li>Felix Hughey</li>
+      <li>Leon Jackson</li>
+      <li>William Laney</li>
+      <li>Colleaner Lyons</li>
+      <li>Harold Mattison</li>
+      <li>Susie Mattison</li>
+      <li>Pearl McCants</li>
+      <li>Walter McCants</li>
+      <li>Clyde Milner</li>
+      <li>Josephine Morton</li>
+      <li>Ozea Morton</li>
+      <li>Gladys Palmer</li>
+      <li>Bettye L. Preston</li>
+      <li>David Rather</li>
+      <li>Ollie Rather</li>
+      <li>Pearl Watts</li>
+      <li>Clifton White</li>
+      <li>Louise White</li>
+      <li>Gertrude Withers</li>
+    </ul>
+  </p>
+);
 
 const bottomContentData = [
   {
