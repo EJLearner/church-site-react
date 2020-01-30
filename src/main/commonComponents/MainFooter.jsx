@@ -34,6 +34,7 @@ const footerData = [
 ];
 
 const NavStyleWrapper = styled.nav`
+  background-color: ${LOGICAL_COLORS.CT_MAIN_YELLOW};
   display: flex;
   padding: 24px ${WIDTHS.SIDE_CONTENT_PADDING};
 `;
