@@ -10,10 +10,6 @@ import ContentSelectBoxes from './ContentSelectBoxes';
 import {contentSelectInfo} from './mainPageData';
 import AnnouncementBox from '../commonComponents/AnnouncementBox';
 
-const PageWrapper = styled.div``;
-
-const MenuBarAndPictureDiv = styled.div``;
-
 const StyledAnnouncementBoxWrapper = styled.div`
   margin: 0 0 2em ${WIDTHS.SIDE_CONTENT_PADDING};
   width: 50%;
@@ -54,20 +50,6 @@ const LearnMoreBox = styled.div`
   }
 `;
 
-// const UpcomingEvents = styled.div`
-//   align-items: center;
-//   background-color: ${LOGICAL_COLORS.CT_SECOND};
-//   display: flex;
-//   padding: 32px ${WIDTHS.SIDE_CONTENT_PADDING};
-// `;
-
-// const SaveTheDate = styled.div`
-//   color: ${LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};
-//   font-size: 200%;
-//   font-weight: bold;
-//   text-transform: uppercase;
-// `;
-
 function MainContent() {
   const [contentIndex, setContentIndex] = useState(0);
 
@@ -75,8 +57,8 @@ function MainContent() {
   const ContentComponent = currentContent.render;
 
   return (
-    <PageWrapper>
-      <MenuBarAndPictureDiv className="menu-bar-and-picture">
+    <div>
+      <div>
         <MainMenubar />
         <StyledAnnouncementBoxWrapper>
           <AnnouncementBox>
@@ -85,9 +67,7 @@ function MainContent() {
             </StyledContentComponentWrapper>
             <ArrowAndLearnmore>
               <ArrowBox>
-                <div>
-                  <FontAwesomeIcon icon={faAngleRight} size="2x" />
-                </div>
+                <FontAwesomeIcon icon={faAngleRight} size="2x" />
               </ArrowBox>
               <LearnMoreBox>
                 <Link to={currentContent.linkPath}>Learn more</Link>
@@ -95,12 +75,12 @@ function MainContent() {
             </ArrowAndLearnmore>
           </AnnouncementBox>
         </StyledAnnouncementBoxWrapper>
-      </MenuBarAndPictureDiv>
+      </div>
       <ContentSelectBoxes
         contentIndex={contentIndex}
         onContentSelect={index => setContentIndex(index)}
       />
-    </PageWrapper>
+    </div>
   );
 }
 
