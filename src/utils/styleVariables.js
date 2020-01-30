@@ -1,5 +1,7 @@
 const FONT_FAMILIES = {
   ARIAL: 'arial, helvetica, sans_serif',
+  ARIAL_COND:
+    "'arial nova cond light', 'arial nova cond', arial, helvetica, sans_serif",
   BRUSH_SCRIPT: "'Brush Script MT', cursive",
   CALIBRI: "Calibri, 'Segoe UI', Candara, Segoe, Optima, Arial, sans_serif",
   CAMBRIA: "cambria, georgia, 'bookman old style', 'times new roman', serif",

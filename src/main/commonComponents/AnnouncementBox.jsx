@@ -10,12 +10,13 @@ const AnnouncementBox = styled.div`
   }
 
   h1 {
-    font-family: ${FONT_FAMILIES.BRUSH_SCRIPT};
+    font-family: ${FONT_FAMILIES.ARIAL_COND};
     margin-bottom: 0;
     line-height: 0.7;
   }
 
   h2 {
+    font-family: ${FONT_FAMILIES.ARIAL};
     font-style: italic;
     margin-top: 0;
   }
