@@ -36,7 +36,7 @@
     "build-css": "node-sass-chokidar src/ -o src/",
     "lint": "eslint src --fix",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "test": "react-scripts test --env=jsdom --coverage",
+    "test": "react-scripts test --env=jsdom --coverage --watchAll=false",
     "coverage": "react-scripts test --env=jsdom --coverage",
     "watch": "react-scripts test --env=jsdom --watch --coverage",
     "eject": "react-scripts eject"
@@ -58,8 +58,7 @@
   ],
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm run lint"
+      "pre-commit": "npm run lint"
     }
   }
 }
