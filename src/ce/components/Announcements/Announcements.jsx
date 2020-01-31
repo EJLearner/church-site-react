@@ -55,7 +55,7 @@ class Announcements extends Component {
     return renderedEvents;
   }
 
-  getFormattedAnnouncements(quantity) {
+  getFormattedAnnouncements() {
     const allDates = this.props.storedDates;
     const datesAsArray = _.map(allDates, (dateObject, dateString) => {
       dateObject.date = dateString;

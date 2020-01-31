@@ -21,7 +21,6 @@ import churchExterior from '../assets/main/images/church-exterior.png';
 
 const WrapperDiv = styled.div`
   padding-bottom: 150px;
-  constpagewrapper=styled.div;
   background-image: url(${churchExterior});
   background-repeat: no-repeat;
   background-size: cover;

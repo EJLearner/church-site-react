@@ -9,9 +9,16 @@ import {LOGICAL_COLORS, WIDTHS, COLORS} from '../../utils/styleVariables';
 import ContentSelectBoxes from './ContentSelectBoxes';
 import {contentSelectInfo} from './mainPageData';
 import AnnouncementBox from '../commonComponents/AnnouncementBox';
+import NewsAndEvents from './NewsAndEvents';
+
+const StyledMainTextAndNews = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
+`;
 
 const StyledAnnouncementBoxWrapper = styled.div`
-  margin: 0 0 2em ${WIDTHS.SIDE_CONTENT_PADDING};
+  margin: 0 0 2em 0;
   width: 50%;
 `;
 
@@ -58,8 +65,8 @@ function MainContent() {
 
   return (
     <div>
-      <div>
-        <MainMenubar />
+      <MainMenubar />
+      <StyledMainTextAndNews>
         <StyledAnnouncementBoxWrapper>
           <AnnouncementBox>
             <StyledContentComponentWrapper>
@@ -75,7 +82,8 @@ function MainContent() {
             </ArrowAndLearnmore>
           </AnnouncementBox>
         </StyledAnnouncementBoxWrapper>
-      </div>
+        <NewsAndEvents />
+      </StyledMainTextAndNews>
       <ContentSelectBoxes
         contentIndex={contentIndex}
         onContentSelect={index => setContentIndex(index)}
