@@ -1,6 +1,6 @@
 import React from 'react';
 
-function SacrificialSowing() {
+function PerpetualOrganCommittee() {
   return (
     <div>
       <h1>Sacrificial Sowing</h1>
@@ -14,4 +14,4 @@ function SacrificialSowing() {
   );
 }
 
-export default SacrificialSowing;
+export default PerpetualOrganCommittee;

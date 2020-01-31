@@ -4,6 +4,7 @@ import JubileeContent from './BoxContent/JubileeContent';
 import PerformingArts from './BoxContent/PerformingArts';
 import ChristianEducation from './BoxContent/ChristianEducation';
 import routePaths from '../../routePaths';
+import PerpetualOrganCommittee from './BoxContent/PerpetualOrganCommittee';
 
 const scrollingEventsTextInfo = [
   {date: '2025-11-28', title: 'Earl’s Birthday', path: 'https://earljones.dev'},
@@ -52,6 +53,12 @@ const contentSelectInfo = [
     linkPath: routePaths.CE_HOME,
     render: ChristianEducation,
     title: 'Christian Education',
+    thumbnail: eventContentTemplate
+  },
+  {
+    linkPath: routePaths.CE_HOME,
+    render: PerpetualOrganCommittee,
+    title: 'Perpetual Organ Committee (POC)',
     thumbnail: eventContentTemplate
   }
 ];
