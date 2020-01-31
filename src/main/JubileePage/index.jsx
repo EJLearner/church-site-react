@@ -2,12 +2,32 @@ import React from 'react';
 
 import GeneralPageTemplate from '../commonComponents/GeneralPageTemplate';
 
-const anniversaryContent = `
-    Anniversary, ipsum dolor sit amet consectetur adipisicing elit. Tempore
-    officia necessitatibus atque molestiae? Eveniet debitis itaque ad iure.
-    Cumque reiciendis eveniet quia fugiat eius nostrum vel doloremque
-    dignissimos, quisquam atque.
-  `;
+const anniversaryContent = (
+  <p>
+    Leviticus 25:9
+    <p>
+      Then on the Day of Atonement in the fiftieth year, blow the ram’s horn
+      loud and long throughout the land.
+    </p>
+    <p>
+      Greetings, church family, friends, Christian brothers and sisters.
+      Hallelujah and To God Be the Glory! We are poised to celebrate 50
+      triumphant years in history at The City Temple of Baltimore (Baptist). The
+      Lord has blessed us to reach this milestone in the life of our church and
+      we honor and thank him for his Grace, Mercy, Faith, and guidance that
+      brought us this far. Throughout this year of Jubilee, we will recognize,
+      honor, and celebrate the historic events in our past and formulate our
+      vision for our future.
+    </p>
+    <p>
+      This is an exciting time in the life of our church, a time for reflection
+      and forward thinking. We are both grateful for the past and accepting of
+      the challenge for the future. Please join us as we journey forward and
+      rejoice in what God has done!
+    </p>
+    <p>Avis Anderson Chair, 50th Anniversary</p>
+  </p>
+);
 
 const calendarContent = `
     Calendar, ipsum dolor sit amet consectetur adipisicing elit. Tempore officia

@@ -9,21 +9,35 @@ const ministry2Content = `
 Members of the Audio/Visual ministry record, advertise, sell and distribute audio and video of worship services and special events.
   `;
 
-const ministry3Content = `
-The Christian Education Ministry is responsible for organizing and implementing the teaching ministry of the church. The church's educational task is to nurture and enrich individuals using Christian principles found in the Holy Scripture. The purpose of the ministry is to nurture and empower an active and focused Christian community in which the church family can unite in one body to provide quality education based on God's word.
-Christian Education members uphold the mission and vision of the Christian Education Ministry through planning and implementing programs of study and education for all phases of Christian Education at City Temple.
-  `;
+const ministry3Content = (
+  <p>
+    <p>
+      The Christian Education Ministry is responsible for organizing and
+      implementing the teaching ministry of the church. The church’s educational
+      task is to nurture and enrich individuals using Christian principles found
+      in the Holy Scripture. The purpose of the ministry is to nurture and
+      empower an active and focused Christian community in which the church
+      family can unite in one body to provide quality education based on God’s
+      word.
+    </p>
+    <p>
+      Christian Education members uphold the mission and vision of the Christian
+      Education Ministry through planning and implementing programs of study and
+      education for all phases of Christian Education at City Temple.
+    </p>
+  </p>
+);
 
 const ministry4Content = `
-The Cultural and Fine Arts Ministry will provide spiritual and cultural experiences that will enlighten and enrich our lives as we support our church in a broad appreciation of the arts, music, and dance.
+The Cultural and Fine Arts Ministry provides spiritual and cultural experiences that enlighten and enrich our lives as we support our church in a broad appreciation of the arts, music, and dance.
 `;
 
 const ministry5Content = `
-Members of this ministry have been consecrated to use their "bodies as living sacrifices, holy, acceptable unto God which is their reasonable service" (Romans 12:1) to praise, worship, and glorify God through movement and dance. Their role in the worship experience at City Temple is to express God’s Word through dance and scriptural interpretation in movement in order to praise and worship the Lord, and in doing so, perhaps, inspire, uplift, heal, and deliver, God’s people through their anointing!
+Members of this ministry have been consecrated to use their “bodies as living sacrifices, holy, acceptable unto God which is their reasonable service” (Romans 12:1) to praise, worship, and glorify God through movement and dance. Their role in the worship experience at City Temple is to express God’s Word through dance and scriptural interpretation in movement in order to praise and worship the Lord, and in doing so, perhaps, inspire, uplift, heal, and deliver, God’s people through their anointing!
 `;
 
 const ministry6Content = `
-Members are ordained church officers who may assist the Pastor with any responsibilities that are not related to preaching. Member assist and support the Pastor in the furtherance of his vision for the achievement of church mission. Diaconate members are spiritual leaders totally committed to God, the church, and mankind. They are servants of the church and help administer the ordinances of baptism and communion. They minister in times of crisis to the church.
+Members are ordained church officers who may assist the Pastor with any responsibilities that are not related to preaching. Members assist and support the Pastor in the furtherance of his vision for the achievement of church mission. Diaconate members are spiritual leaders totally committed to God, the church, and mankind. They are servants of the church and help administer the ordinances of baptism and communion. They minister in times of crisis to the church.
 `;
 
 const ministry7Content = `
@@ -34,9 +48,23 @@ const ministry8Content = `
 The goal of the Just We Few Ministry is to serve the Lord and to stand by the Pastor with willing hearts and helping hands.
 `;
 
-const ministry9Content = `
-City Temple of Baltimore Baptist Church (CTBC) Men's Ministry is a group of Christian men coming together as one to worship. Our Men's Ministry is in active pursuit of men seeking a connection with God and His Word. Together we strive for the purpose of winning, growing and training in Christ. Remaining committed to community outreach will continue to be our focus. We are determined to raise up leaders who will grow in vision and help lead a potential army of men into a deep relationship with the Lord. A variety of CTBC Men's Ministry events are available that can help foster faith in God and promote fellowship at the same time.
-`;
+const ministry9Content = (
+  <p>
+    <p>
+      City Temple of Baltimore Baptist Church (CTBC) Men’s Ministry is a group
+      of Christian men coming together as one to worship. Our Men’s Ministry is
+      in active pursuit of men seeking a connection with God and His Word.
+      Together we strive for the purpose of winning, growing and training in
+      Christ. We remain committed to community outreach as that is our focus.
+    </p>
+    <p>
+      We are determined to raise up leaders who will grow in vision and help
+      lead a potential army of men into a deep relationship with the Lord. A
+      variety of CTBC Men’s Ministry events are available that can help foster
+      faith in God and promote fellowship at the same time.
+    </p>
+  </p>
+);
 
 const ministry10Content = `
 Missionaries are responsible for missions both domestic and abroad in the church and community in order to meet the needs of others and to bring people to Christ. Anyone with the desire to serve is welcomed to join the Missionary Ministry.
@@ -47,48 +75,98 @@ To receive more information, please contact Maelena Holman at (410) 523-3774 or 
 `;
 
 const ministry11Content = `
-The purpose of Music Ministry is to win souls for Jesus Christ and to glorify God through music, fine arts, and dance. Through God's abundant blessings, the Music Ministry will continue to grow and spread spiritual awareness through the singing of His Word.
+The purpose of Music Ministry is to win souls for Jesus Christ and to glorify God through music, fine arts, and dance. Through God’s abundant blessings, the Music Ministry will continue to grow and spread spiritual awareness through the singing of His Word.
 `;
 
 const ministry12Content = `
 Licensed nurses trained in first aid assist parishioners in the time of medical emergencies.
 `;
 
-const ministry13Content = `
-The Outreach Ministry brings life to the teachings of God by helping to meet the basic needs of people in the community. Services provided are:
-Food pantry
-Clothes pantry
-Soup Kitchen - Monday, Wednesday, and Thursday, 11:30 a.m. - 12:30 a.m.
-Financial assistance for evictions, gas & electric, prescriptions and funerals
-Substance abuse assistance & referral
-Thanksgiving and Christmas meals as well as Christmas baskets
-`;
+const ministry13Content = (
+  <p>
+    <p>
+      The Outreach Ministry brings life to the teachings of God by helping to
+      meet the basic needs of people in the community. Services provided are:
+    </p>
+    <ul>
+      <li>Food pantry</li>
+      <li>Clothes pantry</li>
+      <li>
+        Soup Kitchen - Monday, Wednesday, and Thursday, 11:30 a.m. - 12:30 a.m.
+      </li>
+      <li>
+        Financial assistance for evictions, gas & electric, prescriptions and
+        funerals
+      </li>
+      <li>Substance abuse assistance & referral</li>
+      <li>Thanksgiving and Christmas meals as well as Christmas baskets</li>
+    </ul>
+  </p>
+);
 
-const ministry14Content = `
-The Security Ministry has been serving since September 2008. We consider our service to be an "outpost" of the community of City Temple. When our City Temple family members and visitors see us, we hope to give them a sense of comfort as they enter and exit our church home.
-
-We count it as a blessing to be able to volunteer security services at our church. Those services include: watch and report any suspicious activities around the church grounds, assist the trustees during the offering, parking control and maintain a safe environment around the church for its members and visitors.
-`;
+const ministry14Content = (
+  <p>
+    The Security Ministry has been serving since September 2008. We consider our
+    service to be an “outpost” of the community of City Temple. When our City
+    Temple family members and visitors see us, we hope to give them a sense of
+    comfort as they enter and exit our church home.
+    <p>
+      We count it as a blessing to be able to volunteer security services at our
+      church. Those services include:
+    </p>
+    <ul>
+      <li>
+        Watch and report any suspicious activities around the church grounds
+      </li>
+      <li>Assist the trustees during the offering</li>
+      <li>
+        Parking control and maintain a safe environment around the church for
+        its members and visitors
+      </li>
+    </ul>
+  </p>
+);
 
 const ministry15Content = `
-Trustees are officers responsible for the church's financial and business matters. They are responsible for the maintenance of the church and all of its properties. They are responsible for all utilities.
+Trustees are officers responsible for the church’s financial and business matters. They are responsible for the maintenance of the church and all of its properties. They are responsible for all utilities.
 `;
 
 const ministry16Content = `
-We have several groups of ushers that span all age groups. The purpose of this ministry is to welcome all into God's house graciously and warmly.
+We have several groups of ushers that span all age groups. The purpose of this ministry is to welcome all into God’s house graciously and warmly.
 `;
 
-const ministry17Content = `
-The Women's Ministry goal is to become more Christ-like, to share experiences that are particular to women, and to encourage and inspire one another. We want to practice a spirit-led, loving and intentional effort, which enables us to experience together the fellowship, love, power and joy, which is generated when women of all ages come together.
+const ministry17Content = (
+  <div>
+    The Women’s Ministry goal is to become more Christ-like, to share
+    experiences that are particular to women, and to encourage and inspire one
+    another. We want to practice a spirit-led, loving and intentional effort,
+    which enables us to experience together the fellowship, love, power and joy,
+    which is generated when women of all ages come together.
+    <p>
+      Women of all ages are welcome! Our meeting day is the third Saturday of
+      every month from January to June. We break during the summer months of
+      July through August. We then return to fellowship from September and
+      continuing. For more information regarding our ministry, please contact
+      Doris Hunter or Phyllis Day.
+    </p>
+  </div>
+);
 
-Women of all ages are welcome! Our meeting day is the third Saturday of every month from January to June. We break during the summer months of July through August. We then return to fellowship from September and continuing. For more information regarding our ministry, please contact Doris Hunter or Phyllis Day.
-`;
-
-const ministry18Content = `
-As members of the congregation grow older, their needs change. Young At Heart provides an effective and fun way for the members of the church age 55 years or older to come together for fellowship. The goal of this ministry is to administer to the spiritual, physical and personal needs of adults and provide a means of recreation and companionship.
-
-If you would like to join this ministry, just come out the first and third Monday of each week at the church in W.W. Payne Center, or you may contact Shirley Lindsay at (410) 945-7474, Evelyn Wooley at (410) 922-7169 or Hallie Tucker at (410) 523-9664.
-`;
+const ministry18Content = (
+  <p>
+    As members of the congregation grow older, their needs change. Young At
+    Heart provides an effective and fun way for the members of the church age 55
+    years or older to come together for fellowship. The goal of this ministry is
+    to administer to the spiritual, physical and personal needs of adults and
+    provide a means of recreation and companionship.
+    <p>
+      If you would like to join this ministry, just come out the first and third
+      Monday of each week at the church in W.W. Payne Center, or you may contact
+      Shirley Lindsay at (410) 945-7474, Evelyn Wooley at (410) 922-7169 or
+      Hallie Tucker at (410) 523-9664.
+    </p>
+  </p>
+);
 
 const bottomContentData = [
   {
