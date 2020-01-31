@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 
 import MainMenubar from '../MainMenubar';
-import {WIDTHS} from '../../utils/styleVariables';
+import {WIDTHS, COLORS} from '../../utils/styleVariables';
 
 import PropTypes from 'prop-types';
 import AnnouncementBox from './AnnouncementBox.jsx';
@@ -30,6 +30,7 @@ const MenuAndContent = styled.div`
 `;
 
 const LeftSide = styled.div`
+  background-color: ${COLORS.WHITE};
   border: 1px solid gray;
   padding: 1em;
 
@@ -47,6 +48,7 @@ const LeftSide = styled.div`
 `;
 
 const Content = styled.div`
+  background-color: ${COLORS.WHITE};
   border: 1px solid gray;
   padding: 1em;
   width: 70%;
