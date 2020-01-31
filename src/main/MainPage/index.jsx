@@ -57,6 +57,10 @@ const LearnMoreBox = styled.div`
   }
 `;
 
+const ContentSelectBoxesWrapper = styled.div`
+  padding-left: ${WIDTHS.SIDE_CONTENT_PADDING};
+`;
+
 function MainContent() {
   const [contentIndex, setContentIndex] = useState(0);
 
@@ -84,10 +88,12 @@ function MainContent() {
         </StyledAnnouncementBoxWrapper>
         <NewsAndEvents />
       </StyledMainTextAndNews>
-      <ContentSelectBoxes
-        contentIndex={contentIndex}
-        onContentSelect={index => setContentIndex(index)}
-      />
+      <ContentSelectBoxesWrapper>
+        <ContentSelectBoxes
+          contentIndex={contentIndex}
+          onContentSelect={index => setContentIndex(index)}
+        />
+      </ContentSelectBoxesWrapper>
     </div>
   );
 }

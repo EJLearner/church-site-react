@@ -61,10 +61,12 @@ const ContentSelectBoxes = ({contentIndex, onContentSelect}) => {
   const [firstDisplayedEventIndex, setFirstDisplayedEventIndex] = useState(0);
   const eventBoxesToShow = 3;
 
-  const currentlyDisplayedBoxes = contentSelectInfo.slice(
-    firstDisplayedEventIndex,
-    firstDisplayedEventIndex + eventBoxesToShow
-  );
+  const currentlyDisplayedBoxes = contentSelectInfo
+    .map((contentSelect, index) => ({...contentSelect, index}))
+    .slice(
+      firstDisplayedEventIndex,
+      firstDisplayedEventIndex + eventBoxesToShow
+    );
 
   const showLeftArrow = firstDisplayedEventIndex !== 0;
   const showRightArrow =
@@ -85,17 +87,17 @@ const ContentSelectBoxes = ({contentIndex, onContentSelect}) => {
         show={showLeftArrow}
         type="left"
       />
-      {currentlyDisplayedBoxes.map((contentSelect, index) => (
+      {currentlyDisplayedBoxes.map(({index, title, thumbnail}) => (
         <EventBox
-          key={contentSelect.title}
+          key={title}
           onClick={() => onContentSelect(index)}
           onKeyPress={handleKeyPress(onContentSelect, index)}
           role="button"
           selected={index === contentIndex}
           tabIndex="0"
         >
-          <Thumbnail src={contentSelect.thumbnail} />
-          {contentSelect.title}
+          <Thumbnail src={thumbnail} />
+          {title}
         </EventBox>
       ))}
       <ContentSelectArrow
