@@ -5,6 +5,8 @@ import PerformingArts from './BoxContent/PerformingArts';
 import ChristianEducation from './BoxContent/ChristianEducation';
 import routePaths from '../../routePaths';
 import PerpetualOrganCommittee from './BoxContent/PerpetualOrganCommittee';
+import GedProgram from './BoxContent/GedProgram';
+import ServiceTimes from './BoxContent/ServiceTimes';
 
 const scrollingEventsTextInfo = [
   {date: '2025-11-28', title: 'Earl’s Birthday', path: 'https://earljones.dev'},
@@ -50,6 +52,12 @@ const contentSelectInfo = [
     thumbnail: eventContentTemplate
   },
   {
+    linkPath: routePaths.MAIN_PERFORMING_ARTS_PAGE,
+    render: ServiceTimes,
+    title: 'Service Times',
+    thumbnail: eventContentTemplate
+  },
+  {
     linkPath: routePaths.CE_HOME,
     render: ChristianEducation,
     title: 'Christian Education',
@@ -59,6 +67,12 @@ const contentSelectInfo = [
     linkPath: routePaths.CE_HOME,
     render: PerpetualOrganCommittee,
     title: 'Perpetual Organ Committee (POC)',
+    thumbnail: eventContentTemplate
+  },
+  {
+    linkPath: routePaths.CE_HOME,
+    render: GedProgram,
+    title: 'GED Program',
     thumbnail: eventContentTemplate
   }
 ];
