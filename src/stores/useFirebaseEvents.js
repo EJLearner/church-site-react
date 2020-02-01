@@ -2,7 +2,7 @@ import firebase from '../firebase';
 import {useState, useEffect} from 'react';
 import constants from '../utils/constants';
 
-function useFirebaseEventsList() {
+function useFirebaseEvents() {
   const [events, setEventsList] = useState({});
 
   useEffect(() => {
@@ -32,4 +32,4 @@ function useFirebaseEventsList() {
   return events;
 }
 
-export default useFirebaseEventsList;
+export default useFirebaseEvents;
