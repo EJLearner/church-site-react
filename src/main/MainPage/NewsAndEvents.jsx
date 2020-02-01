@@ -8,6 +8,7 @@ import PlainButton from '../commonComponents/PlainButton';
 import constants from '../../utils/constants';
 import {Link} from 'react-router-dom';
 import useFirebaseEvents from '../../stores/useFirebaseEvents';
+import useFirebaseNews from '../../stores/useFirebaseNews';
 
 const NewsEventsContent = styled.div`
   color: ${COLORS.WHITE};
@@ -46,39 +47,16 @@ const DisplayButton = styled(PlainButton)`
   }
 `;
 
-const news = [
-  {
-    text: 'News: Website redesign is live!',
-    linkPath: routePaths.MAIN_HOME,
-    expireDate: '2020-02-15'
-  },
-  {
-    text: 'News: Website redesign is live!',
-    expireDate: '2020-02-15'
-  },
-  {
-    text: 'News: Website redesign is live!',
-    linkPath: routePaths.MAIN_HOME,
-    expireDate: '2019-02-15'
-  }
-];
+function renderNews(news) {
+  return news.map((newsItem, index) => {
+    const {linkPath, text} = newsItem;
 
-function renderNews() {
-  return news.reduce((displayItems, newsItem, index) => {
-    const {expireDate, linkPath, text} = newsItem;
-
-    const dateMoment = moment(expireDate, constants.INTERNAL_DATE_FORMAT, true);
-
-    if (dateMoment.isValid() && dateMoment.isAfter(moment())) {
-      displayItems.push(
-        <NewsItem key={index}>
-          <h3>{linkPath ? <Link to={linkPath}>{text}</Link> : text}</h3>
-        </NewsItem>
-      );
-    }
-
-    return displayItems;
-  }, []);
+    return (
+      <NewsItem key={index}>
+        <h3>{linkPath ? <Link to={linkPath}>{text}</Link> : text}</h3>
+      </NewsItem>
+    );
+  });
 }
 
 function renderEvents(events) {
@@ -110,12 +88,15 @@ const NewsAndEvents = () => {
   const [displayType, setDisplayType] = useState(NEWS_DISPLAY);
 
   const events = useFirebaseEvents({futureOnly: true, returnAsArray: true});
+  const news = useFirebaseNews();
 
   return (
     <div>
       <NewsEventsContent>
         <div>
-          {displayType === NEWS_DISPLAY ? renderNews() : renderEvents(events)}
+          {displayType === NEWS_DISPLAY
+            ? renderNews(news)
+            : renderEvents(events)}
         </div>
       </NewsEventsContent>
       <DisplayButton
