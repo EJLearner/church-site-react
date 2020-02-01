@@ -20,7 +20,7 @@ function useFirebaseEvents() {
         const date = retrievedDates[key];
         // make an array of events
         if (date.events) {
-          const events = Object.values(date.events).map(Boolean);
+          const events = Object.values(date.events).map(event => event);
           newState[key] = {events};
         }
       });
