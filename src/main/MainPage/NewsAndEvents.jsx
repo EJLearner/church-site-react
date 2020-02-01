@@ -7,6 +7,7 @@ import routePaths from '../../routePaths';
 import PlainButton from '../commonComponents/PlainButton';
 import constants from '../../utils/constants';
 import {Link} from 'react-router-dom';
+import useFirebaseEvents from '../../stores/useFirebaseEvents';
 
 const NewsEventsContent = styled.div`
   color: ${COLORS.WHITE};
@@ -62,33 +63,6 @@ const news = [
   }
 ];
 
-const events = [
-  {
-    text: 'Event: Website redesign is live!',
-    date: '2020-02-01',
-    time: '03:00 PM',
-    expireDate: '2020-02-15'
-  },
-  {
-    text: 'Event: Website redesign is live!',
-    date: '2020-02-01',
-    linkPath: routePaths.MAIN_HOME,
-    expireDate: '2020-02-15'
-  },
-  {
-    text: 'Event: Website redesign is live!',
-    date: '2020-02-01',
-    linkPath: routePaths.MAIN_HOME,
-    expireDate: '2020-02-15'
-  },
-  {
-    text: 'Event: Website redesign is live!',
-    date: '2020-02-01',
-    linkPath: routePaths.MAIN_HOME,
-    expireDate: '2020-02-15'
-  }
-];
-
 function renderNews() {
   return news.reduce((displayItems, newsItem, index) => {
     const {expireDate, linkPath, text} = newsItem;
@@ -107,44 +81,41 @@ function renderNews() {
   }, []);
 }
 
-function renderEvents() {
+function renderEvents(events) {
   return events.reduce((displayItems, event, index) => {
-    const {expireDate, date, linkPath, text, time} = event;
+    const {dateString, linkPath, title, timeStart} = event;
 
-    const dateMoment = moment(expireDate, constants.INTERNAL_DATE_FORMAT, true);
+    const to = linkPath ?? {
+      pathname: routePaths.CE_CALENDAR_DAY,
+      state: {selectedDay: dateString}
+    };
 
-    if (dateMoment.isValid() && dateMoment.isAfter(moment())) {
-      const to = linkPath ?? {
-        pathname: routePaths.CE_CALENDAR_DAY,
-        state: {selectedDay: date}
-      };
-
-      displayItems.push(
-        <NewsItem key={index}>
-          <Link to={to}>
-            <h3>{text}</h3>
-            {dateMoment.format(constants.DISPLAY_DATE_FORMAT)}{' '}
-            {time ? moment(time, 'h:mm A').format('h:mm A') : null}
-          </Link>
-        </NewsItem>
-      );
-    }
+    displayItems.push(
+      <NewsItem key={index}>
+        <Link to={to}>
+          <h3>{title}</h3>
+          {moment(dateString).format(constants.DISPLAY_DATE_FORMAT)}{' '}
+          {timeStart ? moment(timeStart, 'h:mm A').format('h:mm A') : null}
+        </Link>
+      </NewsItem>
+    );
 
     return displayItems;
   }, []);
 }
 
-const NewsAndEvents = props => {
+const NewsAndEvents = () => {
   const NEWS_DISPLAY = 'news-content';
   const EVENTS_DISPLAY = 'events-display';
+  const [displayType, setDisplayType] = useState(NEWS_DISPLAY);
 
-  const [displayType, setDisplayType] = useState(EVENTS_DISPLAY);
+  const events = useFirebaseEvents({futureOnly: true, returnAsArray: true});
 
   return (
     <div>
       <NewsEventsContent>
         <div>
-          {displayType === NEWS_DISPLAY ? renderNews() : renderEvents()}
+          {displayType === NEWS_DISPLAY ? renderNews() : renderEvents(events)}
         </div>
       </NewsEventsContent>
       <DisplayButton

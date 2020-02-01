@@ -1,8 +1,25 @@
 import firebase from '../firebase';
 import {useState, useEffect} from 'react';
 import constants from '../utils/constants';
+import moment from 'moment';
 
-function useFirebaseEvents() {
+const sortEventsByStartTime = events => {
+  return events.sort((a, b) => {
+    const timeStartA = a.timeStart || '';
+    const timeStartB = b.timeStart || '';
+
+    if (timeStartA === timeStartB) {
+      return 0;
+    }
+
+    // just doing string compare since standard date-time string is used
+    return timeStartA < timeStartB ? -1 : 1;
+  });
+};
+
+function useFirebaseEvents(options = {}) {
+  const {futureOnly, returnAsArray} = options;
+
   const [events, setEventsList] = useState({});
 
   useEffect(() => {
@@ -17,17 +34,43 @@ function useFirebaseEvents() {
       const newState = {};
 
       Object.keys(retrievedDates).forEach(key => {
-        const date = retrievedDates[key];
-        // make an array of events
-        if (date.events) {
-          const events = Object.values(date.events).map(event => event);
-          newState[key] = {events};
+        if (!futureOnly || moment(key).isSameOrAfter(moment(), 'day')) {
+          const date = retrievedDates[key];
+          // make an array of events
+          if (date.events) {
+            const events = Object.values(date.events).map(event => event);
+            newState[key] = {events};
+          }
         }
       });
 
       setEventsList(newState);
     });
-  }, []);
+  }, [futureOnly, returnAsArray]);
+
+  if (returnAsArray) {
+    const datesAsArray = Object.keys(events).reduce(
+      (eventsArray, dateString) => {
+        const sortedDateEvents = sortEventsByStartTime(
+          events[dateString].events
+        );
+
+        sortedDateEvents.forEach(event => {
+          const eventWithDate = {
+            ...event,
+            dateString
+          };
+
+          eventsArray.push(eventWithDate);
+        });
+
+        return eventsArray;
+      },
+      []
+    );
+
+    return datesAsArray;
+  }
 
   return events;
 }
