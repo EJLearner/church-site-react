@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import moment from 'moment';
 import styled from 'styled-components';
+
 import {COLORS, LOGICAL_COLORS} from '../../utils/styleVariables';
 import routePaths from '../../routePaths';
 import PlainButton from '../commonComponents/PlainButton';
@@ -123,7 +124,7 @@ function renderEvents() {
           <Link to={to}>
             <h3>{text}</h3>
             {dateMoment.format(constants.DISPLAY_DATE_FORMAT)}{' '}
-            {moment(time).format('h:mm A')}
+            {time ? moment(time, 'h:mm A').format('h:mm A') : null}
           </Link>
         </NewsItem>
       );
