@@ -2,7 +2,7 @@ import React from 'react';
 import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
 
 const pastorContent = (
-  <p>
+  <div>
     <p>
       The Rev. Dr. Grady Andrew Yeargin, Jr. was born on November 7, 1949 in
       Greenville, South Carolina. He attended Sterling High School and was
@@ -59,11 +59,11 @@ const pastorContent = (
       daughters, Adia Joy and Candace. He also continues to maintain his sense
       of fatherhood to his beloved daughter, Kimberly Rei, who is deceased.
     </p>
-  </p>
+  </div>
 );
 
 const membershipContent = (
-  <p>
+  <div>
     <p>
       City Temple membership consists of baptized believers who have professed
       faith in Christ and a willingness to be directed by the Holy Spirit. Any
@@ -101,11 +101,11 @@ const membershipContent = (
       <li>The Life of City Temple</li>
       <li>Spiritual Gifts and Talents</li>
     </ol>
-  </p>
+  </div>
 );
 
 const historyContent = (
-  <p>
+  <div>
     <p>
       The City Temple of Baltimore (Baptist) is a historic landmark and should
       be preserved. The church was built in 1868 - 1871 and is the only
@@ -422,7 +422,7 @@ const historyContent = (
       <li>Louise White</li>
       <li>Gertrude Withers</li>
     </ul>
-  </p>
+  </div>
 );
 
 const bottomContentData = [

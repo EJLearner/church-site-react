@@ -10,7 +10,7 @@ Members of the Audio/Visual ministry record, advertise, sell and distribute audi
   `;
 
 const ministry3Content = (
-  <p>
+  <div>
     <p>
       The Christian Education Ministry is responsible for organizing and
       implementing the teaching ministry of the church. The church’s educational
@@ -25,7 +25,7 @@ const ministry3Content = (
       Education Ministry through planning and implementing programs of study and
       education for all phases of Christian Education at City Temple.
     </p>
-  </p>
+  </div>
 );
 
 const ministry4Content = `
@@ -49,7 +49,7 @@ The goal of the Just We Few Ministry is to serve the Lord and to stand by the Pa
 `;
 
 const ministry9Content = (
-  <p>
+  <div>
     <p>
       City Temple of Baltimore Baptist Church (CTBC) Men’s Ministry is a group
       of Christian men coming together as one to worship. Our Men’s Ministry is
@@ -63,7 +63,7 @@ const ministry9Content = (
       variety of CTBC Men’s Ministry events are available that can help foster
       faith in God and promote fellowship at the same time.
     </p>
-  </p>
+  </div>
 );
 
 const ministry10Content = `
@@ -83,7 +83,7 @@ Licensed nurses trained in first aid assist parishioners in the time of medical 
 `;
 
 const ministry13Content = (
-  <p>
+  <div>
     <p>
       The Outreach Ministry brings life to the teachings of God by helping to
       meet the basic needs of people in the community. Services provided are:
@@ -101,7 +101,7 @@ const ministry13Content = (
       <li>Substance abuse assistance & referral</li>
       <li>Thanksgiving and Christmas meals as well as Christmas baskets</li>
     </ul>
-  </p>
+  </div>
 );
 
 const ministry14Content = (

@@ -16,8 +16,8 @@ import ServiceInfoPage from './ServiceInfoPage';
 import JubileePage from './JubileePage';
 import MainFooter from './commonComponents/MainFooter';
 import MusicMinistryPage from './MusicMinistryPage';
-import PerformingArtsPage from './PerformingArtsPage';
 import churchExterior from '../assets/main/images/church-exterior.png';
+import CultureAndFineArtsPage from './CultureAndFineArtsPage';
 
 const WrapperDiv = styled.div`
   background-attachment: fixed;
@@ -44,7 +44,7 @@ function MainWrapper() {
           path={routePaths.MAIN_MUSIC_MINISTRY}
         />
         <Route
-          component={PerformingArtsPage}
+          component={CultureAndFineArtsPage}
           path={routePaths.MAIN_PERFORMING_ARTS_PAGE}
         />
         <Route component={ScholarshipPage} path={routePaths.MAIN_SCHOLARSHIP} />

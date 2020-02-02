@@ -6,7 +6,7 @@ const topBoxContent = (
     <div>
       <h1>Performing Arts Sunday</h1>
     </div>
-    <p>
+    <div>
       <p>
         To enhance City Temple’s worship experience and community outreach,
         beginning in 2020, City Temple will introduce Performing Arts Sunday, a
@@ -31,12 +31,12 @@ const topBoxContent = (
         The Performing Arts Team thanks you in advance for helping to make City
         Temple’s 4th Sunday a joyous worship experience!
       </p>
-    </p>
+    </div>
   </div>
 );
 
-const PerformingArtsPage = () => {
+const CultureAndFineArtsPage = () => {
   return <GeneralPageTemplate topBoxContent={topBoxContent} />;
 };
 
-export default PerformingArtsPage;
+export default CultureAndFineArtsPage;
