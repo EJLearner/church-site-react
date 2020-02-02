@@ -39,8 +39,6 @@ const calendarDatesUtils = {
   getAllDates: () => datesStore,
 
   getEventsForDate: (allDates, dateString) => {
-    // return datesStore['2018-01-18'].events || [];
-
     const dateObject = allDates[dateString];
     const unsortedEvents = (dateObject && dateObject.events) || [];
 

@@ -17,7 +17,7 @@ const AnnouncementBox = styled.div`
     font-family: ${FONT_FAMILIES.BEBAS};
     font-size: 45px;
     margin-bottom: 0;
-    line-height: 0.7;
+    line-height: 0.9;
     text-transform: uppercase;
     letter-spacing: 2px;
   }

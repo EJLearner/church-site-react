@@ -5,6 +5,11 @@ const constants = {
   DISPLAY_TIME_FORMAT: 'M/D/YY h:mm a',
   DISPLAY_DATE_FORMAT: 'M/D/YY',
 
+  FB_REF_EVENTS: 'dates',
+
+  SLENDER_ARROW_LEFT: '‹',
+  SLENDER_ARROW_RIGHT: '›',
+
   VBS_LOGBOOK_REF_NAME: 'vbsLogbook',
   VBS_REGISTRY_ACCESS_REF_NAME: 'user_groups/vbsRegAccess',
   VBS_REGISTERED_CHILD_ID_PROP: 'vbsRegisteredChildrenId',

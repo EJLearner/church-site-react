@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
 import moment from 'moment';
 import styled from 'styled-components';
+
 import {COLORS, LOGICAL_COLORS} from '../../utils/styleVariables';
 import routePaths from '../../routePaths';
 import PlainButton from '../commonComponents/PlainButton';
 import constants from '../../utils/constants';
 import {Link} from 'react-router-dom';
+import useFirebaseEvents from '../../stores/useFirebaseEvents';
+import useFirebaseNews from '../../stores/useFirebaseNews';
 
 const NewsEventsContent = styled.div`
   color: ${COLORS.WHITE};
@@ -44,106 +47,56 @@ const DisplayButton = styled(PlainButton)`
   }
 `;
 
-const news = [
-  {
-    text: 'News: Website redesign is live!',
-    linkPath: routePaths.MAIN_HOME,
-    expireDate: '2020-02-15'
-  },
-  {
-    text: 'News: Website redesign is live!',
-    expireDate: '2020-02-15'
-  },
-  {
-    text: 'News: Website redesign is live!',
-    linkPath: routePaths.MAIN_HOME,
-    expireDate: '2019-02-15'
-  }
-];
+function renderNews(news) {
+  return news.map((newsItem, index) => {
+    const {linkPath, text} = newsItem;
 
-const events = [
-  {
-    text: 'Event: Website redesign is live!',
-    date: '2020-02-01',
-    time: '03:00 PM',
-    expireDate: '2020-02-15'
-  },
-  {
-    text: 'Event: Website redesign is live!',
-    date: '2020-02-01',
-    linkPath: routePaths.MAIN_HOME,
-    expireDate: '2020-02-15'
-  },
-  {
-    text: 'Event: Website redesign is live!',
-    date: '2020-02-01',
-    linkPath: routePaths.MAIN_HOME,
-    expireDate: '2020-02-15'
-  },
-  {
-    text: 'Event: Website redesign is live!',
-    date: '2020-02-01',
-    linkPath: routePaths.MAIN_HOME,
-    expireDate: '2020-02-15'
-  }
-];
-
-function renderNews() {
-  return news.reduce((displayItems, newsItem, index) => {
-    const {expireDate, linkPath, text} = newsItem;
-
-    const dateMoment = moment(expireDate, constants.INTERNAL_DATE_FORMAT, true);
-
-    if (dateMoment.isValid() && dateMoment.isAfter(moment())) {
-      displayItems.push(
-        <NewsItem key={index}>
-          <h3>{linkPath ? <Link to={linkPath}>{text}</Link> : text}</h3>
-        </NewsItem>
-      );
-    }
-
-    return displayItems;
-  }, []);
+    return (
+      <NewsItem key={index}>
+        <h3>{linkPath ? <Link to={linkPath}>{text}</Link> : text}</h3>
+      </NewsItem>
+    );
+  });
 }
 
-function renderEvents() {
+function renderEvents(events) {
   return events.reduce((displayItems, event, index) => {
-    const {expireDate, date, linkPath, text, time} = event;
+    const {dateString, linkPath, title, timeStart} = event;
 
-    const dateMoment = moment(expireDate, constants.INTERNAL_DATE_FORMAT, true);
+    const to = linkPath ?? {
+      pathname: routePaths.CE_CALENDAR_DAY,
+      state: {selectedDay: dateString}
+    };
 
-    if (dateMoment.isValid() && dateMoment.isAfter(moment())) {
-      const to = linkPath ?? {
-        pathname: routePaths.CE_CALENDAR_DAY,
-        state: {selectedDay: date}
-      };
-
-      displayItems.push(
-        <NewsItem key={index}>
-          <Link to={to}>
-            <h3>{text}</h3>
-            {dateMoment.format(constants.DISPLAY_DATE_FORMAT)}{' '}
-            {moment(time).format('h:mm A')}
-          </Link>
-        </NewsItem>
-      );
-    }
+    displayItems.push(
+      <NewsItem key={index}>
+        <Link to={to}>
+          <h3>{title}</h3>
+          {moment(dateString).format(constants.DISPLAY_DATE_FORMAT)}{' '}
+          {timeStart ? moment(timeStart, 'h:mm A').format('h:mm A') : null}
+        </Link>
+      </NewsItem>
+    );
 
     return displayItems;
   }, []);
 }
 
-const NewsAndEvents = props => {
+const NewsAndEvents = () => {
   const NEWS_DISPLAY = 'news-content';
   const EVENTS_DISPLAY = 'events-display';
+  const [displayType, setDisplayType] = useState(NEWS_DISPLAY);
 
-  const [displayType, setDisplayType] = useState(EVENTS_DISPLAY);
+  const events = useFirebaseEvents({futureOnly: true, returnAsArray: true});
+  const news = useFirebaseNews();
 
   return (
     <div>
       <NewsEventsContent>
         <div>
-          {displayType === NEWS_DISPLAY ? renderNews() : renderEvents()}
+          {displayType === NEWS_DISPLAY
+            ? renderNews(news)
+            : renderEvents(events)}
         </div>
       </NewsEventsContent>
       <DisplayButton

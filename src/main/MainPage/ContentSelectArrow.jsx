@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import {faAngleLeft, faAngleRight} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {LOGICAL_COLORS} from '../../utils/styleVariables';
 import PlainButton from '../commonComponents/PlainButton';
+import constants from '../../utils/constants';
+
+const {SLENDER_ARROW_LEFT, SLENDER_ARROW_RIGHT} = constants;
 
 const StyledVisibleIcon = styled(PlainButton)`
   color: ${LOGICAL_COLORS.CT_TEXT_ON_SECONDARY};
@@ -14,14 +15,18 @@ const StyledVisibleIcon = styled(PlainButton)`
   &:hover {
     color: ${LOGICAL_COLORS.CT_LIGHTENED_ACCENT};
   }
+
+  span {
+    font-size: 64px;
+  }
 `;
 
 function ContentSelectArrow({onClick, type, show}) {
-  const icon = type === 'left' ? faAngleLeft : faAngleRight;
+  const icon = type === 'left' ? SLENDER_ARROW_LEFT : SLENDER_ARROW_RIGHT;
 
   return (
     <StyledVisibleIcon onClick={onClick} show={show}>
-      <FontAwesomeIcon fixedWidth icon={icon} size="4x" />
+      <span>{icon}</span>
     </StyledVisibleIcon>
   );
 }
