@@ -1,6 +1,18 @@
 import React from 'react';
 import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
 
+const topBoxContent = (
+  <div>
+    <h1>Culture &amp; Fine Arts</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ullam
+      repellat iusto? Officiis mollitia quos quae dolorem, assumenda placeat
+      excepturi quibusdam sed explicabo, neque voluptatem sunt, ratione ex eius
+      aperiam?
+    </p>
+  </div>
+);
+
 const performingArtsContent = (
   <div>
     <div>
@@ -66,6 +78,7 @@ const CultureAndFineArtsPage = () => {
     <GeneralPageTemplate
       bottomContentData={bottomContentData}
       menuTitle="Culture &amp; Fine Arts"
+      topBoxContent={topBoxContent}
     />
   );
 };
