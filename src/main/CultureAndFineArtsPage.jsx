@@ -1,7 +1,7 @@
 import React from 'react';
 import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
 
-const topBoxContent = (
+const performingArtsContent = (
   <div>
     <div>
       <h1>Performing Arts Sunday</h1>
@@ -35,8 +35,39 @@ const topBoxContent = (
   </div>
 );
 
+const pocContent = (
+  <div>
+    <div>
+      <h1>Perpetual Organ Committee</h1>
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique velit
+      aut, vel officia perferendis harum autem totam fugit architecto eveniet
+      minus illo amet pariatur eaque molestiae nobis consequatur placeat ut.
+    </div>
+  </div>
+);
+
+const bottomContentData = [
+  {
+    title: 'Performing Arts Sunday',
+    id: 'performingArtsSunday',
+    content: performingArtsContent
+  },
+  {
+    title: 'Perpetual Organ Committee (POC)',
+    id: 'poc',
+    content: pocContent
+  }
+];
+
 const CultureAndFineArtsPage = () => {
-  return <GeneralPageTemplate topBoxContent={topBoxContent} />;
+  return (
+    <GeneralPageTemplate
+      bottomContentData={bottomContentData}
+      menuTitle="Culture &amp; Fine Arts"
+    />
+  );
 };
 
 export default CultureAndFineArtsPage;
