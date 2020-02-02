@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-import {faAngleRight} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 import MainMenubar from '../MainMenubar';
 import {LOGICAL_COLORS, WIDTHS, COLORS} from '../../utils/styleVariables';
@@ -10,6 +8,7 @@ import ContentSelectBoxes from './ContentSelectBoxes';
 import {contentSelectInfo} from './mainPageData';
 import AnnouncementBox from '../commonComponents/AnnouncementBox';
 import NewsAndEvents from './NewsAndEvents';
+import constants from '../../utils/constants';
 
 const StyledMainTextAndNews = styled.div`
   display: flex;
@@ -37,8 +36,14 @@ const ArrowBox = styled.div`
   color: ${LOGICAL_COLORS.CT_PRIMARY}
   display: inline-flex;
   flex-direction: column;
+  font-size: 32px;
   justify-content: center;
-  padding: 0 0.5em;
+  padding: 0.2em 0.4em;
+
+  span {
+    height:24px;
+    line-height: 18px;
+  }
 `;
 
 const LearnMoreBox = styled.div`
@@ -78,7 +83,7 @@ function MainContent() {
             </StyledContentComponentWrapper>
             <ArrowAndLearnmore>
               <ArrowBox>
-                <FontAwesomeIcon icon={faAngleRight} size="2x" />
+                <span>{constants.SLENDER_ARROW_RIGHT}</span>
               </ArrowBox>
               <LearnMoreBox>
                 <Link to={currentContent.linkPath}>Learn more</Link>
