@@ -9,10 +9,9 @@ import AnnouncementBox from './AnnouncementBox.jsx';
 import PlainButton from './PlainButton';
 
 const StyledAnnouncementBoxWrapper = styled.div`
+  display: flex;
   justify-content: space-between;
   margin: ${WIDTHS.SIDE_CONTENT_PADDING};
-
-  display: flex;
 
   .announcement-box {
     min-width: 50%;
