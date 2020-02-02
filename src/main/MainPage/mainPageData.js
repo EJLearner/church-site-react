@@ -6,7 +6,7 @@ import ChristianEducation from './BoxContent/ChristianEducation';
 import routePaths from '../../routePaths';
 import PerpetualOrganCommittee from './BoxContent/PerpetualOrganCommittee';
 import GedProgram from './BoxContent/GedProgram';
-import ServiceTimes from './BoxContent/ServiceTimes';
+import WorshipExperience from './BoxContent/WorshipExperience';
 
 const scrollingEventsTextInfo = [
   {date: '2025-11-28', title: 'Earl’s Birthday', path: 'https://earljones.dev'},
@@ -53,8 +53,8 @@ const contentSelectInfo = [
   },
   {
     linkPath: routePaths.MAIN_PERFORMING_ARTS_PAGE,
-    render: ServiceTimes,
-    title: 'Service Times',
+    render: WorshipExperience,
+    title: 'Worship Experience',
     thumbnail: eventContentTemplate
   },
   {
