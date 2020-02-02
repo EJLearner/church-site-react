@@ -1,15 +1,20 @@
 import React from 'react';
 import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
 
-const ministry1Content = `
-The mission statement of the HIV/AIDS Ministry is to be a spiritually-based resource and support for the community and to heighten individual awareness of HIV/AIDS and STDs. The ministry is made up of certified HIV/AIDS prevention counselors, lay counselors and certified Ora-Quick technicians. This ministry also works with the Outreach Ministry to give free HIV testing monthly. Members of this ministry network with community churches and organizations to educate others about HIV/AIDS.
+const aidsMinistryContent = `
+The mission statement of the HIV/AIDS Ministry is to be a spiritually-based resource and support for
+the community and to heighten individual awareness of HIV/AIDS and STDs. The ministry is made up of
+certified HIV/AIDS prevention counselors, lay counselors and certified Ora-Quick technicians. This
+ministry also works with the Outreach Ministry to give free HIV testing monthly. Members of this
+ministry network with community churches and organizations to educate others about HIV/AIDS.
   `;
 
-const ministry2Content = `
-Members of the Audio/Visual ministry record, advertise, sell and distribute audio and video of worship services and special events.
+const audioMinistryContent = `
+Members of the Audio/Visual ministry record, advertise, sell and distribute audio and video of
+worship services and special events.
   `;
 
-const ministry3Content = (
+const ceMinistryContent = (
   <div>
     <p>
       The Christian Education Ministry is responsible for organizing and
@@ -28,27 +33,33 @@ const ministry3Content = (
   </div>
 );
 
-const ministry4Content = `
-The Cultural and Fine Arts Ministry provides spiritual and cultural experiences that enlighten and enrich our lives as we support our church in a broad appreciation of the arts, music, and dance.
+const culturalMinistryContent = `
+The Cultural and Fine Arts Ministry provides spiritual and cultural experiences that enlighten and
+enrich our lives as we support our church in a broad appreciation of the arts, music, and dance.
 `;
 
-const ministry5Content = `
-Members of this ministry have been consecrated to use their “bodies as living sacrifices, holy, acceptable unto God which is their reasonable service” (Romans 12:1) to praise, worship, and glorify God through movement and dance. Their role in the worship experience at City Temple is to express God’s Word through dance and scriptural interpretation in movement in order to praise and worship the Lord, and in doing so, perhaps, inspire, uplift, heal, and deliver, God’s people through their anointing!
+const danceMinistryContent = `
+Members of this ministry have been consecrated to use their “bodies as living sacrifices, holy,
+acceptable unto God which is their reasonable service” (Romans 12:1) to praise, worship, and glorify God through movement and dance. Their role in the worship experience at City Temple is to express God’s Word through dance and scriptural interpretation in movement in order to praise and worship the Lord, and in doing so, perhaps, inspire, uplift, heal, and deliver, God’s people through their anointing!
 `;
 
-const ministry6Content = `
-Members are ordained church officers who may assist the Pastor with any responsibilities that are not related to preaching. Members assist and support the Pastor in the furtherance of his vision for the achievement of church mission. Diaconate members are spiritual leaders totally committed to God, the church, and mankind. They are servants of the church and help administer the ordinances of baptism and communion. They minister in times of crisis to the church.
+const diaconateMinistryContent = `
+Members are ordained church officers who may assist the Pastor with any responsibilities that
+are not related to preaching. Members assist and support the Pastor in the furtherance of his
+vision for the achievement of church mission. Diaconate members are spiritual leaders totally
+committed to God, the church, and mankind. They are servants of the church and help
+administer the ordinances of baptism and communion. They minister in times of crisis to the church.
 `;
 
-const ministry7Content = `
+const hospitalityMinistryContent = `
 Members of this ministry greet and recognize visitors during Sunday morning services.
 `;
 
-const ministry8Content = `
+const justWeFewMinistryContent = `
 The goal of the Just We Few Ministry is to serve the Lord and to stand by the Pastor with willing hearts and helping hands.
 `;
 
-const ministry9Content = (
+const mensMinistryContent = (
   <div>
     <p>
       City Temple of Baltimore Baptist Church (CTBC) Men’s Ministry is a group
@@ -66,7 +77,7 @@ const ministry9Content = (
   </div>
 );
 
-const ministry10Content = `
+const missionaryMinistryContent = `
 Missionaries are responsible for missions both domestic and abroad in the church and community in order to meet the needs of others and to bring people to Christ. Anyone with the desire to serve is welcomed to join the Missionary Ministry.
 
 The missionaries meet quarterly in the months of February, May, August, and November on the first Saturday of the month at 10:30 a.m.
@@ -74,15 +85,15 @@ The missionaries meet quarterly in the months of February, May, August, and Nove
 To receive more information, please contact Maelena Holman at (410) 523-3774 or Lilly Traynham at (410) 265-5443.
 `;
 
-const ministry11Content = `
+const musicMinistryContent = `
 The purpose of Music Ministry is to win souls for Jesus Christ and to glorify God through music, fine arts, and dance. Through God’s abundant blessings, the Music Ministry will continue to grow and spread spiritual awareness through the singing of His Word.
 `;
 
-const ministry12Content = `
+const nursesMinistryContent = `
 Licensed nurses trained in first aid assist parishioners in the time of medical emergencies.
 `;
 
-const ministry13Content = (
+const outreachMinistryContent = (
   <div>
     <p>
       The Outreach Ministry brings life to the teachings of God by helping to
@@ -95,16 +106,16 @@ const ministry13Content = (
         Soup Kitchen - Monday, Wednesday, and Thursday, 11:30 a.m. - 12:30 a.m.
       </li>
       <li>
-        Financial assistance for evictions, gas & electric, prescriptions and
-        funerals
+        Financial assistance for evictions, gas &amp; electric, prescriptions
+        and funerals
       </li>
-      <li>Substance abuse assistance & referral</li>
+      <li>Substance abuse assistance &amp; referral</li>
       <li>Thanksgiving and Christmas meals as well as Christmas baskets</li>
     </ul>
   </div>
 );
 
-const ministry14Content = (
+const securityMinistryContent = (
   <p>
     The Security Ministry has been serving since September 2008. We consider our
     service to be an “outpost” of the community of City Temple. When our City
@@ -127,15 +138,15 @@ const ministry14Content = (
   </p>
 );
 
-const ministry15Content = `
+const trusteesMinistryContent = `
 Trustees are officers responsible for the church’s financial and business matters. They are responsible for the maintenance of the church and all of its properties. They are responsible for all utilities.
 `;
 
-const ministry16Content = `
+const ushersMinistryContent = `
 We have several groups of ushers that span all age groups. The purpose of this ministry is to welcome all into God’s house graciously and warmly.
 `;
 
-const ministry17Content = (
+const womensMinistryContent = (
   <div>
     The Women’s Ministry goal is to become more Christ-like, to share
     experiences that are particular to women, and to encourage and inspire one
@@ -152,7 +163,7 @@ const ministry17Content = (
   </div>
 );
 
-const ministry18Content = (
+const yougAtHeartMinistryContent = (
   <p>
     As members of the congregation grow older, their needs change. Young At
     Heart provides an effective and fun way for the members of the church age 55
@@ -171,93 +182,93 @@ const ministry18Content = (
 const bottomContentData = [
   {
     title: 'AIDS',
-    id: 'ministry1',
-    content: ministry1Content
+    id: 'aidsMinistry',
+    content: aidsMinistryContent
   },
   {
     title: 'Audio/Visual',
-    id: 'ministry2',
-    content: ministry2Content
+    id: 'audioMinistry',
+    content: audioMinistryContent
   },
   {
     title: 'Christian Education',
-    id: 'ministry3',
-    content: ministry3Content
+    id: 'ceMinistry',
+    content: ceMinistryContent
   },
   {
     title: 'Cultural and Fine Arts',
-    id: 'ministry4',
-    content: ministry4Content
+    id: 'culturalMinistry',
+    content: culturalMinistryContent
   },
   {
     title: 'Dance/Movement',
-    id: 'ministry5',
-    content: ministry5Content
+    id: 'danceMinistry',
+    content: danceMinistryContent
   },
   {
     title: 'Diaconate',
-    id: 'ministry6',
-    content: ministry6Content
+    id: 'diaconateMinistry',
+    content: diaconateMinistryContent
   },
   {
     title: 'Hospitality',
-    id: 'ministry7',
-    content: ministry7Content
+    id: 'hospitalityMinistry',
+    content: hospitalityMinistryContent
   },
   {
     title: 'Just We Few',
-    id: 'ministry8',
-    content: ministry8Content
+    id: 'justWeFewMinistry',
+    content: justWeFewMinistryContent
   },
   {
     title: 'Men’s',
-    id: 'ministry9',
-    content: ministry9Content
+    id: 'mensMinistry',
+    content: mensMinistryContent
   },
   {
     title: 'Missionary',
-    id: 'ministry10',
-    content: ministry10Content
+    id: 'missionaryMinistry',
+    content: missionaryMinistryContent
   },
   {
     title: 'Music',
-    id: 'ministry11',
-    content: ministry11Content
+    id: 'musicMinistry',
+    content: musicMinistryContent
   },
   {
     title: 'Nurses',
-    id: 'ministry12',
-    content: ministry12Content
+    id: 'nursesMinistry',
+    content: nursesMinistryContent
   },
   {
     title: 'Outreach',
-    id: 'ministry13',
-    content: ministry13Content
+    id: 'outreachMinistry',
+    content: outreachMinistryContent
   },
   {
     title: 'Security',
-    id: 'ministry14',
-    content: ministry14Content
+    id: 'securityMinistry',
+    content: securityMinistryContent
   },
   {
     title: 'Trustee',
-    id: 'ministry15',
-    content: ministry15Content
+    id: 'trusteesMinistry',
+    content: trusteesMinistryContent
   },
   {
     title: 'Ushers',
-    id: 'ministry16',
-    content: ministry16Content
+    id: 'ushersMinistry',
+    content: ushersMinistryContent
   },
   {
     title: 'Women’s',
-    id: 'ministry17',
-    content: ministry17Content
+    id: 'womensMinistry',
+    content: womensMinistryContent
   },
   {
     title: 'Young At Heart',
-    id: 'ministry18',
-    content: ministry18Content
+    id: 'yougAtHeartMinistry',
+    content: yougAtHeartMinistryContent
   }
 ];
 
