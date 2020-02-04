@@ -28,8 +28,8 @@ const allPictures = [
       'o be a good father and mother requires that the parents defer many of ' +
       'their own needs and desires in favor of the needs of their children. As a ' +
       'consequence of this sacrifice, conscientious parents develop a nobility of ' +
-      'character and learn to put into practice the selfless truths taught by the Savior Himself. Quote from Robert Faust' +
-      'Mother’s Day Service May 13' +
+      'character and learn to put into practice the selfless truths taught by the Savior Himself. ' +
+      ' Quote from Robert Faust Mother’s Day Service May 13' +
       'Father’s Day Service June 17',
     displayBeg: '2018-05-01',
     displayEnd: '2018-06-20',

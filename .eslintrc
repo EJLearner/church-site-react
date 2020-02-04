@@ -1,7 +1,18 @@
 {
-  "extends": ["react-app", "eslint:recommended", "plugin:react/recommended"],
+  "extends": [
+    "react-app",
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
   "rules": {
-    "comma-dangle": ["error", "never"],
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "max-len": [
+      "error",
+      120
+    ],
     "no-console": "error",
     "no-restricted-syntax": [
       "error",
@@ -12,10 +23,24 @@
     ],
     "no-underscore-dangle": "warn",
     "no-useless-computed-key": "error",
-    "object-curly-spacing": ["error", "never"],
-    "object-curly-newline": ["error", {"consistent": true}],
+    "object-curly-spacing": [
+      "error",
+      "never"
+    ],
+    "object-curly-newline": [
+      "error",
+      {
+        "consistent": true
+      }
+    ],
     "prefer-template": "error",
-    "quotes": ["error", "single", {"avoidEscape": true}],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
     "react/jsx-sort-props": "error",
     "react/jsx-filename-extension": "warn",
     "react/jsx-no-useless-fragment": "error",
