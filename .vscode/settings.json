@@ -1,6 +1,12 @@
 {
   "editor.formatOnSave": true,
+  "eslint.codeActionsOnSave.mode": "all",
   "files.autoSave": "onFocusChange",
   "files.eol": "\n",
-  "editor.rulers": [120]
+  "editor.rulers": [120],
+  "git.autofetch": true,
+  "prettier.singleQuote": true,
+  "prettier.bracketSpacing": false,
+  "editor.renderWhitespace": "all",
+  "editor.tabSize": 2
 }
