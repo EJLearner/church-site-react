@@ -5,10 +5,10 @@ import MainMenubar from '../MainMenubar';
 import {WIDTHS, COLORS} from '../../utils/styleVariables';
 
 import PropTypes from 'prop-types';
-import AnnouncementBox from './AnnouncementBox.jsx';
+import TopInfoBox from './TopInfoBox';
 import PlainButton from './PlainButton';
 
-const StyledAnnouncementBoxWrapper = styled.div`
+const StyledTopInfoBoxWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin: ${WIDTHS.SIDE_CONTENT_PADDING};
@@ -108,14 +108,12 @@ const GeneralPageTemplate = props => {
   return (
     <div>
       <MainMenubar />
-      <StyledAnnouncementBoxWrapper>
-        <AnnouncementBox className="announcement-box">
-          {topBoxContent}
-        </AnnouncementBox>
+      <StyledTopInfoBoxWrapper>
+        <TopInfoBox className="announcement-box">{topBoxContent}</TopInfoBox>
         {topRightContent && (
           <div className="more-content">{topRightContent}</div>
         )}
-      </StyledAnnouncementBoxWrapper>
+      </StyledTopInfoBoxWrapper>
       <ContentAndSide>
         {Boolean(menuTitle && bottomContentData) && (
           <MenuAndContent>

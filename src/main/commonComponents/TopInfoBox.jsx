@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {LOGICAL_COLORS, FONT_FAMILIES} from '../../utils/styleVariables';
 
-const AnnouncementBox = styled.div`
+const TopInfoBox = styled.div`
   // regular text
   font-family: ${FONT_FAMILIES.CENTURY_GOTHIC};
 
@@ -30,4 +30,4 @@ const AnnouncementBox = styled.div`
   }
 `;
 
-export default AnnouncementBox;
+export default TopInfoBox;

@@ -40,7 +40,10 @@ enrich our lives as we support our church in a broad appreciation of the arts, m
 
 const danceMinistryContent = `
 Members of this ministry have been consecrated to use their “bodies as living sacrifices, holy,
-acceptable unto God which is their reasonable service” (Romans 12:1) to praise, worship, and glorify God through movement and dance. Their role in the worship experience at City Temple is to express God’s Word through dance and scriptural interpretation in movement in order to praise and worship the Lord, and in doing so, perhaps, inspire, uplift, heal, and deliver, God’s people through their anointing!
+acceptable unto God which is their reasonable service” (Romans 12:1) to praise, worship, and glorify God through
+movement and dance. Their role in the worship experience at City Temple is to express God’s Word through dance and
+scriptural interpretation in movement in order to praise and worship the Lord, and in doing so, perhaps, inspire,
+uplift, heal, and deliver, God’s people through their anointing!
 `;
 
 const diaconateMinistryContent = `
@@ -56,7 +59,8 @@ Members of this ministry greet and recognize visitors during Sunday morning serv
 `;
 
 const justWeFewMinistryContent = `
-The goal of the Just We Few Ministry is to serve the Lord and to stand by the Pastor with willing hearts and helping hands.
+The goal of the Just We Few Ministry is to serve the Lord and to stand by the Pastor with willing hearts and
+helping hands.
 `;
 
 const mensMinistryContent = (
@@ -78,15 +82,20 @@ const mensMinistryContent = (
 );
 
 const missionaryMinistryContent = `
-Missionaries are responsible for missions both domestic and abroad in the church and community in order to meet the needs of others and to bring people to Christ. Anyone with the desire to serve is welcomed to join the Missionary Ministry.
+Missionaries are responsible for missions both domestic and abroad in the church and community in order to meet
+the needs of others and to bring people to Christ. Anyone with the desire to serve is welcomed to join
+the Missionary Ministry.
 
-The missionaries meet quarterly in the months of February, May, August, and November on the first Saturday of the month at 10:30 a.m.
+The missionaries meet quarterly in the months of February, May, August, and November on the first Saturday
+ of the month at 10:30 a.m.
 
 To receive more information, please contact Maelena Holman at (410) 523-3774 or Lilly Traynham at (410) 265-5443.
 `;
 
 const musicMinistryContent = `
-The purpose of Music Ministry is to win souls for Jesus Christ and to glorify God through music, fine arts, and dance. Through God’s abundant blessings, the Music Ministry will continue to grow and spread spiritual awareness through the singing of His Word.
+The purpose of Music Ministry is to win souls for Jesus Christ and to glorify God through music, fine arts, and
+dance. Through God’s abundant blessings, the Music Ministry will continue to grow and spread spiritual awareness
+through the singing of His Word.
 `;
 
 const nursesMinistryContent = `
@@ -139,11 +148,13 @@ const securityMinistryContent = (
 );
 
 const trusteesMinistryContent = `
-Trustees are officers responsible for the church’s financial and business matters. They are responsible for the maintenance of the church and all of its properties. They are responsible for all utilities.
+Trustees are officers responsible for the church’s financial and business matters. They are responsible for
+the maintenance of the church and all of its properties. They are responsible for all utilities.
 `;
 
 const ushersMinistryContent = `
-We have several groups of ushers that span all age groups. The purpose of this ministry is to welcome all into God’s house graciously and warmly.
+We have several groups of ushers that span all age groups. The purpose of this ministry is to welcome all
+into God’s house graciously and warmly.
 `;
 
 const womensMinistryContent = (

@@ -6,7 +6,7 @@ import MainMenubar from '../MainMenubar';
 import {LOGICAL_COLORS, WIDTHS, COLORS} from '../../utils/styleVariables';
 import ContentSelectBoxes from './ContentSelectBoxes';
 import {contentSelectInfo} from './mainPageData';
-import AnnouncementBox from '../commonComponents/AnnouncementBox';
+import TopInfoBox from '../commonComponents/TopInfoBox';
 import NewsAndEvents from './NewsAndEvents';
 import constants from '../../utils/constants';
 
@@ -16,7 +16,7 @@ const StyledMainTextAndNews = styled.div`
   padding: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
 `;
 
-const StyledAnnouncementBoxWrapper = styled.div`
+const StyledTopInfoBoxWrapper = styled.div`
   margin: 0 0 2em 0;
   width: 50%;
 `;
@@ -76,8 +76,8 @@ function MainContent() {
     <div>
       <MainMenubar />
       <StyledMainTextAndNews>
-        <StyledAnnouncementBoxWrapper>
-          <AnnouncementBox>
+        <StyledTopInfoBoxWrapper>
+          <TopInfoBox>
             <StyledContentComponentWrapper>
               <ContentComponent />
             </StyledContentComponentWrapper>
@@ -89,8 +89,8 @@ function MainContent() {
                 <Link to={currentContent.linkPath}>Learn more</Link>
               </LearnMoreBox>
             </ArrowAndLearnmore>
-          </AnnouncementBox>
-        </StyledAnnouncementBoxWrapper>
+          </TopInfoBox>
+        </StyledTopInfoBoxWrapper>
         <NewsAndEvents />
       </StyledMainTextAndNews>
       <ContentSelectBoxesWrapper>
