@@ -1,6 +1,6 @@
 import React from 'react';
 
-function PerformingArts() {
+function CultureAndFineArts() {
   return (
     <div>
       <h1>Culture &amp; Fine Arts</h1>
@@ -15,4 +15,4 @@ function PerformingArts() {
   );
 }
 
-export default PerformingArts;
+export default CultureAndFineArts;

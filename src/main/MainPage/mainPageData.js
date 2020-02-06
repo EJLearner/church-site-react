@@ -1,7 +1,7 @@
 import eventContentTemplate from '../../assets/main/images/event-content-template.png';
 
 import JubileeContent from './BoxContent/JubileeContent';
-import PerformingArts from './BoxContent/PerformingArts';
+import CultureAndFineArts from './BoxContent/CultureAndFineArts';
 import ChristianEducation from './BoxContent/ChristianEducation';
 import routePaths from '../../routePaths';
 import GedProgram from './BoxContent/GedProgram';
@@ -46,7 +46,7 @@ const contentSelectInfo = [
   },
   {
     linkPath: routePaths.MAIN_PERFORMING_ARTS_PAGE,
-    render: PerformingArts,
+    render: CultureAndFineArts,
     title: 'Culture & Fine Arts',
     thumbnail: eventContentTemplate
   },
