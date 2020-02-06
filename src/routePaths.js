@@ -32,11 +32,12 @@ const MAIN_ROOT_PATHS = {
   MAIN_MINISTRIES: `${MAIN_HOME_PATH}ministries/`,
   MAIN_MUSIC_MINISTRY: `${MAIN_HOME_PATH}music-ministry/`,
   MAIN_OUTREACH: `${MAIN_HOME_PATH}outreach/`,
-  MAIN_PERFORMING_ARTS_PAGE: `${MAIN_HOME_PATH}performing-arts/`,
+  MAIN_PERFORMING_ARTS_PAGE: `${MAIN_HOME_PATH}culture-and-fine-arts/`,
   MAIN_SCHOLARSHIP: `${MAIN_HOME_PATH}scholarship`,
   MAIN_SERVICE_INFO: `${MAIN_HOME_PATH}service-info`,
   MAIN_STREAM: `${MAIN_HOME_PATH}stream/`,
-  MAIN_WELCOME: `${MAIN_HOME_PATH}welcome/`
+  MAIN_WELCOME: `${MAIN_HOME_PATH}welcome/`,
+  MAIN_WORSHIP_EXPERIENCE_PAGE: `${MAIN_HOME_PATH}worship/`
 };
 
 const CE_ROOT_PATHS = {

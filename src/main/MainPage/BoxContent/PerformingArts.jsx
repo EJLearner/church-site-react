@@ -3,7 +3,7 @@ import React from 'react';
 function PerformingArts() {
   return (
     <div>
-      <h1>Performing Arts Sunday</h1>
+      <h1>Culture &amp; Fine Arts</h1>
       <p>
         Each fourth Sunday, City Temple will showcase talented artists to
         enhance our worship experience. Categories of artistic talent include

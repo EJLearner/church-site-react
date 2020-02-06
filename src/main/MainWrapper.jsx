@@ -18,6 +18,7 @@ import MainFooter from './commonComponents/MainFooter';
 import MusicMinistryPage from './MusicMinistryPage';
 import churchExterior from '../assets/main/images/church-exterior.png';
 import CultureAndFineArtsPage from './CultureAndFineArtsPage';
+import WorshipExperiencePage from './WorshipExperiencePage';
 
 const WrapperDiv = styled.div`
   background-attachment: fixed;
@@ -39,6 +40,10 @@ function MainWrapper() {
         <Route component={MainContent} exact path={routePaths.MAIN_HOME} />
         <Route component={MembersOnly} path={routePaths.MAIN_MEMBERS_ONLY} />
         <Route component={MinistriesPage} path={routePaths.MAIN_MINISTRIES} />
+        <Route
+          component={WorshipExperiencePage}
+          path={routePaths.MAIN_WORSHIP_EXPERIENCE_PAGE}
+        />
         <Route
           component={MusicMinistryPage}
           path={routePaths.MAIN_MUSIC_MINISTRY}

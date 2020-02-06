@@ -69,9 +69,35 @@ const pocContent = (
       <h1>Perpetual Organ Committee</h1>
     </div>
     <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique velit
-      aut, vel officia perferendis harum autem totam fugit architecto eveniet
-      minus illo amet pariatur eaque molestiae nobis consequatur placeat ut.
+      <p>
+        The Perpetual Organ Committee is responsible for promoting an awareness
+        of the organ and raising funds to assist the church with the upkeep of
+        our organ through the Perpetual Organ Fund. This is accomplished through
+        our sponsors and annual fundraising initiatives. Our annual event is
+        “Organscape”. This event coincides with the Baltimore Office of
+        Promotion and the Arts Annual “Artscape”. Organscape features organists
+        and artists from the Mount Royal and Bolton Hill Cultural District, the
+        greater Baltimore Area, and beyond performing on the Organ—the Adam
+        Stein 144 Rank Pipe Organ, the grand piano, and the Hammond B3 Organ.
+      </p>
+      <p>
+        Donations to the Perpetual Organ Fund are derived from sponsors and
+        patrons at our annual event, Organscape and fundraisers, such as trips
+        within Maryland and Washington DC to various cultural and historical
+        sites, and crab feasts and restored and preserved sites of our enslaved
+        ancestry on the Eastern Shore.
+      </p>
+      <p>
+        In 1970 when City Temple was purchased, the organ was unusable, however
+        through the vision of Rev. William W. Payne, and Dr. Kenneth Dean, the
+        organ was rebuilt, thanks to the late Ernest Horning and Ronald Unger of
+        the Shantz Organ Co. Throughout the years this organ has been upgraded
+        to the beautiful instrument it is today.{' '}
+      </p>
+      <p>
+        The Perpetual Organ Committee is a sub-committee of the Music Ministry’s
+        Cultural and Fine Arts Committee.
+      </p>
     </div>
   </div>
 );
