@@ -5,7 +5,7 @@ function WorshipExperience() {
     <div>
       <h1>Worship Experience</h1>
       <p>
-        No muss. No fuss. No judgment. Just praise. And we have a seat waiting
+        Come dressed up. Come dressed down. Just come. We have a seat waiting
         for you.
       </p>
     </div>

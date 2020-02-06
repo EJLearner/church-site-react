@@ -3,12 +3,15 @@ import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
 
 const topBoxContent = (
   <div>
-    <h1>Culture &amp; Fine Arts</h1>
+    <h1>Worship Experience</h1>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ullam
-      repellat iusto? Officiis mollitia quos quae dolorem, assumenda placeat
-      excepturi quibusdam sed explicabo, neque voluptatem sunt, ratione ex eius
-      aperiam?
+      Here at The City Temple of Baltimore (Baptist), we follow an Order of
+      Worship. While our intent is to remain consistent with this Order of
+      Worship, the experience can change in the blink of any eye based on a
+      testimony, a musical selection, a prayer, or whatever moves the spirit
+      within us. In general, we anticipate a musical prelude, offering, sermon,
+      invitation to Christian Discipleship, and musical postlude at each worship
+      service. All are welcome.
     </p>
   </div>
 );
@@ -20,7 +23,7 @@ const performingArtsContent = (
     </div>
     <div>
       <p>
-        To enhance City Temple’s worship experience and community outreach,
+        To perform City Temple’s worship experience and community outreach,
         beginning in 2020, City Temple will introduce Performing Arts Sunday, a
         special and exciting addition to our music ministry. On the 4th Sunday
         of each month, the worship service will consist of artistic talent from
@@ -52,37 +55,7 @@ const pocContent = (
     <div>
       <h1>Perpetual Organ Committee</h1>
     </div>
-    <div>
-      <p>
-        The Perpetual Organ Committee is responsible for promoting an awareness
-        of the organ and raising funds to assist the church with the upkeep of
-        our organ through the Perpetual Organ Fund. This is accomplished through
-        our sponsors and annual fundraising initiatives. Our annual event is
-        “Organscape”. This event coincides with the Baltimore Office of
-        Promotion and the Arts Annual “Artscape”. Organscape features organists
-        and artists from the Mount Royal and Bolton Hill Cultural District, the
-        greater Baltimore Area, and beyond performing on the Organ—the Adam
-        Stein 144 Rank Pipe Organ, the grand piano, and the Hammond B3 Organ.
-      </p>
-      <p>
-        Donations to the Perpetual Organ Fund are derived from sponsors and
-        patrons at our annual event, Organscape and fundraisers, such as trips
-        within Maryland and Washington DC to various cultural and historical
-        sites, and crab feasts and restored and preserved sites of our enslaved
-        ancestry on the Eastern Shore.
-      </p>
-      <p>
-        In 1970 when City Temple was purchased, the organ was unusable, however
-        through the vision of Rev. William W. Payne, and Dr. Kenneth Dean, the
-        organ was rebuilt, thanks to the late Ernest Horning and Ronald Unger of
-        the Shantz Organ Co. Throughout the years this organ has been upgraded
-        to the beautiful instrument it is today.{' '}
-      </p>
-      <p>
-        The Perpetual Organ Committee is a sub-committee of the Music Ministry’s
-        Cultural and Fine Arts Committee.
-      </p>
-    </div>
+    <div></div>
   </div>
 );
 
@@ -99,7 +72,7 @@ const bottomContentData = [
   }
 ];
 
-const CultureAndFineArtsPage = () => {
+const WorshipExperiencePage = () => {
   return (
     <GeneralPageTemplate
       bottomContentData={bottomContentData}
@@ -109,4 +82,4 @@ const CultureAndFineArtsPage = () => {
   );
 };
 
-export default CultureAndFineArtsPage;
+export default WorshipExperiencePage;
