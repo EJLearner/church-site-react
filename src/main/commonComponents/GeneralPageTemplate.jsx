@@ -22,10 +22,14 @@ const StyledAnnouncementBoxWrapper = styled.div`
   }
 `;
 
+const ContentAndSide = styled.div`
+  display: flex;
+  padding: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
+`;
+
 const MenuAndContent = styled.div`
   display: flex;
-  padding: 0 ${WIDTHS.SIDE_CONTENT_PADDING}
-  flex-direction: row;
+  margin-right: 4em;
 `;
 
 const LeftSide = styled.div`
@@ -63,6 +67,12 @@ const MenuTitle = styled.h2`
   text-transform: uppercase;
 `;
 
+const SideContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+`;
+
 const SideMenu = ({onClick, menuData, title}) => {
   return (
     <LeftSide>
@@ -85,7 +95,13 @@ SideMenu.propTypes = {
 };
 
 const GeneralPageTemplate = props => {
-  const {topBoxContent, bottomContentData, menuTitle, topRightContent} = props;
+  const {
+    topBoxContent,
+    bottomContentData,
+    menuTitle,
+    sideContent,
+    topRightContent
+  } = props;
 
   const [contentId, setContentId] = useState(bottomContentData?.[0].id);
 
@@ -100,18 +116,23 @@ const GeneralPageTemplate = props => {
           <div className="more-content">{topRightContent}</div>
         )}
       </StyledAnnouncementBoxWrapper>
-      {Boolean(menuTitle && bottomContentData) && (
-        <MenuAndContent>
-          <SideMenu
-            menuData={bottomContentData}
-            onClick={id => setContentId(id)}
-            title={menuTitle}
-          />
-          <Content>
-            {bottomContentData.find(({id}) => id === contentId).content}
-          </Content>
-        </MenuAndContent>
-      )}
+      <ContentAndSide>
+        {Boolean(menuTitle && bottomContentData) && (
+          <MenuAndContent>
+            <SideMenu
+              menuData={bottomContentData}
+              onClick={id => setContentId(id)}
+              title={menuTitle}
+            />
+            <Content>
+              {bottomContentData.find(({id}) => id === contentId).content}
+            </Content>
+          </MenuAndContent>
+        )}
+        {sideContent ? (
+          <SideContentWrapper>{sideContent}</SideContentWrapper>
+        ) : null}
+      </ContentAndSide>
     </div>
   );
 };
@@ -119,6 +140,7 @@ const GeneralPageTemplate = props => {
 GeneralPageTemplate.propTypes = {
   bottomContentData: PropTypes.array,
   menuTitle: PropTypes.string,
+  sideContent: PropTypes.node,
   topBoxContent: PropTypes.node.isRequired,
   topRightContent: PropTypes.node
 };

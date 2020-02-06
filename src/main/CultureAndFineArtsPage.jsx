@@ -1,5 +1,21 @@
 import React from 'react';
 import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
+import styled from 'styled-components';
+import {LOGICAL_COLORS} from '../utils/styleVariables';
+
+const ApplyNowBox = styled.div`
+  color: ${LOGICAL_COLORS.CT_PRIMARY};
+  background-color: ${LOGICAL_COLORS.CT_MAIN_YELLOW};
+  margin-bottom: 1em;
+  font-style: italic;
+  padding: 1em;
+
+  h3 {
+    color:${LOGICAL_COLORS.CT_PRIMARY}
+    margin-top: 0;
+    text-transform: uppercase;
+  }
+`;
 
 const topBoxContent = (
   <div>
@@ -60,6 +76,13 @@ const pocContent = (
   </div>
 );
 
+const sideContent = [
+  <ApplyNowBox key="1">
+    <h3>Apply Now</h3>Submit your information today for the 4<sup>th</sup>{' '}
+    Sunday Performing Arts Service.
+  </ApplyNowBox>
+];
+
 const bottomContentData = [
   {
     title: 'Performing Arts Sunday',
@@ -78,6 +101,7 @@ const CultureAndFineArtsPage = () => {
     <GeneralPageTemplate
       bottomContentData={bottomContentData}
       menuTitle="Culture &amp; Fine Arts"
+      sideContent={sideContent}
       topBoxContent={topBoxContent}
     />
   );
