@@ -72,7 +72,7 @@ function renderCompass(pageTitle, pagePath, subPageTitle) {
   return (
     <>
       <Link to={routePaths.MAIN_HOME}>Home</Link> /{' '}
-      <Link to={pagePath}>Culture &amp; Fine Arts</Link> / {subPageTitle}
+      <Link to={pagePath}>{pageTitle}</Link> / {subPageTitle}
     </>
   );
 }

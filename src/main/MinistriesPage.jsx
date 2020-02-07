@@ -1,5 +1,6 @@
 import React from 'react';
 import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
+import routePaths from '../routePaths';
 
 const aidsMinistryContent = `
 The mission statement of the HIV/AIDS Ministry is to be a spiritually-based resource and support for
@@ -125,7 +126,7 @@ const outreachMinistryContent = (
 );
 
 const securityMinistryContent = (
-  <p>
+  <div>
     The Security Ministry has been serving since September 2008. We consider our
     service to be an “outpost” of the community of City Temple. When our City
     Temple family members and visitors see us, we hope to give them a sense of
@@ -144,7 +145,7 @@ const securityMinistryContent = (
         its members and visitors
       </li>
     </ul>
-  </p>
+  </div>
 );
 
 const trusteesMinistryContent = `
@@ -175,7 +176,7 @@ const womensMinistryContent = (
 );
 
 const yougAtHeartMinistryContent = (
-  <p>
+  <div>
     As members of the congregation grow older, their needs change. Young At
     Heart provides an effective and fun way for the members of the church age 55
     years or older to come together for fellowship. The goal of this ministry is
@@ -187,7 +188,7 @@ const yougAtHeartMinistryContent = (
       Shirley Lindsay at (410) 945-7474, Evelyn Wooley at (410) 922-7169 or
       Hallie Tucker at (410) 523-9664.
     </p>
-  </p>
+  </div>
 );
 
 const bottomContentData = [
@@ -304,6 +305,7 @@ const MinistriesPage = () => {
     <GeneralPageTemplate
       bottomContentData={bottomContentData}
       menuTitle="Ministries"
+      pagePath={routePaths.MAIN_MINISTRIES}
       topBoxContent={topBoxContent}
     />
   );

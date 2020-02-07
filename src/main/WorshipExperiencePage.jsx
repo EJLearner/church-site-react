@@ -1,5 +1,6 @@
 import React from 'react';
 import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
+import routePaths from '../routePaths';
 
 const topBoxContent = (
   <div>
@@ -77,6 +78,7 @@ const WorshipExperiencePage = () => {
     <GeneralPageTemplate
       bottomContentData={bottomContentData}
       menuTitle="Culture &amp; Fine Arts"
+      pagePath={routePaths.MAIN_WORSHIP_EXPERIENCE_PAGE}
       topBoxContent={topBoxContent}
     />
   );

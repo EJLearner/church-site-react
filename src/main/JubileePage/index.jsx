@@ -1,6 +1,7 @@
 import React from 'react';
 
 import GeneralPageTemplate from '../commonComponents/GeneralPageTemplate';
+import routePaths from '../../routePaths';
 
 const anniversaryContent = (
   <p>
@@ -71,6 +72,7 @@ function JubileePage() {
     <GeneralPageTemplate
       bottomContentData={bottomContentData}
       menuTitle="Anniversary"
+      pagePath={routePaths.MAIN_JUBILEE_PAGE}
       topBoxContent={topBoxContent}
     />
   );
