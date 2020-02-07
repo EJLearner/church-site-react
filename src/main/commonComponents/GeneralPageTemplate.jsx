@@ -8,6 +8,8 @@ import PropTypes from 'prop-types';
 import TopInfoBox from './TopInfoBox';
 import SideMenu from './SideMenu';
 
+const borderColor = 'gray';
+
 const StyledTopInfoBoxWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -23,26 +25,30 @@ const StyledTopInfoBoxWrapper = styled.div`
 `;
 
 const ContentAndSide = styled.div`
+  border: 1px solid ${borderColor};
+  background-color: white;
   display: flex;
-  padding: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
+  margin: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
 `;
 
 const MenuAndContent = styled.div`
   display: flex;
-  margin-right: 4em;
 `;
 
 const Content = styled.div`
   background-color: ${COLORS.WHITE};
-  border: 1px solid gray;
+  border-left: 1px solid ${borderColor};
   padding: 1em;
   width: 70%;
 `;
 
 const SideContentWrapper = styled.div`
+  border-left: 1px solid ${borderColor};
   display: flex;
   flex-direction: column;
-  min-width: 250px;
+  min-width: 20%;
+  max-width: 25%;
+  padding: 1em 2em 0 2em;
 `;
 
 const GeneralPageTemplate = props => {

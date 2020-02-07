@@ -23,11 +23,16 @@ const ApplyNowBox = styled.div`
 const SideImage = styled.img`
   height: auto;
   margin-bottom: 1em;
-  width: 300px;
+  width: 100%;
 `;
 
 const Event = styled.div`
   width: 80%;
+
+  h2 {
+    color: ${LOGICAL_COLORS.CT_PRIMARY}
+    text-transform: uppercase;
+  }
 
   .description {
     font-weight: bold;
@@ -42,6 +47,9 @@ const Event = styled.div`
 const DC_TOUR_ID = 'dc-tour-2020';
 const ORGANSCAPE_ID = 'organscape-2020';
 const CRAB_FEAST_ID = 'dc-tour-2020';
+const DC_TOUR_TITLE = 'DC Tour 2020';
+const ARTSCAPE_TITLE = 'Artscape to Organscape 2020';
+const CRAB_FEAST_TITLE = 'Eastern Shore Crab Feast';
 
 const topBoxContent = (
   <div>
@@ -130,6 +138,7 @@ const upcomingEventsContent = (
   <div>
     <div>
       <Event>
+        <h2>{DC_TOUR_TITLE}</h2>
         <p className="description" id={DC_TOUR_ID}>
           Trip to Washington, DC for self-guided tours of the Rosa Parks Exhibit
           at the Library of Congress and a National Museum of African-American
@@ -145,6 +154,7 @@ const upcomingEventsContent = (
         <PurchaseHereLink to="need-page" />
       </Event>
       <Event>
+        <h2>{ARTSCAPE_TITLE}</h2>
         <p className="description" id={ORGANSCAPE_ID}>
           Featuring organists and artists from the Mount Royal Bolton Hill
           Cultural District and beyond performing on our historic Adam Stein 144
@@ -158,6 +168,7 @@ const upcomingEventsContent = (
         </p>
       </Event>
       <Event>
+        <h2>{CRAB_FEAST_TITLE}</h2>
         <p className="description" id={CRAB_FEAST_ID}>
           Trip includes an authentic Eastern Shore all-you-can-eat Crab Feast at
           the Suicide Bridge Restaurant and guided tour of Highland Beach, which
@@ -216,9 +227,9 @@ const bottomContentData = [
     content: upcomingEventsContent,
     sideContent: upComingEventsSideContent,
     subLinks: [
-      {title: 'DC Tour 2020', elementId: DC_TOUR_ID},
-      {title: 'Artscape to Organscape 2020', elementId: ORGANSCAPE_ID},
-      {title: 'Eastern Shore Crab Feast', elementId: CRAB_FEAST_ID}
+      {title: DC_TOUR_TITLE, elementId: DC_TOUR_ID},
+      {title: ARTSCAPE_TITLE, elementId: ORGANSCAPE_ID},
+      {title: CRAB_FEAST_TITLE, elementId: CRAB_FEAST_ID}
     ]
   }
 ];

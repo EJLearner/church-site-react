@@ -8,11 +8,12 @@ import PlainButton from './PlainButton';
 
 const LeftSide = styled.div`
   background-color: ${COLORS.WHITE};
+  flex-shrink: 0;
   font-size: 13.33px;
-  border: 1px solid gray;
   padding: 1em;
 
   h2 {
+    color: ${LOGICAL_COLORS.CT_PRIMARY};
     margin-top: 0;
   }
 
@@ -22,6 +23,10 @@ const LeftSide = styled.div`
 
   ul ul {
     padding-left: 1em;
+
+    a {
+      color: black;
+    }
   }
 
   li {
