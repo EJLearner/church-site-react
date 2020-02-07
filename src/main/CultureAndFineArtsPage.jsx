@@ -5,6 +5,7 @@ import {LOGICAL_COLORS} from '../utils/styleVariables';
 import PurchaseHereLink from './commonComponents/PurchaseHereLink';
 import aframMuseum from '../assets/main/images/afram-museum.png';
 import suicideBridgeSign from '../assets/main/images/suicide-bridge-sign.png';
+import routePaths from '../routePaths';
 
 const ApplyNowBox = styled.div`
   color: ${LOGICAL_COLORS.CT_PRIMARY};
@@ -239,6 +240,7 @@ const CultureAndFineArtsPage = () => {
     <GeneralPageTemplate
       bottomContentData={bottomContentData}
       menuTitle="Culture &amp; Fine Arts"
+      pagePath={routePaths.MAIN_PERFORMING_ARTS_PAGE}
       sectionSideContent={performingArtsSideContent}
       topBoxContent={topBoxContent}
     />
