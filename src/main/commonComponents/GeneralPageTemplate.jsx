@@ -50,11 +50,15 @@ const GeneralPageTemplate = props => {
     topBoxContent,
     bottomContentData,
     menuTitle,
-    sideContent,
+    pageWideSideContent,
     topRightContent
   } = props;
 
   const [contentId, setContentId] = useState(bottomContentData?.[0].id);
+
+  const {sideContent: sectionSideContent, content} = bottomContentData.find(
+    ({id}) => id === contentId
+  );
 
   return (
     <div>
@@ -74,13 +78,14 @@ const GeneralPageTemplate = props => {
               onClick={id => setContentId(id)}
               title={menuTitle}
             />
-            <Content>
-              {bottomContentData.find(({id}) => id === contentId).content}
-            </Content>
+            <Content>{content}</Content>
           </MenuAndContent>
         )}
-        {sideContent ? (
-          <SideContentWrapper>{sideContent}</SideContentWrapper>
+        {pageWideSideContent || sectionSideContent ? (
+          <SideContentWrapper>
+            {pageWideSideContent}
+            {sectionSideContent}
+          </SideContentWrapper>
         ) : null}
       </ContentAndSide>
     </div>
@@ -90,7 +95,7 @@ const GeneralPageTemplate = props => {
 GeneralPageTemplate.propTypes = {
   bottomContentData: PropTypes.array,
   menuTitle: PropTypes.string,
-  sideContent: PropTypes.node,
+  pageWideSideContent: PropTypes.node,
   topBoxContent: PropTypes.node.isRequired,
   topRightContent: PropTypes.node
 };

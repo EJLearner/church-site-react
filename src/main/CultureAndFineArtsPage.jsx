@@ -3,6 +3,8 @@ import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
 import styled from 'styled-components';
 import {LOGICAL_COLORS} from '../utils/styleVariables';
 import PurchaseHereLink from './commonComponents/PurchaseHereLink';
+import aframMuseum from '../assets/main/images/afram-museum.png';
+import suicideBridgeSign from '../assets/main/images/suicide-bridge-sign.png';
 
 const ApplyNowBox = styled.div`
   color: ${LOGICAL_COLORS.CT_PRIMARY};
@@ -16,6 +18,12 @@ const ApplyNowBox = styled.div`
     margin-top: 0;
     text-transform: uppercase;
   }
+`;
+
+const SideImage = styled.img`
+  height: auto;
+  margin-bottom: 1em;
+  width: 300px;
 `;
 
 const Event = styled.div`
@@ -169,7 +177,7 @@ const upcomingEventsContent = (
   </div>
 );
 
-const sideContent = [
+const performingArtsSideContent = [
   <ApplyNowBox key="1">
     <h3>Apply Now</h3>
     Submit your information today for the 4<sup>th</sup> Sunday Performing Arts
@@ -177,11 +185,25 @@ const sideContent = [
   </ApplyNowBox>
 ];
 
+const upComingEventsSideContent = [
+  <SideImage
+    alt="African American History Museum"
+    key="museum"
+    src={aframMuseum}
+  ></SideImage>,
+  <SideImage
+    alt="Suicide Bridge Restaurant Sign"
+    key="restaurant"
+    src={suicideBridgeSign}
+  ></SideImage>
+];
+
 const bottomContentData = [
   {
     title: 'Performing Arts Sunday',
     id: 'performingArtsSunday',
-    content: performingArtsContent
+    content: performingArtsContent,
+    sideContent: performingArtsSideContent
   },
   {
     title: 'Perpetual Organ Committee (POC)',
@@ -192,6 +214,7 @@ const bottomContentData = [
     title: 'Upcoming Events',
     id: 'upcomingEvents',
     content: upcomingEventsContent,
+    sideContent: upComingEventsSideContent,
     subLinks: [
       {title: 'DC Tour 2020', elementId: DC_TOUR_ID},
       {title: 'Artscape to Organscape 2020', elementId: ORGANSCAPE_ID},
@@ -205,7 +228,7 @@ const CultureAndFineArtsPage = () => {
     <GeneralPageTemplate
       bottomContentData={bottomContentData}
       menuTitle="Culture &amp; Fine Arts"
-      sideContent={sideContent}
+      sectionSideContent={performingArtsSideContent}
       topBoxContent={topBoxContent}
     />
   );
