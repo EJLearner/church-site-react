@@ -78,7 +78,7 @@ const WorshipExperiencePage = () => {
     <GeneralPageTemplate
       bottomContentData={bottomContentData}
       menuTitle="Culture &amp; Fine Arts"
-      pagePath={routePaths.MAIN_WORSHIP_EXPERIENCE_PAGE}
+      pagePath={routePaths.MAIN_WORSHIP_EXPERIENCE}
       topBoxContent={topBoxContent}
     />
   );

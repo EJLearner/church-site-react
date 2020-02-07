@@ -36,13 +36,13 @@ function MainWrapper() {
         <Route component={Calendar} path={routePaths.MAIN_CALENDAR} />
         <Route component={ContactPage} path={routePaths.MAIN_CONTACT} />
         <Route component={GivingPage} path={routePaths.MAIN_GIVING} />
-        <Route component={JubileePage} path={routePaths.MAIN_JUBILEE_PAGE} />
+        <Route component={JubileePage} path={routePaths.MAIN_JUBILEE} />
         <Route component={MainContent} exact path={routePaths.MAIN_HOME} />
         <Route component={MembersOnly} path={routePaths.MAIN_MEMBERS_ONLY} />
         <Route component={MinistriesPage} path={routePaths.MAIN_MINISTRIES} />
         <Route
           component={WorshipExperiencePage}
-          path={routePaths.MAIN_WORSHIP_EXPERIENCE_PAGE}
+          path={routePaths.MAIN_WORSHIP_EXPERIENCE}
         />
         <Route
           component={MusicMinistryPage}
@@ -50,7 +50,7 @@ function MainWrapper() {
         />
         <Route
           component={CultureAndFineArtsPage}
-          path={routePaths.MAIN_PERFORMING_ARTS_PAGE}
+          path={routePaths.MAIN_CULTURE_AND_ARTS}
         />
         <Route component={ScholarshipPage} path={routePaths.MAIN_SCHOLARSHIP} />
         <Route

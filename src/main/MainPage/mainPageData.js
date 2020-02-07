@@ -38,20 +38,20 @@ const scrollingEventsTextInfo = [
 
 const contentSelectInfo = [
   {
-    linkPath: routePaths.MAIN_JUBILEE_PAGE,
+    linkPath: routePaths.MAIN_JUBILEE,
     render: JubileeContent,
     showUntil: '2021-01-01',
     title: '50th Anniversary Celebration',
     thumbnail: eventContentTemplate
   },
   {
-    linkPath: routePaths.MAIN_PERFORMING_ARTS_PAGE,
+    linkPath: routePaths.MAIN_CULTURE_AND_ARTS,
     render: CultureAndFineArts,
     title: 'Culture & Fine Arts',
     thumbnail: eventContentTemplate
   },
   {
-    linkPath: routePaths.MAIN_WORSHIP_EXPERIENCE_PAGE,
+    linkPath: routePaths.MAIN_WORSHIP_EXPERIENCE,
     render: WorshipExperience,
     title: 'Worship Experience',
     thumbnail: eventContentTemplate

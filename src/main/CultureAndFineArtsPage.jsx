@@ -240,7 +240,7 @@ const CultureAndFineArtsPage = () => {
     <GeneralPageTemplate
       bottomContentData={bottomContentData}
       menuTitle="Culture &amp; Fine Arts"
-      pagePath={routePaths.MAIN_PERFORMING_ARTS_PAGE}
+      pagePath={routePaths.MAIN_CULTURE_AND_ARTS}
       sectionSideContent={performingArtsSideContent}
       topBoxContent={topBoxContent}
     />
