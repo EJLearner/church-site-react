@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const PlainButton = styled.button`
+  color: inherit;
   background-color: inherit;
   border: none;
   cursor: pointer;

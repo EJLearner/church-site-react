@@ -6,7 +6,7 @@ import {WIDTHS, COLORS} from '../../utils/styleVariables';
 
 import PropTypes from 'prop-types';
 import TopInfoBox from './TopInfoBox';
-import PlainButton from './PlainButton';
+import SideMenu from './SideMenu';
 
 const StyledTopInfoBoxWrapper = styled.div`
   display: flex;
@@ -32,24 +32,6 @@ const MenuAndContent = styled.div`
   margin-right: 4em;
 `;
 
-const LeftSide = styled.div`
-  background-color: ${COLORS.WHITE};
-  border: 1px solid gray;
-  padding: 1em;
-
-  h2 {
-    margin-top: 0;
-  }
-
-  ul {
-    padding-left: 0;
-  }
-
-  li {
-    list-style-type: none;
-  }
-`;
-
 const Content = styled.div`
   background-color: ${COLORS.WHITE};
   border: 1px solid gray;
@@ -57,42 +39,11 @@ const Content = styled.div`
   width: 70%;
 `;
 
-const ContentButton = styled(PlainButton)`
-  display: block;
-  line-height: 150%;
-`;
-
-const MenuTitle = styled.h2`
-  font-size: 110%;
-  text-transform: uppercase;
-`;
-
 const SideContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-width: 250px;
 `;
-
-const SideMenu = ({onClick, menuData, title}) => {
-  return (
-    <LeftSide>
-      <MenuTitle>{title}</MenuTitle>
-      <ul>
-        {menuData.map(({id, title}) => (
-          <li key={id} onClick={() => onClick(id)}>
-            <ContentButton>{title}</ContentButton>
-          </li>
-        ))}
-      </ul>
-    </LeftSide>
-  );
-};
-
-SideMenu.propTypes = {
-  menuData: PropTypes.array.isRequired,
-  onClick: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired
-};
 
 const GeneralPageTemplate = props => {
   const {
@@ -118,6 +69,7 @@ const GeneralPageTemplate = props => {
         {Boolean(menuTitle && bottomContentData) && (
           <MenuAndContent>
             <SideMenu
+              currentId={contentId}
               menuData={bottomContentData}
               onClick={id => setContentId(id)}
               title={menuTitle}

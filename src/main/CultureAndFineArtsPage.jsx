@@ -2,6 +2,7 @@ import React from 'react';
 import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
 import styled from 'styled-components';
 import {LOGICAL_COLORS} from '../utils/styleVariables';
+import PurchaseHereLink from './commonComponents/PurchaseHereLink';
 
 const ApplyNowBox = styled.div`
   color: ${LOGICAL_COLORS.CT_PRIMARY};
@@ -16,6 +17,23 @@ const ApplyNowBox = styled.div`
     text-transform: uppercase;
   }
 `;
+
+const Event = styled.div`
+  width: 80%;
+
+  .description {
+    font-weight: bold;
+  }
+
+  .details {
+    font-style: italic;
+    line-height: 150%;
+  }
+`;
+
+const DC_TOUR_ID = 'dc-tour-2020';
+const ORGANSCAPE_ID = 'organscape-2020';
+const CRAB_FEAST_ID = 'dc-tour-2020';
 
 const topBoxContent = (
   <div>
@@ -65,9 +83,7 @@ const performingArtsContent = (
 
 const pocContent = (
   <div>
-    <div>
-      <h1>Perpetual Organ Committee</h1>
-    </div>
+    <h1>Perpetual Organ Committee</h1>
     <div>
       <p>
         The Perpetual Organ Committee is responsible for promoting an awareness
@@ -102,10 +118,62 @@ const pocContent = (
   </div>
 );
 
+const upcomingEventsContent = (
+  <div>
+    <div>
+      <Event>
+        <p className="description" id={DC_TOUR_ID}>
+          Trip to Washington, DC for self-guided tours of the Rosa Parks Exhibit
+          at the Library of Congress and a National Museum of African-American
+          History and Culture
+        </p>
+        <p className="details">
+          March 23, 2020
+          <br />
+          All Day $50
+          <br />
+          (Adults) - $25 (Children/Youth)
+        </p>
+        <PurchaseHereLink to="need-page" />
+      </Event>
+      <Event>
+        <p className="description" id={ORGANSCAPE_ID}>
+          Featuring organists and artists from the Mount Royal Bolton Hill
+          Cultural District and beyond performing on our historic Adam Stein 144
+          Rank Pipe Organ
+        </p>
+        <p className="details">
+          July 18, 2020
+          <br />1 pm
+          <br />
+          Free Admission
+        </p>
+      </Event>
+      <Event>
+        <p className="description" id={CRAB_FEAST_ID}>
+          Trip includes an authentic Eastern Shore all-you-can-eat Crab Feast at
+          the Suicide Bridge Restaurant and guided tour of Highland Beach, which
+          was founded by Frederick Douglass’s son Charles Douglass and his wife
+          Laura; Produce Stand Stop.
+        </p>
+        <p className="details">
+          August 15, 2020
+          <br />
+          All Day
+          <br />
+          $100
+        </p>
+        <PurchaseHereLink to="need-page" />
+      </Event>
+    </div>
+  </div>
+);
+
 const sideContent = [
   <ApplyNowBox key="1">
-    <h3>Apply Now</h3>Submit your information today for the 4<sup>th</sup>{' '}
-    Sunday Performing Arts Service.
+    <h3>Apply Now</h3>
+    Submit your information today for the 4<sup>th</sup> Sunday Performing Arts
+    Service.
   </ApplyNowBox>
 ];
 
@@ -119,6 +187,16 @@ const bottomContentData = [
     title: 'Perpetual Organ Committee (POC)',
     id: 'poc',
     content: pocContent
+  },
+  {
+    title: 'Upcoming Events',
+    id: 'upcomingEvents',
+    content: upcomingEventsContent,
+    subLinks: [
+      {title: 'DC Tour 2020', elementId: DC_TOUR_ID},
+      {title: 'Artscape to Organscape 2020', elementId: ORGANSCAPE_ID},
+      {title: 'Eastern Shore Crab Feast', elementId: CRAB_FEAST_ID}
+    ]
   }
 ];
 
