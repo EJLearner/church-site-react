@@ -27,12 +27,6 @@ const StyledDiv = styled.div`
     }
   }
 
-  h1,
-  h2 {
-    color: ${LOGICAL_COLORS.CT_PRIMARY};
-    text-transform: uppercase;
-  }
-
   .content-and-sub-compass {
     background-color: white;
     border: 1px solid ${borderColor};
@@ -72,6 +66,12 @@ const StyledDiv = styled.div`
     border-left: 1px solid ${borderColor};
     padding: 1em;
     width: 70%;
+
+    h1,
+    h2 {
+      color: ${LOGICAL_COLORS.CT_PRIMARY};
+      text-transform: uppercase;
+    }
   }
 `;
 
