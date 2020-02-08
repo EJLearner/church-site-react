@@ -27,10 +27,17 @@ const StyledDiv = styled.div`
     }
   }
 
+  h1,
+  h2 {
+    color: ${LOGICAL_COLORS.CT_PRIMARY};
+    text-transform: uppercase;
+  }
+
   .content-and-sub-compass {
     background-color: white;
     border: 1px solid ${borderColor};
     margin: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
+    padding: 0 1em;
   }
 
   .compass {

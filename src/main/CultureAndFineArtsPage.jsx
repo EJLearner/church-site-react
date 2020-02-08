@@ -30,11 +30,6 @@ const SideImage = styled.img`
 const Event = styled.div`
   width: 80%;
 
-  h2 {
-    color: ${LOGICAL_COLORS.CT_PRIMARY}
-    text-transform: uppercase;
-  }
-
   .description {
     font-weight: bold;
   }
