@@ -1,9 +1,10 @@
 import React from 'react';
 
 import GeneralPageTemplate from '../commonComponents/GeneralPageTemplate';
+import routePaths from '../../routePaths';
 
 const anniversaryContent = (
-  <p>
+  <div>
     Leviticus 25:9
     <p>
       Then on the Day of Atonement in the fiftieth year, blow the ram’s horn
@@ -26,7 +27,7 @@ const anniversaryContent = (
       rejoice in what God has done!
     </p>
     <p>Avis Anderson Chair, 50th Anniversary</p>
-  </p>
+  </div>
 );
 
 const calendarContent = `
@@ -71,6 +72,7 @@ function JubileePage() {
     <GeneralPageTemplate
       bottomContentData={bottomContentData}
       menuTitle="Anniversary"
+      pagePath={routePaths.MAIN_JUBILEE}
       topBoxContent={topBoxContent}
     />
   );

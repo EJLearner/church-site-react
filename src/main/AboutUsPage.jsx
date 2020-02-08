@@ -1,5 +1,6 @@
 import React from 'react';
 import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
+import routePaths from '../routePaths';
 
 const pastorContent = (
   <div>
@@ -455,6 +456,7 @@ const MainAboutUs = () => {
     <GeneralPageTemplate
       bottomContentData={bottomContentData}
       menuTitle="About Us"
+      pagePath={routePaths.MAIN_ABOUT_US}
       topBoxContent={topBoxContent}
     />
   );

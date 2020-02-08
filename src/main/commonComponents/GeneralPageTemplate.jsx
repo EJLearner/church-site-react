@@ -1,96 +1,144 @@
 import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 import MainMenubar from '../MainMenubar';
-import {WIDTHS, COLORS} from '../../utils/styleVariables';
+import {WIDTHS, COLORS, LOGICAL_COLORS} from '../../utils/styleVariables';
 
 import PropTypes from 'prop-types';
 import TopInfoBox from './TopInfoBox';
 import SideMenu from './SideMenu';
+import routePaths from '../../routePaths';
 
-const StyledTopInfoBoxWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin: ${WIDTHS.SIDE_CONTENT_PADDING};
+const borderColor = 'gray';
 
-  .announcement-box {
-    min-width: 50%;
+const StyledDiv = styled.div`
+  .top-info-box-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: ${WIDTHS.SIDE_CONTENT_PADDING};
+
+    .top-info-box {
+      min-width: 50%;
+    }
+
+    .more-content {
+      margin-left: 1em;
+    }
   }
 
-  .more-content {
-    margin-left: 1em;
+  .content-and-sub-compass {
+    background-color: white;
+    border: 1px solid ${borderColor};
+    margin: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
+  }
+
+  .compass {
+    padding-left: 1em;
+    padding-top: 1em;
+
+    a {
+      color: ${LOGICAL_COLORS.CT_PRIMARY};
+    }
+  }
+
+  .content-and-side {
+    border-top: 1px solid ${borderColor};
+    display: flex;
+  }
+
+  .menu-and-content {
+    display: flex;
+  }
+
+  .side-content-wrapper {
+    border-left: 1px solid ${borderColor};
+    display: flex;
+    flex-direction: column;
+    min-width: 20%;
+    max-width: 25%;
+    padding: 1em 2em 0 2em;
+  }
+
+  .content {
+    background-color: ${COLORS.WHITE};
+    border-left: 1px solid ${borderColor};
+    padding: 1em;
+    width: 70%;
   }
 `;
 
-const ContentAndSide = styled.div`
-  display: flex;
-  padding: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
-`;
-
-const MenuAndContent = styled.div`
-  display: flex;
-  margin-right: 4em;
-`;
-
-const Content = styled.div`
-  background-color: ${COLORS.WHITE};
-  border: 1px solid gray;
-  padding: 1em;
-  width: 70%;
-`;
-
-const SideContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-width: 250px;
-`;
+function renderCompass(pageTitle, pagePath, subPageTitle) {
+  return (
+    <>
+      <Link to={routePaths.MAIN_HOME}>Home</Link> /{' '}
+      <Link to={pagePath}>{pageTitle}</Link> / {subPageTitle}
+    </>
+  );
+}
 
 const GeneralPageTemplate = props => {
   const {
     topBoxContent,
     bottomContentData,
     menuTitle,
-    sideContent,
+    pagePath,
+    pageWideSideContent,
     topRightContent
   } = props;
 
   const [contentId, setContentId] = useState(bottomContentData?.[0].id);
 
+  const {
+    sideContent: sectionSideContent,
+    content,
+    title
+  } = bottomContentData.find(({id}) => id === contentId);
+
   return (
-    <div>
+    <StyledDiv>
       <MainMenubar />
-      <StyledTopInfoBoxWrapper>
-        <TopInfoBox className="announcement-box">{topBoxContent}</TopInfoBox>
+
+      <div className="top-info-box-wrapper">
+        <TopInfoBox className="top-info-box">{topBoxContent}</TopInfoBox>
         {topRightContent && (
           <div className="more-content">{topRightContent}</div>
         )}
-      </StyledTopInfoBoxWrapper>
-      <ContentAndSide>
-        {Boolean(menuTitle && bottomContentData) && (
-          <MenuAndContent>
-            <SideMenu
-              currentId={contentId}
-              menuData={bottomContentData}
-              onClick={id => setContentId(id)}
-              title={menuTitle}
-            />
-            <Content>
-              {bottomContentData.find(({id}) => id === contentId).content}
-            </Content>
-          </MenuAndContent>
-        )}
-        {sideContent ? (
-          <SideContentWrapper>{sideContent}</SideContentWrapper>
-        ) : null}
-      </ContentAndSide>
-    </div>
+      </div>
+
+      <div className="content-and-sub-compass">
+        <div className="compass">
+          {renderCompass(menuTitle, pagePath, title)}
+        </div>
+        <div className="content-and-side">
+          {Boolean(menuTitle && bottomContentData) && (
+            <div className="menu-and-content">
+              <SideMenu
+                currentId={contentId}
+                menuData={bottomContentData}
+                onClick={id => setContentId(id)}
+                title={menuTitle}
+              />
+              <div className="content">{content}</div>
+            </div>
+          )}
+          {pageWideSideContent || sectionSideContent ? (
+            <div className="side-content-wrapper">
+              {pageWideSideContent}
+              {sectionSideContent}
+            </div>
+          ) : null}
+        </div>
+      </div>
+    </StyledDiv>
   );
 };
 
 GeneralPageTemplate.propTypes = {
   bottomContentData: PropTypes.array,
   menuTitle: PropTypes.string,
-  sideContent: PropTypes.node,
+  pagePath: PropTypes.string.isRequired,
+  pageWideSideContent: PropTypes.node,
   topBoxContent: PropTypes.node.isRequired,
   topRightContent: PropTypes.node
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
 
 import styled from 'styled-components';
+import routePaths from '../routePaths';
 
 const pocContent = `
     POC, ipsum dolor sit amet consectetur adipisicing elit. Tempore
@@ -77,6 +78,7 @@ const MusicMinistryPage = () => {
     <GeneralPageTemplate
       bottomContentData={bottomContentData}
       menuTitle="Music Ministry"
+      pagePath={routePaths.MAIN_MUSIC_MINISTRY}
       topBoxContent={topBoxContent}
       topRightContent={upcomingEvents}
     />

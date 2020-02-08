@@ -3,6 +3,9 @@ import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
 import styled from 'styled-components';
 import {LOGICAL_COLORS} from '../utils/styleVariables';
 import PurchaseHereLink from './commonComponents/PurchaseHereLink';
+import aframMuseum from '../assets/main/images/afram-museum.png';
+import suicideBridgeSign from '../assets/main/images/suicide-bridge-sign.png';
+import routePaths from '../routePaths';
 
 const ApplyNowBox = styled.div`
   color: ${LOGICAL_COLORS.CT_PRIMARY};
@@ -18,8 +21,19 @@ const ApplyNowBox = styled.div`
   }
 `;
 
+const SideImage = styled.img`
+  height: auto;
+  margin-bottom: 1em;
+  width: 100%;
+`;
+
 const Event = styled.div`
   width: 80%;
+
+  h2 {
+    color: ${LOGICAL_COLORS.CT_PRIMARY}
+    text-transform: uppercase;
+  }
 
   .description {
     font-weight: bold;
@@ -34,6 +48,9 @@ const Event = styled.div`
 const DC_TOUR_ID = 'dc-tour-2020';
 const ORGANSCAPE_ID = 'organscape-2020';
 const CRAB_FEAST_ID = 'dc-tour-2020';
+const DC_TOUR_TITLE = 'DC Tour 2020';
+const ARTSCAPE_TITLE = 'Artscape to Organscape 2020';
+const CRAB_FEAST_TITLE = 'Eastern Shore Crab Feast';
 
 const topBoxContent = (
   <div>
@@ -122,6 +139,7 @@ const upcomingEventsContent = (
   <div>
     <div>
       <Event>
+        <h2>{DC_TOUR_TITLE}</h2>
         <p className="description" id={DC_TOUR_ID}>
           Trip to Washington, DC for self-guided tours of the Rosa Parks Exhibit
           at the Library of Congress and a National Museum of African-American
@@ -137,6 +155,7 @@ const upcomingEventsContent = (
         <PurchaseHereLink to="need-page" />
       </Event>
       <Event>
+        <h2>{ARTSCAPE_TITLE}</h2>
         <p className="description" id={ORGANSCAPE_ID}>
           Featuring organists and artists from the Mount Royal Bolton Hill
           Cultural District and beyond performing on our historic Adam Stein 144
@@ -150,6 +169,7 @@ const upcomingEventsContent = (
         </p>
       </Event>
       <Event>
+        <h2>{CRAB_FEAST_TITLE}</h2>
         <p className="description" id={CRAB_FEAST_ID}>
           Trip includes an authentic Eastern Shore all-you-can-eat Crab Feast at
           the Suicide Bridge Restaurant and guided tour of Highland Beach, which
@@ -169,7 +189,7 @@ const upcomingEventsContent = (
   </div>
 );
 
-const sideContent = [
+const performingArtsSideContent = [
   <ApplyNowBox key="1">
     <h3>Apply Now</h3>
     Submit your information today for the 4<sup>th</sup> Sunday Performing Arts
@@ -177,11 +197,25 @@ const sideContent = [
   </ApplyNowBox>
 ];
 
+const upComingEventsSideContent = [
+  <SideImage
+    alt="African American History Museum"
+    key="museum"
+    src={aframMuseum}
+  ></SideImage>,
+  <SideImage
+    alt="Suicide Bridge Restaurant Sign"
+    key="restaurant"
+    src={suicideBridgeSign}
+  ></SideImage>
+];
+
 const bottomContentData = [
   {
     title: 'Performing Arts Sunday',
     id: 'performingArtsSunday',
-    content: performingArtsContent
+    content: performingArtsContent,
+    sideContent: performingArtsSideContent
   },
   {
     title: 'Perpetual Organ Committee (POC)',
@@ -192,10 +226,11 @@ const bottomContentData = [
     title: 'Upcoming Events',
     id: 'upcomingEvents',
     content: upcomingEventsContent,
+    sideContent: upComingEventsSideContent,
     subLinks: [
-      {title: 'DC Tour 2020', elementId: DC_TOUR_ID},
-      {title: 'Artscape to Organscape 2020', elementId: ORGANSCAPE_ID},
-      {title: 'Eastern Shore Crab Feast', elementId: CRAB_FEAST_ID}
+      {title: DC_TOUR_TITLE, elementId: DC_TOUR_ID},
+      {title: ARTSCAPE_TITLE, elementId: ORGANSCAPE_ID},
+      {title: CRAB_FEAST_TITLE, elementId: CRAB_FEAST_ID}
     ]
   }
 ];
@@ -205,7 +240,8 @@ const CultureAndFineArtsPage = () => {
     <GeneralPageTemplate
       bottomContentData={bottomContentData}
       menuTitle="Culture &amp; Fine Arts"
-      sideContent={sideContent}
+      pagePath={routePaths.MAIN_CULTURE_AND_ARTS}
+      sectionSideContent={performingArtsSideContent}
       topBoxContent={topBoxContent}
     />
   );

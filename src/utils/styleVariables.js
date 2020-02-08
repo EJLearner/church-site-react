@@ -24,6 +24,7 @@ const COLORS = {
   GRAY217: 'rgb(217, 217, 217)',
   LIGHT_BLUE: '#5b9bd5',
   LIGHTER_BLUE: 'rgb(190,215,239)',
+  BLUE_50: 'rgb(0, 112, 192)',
   BLACK: 'black',
   WHITE: 'white',
   RED: 'red',

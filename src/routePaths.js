@@ -27,17 +27,17 @@ const MAIN_ROOT_PATHS = {
   MAIN_CALENDAR: `${MAIN_HOME_PATH}calendar/`,
   MAIN_CONTACT: `${MAIN_HOME_PATH}contact/`,
   MAIN_GIVING: `${MAIN_HOME_PATH}giving/`,
-  MAIN_JUBILEE_PAGE: `${MAIN_HOME_PATH}jubilee/`,
+  MAIN_JUBILEE: `${MAIN_HOME_PATH}jubilee/`,
   MAIN_MEMBERS_ONLY: `${MAIN_HOME_PATH}members-only/`,
   MAIN_MINISTRIES: `${MAIN_HOME_PATH}ministries/`,
   MAIN_MUSIC_MINISTRY: `${MAIN_HOME_PATH}music-ministry/`,
   MAIN_OUTREACH: `${MAIN_HOME_PATH}outreach/`,
-  MAIN_PERFORMING_ARTS_PAGE: `${MAIN_HOME_PATH}culture-and-fine-arts/`,
+  MAIN_CULTURE_AND_ARTS: `${MAIN_HOME_PATH}culture-and-fine-arts/`,
   MAIN_SCHOLARSHIP: `${MAIN_HOME_PATH}scholarship`,
   MAIN_SERVICE_INFO: `${MAIN_HOME_PATH}service-info`,
   MAIN_STREAM: `${MAIN_HOME_PATH}stream/`,
   MAIN_WELCOME: `${MAIN_HOME_PATH}welcome/`,
-  MAIN_WORSHIP_EXPERIENCE_PAGE: `${MAIN_HOME_PATH}worship/`
+  MAIN_WORSHIP_EXPERIENCE: `${MAIN_HOME_PATH}worship/`
 };
 
 const CE_ROOT_PATHS = {
