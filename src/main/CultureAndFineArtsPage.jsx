@@ -39,10 +39,10 @@ const topBoxContent = (
   <div>
     <h1>Culture &amp; Fine Arts</h1>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ullam
-      repellat iusto? Officiis mollitia quos quae dolorem, assumenda placeat
-      excepturi quibusdam sed explicabo, neque voluptatem sunt, ratione ex eius
-      aperiam?
+      The Music Ministry oversees several ministries and committees responsible
+      for promoting cultural awareness and appreciation of the arts. They
+      include the Movement Ministry, the Cultural &amp; Fine Arts Ministry, and
+      the Perpetual Organ Committee (POC).
     </p>
   </div>
 );

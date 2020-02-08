@@ -5,11 +5,11 @@ function CultureAndFineArts() {
     <div>
       <h1>Culture &amp; Fine Arts</h1>
       <p>
-        Each fourth Sunday, City Temple will showcase talented artists to
-        enhance our worship experience. Categories of artistic talent include
-        solo or ensemble sacred, classical, spiritual, or hymnal jazz vocal and
-        instrument; dance; theater; and dramatic readings. Learn more to find
-        out how you can participate or refer a talented artist you know.
+        The City Temple of Baltimore (Baptist) has long provided worship
+        experiences and programs vital to advancing cultural diversity and
+        promoting an appreciation of the arts. We are dedicated to creating,
+        establishing, and organizing programs and outings that celebrate and
+        educate on our history and traditions.
       </p>
     </div>
   );
