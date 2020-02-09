@@ -8,7 +8,7 @@ import NotFound from '../ce/components/NotFound/NotFound';
 import AboutUsPage from './AboutUsPage';
 import MinistriesPage from './MinistriesPage';
 import GivingPage from './GivingPage';
-import Calendar from './Calendar';
+import Calendar from './CalendarPage';
 import MembersOnly from './MembersOnly';
 import ContactPage from './ContactPage';
 import ScholarshipPage from './ScholarshipPage';

@@ -25,7 +25,7 @@ class MenuBar extends Component {
     showLogo: true
   };
 
-  _renderLogo() {
+  renderLogo() {
     return (
       <div className="logo">
         <img alt="City Temple Logo" src={churchLogo} />
@@ -58,7 +58,7 @@ class MenuBar extends Component {
     return (
       <div className="menu-bar" id={this.props.id}>
         <ul>{renderedLinks}</ul>
-        {this.props.showLogo ? this._renderLogo() : null}
+        {this.props.showLogo ? this.renderLogo() : null}
         {this.props.addDivToRight ? <div className="styling-div" /> : null}
       </div>
     );
