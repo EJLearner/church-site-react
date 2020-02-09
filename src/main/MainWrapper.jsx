@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -16,49 +16,78 @@ import ServiceInfoPage from './ServiceInfoPage';
 import JubileePage from './JubileePage';
 import MainFooter from './commonComponents/MainFooter';
 import MusicMinistryPage from './MusicMinistryPage';
-import churchExterior from '../assets/main/images/church-exterior.png';
 import CultureAndFineArtsPage from './CultureAndFineArtsPage';
 import WorshipExperiencePage from './WorshipExperiencePage';
+import backgroundStore from '../stores/backgroundStore';
 
 const WrapperDiv = styled.div`
   background-attachment: fixed;
-  background-image: url(${churchExterior});
+  background-image: url(${props => props.backgroundSource});
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 150px;
 `;
 
-function MainWrapper() {
-  return (
-    <WrapperDiv>
-      <Switch>
-        <Route component={AboutUsPage} path={routePaths.MAIN_ABOUT_US} />
-        <Route component={Calendar} path={routePaths.MAIN_CALENDAR} />
-        <Route component={ContactPage} path={routePaths.MAIN_CONTACT} />
-        <Route component={GivingPage} path={routePaths.MAIN_GIVING} />
-        <Route component={JubileePage} path={routePaths.MAIN_JUBILEE} />
-        <Route component={MainContent} exact path={routePaths.MAIN_HOME} />
-        <Route component={MembersOnly} path={routePaths.MAIN_MEMBERS_ONLY} />
-        <Route component={MinistriesPage} path={routePaths.MAIN_MINISTRIES} />
-        <Route
-          component={WorshipExperiencePage}
-          path={routePaths.MAIN_WORSHIP_EXPERIENCE}
-        />
-        <Route
-          component={MusicMinistryPage}
-          path={routePaths.MAIN_MUSIC_MINISTRY}
-        />
-        <Route
-          component={CultureAndFineArtsPage}
-          path={routePaths.MAIN_CULTURE_AND_ARTS}
-        />
-        <Route component={ScholarshipPage} path={routePaths.MAIN_SCHOLARSHIP} />
-        <Route
-          component={ServiceInfoPage}
-          path={routePaths.MAIN_SERVICE_INFO}
-        />
+const PAGE_ID = 'main-wrapper';
 
-        <Route component={NotFound} />
+function MainWrapper() {
+  const [backgroundSource, setBackgroundSource] = useState(
+    backgroundStore.getBackgroundSource()
+  );
+
+  useEffect(() => {
+    backgroundStore.subscribe(PAGE_ID, newBackgroundSource => {
+      setBackgroundSource(newBackgroundSource);
+    });
+
+    return () => backgroundStore.unsubscribe(PAGE_ID);
+  });
+
+  return (
+    <WrapperDiv backgroundSource={backgroundSource}>
+      <Switch>
+        <Route path={routePaths.MAIN_ABOUT_US}>
+          <AboutUsPage />
+        </Route>
+        <Route path={routePaths.MAIN_CALENDAR}>
+          <Calendar />
+        </Route>
+        <Route path={routePaths.MAIN_CONTACT}>
+          <ContactPage />
+        </Route>
+        <Route path={routePaths.MAIN_GIVING}>
+          <GivingPage />
+        </Route>
+        <Route path={routePaths.MAIN_JUBILEE}>
+          <JubileePage />
+        </Route>
+        <Route exact path={routePaths.MAIN_HOME}>
+          <MainContent />
+        </Route>
+        <Route path={routePaths.MAIN_MEMBERS_ONLY}>
+          <MembersOnly />
+        </Route>
+        <Route path={routePaths.MAIN_MINISTRIES}>
+          <MinistriesPage />
+        </Route>
+        <Route path={routePaths.MAIN_WORSHIP_EXPERIENCE}>
+          <WorshipExperiencePage />
+        </Route>
+        <Route path={routePaths.MAIN_MUSIC_MINISTRY}>
+          <MusicMinistryPage />
+        </Route>
+        <Route path={routePaths.MAIN_CULTURE_AND_ARTS}>
+          <CultureAndFineArtsPage />
+        </Route>
+        <Route path={routePaths.MAIN_SCHOLARSHIP}>
+          <ScholarshipPage />
+        </Route>
+        <Route path={routePaths.MAIN_SERVICE_INFO}>
+          <ServiceInfoPage />
+        </Route>
+        <Route>
+          <NotFound />
+        </Route>
       </Switch>
       <MainFooter />
     </WrapperDiv>

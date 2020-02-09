@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
 import styled from 'styled-components';
 import {LOGICAL_COLORS} from '../utils/styleVariables';
@@ -6,6 +6,7 @@ import PurchaseHereLink from './commonComponents/PurchaseHereLink';
 import aframMuseum from '../assets/main/images/afram-museum.png';
 import suicideBridgeSign from '../assets/main/images/suicide-bridge-sign.png';
 import routePaths from '../routePaths';
+import backgroundStore from '../stores/backgroundStore';
 
 const ApplyNowBox = styled.div`
   color: ${LOGICAL_COLORS.CT_PRIMARY};
@@ -231,6 +232,14 @@ const bottomContentData = [
 ];
 
 const CultureAndFineArtsPage = () => {
+  useEffect(() => {
+    backgroundStore.setBackgroundSource(
+      backgroundStore.backgroundSources.DANCE
+    );
+
+    return () => backgroundStore.resetBackground();
+  }, []);
+
   return (
     <GeneralPageTemplate
       bottomContentData={bottomContentData}
