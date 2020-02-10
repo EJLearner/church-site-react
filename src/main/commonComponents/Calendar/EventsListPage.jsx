@@ -7,14 +7,30 @@ import {Parser as HtmlToReactParser} from 'html-to-react';
 
 import MiniCalendar from './MiniCalendar';
 
-import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
-
-import './EventsListPage.css';
-
+import calendarDatesUtils from '../../../ce/utils/calendarDatesUtils';
 import styled from 'styled-components';
+
 const EventsListPageStyles = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+  width: 80%;
+
   .header-and-events {
-    width: 600px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 1em;
+    min-width: 400px;
+  }
+
+  .mini-calendar-wrapper {
+    margin: 0;
+  }
+
+  .day-event {
+    .title {
+      color: black;
+    }
   }
 `;
 
@@ -66,13 +82,15 @@ class EventsListPage extends Component {
   }
 
   renderEvents() {
+    const {dates, storedDates} = this.props;
+
     const dateEvents = [];
 
-    const showDate = this.props.dates.length > 1;
+    const showDate = dates.length > 1;
 
-    _.each(this.props.dates, date => {
+    dates.forEach(date => {
       const eventsForDate = calendarDatesUtils.getEventsForDate(
-        this.props.storedDates,
+        storedDates,
         date
       );
 
@@ -93,7 +111,7 @@ class EventsListPage extends Component {
       dateEvents.push(...eventsForDateWithDateAddedAsProp);
     });
 
-    return _.map(dateEvents, (event, index) => {
+    return dateEvents.map((event, index) => {
       if (typeof event === 'object') {
         const {date} = event;
         let {longDescription} = event;

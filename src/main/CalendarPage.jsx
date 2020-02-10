@@ -8,7 +8,7 @@ import MainMenubar from './MainMenubar';
 import CalendarMenuBar from './commonComponents/Calendar/CalendarMenuBar';
 import routePaths from '../routePaths';
 
-// import CalendarDay from './commonComponents/Calendar/CalendarDay';
+import CalendarDay from './commonComponents/Calendar/CalendarDay';
 import CalendarMonth from './commonComponents/Calendar/CalendarMonth';
 // import CalendarWeek from './commonComponents/Calendar/CalendarWeek';
 // import CalendarYear from './commonComponents/Calendar/CalendarYear';
@@ -55,6 +55,9 @@ class Calendar extends Component {
           <Switch>
             <Route path={routePaths.MAIN_CALENDAR_MONTH}>
               <CalendarMonth />
+            </Route>
+            <Route path={routePaths.MAIN_CALENDAR_DAY}>
+              <CalendarDay />
             </Route>
           </Switch>
         </div>

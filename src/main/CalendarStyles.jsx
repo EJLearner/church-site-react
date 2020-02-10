@@ -3,7 +3,9 @@ import {LOGICAL_COLORS, WIDTHS} from '../utils/styleVariables';
 
 const CalendarStyles = styled.div`
   .calendar-page {
-    padding: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
+    max-width: ${WIDTHS.CALENDAR_WIDTH_MAX};
+
+    padding: 1em ${WIDTHS.SIDE_CONTENT_PADDING};
 
     h1 {
       color: ${LOGICAL_COLORS.CT_PRIMARY}
@@ -16,7 +18,7 @@ const CalendarStyles = styled.div`
 
   #calendar-div {
     margin: 0 auto;
-    padding: 0 1em;
+    padding: 0 1em 1em 1em;
   }
 
   .controls-and-title {
@@ -58,6 +60,7 @@ const CalendarStyles = styled.div`
   .month-calendar-table {
     border-collapse: collapse;
     box-sizing: border-box;
+    width: 100%;
 
     th,
     td {
