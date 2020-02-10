@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Route, Switch} from 'react-router-dom';
 
 import moment from 'moment';
 
@@ -7,13 +8,11 @@ import MainMenubar from './MainMenubar';
 import CalendarMenuBar from './commonComponents/Calendar/CalendarMenuBar';
 import routePaths from '../routePaths';
 
-// import CalendarDay from './CalendarDay';
-// import CalendarMonth from './CalendarMonth';
-// import CalendarWeek from './CalendarWeek';
-// import CalendarYear from './CalendarYear';
-// import CalendarUpcoming from './CalendarUpcoming';
-// import MenuBar from '../MenuBar/MenuBar';
-// import SubPageSwitch from '../Reusable/SubPageSwitch/SubPageSwitch';
+// import CalendarDay from './commonComponents/Calendar/CalendarDay';
+import CalendarMonth from './commonComponents/Calendar/CalendarMonth';
+// import CalendarWeek from './commonComponents/Calendar/CalendarWeek';
+// import CalendarYear from './commonComponents/Calendar/CalendarYear';
+// import CalendarUpcoming from './commonComponents/Calendar/CalendarUpcoming';
 
 class Calendar extends Component {
   constructor(props) {
@@ -26,24 +25,23 @@ class Calendar extends Component {
   render() {
     const linkData = [
       {
-        path: routePaths.CE_CALENDAR_DAY,
+        path: routePaths.MAIN_CALENDAR_DAY,
         text: 'Day View'
       },
       {
-        path: routePaths.CE_CALENDAR_WEEK,
+        path: routePaths.MAIN_CALENDAR_WEEK,
         text: 'Week View'
       },
       {
-        isDefault: true,
-        path: routePaths.CE_CALENDAR_MONTH,
+        path: routePaths.MAIN_CALENDAR_MONTH,
         text: 'Month View'
       },
       {
-        path: routePaths.CE_CALENDAR_YEAR,
+        path: routePaths.MAIN_CALENDAR_YEAR,
         text: 'Year View'
       },
       {
-        path: routePaths.CE_CALENDAR_UPCOMING,
+        path: routePaths.MAIN_CALENDAR_UPCOMING,
         text: 'Upcoming'
       }
     ];
@@ -54,7 +52,11 @@ class Calendar extends Component {
         <div className="calendar-page">
           <h1>Events at City Temple</h1>
           <CalendarMenuBar id="calendar-menu" links={linkData} />
-          {/* <SubPageSwitch linkData={linkData} /> */}
+          <Switch>
+            <Route path={routePaths.MAIN_CALENDAR_MONTH}>
+              <CalendarMonth />
+            </Route>
+          </Switch>
         </div>
       </CalendarStyles>
     );
