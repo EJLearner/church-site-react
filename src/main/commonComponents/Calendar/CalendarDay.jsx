@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {withRouter} from 'react-router-dom';
 
-import _ from 'lodash';
-
 import moment from 'moment';
 
 import EventsListPage from './EventsListPage';
@@ -13,7 +11,7 @@ class CalendarDay extends Component {
   constructor(props) {
     super(props);
 
-    const dayFromRouter = _.get(this.props.location, 'state.selectedDay');
+    const dayFromRouter = this.props.location?.state?.selectedDay;
 
     this.state = {selectedDay: dayFromRouter || moment().format('YYYY-MM-DD')};
   }

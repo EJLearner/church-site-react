@@ -15,6 +15,7 @@ const EventsListPageStyles = styled.div`
   justify-content: space-between;
   margin-top: 2em;
   width: 80%;
+  max-width: 1200px;
 
   .header-and-events {
     background-color: white;

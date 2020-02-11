@@ -11,6 +11,8 @@ import styled from 'styled-components';
 
 const MonthCalendarStyle = styled.div`
   background-color: white;
+  border-radius: 20px;
+  max-width: 1200px;
 
   .controls-and-title {
     background-color: white;

@@ -3,8 +3,6 @@ import {LOGICAL_COLORS, WIDTHS} from '../utils/styleVariables';
 
 const CalendarStyles = styled.div`
   .calendar-page {
-    max-width: ${WIDTHS.CALENDAR_WIDTH_MAX};
-
     padding: 1em ${WIDTHS.SIDE_CONTENT_PADDING};
 
     h1 {
