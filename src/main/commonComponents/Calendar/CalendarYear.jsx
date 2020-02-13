@@ -9,30 +9,23 @@ import _ from 'lodash';
 
 import MiniCalendar from './MiniCalendar';
 
+function getMiniCalendarMonths(firstMonth) {
+  return _.range(0, 12).map(monthsAdded => {
+    return moment(firstMonth)
+      .add(monthsAdded, 'months')
+      .format('YYYY-MM-DD');
+  });
+}
+
 class CalendarYear extends Component {
   constructor(props) {
     super(props);
 
     this.state = {redirectDate: null};
-
-    this._goToDay = this._goToDay.bind(this);
-    this._renderMonths = this._renderMonths.bind(this);
   }
 
-  _goToDay(dayString) {
-    this.setState({redirectDate: dayString});
-  }
-
-  _getMiniCalendarMonths() {
-    return _.range(0, 12).map(monthsAdded => {
-      return moment(this.props.firstMonth)
-        .add(monthsAdded, 'months')
-        .format('YYYY-MM-DD');
-    });
-  }
-
-  _renderMonths() {
-    return this._getMiniCalendarMonths().map(monthDate => {
+  renderMonths() {
+    return getMiniCalendarMonths(this.props.firstMonth).map(monthDate => {
       let selectedDay = monthDate;
       let highlightSelectedDay = false;
 
@@ -46,7 +39,7 @@ class CalendarYear extends Component {
           <MiniCalendar
             allDatesClickable
             highlightSelectedDay={highlightSelectedDay}
-            onDateClick={this._goToDay}
+            onDateClick={dayString => this.setState({redirectDate: dayString})}
             selectedDay={selectedDay}
             yearDisplayMode
           />
@@ -55,7 +48,7 @@ class CalendarYear extends Component {
     });
   }
 
-  _redirect() {
+  redirect() {
     return (
       <Redirect
         push
@@ -69,14 +62,14 @@ class CalendarYear extends Component {
 
   render() {
     if (this.state.redirectDate) {
-      return this._redirect();
+      return this.redirect();
     }
 
     return (
       <div className="year-calendar-content">
         <h2>Events This Year</h2>
         <div className="year-calendar-months-display">
-          {this._renderMonths()}
+          {this.renderMonths()}
         </div>
       </div>
     );

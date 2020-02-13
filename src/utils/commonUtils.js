@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import moment from 'moment';
 
 import routePaths from '../routePaths';
@@ -24,7 +25,7 @@ let lastPushTime = 0;
 // "incremented" by one.
 const lastRandChars = [];
 
-const utils = {
+const commonUtils = {
   /**
    * Fancy ID generator that creates 20-character string identifiers with the following properties:
    *
@@ -164,7 +165,9 @@ const utils = {
     throw new Error(
       `Can not get valid route from path ${path} and pathKey ${pathKey}`
     );
-  }
+  },
+
+  range: (startIndex, endIndex) => _.range(startIndex, endIndex)
 };
 
-export default utils;
+export default commonUtils;

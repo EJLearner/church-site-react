@@ -5,6 +5,7 @@ import moment from 'moment';
 
 import EventsListPage from './EventsListPage';
 import withDatesSubscription from '../../../ce/components/Hocs/withDatesSubscription';
+import commonUtils from '../../../utils/commonUtils';
 import constants from '../../../utils/constants';
 
 const {INTERNAL_DATE_FORMAT} = constants;
@@ -12,7 +13,7 @@ const {INTERNAL_DATE_FORMAT} = constants;
 function getDates(selectedDay) {
   const firstDay = moment(selectedDay).startOf('week');
 
-  return new Array(7).map(daysAdded => {
+  return commonUtils.range(0, 7).map(daysAdded => {
     return moment(firstDay)
       .add(daysAdded, 'days')
       .format(INTERNAL_DATE_FORMAT);
