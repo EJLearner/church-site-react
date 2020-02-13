@@ -229,7 +229,7 @@ class CalendarMonth extends Component {
 }
 
 CalendarMonth.propTypes = {
-  storedDates: PropTypes.any
+  storedDates: PropTypes.object
 };
 
 export default withDatesSubscription(CalendarMonth);

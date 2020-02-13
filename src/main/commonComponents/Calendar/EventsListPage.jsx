@@ -183,7 +183,7 @@ EventsListPage.propTypes = {
   onDateChange: PropTypes.func.isRequired,
   pageTitle: PropTypes.string.isRequired,
   selectedDay: PropTypes.string.isRequired,
-  storedDates: PropTypes.any,
+  storedDates: PropTypes.object,
   subTitle: PropTypes.string
 };
 

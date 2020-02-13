@@ -64,7 +64,7 @@ class CalendarUpcoming extends Component {
 }
 
 CalendarUpcoming.propTypes = {
-  storedDates: PropTypes.any
+  storedDates: PropTypes.object
 };
 
 export default withDatesSubscription(CalendarUpcoming);

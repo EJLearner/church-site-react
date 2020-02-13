@@ -130,7 +130,7 @@ class Announcements extends Component {
 }
 
 Announcements.propTypes = {
-  storedDates: PropTypes.any
+  storedDates: PropTypes.object
 };
 
 export default withDatesSubscription(Announcements);

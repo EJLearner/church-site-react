@@ -264,7 +264,7 @@ MiniCalendar.propTypes = {
   onDateChange: PropTypes.func,
   onDateClick: PropTypes.func,
   selectedDay: PropTypes.string,
-  storedDates: PropTypes.any,
+  storedDates: PropTypes.object,
   yearDisplayMode: PropTypes.bool
 };
 

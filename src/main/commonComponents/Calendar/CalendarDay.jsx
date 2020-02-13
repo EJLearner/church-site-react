@@ -54,7 +54,7 @@ class CalendarDay extends Component {
 CalendarDay.propTypes = {
   location: PropTypes.object.isRequired,
   selectedDay: PropTypes.string,
-  storedDates: PropTypes.any
+  storedDates: PropTypes.object
 };
 
 CalendarDay.defaultProps = {

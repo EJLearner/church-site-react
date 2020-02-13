@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Route, Switch} from 'react-router-dom';
+import {Redirect, Route, Switch} from 'react-router-dom';
 
 import moment from 'moment';
 
@@ -69,6 +69,11 @@ class Calendar extends Component {
             <Route path={routePaths.MAIN_CALENDAR_UPCOMING}>
               <CalendarUpcoming />
             </Route>
+            <Redirect
+              exact
+              from={routePaths.MAIN_CALENDAR}
+              to={routePaths.MAIN_CALENDAR_MONTH}
+            />
           </Switch>
         </div>
       </CalendarStyles>

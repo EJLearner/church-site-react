@@ -54,7 +54,7 @@ class CalendarWeek extends Component {
 }
 
 CalendarWeek.propTypes = {
-  storedDates: PropTypes.any
+  storedDates: PropTypes.object
 };
 
 export default withDatesSubscription(CalendarWeek);
