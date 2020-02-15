@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 
 import {WIDTHS, COLORS, LOGICAL_COLORS} from '../utils/styleVariables';
 
 import MainMenubar from './MainMenubar';
 import AboveContentLinks from './commonComponents/AboveContentLinks';
+import Text from '../common/components/Text';
 
 const borderColor = 'gray';
 
@@ -133,6 +134,10 @@ function renderLeftSideInfo() {
 }
 
 const ContactPage = () => {
+  const [name, setName] = useState('');
+  const [emailAddress, setEmailAddress] = useState('');
+  const [message, setMessage] = useState('');
+
   return (
     <StyledDiv>
       <MainMenubar />
@@ -146,6 +151,22 @@ const ContactPage = () => {
           <div className="menu-and-content">
             <div className="content">
               <h1>Contact Us</h1>
+              <Text
+                label="Name"
+                onChange={value => setName(value)}
+                value={name}
+              />
+              <Text
+                label="Email Address"
+                onChange={value => setEmailAddress(value)}
+                value={emailAddress}
+              />
+              <Text
+                label="Message"
+                onChange={value => setMessage(value)}
+                textArea
+                value={message}
+              />
             </div>
           </div>
           <div className="side-content-wrapper">Side Content</div>
