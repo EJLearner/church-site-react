@@ -1,7 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import './Text.css';
+const TextStyle = styled.div`
+  display: inline-block;
+  margin: 0.5em 3em 0.5em 0;
+
+  label {
+    display: block;
+  }
+
+  input,
+  textarea {
+    border: 1px solid gray;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 0 #c2c2c2;
+    font-family: $century-gothic;
+    padding: 6px;
+  }
+`;
 
 const Text = props => {
   const {
@@ -19,30 +36,24 @@ const Text = props => {
     value
   } = props;
 
-  const _onChange = event => {
-    onChange(event.target.value, id, event);
-  };
-
-  const _onKeyPress = event => {
-    if (onEnter && event.key === 'Enter') {
-      onEnter(event.target.value, id, event);
-    }
+  const onKeyPress = event => {
+    onEnter && event.key === 'Enter' && onEnter(event.target.value, id, event);
   };
 
   const labelId = `${id}-label`;
   const instructionsId = instructions ? `${id}-instructions` : null;
-  const labelledBy = [labelId, instructionsId].filter(id => id).join(' ');
+  const labelledBy = [labelId, instructionsId].filter(Boolean).join(' ');
 
   const inputProps = {
     'aria-labelledby': labelledBy,
     cols: columns,
-    id: id,
-    onChange: _onChange,
-    onKeyPress: _onKeyPress,
-    placeholder: placeholder,
-    rows: rows,
-    size: size,
-    value: value
+    id,
+    onChange: event => onChange(event.target.value, id, event),
+    onKeyPress,
+    placeholder,
+    rows,
+    size,
+    value
   };
 
   const inputOrTextarea = textArea ? (
@@ -52,14 +63,14 @@ const Text = props => {
   );
 
   return (
-    <div className="text-box-pattern">
+    <TextStyle className="text-box-pattern">
       {instructions && <p id={instructionsId}>{instructions}</p>}
       <label htmlFor={id} id={labelId}>
         {label}
         {required && '*'}
       </label>
       {inputOrTextarea}
-    </div>
+    </TextStyle>
   );
 };
 
