@@ -170,7 +170,7 @@ const commonUtils = {
 
   range: (startIndex, endIndex) => _.range(startIndex, endIndex),
 
-  sort: function(array, getSortValue, direction = SORT_DIRECTION_ASCENDING) {
+  sort(array, getSortValue, direction = SORT_DIRECTION_ASCENDING) {
     return array?.sort((a, b) => {
       const reverseMultiplier = direction === SORT_DIRECTION_ASCENDING ? 1 : -1;
       const valueA = getSortValue(a);

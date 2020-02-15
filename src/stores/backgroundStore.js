@@ -13,32 +13,32 @@ const callbacks = {};
 let backgroundSource = backgroundSources.CHURCH;
 
 const backgroundStore = {
-  dispatchAll: function() {
+  dispatchAll() {
     Object.values(callbacks).forEach(callback => {
       callback(backgroundSource);
     });
   },
 
-  setBackgroundSource: function(newSource) {
+  setBackgroundSource(newSource) {
     if (Object.values(backgroundSources).includes(newSource)) {
       backgroundSource = newSource;
       backgroundStore.dispatchAll(backgroundSource);
     }
   },
 
-  resetBackground: function() {
+  resetBackground() {
     backgroundStore.setBackgroundSource(DEFAULT_BACKGROUND_SOURCE);
   },
 
-  getBackgroundSource: function() {
+  getBackgroundSource() {
     return backgroundSource;
   },
 
-  subscribe: function(id, callback) {
+  subscribe(id, callback) {
     callbacks[id] = callback;
   },
 
-  unsubscribe: function(id, callback) {
+  unsubscribe(id, callback) {
     delete callbacks[id];
   }
 };
