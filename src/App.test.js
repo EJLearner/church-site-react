@@ -13,9 +13,9 @@ it('sets updateLocal function for moment', () => {
   expect(moment.updateLocale.mock.calls[0][0]).toBe('en');
 
   const meridiemFunction = moment.updateLocale.mock.calls[0][1].meridiem;
-  expect(meridiemFunction(5)).toBe('a.m.');
-  expect(meridiemFunction(12)).toBe('p.m.');
-  expect(meridiemFunction(22)).toBe('p.m.');
+  expect(meridiemFunction(5)).toBe('am');
+  expect(meridiemFunction(12)).toBe('pm');
+  expect(meridiemFunction(22)).toBe('pm');
 });
 
 it('should render Routes', () => {

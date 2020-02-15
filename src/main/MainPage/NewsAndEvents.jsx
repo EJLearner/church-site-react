@@ -5,18 +5,23 @@ import styled from 'styled-components';
 import {COLORS, LOGICAL_COLORS} from '../../utils/styleVariables';
 import routePaths from '../../routePaths';
 import PlainButton from '../commonComponents/PlainButton';
-import constants from '../../utils/constants';
 import {Link} from 'react-router-dom';
 import useFirebaseEvents from '../../stores/useFirebaseEvents';
 import useFirebaseNews from '../../stores/useFirebaseNews';
 
-const NewsEventsContent = styled.div`
-  color: ${COLORS.WHITE};
-  font-size: 12px;
-  padding: 1em;
-  background-color: ${LOGICAL_COLORS.CT_PRIMARY};
-  min-width: 300px;
-  height: 300px;
+const NewsEventsStyle = styled.div`
+  .news-and-events-content {
+    color: ${COLORS.WHITE};
+    font-size: 12px;
+    padding: 1em;
+    background-color: ${LOGICAL_COLORS.CT_PRIMARY};
+    width: 300px
+    height: 300px;
+
+    news-item {
+      margin-bottom: 1em;
+    }
+  }
 
   a {
     color: ${COLORS.WHITE};
@@ -24,12 +29,15 @@ const NewsEventsContent = styled.div`
 
   h3 {
     color: ${COLORS.WHITE};
+    font-weight: bold;
     font-size: 14px;
+    margin-bottom: 6px;
   }
-`;
 
-const NewsItem = styled.div`
-  margin-bottom: 1em;
+  .date-and-time {
+    font-style: italic;
+    margin-left: 4em;
+  }
 `;
 
 const DisplayButton = styled(PlainButton)`
@@ -52,9 +60,9 @@ function renderNews(news) {
     const {linkPath, text} = newsItem;
 
     return (
-      <NewsItem key={index}>
+      <div className="news-item" key={index}>
         <h3>{linkPath ? <Link to={linkPath}>{text}</Link> : text}</h3>
-      </NewsItem>
+      </div>
     );
   });
 }
@@ -69,13 +77,15 @@ function renderEvents(events) {
     };
 
     displayItems.push(
-      <NewsItem key={index}>
+      <div className="news-item" key={index}>
         <Link to={to}>
           <h3>{title}</h3>
-          {moment(dateString).format(constants.DISPLAY_DATE_FORMAT)}{' '}
-          {timeStart ? moment(timeStart, 'h:mm A').format('h:mm A') : null}
+          <div className="date-and-time">
+            {moment(dateString).format('dddd, MMMM D')}{' '}
+            {timeStart ? moment(timeStart, 'h:mm A').format(' @ h:mm A') : null}
+          </div>
         </Link>
-      </NewsItem>
+      </div>
     );
 
     return displayItems;
@@ -91,14 +101,10 @@ const NewsAndEvents = () => {
   const news = useFirebaseNews();
 
   return (
-    <div>
-      <NewsEventsContent>
-        <div>
-          {displayType === NEWS_DISPLAY
-            ? renderNews(news)
-            : renderEvents(events)}
-        </div>
-      </NewsEventsContent>
+    <NewsEventsStyle>
+      <div className="news-and-events-content">
+        {displayType === NEWS_DISPLAY ? renderNews(news) : renderEvents(events)}
+      </div>
       <DisplayButton
         onClick={() => setDisplayType(NEWS_DISPLAY)}
         selected={displayType === NEWS_DISPLAY}
@@ -111,7 +117,7 @@ const NewsAndEvents = () => {
       >
         Events
       </DisplayButton>
-    </div>
+    </NewsEventsStyle>
   );
 };
 

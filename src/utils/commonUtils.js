@@ -9,7 +9,8 @@ const {
   INTERNAL_DATE_FORMAT,
   INTERNAL_TIMESTAMP_FORMAT,
   DISPLAY_DATE_FORMAT,
-  DISPLAY_TIME_FORMAT
+  DISPLAY_TIME_FORMAT,
+  SORT_DIRECTION_ASCENDING
 } = constants;
 
 // Modeled after base64 web-safe chars, but ordered by ASCII.
@@ -167,7 +168,21 @@ const commonUtils = {
     );
   },
 
-  range: (startIndex, endIndex) => _.range(startIndex, endIndex)
+  range: (startIndex, endIndex) => _.range(startIndex, endIndex),
+
+  sort: function(array, getSortValue, direction = SORT_DIRECTION_ASCENDING) {
+    return array?.sort((a, b) => {
+      const reverseMultiplier = direction === SORT_DIRECTION_ASCENDING ? 1 : -1;
+      const valueA = getSortValue(a);
+      const valueB = getSortValue(b);
+
+      if (valueA === valueB) {
+        return 0;
+      }
+
+      return valueA < valueB ? -1 * reverseMultiplier : 1 * reverseMultiplier;
+    });
+  }
 };
 
 export default commonUtils;
