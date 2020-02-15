@@ -43,6 +43,7 @@ const StyledDiv = styled.div`
     h2 {
       color: ${LOGICAL_COLORS.CT_PRIMARY};
       margin-top: 0;
+      margin-bottom: 0;
       font-size: 110%;
     }
 
@@ -52,10 +53,12 @@ const StyledDiv = styled.div`
 
     li {
       list-style-type: none;
+      margin-bottom: 1em;
+    }
 
-      &:hover {
-        text-decoration: underline;
-      }
+    .address-and-contact-info {
+      font-weight: bold;
+      margin-top: 4em;
     }
   }
 
@@ -123,7 +126,7 @@ const ContactPage = props => {
               </li>
             </ul>
 
-            <p className="address-and-contanct-info">
+            <p className="address-and-contact-info">
               317 Dolphin Street
               <br />
               Baltimore, MD 21217
