@@ -33,15 +33,6 @@ const StyledDiv = styled.div`
     padding: 0 1em;
   }
 
-  .compass {
-    padding-left: 1em;
-    padding-top: 1em;
-
-    a {
-      color: ${LOGICAL_COLORS.CT_PRIMARY};
-    }
-  }
-
   .content-and-side {
     border-top: 1px solid ${borderColor};
     display: flex;
