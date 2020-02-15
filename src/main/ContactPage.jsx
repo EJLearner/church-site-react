@@ -30,18 +30,33 @@ const StyledDiv = styled.div`
     padding: 0 1em;
   }
 
-  .compass {
-    padding-left: 1em;
-    padding-top: 1em;
-
-    a {
-      color: ${LOGICAL_COLORS.CT_PRIMARY};
-    }
-  }
-
   .content-and-sides {
     border-top: 1px solid ${borderColor};
     display: flex;
+  }
+
+  .side-times {
+    flex-shrink: 0;
+    font-size: 13.33px;
+    padding: 1em;
+
+    h2 {
+      color: ${LOGICAL_COLORS.CT_PRIMARY};
+      margin-top: 0;
+      font-size: 110%;
+    }
+
+    ul {
+      padding-left: 0;
+    }
+
+    li {
+      list-style-type: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   .menu-and-content {
@@ -81,6 +96,44 @@ const ContactPage = props => {
           <AboveContentLinks pageTitle="Worship Experience" />
         </div>
         <div className="content-and-sides">
+          <div className="side-times">
+            <h2>City Temple Baltimore (Baptist)</h2>
+            <ul>
+              <li>
+                <h2>Sunday Worship</h2>9 am
+              </li>
+              <li>
+                <h2>Holy Communion &amp; Baptism</h2>First Sunday of each month
+              </li>
+              <li>
+                <h2>Youth Church</h2>(second Sundays)
+                <br />
+                9am
+              </li>
+              <li>
+                <h2>Sunday School</h2>11:30 am
+              </li>
+              <li>
+                <h2>Prayer Meeting</h2>Saturday before first Sunday
+              </li>
+              <li>
+                <h2>Bible Study</h2>Tuesday, 12 pm &amp; 7 pm
+                <br />
+                Saturday, 12 pm
+              </li>
+            </ul>
+
+            <p className="address-and-contanct-info">
+              317 Dolphin Street
+              <br />
+              Baltimore, MD 21217
+              <br />
+              Phone: 410.462.4800
+              <br />
+              Email: connect@thecitytemple.org
+              <br />
+            </p>
+          </div>
           <div className="menu-and-content">
             <div className="content">Main Content Here</div>
           </div>
