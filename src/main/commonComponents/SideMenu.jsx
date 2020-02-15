@@ -15,6 +15,8 @@ const LeftSide = styled.div`
   h2 {
     color: ${LOGICAL_COLORS.CT_PRIMARY};
     margin-top: 0;
+    font-size: 110%;
+    text-transform: uppercase;
   }
 
   ul {
@@ -45,11 +47,6 @@ const LeftSide = styled.div`
 const ContentButton = styled(PlainButton)`
   display: block;
   line-height: 150%;
-`;
-
-const MenuTitle = styled.h2`
-  font-size: 110%;
-  text-transform: uppercase;
 `;
 
 const subMenu = subLinks => {
@@ -83,7 +80,7 @@ const renderMenuItem = menuItemData => {
 const SideMenu = ({currentId, onClick, menuData, title}) => {
   return (
     <LeftSide>
-      <MenuTitle>{title}</MenuTitle>
+      <h2>{title}</h2>
       <ul>
         {menuData.map(menuItemInfo =>
           renderMenuItem({
