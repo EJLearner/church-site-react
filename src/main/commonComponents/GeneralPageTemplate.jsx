@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 import MainMenubar from '../MainMenubar';
@@ -8,7 +7,7 @@ import {WIDTHS, COLORS, LOGICAL_COLORS} from '../../utils/styleVariables';
 import PropTypes from 'prop-types';
 import TopInfoBox from './TopInfoBox';
 import SideMenu from './SideMenu';
-import routePaths from '../../routePaths';
+import AboveContentLinks from './AboveContentLinks';
 
 const borderColor = 'gray';
 
@@ -75,15 +74,6 @@ const StyledDiv = styled.div`
   }
 `;
 
-function renderCompass(pageTitle, pagePath, subPageTitle) {
-  return (
-    <>
-      <Link to={routePaths.MAIN_HOME}>Home</Link> /{' '}
-      <Link to={pagePath}>{pageTitle}</Link> / {subPageTitle}
-    </>
-  );
-}
-
 const GeneralPageTemplate = props => {
   const {
     topBoxContent,
@@ -115,7 +105,11 @@ const GeneralPageTemplate = props => {
 
       <div className="content-and-sub-compass">
         <div className="compass">
-          {renderCompass(menuTitle, pagePath, title)}
+          <AboveContentLinks
+            pagePath={pagePath}
+            pageTitle={menuTitle}
+            subPageTitle={title}
+          />
         </div>
         <div className="content-and-side">
           {Boolean(menuTitle && bottomContentData) && (

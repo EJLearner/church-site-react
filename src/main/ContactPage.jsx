@@ -1,86 +1,93 @@
 import React from 'react';
 import styled from 'styled-components';
-import churchExteriorTallPicture from '../assets/main/images/church-exterior-tall.png';
+
+import {WIDTHS, COLORS, LOGICAL_COLORS} from '../utils/styleVariables';
 
 import MainMenubar from './MainMenubar';
-import {WIDTHS} from '../utils/styleVariables';
+import AboveContentLinks from './commonComponents/AboveContentLinks';
 
-const PictureAndContacts = styled.div`
-  margin: 0 ${WIDTHS.SIDE_CONTENT_PADDING}
-  display: flex;
-`;
+const borderColor = 'gray';
 
-const ChurchAndOfficePhone = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-right: 2em;
+const StyledDiv = styled.div`
+  .top-info-box-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: ${WIDTHS.SIDE_CONTENT_PADDING};
+
+    .top-info-box {
+      min-width: 50%;
+    }
+
+    .more-content {
+      margin-left: 1em;
+    }
+  }
+
+  .content-and-sub-compass {
+    background-color: white;
+    border: 1px solid ${borderColor};
+    margin: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
+    padding: 0 1em;
+  }
+
+  .compass {
+    padding-left: 1em;
+    padding-top: 1em;
+
+    a {
+      color: ${LOGICAL_COLORS.CT_PRIMARY};
+    }
+  }
+
+  .content-and-sides {
+    border-top: 1px solid ${borderColor};
+    display: flex;
+  }
+
+  .menu-and-content {
+    display: flex;
+  }
+
+  .side-content-wrapper {
+    border-left: 1px solid ${borderColor};
+    display: flex;
+    flex-direction: column;
+    min-width: 20%;
+    max-width: 25%;
+    padding: 1em 2em 0 2em;
+  }
+
+  .content {
+    background-color: ${COLORS.WHITE};
+    border-left: 1px solid ${borderColor};
+    padding: 1em;
+    width: 70%;
+
+    h1,
+    h2 {
+      color: ${LOGICAL_COLORS.CT_PRIMARY};
+      text-transform: uppercase;
+    }
+  }
 `;
-const ContactList = styled.div``;
-const Contact = styled.section``;
 
 const ContactPage = props => {
   return (
-    <>
+    <StyledDiv>
       <MainMenubar />
-      <PictureAndContacts>
-        <ChurchAndOfficePhone>
-          <img alt="Church" src={churchExteriorTallPicture} />
-          <div>
-            <b>Main Office Phone:</b>
-            <br />
-            (410) 462-4800
+
+      <div className="content-and-sub-compass">
+        <div className="compass">
+          <AboveContentLinks pageTitle="Worship Experience" />
+        </div>
+        <div className="content-and-sides">
+          <div className="menu-and-content">
+            <div className="content">Main Content Here</div>
           </div>
-        </ChurchAndOfficePhone>
-        <ContactList>
-          <Contact>
-            <h3>Send your inquiry to the Pastor to:</h3>
-            <div className="contactinfo">
-              City Temple of Baltimore (Baptist)
-              <br />
-              c/o Rev. Dr. Grady A. Yeargin, Jr.
-              <br />
-              317 Dolphin Street
-              <br />
-              Baltimore, MD 21217
-              <br />
-              (410) 462-4802
-              <br />
-            </div>
-          </Contact>
-          <Contact>
-            <h3>Send your inquiry to the Outreach Department to:</h3>
-            <div className="contactinfo">
-              City Temple of Baltimore (Baptist)
-              <br />
-              c/o Gary Hamiel
-              <br />
-              317 Dolphin Street
-              <br />
-              Baltimore, MD 21217
-              <br />
-              (410) 383-8040
-              <br />
-            </div>
-          </Contact>
-          <Contact>
-            <h3>Send your inquiry to the Music Department to:</h3>
-            <div className="contactinfo">
-              City Temple of Baltimore (Baptist)
-              <br />
-              c/o Dr. Kenneth Dean, Jr.
-              <br />
-              317 Dolphin Street
-              <br />
-              Baltimore, MD 21217
-              <br />
-              (410) 462-4801
-              <br />
-            </div>
-          </Contact>
-        </ContactList>
-      </PictureAndContacts>
-    </>
+          <div className="side-content-wrapper">Side Content</div>
+        </div>
+      </div>
+    </StyledDiv>
   );
 };
 
