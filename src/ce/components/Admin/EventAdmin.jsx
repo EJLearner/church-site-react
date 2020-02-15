@@ -5,8 +5,8 @@ import moment from 'moment';
 import {Parser as HtmlToReactParser} from 'html-to-react';
 
 import Button from '../Reusable/Button/Button';
-import Text from '../Reusable/Text/Text';
 import Checklist from '../Reusable/Checklist/Checklist';
+import Text from '../../../common/components/Text';
 
 const TIME_FORMAT = {
   SIMPLE_TIME: 'h:mm a',

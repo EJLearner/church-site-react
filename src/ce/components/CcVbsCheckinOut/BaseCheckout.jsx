@@ -6,7 +6,7 @@ import _ from 'lodash';
 
 import Button from '../Reusable/Button/Button';
 import Checklist from '../Reusable/Checklist/Checklist';
-import Text from '../Reusable/Text/Text';
+import Text from '../../../common/components/Text';
 
 import utils from '../../../utils/commonUtils';
 

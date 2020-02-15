@@ -8,7 +8,7 @@ import constants from '../../../utils/constants';
 import Button from '../Reusable/Button/Button';
 import Checkbox from '../Reusable/Checklist/Checkbox';
 import Modal from '../Reusable/Modal/Modal';
-import Text from '../Reusable/Text/Text';
+import Text from '../../../common/components/Text';
 
 import fieldValidators from './fieldValidators';
 import registrationUtils from './registrationUtils';

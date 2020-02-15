@@ -89,7 +89,50 @@ const StyledDiv = styled.div`
   }
 `;
 
-const ContactPage = props => {
+function renderLeftSideInfo() {
+  return (
+    <div className="side-times">
+      <h2>City Temple Baltimore (Baptist)</h2>
+      <ul>
+        <li>
+          <h2>Sunday Worship</h2>9 am
+        </li>
+        <li>
+          <h2>Holy Communion &amp; Baptism</h2>First Sunday of each month
+        </li>
+        <li>
+          <h2>Youth Church</h2>(second Sundays)
+          <br />
+          9am
+        </li>
+        <li>
+          <h2>Sunday School</h2>11: 30 am
+        </li>
+        <li>
+          <h2>Prayer Meeting</h2>Saturday before first Sunday
+        </li>
+        <li>
+          <h2>Bible Study</h2>Tuesday, 12 pm &amp; 7 pm
+          <br />
+          Saturday, 12 pm
+        </li>
+      </ul>
+
+      <p className="address-and-contact-info">
+        317 Dolphin Street
+        <br />
+        Baltimore, MD 21217
+        <br />
+        Phone: 410.462.4800
+        <br />
+        Email: connect @thecitytemple.org
+        <br />
+      </p>
+    </div>
+  );
+}
+
+const ContactPage = () => {
   return (
     <StyledDiv>
       <MainMenubar />
@@ -99,46 +142,11 @@ const ContactPage = props => {
           <AboveContentLinks pageTitle="Worship Experience" />
         </div>
         <div className="content-and-sides">
-          <div className="side-times">
-            <h2>City Temple Baltimore (Baptist)</h2>
-            <ul>
-              <li>
-                <h2>Sunday Worship</h2>9 am
-              </li>
-              <li>
-                <h2>Holy Communion &amp; Baptism</h2>First Sunday of each month
-              </li>
-              <li>
-                <h2>Youth Church</h2>(second Sundays)
-                <br />
-                9am
-              </li>
-              <li>
-                <h2>Sunday School</h2>11:30 am
-              </li>
-              <li>
-                <h2>Prayer Meeting</h2>Saturday before first Sunday
-              </li>
-              <li>
-                <h2>Bible Study</h2>Tuesday, 12 pm &amp; 7 pm
-                <br />
-                Saturday, 12 pm
-              </li>
-            </ul>
-
-            <p className="address-and-contact-info">
-              317 Dolphin Street
-              <br />
-              Baltimore, MD 21217
-              <br />
-              Phone: 410.462.4800
-              <br />
-              Email: connect@thecitytemple.org
-              <br />
-            </p>
-          </div>
+          {renderLeftSideInfo()}
           <div className="menu-and-content">
-            <div className="content">Main Content Here</div>
+            <div className="content">
+              <h1>Contact Us</h1>
+            </div>
           </div>
           <div className="side-content-wrapper">Side Content</div>
         </div>

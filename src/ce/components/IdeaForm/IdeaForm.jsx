@@ -4,7 +4,7 @@ import {Redirect} from 'react-router';
 import routePaths from '../../../routePaths';
 
 import Button from '../Reusable/Button/Button';
-import Text from '../Reusable/Text/Text';
+import Text from '../../../common/components/Text';
 
 import fieldValidators from '../RegistrationPages/fieldValidators';
 import registrationUtils from '../RegistrationPages/registrationUtils';
