@@ -18,8 +18,8 @@ const NewsEventsStyle = styled.div`
     width: 300px
     height: 300px;
 
-    news-item {
-      margin-bottom: 1em;
+    .news-item {
+      margin-bottom: 2em;
     }
   }
 
@@ -37,6 +37,15 @@ const NewsEventsStyle = styled.div`
   .date-and-time {
     font-style: italic;
     margin-left: 4em;
+  }
+
+  .more-link {
+    border-top: 1px solid white;
+    display: inline-block;
+    font-weight: bold;
+    margin-top: 1em;
+    padding-top: 1em;
+    text-transform: uppercase;
   }
 `;
 
@@ -67,7 +76,7 @@ function renderNews(news) {
   });
 }
 
-function renderEvents(events) {
+function renderEventsList(events) {
   return events.reduce((displayItems, event, index) => {
     const {dateString, linkPath, title, timeStart} = event;
 
@@ -92,12 +101,38 @@ function renderEvents(events) {
   }, []);
 }
 
+function renderMoreEventsLink() {
+  return (
+    <Link className="more-link" to={routePaths.MAIN_CALENDAR_UPCOMING}>
+      More Events
+    </Link>
+  );
+}
+
+function renderEvents(events) {
+  const numberofEventsToDisplay = 3;
+  const displayedEvents = events.slice(0, numberofEventsToDisplay);
+
+  const eventsAreTruncated = displayedEvents.length !== events.length;
+
+  return (
+    <>
+      {renderEventsList(displayedEvents)}
+      {eventsAreTruncated && renderMoreEventsLink()}
+    </>
+  );
+}
+
 const NewsAndEvents = () => {
   const NEWS_DISPLAY = 'news-content';
   const EVENTS_DISPLAY = 'events-display';
-  const [displayType, setDisplayType] = useState(NEWS_DISPLAY);
+  const [displayType, setDisplayType] = useState(EVENTS_DISPLAY);
 
-  const events = useFirebaseEvents({futureOnly: true, returnAsArray: true});
+  const events = useFirebaseEvents({
+    futureOnly: true,
+    returnAsArray: true
+  });
+
   const news = useFirebaseNews();
 
   return (
