@@ -8,6 +8,7 @@ import AboveContentLinks from './commonComponents/AboveContentLinks';
 import Textbox from '../common/components/Textbox';
 import Textarea from '../common/components/Textarea';
 import Button from '../ce/components/Reusable/Button/Button';
+import sendMail, {RECIPIENTS} from '../utils/sendMail';
 
 const borderColor = 'gray';
 
@@ -84,7 +85,15 @@ const StyledDiv = styled.div`
   }
 `;
 
-const submitMessage = () => {};
+const submitMessage = (name, emailAddress, messageFromuser) => {
+  const messagePrefix = `The following message was sent via the Contact Us Page on the City Temple website.
+  Name: ${name || 'Not Provided'}
+  Email Address: ${emailAddress || 'Not Provided'}
+  `;
+
+  const message = messagePrefix + messageFromuser;
+  sendMail(RECIPIENTS.CONNECT, message);
+};
 
 const ErrorMessage = styled.div`
   color: red;
