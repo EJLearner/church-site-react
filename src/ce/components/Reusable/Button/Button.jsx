@@ -1,40 +1,64 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import './Button.css';
+import styled from 'styled-components';
 
 const STYLES = {
   OVAL: 'OVAL',
   RECT: 'RECT'
 };
 
+const StyledButton = styled.button`
+  box-shadow: none;
+  min-width: 80px;
+  min-height: 30px;
+  color: black;
+
+  &.oval-button {
+    background-color: orange;
+    border: none;
+    border-radius: 15px;
+  }
+
+  &.rect-button {
+    border: 1px solid;
+  }
+
+  &.disabled {
+    background-color: grey;
+  }
+`;
+
 class Button extends Component {
   render() {
-    const {className, onClick, children, buttonShape} = this.props;
+    const {className, disable, onClick, children, buttonShape} = this.props;
 
-    let computedClassName =
-      buttonShape === STYLES.RECT ? 'rect-button' : 'oval-button';
-
-    if (className) {
-      computedClassName += ` ${className}`;
-    }
+    const computedClassName = [
+      buttonShape === STYLES.RECT ? 'rect-button' : 'oval-button',
+      className,
+      disable && 'disabled'
+    ]
+      .filter(Boolean)
+      .join(' ');
 
     return (
-      <button className={computedClassName} onClick={onClick}>
+      <StyledButton className={computedClassName} onClick={onClick}>
         {children}
-      </button>
+      </StyledButton>
     );
   }
 }
 
 Button.defaultProps = {
-  buttonShape: STYLES.OVAL
+  buttonShape: STYLES.OVAL,
+  disable: false
 };
 
 Button.propTypes = {
   buttonShape: PropTypes.oneOf(Object.values(STYLES)),
-  children: PropTypes.any,
+  children: PropTypes.node,
   className: PropTypes.string,
+  disable: PropTypes.bool,
   onClick: PropTypes.func.isRequired
 };
 

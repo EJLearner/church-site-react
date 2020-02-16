@@ -6,6 +6,7 @@ import {WIDTHS, COLORS, LOGICAL_COLORS} from '../utils/styleVariables';
 import MainMenubar from './MainMenubar';
 import AboveContentLinks from './commonComponents/AboveContentLinks';
 import Text from '../common/components/Text';
+import Button from '../ce/components/Reusable/Button/Button';
 
 const borderColor = 'gray';
 
@@ -90,6 +91,13 @@ const StyledDiv = styled.div`
   }
 `;
 
+const submitMessage = () => {};
+
+const ErrorMessage = styled.div`
+  color: red;
+  font-weight: bold;
+`;
+
 function renderLeftSideInfo() {
   return (
     <div className="side-times">
@@ -137,6 +145,9 @@ const ContactPage = () => {
   const [name, setName] = useState('');
   const [emailAddress, setEmailAddress] = useState('');
   const [message, setMessage] = useState('');
+  const characterLimit = 300;
+  // TODO: show error when text is blurred and message is empty
+  const showError = false;
 
   return (
     <StyledDiv>
@@ -152,21 +163,39 @@ const ContactPage = () => {
             <div className="content">
               <h1>Contact Us</h1>
               <Text
+                id="name"
                 label="Name"
                 onChange={value => setName(value)}
                 value={name}
               />
               <Text
+                id="address"
                 label="Email Address"
                 onChange={value => setEmailAddress(value)}
                 value={emailAddress}
               />
               <Text
+                characterLimit={characterLimit}
+                errors={
+                  showError && (
+                    <ErrorMessage>You must enter a message.</ErrorMessage>
+                  )
+                }
+                id="message"
                 label="Message"
                 onChange={value => setMessage(value)}
                 textArea
                 value={message}
               />
+
+              <div>
+                <Button
+                  disable={!message.length}
+                  onClick={() => submitMessage(name, emailAddress, message)}
+                >
+                  Send
+                </Button>
+              </div>
             </div>
           </div>
           <div className="side-content-wrapper">Side Content</div>
