@@ -77,6 +77,10 @@ const StyledDiv = styled.div`
       margin-bottom: 0;
       text-transform: uppercase;
     }
+
+    iframe {
+      width: 100%;
+    }
   }
 `;
 
@@ -86,6 +90,12 @@ const ErrorMessage = styled.div`
   color: red;
   font-weight: bold;
 `;
+
+const googleMapSource =
+  'https://www.google.com/maps/embed?pb=' +
+  '!1m18!1m12!1m3!1d3087.345806781657!2d-76.6268381850241!3d39.30308427951011!2m3!1f0!2f0!3f0!3m2' +
+  '!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c804bb92cb30b3%3A0x89980f2bfdc2560a!2s317%20Dolphin%20St%2C%20' +
+  'Baltimore%2C%20MD%2021217!5e0!3m2!1sen!2sus!4v1581891196487!5m2!1sen!2sus';
 
 function renderLeftSideInfo() {
   return (
@@ -215,6 +225,12 @@ const ContactPage = () => {
                 value="317 Dolphin Street Baltimore, MD 21217"
               />
             </form>
+            <iframe
+              allowFullScreen=""
+              frameBorder="0"
+              src={googleMapSource}
+              title="Google Map of Church Location"
+            ></iframe>
           </div>
         </div>
       </div>
