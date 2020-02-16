@@ -26,10 +26,6 @@ const TextStyle = styled.div`
   }
 `;
 
-function getErrorsId(id) {
-  return `${id}-errors`;
-}
-
 function handleChange(event, onChange, id, characterLimit) {
   const {value} = event.target;
 
@@ -48,6 +44,7 @@ const Text = props => {
     id,
     instructions,
     label,
+    name,
     onChange,
     onEnter,
     placeholder,
@@ -62,9 +59,17 @@ const Text = props => {
     onEnter && event.key === 'Enter' && onEnter(event.target.value, id, event);
   };
 
+  const errorsId = `${id}-errors`;
   const labelId = `${id}-label`;
-  const instructionsId = instructions ? `${id}-instructions` : null;
-  const labelledBy = [errors && getErrorsId(), labelId, instructionsId]
+  const characterCountId = `${id}-character-count`;
+  const instructionsId = `${id}-instructions`;
+
+  const labelledBy = [
+    errors && errorsId,
+    labelId,
+    instructions && instructionsId,
+    characterLimit && characterCountId
+  ]
     .filter(Boolean)
     .join(' ');
 
@@ -72,6 +77,7 @@ const Text = props => {
     'aria-labelledby': labelledBy,
     cols: columns,
     id,
+    name,
     onChange: event => handleChange(event, onChange, id, characterLimit),
     onKeyPress,
     placeholder,
@@ -91,7 +97,7 @@ const Text = props => {
   if (characterLimit) {
     remainingCharacters = characterLimit - value.length;
     characterCountRender = (
-      <div className="char-count">
+      <div className="char-count" id={characterCountId}>
         Characters Remaining: {remainingCharacters}
       </div>
     );
@@ -104,7 +110,7 @@ const Text = props => {
         {label}
         {required && '*'}
       </label>
-      <div id={getErrorsId(id)}>{errors}</div>
+      {errors && <div id={errorsId}>{errors}</div>}
       {inputOrTextarea}
       {characterCountRender}
     </TextStyle>
@@ -122,6 +128,7 @@ Text.propTypes = {
   id: PropTypes.string.isRequired,
   instructions: PropTypes.node,
   label: PropTypes.string.isRequired,
+  name: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   onEnter: PropTypes.func,
   placeholder: PropTypes.string,
