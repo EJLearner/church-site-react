@@ -5,26 +5,13 @@ import {WIDTHS, COLORS, LOGICAL_COLORS} from '../utils/styleVariables';
 
 import MainMenubar from './MainMenubar';
 import AboveContentLinks from './commonComponents/AboveContentLinks';
-import Text from '../common/components/Text';
+import Textbox from '../common/components/Textbox';
+import Textarea from '../common/components/Textarea';
 import Button from '../ce/components/Reusable/Button/Button';
 
 const borderColor = 'gray';
 
 const StyledDiv = styled.div`
-  .top-info-box-wrapper {
-    display: flex;
-    justify-content: space-between;
-    margin: ${WIDTHS.SIDE_CONTENT_PADDING};
-
-    .top-info-box {
-      min-width: 50%;
-    }
-
-    .more-content {
-      margin-left: 1em;
-    }
-  }
-
   .content-and-sub-compass {
     background-color: white;
     border: 1px solid ${borderColor};
@@ -38,7 +25,7 @@ const StyledDiv = styled.div`
   }
 
   .side-times {
-    flex-shrink: 0;
+    flex: 0 0;
     font-size: 13.33px;
     padding: 1em;
 
@@ -64,28 +51,30 @@ const StyledDiv = styled.div`
     }
   }
 
-  .menu-and-content {
-    display: flex;
-  }
-
-  .side-content-wrapper {
-    border-left: 1px solid ${borderColor};
-    display: flex;
-    flex-direction: column;
-    min-width: 20%;
-    max-width: 25%;
-    padding: 1em 2em 0 2em;
-  }
-
   .content {
     background-color: ${COLORS.WHITE};
     border-left: 1px solid ${borderColor};
     padding: 1em;
     width: 70%;
 
-    h1,
+    h1 {
+      color: ${LOGICAL_COLORS.CT_PRIMARY};
+      margin-top: 0;
+      text-transform: uppercase;
+    }
+  }
+
+  .side-content-wrapper {
+    border-left: 1px solid ${borderColor};
+    flex: 0 1;
+    min-width: 20%;
+    max-width: 25%;
+    padding: 1em 2em 0 2em;
+
     h2 {
       color: ${LOGICAL_COLORS.CT_PRIMARY};
+      font-size: 18px;
+      margin-bottom: 0;
       text-transform: uppercase;
     }
   }
@@ -134,7 +123,7 @@ function renderLeftSideInfo() {
         <br />
         Phone: 410.462.4800
         <br />
-        Email: connect @thecitytemple.org
+        Email: connect@thecitytemple.org
         <br />
       </p>
     </div>
@@ -145,6 +134,9 @@ const ContactPage = () => {
   const [name, setName] = useState('');
   const [emailAddress, setEmailAddress] = useState('');
   const [message, setMessage] = useState('');
+
+  const [fromAddress, setFromAddress] = useState('');
+
   const characterLimit = 300;
   // TODO: show error when text is blurred and message is empty
   const showError = false;
@@ -159,46 +151,71 @@ const ContactPage = () => {
         </div>
         <div className="content-and-sides">
           {renderLeftSideInfo()}
-          <div className="menu-and-content">
-            <div className="content">
-              <h1>Contact Us</h1>
-              <Text
-                id="name"
-                label="Name"
-                onChange={value => setName(value)}
-                value={name}
-              />
-              <Text
-                id="address"
-                label="Email Address"
-                onChange={value => setEmailAddress(value)}
-                value={emailAddress}
-              />
-              <Text
-                characterLimit={characterLimit}
-                errors={
-                  showError && (
-                    <ErrorMessage>You must enter a message.</ErrorMessage>
-                  )
-                }
-                id="message"
-                label="Message"
-                onChange={value => setMessage(value)}
-                textArea
-                value={message}
-              />
-
-              <div>
-                <Button
-                  disable={!message.length}
-                  onClick={() => submitMessage(name, emailAddress, message)}
-                >
-                  Send
-                </Button>
-              </div>
+          <div className="content">
+            <h1>Contact Us</h1>
+            <Textbox
+              id="name"
+              label="Name"
+              onChange={value => setName(value)}
+              size={40}
+              value={name}
+            />
+            <br />
+            <Textbox
+              id="address"
+              label="Email Address"
+              onChange={value => setEmailAddress(value)}
+              size={40}
+              value={emailAddress}
+            />
+            <br />
+            <Textarea
+              characterLimit={characterLimit}
+              columns={40}
+              errors={
+                showError && (
+                  <ErrorMessage>You must enter a message.</ErrorMessage>
+                )
+              }
+              id="message"
+              label="Message"
+              onChange={value => setMessage(value)}
+              textArea
+              value={message}
+            />
+            <div>
+              <Button
+                disable={!message.length}
+                onClick={() => submitMessage(name, emailAddress, message)}
+              >
+                Send
+              </Button>
             </div>
           </div>
-          <div className="side-content-wrapper">Side Content</div>
+          <div className="side-content-wrapper">
+            <h2>Get Directions</h2>
+            <form
+              action="http://maps.google.com/maps"
+              method="get"
+              target="_blank"
+            >
+              <Textbox
+                id="from-address"
+                label="From"
+                name="saddr"
+                onChange={value => setFromAddress(value)}
+                value={fromAddress}
+              />
+              <Button disable={!fromAddress.length} onClick={() => {}}>
+                Get Directions
+              </Button>
+              <input
+                name="daddr"
+                type="hidden"
+                value="317 Dolphin Street Baltimore, MD 21217"
+              />
+            </form>
+          </div>
         </div>
       </div>
     </StyledDiv>
