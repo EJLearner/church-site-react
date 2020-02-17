@@ -13,7 +13,7 @@ const footerData = [
   },
   {
     actionWord: 'Visit',
-    path: routePaths.MAIN_SERVICE_INFO,
+    path: routePaths.MAIN_CONTACT,
     subject: 'Service Info'
   },
   {

@@ -34,7 +34,6 @@ const MAIN_ROOT_PATHS = {
   MAIN_OUTREACH: `${MAIN_HOME_PATH}outreach/`,
   MAIN_CULTURE_AND_ARTS: `${MAIN_HOME_PATH}culture-and-fine-arts/`,
   MAIN_SCHOLARSHIP: `${MAIN_HOME_PATH}scholarship`,
-  MAIN_SERVICE_INFO: `${MAIN_HOME_PATH}service-info`,
   MAIN_STREAM: `${MAIN_HOME_PATH}stream/`,
   MAIN_WELCOME: `${MAIN_HOME_PATH}welcome/`,
   MAIN_WORSHIP_EXPERIENCE: `${MAIN_HOME_PATH}worship/`

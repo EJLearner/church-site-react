@@ -12,7 +12,6 @@ import Calendar from './CalendarPage';
 import MembersOnly from './MembersOnly';
 import ContactPage from './ContactPage';
 import ScholarshipPage from './ScholarshipPage';
-import ServiceInfoPage from './ServiceInfoPage';
 import JubileePage from './JubileePage';
 import MainFooter from './commonComponents/MainFooter';
 import MusicMinistryPage from './MusicMinistryPage';
@@ -81,9 +80,6 @@ function MainWrapper() {
         </Route>
         <Route path={routePaths.MAIN_SCHOLARSHIP}>
           <ScholarshipPage />
-        </Route>
-        <Route path={routePaths.MAIN_SERVICE_INFO}>
-          <ServiceInfoPage />
         </Route>
         <Route>
           <NotFound />
