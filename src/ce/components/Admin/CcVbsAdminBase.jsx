@@ -198,7 +198,7 @@ class CcVbsAdminBase extends Component {
       name: volunteerObject.name,
       homePhone: commonUtils.formatPhoneNumber(homePhone, true),
       mobilePhone: commonUtils.formatPhoneNumber(mobilePhone, true),
-      email: email,
+      email,
       address: (
         <div>
           {address1}
@@ -264,10 +264,10 @@ class CcVbsAdminBase extends Component {
 
     return {
       id: key,
-      childName: childName,
+      childName,
       parentPhone: commonUtils.formatPhoneNumber(parentPhone, true),
-      parentEmail: parentEmail,
-      parentName: parentName,
+      parentEmail,
+      parentName,
       address: (
         <div>
           {address1}
@@ -360,11 +360,11 @@ class CcVbsAdminBase extends Component {
 
     return (
       <Droplist
+        label="Select Data Year"
         onChange={value => {
           this.setState({dataYear: value});
         }}
         options={options}
-        title="Select Data Year"
         value={this.state.dataYear}
       />
     );
@@ -380,11 +380,11 @@ class CcVbsAdminBase extends Component {
 
     return (
       <Droplist
+        label="Select Sign In Date"
         onChange={value => {
           this.setState({currentSigninDate: value});
         }}
         options={options}
-        title="Select Sign In Date"
         value={selectedDate}
       />
     );
