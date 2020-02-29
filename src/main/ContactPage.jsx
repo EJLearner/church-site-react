@@ -65,6 +65,10 @@ const StyledDiv = styled.div`
     }
   }
 
+  .submit-directions-button-wrapper {
+    margin-bottom: 12px;
+  }
+
   .side-content-wrapper {
     border-left: 1px solid ${borderColor};
     flex: 0 1;
@@ -225,9 +229,11 @@ const ContactPage = () => {
                 onChange={value => setFromAddress(value)}
                 value={fromAddress}
               />
-              <Button disable={!fromAddress.length} onClick={() => {}}>
-                Get Directions
-              </Button>
+              <div className="submit-directions-button-wrapper">
+                <Button disable={!fromAddress.length} onClick={() => {}}>
+                  Get Directions
+                </Button>
+              </div>
               <input
                 name="daddr"
                 type="hidden"

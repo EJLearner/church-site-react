@@ -20,6 +20,7 @@ const COLORS = {
   GRAY77: 'rgb(77, 77, 77)',
   GRAY83: 'rgb(83, 83, 83)',
   GRAY95: '#5f5f5f',
+  // TODO: make this the logical disabled color
   GRAY180: 'rgb(180, 180, 180)',
   GRAY217: 'rgb(217, 217, 217)',
   LIGHT_BLUE: '#5b9bd5',
@@ -38,13 +39,12 @@ const LOGICAL_COLORS = {
   STANDARD_BACKGROUND: COLORS.WHITE,
   STANDARD_TEXT: COLORS.BLACK,
   CT_PRIMARY: '#8E131B',
-  CT_MAIN_YELLOW: '#edde19',
   CT_TEXT_ON_PRIMARY: COLORS.WHITE,
   CT_TEXT_ON_SECONDARY: COLORS.WHITE,
   CT_TEXT_ON_DARK: COLORS.WHITE,
-  CT_ACCENT: '#00bae2',
+  CT_ACCENT: '#FFC600',
   CT_LIGHTENED_ACCENT: '#bff3ff',
-  CT_SECOND: '#ff9b71',
+  CT_SECOND: '#07294D',
   CT_THIRD: '#d2b48c'
 };
 

@@ -2,7 +2,12 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 
 import MainMenubar from '../MainMenubar';
-import {WIDTHS, COLORS, LOGICAL_COLORS} from '../../utils/styleVariables';
+import {
+  WIDTHS,
+  COLORS,
+  LOGICAL_COLORS,
+  FONT_FAMILIES
+} from '../../utils/styleVariables';
 
 import PropTypes from 'prop-types';
 import TopInfoBox from './TopInfoBox';
@@ -12,6 +17,8 @@ import AboveContentLinks from './AboveContentLinks';
 const borderColor = 'gray';
 
 const StyledDiv = styled.div`
+  font-family: ${FONT_FAMILIES.ARIAL};
+
   .top-info-box-wrapper {
     display: flex;
     justify-content: space-between;
@@ -54,6 +61,7 @@ const StyledDiv = styled.div`
   .content {
     background-color: ${COLORS.WHITE};
     border-left: 1px solid ${borderColor};
+    font-size: 13px;
     padding: 1em;
     width: 70%;
 

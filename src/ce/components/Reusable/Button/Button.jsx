@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
+import {COLORS} from '../../../../utils/styleVariables';
 
 const STYLES = {
   OVAL: 'OVAL',
@@ -25,7 +26,7 @@ const StyledButton = styled.button`
   }
 
   &.disabled {
-    background-color: grey;
+    background-color: ${COLORS.GRAY180};
   }
 `;
 

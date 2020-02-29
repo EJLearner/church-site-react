@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import {LOGICAL_COLORS} from '../../utils/styleVariables';
 
 const AboveContentLinksStyle = styled.div`
+  font-size: 11px;
   padding-left: 1em;
   padding-top: 1em;
 

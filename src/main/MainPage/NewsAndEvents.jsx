@@ -2,7 +2,11 @@ import React, {useState} from 'react';
 import moment from 'moment';
 import styled from 'styled-components';
 
-import {COLORS, LOGICAL_COLORS} from '../../utils/styleVariables';
+import {
+  FONT_FAMILIES,
+  COLORS,
+  LOGICAL_COLORS
+} from '../../utils/styleVariables';
 import routePaths from '../../routePaths';
 import PlainButton from '../commonComponents/PlainButton';
 import {Link} from 'react-router-dom';
@@ -12,6 +16,7 @@ import useFirebaseNews from '../../stores/useFirebaseNews';
 const NewsEventsStyle = styled.div`
   .news-and-events-content {
     color: ${COLORS.WHITE};
+    font-family: ${FONT_FAMILIES.ARIAL};
     font-size: 12px;
     padding: 1em;
     background-color: ${LOGICAL_COLORS.CT_PRIMARY};
@@ -30,7 +35,7 @@ const NewsEventsStyle = styled.div`
   h3 {
     color: ${COLORS.WHITE};
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
     margin-bottom: 6px;
   }
 
@@ -50,14 +55,13 @@ const NewsEventsStyle = styled.div`
 `;
 
 const DisplayButton = styled(PlainButton)`
+  color: ${COLORS.WHITE};
   display: inline-block;
   padding: 1em;
   ${({selected}) =>
     selected
-      ? `background-color: ${LOGICAL_COLORS.CT_PRIMARY};
-      color: ${COLORS.WHITE};`
-      : `background-color: ${LOGICAL_COLORS.CT_SECOND};
-      color: ${COLORS.BLACK};`}
+      ? `background-color: ${LOGICAL_COLORS.CT_PRIMARY};`
+      : `background-color: ${LOGICAL_COLORS.CT_SECOND};`}
 
   &:hover {
     text-decoration: underline;

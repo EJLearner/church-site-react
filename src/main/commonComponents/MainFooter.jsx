@@ -35,12 +35,14 @@ const footerData = [
 
 const Styledfooter = styled.footer`
   position: fixed;
+  // TODO: Add box shadow to page footer, mimic drexel
+  // box-shadow: 0 -4px 5px #c2c2c2;
   bottom: 0;
   width: 100%;
 `;
 
 const NavStyleWrapper = styled.nav`
-  background-color: ${LOGICAL_COLORS.CT_MAIN_YELLOW};
+  background-color: ${LOGICAL_COLORS.CT_ACCENT};
   display: flex;
   padding: 24px ${WIDTHS.SIDE_CONTENT_PADDING};
 `;
@@ -52,6 +54,7 @@ const FooterItem = styled.div`
 
   & div:first-child {
     font-weight: bold;
+    text-transform: uppercase;
   }
 
   & a {

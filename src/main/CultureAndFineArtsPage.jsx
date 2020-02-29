@@ -10,7 +10,7 @@ import backgroundStore from '../stores/backgroundStore';
 
 const ApplyNowBox = styled.div`
   color: ${LOGICAL_COLORS.CT_PRIMARY};
-  background-color: ${LOGICAL_COLORS.CT_MAIN_YELLOW};
+  background-color: ${LOGICAL_COLORS.CT_ACCENT};
   margin-bottom: 1em;
   font-style: italic;
   padding: 1em;
