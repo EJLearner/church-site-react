@@ -31,6 +31,8 @@ const Droplist = ({onChange, id, options, value, label}) => {
     <DroplistStyle className="select-outer-div">
       {label && <div>{label}</div>}
       <select
+        id={id}
+        name={id}
         onChange={event => onChange(event.target.value, id, event)}
         value={value}
       >

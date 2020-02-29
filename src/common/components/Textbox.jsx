@@ -61,7 +61,7 @@ const Textbox = props => {
       <input
         aria-labelledby={labelledBy}
         id={id}
-        name={name}
+        name={name || id}
         onChange={event => onChange(event.target.value, id, event)}
         onKeyPress={onKeyPress}
         placeholder={placeholder}
