@@ -138,7 +138,9 @@ const GivingPage = () => {
     );
   };
 
-  const renderTextbox = (id, label, required) => {
+  const renderTextbox = (id, label, options = {}) => {
+    const {type, required} = options;
+
     return (
       <>
         <Textbox
@@ -147,6 +149,7 @@ const GivingPage = () => {
           onChange={value => setUserInfoProp(value, id)}
           required={required}
           size={40}
+          type={type}
           value={userInfo[id] ?? ''}
         />
         <br />
@@ -258,7 +261,7 @@ const GivingPage = () => {
               {renderStateSelect('state')}
               {renderTextbox('zip', 'Zipcode')}
               {renderTextbox('night_phone_a', 'Phone')}
-              {renderTextbox('email', 'Email', true)}
+              {renderTextbox('email', 'Email', {required: true, type: 'email'})}
               {renderTextbox('box', 'Box #')}
               {boxNum && renderHiddenTextbox('custom', `Box: ${boxNum}`)}
               {renderHiddenTextbox('business', 'giving@thecitytemple.org')}

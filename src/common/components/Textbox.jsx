@@ -31,6 +31,7 @@ const Textbox = props => {
     placeholder,
     required,
     size,
+    type,
     value
   } = props;
 
@@ -66,6 +67,7 @@ const Textbox = props => {
         onKeyPress={onKeyPress}
         placeholder={placeholder}
         size={size}
+        type={type}
         value={value}
       />
     </TextboxStyle>
@@ -83,6 +85,7 @@ Textbox.propTypes = {
   placeholder: PropTypes.string,
   required: PropTypes.bool,
   size: PropTypes.number,
+  type: PropTypes.string,
   value: PropTypes.string.isRequired
 };
 
