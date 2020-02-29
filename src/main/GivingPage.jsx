@@ -8,6 +8,7 @@ import AboveContentLinks from './commonComponents/AboveContentLinks';
 import Textbox from '../common/components/Textbox';
 import Button from '../ce/components/Reusable/Button/Button';
 import Droplist from '../ce/components/Reusable/Droplist/Droplist';
+import SelectState from '../common/components/SelectState';
 
 const borderColor = 'gray';
 const givingType = 'tithing';
@@ -51,6 +52,20 @@ const GivingPageStyledDiv = styled.div`
   }
 `;
 
+const USE_TEST_DATA = false;
+
+const testUserInfo = {
+  first_name: 'First',
+  last_name: 'Last',
+  address1: 'My Address',
+  address2: 'Address Line 2',
+  city: 'City',
+  night_phone_a: '4109440396',
+  state: 'MD',
+  zip: '21216',
+  email: 'test@somethwere.com'
+};
+
 function renderLeftSideInfo() {
   return (
     <div className="side-times">
@@ -68,7 +83,9 @@ const donationTypeOptions = [
 ];
 
 const initialDonationTypeInfo = donationTypeOptions.map((option, index) => {
-  return index ? {} : {type: option.value};
+  return index
+    ? {}
+    : {type: option.value, amount: USE_TEST_DATA ? '10.00' : undefined};
 });
 
 const getCurrentDroplistOptions = (selectedValue, amounts) => {
@@ -82,7 +99,7 @@ const getCurrentDroplistOptions = (selectedValue, amounts) => {
 };
 
 const GivingPage = () => {
-  const [userInfo, setUserInfo] = useState({});
+  const [userInfo, setUserInfo] = useState(USE_TEST_DATA ? testUserInfo : {});
   const [amounts, setAmounts] = useState(initialDonationTypeInfo);
 
   const setUserInfoProp = (value, id) => {
@@ -106,6 +123,19 @@ const GivingPage = () => {
 
       return [...currentPaymentInfo];
     });
+  };
+
+  const renderStateSelect = id => {
+    return (
+      <>
+        <SelectState
+          id={id}
+          onChange={value => setUserInfoProp(value, id)}
+          value={userInfo[id] ?? ''}
+        />
+        <br />
+      </>
+    );
   };
 
   const renderTextbox = (id, label, required) => {
@@ -187,6 +217,8 @@ const GivingPage = () => {
   const renderTithingFields = () => {
     return (
       <>
+        {renderHiddenTextbox('cmd', '_cart')}
+        {renderHiddenTextbox('upload', '1')}
         {renderPaymentboxes(amounts)}
 
         {Boolean(firstUnusedType) && (
@@ -223,14 +255,18 @@ const GivingPage = () => {
               {renderTextbox('address1', 'Street Address')}
               {renderTextbox('address2', 'Street Address cont.')}
               {renderTextbox('city', 'City')}
-              {renderTextbox('state', 'State')}
+              {renderStateSelect('state')}
               {renderTextbox('zip', 'Zipcode')}
-              {renderTextbox('phone', 'Phone')}
+              {renderTextbox('night_phone_a', 'Phone')}
               {renderTextbox('email', 'Email', true)}
               {renderTextbox('box', 'Box #')}
               {boxNum && renderHiddenTextbox('custom', `Box: ${boxNum}`)}
               {renderHiddenTextbox('business', 'giving@thecitytemple.org')}
               {renderHiddenTextbox('return', 'https://www.thecitytemple.org')}
+              {renderHiddenTextbox(
+                'cancel_return',
+                'https://www.thecitytemple.org'
+              )}
               {renderHiddenTextbox('no_shipping', '1')}
 
               {givingType === 'tithing' && renderTithingFields()}
