@@ -10,6 +10,7 @@ import Button from '../ce/components/Reusable/Button/Button';
 import Droplist from '../ce/components/Reusable/Droplist/Droplist';
 
 const borderColor = 'gray';
+const givingType = 'tithing';
 
 const GivingPageStyledDiv = styled.div`
   .content-and-sub-compass {
@@ -50,8 +51,6 @@ const GivingPageStyledDiv = styled.div`
   }
 `;
 
-const makePayment = (name, emailAddress, messageFromuser) => {};
-
 function renderLeftSideInfo() {
   return (
     <div className="side-times">
@@ -69,34 +68,41 @@ const donationTypeOptions = [
 ];
 
 const initialDonationTypeInfo = donationTypeOptions.map((option, index) => {
-  const object = {key: `amount-${index + 1}-type`};
-
-  if (!index) {
-    object.type = option.value;
-  }
-
-  return object;
+  return index ? {} : {type: option.value};
 });
 
+const getCurrentDroplistOptions = (selectedValue, amounts) => {
+  return donationTypeOptions.filter(option => {
+    const selectedByThisDroplist = option.value === selectedValue;
+    const selectedValues = amounts.map(({type}) => type).filter(Boolean);
+    const selectedByAnyDroplist = selectedValues.includes(option.value);
+
+    return selectedByThisDroplist || !selectedByAnyDroplist;
+  });
+};
+
 const GivingPage = () => {
-  const [userInfo, setUserInfo] = useState(initialDonationTypeInfo);
+  const [userInfo, setUserInfo] = useState({});
   const [amounts, setAmounts] = useState(initialDonationTypeInfo);
 
   const setUserInfoProp = (value, id) => {
     setUserInfo(currentUserInfo => ({...currentUserInfo, [id]: value}));
   };
 
-  const setPaymentAmount = (value, index) => {
+  const setPaymentInfo = (value, index, prop) => {
     setAmounts(currentPaymentInfo => {
-      currentPaymentInfo[index].amount = value;
+      if (!currentPaymentInfo[index]) {
+        currentPaymentInfo[index] = {};
+      }
+      currentPaymentInfo[index][prop] = value;
 
       return [...currentPaymentInfo];
     });
   };
 
-  const setPaymentType = (value, index) => {
+  const setPaymentAmount = (value, index) => {
     setAmounts(currentPaymentInfo => {
-      currentPaymentInfo[index].type = value;
+      currentPaymentInfo[index].amount = value;
 
       return [...currentPaymentInfo];
     });
@@ -124,7 +130,7 @@ const GivingPage = () => {
     return (
       <>
         <Textbox
-          id={`amount-${currentNumber}-amount`}
+          id={`amount_${currentNumber}`}
           label="Amount"
           onChange={value => setPaymentAmount(value, index)}
           required={required}
@@ -141,14 +147,20 @@ const GivingPage = () => {
       .filter(paymentItem => paymentItem.type)
       .map((paymentItem, index) => {
         const currentNumber = index + 1;
-        const droplistId = `amount-${currentNumber}-type`;
+        const droplistId = `item_name_${currentNumber}`;
+
+        const dropListOptions = getCurrentDroplistOptions(
+          paymentItem.type,
+          amounts
+        );
+
         return (
           <div key={index}>
             {renderPaymentAmount(index, true)}
             <Droplist
               id={droplistId}
-              onChange={value => setPaymentType(value, index)}
-              options={donationTypeOptions}
+              onChange={value => setPaymentInfo(value, index, 'type')}
+              options={dropListOptions}
               value={paymentItem.type}
             />
           </div>
@@ -156,14 +168,39 @@ const GivingPage = () => {
       });
   };
 
-  const addPaymentOption = () => {
+  const addPaymentOption = (firstUnusedType, event) => {
     const unusedPaymentItemIndex = amounts.findIndex(amount => !amount.type);
-    const usedTypes = amounts.map(amount => amount.type).filter(Boolean);
-    const firstUnusedType = donationTypeOptions.find(
-      option => !usedTypes.includes(option.value)
-    )?.value;
-    setPaymentType(firstUnusedType, unusedPaymentItemIndex);
+    setPaymentInfo(firstUnusedType, unusedPaymentItemIndex, 'type');
+
+    event.preventDefault();
   };
+
+  const renderHiddenTextbox = (name, value) => {
+    return <input name={name} type="hidden" value={value} />;
+  };
+
+  const usedTypes = amounts.map(amount => amount.type).filter(Boolean);
+  const firstUnusedType = donationTypeOptions.find(
+    option => !usedTypes.includes(option.value)
+  )?.value;
+
+  const renderTithingFields = () => {
+    return (
+      <>
+        {renderPaymentboxes(amounts)}
+
+        {Boolean(firstUnusedType) && (
+          <div>
+            <Button onClick={event => addPaymentOption(firstUnusedType, event)}>
+              Add another payment type
+            </Button>
+          </div>
+        )}
+      </>
+    );
+  };
+
+  const boxNum = userInfo.box;
 
   return (
     <GivingPageStyledDiv>
@@ -176,25 +213,31 @@ const GivingPage = () => {
           {renderLeftSideInfo()}
           <div className="content">
             <h1>Giving</h1>
-            {renderTextbox('first-name', 'First Name')}
-            {renderTextbox('last-name', 'Last Name')}
-            {renderTextbox('address', 'Street Address')}
-            {renderTextbox('address-cont', 'Street Address cont.')}
-            {renderTextbox('city', 'City')}
-            {renderTextbox('state', 'State')}
-            {renderTextbox('zip-code', 'Zipcode')}
-            {renderTextbox('phone', 'Phone')}
-            {renderTextbox('email', 'Email', true)}
-            {renderTextbox('box', 'Box #')}
-            {renderPaymentboxes(amounts)}
-            <div>
-              <Button onClick={() => addPaymentOption()}>
-                Add another payment type
-              </Button>
-            </div>
-            <div>
-              <Button onClick={() => makePayment(amounts)}>Send</Button>
-            </div>
+            <form
+              action="https://www.paypal.com/cgi-bin/webscr"
+              method="post"
+              name="validform"
+            >
+              {renderTextbox('first_name', 'First Name')}
+              {renderTextbox('last_name', 'Last Name')}
+              {renderTextbox('address1', 'Street Address')}
+              {renderTextbox('address2', 'Street Address cont.')}
+              {renderTextbox('city', 'City')}
+              {renderTextbox('state', 'State')}
+              {renderTextbox('zip', 'Zipcode')}
+              {renderTextbox('phone', 'Phone')}
+              {renderTextbox('email', 'Email', true)}
+              {renderTextbox('box', 'Box #')}
+              {boxNum && renderHiddenTextbox('custom', `Box: ${boxNum}`)}
+              {renderHiddenTextbox('business', 'giving@thecitytemple.org')}
+              {renderHiddenTextbox('return', 'https://www.thecitytemple.org')}
+              {renderHiddenTextbox('no_shipping', '1')}
+
+              {givingType === 'tithing' && renderTithingFields()}
+              <div>
+                <input name="submit" type="submit" value="Continue" />
+              </div>
+            </form>
           </div>
         </div>
       </div>
