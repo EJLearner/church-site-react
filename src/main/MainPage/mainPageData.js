@@ -4,7 +4,7 @@ import JubileeContent from './BoxContent/JubileeContent';
 import CultureAndFineArts from './BoxContent/CultureAndFineArts';
 import ChristianEducation from './BoxContent/ChristianEducation';
 import routePaths from '../../routePaths';
-import GedProgram from './BoxContent/GedProgram';
+// import GedProgram from './BoxContent/GedProgram';
 import WorshipExperience from './BoxContent/WorshipExperience';
 
 const contentSelectInfo = [
@@ -22,7 +22,7 @@ const contentSelectInfo = [
     thumbnail: eventContentTemplate
   },
   {
-    linkPath: routePaths.MAIN_WORSHIP_EXPERIENCE,
+    linkPath: routePaths.MAIN_CONTACT,
     render: WorshipExperience,
     title: 'Worship Experience',
     thumbnail: eventContentTemplate
@@ -32,13 +32,14 @@ const contentSelectInfo = [
     render: ChristianEducation,
     title: 'Christian Education',
     thumbnail: eventContentTemplate
-  },
-  {
-    linkPath: routePaths.CE_HOME,
-    render: GedProgram,
-    title: 'GED Program',
-    thumbnail: eventContentTemplate
   }
+  // TODO: add this back later
+  // {
+  //   linkPath: routePaths.CE_HOME,
+  //   render: GedProgram,
+  //   title: 'GED Program',
+  //   thumbnail: eventContentTemplate
+  // }
 ];
 
 export {contentSelectInfo};

@@ -16,15 +16,15 @@ import JubileePage from './JubileePage';
 import MainFooter from './commonComponents/MainFooter';
 import MusicMinistryPage from './MusicMinistryPage';
 import CultureAndFineArtsPage from './CultureAndFineArtsPage';
-import WorshipExperiencePage from './WorshipExperiencePage';
 import backgroundStore from '../stores/backgroundStore';
+import {SIZES} from '../utils/styleVariables';
 
 const WrapperDiv = styled.div`
   background-attachment: fixed;
   background-image: url(${props => props.backgroundSource});
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 150px;
+  padding-bottom: ${SIZES.FOOTER_HEIGHT};
 `;
 
 const PAGE_ID = 'main-wrapper';
@@ -68,9 +68,6 @@ function MainWrapper() {
         </Route>
         <Route path={routePaths.MAIN_MINISTRIES}>
           <MinistriesPage />
-        </Route>
-        <Route path={routePaths.MAIN_WORSHIP_EXPERIENCE}>
-          <WorshipExperiencePage />
         </Route>
         <Route path={routePaths.MAIN_MUSIC_MINISTRY}>
           <MusicMinistryPage />

@@ -22,6 +22,7 @@ const StyledButton = styled.button`
   }
 
   &.rect-button {
+    background-color: orange;
     border: none;
   }
 

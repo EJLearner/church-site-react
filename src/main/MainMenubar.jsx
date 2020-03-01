@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import {LOGICAL_COLORS, WIDTHS, FONT_FAMILIES} from '../utils/styleVariables';
 
 const StyledHeader = styled.header`
+  font-family: ${FONT_FAMILIES.CENTURY_GOTHIC};
   margin: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
 `;
 
@@ -57,9 +58,11 @@ const MainMenubar = () => {
     {text: 'Home', path: routePaths.MAIN_HOME},
     {text: 'About Us', path: routePaths.MAIN_ABOUT_US},
     {text: 'Ministries', path: routePaths.MAIN_MINISTRIES},
-    {text: 'Giving', path: routePaths.MAIN_GIVING},
+    // TODO: Add later
+    // {text: 'Giving', path: routePaths.MAIN_GIVING},
     {text: 'Church Calendar', path: routePaths.MAIN_CALENDAR},
-    {text: 'Members Only', path: routePaths.MAIN_MEMBERS_ONLY},
+    // TODO: Add later
+    // {text: 'Members Only', path: routePaths.MAIN_MEMBERS_ONLY},
     {text: 'Contact', path: routePaths.MAIN_CONTACT}
   ];
 

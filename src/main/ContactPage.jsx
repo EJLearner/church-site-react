@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+import {post} from 'jquery';
 
 import {
   WIDTHS,
@@ -14,6 +15,7 @@ import Textbox from '../common/components/Textbox';
 import Textarea from '../common/components/Textarea';
 import Button, {STYLES} from '../ce/components/Reusable/Button/Button';
 import sendMail, {RECIPIENTS} from '../utils/sendMail';
+import PostSubmitStatusMessage from '../ce/components/Common/PostSubmitStatusMessage';
 
 const StyledDiv = styled.div`
   .content-and-sub-compass {
@@ -106,6 +108,7 @@ const StyledDiv = styled.div`
   }
 `;
 
+// eslint-disable-next-line no-unused-vars
 const submitMessage = (name, emailAddress, messageFromuser) => {
   const messagePrefix = `The following message was sent via the Contact Us Page on the City Temple website.
   Name: ${name || 'Not Provided'}
@@ -170,21 +173,78 @@ function renderLeftSideInfo() {
   );
 }
 
-const ContactPage = () => {
-  const [name, setName] = useState('');
-  const [emailAddress, setEmailAddress] = useState('');
-  const [message, setMessage] = useState('');
+const emptySendInfo = {
+  name: '',
+  emailAddress: '',
+  message: ''
+};
 
+const ContactPage = () => {
+  const [showThanksMessage, setShowThanksMessage] = useState(false);
+  const [postStatus, setPostStatus] = useState(null);
+  const [errors, setErrors] = useState([]);
+  const [responseError, setResponseError] = useState();
   const [fromAddress, setFromAddress] = useState('');
+  const [sendInfo, setSendInfoRaw] = useState(emptySendInfo);
+
+  const {name, emailAddress, message} = sendInfo;
+
+  const setSendInfo = (value, prop) => {
+    setPostStatus(null);
+    setSendInfoRaw(sendInfo => ({...sendInfo, [prop]: value}));
+    setShowThanksMessage(false);
+  };
+
+  const submitData = () => {
+    const data = {
+      name: sendInfo.name || 'Not Provided',
+      emailAddress: sendInfo.emailAddress || 'Not Provided',
+      message: sendInfo.message
+    };
+
+    post(
+      '/contactUsSend.php',
+      data,
+      responseError => {
+        if (responseError.success) {
+          setShowThanksMessage(true);
+        } else {
+          setPostStatus('failure');
+        }
+      },
+      'json'
+    ).fail(responseError => {
+      setPostStatus('failure');
+      setResponseError(responseError);
+    });
+  };
+
+  const validateAndSubmit = () => {
+    if (message.length) {
+      submitData();
+      setErrors([]);
+    } else {
+      setErrors(['Please enter a message.']);
+    }
+  };
 
   const characterLimit = 300;
-  // TODO: show error when text is blurred and message is empty
-  const showError = false;
+  const showError = Boolean(errors.length);
+
+  if (showThanksMessage) {
+    return (
+      <div className="registration-page">
+        <h2>Thanks for contacting us!</h2>
+        <p>
+          You will be redirected to the home page in less than five seconds...
+        </p>
+      </div>
+    );
+  }
 
   return (
     <StyledDiv>
       <MainMenubar />
-
       <div className="content-and-sub-compass">
         <div className="compass">
           <AboveContentLinks pageTitle="Worship Experience" />
@@ -196,7 +256,7 @@ const ContactPage = () => {
             <Textbox
               id="name"
               label="Name"
-              onChange={value => setName(value)}
+              onChange={value => setSendInfo(value, 'name')}
               size={40}
               value={name}
             />
@@ -204,7 +264,7 @@ const ContactPage = () => {
             <Textbox
               id="address"
               label="Email Address"
-              onChange={value => setEmailAddress(value)}
+              onChange={value => setSendInfo(value, 'emailAddress')}
               size={40}
               value={emailAddress}
             />
@@ -219,7 +279,8 @@ const ContactPage = () => {
               }
               id="message"
               label="Message"
-              onChange={value => setMessage(value)}
+              onChange={value => setSendInfo(value, 'message')}
+              required
               rows={10}
               value={message}
             />
@@ -227,10 +288,19 @@ const ContactPage = () => {
               <Button
                 buttonShape={STYLES.RECT}
                 disable={!message.length}
-                onClick={() => submitMessage(name, emailAddress, message)}
+                onClick={() => validateAndSubmit()}
               >
                 Send
               </Button>
+              {Boolean(postStatus || errors.length) && (
+                <PostSubmitStatusMessage
+                  inputErrorMessage={
+                    errors.length ? 'Please enter a message' : undefined
+                  }
+                  postStatus={postStatus}
+                  responseError={responseError}
+                />
+              )}
             </div>
           </div>
           <div className="side-content-wrapper">

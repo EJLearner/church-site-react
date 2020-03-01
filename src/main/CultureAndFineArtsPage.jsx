@@ -29,6 +29,7 @@ const SideImage = styled.img`
 `;
 
 const Event = styled.div`
+  margin-bottom: 3em;
   width: 80%;
 
   .description {
@@ -144,9 +145,11 @@ const upcomingEventsContent = (
         <p className="details">
           March 23, 2020
           <br />
-          All Day $50
+          All Day
           <br />
-          (Adults) - $25 (Children/Youth)
+          $50 (Adults)
+          <br />
+          $25 (Children/Youth)
         </p>
         <PurchaseHereLink to="need-page" />
       </Event>

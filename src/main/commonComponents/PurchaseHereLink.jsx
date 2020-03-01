@@ -14,6 +14,12 @@ const StyledPurchaseHereLink = styled.p`
 `;
 
 const PurchaseHereLink = to => {
+  // TODO: make not null when store pages are donationTypeOptions
+  const storeIsDone = false;
+  if (!storeIsDone) {
+    return null;
+  }
+
   return (
     <StyledPurchaseHereLink>
       <Link to={to}>Purchase your tickets here!</Link>

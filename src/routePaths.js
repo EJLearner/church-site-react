@@ -35,8 +35,7 @@ const MAIN_ROOT_PATHS = {
   MAIN_CULTURE_AND_ARTS: `${MAIN_HOME_PATH}culture-and-fine-arts/`,
   MAIN_SCHOLARSHIP: `${MAIN_HOME_PATH}scholarship`,
   MAIN_STREAM: `${MAIN_HOME_PATH}stream/`,
-  MAIN_WELCOME: `${MAIN_HOME_PATH}welcome/`,
-  MAIN_WORSHIP_EXPERIENCE: `${MAIN_HOME_PATH}worship/`
+  MAIN_WELCOME: `${MAIN_HOME_PATH}welcome/`
 };
 
 const {MAIN_CALENDAR} = MAIN_ROOT_PATHS;
