@@ -1,16 +1,18 @@
 import churchExterior from '../assets/main/images/church-exterior.png';
+import choir from '../assets/main/images/choir.jpg';
 import dance from '../assets/main/images/event-content-template.png';
 
 const backgroundSources = {
+  CHOIR: choir,
   CHURCH: churchExterior,
   DANCE: dance
 };
 
-const DEFAULT_BACKGROUND_SOURCE = backgroundSources.CHURCH;
+const DEFAULT_BACKGROUND_SOURCE = backgroundSources.CHOIR;
 
 const callbacks = {};
 
-let backgroundSource = backgroundSources.CHURCH;
+let backgroundSource = DEFAULT_BACKGROUND_SOURCE;
 
 const backgroundStore = {
   dispatchAll() {

@@ -2,14 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {COLORS} from '../../utils/styleVariables';
+import InputLabel from './InputLabel';
 
 const TextareaStyle = styled.div`
   display: inline-block;
   margin: 0.5em 3em 0.5em 0;
-
-  label {
-    display: block;
-  }
 
   input {
     border: 1px solid gray;
@@ -92,10 +89,9 @@ const Textarea = props => {
   return (
     <TextareaStyle className="text-box-pattern">
       {instructions && <p id={instructionsId}>{instructions}</p>}
-      <label htmlFor={id} id={labelId}>
+      <InputLabel htmlFor={id} id={labelId} required={required}>
         {label}
-        {required && '*'}
-      </label>
+      </InputLabel>
       {errors && <div id={errorsId}>{errors}</div>}
       {inputOrTextarea}
       {characterCountRender}

@@ -14,8 +14,6 @@ import TopInfoBox from './TopInfoBox';
 import SideMenu from './SideMenu';
 import AboveContentLinks from './AboveContentLinks';
 
-const borderColor = 'gray';
-
 const StyledDiv = styled.div`
   font-family: ${FONT_FAMILIES.ARIAL};
 
@@ -35,13 +33,12 @@ const StyledDiv = styled.div`
 
   .content-and-sub-compass {
     background-color: white;
-    border: 1px solid ${borderColor};
     margin: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
     padding: 0 1em;
   }
 
   .content-and-side {
-    border-top: 1px solid ${borderColor};
+    border-top: 1px solid ${LOGICAL_COLORS.GENERAL_PAGE_BORDER_COLOR};
     display: flex;
   }
 
@@ -50,7 +47,7 @@ const StyledDiv = styled.div`
   }
 
   .side-content-wrapper {
-    border-left: 1px solid ${borderColor};
+    border-left: 1px solid ${LOGICAL_COLORS.GENERAL_PAGE_BORDER_COLOR};
     display: flex;
     flex-direction: column;
     min-width: 20%;
@@ -60,7 +57,7 @@ const StyledDiv = styled.div`
 
   .content {
     background-color: ${COLORS.WHITE};
-    border-left: 1px solid ${borderColor};
+    border-left: 1px solid ${LOGICAL_COLORS.GENERAL_PAGE_BORDER_COLOR};
     font-size: 13px;
     padding: 1em;
     width: 70%;

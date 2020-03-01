@@ -11,6 +11,7 @@ const AboveContentLinksStyle = styled.div`
   font-size: 11px;
   padding-left: 1em;
   padding-top: 1em;
+  padding-bottom: 1em;
 
   a {
     color: ${LOGICAL_COLORS.CT_PRIMARY};

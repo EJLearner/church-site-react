@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
+import InputLabel from '../../../../common/components/InputLabel';
 const DroplistStyle = styled.div`
   display: inline-block;
   margin-right: 2em;
@@ -29,7 +30,7 @@ function renderedOptions(options) {
 const Droplist = ({onChange, id, options, value, label}) => {
   return (
     <DroplistStyle className="select-outer-div">
-      {label && <div>{label}</div>}
+      {label && <InputLabel>{label}</InputLabel>}
       <select
         id={id}
         name={id}

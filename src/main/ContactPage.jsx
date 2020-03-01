@@ -1,40 +1,52 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import {WIDTHS, COLORS, LOGICAL_COLORS} from '../utils/styleVariables';
+import {
+  WIDTHS,
+  COLORS,
+  LOGICAL_COLORS,
+  FONT_FAMILIES
+} from '../utils/styleVariables';
 
 import MainMenubar from './MainMenubar';
 import AboveContentLinks from './commonComponents/AboveContentLinks';
 import Textbox from '../common/components/Textbox';
 import Textarea from '../common/components/Textarea';
-import Button from '../ce/components/Reusable/Button/Button';
+import Button, {STYLES} from '../ce/components/Reusable/Button/Button';
 import sendMail, {RECIPIENTS} from '../utils/sendMail';
-
-const borderColor = 'gray';
 
 const StyledDiv = styled.div`
   .content-and-sub-compass {
     background-color: white;
-    border: 1px solid ${borderColor};
-    margin: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
+    margin: 18em ${WIDTHS.SIDE_CONTENT_PADDING} 0 ${WIDTHS.SIDE_CONTENT_PADDING};
     padding: 0 1em;
   }
 
   .content-and-sides {
-    border-top: 1px solid ${borderColor};
+    border-top: 1px solid ${LOGICAL_COLORS.GENERAL_PAGE_BORDER_COLOR};
     display: flex;
+    font-family: ${FONT_FAMILIES.ARIAL};
+    font-size: 12px;
   }
 
   .side-times {
-    flex: 0 0;
-    font-size: 13.33px;
+    color: ${COLORS.GRAY38};
+    flex: 1 0;
+    // font-size: 13.33px;
+    min-width: 20%;
     padding: 1em;
 
     h2 {
-      color: ${LOGICAL_COLORS.CT_PRIMARY};
       margin-top: 0;
       margin-bottom: 0;
       font-size: 110%;
+    }
+
+    h2.church-name {
+      font-family: ${FONT_FAMILIES.CENTURY_GOTHIC};
+      font-size: 18px;
+      color: ${LOGICAL_COLORS.CT_PRIMARY};
+      text-transform: uppercase;
     }
 
     ul {
@@ -48,29 +60,33 @@ const StyledDiv = styled.div`
 
     .address-and-contact-info {
       font-weight: bold;
+      line-height: 150%;
       margin-top: 4em;
     }
   }
 
   .content {
     background-color: ${COLORS.WHITE};
-    border-left: 1px solid ${borderColor};
+    border-left: 1px solid ${LOGICAL_COLORS.GENERAL_PAGE_BORDER_COLOR};
     padding: 1em;
     width: 70%;
 
     h1 {
       color: ${LOGICAL_COLORS.CT_PRIMARY};
-      margin-top: 0;
+      font-family: ${FONT_FAMILIES.CENTURY_GOTHIC};
+      // trying to align top of middle header with two side headers
+      // maybe there's a better way
+      margin-top: -9px;
       text-transform: uppercase;
     }
   }
 
   .submit-directions-button-wrapper {
-    margin-bottom: 12px;
+    margin: 0.5em 0 3em 0;
   }
 
   .side-content-wrapper {
-    border-left: 1px solid ${borderColor};
+    border-left: 1px solid ${LOGICAL_COLORS.GENERAL_PAGE_BORDER_COLOR};
     flex: 0 1;
     min-width: 20%;
     max-width: 25%;
@@ -78,8 +94,9 @@ const StyledDiv = styled.div`
 
     h2 {
       color: ${LOGICAL_COLORS.CT_PRIMARY};
+      font-family: ${FONT_FAMILIES.CENTURY_GOTHIC};
       font-size: 18px;
-      margin-bottom: 0;
+      margin: 0;
       text-transform: uppercase;
     }
 
@@ -113,7 +130,7 @@ const googleMapSource =
 function renderLeftSideInfo() {
   return (
     <div className="side-times">
-      <h2>City Temple Baltimore (Baptist)</h2>
+      <h2 className="church-name">The City Temple of Baltimore (Baptist)</h2>
       <ul>
         <li>
           <h2>Sunday Worship</h2>9 am
@@ -194,7 +211,7 @@ const ContactPage = () => {
             <br />
             <Textarea
               characterLimit={characterLimit}
-              columns={40}
+              columns={60}
               errors={
                 showError && (
                   <ErrorMessage>You must enter a message.</ErrorMessage>
@@ -203,11 +220,12 @@ const ContactPage = () => {
               id="message"
               label="Message"
               onChange={value => setMessage(value)}
-              textArea
+              rows={10}
               value={message}
             />
             <div>
               <Button
+                buttonShape={STYLES.RECT}
                 disable={!message.length}
                 onClick={() => submitMessage(name, emailAddress, message)}
               >
@@ -230,7 +248,11 @@ const ContactPage = () => {
                 value={fromAddress}
               />
               <div className="submit-directions-button-wrapper">
-                <Button disable={!fromAddress.length} onClick={() => {}}>
+                <Button
+                  buttonShape={STYLES.RECT}
+                  disable={!fromAddress.length}
+                  onClick={() => {}}
+                >
                   Get Directions
                 </Button>
               </div>

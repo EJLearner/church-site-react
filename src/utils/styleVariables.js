@@ -1,5 +1,6 @@
 const FONT_FAMILIES = {
   ARIAL: 'arial, helvetica, sans_serif',
+  ARIAL_NARROW: "'arial narrow', arial, helvetica, sans_serif",
   BRUSH_SCRIPT: "'Brush Script MT', cursive",
   CALIBRI: "Calibri, 'Segoe UI', Candara, Segoe, Optima, Arial, sans_serif",
   CAMBRIA: "cambria, georgia, 'bookman old style', 'times new roman', serif",
@@ -15,6 +16,7 @@ const COLORS = {
   GREEN_80: 'rgb(102, 158, 74)',
   ORANGE: 'orange',
   PEACH: 'rgb(255, 230, 149)',
+  GRAY38: 'rgb(38,38,38)',
   GRAY41: 'rgb(41, 41, 41)',
   GRAY63: 'rgb(63, 63, 63)',
   GRAY77: 'rgb(77, 77, 77)',
@@ -36,6 +38,7 @@ const COLORS = {
 };
 
 const LOGICAL_COLORS = {
+  GENERAL_PAGE_BORDER_COLOR: COLORS.GRAY217,
   STANDARD_BACKGROUND: COLORS.WHITE,
   STANDARD_TEXT: COLORS.BLACK,
   CT_PRIMARY: '#8E131B',

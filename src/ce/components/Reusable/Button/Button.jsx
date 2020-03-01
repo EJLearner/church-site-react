@@ -22,7 +22,7 @@ const StyledButton = styled.button`
   }
 
   &.rect-button {
-    border: 1px solid;
+    border: none;
   }
 
   &.disabled {
