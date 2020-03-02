@@ -91,7 +91,6 @@ const GeneralPageTemplate = props => {
   return (
     <StyledDiv>
       <MainMenubar />
-
       <div className="top-info-box-wrapper">
         <TopInfoBox className="top-info-box">{topBoxContent}</TopInfoBox>
         {topRightContent && (

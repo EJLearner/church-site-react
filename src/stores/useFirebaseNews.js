@@ -7,7 +7,7 @@ function useNews() {
   const allNews = [
     {
       text:
-        'Stewardship Reports for the 2019 tax year are now available. See Michele Williams for your statement. !',
+        'Stewardship Reports for the 2019 tax year are now available. See Michele Williams for your statement!',
       linkPath: routePaths.MAIN_HOME,
       expireDate: '2020-03-15',
       sortOrder: 20

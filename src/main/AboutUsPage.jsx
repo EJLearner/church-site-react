@@ -4,6 +4,7 @@ import routePaths from '../routePaths';
 
 const pastorContent = (
   <div>
+    <h2>The Pastor</h2>
     <p>
       The Rev. Dr. Grady Andrew Yeargin, Jr. was born on November 7, 1949 in
       Greenville, South Carolina. He attended Sterling High School and was
@@ -65,6 +66,7 @@ const pastorContent = (
 
 const membershipContent = (
   <div>
+    <h2>Membership</h2>
     <p>
       City Temple membership consists of baptized believers who have professed
       faith in Christ and a willingness to be directed by the Holy Spirit. Any
@@ -107,6 +109,7 @@ const membershipContent = (
 
 const historyContent = (
   <div>
+    <h2>History</h2>
     <p>
       The City Temple of Baltimore (Baptist) is a historic landmark and should
       be preserved. The church was built in 1868 - 1871 and is the only

@@ -64,6 +64,7 @@ const LearnMoreBox = styled.div`
 
 const ContentSelectBoxesWrapper = styled.div`
   padding-left: ${WIDTHS.SIDE_CONTENT_PADDING};
+  margin-bottom: 3em;
 `;
 
 function MainContent() {

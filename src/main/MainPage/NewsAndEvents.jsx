@@ -130,7 +130,7 @@ function renderEvents(events) {
 const NewsAndEvents = () => {
   const NEWS_DISPLAY = 'news-content';
   const EVENTS_DISPLAY = 'events-display';
-  const [displayType, setDisplayType] = useState(EVENTS_DISPLAY);
+  const [displayType, setDisplayType] = useState(NEWS_DISPLAY);
 
   const events = useFirebaseEvents({
     futureOnly: true,
