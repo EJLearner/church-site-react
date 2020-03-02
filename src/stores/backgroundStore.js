@@ -8,7 +8,7 @@ const backgroundSources = {
   DANCE: dance
 };
 
-const DEFAULT_BACKGROUND_SOURCE = backgroundSources.CHOIR;
+const DEFAULT_BACKGROUND_SOURCE = backgroundSources.CHURCH;
 
 const callbacks = {};
 

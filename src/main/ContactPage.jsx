@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import {post} from 'jquery';
 
@@ -16,6 +16,7 @@ import Textarea from '../common/components/Textarea';
 import Button, {STYLES} from '../ce/components/Reusable/Button/Button';
 import sendMail, {RECIPIENTS} from '../utils/sendMail';
 import PostSubmitStatusMessage from '../ce/components/Common/PostSubmitStatusMessage';
+import backgroundStore from '../stores/backgroundStore';
 
 const StyledDiv = styled.div`
   .content-and-sub-compass {
@@ -192,6 +193,14 @@ const thanksForInfoRender = (
 );
 
 const ContactPage = () => {
+  useEffect(() => {
+    backgroundStore.setBackgroundSource(
+      backgroundStore.backgroundSources.CHOIR
+    );
+
+    return () => backgroundStore.resetBackground();
+  }, []);
+
   const [showThanksMessage, setShowThanksMessage] = useState(false);
   const [postStatus, setPostStatus] = useState(null);
   const [errors, setErrors] = useState([]);
