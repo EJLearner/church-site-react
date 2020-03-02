@@ -83,6 +83,14 @@ const StyledDiv = styled.div`
     }
   }
 
+  .message-sent-notification {
+    background-color: green;
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
   .submit-directions-button-wrapper {
     margin: 0.5em 0 3em 0;
   }
@@ -179,6 +187,10 @@ const emptySendInfo = {
   message: ''
 };
 
+const thanksForInfoRender = (
+  <p className="message-sent-notification">Your message was sent!</p>
+);
+
 const ContactPage = () => {
   const [showThanksMessage, setShowThanksMessage] = useState(false);
   const [postStatus, setPostStatus] = useState(null);
@@ -231,17 +243,6 @@ const ContactPage = () => {
   const characterLimit = 300;
   const showError = Boolean(errors.length);
 
-  if (showThanksMessage) {
-    return (
-      <div className="registration-page">
-        <h2>Thanks for contacting us!</h2>
-        <p>
-          You will be redirected to the home page in less than five seconds...
-        </p>
-      </div>
-    );
-  }
-
   return (
     <StyledDiv>
       <MainMenubar />
@@ -292,6 +293,7 @@ const ContactPage = () => {
               >
                 Send
               </Button>
+              <br />
               {Boolean(postStatus || errors.length) && (
                 <PostSubmitStatusMessage
                   inputErrorMessage={
@@ -301,6 +303,7 @@ const ContactPage = () => {
                   responseError={responseError}
                 />
               )}
+              {showThanksMessage && thanksForInfoRender}
             </div>
           </div>
           <div className="side-content-wrapper">
