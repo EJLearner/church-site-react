@@ -20,11 +20,6 @@ const StyledDiv = styled.div`
   .top-info-box-wrapper {
     display: flex;
     justify-content: space-between;
-    margin: ${WIDTHS.SIDE_CONTENT_PADDING};
-
-    .top-info-box {
-      min-width: 50%;
-    }
 
     .more-content {
       margin-left: 1em;

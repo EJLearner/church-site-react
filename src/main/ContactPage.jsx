@@ -14,14 +14,14 @@ import AboveContentLinks from './commonComponents/AboveContentLinks';
 import Textbox from '../common/components/Textbox';
 import Textarea from '../common/components/Textarea';
 import Button, {STYLES} from '../ce/components/Reusable/Button/Button';
-import sendMail, {RECIPIENTS} from '../utils/sendMail';
 import PostSubmitStatusMessage from '../ce/components/Common/PostSubmitStatusMessage';
 import backgroundStore from '../stores/backgroundStore';
+import TopInfoBox from './commonComponents/TopInfoBox';
 
 const StyledDiv = styled.div`
   .content-and-sub-compass {
     background-color: white;
-    margin: 18em ${WIDTHS.SIDE_CONTENT_PADDING} 0 ${WIDTHS.SIDE_CONTENT_PADDING};
+    margin: 0 ${WIDTHS.SIDE_CONTENT_PADDING} 0 ${WIDTHS.SIDE_CONTENT_PADDING};
     padding: 0 1em;
   }
 
@@ -116,17 +116,6 @@ const StyledDiv = styled.div`
     }
   }
 `;
-
-// eslint-disable-next-line no-unused-vars
-const submitMessage = (name, emailAddress, messageFromuser) => {
-  const messagePrefix = `The following message was sent via the Contact Us Page on the City Temple website.
-  Name: ${name || 'Not Provided'}
-  Email Address: ${emailAddress || 'Not Provided'}
-  `;
-
-  const message = messagePrefix + messageFromuser;
-  sendMail(RECIPIENTS.CONNECT, message);
-};
 
 const ErrorMessage = styled.div`
   color: red;
@@ -255,6 +244,15 @@ const ContactPage = () => {
   return (
     <StyledDiv>
       <MainMenubar />
+      <TopInfoBox>
+        <h1>Contact Us</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
+          aliquam laudantium eius temporibus ratione laborum quo vel in
+          reprehenderit deleniti! Nulla, omnis asperiores. Sint, vel temporibus
+          harum est assumenda quidem.
+        </p>
+      </TopInfoBox>
       <div className="content-and-sub-compass">
         <div className="compass">
           <AboveContentLinks pageTitle="Worship Experience" />

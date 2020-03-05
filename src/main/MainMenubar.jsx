@@ -33,7 +33,6 @@ const StyledMainTopTitle = styled.div`
 const StyledMainMenuBar = styled.nav`
   font-family: ${FONT_FAMILIES.MULI};
   background-color: rgba(0, 0, 0, 0.4);
-  margin-bottom: 64px;
   display: flex;
   font-size: 12px;
   text-transform: uppercase;

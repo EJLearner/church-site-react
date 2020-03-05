@@ -1,19 +1,16 @@
 import styled from 'styled-components';
-import {
-  LOGICAL_COLORS,
-  FONT_FAMILIES,
-  WIDTHS
-} from '../../utils/styleVariables';
+import {LOGICAL_COLORS, FONT_FAMILIES} from '../../utils/styleVariables';
 
-const TopInfoBox = styled.div`
+const MainTopInfoBox = styled.div`
   // regular text
   font-family: ${FONT_FAMILIES.CENTURY_GOTHIC};
 
-  background-color: ${LOGICAL_COLORS.CT_PRIMARY};
-  color: ${LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};
-  padding: 1em;
-  max-width: 500px;
-  margin: ${WIDTHS.SIDE_CONTENT_PADDING};
+  & > div:first-of-type {
+    background-color: ${LOGICAL_COLORS.CT_PRIMARY};
+    color: ${LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};
+    padding: 1em;
+    max-width: 500px;
+  }
 
   // title
   h1 {
@@ -33,4 +30,4 @@ const TopInfoBox = styled.div`
   }
 `;
 
-export default TopInfoBox;
+export default MainTopInfoBox;

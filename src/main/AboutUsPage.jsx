@@ -441,9 +441,7 @@ const bottomContentData = [
 
 const topBoxContent = (
   <div>
-    <div>
-      <h1>Something About Us</h1>
-    </div>
+    <h1>Something About Us</h1>
     <p>
       City Temple’s goal from inception has been to open its doors to the
       sorrowful, serve meals to the hungry, provide clothing for the needy,

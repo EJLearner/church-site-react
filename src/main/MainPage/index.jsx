@@ -6,13 +6,14 @@ import MainMenubar from '../MainMenubar';
 import {LOGICAL_COLORS, WIDTHS, COLORS} from '../../utils/styleVariables';
 import ContentSelectBoxes from './ContentSelectBoxes';
 import {contentSelectInfo} from './mainPageData';
-import TopInfoBox from '../commonComponents/TopInfoBox';
+import MainTopInfoBox from '../commonComponents/MainTopInfoBox';
 import NewsAndEvents from './NewsAndEvents';
 import constants from '../../utils/constants';
 
 const StyledMainTextAndNews = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-top: ${WIDTHS.SIDE_CONTENT_PADDING};
   padding: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
 `;
 
@@ -78,7 +79,7 @@ function MainContent() {
       <MainMenubar />
       <StyledMainTextAndNews>
         <StyledTopInfoBoxWrapper>
-          <TopInfoBox>
+          <MainTopInfoBox>
             <StyledContentComponentWrapper>
               <ContentComponent />
             </StyledContentComponentWrapper>
@@ -90,7 +91,7 @@ function MainContent() {
                 <Link to={currentContent.linkPath}>Learn more</Link>
               </LearnMoreBox>
             </ArrowAndLearnmore>
-          </TopInfoBox>
+          </MainTopInfoBox>
         </StyledTopInfoBoxWrapper>
         <NewsAndEvents />
       </StyledMainTextAndNews>

@@ -9,6 +9,7 @@ import Textbox from '../common/components/Textbox';
 import Button from '../ce/components/Reusable/Button/Button';
 import Droplist from '../ce/components/Reusable/Droplist/Droplist';
 import SelectState from '../common/components/SelectState';
+import TopInfoBox from './commonComponents/TopInfoBox';
 
 const givingType = 'tithing';
 
@@ -238,6 +239,15 @@ const GivingPage = () => {
   return (
     <GivingPageStyledDiv>
       <MainMenubar />
+      <TopInfoBox>
+        <h1>Giving</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
+          aliquam laudantium eius temporibus ratione laborum quo vel in
+          reprehenderit deleniti! Nulla, omnis asperiores. Sint, vel temporibus
+          harum est assumenda quidem.
+        </p>
+      </TopInfoBox>
       <div className="content-and-sub-compass">
         <div className="compass">
           <AboveContentLinks pageTitle="Giving" />
