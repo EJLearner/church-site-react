@@ -33,7 +33,16 @@ const StyledButton = styled.button`
 
 class Button extends Component {
   render() {
-    const {className, disable, onClick, children, buttonShape} = this.props;
+    const {
+      className,
+      disable,
+      onClick,
+      children,
+      buttonShape,
+      name,
+      value,
+      type
+    } = this.props;
 
     const computedClassName = [
       buttonShape === STYLES.RECT ? 'rect-button' : 'oval-button',
@@ -44,7 +53,13 @@ class Button extends Component {
       .join(' ');
 
     return (
-      <StyledButton className={computedClassName} onClick={onClick}>
+      <StyledButton
+        className={computedClassName}
+        name={name}
+        onClick={onClick}
+        type={type}
+        value={value}
+      >
         {children}
       </StyledButton>
     );
@@ -61,7 +76,10 @@ Button.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   disable: PropTypes.bool,
-  onClick: PropTypes.func.isRequired
+  name: PropTypes.string,
+  onClick: PropTypes.func.isRequired,
+  type: PropTypes.string,
+  value: PropTypes.string
 };
 
 export {STYLES};
