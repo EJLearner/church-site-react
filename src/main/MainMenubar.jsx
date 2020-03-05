@@ -57,8 +57,7 @@ const MainMenubar = () => {
     {text: 'Home', path: routePaths.MAIN_HOME},
     {text: 'About Us', path: routePaths.MAIN_ABOUT_US},
     {text: 'Ministries', path: routePaths.MAIN_MINISTRIES},
-    // TODO: Add later
-    // {text: 'Giving', path: routePaths.MAIN_GIVING},
+    {text: 'Giving', path: routePaths.MAIN_GIVING},
     {text: 'Church Calendar', path: routePaths.MAIN_CALENDAR},
     // TODO: Add later
     // {text: 'Members Only', path: routePaths.MAIN_MEMBERS_ONLY},

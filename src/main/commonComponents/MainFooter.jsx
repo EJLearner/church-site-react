@@ -21,13 +21,12 @@ const footerData = [
     actionWord: 'Connect',
     path: routePaths.MAIN_MINISTRIES,
     subject: 'Ministries'
+  },
+  {
+    actionWord: 'Giving',
+    path: routePaths.MAIN_GIVING,
+    subject: 'Make A Gift'
   }
-  // TODO: add later
-  // {
-  //   actionWord: 'Giving',
-  //   path: routePaths.MAIN_GIVING,
-  //   subject: 'Make A Gift'
-  // }
   // TODO: add later
   // {
   //   actionWord: 'Follow Us',
