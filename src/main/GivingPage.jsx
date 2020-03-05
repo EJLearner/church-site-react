@@ -10,6 +10,7 @@ import Button from '../ce/components/Reusable/Button/Button';
 import Droplist from '../ce/components/Reusable/Droplist/Droplist';
 import SelectState from '../common/components/SelectState';
 import TopInfoBox from './commonComponents/TopInfoBox';
+import PlainButton from './commonComponents/PlainButton';
 
 const givingType = 'tithing';
 
@@ -187,10 +188,11 @@ const GivingPage = () => {
         );
 
         return (
-          <div key={index}>
+          <div className="" key={index}>
             {renderPaymentAmount(index, true)}
             <Droplist
               id={droplistId}
+              label="Giving Type"
               onChange={value => setPaymentInfo(value, index, 'type')}
               options={dropListOptions}
               value={paymentItem.type}
@@ -225,9 +227,12 @@ const GivingPage = () => {
 
         {Boolean(firstUnusedType) && (
           <div>
-            <Button onClick={event => addPaymentOption(firstUnusedType, event)}>
-              Add another payment type
-            </Button>
+            <br />
+            <PlainButton
+              onClick={event => addPaymentOption(firstUnusedType, event)}
+            >
+              + Add another donation type
+            </PlainButton>
           </div>
         )}
       </>
@@ -282,7 +287,15 @@ const GivingPage = () => {
 
               {givingType === 'tithing' && renderTithingFields()}
               <div>
-                <input name="submit" type="submit" value="Continue" />
+                <br />
+                <Button
+                  name="submit"
+                  onClick={() => {}}
+                  type="submit"
+                  value="Continue"
+                >
+                  Continue
+                </Button>
               </div>
             </form>
           </div>
