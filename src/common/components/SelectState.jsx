@@ -71,7 +71,7 @@ function SelectState({id, label, onChange, value}) {
   return (
     <Droplist
       id={id}
-      label={label || 'State'}
+      label="State"
       onChange={onChange}
       options={stateOptions}
       value={value}
@@ -84,6 +84,10 @@ SelectState.propTypes = {
   label: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   value: PropTypes.string
+};
+
+SelectState.defaultProps = {
+  label: 'State'
 };
 
 export default SelectState;
