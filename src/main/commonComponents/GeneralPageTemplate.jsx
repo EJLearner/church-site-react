@@ -60,6 +60,7 @@ const StyledDiv = styled.div`
     h1,
     h2 {
       color: ${LOGICAL_COLORS.CT_PRIMARY};
+      margin-top: 0;
       text-transform: uppercase;
     }
   }

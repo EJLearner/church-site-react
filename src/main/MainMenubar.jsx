@@ -48,7 +48,12 @@ const StyledMainMenuBar = styled.nav`
   }
 
   a {
+    text-decoration: none;
     color: ${LOGICAL_COLORS.CT_TEXT_ON_DARK};
+
+    &:hover: {
+      text-decoration: underline;
+    }
   }
 `;
 

@@ -228,26 +228,23 @@ const GivingPage = () => {
       <TopInfoBox>
         <h1>Giving</h1>
         <p>
-          <p>
-            <i>
-              “You can’t beat God’s giving, no matter how you try. For just as
-              sure as you are living and the Lord is in heaven on high; the more
-              you give, the more He gives to you. But keep on giving because
-              it’s really true, that you can’t beat God’s giving, no matter how
-              you try.”
-            </i>
-          </p>
-          <p>
-            When Abram gave the king of Salem, Melchizedek, a tenth of his
-            possessions, he did it not to invoke God’s blessing, but in response
-            to God’s blessings. The generosity we show God and the spirit in
-            which we give are reflections of the gratitude we have for all He
-            has done for us. Tithes and offerings also have the very practical
-            purpose of providing a source of income for the church to operate
-            and fulfill its missions. City Temple thanks you for your
-            open-hearted generosity and contributions to its kingdom-building
-            efforts.
-          </p>
+          <i>
+            “You can’t beat God’s giving, no matter how you try. For just as
+            sure as you are living and the Lord is in heaven on high; the more
+            you give, the more He gives to you. But keep on giving because it’s
+            really true, that you can’t beat God’s giving, no matter how you
+            try.”
+          </i>
+        </p>
+        <p>
+          When Abram gave the king of Salem, Melchizedek, a tenth of his
+          possessions, he did it not to invoke God’s blessing, but in response
+          to God’s blessings. The generosity we show God and the spirit in which
+          we give are reflections of the gratitude we have for all He has done
+          for us. Tithes and offerings also have the very practical purpose of
+          providing a source of income for the church to operate and fulfill its
+          missions. City Temple thanks you for your open-hearted generosity and
+          contributions to its kingdom-building efforts.
         </p>
       </TopInfoBox>
       <div className="content-and-sub-compass">

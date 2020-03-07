@@ -30,6 +30,7 @@ const anniversaryContent = (
   </div>
 );
 
+// eslint-disable-next-line no-unused-vars
 const calendarContent = `
     Calendar, ipsum dolor sit amet consectetur adipisicing elit. Tempore officia
     necessitatibus atque molestiae? Eveniet debitis itaque ad iure. Cumque
@@ -37,6 +38,7 @@ const calendarContent = `
     quisquam atque.
   `;
 
+// eslint-disable-next-line no-unused-vars
 const storeContent = `
     Store, ipsum dolor sit amet consectetur adipisicing elit. Tempore officia
     necessitatibus atque molestiae? Eveniet debitis itaque ad iure. Cumque
@@ -49,9 +51,10 @@ const bottomContentData = [
     title: '50th Anniversary Celebration',
     id: '50thAnniversary',
     content: anniversaryContent
-  },
-  {title: 'Event Calendar', id: 'calendar', content: calendarContent},
-  {title: 'Store', id: 'store', content: storeContent}
+  }
+  // TODO: add these back
+  // {title: 'Event Calendar', id: 'calendar', content: calendarContent},
+  // {title: 'Store', id: 'store', content: storeContent}
 ];
 
 const topBoxContent = (
