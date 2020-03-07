@@ -25,6 +25,7 @@ const WrapperDiv = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: ${SIZES.FOOTER_HEIGHT};
+  min-height: 100%;
 `;
 
 const PAGE_ID = 'main-wrapper';

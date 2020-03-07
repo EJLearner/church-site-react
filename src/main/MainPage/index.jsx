@@ -23,7 +23,7 @@ const StyledTopInfoBoxWrapper = styled.div`
 `;
 
 const StyledContentComponentWrapper = styled.div`
-  height: 300px;
+  height: 350px;
   overflow-y: auto;
 `;
 
