@@ -79,7 +79,7 @@ const StyledDiv = styled.div`
       font-family: ${FONT_FAMILIES.CENTURY_GOTHIC};
       // trying to align top of middle header with two side headers
       // maybe there's a better way
-      margin-top: -9px;
+      margin-top: -3px;
       text-transform: uppercase;
     }
   }

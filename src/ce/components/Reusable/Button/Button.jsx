@@ -77,7 +77,7 @@ Button.propTypes = {
   className: PropTypes.string,
   disable: PropTypes.bool,
   name: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   type: PropTypes.string,
   value: PropTypes.string
 };

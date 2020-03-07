@@ -24,25 +24,14 @@ const GivingPageStyledDiv = styled.div`
   .content-and-sides {
     border-top: 1px solid ${LOGICAL_COLORS.GENERAL_PAGE_BORDER_COLOR};
     display: flex;
-  }
-
-  .side-times {
-    font-size: 13.33px;
-    padding: 1em;
-
-    h2 {
-      color: ${LOGICAL_COLORS.CT_PRIMARY};
-      margin-top: 0;
-      margin-bottom: 0;
-      font-size: 110%;
-    }
+    flex-direction: column;
+    justify-content: center;
   }
 
   .content {
     background-color: ${COLORS.WHITE};
-    border-left: 1px solid ${LOGICAL_COLORS.GENERAL_PAGE_BORDER_COLOR};
+    margin: 0 auto;
     padding: 1em;
-    width: 70%;
 
     h1 {
       color: ${LOGICAL_COLORS.CT_PRIMARY};
@@ -65,14 +54,6 @@ const testUserInfo = {
   zip: '21216',
   email: 'test@somethwere.com'
 };
-
-function renderLeftSideInfo() {
-  return (
-    <div className="side-times">
-      <h2>Keep An Account</h2>
-    </div>
-  );
-}
 
 const donationTypeOptions = [
   {label: 'General Church Fund', value: 'general'},
@@ -258,7 +239,6 @@ const GivingPage = () => {
           <AboveContentLinks pageTitle="Giving" />
         </div>
         <div className="content-and-sides">
-          {renderLeftSideInfo()}
           <div className="content">
             <h1>Giving</h1>
             <form
@@ -288,12 +268,7 @@ const GivingPage = () => {
               {givingType === 'tithing' && renderTithingFields()}
               <div>
                 <br />
-                <Button
-                  name="submit"
-                  onClick={() => {}}
-                  type="submit"
-                  value="Continue"
-                >
+                <Button name="submit" type="submit" value="Continue">
                   Continue
                 </Button>
               </div>
