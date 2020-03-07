@@ -3,16 +3,16 @@ import {LOGICAL_COLORS, WIDTHS} from '../utils/styleVariables';
 
 const CalendarStyles = styled.div`
   .calendar-page {
+    background-color: white;
     padding: 1em ${WIDTHS.SIDE_CONTENT_PADDING};
 
     h1 {
       color: ${LOGICAL_COLORS.CT_PRIMARY}
       font-family: $century-gothic;
       font-weight: normal;
+      margin-top: 0;
     }
   }
-
-
 
   #calendar-div {
     margin: 0 auto;
