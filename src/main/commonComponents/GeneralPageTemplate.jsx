@@ -1,75 +1,18 @@
 import React, {useState} from 'react';
-import styled from 'styled-components';
 
 import MainMenubar from '../MainMenubar';
-import {
-  WIDTHS,
-  COLORS,
-  LOGICAL_COLORS,
-  FONT_FAMILIES
-} from '../../utils/styleVariables';
 
 import PropTypes from 'prop-types';
 import TopInfoBox from './TopInfoBox';
 import SideMenu from './SideMenu';
 import AboveContentLinks from './AboveContentLinks';
-
-const StyledDiv = styled.div`
-  font-family: ${FONT_FAMILIES.ARIAL};
-
-  .top-info-box-wrapper {
-    display: flex;
-    justify-content: space-between;
-
-    .more-content {
-      margin-left: 1em;
-    }
-  }
-
-  .content-and-sub-compass {
-    background-color: white;
-    margin: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
-    padding: 0 1em;
-  }
-
-  .content-and-side {
-    border-top: 1px solid ${LOGICAL_COLORS.GENERAL_PAGE_BORDER_COLOR};
-    display: flex;
-  }
-
-  .menu-and-content {
-    display: flex;
-  }
-
-  .left-side-menu-wrapper {
-    min-width: 15%;
-    padding: 1em;
-  }
-
-  .side-content-wrapper {
-    border-left: 1px solid ${LOGICAL_COLORS.GENERAL_PAGE_BORDER_COLOR};
-    display: flex;
-    flex-direction: column;
-    min-width: 15%;
-    max-width: 25%;
-    padding: 1em 1em 0 2em;
-  }
-
-  .content {
-    background-color: ${COLORS.WHITE};
-    border-left: 1px solid ${LOGICAL_COLORS.GENERAL_PAGE_BORDER_COLOR};
-    font-size: 13px;
-    padding: 1em;
-    width: 70%;
-
-    h1,
-    h2 {
-      color: ${LOGICAL_COLORS.CT_PRIMARY};
-      margin-top: 0;
-      text-transform: uppercase;
-    }
-  }
-`;
+import TopInfoBoxWrapper from './TopInfoBoxWrapper';
+import ContentAndSubCompassWrapper from './ContentAndSubCompassWrapper';
+import ContentAndSides from './ContentAndSides';
+import ContentLeftSide from './ContentLeftSide';
+import ContentWrapper from './ContentWrapper';
+import ContentRightSide from './ContentRightSide';
+import StandardPageWrapper from './StandardPageWrapper';
 
 const GeneralPageTemplate = props => {
   const {
@@ -78,8 +21,7 @@ const GeneralPageTemplate = props => {
     bottomContentData,
     menuTitle,
     pagePath,
-    pageWideSideContent,
-    topRightContent
+    pageWideSideContent
   } = props;
 
   const [contentId, setContentId] = useState(bottomContentData[0].id);
@@ -99,39 +41,30 @@ const GeneralPageTemplate = props => {
     />
   );
   return (
-    <StyledDiv>
+    <StandardPageWrapper>
       <MainMenubar />
-      <div className="top-info-box-wrapper">
-        <TopInfoBox className="top-info-box">{topBoxContent}</TopInfoBox>
-        {topRightContent && (
-          <div className="more-content">{topRightContent}</div>
-        )}
-      </div>
+      <TopInfoBoxWrapper>
+        <TopInfoBox>{topBoxContent}</TopInfoBox>
+      </TopInfoBoxWrapper>
 
-      <div className="content-and-sub-compass">
-        <div className="compass">
-          <AboveContentLinks
-            pagePath={pagePath}
-            pageTitle={menuTitle}
-            subPageTitle={title}
-          />
-        </div>
-        <div className="content-and-side">
-          {Boolean(menuTitle && bottomContentData) && (
-            <>
-              <div className="left-side-menu-wrapper">
-                {leftContent || sideMenu}
-              </div>
-              <div className="content">{content}</div>
-            </>
-          )}
-          <div className="side-content-wrapper">
+      <ContentAndSubCompassWrapper>
+        <AboveContentLinks
+          pagePath={pagePath}
+          pageTitle={menuTitle}
+          subPageTitle={title}
+        />
+        <ContentAndSides>
+          <ContentLeftSide>
+            {leftContent || (menuTitle && sideMenu)}
+          </ContentLeftSide>
+          <ContentWrapper>{content}</ContentWrapper>
+          <ContentRightSide>
             {pageWideSideContent}
             {sectionSideContent}
-          </div>
-        </div>
-      </div>
-    </StyledDiv>
+          </ContentRightSide>
+        </ContentAndSides>
+      </ContentAndSubCompassWrapper>
+    </StandardPageWrapper>
   );
 };
 
@@ -147,8 +80,7 @@ GeneralPageTemplate.propTypes = {
   menuTitle: PropTypes.string,
   pagePath: PropTypes.string.isRequired,
   pageWideSideContent: PropTypes.node,
-  topBoxContent: PropTypes.node.isRequired,
-  topRightContent: PropTypes.node
+  topBoxContent: PropTypes.node.isRequired
 };
 
 export default GeneralPageTemplate;

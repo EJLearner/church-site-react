@@ -4,8 +4,17 @@ import Button from '../ce/components/Reusable/Button/Button';
 import Droplist from '../ce/components/Reusable/Droplist/Droplist';
 import SelectState from '../common/components/SelectState';
 import PlainButton from './commonComponents/PlainButton';
-import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
 import routePaths from '../routePaths';
+import StandardPageWrapper from './commonComponents/StandardPageWrapper';
+import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
+import MainMenubar from './MainMenubar';
+import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
+import AboveContentLinks from './commonComponents/AboveContentLinks';
+import TopInfoBox from './commonComponents/TopInfoBox';
+import ContentLeftSide from './commonComponents/ContentLeftSide';
+import ContentWrapper from './commonComponents/ContentWrapper';
+import ContentRightSide from './commonComponents/ContentRightSide';
+import ContentAndSides from './commonComponents/ContentAndSides';
 
 const givingType = 'tithing';
 
@@ -249,21 +258,26 @@ const GivingPage = () => {
     </>
   );
 
-  const givingPageContentInfo = {
-    content: givingPageContent,
-    id: 'giving',
-    title: 'Giving'
-  };
-
   return (
-    <GeneralPageTemplate
-      bottomContentData={[givingPageContentInfo]}
-      leftContent={[]}
-      menuTitle="Giving"
-      pagePath={routePaths.MAIN_GIVING}
-      pageTitle="Giving"
-      topBoxContent={topInfoBoxContent}
-    />
+    <StandardPageWrapper>
+      <MainMenubar />
+      <TopInfoBoxWrapper>
+        <TopInfoBox>{topInfoBoxContent}</TopInfoBox>
+      </TopInfoBoxWrapper>
+      <ContentAndSubCompassWrapper>
+        <AboveContentLinks
+          pagePath={routePaths.MAIN_GIVING}
+          pageTitle="Giving"
+        />
+        <ContentAndSides>
+          <ContentLeftSide>
+            <div />
+          </ContentLeftSide>
+          <ContentWrapper>{givingPageContent}</ContentWrapper>
+          <ContentRightSide />
+        </ContentAndSides>
+      </ContentAndSubCompassWrapper>
+    </StandardPageWrapper>
   );
 };
 
