@@ -16,6 +16,14 @@ import ContentWrapper from './commonComponents/ContentWrapper';
 import ContentRightSide from './commonComponents/ContentRightSide';
 import ContentAndSides from './commonComponents/ContentAndSides';
 
+import styled from 'styled-components';
+import {FONT_FAMILIES, COLORS} from '../utils/styleVariables';
+
+const AddAnotherTypeWrapper = styled.div`
+  color: ${COLORS.GRAY38};
+  font-family: ${FONT_FAMILIES.CENTURY_GOTHIC};
+`;
+
 const givingType = 'tithing';
 
 const USE_TEST_DATA = false;
@@ -184,14 +192,14 @@ const GivingPage = () => {
         {renderPaymentboxes(amounts)}
 
         {Boolean(firstUnusedType) && (
-          <div>
-            <br />
+          <AddAnotherTypeWrapper>
             <PlainButton
+              className="add-another"
               onClick={event => addPaymentOption(firstUnusedType, event)}
             >
               + Add another donation type
             </PlainButton>
-          </div>
+          </AddAnotherTypeWrapper>
         )}
       </>
     );
