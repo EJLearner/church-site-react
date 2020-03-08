@@ -1,11 +1,15 @@
 import churchExterior from '../assets/main/images/church-exterior.png';
 import choir from '../assets/main/images/choir.jpg';
-import dance from '../assets/main/images/event-content-template.png';
+import dance from '../assets/main/images/dance.png';
+import christianEdPeople from '../assets/main/images/christian-ed-people.jpg';
+import shofarBlowers from '../assets/main/images/shofar-blowers.jpg';
 
 const backgroundSources = {
   CHOIR: choir,
+  CHRISTIANEDPEOPLE: christianEdPeople,
   CHURCH: churchExterior,
-  DANCE: dance
+  DANCE: dance,
+  SHOFARBLOWERS: shofarBlowers
 };
 
 const DEFAULT_BACKGROUND_SOURCE = backgroundSources.CHURCH;
