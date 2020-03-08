@@ -26,6 +26,7 @@ const MAIN_ROOT_PATHS = {
   MAIN_ABOUT_US: `${MAIN_HOME_PATH}about-us/`,
   MAIN_CALENDAR: `${MAIN_HOME_PATH}calendar/`,
   MAIN_CONTACT: `${MAIN_HOME_PATH}contact/`,
+  MAIN_CORONAVIRUS: `${MAIN_HOME_PATH}coronavirus/`,
   MAIN_GIVING: `${MAIN_HOME_PATH}giving/`,
   MAIN_JUBILEE: `${MAIN_HOME_PATH}jubilee/`,
   MAIN_MEMBERS_ONLY: `${MAIN_HOME_PATH}members-only/`,
