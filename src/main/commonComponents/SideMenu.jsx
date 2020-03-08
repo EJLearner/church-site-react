@@ -11,13 +11,6 @@ const LeftSide = styled.div`
   flex-shrink: 0;
   font-size: 13.33px;
 
-  h2 {
-    color: ${LOGICAL_COLORS.CT_PRIMARY};
-    margin-top: 0;
-    font-size: 110%;
-    text-transform: uppercase;
-  }
-
   ul {
     padding-left: 0;
   }
