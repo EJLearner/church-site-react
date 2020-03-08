@@ -63,9 +63,7 @@ const topBoxContent = (
 
 const performingArtsContent = (
   <div>
-    <div>
-      <h1>Performing Arts Sunday</h1>
-    </div>
+    <h1>Performing Arts Sunday</h1>
     <div>
       <p>
         To enhance City Temple’s worship experience and community outreach,

@@ -6,6 +6,7 @@ import backgroundStore from '../../stores/backgroundStore';
 
 const anniversaryContent = (
   <div>
+    <h1>Join the Jubilee</h1>
     Leviticus 25:9
     <p>
       Then on the Day of Atonement in the fiftieth year, blow the ram’s horn
@@ -32,12 +33,14 @@ const anniversaryContent = (
 );
 
 // eslint-disable-next-line no-unused-vars
-const calendarContent = `
+const calendarContent = (
+  <p>
     Calendar, ipsum dolor sit amet consectetur adipisicing elit. Tempore officia
     necessitatibus atque molestiae? Eveniet debitis itaque ad iure. Cumque
     reiciendis eveniet quia fugiat eius nostrum vel doloremque dignissimos,
     quisquam atque.
-  `;
+  </p>
+);
 
 // eslint-disable-next-line no-unused-vars
 const storeContent = `
