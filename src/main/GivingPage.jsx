@@ -1,45 +1,13 @@
 import React, {useState} from 'react';
-import styled from 'styled-components';
-
-import {WIDTHS, COLORS, LOGICAL_COLORS} from '../utils/styleVariables';
-
-import MainMenubar from './MainMenubar';
-import AboveContentLinks from './commonComponents/AboveContentLinks';
 import Textbox from '../common/components/Textbox';
 import Button from '../ce/components/Reusable/Button/Button';
 import Droplist from '../ce/components/Reusable/Droplist/Droplist';
 import SelectState from '../common/components/SelectState';
-import TopInfoBox from './commonComponents/TopInfoBox';
 import PlainButton from './commonComponents/PlainButton';
+import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
+import routePaths from '../routePaths';
 
 const givingType = 'tithing';
-
-const GivingPageStyledDiv = styled.div`
-  .content-and-sub-compass {
-    background-color: white;
-    margin: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
-    padding: 0 1em;
-  }
-
-  .content-and-sides {
-    border-top: 1px solid ${LOGICAL_COLORS.GENERAL_PAGE_BORDER_COLOR};
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .content {
-    background-color: ${COLORS.WHITE};
-    margin: 0 auto;
-    padding: 1em;
-
-    h1 {
-      color: ${LOGICAL_COLORS.CT_PRIMARY};
-      margin-top: 0;
-      text-transform: uppercase;
-    }
-  }
-`;
 
 const USE_TEST_DATA = false;
 
@@ -222,74 +190,80 @@ const GivingPage = () => {
 
   const boxNum = userInfo.box;
 
-  return (
-    <GivingPageStyledDiv>
-      <MainMenubar />
-      <TopInfoBox>
-        <h1>Giving</h1>
-        <p>
-          <i>
-            “You can’t beat God’s giving, no matter how you try. For just as
-            sure as you are living and the Lord is in heaven on high; the more
-            you give, the more He gives to you. But keep on giving because it’s
-            really true, that you can’t beat God’s giving, no matter how you
-            try.”
-          </i>
-        </p>
-        <p>
-          When Abram gave the king of Salem, Melchizedek, a tenth of his
-          possessions, he did it not to invoke God’s blessing, but in response
-          to God’s blessings. The generosity we show God and the spirit in which
-          we give are reflections of the gratitude we have for all He has done
-          for us. Tithes and offerings also have the very practical purpose of
-          providing a source of income for the church to operate and fulfill its
-          missions. City Temple thanks you for your open-hearted generosity and
-          contributions to its kingdom-building efforts.
-        </p>
-      </TopInfoBox>
-      <div className="content-and-sub-compass">
-        <div className="compass">
-          <AboveContentLinks pageTitle="Giving" />
-        </div>
-        <div className="content-and-sides">
-          <div className="content">
-            <h1>Giving</h1>
-            <form
-              action="https://www.paypal.com/cgi-bin/webscr"
-              method="post"
-              name="validform"
-            >
-              {renderTextbox('first_name', 'First Name')}
-              {renderTextbox('last_name', 'Last Name')}
-              {renderTextbox('address1', 'Street Address')}
-              {renderTextbox('address2', 'Street Address cont.')}
-              {renderTextbox('city', 'City')}
-              {renderStateSelect('state')}
-              {renderTextbox('zip', 'Zipcode')}
-              {renderTextbox('night_phone_a', 'Phone')}
-              {renderTextbox('email', 'Email', {required: true, type: 'email'})}
-              {renderTextbox('box', 'Box #')}
-              {boxNum && renderHiddenTextbox('custom', `Box: ${boxNum}`)}
-              {renderHiddenTextbox('business', 'giving@thecitytemple.org')}
-              {renderHiddenTextbox('return', 'https://www.thecitytemple.org')}
-              {renderHiddenTextbox(
-                'cancel_return',
-                'https://www.thecitytemple.org'
-              )}
-              {renderHiddenTextbox('no_shipping', '1')}
+  const topInfoBoxContent = (
+    <>
+      <h1>Giving</h1>
+      <p>
+        <i>
+          “You can’t beat God’s giving, no matter how you try. For just as sure
+          as you are living and the Lord is in heaven on high; the more you
+          give, the more He gives to you. But keep on giving because it’s really
+          true, that you can’t beat God’s giving, no matter how you try.”
+        </i>
+      </p>
+      <p>
+        When Abram gave the king of Salem, Melchizedek, a tenth of his
+        possessions, he did it not to invoke God’s blessing, but in response to
+        God’s blessings. The generosity we show God and the spirit in which we
+        give are reflections of the gratitude we have for all He has done for
+        us. Tithes and offerings also have the very practical purpose of
+        providing a source of income for the church to operate and fulfill its
+        missions. City Temple thanks you for your open-hearted generosity and
+        contributions to its kingdom-building efforts.
+      </p>
+    </>
+  );
 
-              {givingType === 'tithing' && renderTithingFields()}
-              <div>
-                <br />
-                <Button name="submit" type="submit" value="Continue">
-                  Continue
-                </Button>
-              </div>
-            </form>
-          </div>
+  const givingPageContent = (
+    <>
+      <h1>Giving</h1>
+      <form
+        action="https://www.paypal.com/cgi-bin/webscr"
+        method="post"
+        name="validform"
+      >
+        {renderTextbox('first_name', 'First Name')}
+        {renderTextbox('last_name', 'Last Name')}
+        {renderTextbox('address1', 'Street Address')}
+        {renderTextbox('address2', 'Street Address cont.')}
+        {renderTextbox('city', 'City')}
+        {renderStateSelect('state')}
+        {renderTextbox('zip', 'Zipcode')}
+        {renderTextbox('night_phone_a', 'Phone')}
+        {renderTextbox('email', 'Email', {required: true, type: 'email'})}
+        {renderTextbox('box', 'Box #')}
+        {boxNum && renderHiddenTextbox('custom', `Box: ${boxNum}`)}
+        {renderHiddenTextbox('business', 'giving@thecitytemple.org')}
+        {renderHiddenTextbox('return', 'https://www.thecitytemple.org')}
+        {renderHiddenTextbox('cancel_return', 'https://www.thecitytemple.org')}
+        {renderHiddenTextbox('no_shipping', '1')}
+
+        {givingType === 'tithing' && renderTithingFields()}
+        <div>
+          <br />
+          <Button name="submit" type="submit" value="Continue">
+            Continue
+          </Button>
         </div>
-      </div>
-    </GivingPageStyledDiv>
+      </form>
+    </>
+  );
+
+  const givingPageContentInfo = {
+    content: givingPageContent,
+    id: 'giving',
+    title: 'Giving'
+  };
+
+  return (
+    <GeneralPageTemplate
+      bottomContentData={[givingPageContentInfo]}
+      leftContent={[]}
+      menuTitle="Giving"
+      pagePath={routePaths.MAIN_GIVING}
+      pageTitle="Giving"
+      topBoxContent={topInfoBoxContent}
+    />
   );
 };
 
