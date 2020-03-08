@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import GeneralPageTemplate from '../commonComponents/GeneralPageTemplate';
 import routePaths from '../../routePaths';
+import backgroundStore from '../../stores/backgroundStore';
 
 const anniversaryContent = (
   <div>
@@ -71,6 +72,14 @@ const topBoxContent = (
 );
 
 function JubileePage() {
+  useEffect(() => {
+    backgroundStore.setBackgroundSource(
+      backgroundStore.backgroundSources.SHOFARBLOWERS
+    );
+
+    return () => backgroundStore.resetBackground();
+  }, []);
+
   return (
     <GeneralPageTemplate
       bottomContentData={bottomContentData}

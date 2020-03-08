@@ -3,8 +3,8 @@ import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
 import styled from 'styled-components';
 import {LOGICAL_COLORS} from '../utils/styleVariables';
 import PurchaseHereLink from './commonComponents/PurchaseHereLink';
-import aframMuseum from '../assets/main/images/afram-museum.png';
-import suicideBridgeSign from '../assets/main/images/suicide-bridge-sign.png';
+import aframMuseum from '../assets/main/images/afram-museum.jpg';
+import suicideBridgeSign from '../assets/main/images/suicide-bridge-sign.jpg';
 import routePaths from '../routePaths';
 import backgroundStore from '../stores/backgroundStore';
 
