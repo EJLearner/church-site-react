@@ -41,13 +41,18 @@ const StyledDiv = styled.div`
     display: flex;
   }
 
+  .left-side-menu-wrapper {
+    min-width: 15%;
+    padding: 1em;
+  }
+
   .side-content-wrapper {
     border-left: 1px solid ${LOGICAL_COLORS.GENERAL_PAGE_BORDER_COLOR};
     display: flex;
     flex-direction: column;
-    min-width: 20%;
+    min-width: 15%;
     max-width: 25%;
-    padding: 1em 2em 0 2em;
+    padding: 1em 1em 0 2em;
   }
 
   .content {
@@ -68,6 +73,7 @@ const StyledDiv = styled.div`
 
 const GeneralPageTemplate = props => {
   const {
+    leftContent,
     topBoxContent,
     bottomContentData,
     menuTitle,
@@ -76,7 +82,7 @@ const GeneralPageTemplate = props => {
     topRightContent
   } = props;
 
-  const [contentId, setContentId] = useState(bottomContentData?.[0].id);
+  const [contentId, setContentId] = useState(bottomContentData[0].id);
 
   const {
     sideContent: sectionSideContent,
@@ -84,6 +90,14 @@ const GeneralPageTemplate = props => {
     title
   } = bottomContentData.find(({id}) => id === contentId);
 
+  const sideMenu = (
+    <SideMenu
+      currentId={contentId}
+      menuData={bottomContentData}
+      onClick={id => setContentId(id)}
+      title={menuTitle}
+    />
+  );
   return (
     <StyledDiv>
       <MainMenubar />
@@ -104,22 +118,17 @@ const GeneralPageTemplate = props => {
         </div>
         <div className="content-and-side">
           {Boolean(menuTitle && bottomContentData) && (
-            <div className="menu-and-content">
-              <SideMenu
-                currentId={contentId}
-                menuData={bottomContentData}
-                onClick={id => setContentId(id)}
-                title={menuTitle}
-              />
+            <>
+              <div className="left-side-menu-wrapper">
+                {leftContent || sideMenu}
+              </div>
               <div className="content">{content}</div>
-            </div>
+            </>
           )}
-          {pageWideSideContent || sectionSideContent ? (
-            <div className="side-content-wrapper">
-              {pageWideSideContent}
-              {sectionSideContent}
-            </div>
-          ) : null}
+          <div className="side-content-wrapper">
+            {pageWideSideContent}
+            {sectionSideContent}
+          </div>
         </div>
       </div>
     </StyledDiv>
@@ -127,7 +136,14 @@ const GeneralPageTemplate = props => {
 };
 
 GeneralPageTemplate.propTypes = {
-  bottomContentData: PropTypes.array,
+  bottomContentData: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string,
+      content: PropTypes.node
+    })
+  ),
+  leftContent: PropTypes.node,
   menuTitle: PropTypes.string,
   pagePath: PropTypes.string.isRequired,
   pageWideSideContent: PropTypes.node,

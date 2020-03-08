@@ -10,7 +10,6 @@ const LeftSide = styled.div`
   background-color: ${COLORS.WHITE};
   flex-shrink: 0;
   font-size: 13.33px;
-  padding: 1em;
 
   h2 {
     color: ${LOGICAL_COLORS.CT_PRIMARY};
