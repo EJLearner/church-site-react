@@ -1,14 +1,14 @@
 const FONT_FAMILIES = {
-  ARIAL: 'arial, helvetica, sans_serif',
-  ARIAL_NARROW: "'arial narrow', arial, helvetica, sans_serif",
+  ARIAL: 'arial, helvetica, sans-serif',
+  ARIAL_NARROW: "'arial narrow', arial, helvetica, sans-serif",
   BRUSH_SCRIPT: "'Brush Script MT', cursive",
-  CALIBRI: "Calibri, 'Segoe UI', Candara, Segoe, Optima, Arial, sans_serif",
+  CALIBRI: "Calibri, 'Segoe UI', Candara, Segoe, Optima, Arial, sans-serif",
   CAMBRIA: "cambria, georgia, 'bookman old style', 'times new roman', serif",
-  CENTURY_GOTHIC: "'Century Gothic', CenturyGothic, AppleGothic, sans_serif",
+  CENTURY_GOTHIC: "'Century Gothic', CenturyGothic, AppleGothic, sans-serif",
   GARAMOND:
     "'Adobe Garamond Pro', Garamond, Baskerville, 'Baskerville Old Face'," +
     "'Hoefler Text', 'Times New Roman', serif",
-  BEBAS: '"Bebas Neue", arial, helvetica, sans_serif'
+  BEBAS: '"Bebas Neue", arial, helvetica, sans-serif'
 };
 const COLORS = {
   GREEN_20: 'rgb(146, 208, 80)',
