@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
 
 import routePaths from './routePaths';
@@ -31,245 +31,132 @@ import WhoWeAre from './ce/components/WhoWeAre/WhoWeAre';
 import Why from './ce/components/Why/Why';
 import Youth from './ce/components/Youth/Youth';
 
-class Routes extends Component {
-  renderFullCePage({children}) {
-    const mainTopLinks = [
-      {
-        path: routePaths.CE_HOME,
-        text: 'Home'
-      },
-      {
-        path: routePaths.CE_WHO,
-        text: 'Who We are'
-      },
-      {
-        path: routePaths.CE_WHY,
-        text: 'Why We Are Here'
-      },
-      {
-        path: routePaths.CE_YOUTH,
-        text: 'Programs'
-      },
-      {
-        path: routePaths.CE_IDEA_FORM,
-        text: 'Tell Us What You Think'
-      }
-    ];
+function newRenderFullCePage(content) {
+  const mainTopLinks = [
+    {
+      path: routePaths.CE_HOME,
+      text: 'Home'
+    },
+    {
+      path: routePaths.CE_WHO,
+      text: 'Who We are'
+    },
+    {
+      path: routePaths.CE_WHY,
+      text: 'Why We Are Here'
+    },
+    {
+      path: routePaths.CE_YOUTH,
+      text: 'Programs'
+    },
+    {
+      path: routePaths.CE_IDEA_FORM,
+      text: 'Tell Us What You Think'
+    }
+  ];
 
-    return (
-      <div id="top-react-div">
-        <TitleBar />
-        <MenuBar id="main-menu-bar" links={mainTopLinks} />
-        {children}
-        <Quote />
-        <Footer />
-      </div>
-    );
-  }
-
-  renderBareCePage({children}) {
-    return (
-      <div id="top-react-div">
-        <TitleBar />
-        {children}
-        <CeLogo />
-      </div>
-    );
-  }
-
-  render() {
-    const FullCePage = this.renderFullCePage;
-    const BareCePage = this.renderBareCePage;
-
-    return (
-      <BrowserRouter>
-        <Switch>
-          <Route component={MainWrapper} exact path={routePaths.MAIN_HOME} />
-          <Route
-            path="/christianedu.html"
-            render={() => (
-              <FullCePage>
-                <CeHome />
-              </FullCePage>
-            )}
-          />
-          <Route
-            exact
-            path={routePaths.CE_HOME}
-            render={() => (
-              <FullCePage>
-                <CeHome />
-              </FullCePage>
-            )}
-          />
-          <Route
-            path={routePaths.ADMIN}
-            render={() => (
-              <BareCePage>
-                <Admin />
-              </BareCePage>
-            )}
-          />
-          <Route
-            path={routePaths.CE_CC_CHECKIN}
-            render={() => (
-              <BareCePage>
-                <CcCheckin />
-              </BareCePage>
-            )}
-          />
-          <Route
-            path={routePaths.CE_CC_CHECKOUT}
-            render={() => (
-              <BareCePage>
-                <CcCheckout />
-              </BareCePage>
-            )}
-          />
-          <Route
-            path={routePaths.CE_VBS_CHECKIN}
-            render={() => (
-              <BareCePage>
-                <VbsCheckin />
-              </BareCePage>
-            )}
-          />
-          <Route
-            path={routePaths.CE_VBS_CHECKOUT}
-            render={() => (
-              <BareCePage>
-                <VbsCheckout />
-              </BareCePage>
-            )}
-          />
-
-          <Route component={Calendar} path={routePaths.CE_CALENDAR} />
-          <Route
-            path={routePaths.CE_CC_REG_CHILD}
-            render={() => (
-              <BareCePage>
-                <CcRegistrationChild />
-              </BareCePage>
-            )}
-          />
-          <Route
-            path={routePaths.CE_CC_REG_LANDING}
-            render={() => (
-              <BareCePage>
-                <CcRegistrationLanding />
-              </BareCePage>
-            )}
-          />
-          <Route
-            path={routePaths.CE_CC_REG_VOLUNTEER}
-            render={() => (
-              <BareCePage>
-                <CcRegistrationVolunteer />
-              </BareCePage>
-            )}
-          />
-          {routePaths.OLD_PATHS_CE_IDEA_FORM.map(oldPath => {
-            return (
-              <Redirect
-                from={oldPath}
-                key={oldPath}
-                to={routePaths.CE_IDEA_FORM}
-              />
-            );
-          })}
-          <Route
-            path={routePaths.CE_IDEA_FORM}
-            render={() => (
-              <FullCePage>
-                <IdeaForm />
-              </FullCePage>
-            )}
-          />
-          <Route
-            path={routePaths.CE_VBS_REG_ADULT}
-            render={() => (
-              <BareCePage>
-                <VbsRegistrationStudent studentType={regStudentTypes.ADULT} />
-              </BareCePage>
-            )}
-          />
-          <Route
-            path={routePaths.CE_VBS_REG_CHILD}
-            render={() => (
-              <BareCePage>
-                <VbsRegistrationStudent studentType={regStudentTypes.CHILD} />
-              </BareCePage>
-            )}
-          />
-          <Route
-            path={routePaths.CE_VBS_REG_LANDING}
-            render={() => (
-              <BareCePage>
-                <VbsRegistrationLanding />
-              </BareCePage>
-            )}
-          />
-          <Route
-            path={routePaths.CE_VBS_REG_VOLUNTEER}
-            render={() => (
-              <BareCePage>
-                <VbsRegistrationVolunteer />
-              </BareCePage>
-            )}
-          />
-          <Route
-            path={routePaths.CE_THANK_YOU}
-            render={() => (
-              <FullCePage>
-                <ThankYouPage />
-              </FullCePage>
-            )}
-          />
-          <Route
-            path={routePaths.CE_VISION}
-            render={() => (
-              <FullCePage>
-                <Vision />
-              </FullCePage>
-            )}
-          />
-          <Route
-            path={routePaths.CE_WHO}
-            render={() => (
-              <FullCePage>
-                <WhoWeAre />
-              </FullCePage>
-            )}
-          />
-          <Route
-            path={routePaths.CE_WHY}
-            render={() => (
-              <FullCePage>
-                <Why />
-              </FullCePage>
-            )}
-          />
-          <Route
-            path="/ce/where"
-            render={() => (
-              <FullCePage>
-                <Youth />
-              </FullCePage>
-            )}
-          />
-          <Route
-            path={routePaths.CE_YOUTH}
-            render={() => (
-              <FullCePage>
-                <Youth />
-              </FullCePage>
-            )}
-          />
-          <Route component={MainWrapper} path="/" />
-        </Switch>
-      </BrowserRouter>
-    );
-  }
+  return (
+    <div id="top-react-div">
+      <TitleBar />
+      <MenuBar id="main-menu-bar" links={mainTopLinks} />
+      {content}
+      <Quote />
+      <Footer />
+    </div>
+  );
 }
+
+function newRenderBareCePage(content) {
+  return (
+    <div id="top-react-div">
+      <TitleBar />
+      {content}
+      <CeLogo />
+    </div>
+  );
+}
+
+const Routes = () => {
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route component={MainWrapper} exact path={routePaths.MAIN_HOME} />
+        <Route path="/christianedu.html">
+          {newRenderFullCePage(<CeHome />)}
+        </Route>
+        <Route exact path={routePaths.CE_HOME}>
+          {newRenderFullCePage(<CeHome />)}
+        </Route>
+        <Route path={routePaths.ADMIN}>{newRenderBareCePage(<Admin />)}</Route>
+        <Route path={routePaths.CE_CC_CHECKIN}>
+          {newRenderBareCePage(<CcCheckin />)}
+        </Route>
+        <Route path={routePaths.CE_CC_CHECKOUT}>
+          {newRenderBareCePage(<CcCheckout />)}
+        </Route>
+        <Route path={routePaths.CE_VBS_CHECKIN}>
+          {newRenderBareCePage(<VbsCheckin />)}
+        </Route>
+        <Route path={routePaths.CE_VBS_CHECKOUT}>
+          {newRenderBareCePage(<VbsCheckout />)}
+        </Route>
+        <Route component={Calendar} path={routePaths.CE_CALENDAR} />
+        <Route path={routePaths.CE_CC_REG_CHILD}>
+          {newRenderBareCePage(<CcRegistrationChild />)}
+        </Route>
+        <Route path={routePaths.CE_CC_REG_LANDING}>
+          {newRenderBareCePage(<CcRegistrationLanding />)}
+        </Route>
+        <Route path={routePaths.CE_CC_REG_VOLUNTEER}>
+          {newRenderBareCePage(<CcRegistrationVolunteer />)}
+        </Route>
+        {routePaths.OLD_PATHS_CE_IDEA_FORM.map(oldPath => {
+          return (
+            <Redirect
+              from={oldPath}
+              key={oldPath}
+              to={routePaths.CE_IDEA_FORM}
+            />
+          );
+        })}
+        <Route path={routePaths.CE_IDEA_FORM}>
+          {newRenderFullCePage(<IdeaForm />)}
+        </Route>
+        <Route path={routePaths.CE_VBS_REG_ADULT}>
+          {newRenderBareCePage(
+            <VbsRegistrationStudent studentType={regStudentTypes.ADULT} />
+          )}
+        </Route>
+        <Route path={routePaths.CE_VBS_REG_CHILD}>
+          {newRenderBareCePage(
+            <VbsRegistrationStudent studentType={regStudentTypes.CHILD} />
+          )}
+        </Route>
+        <Route path={routePaths.CE_VBS_REG_LANDING}>
+          {newRenderBareCePage(<VbsRegistrationLanding />)}
+        </Route>
+        <Route path={routePaths.CE_VBS_REG_VOLUNTEER}>
+          {newRenderBareCePage(<VbsRegistrationVolunteer />)}
+        </Route>
+        <Route path={routePaths.CE_THANK_YOU}>
+          {newRenderFullCePage(<ThankYouPage />)}
+        </Route>
+        <Route path={routePaths.CE_VISION}>
+          {newRenderFullCePage(<Vision />)}
+        </Route>
+        <Route path={routePaths.CE_WHO}>
+          {newRenderFullCePage(<WhoWeAre />)}
+        </Route>
+        <Route path={routePaths.CE_WHY}>{newRenderFullCePage(<Why />)}</Route>
+        <Route path="/ce/where">{newRenderFullCePage(<Youth />)}</Route>
+        <Route path={routePaths.CE_YOUTH}>
+          {newRenderFullCePage(<Youth />)}
+        </Route>
+
+        <Route component={MainWrapper} path="/" />
+      </Switch>
+    </BrowserRouter>
+  );
+};
 
 export default Routes;
