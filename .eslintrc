@@ -36,6 +36,8 @@
     "react/sort-comp": "error",
     "react/prop-types": "error",
     "react/no-unused-prop-types": "error",
+    "react/self-closing-comp": "error",
+    "react/void-dom-elements-no-children": "error",
     "semi": "error"
   },
   "overrides": [
