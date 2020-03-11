@@ -8,7 +8,8 @@ const FONT_FAMILIES = {
   GARAMOND:
     "'Adobe Garamond Pro', Garamond, Baskerville, 'Baskerville Old Face'," +
     "'Hoefler Text', 'Times New Roman', serif",
-  BEBAS: '"Bebas Neue", arial, helvetica, sans-serif'
+  BEBAS: '"Bebas Neue", arial, helvetica, sans-serif',
+  DIDACT_GOTHIC: '"Didact Gothic", arial, helvetica, sans-serif'
 };
 const COLORS = {
   GREEN_20: 'rgb(146, 208, 80)',
