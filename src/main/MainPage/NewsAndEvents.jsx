@@ -20,7 +20,7 @@ const NewsEventsStyle = styled.div`
     font-size: 12px;
     padding: 1em;
     background-color: ${LOGICAL_COLORS.CT_PRIMARY};
-    width: 300px
+    width: 300px;
     height: 300px;
 
     .news-item {
