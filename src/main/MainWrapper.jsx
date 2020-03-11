@@ -18,6 +18,7 @@ import MusicMinistryPage from './MusicMinistryPage';
 import CultureAndFineArtsPage from './CultureAndFineArtsPage';
 import backgroundStore from '../stores/backgroundStore';
 import {SIZES} from '../utils/styleVariables';
+import CoronaVirusPage from './CoronavirusPage';
 
 const WrapperDiv = styled.div`
   background-attachment: fixed;
@@ -54,6 +55,9 @@ function MainWrapper() {
         </Route>
         <Route path={routePaths.MAIN_CONTACT}>
           <ContactPage />
+        </Route>
+        <Route path={routePaths.MAIN_CORONAVIRUS}>
+          <CoronaVirusPage />
         </Route>
         <Route path={routePaths.MAIN_GIVING}>
           <GivingPage />

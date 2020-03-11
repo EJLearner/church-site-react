@@ -93,7 +93,19 @@ const SideMenu = ({currentId, onClick, menuData, title}) => {
 
 SideMenu.propTypes = {
   currentId: PropTypes.string.isRequired,
-  menuData: PropTypes.array.isRequired,
+  menuData: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      isSelected: PropTypes.bool,
+      subLinks: PropTypes.arrayOf(
+        PropTypes.shape({
+          elementId: PropTypes.string.isRequired,
+          title: PropTypes.string.isRequired
+        })
+      ),
+      title: PropTypes.string.isRequired
+    })
+  ).isRequired,
   onClick: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired
 };
