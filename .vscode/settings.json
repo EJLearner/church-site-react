@@ -1,12 +1,20 @@
 {
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "editor.formatOnSave": true,
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [120],
+  "editor.tabSize": 2,
+
   "eslint.codeActionsOnSave.mode": "all",
   "files.autoSave": "onFocusChange",
   "files.eol": "\n",
-  "editor.rulers": [120],
+  "files.insertFinalNewline": true,
   "git.autofetch": true,
-  "prettier.singleQuote": true,
   "prettier.bracketSpacing": false,
-  "editor.renderWhitespace": "all",
-  "editor.tabSize": 2
+  "prettier.singleQuote": true,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  }
 }
