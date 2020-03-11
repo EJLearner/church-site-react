@@ -9,8 +9,10 @@ const ContentWrapper = styled.div`
   background-color: ${COLORS.WHITE};
   border-left: 1px solid ${LOGICAL_COLORS.GENERAL_PAGE_BORDER_COLOR};
   font-size: 13px;
+  line-height: 150%;
   padding: 1em;
   width: 70%;
+
   h2 {
     font-family: ${FONT_FAMILIES.FIRA_SANS};
     font-size: 45px;

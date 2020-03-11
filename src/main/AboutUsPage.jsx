@@ -1,10 +1,24 @@
 import React from 'react';
 import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
+import yearginPicture from '../assets/main/images/Yeargin_G.jpg';
 import routePaths from '../routePaths';
+import styled from 'styled-components';
+
+const YearginPicture = styled.img`
+  float: left;
+  width: 200px;
+  height: auto;
+  margin: 0 1em 1em 0;
+`;
 
 const pastorContent = (
   <div>
     <h2>The Pastor</h2>
+    <YearginPicture
+      alt="Grady Yeargin"
+      className="yeargin-picture"
+      src={yearginPicture}
+    />
     <p>
       The Rev. Dr. Grady Andrew Yeargin, Jr. was born on November 7, 1949 in
       Greenville, South Carolina. He attended Sterling High School and was
