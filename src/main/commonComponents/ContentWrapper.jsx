@@ -14,7 +14,7 @@ const ContentWrapper = styled.div`
   width: 70%;
 
   h2 {
-    font-family: ${FONT_FAMILIES.FIRA_SANS};
+    font-family: ${FONT_FAMILIES.DIDACT_GOTHIC};
     font-size: 45px;
   }
 
