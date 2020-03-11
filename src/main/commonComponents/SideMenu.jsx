@@ -1,7 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {COLORS, LOGICAL_COLORS} from '../../utils/styleVariables';
+import {
+  COLORS,
+  LOGICAL_COLORS,
+  FONT_FAMILIES
+} from '../../utils/styleVariables';
 
 import PropTypes from 'prop-types';
 import PlainButton from './PlainButton';
@@ -9,6 +13,7 @@ import PlainButton from './PlainButton';
 const LeftSide = styled.div`
   background-color: ${COLORS.WHITE};
   flex-shrink: 0;
+  font-family: ${FONT_FAMILIES.DIDACT_GOTHIC};
   font-size: 13.33px;
 
   ul {

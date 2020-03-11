@@ -6,6 +6,7 @@ const PlainButton = styled.button`
   border: none;
   cursor: pointer;
   display: inline-block;
+  font-family: inherit;
   padding: 0;
   text-align: left;
 `;
