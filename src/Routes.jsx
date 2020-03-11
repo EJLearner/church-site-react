@@ -30,6 +30,7 @@ import Vision from './ce/components/Vision/Vision';
 import WhoWeAre from './ce/components/WhoWeAre/WhoWeAre';
 import Why from './ce/components/Why/Why';
 import Youth from './ce/components/Youth/Youth';
+import ScrollToTop from './main/commonComponents/ScrollToTop';
 
 function newRenderFullCePage(content) {
   const mainTopLinks = [
@@ -79,6 +80,7 @@ function newRenderBareCePage(content) {
 const Routes = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Switch>
         <Route component={MainWrapper} exact path={routePaths.MAIN_HOME} />
         <Route path="/christianedu.html">
