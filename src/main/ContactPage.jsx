@@ -355,7 +355,7 @@ const ContactPage = () => {
                 frameBorder="0"
                 src={googleMapSource}
                 title="Google Map of Church Location"
-              ></iframe>
+              />
             </ContentRightSide>
           </ContentAndSides>
         </ContentAndSubCompassWrapper>
