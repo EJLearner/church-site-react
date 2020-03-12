@@ -1,6 +1,6 @@
 import React from 'react';
 import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
-import yearginPicture from '../assets/main/images/Yeargin_G.jpg';
+import yearginPicture from '../assets/main/images/grady-yeargin.jpg';
 import routePaths from '../routePaths';
 import styled from 'styled-components';
 
