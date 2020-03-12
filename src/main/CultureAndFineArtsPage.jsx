@@ -51,7 +51,7 @@ const CRAB_FEAST_TITLE = 'Eastern Shore Crab Feast';
 
 const topBoxContent = (
   <div>
-    <h1>Culture &amp; Fine Arts</h1>
+    <h2>Culture &amp; Fine Arts</h2>
     <p>
       The Music Ministry oversees several ministries and committees responsible
       for promoting cultural awareness and appreciation of the arts. They
@@ -63,7 +63,7 @@ const topBoxContent = (
 
 const performingArtsContent = (
   <div>
-    <h1>Performing Arts Sunday</h1>
+    <h2>Performing Arts Sunday</h2>
     <div>
       <p>
         To enhance City Temple’s worship experience and community outreach,
@@ -95,7 +95,7 @@ const performingArtsContent = (
 
 const pocContent = (
   <div>
-    <h1>Perpetual Organ Committee</h1>
+    <h2>Perpetual Organ Committee</h2>
     <div>
       <p>
         The Perpetual Organ Committee is responsible for promoting an awareness
@@ -199,12 +199,12 @@ const upComingEventsSideContent = [
     alt="African American History Museum"
     key="museum"
     src={aframMuseum}
-  ></SideImage>,
+  />,
   <SideImage
     alt="Suicide Bridge Restaurant Sign"
     key="restaurant"
     src={suicideBridgeSign}
-  ></SideImage>
+  />
 ];
 
 const bottomContentData = [

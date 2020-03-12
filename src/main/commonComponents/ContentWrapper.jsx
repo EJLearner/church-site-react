@@ -16,6 +16,7 @@ const ContentWrapper = styled.div`
   h2 {
     font-family: ${FONT_FAMILIES.DIDACT_GOTHIC};
     font-size: 45px;
+    line-height: 100%;
   }
 
   h1,

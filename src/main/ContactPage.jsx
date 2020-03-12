@@ -268,7 +268,7 @@ const ContactPage = () => {
           <ContentAndSides>
             <ContentLeftSide>{renderLeftSideInfo()}</ContentLeftSide>
             <ContentWrapper className="content">
-              <h1>Contact Us</h1>
+              <h2>Contact Us</h2>
               <Textbox
                 id="name"
                 label="Name"

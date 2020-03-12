@@ -233,7 +233,7 @@ const GivingPage = () => {
 
   const givingPageContent = (
     <>
-      <h1>Giving</h1>
+      <h2>Giving</h2>
       <form
         action="https://www.paypal.com/cgi-bin/webscr"
         method="post"

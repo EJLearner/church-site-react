@@ -6,7 +6,7 @@ import backgroundStore from '../../stores/backgroundStore';
 
 const anniversaryContent = (
   <div>
-    <h1>Join the Jubilee</h1>
+    <h2>Join the Jubilee</h2>
     Leviticus 25:9
     <p>
       Then on the Day of Atonement in the fiftieth year, blow the ram’s horn
