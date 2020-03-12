@@ -1,6 +1,10 @@
 import React from 'react';
 import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
 import routePaths from '../routePaths';
+import styled from 'styled-components';
+
+// TODO: Add styling here or remove
+const MinistryInfo = styled.div``;
 
 const aidsMinistryContent = `
 The mission statement of the HIV/AIDS Ministry is to be a spiritually-based resource and support for
@@ -191,7 +195,7 @@ const yougAtHeartMinistryContent = (
   </div>
 );
 
-const bottomContentData = [
+const contentPiecesInfo = [
   {
     title: 'AIDS',
     id: 'aidsMinistry',
@@ -281,6 +285,24 @@ const bottomContentData = [
     title: 'Young At Heart',
     id: 'yougAtHeartMinistry',
     content: yougAtHeartMinistryContent
+  }
+];
+
+const allContent = contentPiecesInfo.map(({id, title, content}) => {
+  return (
+    <MinistryInfo key={id}>
+      <h2 id={id}>{title}</h2>
+      {content}
+    </MinistryInfo>
+  );
+});
+
+const bottomContentData = [
+  {
+    content: allContent,
+    title: 'Ministries',
+    id: 'ministries',
+    subLinks: contentPiecesInfo.map(({title, id}) => ({title, elementId: id}))
   }
 ];
 

@@ -44,7 +44,7 @@ const Event = styled.div`
 
 const DC_TOUR_ID = 'dc-tour-2020';
 const ORGANSCAPE_ID = 'organscape-2020';
-const CRAB_FEAST_ID = 'dc-tour-2020';
+const CRAB_FEAST_ID = 'crab-feast';
 const DC_TOUR_TITLE = 'DC Tour 2020';
 const ARTSCAPE_TITLE = 'Artscape to Organscape 2020';
 const CRAB_FEAST_TITLE = 'Eastern Shore Crab Feast';

@@ -72,8 +72,8 @@ GeneralPageTemplate.propTypes = {
   bottomContentData: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-      title: PropTypes.string,
-      content: PropTypes.node
+      title: PropTypes.string.isRequired,
+      content: PropTypes.node.isRequired
     })
   ),
   leftContent: PropTypes.node,

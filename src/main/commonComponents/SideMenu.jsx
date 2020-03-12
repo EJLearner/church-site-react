@@ -50,7 +50,7 @@ const subMenu = subLinks => {
   return (
     <ul>
       {subLinks.map(({elementId, title}) => (
-        <li key={title}>
+        <li key={elementId}>
           <a href={`#${elementId}`}>{title}</a>
         </li>
       ))}
@@ -59,16 +59,27 @@ const subMenu = subLinks => {
 };
 
 const renderMenuItem = menuItemData => {
-  const {id, isSelected, onClick, subLinks, title} = menuItemData;
+  const {
+    id,
+    isSelected,
+    onClick,
+    subLinks,
+    renderMenuItemTitle,
+    title
+  } = menuItemData;
 
   return (
     <React.Fragment key={id}>
-      <li
-        className={isSelected ? 'selected' : null}
-        onClick={() => onClick(id)}
-      >
-        <ContentButton>{title}</ContentButton>
-      </li>
+      {renderMenuItemTitle && (
+        // don't show title if there is only one - helpful when we have a
+        // single menu item with a within page anchors
+        <li
+          className={isSelected ? 'selected' : null}
+          onClick={() => onClick(id)}
+        >
+          <ContentButton>{title}</ContentButton>
+        </li>
+      )}
       {subLinks && isSelected && subMenu(subLinks)}
     </React.Fragment>
   );
@@ -83,7 +94,8 @@ const SideMenu = ({currentId, onClick, menuData, title}) => {
           renderMenuItem({
             ...menuItemInfo,
             onClick,
-            isSelected: menuItemInfo.id === currentId
+            isSelected: menuItemInfo.id === currentId,
+            renderMenuItemTitle: Boolean(menuData.length)
           })
         )}
       </ul>
