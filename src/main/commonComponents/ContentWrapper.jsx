@@ -20,10 +20,18 @@ const ContentWrapper = styled.div`
     line-height: 100%;
   }
 
+  h3 {
+    font-family: ${FONT_FAMILIES.ARIAL};
+    font-size: 15px;
+    letter-spacing: 0.01em;
+    line-height: 130%;
+    color: ${LOGICAL_COLORS.CT_PRIMARY};
+  }
+
   h1,
   h2 {
     color: ${LOGICAL_COLORS.CT_PRIMARY};
-    margin-top: 0.3em;
+    margin-top: 0.03em;
     text-transform: uppercase;
   }
 `;

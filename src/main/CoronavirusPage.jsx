@@ -240,11 +240,13 @@ const procedureChangesContent = (
   <>
     <h2>Church Protocol Changes</h2>
     <p>
-      <b>
-        City Temple will implement temporary changes in our morning worship
-        protocol to help prevent the spread of COVID-19 and to support those
-        among our congregation with compromised immune systems.
-      </b>
+      <h3>
+        <b>
+          City Temple will implement temporary changes in our morning worship
+          protocol to help prevent the spread of COVID-19 and to support those
+          among our congregation with compromised immune systems.
+        </b>
+      </h3>
       <p>
         <b>Moment of Fellowship</b>
       </p>
@@ -280,7 +282,9 @@ const procedureChangesContent = (
         You can also mail checks or money orders to the church office.
       </p>
       <p>
-        <b>The following church protocols will remain unchanged:</b>
+        <h3>
+          <b>The following church protocols will remain unchanged:</b>
+        </h3>
       </p>
       <p>
         <b>Baptism</b>
