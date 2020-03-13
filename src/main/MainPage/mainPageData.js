@@ -1,4 +1,5 @@
 import choirThumb from '../../assets/main/images/choir-thumb.jpg';
+import coronavirus from '../../assets/main/images/coronavirus-thumb.png';
 import dance from '../../assets/main/images/dance.jpg';
 import christianEdPeopleThumb from '../../assets/main/images/christian-ed-people-thumb.jpg';
 import shofarBlowers from '../../assets/main/images/shofar-blowers.jpg';
@@ -9,6 +10,8 @@ import ChristianEducation from './BoxContent/ChristianEducation';
 import routePaths from '../../routePaths';
 // import GedProgram from './BoxContent/GedProgram';
 import WorshipExperience from './BoxContent/WorshipExperience';
+import CoronaVirusPage from '../CoronavirusPage';
+import CoronaVirusContent from './CoronaVirusContent';
 
 const contentSelectInfo = [
   {
@@ -35,6 +38,12 @@ const contentSelectInfo = [
     render: ChristianEducation,
     title: 'Christian Education',
     thumbnail: christianEdPeopleThumb
+  },
+  {
+    linkPath: routePaths.MAIN_CORONAVIRUS,
+    render: CoronaVirusContent,
+    title: 'Coronavirus Update',
+    thumbnail: coronavirus
   }
   // TODO: add this back later
   // {
