@@ -14,15 +14,15 @@ const ContentWrapper = styled.div`
   width: 70%;
 
   h2 {
-    font-family: ${FONT_FAMILIES.DIDACT_GOTHIC};
-    font-size: 45px;
-    line-height: 100%;
+    font-family: ${FONT_FAMILIES.ROBOTO};
+    font-size: 40px;
+    letter-spacing: 0.02em;
   }
 
   h1,
   h2 {
     color: ${LOGICAL_COLORS.CT_PRIMARY};
-    margin-top: 0;
+    margin-top: 0.3em;
     text-transform: uppercase;
   }
 `;

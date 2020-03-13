@@ -13,8 +13,9 @@ import PlainButton from './PlainButton';
 const LeftSide = styled.div`
   background-color: ${COLORS.WHITE};
   flex-shrink: 0;
-  font-family: ${FONT_FAMILIES.DIDACT_GOTHIC};
+  font-family: ${FONT_FAMILIES.ARIAL};
   font-size: 13.33px;
+  font-weight: bold;
 
   ul {
     padding-left: 0;
@@ -30,7 +31,7 @@ const LeftSide = styled.div`
 
   li {
     list-style-type: none;
-
+    padding-bottom: 1em;
     &:hover {
       text-decoration: underline;
     }
