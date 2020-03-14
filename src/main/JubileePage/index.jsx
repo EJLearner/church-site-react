@@ -3,6 +3,7 @@ import React, {useEffect} from 'react';
 import GeneralPageTemplate from '../commonComponents/GeneralPageTemplate';
 import routePaths from '../../routePaths';
 import backgroundStore from '../../stores/backgroundStore';
+import UpcomingEvents from './UpcomingEvents';
 
 const anniversaryContent = (
   <div>
@@ -32,14 +33,45 @@ const anniversaryContent = (
   </div>
 );
 
-// eslint-disable-next-line no-unused-vars
+const orderedEvents = [
+  {date: '2020-03-16', title: 'This is an event that you should come to'},
+  {
+    date: '2020-03-18',
+    title: 'This is an event that you should come to',
+    timeStart: '2020-03-18T09:00:00'
+  },
+  {
+    date: '2020-04-18',
+    title: 'This is an event that you should come to',
+    timeStart: '2020-04-18T09:00:00'
+  },
+  {
+    date: '2020-05-18',
+    title: 'This is an event that you should come to',
+    timeStart: '2020-05-18T09:00:00'
+  },
+  {
+    date: '2020-05-20',
+    title: 'This is an event that you should come to',
+    timeStart: '2020-05-20T09:00:00'
+  },
+  {
+    date: '2020-05-21',
+    title: 'This is an event that you should come to',
+    timeStart: '2020-05-21T09:00:00'
+  },
+  {
+    date: '2020-05-25',
+    title: 'This is an event that you should come to',
+    timeStart: '2020-05-25T09:00:00'
+  }
+];
+
 const calendarContent = (
-  <p>
-    Calendar, ipsum dolor sit amet consectetur adipisicing elit. Tempore officia
-    necessitatibus atque molestiae? Eveniet debitis itaque ad iure. Cumque
-    reiciendis eveniet quia fugiat eius nostrum vel doloremque dignissimos,
-    quisquam atque.
-  </p>
+  <div>
+    <h2>Upcoming Events</h2>
+    <UpcomingEvents orderedEvents={orderedEvents} />
+  </div>
 );
 
 // eslint-disable-next-line no-unused-vars
@@ -51,13 +83,13 @@ const storeContent = `
   `;
 
 const bottomContentData = [
+  {title: 'Event Calendar', id: 'calendar', content: calendarContent},
   {
     title: '50th Anniversary Celebration',
     id: '50thAnniversary',
     content: anniversaryContent
   }
   // TODO: add these back
-  // {title: 'Event Calendar', id: 'calendar', content: calendarContent},
   // {title: 'Store', id: 'store', content: storeContent}
 ];
 
