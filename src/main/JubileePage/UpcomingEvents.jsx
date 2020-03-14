@@ -45,6 +45,10 @@ const EventsWrapper = styled.div`
       color: white;
       background-color: ${LOGICAL_COLORS.CT_ACCENT};
     }
+
+    .date-square-date {
+      color: ${LOGICAL_COLORS.CT_ACCENT};
+    }
   }
 
   .title-and-name {
