@@ -69,7 +69,7 @@ const orderedEvents = [
 
 const calendarContent = (
   <div>
-    <h2>Upcoming Events</h2>
+    <h2>50th Anniversary Events</h2>
     <UpcomingEvents orderedEvents={orderedEvents} />
   </div>
 );

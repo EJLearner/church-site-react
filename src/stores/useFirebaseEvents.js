@@ -1,7 +1,12 @@
 import firebase from '../firebase';
 import {useState, useEffect} from 'react';
 import constants from '../utils/constants';
-import moment from 'moment';
+import {
+  endOfYesterday,
+  parseISO,
+  startOfDay,
+  isAfter
+} from '../utils/dateTimeUtils';
 
 const sortEventsByStartTime = events => {
   return events.sort((a, b) => {
@@ -33,13 +38,17 @@ function useFirebaseEvents(options = {}) {
       const retrievedDates = snapshot.val();
       const newState = {};
 
-      Object.keys(retrievedDates).forEach(key => {
-        if (!futureOnly || moment(key).isSameOrAfter(moment(), 'day')) {
-          const date = retrievedDates[key];
+      Object.keys(retrievedDates).forEach(date => {
+        const jsDate = parseISO(date);
+        const startOfJsDate = startOfDay(jsDate);
+        const isInFuture = isAfter(startOfJsDate, endOfYesterday());
+
+        if (!futureOnly || isInFuture) {
+          const eventInfo = retrievedDates[date];
           // make an array of events
-          if (date.events) {
-            const events = Object.values(date.events).map(event => event);
-            newState[key] = {events};
+          if (eventInfo.events) {
+            const events = Object.values(eventInfo.events).map(event => event);
+            newState[date] = {events};
           }
         }
       });

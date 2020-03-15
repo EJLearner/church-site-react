@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import moment from 'moment';
 import styled from 'styled-components';
 
 import {
@@ -12,6 +11,7 @@ import PlainButton from '../commonComponents/PlainButton';
 import {Link} from 'react-router-dom';
 import useFirebaseEvents from '../../stores/useFirebaseEvents';
 import useFirebaseNews from '../../stores/useFirebaseNews';
+import {parseISO, format} from '../../utils/dateTimeUtils';
 
 const NewsEventsStyle = styled.div`
   .news-and-events-content {
@@ -89,13 +89,16 @@ function renderEventsList(events) {
       state: {selectedDay: dateString}
     };
 
+    const jsDate = parseISO(dateString);
+    const jsTimeStart = parseISO(timeStart);
+    const formattedTimeStart = timeStart && format(jsTimeStart, ' @ h:mm aaaa');
+
     displayItems.push(
       <div className="news-item" key={index}>
         <Link to={to}>
           <h3>{title}</h3>
           <div className="date-and-time">
-            {moment(dateString).format('dddd, MMMM D')}{' '}
-            {timeStart ? moment(timeStart, 'h:mm A').format(' @ h:mm A') : null}
+            {format(jsDate, 'cccc, LLLL d')} {timeStart && formattedTimeStart}
           </div>
         </Link>
       </div>
