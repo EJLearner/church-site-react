@@ -96,7 +96,7 @@ const SideMenu = ({currentId, onClick, menuData, title}) => {
             ...menuItemInfo,
             onClick,
             isSelected: menuItemInfo.id === currentId,
-            renderMenuItemTitle: Boolean(menuData.length)
+            renderMenuItemTitle: Boolean(menuData.length > 1)
           })
         )}
       </ul>
