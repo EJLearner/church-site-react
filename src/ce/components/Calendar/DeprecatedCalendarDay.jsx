@@ -6,7 +6,7 @@ import _ from 'lodash';
 
 import moment from 'moment';
 
-import EventsListPage from './EventsListPage';
+import EventsListPage from './DeprecatedEventsListPage';
 import withDatesSubscription from '../Hocs/withDatesSubscription';
 
 class CalendarDay extends Component {

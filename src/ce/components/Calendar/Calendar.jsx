@@ -4,8 +4,8 @@ import moment from 'moment';
 
 import routePaths from '../../../routePaths';
 
-import CalendarDay from './CalendarDay';
-import CalendarMonth from './CalendarMonth';
+import CalendarDay from './DeprecatedCalendarDay';
+import CalendarMonth from './DeprecatedCalendarMonth';
 import CalendarWeek from './CalendarWeek';
 import CalendarYear from './CalendarYear';
 import CalendarUpcoming from './CalendarUpcoming';

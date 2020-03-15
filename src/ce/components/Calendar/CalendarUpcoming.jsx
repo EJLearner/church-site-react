@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import moment from 'moment';
 
-import EventsListPage from './EventsListPage';
+import EventsListPage from './DeprecatedEventsListPage';
 
 import './Calendar.css';
 import calendarDatesUtils from '../../utils/calendarDatesUtils';

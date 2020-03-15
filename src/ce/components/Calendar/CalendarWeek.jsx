@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import _ from 'lodash';
 
-import EventsListPage from './EventsListPage';
+import EventsListPage from './DeprecatedEventsListPage';
 import withDatesSubscription from '../Hocs/withDatesSubscription';
 
 import './Calendar.css';
