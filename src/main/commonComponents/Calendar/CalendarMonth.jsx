@@ -8,6 +8,8 @@ import calendarDatesUtils from '../../../ce/utils/calendarDatesUtils';
 import Droplist from '../../../ce/components/Reusable/Droplist/Droplist';
 import withDatesSubscription from '../../../ce/components/Hocs/withDatesSubscription';
 import styled from 'styled-components';
+import routePaths from '../../../routePaths';
+import {Link} from 'react-router-dom';
 
 const MonthCalendarStyle = styled.div`
   background-color: white;
@@ -16,6 +18,10 @@ const MonthCalendarStyle = styled.div`
 
   .controls-and-title {
     background-color: white;
+  }
+
+  .event-link {
+    color: inherit;
   }
 `;
 
@@ -80,10 +86,18 @@ class CalendarMonth extends Component {
     return _.map(daysEventsData, (event, index, allEvents) => {
       const title = event.title || event;
       const isLastEvent = event === _.last(allEvents);
+      const pathname = this.props.isCe
+        ? routePaths.CE_CALENDAR_DAY
+        : routePaths.MAIN_CALENDAR_DAY;
 
       return (
         <div key={index}>
-          <span>{title}</span>
+          <Link
+            className="event-link"
+            to={{pathname, state: {selectedDay: dateString}}}
+          >
+            {title}
+          </Link>
           {!isLastEvent && <hr />}
         </div>
       );
@@ -229,11 +243,13 @@ class CalendarMonth extends Component {
 
 CalendarMonth.propTypes = {
   id: PropTypes.string,
+  isCe: PropTypes.bool,
   storedDates: PropTypes.object
 };
 
 CalendarMonth.propTypes = {
-  id: 'calendar-month-div'
+  id: 'calendar-month-div',
+  isCe: false
 };
 
 export default withDatesSubscription(CalendarMonth);

@@ -13,7 +13,7 @@ const CalendarMonthWrapper = styled.div`
 function CeCalendarMonth() {
   return (
     <CalendarMonthWrapper>
-      <CalendarMonth id={MONTH_DIV_ID} />
+      <CalendarMonth id={MONTH_DIV_ID} isCe />
     </CalendarMonthWrapper>
   );
 }
