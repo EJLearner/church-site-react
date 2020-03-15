@@ -6,9 +6,9 @@ import routePaths from '../../../routePaths';
 
 import CalendarDay from './DeprecatedCalendarDay';
 import CalendarMonth from './DeprecatedCalendarMonth';
-import CalendarWeek from './CalendarWeek';
-import CalendarYear from './CalendarYear';
-import CalendarUpcoming from './CalendarUpcoming';
+import CalendarWeek from './DeprecatedCalendarWeek';
+import CalendarYear from './DeprecatedCalendarYear';
+import CalendarUpcoming from './DeprecatedCalendarUpcoming';
 import Footer from '../Footer/Footer';
 import MenuBar from '../MenuBar/MenuBar';
 import Quote from '../Quote/Quote';

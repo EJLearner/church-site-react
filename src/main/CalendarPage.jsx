@@ -13,7 +13,6 @@ import CalendarMonth from './commonComponents/Calendar/CalendarMonth';
 import CalendarWeek from './commonComponents/Calendar/CalendarWeek';
 import CalendarYear from './commonComponents/Calendar/CalendarYear';
 import CalendarUpcoming from './commonComponents/Calendar/CalendarUpcoming';
-// import CalendarUpcoming from './commonComponents/Calendar/CalendarUpcoming';
 
 class Calendar extends Component {
   constructor(props) {
