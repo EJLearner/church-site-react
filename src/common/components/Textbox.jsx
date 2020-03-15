@@ -5,7 +5,7 @@ import InputLabel from './InputLabel';
 
 const TextboxStyle = styled.div`
   display: inline-block;
-  margin: 0.5em 3em 0.5em 0;
+  margin: 1em 3em 0.5em 0;
 
   input {
     border: 1px solid gray;

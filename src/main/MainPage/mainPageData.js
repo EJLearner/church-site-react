@@ -1,4 +1,5 @@
 import choirThumb from '../../assets/main/images/choir-thumb.jpg';
+import coronavirus from '../../assets/main/images/coronavirus-thumb.png';
 import dance from '../../assets/main/images/dance.jpg';
 import christianEdPeopleThumb from '../../assets/main/images/christian-ed-people-thumb.jpg';
 import shofarBlowers from '../../assets/main/images/shofar-blowers.jpg';
@@ -9,6 +10,7 @@ import ChristianEducation from './BoxContent/ChristianEducation';
 import routePaths from '../../routePaths';
 // import GedProgram from './BoxContent/GedProgram';
 import WorshipExperience from './BoxContent/WorshipExperience';
+import CoronaVirusContent from './CoronaVirusContent';
 
 const contentSelectInfo = [
   {
@@ -17,6 +19,12 @@ const contentSelectInfo = [
     showUntil: '2021-01-01',
     title: '50th Anniversary Celebration',
     thumbnail: shofarBlowers
+  },
+  {
+    linkPath: routePaths.MAIN_CORONAVIRUS,
+    render: CoronaVirusContent,
+    title: 'Coronavirus Update',
+    thumbnail: coronavirus
   },
   {
     linkPath: routePaths.MAIN_CULTURE_AND_ARTS,
@@ -36,6 +44,7 @@ const contentSelectInfo = [
     title: 'Christian Education',
     thumbnail: christianEdPeopleThumb
   }
+
   // TODO: add this back later
   // {
   //   linkPath: routePaths.CE_HOME,

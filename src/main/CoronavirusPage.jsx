@@ -11,6 +11,12 @@ import ContentLeftSide from './commonComponents/ContentLeftSide';
 import ContentWrapper from './commonComponents/ContentWrapper';
 import ContentRightSide from './commonComponents/ContentRightSide';
 import SideMenu from './commonComponents/SideMenu';
+import coronaVirusImage from '../assets/main/images/coronavirus.png';
+
+import styled from 'styled-components';
+const CoronaVirusImage = styled.img`
+  width: 300px;
+`;
 
 const IDS = {
   INFO: 'info',
@@ -27,8 +33,11 @@ const menuData = [
   }
 ];
 
-const infoContent = (
+const image = <CoronaVirusImage alt="Coronavirus" src={coronaVirusImage} />;
+
+const preventingSickness = (
   <>
+    {image}
     <h2>Preventing Sickness</h2>
     <p>
       <b>
@@ -103,6 +112,7 @@ const infoContent = (
 
 const ifInfectedContent = (
   <>
+    {image}
     <h2>
       What to do if you are sick with the coronavirus disease 2019 (COVID-19)
     </h2>
@@ -238,13 +248,16 @@ const ifInfectedContent = (
 
 const procedureChangesContent = (
   <>
+    {image}
     <h2>Church Protocol Changes</h2>
     <p>
-      <b>
-        City Temple will implement temporary changes in our morning worship
-        protocol to help prevent the spread of COVID-19 and to support those
-        among our congregation with compromised immune systems.
-      </b>
+      <h3>
+        <b>
+          City Temple will implement temporary changes in our morning worship
+          protocol to help prevent the spread of COVID-19 and to support those
+          among our congregation with compromised immune systems.
+        </b>
+      </h3>
       <p>
         <b>Moment of Fellowship</b>
       </p>
@@ -280,7 +293,9 @@ const procedureChangesContent = (
         You can also mail checks or money orders to the church office.
       </p>
       <p>
-        <b>The following church protocols will remain unchanged:</b>
+        <h3>
+          <b>The following church protocols will remain unchanged:</b>
+        </h3>
       </p>
       <p>
         <b>Baptism</b>
@@ -312,7 +327,7 @@ const procedureChangesContent = (
 );
 
 const contentMap = {
-  [IDS.INFO]: infoContent,
+  [IDS.INFO]: preventingSickness,
   [IDS.IF_INFECTED]: ifInfectedContent,
   [IDS.PROCEDURE_CHANGES]: procedureChangesContent
 };

@@ -4,20 +4,36 @@ import routePaths from '../routePaths';
 import styled from 'styled-components';
 
 // TODO: Add styling here or remove
-const MinistryInfo = styled.div``;
+const MinistryInfo = styled.div`
+  h2 {
+    font-size: 30px;
+    margin-bottom: 0;
+    margin-top: 35px;
+  }
 
-const aidsMinistryContent = `
-The mission statement of the HIV/AIDS Ministry is to be a spiritually-based resource and support for
-the community and to heighten individual awareness of HIV/AIDS and STDs. The ministry is made up of
-certified HIV/AIDS prevention counselors, lay counselors and certified Ora-Quick technicians. This
-ministry also works with the Outreach Ministry to give free HIV testing monthly. Members of this
-ministry network with community churches and organizations to educate others about HIV/AIDS.
-  `;
+  h2.first-header {
+    margin-top: 0em;
+  }
+`;
 
-const audioMinistryContent = `
-Members of the Audio/Visual ministry record, advertise, sell and distribute audio and video of
-worship services and special events.
-  `;
+const aidsMinistryContent = (
+  <p>
+    The mission statement of the HIV/AIDS Ministry is to be a spiritually-based
+    resource and support for the community and to heighten individual awareness
+    of HIV/AIDS and STDs. The ministry is made up of certified HIV/AIDS
+    prevention counselors, lay counselors and certified Ora-Quick technicians.
+    This ministry also works with the Outreach Ministry to give free HIV testing
+    monthly. Members of this ministry network with community churches and
+    organizations to educate others about HIV/AIDS.
+  </p>
+);
+
+const audioMinistryContent = (
+  <p>
+    Members of the Audio/Visual ministry record, advertise, sell and distribute
+    audio and video of worship services and special events.
+  </p>
+);
 
 const ceMinistryContent = (
   <div>
@@ -38,35 +54,51 @@ const ceMinistryContent = (
   </div>
 );
 
-const culturalMinistryContent = `
-The Cultural and Fine Arts Ministry provides spiritual and cultural experiences that enlighten and
-enrich our lives as we support our church in a broad appreciation of the arts, music, and dance.
-`;
+const culturalMinistryContent = (
+  <p>
+    The Cultural and Fine Arts Ministry provides spiritual and cultural
+    experiences that enlighten and enrich our lives as we support our church in
+    a broad appreciation of the arts, music, and dance.
+  </p>
+);
 
-const danceMinistryContent = `
-Members of this ministry have been consecrated to use their “bodies as living sacrifices, holy,
-acceptable unto God which is their reasonable service” (Romans 12:1) to praise, worship, and glorify God through
-movement and dance. Their role in the worship experience at City Temple is to express God’s Word through dance and
-scriptural interpretation in movement in order to praise and worship the Lord, and in doing so, perhaps, inspire,
-uplift, heal, and deliver, God’s people through their anointing!
-`;
+const danceMinistryContent = (
+  <p>
+    Members of this ministry have been consecrated to use their “bodies as
+    living sacrifices, holy, acceptable unto God which is their reasonable
+    service” (Romans 12:1) to praise, worship, and glorify God through movement
+    and dance. Their role in the worship experience at City Temple is to express
+    God’s Word through dance and scriptural interpretation in movement in order
+    to praise and worship the Lord, and in doing so, perhaps, inspire, uplift,
+    heal, and deliver, God’s people through their anointing!
+  </p>
+);
 
-const diaconateMinistryContent = `
-Members are ordained church officers who may assist the Pastor with any responsibilities that
-are not related to preaching. Members assist and support the Pastor in the furtherance of his
-vision for the achievement of church mission. Diaconate members are spiritual leaders totally
-committed to God, the church, and mankind. They are servants of the church and help
-administer the ordinances of baptism and communion. They minister in times of crisis to the church.
-`;
+const diaconateMinistryContent = (
+  <p>
+    Members are ordained church officers who may assist the Pastor with any
+    responsibilities that are not related to preaching. Members assist and
+    support the Pastor in the furtherance of his vision for the achievement of
+    church mission. Diaconate members are spiritual leaders totally committed to
+    God, the church, and mankind. They are servants of the church and help
+    administer the ordinances of baptism and communion. They minister in times
+    of crisis to the church.
+  </p>
+);
 
-const hospitalityMinistryContent = `
-Members of this ministry greet and recognize visitors during Sunday morning services.
-`;
+const hospitalityMinistryContent = (
+  <p>
+    Members of this ministry greet and recognize visitors during Sunday morning
+    services.
+  </p>
+);
 
-const justWeFewMinistryContent = `
-The goal of the Just We Few Ministry is to serve the Lord and to stand by the Pastor with willing hearts and
-helping hands.
-`;
+const justWeFewMinistryContent = (
+  <p>
+    The goal of the Just We Few Ministry is to serve the Lord and to stand by
+    the Pastor with willing hearts and helping hands.
+  </p>
+);
 
 const mensMinistryContent = (
   <div>
@@ -86,26 +118,33 @@ const mensMinistryContent = (
   </div>
 );
 
-const missionaryMinistryContent = `
-Missionaries are responsible for missions both domestic and abroad in the church and community in order to meet
-the needs of others and to bring people to Christ. Anyone with the desire to serve is welcomed to join
-the Missionary Ministry.
+const missionaryMinistryContent = (
+  <p>
+    Missionaries are responsible for missions both domestic and abroad in the
+    church and community in order to meet the needs of others and to bring
+    people to Christ. Anyone with the desire to serve is welcomed to join the
+    Missionary Ministry. The missionaries meet quarterly in the months of
+    February, May, August, and November on the first Saturday of the month at
+    10:30 a.m. To receive more information, please contact Maelena Holman at
+    (410) 523-3774 or Lilly Traynham at (410) 265-5443.
+  </p>
+);
 
-The missionaries meet quarterly in the months of February, May, August, and November on the first Saturday
- of the month at 10:30 a.m.
+const musicMinistryContent = (
+  <p>
+    The purpose of Music Ministry is to win souls for Jesus Christ and to
+    glorify God through music, fine arts, and dance. Through God’s abundant
+    blessings, the Music Ministry will continue to grow and spread spiritual
+    awareness through the singing of His Word.
+  </p>
+);
 
-To receive more information, please contact Maelena Holman at (410) 523-3774 or Lilly Traynham at (410) 265-5443.
-`;
-
-const musicMinistryContent = `
-The purpose of Music Ministry is to win souls for Jesus Christ and to glorify God through music, fine arts, and
-dance. Through God’s abundant blessings, the Music Ministry will continue to grow and spread spiritual awareness
-through the singing of His Word.
-`;
-
-const nursesMinistryContent = `
-Licensed nurses trained in first aid assist parishioners in the time of medical emergencies.
-`;
+const nursesMinistryContent = (
+  <p>
+    Licensed nurses trained in first aid assist parishioners in the time of
+    medical emergencies.
+  </p>
+);
 
 const outreachMinistryContent = (
   <div>
@@ -117,7 +156,7 @@ const outreachMinistryContent = (
       <li>Food pantry</li>
       <li>Clothes pantry</li>
       <li>
-        Soup Kitchen - Monday, Wednesday, and Thursday, 11:30 a.m. - 12:30 a.m.
+        Soup Kitchen - Monday, Wednesday, and Thursday, 11:30 a.m. - 12:30 p.m.
       </li>
       <li>
         Financial assistance for evictions, gas &amp; electric, prescriptions
@@ -152,15 +191,20 @@ const securityMinistryContent = (
   </div>
 );
 
-const trusteesMinistryContent = `
-Trustees are officers responsible for the church’s financial and business matters. They are responsible for
-the maintenance of the church and all of its properties. They are responsible for all utilities.
-`;
+const trusteesMinistryContent = (
+  <p>
+    Trustees are officers responsible for the church’s financial and business
+    matters. They are responsible for the maintenance of the church and all of
+    its properties. They are responsible for all utilities.
+  </p>
+);
 
-const ushersMinistryContent = `
-We have several groups of ushers that span all age groups. The purpose of this ministry is to welcome all
-into God’s house graciously and warmly.
-`;
+const ushersMinistryContent = (
+  <p>
+    We have several groups of ushers that span all age groups. The purpose of
+    this ministry is to welcome all into God’s house graciously and warmly.
+  </p>
+);
 
 const womensMinistryContent = (
   <div>
@@ -288,10 +332,15 @@ const contentPiecesInfo = [
   }
 ];
 
-const allContent = contentPiecesInfo.map(({id, title, content}) => {
+const allContent = contentPiecesInfo.map((info, index) => {
+  const {id, title, content} = info;
+  const className = index ? null : 'first-header';
+
   return (
     <MinistryInfo key={id}>
-      <h2 id={id}>{title}</h2>
+      <h2 className={className} id={id}>
+        {title}
+      </h2>
       {content}
     </MinistryInfo>
   );
