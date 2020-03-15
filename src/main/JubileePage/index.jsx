@@ -67,6 +67,7 @@ const orderedEvents = [
   }
 ];
 
+// eslint-disable-next-line no-unused-vars
 const calendarContent = (
   <div>
     <h2>50th Anniversary Events</h2>
@@ -83,13 +84,13 @@ const storeContent = `
   `;
 
 const bottomContentData = [
-  {title: 'Event Calendar', id: 'calendar', content: calendarContent},
   {
     title: '50th Anniversary Celebration',
     id: '50thAnniversary',
     content: anniversaryContent
   }
   // TODO: add these back
+  // {title: 'Event Calendar', id: 'calendar', content: calendarContent}
   // {title: 'Store', id: 'store', content: storeContent}
 ];
 
