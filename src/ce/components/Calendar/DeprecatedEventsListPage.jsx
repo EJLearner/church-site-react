@@ -5,7 +5,7 @@ import moment from 'moment';
 import _ from 'lodash';
 import {Parser as HtmlToReactParser} from 'html-to-react';
 
-import MiniCalendar from './MiniCalendar';
+import DeprecatedMiniCalendar from './DeprecatedMiniCalendar';
 
 import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
 
@@ -144,7 +144,7 @@ class EventsListPage extends Component {
           <div className="event-list-container">{renderEventsOrNoEvents}</div>
         </div>
         <div className="mini-calendar-wrapper">
-          <MiniCalendar
+          <DeprecatedMiniCalendar
             highlightWeek={highlightWeek}
             onDateChange={onDateChange}
             selectedDay={selectedDay}

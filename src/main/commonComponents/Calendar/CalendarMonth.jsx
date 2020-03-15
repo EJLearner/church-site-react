@@ -30,8 +30,6 @@ class CalendarMonth extends Component {
     this.monthForward = this.monthForward.bind(this);
     this.onChangeMonth = this.onChangeMonth.bind(this);
     this.onChangeYear = this.onChangeYear.bind(this);
-    this.renderMonthDropDown = this.renderMonthDropDown.bind(this);
-    this.renderYearDropDown = this.renderYearDropDown.bind(this);
   }
 
   monthForward() {
@@ -81,11 +79,12 @@ class CalendarMonth extends Component {
 
     return _.map(daysEventsData, (event, index, allEvents) => {
       const title = event.title || event;
+      const isLastEvent = event === _.last(allEvents);
 
       return (
         <div key={index}>
           <span>{title}</span>
-          {event === _.last(allEvents) ? null : <hr />}
+          {!isLastEvent && <hr />}
         </div>
       );
     });
@@ -229,8 +228,8 @@ class CalendarMonth extends Component {
 }
 
 CalendarMonth.propTypes = {
-  storedDates: PropTypes.object,
-  id: PropTypes.string
+  id: PropTypes.string,
+  storedDates: PropTypes.object
 };
 
 CalendarMonth.propTypes = {

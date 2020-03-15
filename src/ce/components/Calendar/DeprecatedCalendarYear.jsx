@@ -7,7 +7,7 @@ import routePaths from '../../../routePaths';
 import moment from 'moment';
 import _ from 'lodash';
 
-import MiniCalendar from './MiniCalendar';
+import DeprecatedMiniCalendar from './DeprecatedMiniCalendar';
 
 import './Calendar.css';
 
@@ -45,7 +45,7 @@ class CalendarYear extends Component {
 
       return (
         <div className="yearly-calendar-month-wrapper" key={selectedDay}>
-          <MiniCalendar
+          <DeprecatedMiniCalendar
             allDatesClickable
             highlightSelectedDay={highlightSelectedDay}
             onDateClick={this._goToDay}

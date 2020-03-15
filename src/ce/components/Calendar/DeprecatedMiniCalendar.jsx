@@ -14,7 +14,7 @@ const CONTROLS = {
   NEXT: 'NEXT'
 };
 
-class MiniCalendar extends Component {
+class DeprecatedMiniCalendar extends Component {
   constructor(props) {
     super(props);
 
@@ -195,7 +195,7 @@ class MiniCalendar extends Component {
   }
 }
 
-MiniCalendar.propTypes = {
+DeprecatedMiniCalendar.propTypes = {
   allDatesClickable: PropTypes.bool,
   highlightSelectedDay: PropTypes.bool,
   highlightWeek: PropTypes.bool,
@@ -206,11 +206,11 @@ MiniCalendar.propTypes = {
   yearDisplayMode: PropTypes.bool
 };
 
-MiniCalendar.defaultProps = {
+DeprecatedMiniCalendar.defaultProps = {
   allDatesClickable: true,
   highlightWeek: false,
   highlightSelectedDay: true,
   yearDisplayMode: false
 };
 
-export default withDatesSubscription(MiniCalendar);
+export default withDatesSubscription(DeprecatedMiniCalendar);
