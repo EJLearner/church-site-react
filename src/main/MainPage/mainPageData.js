@@ -10,7 +10,6 @@ import ChristianEducation from './BoxContent/ChristianEducation';
 import routePaths from '../../routePaths';
 // import GedProgram from './BoxContent/GedProgram';
 import WorshipExperience from './BoxContent/WorshipExperience';
-import CoronaVirusPage from '../CoronavirusPage';
 import CoronaVirusContent from './CoronaVirusContent';
 
 const contentSelectInfo = [
