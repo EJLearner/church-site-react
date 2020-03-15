@@ -51,7 +51,7 @@ const StyledMainMenuBar = styled.nav`
     text-decoration: none;
     color: ${LOGICAL_COLORS.CT_TEXT_ON_DARK};
 
-    &:hover: {
+    &:hover {
       text-decoration: underline;
     }
   }

@@ -18,9 +18,14 @@ function useNews() {
       sortOrder: 10
     },
     {
-      text: 'News: Website redesign is live!',
-      linkPath: routePaths.MAIN_HOME,
+      text: 'Website redesign is live!',
       expireDate: '2020-05-01'
+    },
+    {
+      text: 'Coronavirus information posted',
+      linkPath: routePaths.MAIN_CORONAVIRUS,
+      sortOrder: 1,
+      expireDate: '2020-06-01'
     }
   ];
 
