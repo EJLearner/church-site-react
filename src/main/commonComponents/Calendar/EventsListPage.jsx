@@ -114,14 +114,11 @@ class EventsListPage extends Component {
 
     return dateEvents.map((event, index) => {
       if (typeof event === 'object') {
-        const {date} = event;
-        let {longDescription} = event;
+        const {date, longDescription} = event;
         const timeDivs = this.renderTimeDivs(event, showDate, date);
 
-        if (longDescription && longDescription[0] === '<') {
-          const htmlToReactParser = new HtmlToReactParser();
-          longDescription = htmlToReactParser.parse(longDescription);
-        }
+        const htmlToReactParser = new HtmlToReactParser();
+        const longDescriptionRender = htmlToReactParser.parse(longDescription);
 
         return (
           <div className="day-event" key={index}>
@@ -129,7 +126,7 @@ class EventsListPage extends Component {
             {timeDivs.start}
             {timeDivs.end}
             <div className="location">{event.location}</div>
-            <div className="long-description">{longDescription}</div>
+            <div className="long-description">{longDescriptionRender}</div>
           </div>
         );
       }
