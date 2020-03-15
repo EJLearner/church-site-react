@@ -22,6 +22,12 @@ const contentSelectInfo = [
     thumbnail: shofarBlowers
   },
   {
+    linkPath: routePaths.MAIN_CORONAVIRUS,
+    render: CoronaVirusContent,
+    title: 'Coronavirus Update',
+    thumbnail: coronavirus
+  },
+  {
     linkPath: routePaths.MAIN_CULTURE_AND_ARTS,
     render: CultureAndFineArts,
     title: 'Culture & Fine Arts',
@@ -38,13 +44,8 @@ const contentSelectInfo = [
     render: ChristianEducation,
     title: 'Christian Education',
     thumbnail: christianEdPeopleThumb
-  },
-  {
-    linkPath: routePaths.MAIN_CORONAVIRUS,
-    render: CoronaVirusContent,
-    title: 'Coronavirus Update',
-    thumbnail: coronavirus
   }
+
   // TODO: add this back later
   // {
   //   linkPath: routePaths.CE_HOME,

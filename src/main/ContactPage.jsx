@@ -333,6 +333,7 @@ const ContactPage = () => {
                   label="From"
                   name="saddr"
                   onChange={value => setFromAddress(value)}
+                  size={40}
                   value={fromAddress}
                 />
                 <div className="submit-directions-button-wrapper">

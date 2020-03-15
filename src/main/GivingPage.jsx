@@ -20,8 +20,9 @@ import styled from 'styled-components';
 import {FONT_FAMILIES, COLORS} from '../utils/styleVariables';
 
 const AddAnotherTypeWrapper = styled.div`
-  color: ${COLORS.GRAY38};
+  color: ${COLORS.GRAY180};
   font-family: ${FONT_FAMILIES.CENTURY_GOTHIC};
+  margin-top: 15px;
 `;
 
 const givingType = 'tithing';
