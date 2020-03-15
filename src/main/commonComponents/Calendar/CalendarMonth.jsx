@@ -202,7 +202,7 @@ class CalendarMonth extends Component {
 
   render() {
     return (
-      <MonthCalendarStyle id="calendar-div">
+      <MonthCalendarStyle id={this.props.id}>
         <div className="controls-and-title">
           <div className="drop-downs">
             {this.renderYearDropDown()}
@@ -229,7 +229,12 @@ class CalendarMonth extends Component {
 }
 
 CalendarMonth.propTypes = {
-  storedDates: PropTypes.object
+  storedDates: PropTypes.object,
+  id: PropTypes.string
+};
+
+CalendarMonth.propTypes = {
+  id: 'calendar-month-div'
 };
 
 export default withDatesSubscription(CalendarMonth);

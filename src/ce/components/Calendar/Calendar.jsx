@@ -5,8 +5,8 @@ import moment from 'moment';
 import routePaths from '../../../routePaths';
 
 import CalendarDay from './DeprecatedCalendarDay';
-import CalendarMonth from './DeprecatedCalendarMonth';
 import CalendarWeek from './DeprecatedCalendarWeek';
+import CeCalendarMonth from './CeCalendarMonth';
 import CalendarYear from './DeprecatedCalendarYear';
 import CalendarUpcoming from './DeprecatedCalendarUpcoming';
 import Footer from '../Footer/Footer';
@@ -40,7 +40,7 @@ class Calendar extends Component {
       {
         isDefault: true,
         path: routePaths.CE_CALENDAR_MONTH,
-        render: <CalendarMonth />,
+        render: <CeCalendarMonth />,
         text: 'Month View'
       },
       {
