@@ -14,10 +14,15 @@ import SideMenu from './commonComponents/SideMenu';
 import coronaVirusImage from '../assets/main/images/coronavirus.png';
 
 import styled from 'styled-components';
-const CoronaVirusImage = styled.img`
-  width: 300px;
-`;
 
+const StyleWrapper = styled.div`
+  .corona-virus-image {
+    width: 300px;
+  }
+  .mid-sentence {
+    color: #c00000;
+  }
+`;
 const IDS = {
   INFO: 'info',
   IF_INFECTED: 'if-sick',
@@ -29,11 +34,17 @@ const menuData = [
   {id: IDS.IF_INFECTED, title: 'What to do if infected'},
   {
     id: IDS.PROCEDURE_CHANGES,
-    title: 'What the church is doing differently'
+    title: 'City Temple’s Response to COVID-19'
   }
 ];
 
-const image = <CoronaVirusImage alt="Coronavirus" src={coronaVirusImage} />;
+const image = (
+  <img
+    alt="Coronavirus"
+    className="corona-virus-image"
+    src={coronaVirusImage}
+  />
+);
 
 const preventingSickness = (
   <>
@@ -284,10 +295,14 @@ const procedureChangesContent = (
       <p>
         <ul>
           <li>
-            We are encouraging ministries to conduct meetings remotely using a
-            church-provided ministry conference line. Contact Emily Tilghman at
-            (443) 520-8162 or kerrtilghman@gmail.com to schedule your use of the
-            conference line to avoid conflicts.
+            We are encouraging ministries to conduct meetings remotely using a{' '}
+            <b>
+              <span className="mid-sentence">
+                church-provided ministry conference line
+              </span>
+            </b>
+            . Contact Emily Tilghman at (443) 520-8162 or kerrtilghman@gmail.com
+            to schedule your use of the conference line to avoid conflicts.
             <ul>
               <li>Dial-in number: (425) 436-6358</li>
               <li>Participant code: 581086</li>
@@ -368,46 +383,48 @@ export default function CoronaVirusPage() {
   const content = contentMap[contentId];
 
   return (
-    <StandardPageWrapper>
-      <MainMenubar />
-      <TopInfoBoxWrapper>
-        <TopInfoBox>
-          <h1>Faith in the “Great Physician”</h1>
-          <p>
-            The enemy uses every opportunity to steal, kill, and destroy—this
-            includes our hope, our peace, and our faith. However, God instructs
-            us still to “cast all of your cares upon Him, for He cares for you”
-            (I Peter 5:7). Faith is a spiritual muscle; and, like all muscles,
-            if left dormant, it withers and atrophies. Trials and trouble remind
-            us that on our own we are helpless. But thanks to God who regards
-            our helpless estate! In all things, we already have the victory! Be
-            an inspiration to those who are down-hearted and worried. Offer
-            comfort and love to those who grieve. Pray and encourage others to
-            pray for those affected by the virus. Share facts of the virus to
-            stop the spread of rumors and discrimination. Exercise your faith
-            through meditating on scripture, prayer, and maintaining a positive
-            outlook.
-          </p>
-        </TopInfoBox>
-        <ContentAndSubCompassWrapper>
-          <AboveContentLinks
-            pagePath={routePaths.MAIN_CORONAVIRUS}
-            pageTitle="Coronavirus"
-          />
-          <ContentAndSides>
-            <ContentLeftSide>
-              <SideMenu
-                currentId={contentId}
-                menuData={menuData}
-                onClick={id => setContentId(id)}
-                title="Coronavirus"
-              />
-            </ContentLeftSide>
-            <ContentWrapper>{content}</ContentWrapper>
-            <ContentRightSide />
-          </ContentAndSides>
-        </ContentAndSubCompassWrapper>
-      </TopInfoBoxWrapper>
-    </StandardPageWrapper>
+    <StyleWrapper>
+      <StandardPageWrapper>
+        <MainMenubar />
+        <TopInfoBoxWrapper>
+          <TopInfoBox>
+            <h1>Faith in the “Great Physician”</h1>
+            <p>
+              The enemy uses every opportunity to steal, kill, and destroy—this
+              includes our hope, our peace, and our faith. However, God
+              instructs us still to “cast all of your cares upon Him, for He
+              cares for you” (I Peter 5:7). Faith is a spiritual muscle; and,
+              like all muscles, if left dormant, it withers and atrophies.
+              Trials and trouble remind us that on our own we are helpless. But
+              thanks to God who regards our helpless estate! In all things, we
+              already have the victory! Be an inspiration to those who are
+              down-hearted and worried. Offer comfort and love to those who
+              grieve. Pray and encourage others to pray for those affected by
+              the virus. Share facts of the virus to stop the spread of rumors
+              and discrimination. Exercise your faith through meditating on
+              scripture, prayer, and maintaining a positive outlook.
+            </p>
+          </TopInfoBox>
+          <ContentAndSubCompassWrapper>
+            <AboveContentLinks
+              pagePath={routePaths.MAIN_CORONAVIRUS}
+              pageTitle="Coronavirus"
+            />
+            <ContentAndSides>
+              <ContentLeftSide>
+                <SideMenu
+                  currentId={contentId}
+                  menuData={menuData}
+                  onClick={id => setContentId(id)}
+                  title="Coronavirus"
+                />
+              </ContentLeftSide>
+              <ContentWrapper>{content}</ContentWrapper>
+              <ContentRightSide />
+            </ContentAndSides>
+          </ContentAndSubCompassWrapper>
+        </TopInfoBoxWrapper>
+      </StandardPageWrapper>
+    </StyleWrapper>
   );
 }
