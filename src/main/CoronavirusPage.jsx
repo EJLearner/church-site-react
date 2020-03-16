@@ -249,78 +249,108 @@ const ifInfectedContent = (
 const procedureChangesContent = (
   <>
     {image}
-    <h2>Church Protocol Changes</h2>
+    <h2>Responding to the Coronavirus Pandemic</h2>
     <p>
       <h3>
         <b>
-          City Temple will implement temporary changes in our morning worship
-          protocol to help prevent the spread of COVID-19 and to support those
-          among our congregation with compromised immune systems.
+          This is an emerging, rapidly evolving situation. We will provide
+          updated information regarding our services, events, and other
+          protocols as necessary. Please accept the following guidelines and
+          help us protect the vulnerable members of our congregation.
         </b>
       </h3>
       <p>
-        <b>Moment of Fellowship</b>
+        <b>Church Service</b>
       </p>
       <p>
-        We are asking our members to remain in their pews and greet one another
-        with smiles and waves in lieu of personally approaching each other to
-        greet.
+        <ul>
+          <li>
+            Church service will be held at 9 am each Sunday unless otherwise
+            noted and communicated.
+          </li>
+          <li>
+            If you have a cold, or cold- or flu-like symptoms, please do not
+            attend church service.
+          </li>
+          <li>
+            Church service will not exceed 60 minutes in order to limit
+            opportunity for germs to spread.
+          </li>
+        </ul>
       </p>
       <p>
-        <b>Prayer</b>
+        <b>Ministry Meetings</b>
       </p>
       <p>
-        During moments of cognregational prayer, members will be asked to link
-        arms with one another instead of holding hands.
-      </p>
-      <p>
-        <b>Streaming worship service</b>
-      </p>
-      <p>
-        We are making every effort to live stream morning worship services to
-        allow members with compromised immune systems to view service online if
-        they are unable to participate in service in person.
+        <ul>
+          <li>
+            We are encouraging ministries to conduct meetings remotely using a
+            church-provided ministry conference line. Contact Emily Tilghman at
+            (443) 520-8162 or kerrtilghman@gmail.com to schedule your use of the
+            conference line to avoid conflicts.
+            <ul>
+              <li>Dial-in number: (425) 436-6358</li>
+              <li>Participant code: 581086</li>
+              <li>Host PIN: 6845</li>
+            </ul>
+          </li>
+          <li>
+            Please see April Jones if you are interested in video conferencing
+            for your meetings.
+          </li>
+        </ul>
       </p>
       <p>
         <b>Tithing &amp; Offering</b>
       </p>
       <p>
-        If you would like to make your tithing, offering, or donation on-line,
-        please visit our{' '}
-        <a href="https://www.thecitytemple.org/giving/">
-          <b>Giving Page.</b>
-        </a>{' '}
-        You can also mail checks or money orders to the church office.
+        <ul>
+          <li>
+            Please continue to send your tithes and offering to your church! We
+            suggest three methods for sending in your offering:
+            <ul>
+              <li>
+                Church website: Make your tithing, offering, or donation on-line
+                by visiting our{' '}
+                <a href="https://www.thecitytemple.org/giving/">
+                  <b>Giving Page.</b>
+                </a>{' '}
+              </li>
+              <li>
+                Mail to church: 317 Dolphin Street, Baltimore, MD 21217 (please,
+                no cash)
+              </li>
+              <li>
+                Drop off: Leave in the mail slot on Eutaw Place or bring in to
+                the church office between 9 am - 1 pm (please, no cash)
+              </li>
+            </ul>
+          </li>
+        </ul>
       </p>
       <p>
-        <h3>
-          <b>The following church protocols will remain unchanged:</b>
-        </h3>
+        <b>Notifications &amp; Cancellations</b>
       </p>
       <p>
-        <b>Baptism</b>
-      </p>
-      <p>
-        Members desiring baptism may do so each first Sunday of the month.
-        Please call the church office or speak to a Diaconate member after
-        church service to schedule your baptism.
-      </p>
-      <p>
-        <b>Communion</b>
-      </p>
-      <p>
-        We will continue to administer communion in our normal fashion. The
-        Diaconate will continue to wear gloves and distribute the communion
-        elements to members desiring holy communion.
-      </p>
-      <p>
-        <b>Scheduled Activities &amp; Events</b>
-      </p>
-      <p>
-        Unless the church is otherwise notified, please plan to attend all
-        scheduled trips, activities, and events. In the event of a cancellation,
-        members will be notified via robocall, email message, or on the church
-        website.
+        <ul>
+          <li>
+            We will communicate updates using robocalls, emails, website
+            updates, radio, and tv.
+          </li>
+          <li>
+            If your contact information has changed in the last 6 months, please
+            update it with the church office.
+          </li>
+          <li>Lenten services have been cancelled.</li>
+          <li>
+            All church events scheduled for March and April have been postponed
+            &mdash; new dates <b>to be determined</b>.
+          </li>
+          <li>
+            Please do not submit requests for any new events taking place before
+            August.
+          </li>
+        </ul>
       </p>
     </p>
   </>

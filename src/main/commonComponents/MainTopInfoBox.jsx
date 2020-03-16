@@ -3,7 +3,8 @@ import {LOGICAL_COLORS, FONT_FAMILIES} from '../../utils/styleVariables';
 
 const MainTopInfoBox = styled.div`
   // regular text
-  font-family: ${FONT_FAMILIES.CENTURY_GOTHIC};
+  font-family: ${FONT_FAMILIES.ARIAL};
+  font-size: 15px;
 
   & > div:first-of-type {
     background-color: ${LOGICAL_COLORS.CT_PRIMARY};
