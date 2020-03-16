@@ -1,24 +1,72 @@
-import React from 'react';
-import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
+import React, {useState} from 'react';
 import yearginPicture from '../assets/main/images/grady-yeargin.jpg';
+import congregationPicture from '../assets/main/images/congregation.jpg';
+import organPicture from '../assets/main/images/organ-close.jpg';
+import anniversaryChoirPicture from '../assets/main/images/30th-anniversary-choir.jpg';
+import revPaynePicture from '../assets/main/images/rev-payne.png';
 import routePaths from '../routePaths';
 import styled from 'styled-components';
+import StandardPageWrapper from './commonComponents/StandardPageWrapper';
+import MainMenubar from './MainMenubar';
+import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
+import TopInfoBox from './commonComponents/TopInfoBox';
+import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
+import AboveContentLinks from './commonComponents/AboveContentLinks';
+import ContentLeftSide from './commonComponents/ContentLeftSide';
+import SideMenu from './commonComponents/SideMenu';
+import ContentWrapper from './commonComponents/ContentWrapper';
+import ContentRightSide from './commonComponents/ContentRightSide';
+import ContentAndSides from './commonComponents/ContentAndSides';
 
-const YearginPicture = styled.img`
-  float: left;
-  width: 200px;
-  height: auto;
-  margin: 0 1em 1em 0;
+const StyleWrapper = styled.div`
+  .yeargin-picture {
+    float: left;
+    width: 200px;
+    height: auto;
+    margin: 0 1em 1em 0;
+  }
+
+  .above-header-picture {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    margin: 0 1em 1em 0;
+  }
+
+  .mid-content-picture {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    margin: 0 1em 1em 0;
+  }
+
+  .rev-payne-picture-and-caption {
+    float: left;
+    width: 200px;
+    margin: 0 1em 1em 0;
+    text-align: center;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .multi-pictures {
+    display: flex;
+    align-items: flex-start;
+
+    .img {
+      display: block;
+      height: auto;
+    }
+  }
 `;
 
 const pastorContent = (
   <div>
     <h2>The Pastor</h2>
-    <YearginPicture
-      alt="Grady Yeargin"
-      className="yeargin-picture"
-      src={yearginPicture}
-    />
+    <img alt="Grady Yeargin" className="yeargin-picture" src={yearginPicture} />
     <p>
       The Rev. Dr. Grady Andrew Yeargin, Jr. was born on November 7, 1949 in
       Greenville, South Carolina. He attended Sterling High School and was
@@ -80,6 +128,11 @@ const pastorContent = (
 
 const membershipContent = (
   <div>
+    <img
+      alt="Congregation"
+      className="above-header-picture"
+      src={congregationPicture}
+    />
     <h2>Membership</h2>
     <p>
       City Temple membership consists of baptized believers who have professed
@@ -123,7 +176,12 @@ const membershipContent = (
 
 const historyContent = (
   <div>
+    <div className="multi-pictures" />
     <h2>History</h2>
+    <div className="rev-payne-picture-and-caption">
+      <img alt="Rev Payne" className="payne-picture" src={revPaynePicture} />
+      <figcaption>Rev Payne</figcaption>
+    </div>
     <p>
       The City Temple of Baltimore (Baptist) is a historic landmark and should
       be preserved. The church was built in 1868 - 1871 and is the only
@@ -169,6 +227,7 @@ const historyContent = (
       Giving Service to Those In Need. All members in this ministry were urged
       to enroll in Sunday School.
     </p>
+
     <p>
       Reverend Payne stated that part of this dream was a settlement house. The
       settlement house would be called “A House of Hope” where all people could
@@ -229,6 +288,11 @@ const historyContent = (
       expertise in getting much of the legal litigation of the corporation done
       free of charge.
     </p>
+    <img
+      alt="50th Anniversary Choir"
+      className="mid-content-picture"
+      src={anniversaryChoirPicture}
+    />
     <p>
       Mid-week, mid-city, mid-day worship services were held at the City Temple
       of Baltimore (Baptist) each Wednesday at 12:05 PM for all people who
@@ -342,6 +406,7 @@ const historyContent = (
       same event, Sis. Delores Royster made a presentation to Dea. Mattie
       Gladney and Bro. Herman Johnson for dedicated service.
     </p>
+    <img alt="Organ" className="mid-content-picture" src={organPicture} />
     <p>
       A special committee of church members was formed to raise money for the
       restoration of the church’s pipe organ. This committee sold fish and
@@ -455,7 +520,7 @@ const bottomContentData = [
 
 const topBoxContent = (
   <div>
-    <h1>Something About Us</h1>
+    <h1>About Us</h1>
     <p>
       City Temple’s goal from inception has been to open its doors to the
       sorrowful, serve meals to the hungry, provide clothing for the needy,
@@ -467,13 +532,38 @@ const topBoxContent = (
 );
 
 const MainAboutUs = () => {
+  const [contentId, setContentId] = useState(bottomContentData[0].id);
+  const currentContentData = bottomContentData.find(({id}) => contentId === id);
+
   return (
-    <GeneralPageTemplate
-      bottomContentData={bottomContentData}
-      menuTitle="About Us"
-      pagePath={routePaths.MAIN_ABOUT_US}
-      topBoxContent={topBoxContent}
-    />
+    <StyleWrapper>
+      <StandardPageWrapper>
+        <MainMenubar />
+        <TopInfoBoxWrapper>
+          <TopInfoBox>{topBoxContent}</TopInfoBox>
+
+          <ContentAndSubCompassWrapper>
+            <AboveContentLinks
+              pagePath={routePaths.MAIN_ABOUT_US}
+              pageTitle="About Us"
+              subPageTitle={currentContentData.title}
+            />
+            <ContentAndSides>
+              <ContentLeftSide>
+                <SideMenu
+                  currentId={contentId}
+                  menuData={bottomContentData}
+                  onClick={id => setContentId(id)}
+                  title="About Us"
+                />
+              </ContentLeftSide>
+              <ContentWrapper>{currentContentData.content}</ContentWrapper>
+              <ContentRightSide />
+            </ContentAndSides>
+          </ContentAndSubCompassWrapper>
+        </TopInfoBoxWrapper>
+      </StandardPageWrapper>
+    </StyleWrapper>
   );
 };
 

@@ -2,7 +2,7 @@ import choirThumb from '../../assets/main/images/choir-thumb.jpg';
 import coronavirus from '../../assets/main/images/coronavirus-thumb.png';
 import dance from '../../assets/main/images/dance.jpg';
 import christianEdPeopleThumb from '../../assets/main/images/christian-ed-people-thumb.jpg';
-import shofarBlowers from '../../assets/main/images/shofar-blowers.jpg';
+import shofarBlower from '../../assets/main/images/shofar-blower-thumb.png';
 
 import JubileeContent from './BoxContent/JubileeContent';
 import CultureAndFineArts from './BoxContent/CultureAndFineArts';
@@ -18,7 +18,7 @@ const contentSelectInfo = [
     render: JubileeContent,
     showUntil: '2021-01-01',
     title: '50th Anniversary Celebration',
-    thumbnail: shofarBlowers
+    thumbnail: shofarBlower
   },
   {
     linkPath: routePaths.MAIN_CORONAVIRUS,

@@ -1,10 +1,11 @@
 import React from 'react';
 import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
+import outdoorPicture from '../assets/main/images/outdoor-ct-shirts.jpg';
+
 import routePaths from '../routePaths';
 import styled from 'styled-components';
 
-// TODO: Add styling here or remove
-const MinistryInfo = styled.div`
+const MinistriesPageWrapper = styled.div`
   h2 {
     font-size: 30px;
     margin-bottom: 0;
@@ -13,6 +14,13 @@ const MinistryInfo = styled.div`
 
   h2.first-header {
     margin-top: 0em;
+  }
+
+  img {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    margin: 0 1em 1em 0;
   }
 `;
 
@@ -332,19 +340,26 @@ const contentPiecesInfo = [
   }
 ];
 
-const allContent = contentPiecesInfo.map((info, index) => {
+const combinedMinistriesContent = contentPiecesInfo.map((info, index) => {
   const {id, title, content} = info;
   const className = index ? null : 'first-header';
 
   return (
-    <MinistryInfo key={id}>
+    <div className="ministry-info" key={id}>
       <h2 className={className} id={id}>
         {title}
       </h2>
       {content}
-    </MinistryInfo>
+    </div>
   );
 });
+
+const allContent = (
+  <MinistriesPageWrapper>
+    <img alt="Outdoor Members" src={outdoorPicture} />
+    {combinedMinistriesContent}
+  </MinistriesPageWrapper>
+);
 
 const bottomContentData = [
   {

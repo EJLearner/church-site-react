@@ -178,7 +178,7 @@ const thanksForInfoRender = (
 const ContactPage = () => {
   useEffect(() => {
     backgroundStore.setBackgroundSource(
-      backgroundStore.backgroundSources.CHOIR
+      backgroundStore.backgroundSources.CHURCH
     );
 
     return () => backgroundStore.resetBackground();

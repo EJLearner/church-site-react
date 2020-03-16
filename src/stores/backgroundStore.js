@@ -3,12 +3,14 @@ import choir from '../assets/main/images/choir.jpg';
 import dance from '../assets/main/images/dance-crop-1.jpg';
 import christianEdPeople from '../assets/main/images/christian-ed-people.jpg';
 import shofarBlowers from '../assets/main/images/shofar-blowers.jpg';
+import shofarBlower from '../assets/main/images/shofar-blower.png';
 
 const backgroundSources = {
   CHOIR: choir,
   CHRISTIANEDPEOPLE: christianEdPeople,
   CHURCH: churchExterior,
   DANCE: dance,
+  SHOFARBLOWER: shofarBlower,
   SHOFARBLOWERS: shofarBlowers
 };
 

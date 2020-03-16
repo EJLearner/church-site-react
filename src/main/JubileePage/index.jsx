@@ -110,7 +110,7 @@ const topBoxContent = (
 function JubileePage() {
   useEffect(() => {
     backgroundStore.setBackgroundSource(
-      backgroundStore.backgroundSources.SHOFARBLOWERS
+      backgroundStore.backgroundSources.SHOFARBLOWER
     );
 
     return () => backgroundStore.resetBackground();
