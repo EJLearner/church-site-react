@@ -8,10 +8,15 @@ import UpcomingEvents from './UpcomingEvents';
 const anniversaryContent = (
   <div>
     <h2>Join the Jubilee</h2>
-    Leviticus 25:9
+
+    <h3>
+      <i>A message from the 50th Anniversary Chairperson</i>
+    </h3>
     <p>
-      Then on the Day of Atonement in the fiftieth year, blow the ram’s horn
-      loud and long throughout the land.
+      <b>
+        Then on the Day of Atonement in the fiftieth year, blow the ram’s horn
+        loud and long throughout the land. &mdash; Leviticus 25:9
+      </b>
     </p>
     <p>
       Greetings, church family, friends, Christian brothers and sisters.

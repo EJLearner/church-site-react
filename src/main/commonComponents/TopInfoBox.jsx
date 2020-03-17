@@ -7,7 +7,8 @@ import {
 
 const TopInfoBox = styled.div`
   // regular text
-  font-family: ${FONT_FAMILIES.CENTURY_GOTHIC};
+  font-family: ${FONT_FAMILIES.ARIAL};
+  font-size: 15px;
 
   background-color: ${LOGICAL_COLORS.CT_PRIMARY};
   color: ${LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};

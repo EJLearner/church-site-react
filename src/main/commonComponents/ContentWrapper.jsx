@@ -21,10 +21,10 @@ const ContentWrapper = styled.div`
   }
 
   h3 {
-    font-family: ${FONT_FAMILIES.ARIAL};
-    font-size: 15px;
+    font-family: ${FONT_FAMILIES.CAMBRIA};
+    font-size: 20px;
     letter-spacing: 0.01em;
-    line-height: 130%;
+    line-height: 110%;
     color: ${LOGICAL_COLORS.CT_PRIMARY};
   }
 
