@@ -4,6 +4,46 @@ import GeneralPageTemplate from '../commonComponents/GeneralPageTemplate';
 import routePaths from '../../routePaths';
 import backgroundStore from '../../stores/backgroundStore';
 import UpcomingEvents from './UpcomingEvents';
+import styled from 'styled-components';
+import avisPicture from '../../assets/main/images/avis.jpg';
+
+const JubileePageStyles = styled.div`
+  .image-and-caption {
+    display: inline-block;
+
+    img {
+      padding-top: 1em;
+      width: 400px;
+      height: auto;
+    }
+
+    figcaption {
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+
+  .members-list-wrapper {
+    text-align: center;
+
+    h3 {
+      font-weight: bold;
+      font-style: italic;
+      margin-bottom: 1em;
+    }
+
+    ul,
+    li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      font-weight: bold;
+    }
+  }
+`;
 
 const anniversaryContent = (
   <div>
@@ -12,6 +52,10 @@ const anniversaryContent = (
     <h3>
       <i>A message from the 50th Anniversary Chairperson</i>
     </h3>
+    <div className="image-and-caption">
+      <img alt="Avis Anderson" className="avis-picture" src={avisPicture} />
+      <figcaption>Avis Anderson, 50th Anniversary Chairperson</figcaption>
+    </div>
     <p>
       <b>
         Then on the Day of Atonement in the fiftieth year, blow the ram’s horn
@@ -35,6 +79,30 @@ const anniversaryContent = (
       rejoice in what God has done!
     </p>
     <p>Avis Anderson Chair, 50th Anniversary</p>
+
+    <div className="members-list-wrapper">
+      <div className="members list">
+        <h3>50th Anniversary Committee</h3>
+        <ul>
+          <li>Avis Anderson</li>
+          <li>DeVera Barnhill</li>
+          <li>Lanette Davis</li>
+          <li>Kenneth Dean</li>
+          <li>Juanita Edgerton</li>
+          <li>Iris Ford</li>
+          <li>Lori Ford</li>
+          <li>Gerry Grant</li>
+          <li>Michelle Hamiel</li>
+          <li>April Jones</li>
+          <li>Rommie Richards</li>
+          <li>Kim Smith</li>
+          <li>Racquel Smith</li>
+          <li>Emily Tilghman</li>
+          <li>Patricia Ward</li>
+          <li>Michele Williams</li>
+        </ul>
+      </div>
+    </div>
   </div>
 );
 
@@ -122,12 +190,14 @@ function JubileePage() {
   }, []);
 
   return (
-    <GeneralPageTemplate
-      bottomContentData={bottomContentData}
-      menuTitle="Anniversary"
-      pagePath={routePaths.MAIN_JUBILEE}
-      topBoxContent={topBoxContent}
-    />
+    <JubileePageStyles>
+      <GeneralPageTemplate
+        bottomContentData={bottomContentData}
+        menuTitle="Anniversary"
+        pagePath={routePaths.MAIN_JUBILEE}
+        topBoxContent={topBoxContent}
+      />
+    </JubileePageStyles>
   );
 }
 

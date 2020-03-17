@@ -4,9 +4,17 @@ import styled from 'styled-components';
 import {LOGICAL_COLORS} from '../utils/styleVariables';
 import PurchaseHereLink from './commonComponents/PurchaseHereLink';
 import aframMuseum from '../assets/main/images/afram-museum.jpg';
+import drummer from '../assets/main/images/drummer.jpg';
+import musicians from '../assets/main/images/musicians.jpg';
 import suicideBridgeSign from '../assets/main/images/suicide-bridge-sign.jpg';
 import routePaths from '../routePaths';
 import backgroundStore from '../stores/backgroundStore';
+
+const PageStyles = styled.div`
+  img {
+    width: 100%;
+  }
+`;
 
 const ApplyNowBox = styled.div`
   color: ${LOGICAL_COLORS.CT_PRIMARY};
@@ -63,6 +71,7 @@ const topBoxContent = (
 
 const performingArtsContent = (
   <div>
+    <img alt="Drumming Performance" src={drummer} />
     <h2>Performing Arts Sunday</h2>
     <div>
       <p>
@@ -95,6 +104,7 @@ const performingArtsContent = (
 
 const pocContent = (
   <div>
+    <img alt="Organscape Artists" src={musicians} />
     <h2>Perpetual Organ Committee</h2>
     <div>
       <p>
@@ -242,13 +252,15 @@ const CultureAndFineArtsPage = () => {
   }, []);
 
   return (
-    <GeneralPageTemplate
-      bottomContentData={bottomContentData}
-      menuTitle="Culture &amp; Fine Arts"
-      pagePath={routePaths.MAIN_CULTURE_AND_ARTS}
-      sectionSideContent={performingArtsSideContent}
-      topBoxContent={topBoxContent}
-    />
+    <PageStyles>
+      <GeneralPageTemplate
+        bottomContentData={bottomContentData}
+        menuTitle="Culture &amp; Fine Arts"
+        pagePath={routePaths.MAIN_CULTURE_AND_ARTS}
+        sectionSideContent={performingArtsSideContent}
+        topBoxContent={topBoxContent}
+      />
+    </PageStyles>
   );
 };
 
