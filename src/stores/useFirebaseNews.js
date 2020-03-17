@@ -19,7 +19,9 @@ function useNews() {
     },
     {
       text:
-        'The Ushers and Nurses will be selling patrons for their upcoming anniversary. The cost of the patrons is $2.00 per name. See any usher or nurse for more information. Thank you for your continued support.',
+        'The Ushers and Nurses will be selling patrons for their upcoming anniversary. ' +
+        'The cost of the patrons is $2.00 per name. See any usher or nurse for more information. ' +
+        'Thank you for your continued support.',
       expireDate: '2020-04-04'
     },
     {
