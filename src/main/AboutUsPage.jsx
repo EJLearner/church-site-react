@@ -3,7 +3,7 @@ import yearginPicture from '../assets/main/images/grady-yeargin.jpg';
 import congregationPicture from '../assets/main/images/congregation.jpg';
 import organPicture from '../assets/main/images/organ-close.jpg';
 import anniversaryChoirPicture from '../assets/main/images/30th-anniversary-choir.jpg';
-import revPaynePicture from '../assets/main/images/rev-payne.png';
+import revPaynePicture from '../assets/main/images/rev-payne.jpg';
 import routePaths from '../routePaths';
 import styled from 'styled-components';
 import StandardPageWrapper from './commonComponents/StandardPageWrapper';
@@ -42,6 +42,7 @@ const StyleWrapper = styled.div`
 
   .rev-payne-picture-and-caption {
     float: left;
+    font-weight: bold;
     width: 200px;
     margin: 0 1em 1em 0;
     text-align: center;
@@ -179,8 +180,8 @@ const historyContent = (
     <div className="multi-pictures" />
     <h2>History</h2>
     <div className="rev-payne-picture-and-caption">
-      <img alt="Rev Payne" className="payne-picture" src={revPaynePicture} />
-      <figcaption>Rev Payne</figcaption>
+      <img alt="Rev. Payne" className="payne-picture" src={revPaynePicture} />
+      <figcaption>Rev. Payne</figcaption>
     </div>
     <p>
       The City Temple of Baltimore (Baptist) is a historic landmark and should
