@@ -14,7 +14,6 @@ import ContactPage from './ContactPage';
 import ScholarshipPage from './ScholarshipPage';
 import JubileePage from './JubileePage';
 import MainFooter from './commonComponents/MainFooter';
-import MusicMinistryPage from './MusicMinistryPage';
 import CultureAndFineArtsPage from './CultureAndFineArtsPage';
 import backgroundStore from '../stores/backgroundStore';
 import {SIZES} from '../utils/styleVariables';
@@ -73,9 +72,6 @@ function MainWrapper() {
         </Route>
         <Route path={routePaths.MAIN_MINISTRIES}>
           <MinistriesPage />
-        </Route>
-        <Route path={routePaths.MAIN_MUSIC_MINISTRY}>
-          <MusicMinistryPage />
         </Route>
         <Route path={routePaths.MAIN_CULTURE_AND_ARTS}>
           <CultureAndFineArtsPage />
