@@ -14,6 +14,7 @@ import SideMenu from './commonComponents/SideMenu';
 import coronaVirusImage from '../assets/main/images/coronavirus.png';
 
 import styled from 'styled-components';
+import {LOGICAL_COLORS, SIZES} from '../utils/styleVariables';
 
 const StyleWrapper = styled.div`
   .corona-virus-image {
@@ -22,20 +23,32 @@ const StyleWrapper = styled.div`
   .mid-sentence {
     color: #c00000;
   }
+
+  .ged-contact-us {
+    background-color: grey;
+    color: white;
+    font-weight: bold;
+    padding: 1em;
+    position: sticky;
+    top: 1em;
+    bottom: ${SIZES.FOOTER_HEIGHT};
+    text-align: center;
+    width: 175px;
+
+    .free {
+      text-transform: uppercase;
+      color: ${LOGICAL_COLORS.CT_PRIMARY};
+    }
+  }
 `;
 const IDS = {
-  INFO: 'info',
-  IF_INFECTED: 'if-sick',
-  PROCEDURE_CHANGES: 'church-procedure-changes'
+  UPCOMING_CLASSES: 'upcoming-classes',
+  ABOUT: 'about'
 };
 
 const menuData = [
-  {id: IDS.INFO, title: 'Preventing sickness'},
-  {id: IDS.IF_INFECTED, title: 'What to do if infected'},
-  {
-    id: IDS.PROCEDURE_CHANGES,
-    title: 'City Temple’s Response to COVID-19'
-  }
+  {id: IDS.UPCOMING_CLASSES, title: 'Upcoming Classes & Registration'},
+  {id: IDS.ABOUT, title: 'About the GED Prep Program'}
 ];
 
 const image = (
@@ -46,10 +59,10 @@ const image = (
   />
 );
 
-const preventingSickness = (
+const upcomingClasses = (
   <>
     {image}
-    <h2>Preventing Sickness</h2>
+    <h2>Upcoming Classes &amp; Registration</h2>
     <p>
       <b>
         There is currently no vaccine to prevent coronavirus disease 2019
@@ -121,7 +134,7 @@ const preventingSickness = (
   </>
 );
 
-const ifInfectedContent = (
+const aboutContent = (
   <>
     {image}
     <h2>
@@ -257,127 +270,12 @@ const ifInfectedContent = (
   </>
 );
 
-const procedureChangesContent = (
-  <>
-    {image}
-    <h2>Responding to the Coronavirus Pandemic</h2>
-    <p>
-      <h3>
-        <b>
-          This is an emerging, rapidly evolving situation. We will provide
-          updated information regarding our services, events, and other
-          protocols as necessary. Please accept the following guidelines and
-          help us protect the vulnerable members of our congregation.
-        </b>
-      </h3>
-      <p>
-        <b>Church Service</b>
-      </p>
-      <p>
-        <ul>
-          <li>
-            Church service will be held at 9 am each Sunday unless otherwise
-            noted and communicated.
-          </li>
-          <li>
-            If you have a cold, or cold- or flu-like symptoms, please do not
-            attend church service.
-          </li>
-          <li>
-            Church service will not exceed 60 minutes in order to limit
-            opportunity for germs to spread.
-          </li>
-        </ul>
-      </p>
-      <p>
-        <b>Ministry Meetings</b>
-      </p>
-      <p>
-        <ul>
-          <li>
-            We are encouraging ministries to conduct meetings remotely using a{' '}
-            <b>
-              <span className="mid-sentence">
-                church-provided ministry conference line
-              </span>
-            </b>
-            . Contact Emily Tilghman at (443) 520-8162 or kerrtilghman@gmail.com
-            to schedule your use of the conference line to avoid conflicts.
-            <ul>
-              <li>Dial-in number: (425) 436-6358</li>
-              <li>Participant code: 581086</li>
-              <li>Host PIN: 6845</li>
-            </ul>
-          </li>
-          <li>
-            Please see April Jones if you are interested in video conferencing
-            for your meetings.
-          </li>
-        </ul>
-      </p>
-      <p>
-        <b>Tithing &amp; Offering</b>
-      </p>
-      <p>
-        <ul>
-          <li>
-            Please continue to send your tithes and offering to your church! We
-            suggest three methods for sending in your offering:
-            <ul>
-              <li>
-                Church website: Make your tithing, offering, or donation on-line
-                by visiting our{' '}
-                <a href="https://www.thecitytemple.org/giving/">
-                  <b>Giving Page.</b>
-                </a>{' '}
-              </li>
-              <li>
-                Mail to church: 317 Dolphin Street, Baltimore, MD 21217 (please,
-                no cash)
-              </li>
-              <li>
-                Drop off: Leave in the mail slot on Eutaw Place or bring in to
-                the church office between 9 am - 1 pm (please, no cash)
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </p>
-      <p>
-        <b>Notifications &amp; Cancellations</b>
-      </p>
-      <p>
-        <ul>
-          <li>
-            We will communicate updates using robocalls, emails, website
-            updates, radio, and tv.
-          </li>
-          <li>
-            If your contact information has changed in the last 6 months, please
-            update it with the church office.
-          </li>
-          <li>Lenten services have been cancelled.</li>
-          <li>
-            All church events scheduled for March and April have been postponed
-            &mdash; new dates <b>to be determined</b>.
-          </li>
-          <li>
-            Please do not submit requests for any new events taking place before
-            August.
-          </li>
-        </ul>
-      </p>
-    </p>
-  </>
-);
-
 const contentMap = {
-  [IDS.INFO]: preventingSickness,
-  [IDS.IF_INFECTED]: ifInfectedContent,
-  [IDS.PROCEDURE_CHANGES]: procedureChangesContent
+  [IDS.UPCOMING_CLASSES]: upcomingClasses,
+  [IDS.ABOUT]: aboutContent
 };
 
-export default function CoronavirusPage() {
+export default function GedPage() {
   const [contentId, setContentId] = useState(menuData[0].id);
 
   const content = contentMap[contentId];
@@ -407,8 +305,8 @@ export default function CoronavirusPage() {
           </TopInfoBox>
           <ContentAndSubCompassWrapper>
             <AboveContentLinks
-              pagePath={routePaths.MAIN_CORONAVIRUS}
-              pageTitle="Coronavirus"
+              pagePath={routePaths.MAIN_GED}
+              pageTitle="Ged Program"
             />
             <ContentAndSides>
               <ContentLeftSide>
@@ -416,11 +314,16 @@ export default function CoronavirusPage() {
                   currentId={contentId}
                   menuData={menuData}
                   onClick={id => setContentId(id)}
-                  title="Coronavirus"
+                  title="Ged Program"
                 />
               </ContentLeftSide>
               <ContentWrapper>{content}</ContentWrapper>
-              <ContentRightSide />
+              <ContentRightSide>
+                <div className="ged-contact-us">
+                  Contact us for more information about how you can sign up for{' '}
+                  <span className="free">free</span> GED Preparation Classes
+                </div>
+              </ContentRightSide>
             </ContentAndSides>
           </ContentAndSubCompassWrapper>
         </TopInfoBoxWrapper>
