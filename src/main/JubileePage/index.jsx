@@ -122,12 +122,12 @@ const storeContent = `
   `;
 
 const bottomContentData = [
-  {title: 'Event Calendar', id: 'calendar', content: calendarContent},
   {
     title: '50th Anniversary Celebration',
     id: '50thAnniversary',
     content: anniversaryContent
-  }
+  },
+  {title: 'Event Calendar', id: 'calendar', content: calendarContent}
   // TODO: add these back
   // {title: 'Store', id: 'store', content: storeContent}
 ];

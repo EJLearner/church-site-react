@@ -63,36 +63,30 @@ const EventsWrapper = styled.div`
 `;
 
 const orderedEvents = [
-  {date: '2020-03-16', title: 'This is an event that you should come to'},
   {
-    date: '2020-03-18',
-    title: 'This is an event that you should come to',
+    date: '2020-03-15',
+    title: 'Recognition of Rev. William Payne, Pastor Emeritus',
     time: '9 am'
   },
   {
-    date: '2020-04-18',
-    title: 'This is an event that you should come to',
+    date: '2020-03-28',
+    title: '5K Memorial Walk',
     time: '9 am'
   },
   {
-    date: '2020-05-18',
-    title: 'This is an event that you should come to',
+    date: '2020-05-24',
+    title: 'Recognition of Our Deceased Loved Ones',
     time: '9 am'
   },
   {
-    date: '2020-05-20',
-    title: 'This is an event that you should come to',
-    time: '9 am'
+    date: '2020-06-14',
+    title: 'Gospel Ensemble & Men’s Choir Concert',
+    time: '4 pm'
   },
   {
-    date: '2020-05-21',
-    title: 'This is an event that you should come to',
-    time: '9 am'
-  },
-  {
-    date: '2020-05-25',
-    title: 'This is an event that you should come to',
-    time: '9 am'
+    date: '2020-11-06',
+    title: '50th Anniversary Jubilee Banquet',
+    time: '6 pm'
   }
 ];
 
