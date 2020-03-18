@@ -158,7 +158,7 @@ function renderLeftSideInfo() {
         <br />
         Phone: 410.462.4800
         <br />
-        Email: connect@thecitytemple.org
+        Email: church@thecitytemple.org
         <br />
       </p>
     </div>

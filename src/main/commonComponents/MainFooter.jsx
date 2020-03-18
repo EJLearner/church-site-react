@@ -37,8 +37,7 @@ const footerData = [
 
 const Styledfooter = styled.footer`
   position: fixed;
-  // TODO: Add box shadow to page footer, mimic drexel
-  // box-shadow: 0 -4px 5px #c2c2c2;
+  box-shadow: 0px -1px 10px black;
   background-color: ${LOGICAL_COLORS.CT_ACCENT};
   bottom: 0;
   display: flex;
