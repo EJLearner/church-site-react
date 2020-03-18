@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import {LOGICAL_COLORS} from '../../utils/styleVariables';
 import format from 'date-fns/format';
@@ -7,7 +6,7 @@ import parseISO from 'date-fns/parseISO';
 
 const EventsWrapper = styled.div`
   h3 {
-    background-color: ${LOGICAL_COLORS.CT_ACCENT};
+    background-color: ${LOGICAL_COLORS.CT_PRIMARY};
     color: white;
     font-size: 2em;
     margin-bottom: 1em;
@@ -25,7 +24,7 @@ const EventsWrapper = styled.div`
 
   .date-square {
     display: inline-block;
-    border: 3px solid ${LOGICAL_COLORS.CT_ACCENT};
+    border: 3px solid ${LOGICAL_COLORS.CT_PRIMARY};
     border-radius: 10px;
     font-weight: bold;
     text-align: center;
@@ -43,11 +42,11 @@ const EventsWrapper = styled.div`
     .date-square-month {
       display: flex;
       color: white;
-      background-color: ${LOGICAL_COLORS.CT_ACCENT};
+      background-color: ${LOGICAL_COLORS.CT_PRIMARY};
     }
 
     .date-square-date {
-      color: ${LOGICAL_COLORS.CT_ACCENT};
+      color: ${LOGICAL_COLORS.CT_PRIMARY};
     }
   }
 
@@ -63,11 +62,41 @@ const EventsWrapper = styled.div`
   }
 `;
 
-function renderDate(title, jsDate, timeStart, index) {
-  const jsStartTime = parseISO(timeStart);
+const orderedEvents = [
+  {date: '2020-03-16', title: 'This is an event that you should come to'},
+  {
+    date: '2020-03-18',
+    title: 'This is an event that you should come to',
+    time: '9 am'
+  },
+  {
+    date: '2020-04-18',
+    title: 'This is an event that you should come to',
+    time: '9 am'
+  },
+  {
+    date: '2020-05-18',
+    title: 'This is an event that you should come to',
+    time: '9 am'
+  },
+  {
+    date: '2020-05-20',
+    title: 'This is an event that you should come to',
+    time: '9 am'
+  },
+  {
+    date: '2020-05-21',
+    title: 'This is an event that you should come to',
+    time: '9 am'
+  },
+  {
+    date: '2020-05-25',
+    title: 'This is an event that you should come to',
+    time: '9 am'
+  }
+];
 
-  const time = timeStart && format(jsStartTime, 'h bbbb').replace(/\./g, '');
-
+function renderDate(title, jsDate, time, index) {
   return (
     <div key={index}>
       <div className="date-square">
@@ -76,7 +105,7 @@ function renderDate(title, jsDate, timeStart, index) {
       </div>
       <div className="title-and-name">
         <div className="event-title">{title}</div>
-        <div className="event-time">{time}</div>
+        {time && <div className="event-time">{time}</div>}
       </div>
     </div>
   );
@@ -84,7 +113,7 @@ function renderDate(title, jsDate, timeStart, index) {
 
 function eventsRenders(orderedEvents) {
   return orderedEvents.reduce((render, event, index, orderedEvents) => {
-    const {date, title, timeStart} = event;
+    const {date, title, time} = event;
     const monthNumber = date.substring(5, 7);
     const lastMonthNumber =
       index && orderedEvents[index - 1].date.substring(5, 7);
@@ -102,26 +131,16 @@ function eventsRenders(orderedEvents) {
       );
     }
 
-    render.push(renderDate(title, jsDate, timeStart, index));
+    render.push(renderDate(title, jsDate, time, index));
 
     return render;
   }, []);
 }
 
 function UpcomingEvents(props) {
-  const renderedEvents = eventsRenders(props.orderedEvents);
+  const renderedEvents = eventsRenders(orderedEvents);
 
   return <EventsWrapper>{renderedEvents}</EventsWrapper>;
 }
-
-UpcomingEvents.propTypes = {
-  orderedEvents: PropTypes.arrayOf(
-    PropTypes.shape({
-      date: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      timeStart: PropTypes.string
-    })
-  ).isRequired
-};
 
 export default UpcomingEvents;
