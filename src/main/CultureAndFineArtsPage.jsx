@@ -69,7 +69,7 @@ const CRAB_FEAST_TITLE = 'Eastern Shore Crab Feast';
 
 const topBoxContent = (
   <div>
-    <h2>Culture &amp; Fine Arts</h2>
+    <h1>Culture &amp; Fine Arts</h1>
     <p>
       The Music Ministry oversees several ministries and committees responsible
       for promoting cultural awareness and appreciation of the arts. They
