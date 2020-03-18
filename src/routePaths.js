@@ -31,7 +31,6 @@ const MAIN_ROOT_PATHS = {
   MAIN_JUBILEE: `${MAIN_HOME_PATH}jubilee/`,
   MAIN_MEMBERS_ONLY: `${MAIN_HOME_PATH}members-only/`,
   MAIN_MINISTRIES: `${MAIN_HOME_PATH}ministries/`,
-  MAIN_MUSIC_MINISTRY: `${MAIN_HOME_PATH}music-ministry/`,
   MAIN_OUTREACH: `${MAIN_HOME_PATH}outreach/`,
   MAIN_CULTURE_AND_ARTS: `${MAIN_HOME_PATH}culture-and-fine-arts/`,
   MAIN_SCHOLARSHIP: `${MAIN_HOME_PATH}scholarship`,
