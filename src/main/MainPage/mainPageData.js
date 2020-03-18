@@ -14,6 +14,12 @@ import CoronaVirusContent from './CoronaVirusContent';
 
 const contentSelectInfo = [
   {
+    linkPath: routePaths.MAIN_CONTACT,
+    render: WorshipExperience,
+    title: 'Worship Experience',
+    thumbnail: choirThumb
+  },
+  {
     linkPath: routePaths.MAIN_JUBILEE,
     render: JubileeContent,
     showUntil: '2021-01-01',
@@ -31,12 +37,6 @@ const contentSelectInfo = [
     render: CultureAndFineArts,
     title: 'Culture & Fine Arts',
     thumbnail: dance
-  },
-  {
-    linkPath: routePaths.MAIN_CONTACT,
-    render: WorshipExperience,
-    title: 'Worship Experience',
-    thumbnail: choirThumb
   },
   {
     linkPath: routePaths.CE_HOME,
