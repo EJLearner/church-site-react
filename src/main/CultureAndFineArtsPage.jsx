@@ -14,6 +14,16 @@ const PageStyles = styled.div`
   img {
     width: 100%;
   }
+
+  .artscape-video {
+    iframe {
+      width: 100%;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
 `;
 
 const ApplyNowBox = styled.div`
@@ -59,7 +69,7 @@ const CRAB_FEAST_TITLE = 'Eastern Shore Crab Feast';
 
 const topBoxContent = (
   <div>
-    <h2>Culture &amp; Fine Arts</h2>
+    <h1>Culture &amp; Fine Arts</h1>
     <p>
       The Music Ministry oversees several ministries and committees responsible
       for promoting cultural awareness and appreciation of the arts. They
@@ -204,6 +214,19 @@ const performingArtsSideContent = [
   </ApplyNowBox>
 ];
 
+const perpetualOrganCommitteeSideContent = [
+  <div className="artscape-video" key="artscape">
+    <iframe
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      frameBorder="0"
+      src="https://www.youtube.com/embed/QdzviEfS4EI"
+      title="Artscape to Organscape"
+    />
+    <p>Artscape to Organscape</p>
+  </div>
+];
+
 const upComingEventsSideContent = [
   <SideImage
     alt="African American History Museum"
@@ -227,7 +250,8 @@ const bottomContentData = [
   {
     title: 'Perpetual Organ Committee (POC)',
     id: 'poc',
-    content: pocContent
+    content: pocContent,
+    sideContent: perpetualOrganCommitteeSideContent
   },
   {
     title: 'Upcoming Events',

@@ -21,6 +21,7 @@ const MainTopInfoBox = styled.div`
     line-height: 0.9;
     text-transform: uppercase;
     letter-spacing: 2px;
+    margin-top: 0.3em;
   }
 
   // subtitle

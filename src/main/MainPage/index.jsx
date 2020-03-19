@@ -10,62 +10,65 @@ import MainTopInfoBox from '../commonComponents/MainTopInfoBox';
 import NewsAndEvents from './NewsAndEvents';
 import constants from '../../utils/constants';
 
-const StyledMainTextAndNews = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-top: ${WIDTHS.SIDE_CONTENT_PADDING};
-  padding: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
-`;
-
-const StyledTopInfoBoxWrapper = styled.div`
-  margin: 0 0 2em 0;
-  width: 50%;
-`;
-
-const StyledContentComponentWrapper = styled.div`
-  height: 350px;
-  overflow-y: auto;
-`;
-
-const ArrowAndLearnmore = styled.div`
-  display: inline-flex;
-  align-items: stretch;
-`;
-
-const ArrowBox = styled.div`
-  background-color: ${LOGICAL_COLORS.CT_ACCENT};
-  color: ${LOGICAL_COLORS.CT_PRIMARY}
-  display: inline-flex;
-  flex-direction: column;
-  font-size: 32px;
-  justify-content: center;
-  padding: 0.2em 0.4em;
-
-  span {
-    height:24px;
-    line-height: 18px;
+const StyledPage = styled.div`
+  .main-text-and-news {
+    display: flex;
+    justify-content: space-between;
+    margin-top: ${WIDTHS.SIDE_CONTENT_PADDING};
+    padding: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
   }
-`;
 
-const LearnMoreBox = styled.div`
-  background-color: ${LOGICAL_COLORS.CT_PRIMARY};
-  color: ${LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};
-  display: inline-flex;
-  flex-direction: column;
-  font-size: 15px;
-  font-weight: bold;
-  justify-content: center;
-  padding: 0 0.5em;
-  text-transform: uppercase;
-
-  a {
-    color: ${COLORS.WHITE};
+  .top-box-wrapper {
+    margin: 0 0 2em 0;
+    width: 50%;
   }
-`;
 
-const ContentSelectBoxesWrapper = styled.div`
-  padding-left: ${WIDTHS.SIDE_CONTENT_PADDING};
-  margin-bottom: 3em;
+  .content-component-wrapper {
+    height: 280px;
+    overflow-y: auto;
+  }
+
+  .arrow-and-learn-more {
+    display: inline-flex;
+    align-items: stretch;
+  }
+
+  .arrow-box {
+    background-color: ${LOGICAL_COLORS.CT_ACCENT};
+    color: ${LOGICAL_COLORS.CT_PRIMARY}
+    display: inline-flex;
+    flex-direction: column;
+    font-size: 32px;
+    justify-content: center;
+    padding: 0.2em 0.4em;
+
+    span {
+      height:24px;
+      line-height: 18px;
+    }
+  }
+
+  .learn-more-box {
+    background-color: ${LOGICAL_COLORS.CT_PRIMARY};
+    color: ${LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};
+    display: inline-flex;
+    flex-direction: column;
+    font-size: 15px;
+    font-weight: bold;
+    justify-content: center;
+    padding: 0 0.5em;
+    text-transform: uppercase;
+
+    a {
+      color: ${COLORS.WHITE};
+    }
+  }
+
+  .content-select-box-wrapper {
+    padding-left: ${WIDTHS.SIDE_CONTENT_PADDING};
+    margin-bottom: 3em;
+  }
+
 `;
 
 function MainContent() {
@@ -75,33 +78,31 @@ function MainContent() {
   const ContentComponent = currentContent.render;
 
   return (
-    <div>
+    <StyledPage>
       <MainMenubar />
-      <StyledMainTextAndNews>
-        <StyledTopInfoBoxWrapper>
+      <div className="main-text-and-news">
+        <div className="top-box-wrapper">
           <MainTopInfoBox>
-            <StyledContentComponentWrapper>
+            <div className="content-component-wrapper">
               <ContentComponent />
-            </StyledContentComponentWrapper>
-            <ArrowAndLearnmore>
-              <ArrowBox>
-                <span>{constants.SLENDER_ARROW_RIGHT}</span>
-              </ArrowBox>
-              <LearnMoreBox>
+            </div>
+            <div className="arrow-and-learn-more">
+              <div className="arrow-box">{constants.SLENDER_ARROW_RIGHT}</div>
+              <div className="learn-more-box">
                 <Link to={currentContent.linkPath}>Learn more</Link>
-              </LearnMoreBox>
-            </ArrowAndLearnmore>
+              </div>
+            </div>
           </MainTopInfoBox>
-        </StyledTopInfoBoxWrapper>
+        </div>
         <NewsAndEvents />
-      </StyledMainTextAndNews>
-      <ContentSelectBoxesWrapper>
+      </div>
+      <div className="content-select-box-wrapper">
         <ContentSelectBoxes
           contentIndex={contentIndex}
           onContentSelect={index => setContentIndex(index)}
         />
-      </ContentSelectBoxesWrapper>
-    </div>
+      </div>
+    </StyledPage>
   );
 }
 

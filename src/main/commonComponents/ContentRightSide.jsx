@@ -4,6 +4,7 @@ import {LOGICAL_COLORS} from '../../utils/styleVariables';
 const ContentRightSide = styled.div`
   border-left: 1px solid ${LOGICAL_COLORS.GENERAL_PAGE_BORDER_COLOR};
   display: flex;
+  align-items: center;
   flex-direction: column;
   min-width: 15%;
   max-width: 25%;

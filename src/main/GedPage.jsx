@@ -12,40 +12,43 @@ import ContentWrapper from './commonComponents/ContentWrapper';
 import ContentRightSide from './commonComponents/ContentRightSide';
 import SideMenu from './commonComponents/SideMenu';
 import coronaVirusImage from '../assets/main/images/coronavirus.png';
-import yearginPicture from '../assets/main/images/grady-yeargin.jpg';
 
 import styled from 'styled-components';
+import {LOGICAL_COLORS, SIZES} from '../utils/styleVariables';
 
 const StyleWrapper = styled.div`
-  .yeargin-picture {
-    float: left;
-    width: 200px;
-    height: auto;
-    margin: 0 1em 1em 0;
-  }
-
   .corona-virus-image {
     width: 300px;
   }
   .mid-sentence {
     color: #c00000;
   }
+
+  .ged-contact-us {
+    background-color: grey;
+    color: white;
+    font-weight: bold;
+    padding: 1em;
+    position: sticky;
+    top: 1em;
+    bottom: ${SIZES.FOOTER_HEIGHT};
+    text-align: center;
+    width: 175px;
+
+    .free {
+      text-transform: uppercase;
+      color: ${LOGICAL_COLORS.CT_PRIMARY};
+    }
+  }
 `;
 const IDS = {
-  INFO: 'info',
-  IF_INFECTED: 'if-sick',
-  MEDITATION: 'meditation',
-  PROCEDURE_CHANGES: 'church-procedure-changes'
+  UPCOMING_CLASSES: 'upcoming-classes',
+  ABOUT: 'about'
 };
 
 const menuData = [
-  {id: IDS.MEDITATION, title: 'Meditation from the pastor'},
-  {id: IDS.INFO, title: 'Preventing sickness'},
-  {id: IDS.IF_INFECTED, title: 'What to do if infected'},
-  {
-    id: IDS.PROCEDURE_CHANGES,
-    title: 'City Temple’s Response to COVID-19'
-  }
+  {id: IDS.UPCOMING_CLASSES, title: 'Upcoming Classes & Registration'},
+  {id: IDS.ABOUT, title: 'About the GED Prep Program'}
 ];
 
 const image = (
@@ -56,73 +59,10 @@ const image = (
   />
 );
 
-const meditation = (
-  <div>
-    <h2>The Pastor</h2>
-    <img alt="Grady Yeargin" className="yeargin-picture" src={yearginPicture} />
-    <p>
-      The Rev. Dr. Grady Andrew Yeargin, Jr. was born on November 7, 1949 in
-      Greenville, South Carolina. He attended Sterling High School and was
-      admitted to Morehouse College in 1966 on an early admission scholarship.
-      In 1970, he graduated from Morehouse with a B.A. Degree in Philosophy and
-      Religion, he graduated from Colgate-Rochester Divinity School with a
-      Master of Divinity Degree in 1973, and he graduated from Wesley
-      Theological Seminary in 2005 with a Doctor of Ministry Degree.
-    </p>
-    <p>
-      Dr. Yeargin began his ministerial career in 1973 as the Associate Minister
-      of the Mount Zion Baptist Church in Newark, NJ under the pastorate of the
-      Rev. Dr. Granville A. Seward. Along with his responsibilities in the areas
-      of Youth Ministry, Christian Education and Neighborhood Ministry, Dr.
-      Yeargin was also responsible for assuming the pastoral responsibilities in
-      the absence of the Pastor.
-    </p>
-    <p>
-      During his tenure at Mount Zion, Dr. Yeargin served as a board member of
-      the Campus Christian Foundation, the Youth Council of the American Baptist
-      Churches of New Jersey and of the Metropolitan Ecumenical Ministries
-      Committee on Neighborhood and Youth Ministry.
-    </p>
-    <p>
-      In 1976, Dr. Yeargin was called to pastor the Mount Prospect Church in
-      Rock Hill, South Carolina. Along with providing a new dimension in the
-      area of teaching ministry in the church and in the local Bible College,
-      Dr. Yeargin held positions in both the local and state conventions along
-      with serving on several civic committees.
-    </p>
-    <p>
-      After serving Mount Prospect for nine years, Dr. Yeargin was called to
-      pastor the City Temple of Baltimore (Baptist) on September 10, 1985. He
-      began his pastorate in January 1986. Dr. Yeargin has brought a new
-      dimension of spiritual nourishment and growth to City Temple through
-      worship, study, and action. Under his direction several new ministries
-      have been established in City Temple that include: the Shelter Ministry,
-      the Dance Ministry, the New Members Counselors Ministry, the Christian
-      Education Ministry, the Courtesy Guild, the Tape Ministry as well as the
-      re-establishment of the Cultural and Fine Arts Ministry and the Building
-      Ministry.
-    </p>
-    <p>
-      Dr. Yeargin has been socially involved in the life of the community
-      through his participation in Baltimoreans United in Leadership Development
-      (B.U.I.L.D.) as well as serving for two years as a clergy co-chairperson,
-      the Interdenominational Ministerial Alliance, the Institute for Christian
-      and Jewish Studies, The United Missionary Baptist Convention of Maryland,
-      and was the previous co-chairperson of the Baltimore affiliate of the
-      National Black Leadership Commission on AIDS.
-    </p>
-    <p>
-      Dr. Yeargin is married to Patricia Ann Yeargin and they share two
-      daughters, Adia Joy and Candace. He also continues to maintain his sense
-      of fatherhood to his beloved daughter, Kimberly Rei, who is deceased.
-    </p>
-  </div>
-);
-
-const preventingSickness = (
+const upcomingClasses = (
   <>
     {image}
-    <h2>Preventing Sickness</h2>
+    <h2>Upcoming Classes &amp; Registration</h2>
     <p>
       <b>
         There is currently no vaccine to prevent coronavirus disease 2019
@@ -194,7 +134,7 @@ const preventingSickness = (
   </>
 );
 
-const ifInfectedContent = (
+const aboutContent = (
   <>
     {image}
     <h2>
@@ -330,128 +270,12 @@ const ifInfectedContent = (
   </>
 );
 
-const procedureChangesContent = (
-  <>
-    {image}
-    <h2>Responding to the Coronavirus Pandemic</h2>
-    <p>
-      <h3>
-        <b>
-          This is an emerging, rapidly evolving situation. We will provide
-          updated information regarding our services, events, and other
-          protocols as necessary. Please accept the following guidelines and
-          help us protect the vulnerable members of our congregation.
-        </b>
-      </h3>
-      <p>
-        <b>Church Service</b>
-      </p>
-      <p>
-        <ul>
-          <li>
-            Church service will be held at 9 am each Sunday unless otherwise
-            noted and communicated.
-          </li>
-          <li>
-            If you have a cold, or cold- or flu-like symptoms, please do not
-            attend church service.
-          </li>
-          <li>
-            Church service will not exceed 60 minutes in order to limit
-            opportunity for germs to spread.
-          </li>
-        </ul>
-      </p>
-      <p>
-        <b>Ministry Meetings</b>
-      </p>
-      <p>
-        <ul>
-          <li>
-            We are encouraging ministries to conduct meetings remotely using a{' '}
-            <b>
-              <span className="mid-sentence">
-                church-provided ministry conference line
-              </span>
-            </b>
-            . Contact Emily Tilghman at (443) 520-8162 or kerrtilghman@gmail.com
-            to schedule your use of the conference line to avoid conflicts.
-            <ul>
-              <li>Dial-in number: (425) 436-6358</li>
-              <li>Participant code: 581086</li>
-              <li>Host PIN: 6845</li>
-            </ul>
-          </li>
-          <li>
-            Please see April Jones if you are interested in video conferencing
-            for your meetings.
-          </li>
-        </ul>
-      </p>
-      <p>
-        <b>Tithing &amp; Offering</b>
-      </p>
-      <p>
-        <ul>
-          <li>
-            Please continue to send your tithes and offering to your church! We
-            suggest three methods for sending in your offering:
-            <ul>
-              <li>
-                Church website: Make your tithing, offering, or donation on-line
-                by visiting our{' '}
-                <a href="https://www.thecitytemple.org/giving/">
-                  <b>Giving Page.</b>
-                </a>{' '}
-              </li>
-              <li>
-                Mail to church: 317 Dolphin Street, Baltimore, MD 21217 (please,
-                no cash)
-              </li>
-              <li>
-                Drop off: Leave in the mail slot on Eutaw Place or bring in to
-                the church office between 9 am - 1 pm (please, no cash)
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </p>
-      <p>
-        <b>Notifications &amp; Cancellations</b>
-      </p>
-      <p>
-        <ul>
-          <li>
-            We will communicate updates using robocalls, emails, website
-            updates, radio, and tv.
-          </li>
-          <li>
-            If your contact information has changed in the last 6 months, please
-            update it with the church office.
-          </li>
-          <li>Lenten services have been cancelled.</li>
-          <li>
-            All church events scheduled for March and April have been postponed
-            &mdash; new dates <b>to be determined</b>.
-          </li>
-          <li>
-            Please do not submit requests for any new events taking place before
-            August.
-          </li>
-        </ul>
-      </p>
-    </p>
-  </>
-);
-
 const contentMap = {
-  [IDS.INFO]: preventingSickness,
-  [IDS.IF_INFECTED]: ifInfectedContent,
-  [IDS.PROCEDURE_CHANGES]: procedureChangesContent,
-  [IDS.MEDITATION]: meditation
+  [IDS.UPCOMING_CLASSES]: upcomingClasses,
+  [IDS.ABOUT]: aboutContent
 };
 
-export default function CoronavirusPage() {
+export default function GedPage() {
   const [contentId, setContentId] = useState(menuData[0].id);
 
   const content = contentMap[contentId];
@@ -462,35 +286,27 @@ export default function CoronavirusPage() {
         <MainMenubar />
         <TopInfoBoxWrapper>
           <TopInfoBox>
-            <h1>In Response to the Coronavirus Pandemic</h1>
+            <h1>Faith in the “Great Physician”</h1>
             <p>
-              By now, we are fully aware of the Coronavirus or COVID-19
-              pandemic. It has radically changed our daily lives. It is clear
-              that one of the most important actions each of us can take at this
-              time is to participate in “social distancing,” which can slow down
-              and eventually stop the spread of this dangerous virus.
-            </p>
-            <p>
-              Therefore, in keeping with the principle precept of bioethics to
-              “First, do no harm” and adhering to the State of Emergency
-              declared by Governor Hogan and the Center for Disease Control, we
-              are cancelling our weekly worship service until further notice. I
-              believe this is in keeping with the second greatest commandment to
-              <i>“Love your neighbor as you love yourself”</i> (Mark 20:31). By
-              so doing, we lessen the possibility of contracting and/or
-              spreading the virus to others.{' '}
-            </p>
-            <p>
-              {' '}
-              We will be sending out further information in the days to come
-              regarding what we will be able to do to keep our church family
-              informed.
+              The enemy uses every opportunity to steal, kill, and destroy—this
+              includes our hope, our peace, and our faith. However, God
+              instructs us still to “cast all of your cares upon Him, for He
+              cares for you” (I Peter 5:7). Faith is a spiritual muscle; and,
+              like all muscles, if left dormant, it withers and atrophies.
+              Trials and trouble remind us that on our own we are helpless. But
+              thanks to God who regards our helpless estate! In all things, we
+              already have the victory! Be an inspiration to those who are
+              down-hearted and worried. Offer comfort and love to those who
+              grieve. Pray and encourage others to pray for those affected by
+              the virus. Share facts of the virus to stop the spread of rumors
+              and discrimination. Exercise your faith through meditating on
+              scripture, prayer, and maintaining a positive outlook.
             </p>
           </TopInfoBox>
           <ContentAndSubCompassWrapper>
             <AboveContentLinks
-              pagePath={routePaths.MAIN_CORONAVIRUS}
-              pageTitle="Coronavirus"
+              pagePath={routePaths.MAIN_GED}
+              pageTitle="Ged Program"
             />
             <ContentAndSides>
               <ContentLeftSide>
@@ -498,11 +314,16 @@ export default function CoronavirusPage() {
                   currentId={contentId}
                   menuData={menuData}
                   onClick={id => setContentId(id)}
-                  title="Coronavirus"
+                  title="Ged Program"
                 />
               </ContentLeftSide>
               <ContentWrapper>{content}</ContentWrapper>
-              <ContentRightSide />
+              <ContentRightSide>
+                <div className="ged-contact-us">
+                  Contact us for more information about how you can sign up for{' '}
+                  <span className="free">free</span> GED Preparation Classes
+                </div>
+              </ContentRightSide>
             </ContentAndSides>
           </ContentAndSubCompassWrapper>
         </TopInfoBoxWrapper>
