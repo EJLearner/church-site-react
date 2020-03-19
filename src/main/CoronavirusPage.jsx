@@ -388,21 +388,29 @@ export default function CoronaVirusPage() {
         <MainMenubar />
         <TopInfoBoxWrapper>
           <TopInfoBox>
-            <h1>Faith in the “Great Physician”</h1>
+            <h1>In Response to the Coronavirus Pandemic</h1>
             <p>
-              The enemy uses every opportunity to steal, kill, and destroy—this
-              includes our hope, our peace, and our faith. However, God
-              instructs us still to “cast all of your cares upon Him, for He
-              cares for you” (I Peter 5:7). Faith is a spiritual muscle; and,
-              like all muscles, if left dormant, it withers and atrophies.
-              Trials and trouble remind us that on our own we are helpless. But
-              thanks to God who regards our helpless estate! In all things, we
-              already have the victory! Be an inspiration to those who are
-              down-hearted and worried. Offer comfort and love to those who
-              grieve. Pray and encourage others to pray for those affected by
-              the virus. Share facts of the virus to stop the spread of rumors
-              and discrimination. Exercise your faith through meditating on
-              scripture, prayer, and maintaining a positive outlook.
+              By now, we are fully aware of the Coronavirus or COVID-19
+              pandemic. It has radically changed our daily lives. It is clear
+              that one of the most important actions each of us can take at this
+              time is to participate in “social distancing,” which can slow down
+              and eventually stop the spread of this dangerous virus.
+            </p>
+            <p>
+              Therefore, in keeping with the principle precept of bioethics to
+              “First, do no harm” and adhering to the State of Emergency
+              declared by Governor Hogan and the Center for Disease Control, we
+              are cancelling our weekly worship service until further notice. I
+              believe this is in keeping with the second greatest commandment to
+              <i>“Love your neighbor as you love yourself”</i> (Mark 20:31). By
+              so doing, we lessen the possibility of contracting and/or
+              spreading the virus to others.{' '}
+            </p>
+            <p>
+              {' '}
+              We will be sending out further information in the days to come
+              regarding what we will be able to do to keep our church family
+              informed.
             </p>
           </TopInfoBox>
           <ContentAndSubCompassWrapper>
