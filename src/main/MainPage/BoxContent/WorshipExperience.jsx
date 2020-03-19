@@ -16,9 +16,10 @@ function WorshipExperience() {
         <b>
           <u>all</u>
         </b>{' '}
-        bible study sessions. If you have specific questions or need to contact
-        the clergy, please call us at (410) 462-4800 or email us at
-        church@thecitytemple.org.
+        bible study sessions. See our “Response to the COVID-19” on the
+        Coronavirus Update page for ways to give while church is closed. If you
+        have specific questions or need to contact the clergy, please call (410)
+        462-4800 or email us at church@thecitytemple.org.
       </p>
     </div>
   );
