@@ -38,16 +38,6 @@ const IDS = {
   PROCEDURE_CHANGES: 'church-procedure-changes'
 };
 
-const menuData = [
-  {id: IDS.MEDITATION, title: 'Meditation from the pastor'},
-  {id: IDS.INFO, title: 'Preventing sickness'},
-  {id: IDS.IF_INFECTED, title: 'What to do if infected'},
-  {
-    id: IDS.PROCEDURE_CHANGES,
-    title: 'City Temple’s Response to COVID-19'
-  }
-];
-
 const image = (
   <img
     alt="Coronavirus"
@@ -246,7 +236,7 @@ const ifInfectedContent = (
       your room.
     </p>
     <p>
-      <b and coughs Cover sneezes your />
+      <b>Cover your coughts and snezes</b>
     </p>
     <p>
       Cover your mouth and nose with a tissue when you cough or sneeze. Throw
@@ -334,7 +324,7 @@ const procedureChangesContent = (
   <>
     {image}
     <h2>Responding to the Coronavirus Pandemic</h2>
-    <p>
+    <div>
       <h3>
         <b>
           This is an emerging, rapidly evolving situation. We will provide
@@ -346,7 +336,7 @@ const procedureChangesContent = (
       <p>
         <b>Church Service</b>
       </p>
-      <p>
+      <div>
         <ul>
           <li>
             Church service will be held at 9 am each Sunday unless otherwise
@@ -361,11 +351,11 @@ const procedureChangesContent = (
             opportunity for germs to spread.
           </li>
         </ul>
-      </p>
+      </div>
       <p>
         <b>Ministry Meetings</b>
       </p>
-      <p>
+      <div>
         <ul>
           <li>
             We are encouraging ministries to conduct meetings remotely using a{' '}
@@ -387,11 +377,11 @@ const procedureChangesContent = (
             for your meetings.
           </li>
         </ul>
-      </p>
+      </div>
       <p>
         <b>Tithing &amp; Offering</b>
       </p>
-      <p>
+      <div>
         <ul>
           <li>
             Please continue to send your tithes and offering to your church! We
@@ -415,11 +405,11 @@ const procedureChangesContent = (
             </ul>
           </li>
         </ul>
-      </p>
+      </div>
       <p>
         <b>Notifications &amp; Cancellations</b>
       </p>
-      <p>
+      <div>
         <ul>
           <li>
             We will communicate updates using robocalls, emails, website
@@ -439,22 +429,34 @@ const procedureChangesContent = (
             August.
           </li>
         </ul>
-      </p>
-    </p>
+      </div>
+    </div>
   </>
 );
 
-const contentMap = {
-  [IDS.INFO]: preventingSickness,
-  [IDS.IF_INFECTED]: ifInfectedContent,
-  [IDS.PROCEDURE_CHANGES]: procedureChangesContent,
-  [IDS.MEDITATION]: meditation
-};
+const contentData = [
+  {
+    id: IDS.MEDITATION,
+    content: meditation,
+    title: 'Meditation from the pastor'
+  },
+  {id: IDS.INFO, content: preventingSickness, title: 'Preventing sickness'},
+  {
+    id: IDS.IF_INFECTED,
+    content: ifInfectedContent,
+    title: 'What to do if infected'
+  },
+  {
+    id: IDS.PROCEDURE_CHANGES,
+    content: procedureChangesContent,
+    title: 'City Temple’s Response to COVID-19'
+  }
+];
 
 export default function CoronavirusPage() {
-  const [contentId, setContentId] = useState(menuData[0].id);
+  const [contentId, setContentId] = useState(contentData[0].id);
 
-  const content = contentMap[contentId];
+  const {content, title} = contentData.find(({id}) => id === contentId);
 
   return (
     <StyleWrapper>
@@ -483,12 +485,13 @@ export default function CoronavirusPage() {
             <AboveContentLinks
               pagePath={routePaths.MAIN_CORONAVIRUS}
               pageTitle="Coronavirus"
+              subPageTitle={title}
             />
             <ContentAndSides>
               <ContentLeftSide>
                 <SideMenu
                   currentId={contentId}
-                  menuData={menuData}
+                  menuData={contentData}
                   onClick={id => setContentId(id)}
                   title="Coronavirus"
                 />

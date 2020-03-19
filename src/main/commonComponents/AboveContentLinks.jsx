@@ -18,12 +18,6 @@ const AboveContentLinksStyle = styled.div`
   }
 `;
 
-AboveContentLinks.propTypes = {
-  pagePath: PropTypes.string,
-  pageTitle: PropTypes.string.isRequired,
-  subPageTitle: PropTypes.string
-};
-
 function AboveContentLinks({pageTitle, pagePath, subPageTitle}) {
   if (subPageTitle) {
     return (
@@ -40,5 +34,11 @@ function AboveContentLinks({pageTitle, pagePath, subPageTitle}) {
     </AboveContentLinksStyle>
   );
 }
+
+AboveContentLinks.propTypes = {
+  pagePath: PropTypes.string,
+  pageTitle: PropTypes.string.isRequired,
+  subPageTitle: PropTypes.string
+};
 
 export default AboveContentLinks;
