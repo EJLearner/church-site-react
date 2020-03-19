@@ -42,8 +42,13 @@ const testUserInfo = {
 };
 
 const donationTypeOptions = [
-  {label: 'General Church Fund', value: 'general'},
+  {label: 'Tithes', value: 'tithes'},
+  {label: 'General Offering', value: 'general'},
+  {label: 'Benevolence', value: 'benevolence'},
+  {label: 'Building Fund', value: 'building'},
   {label: 'Outreach', value: 'outreach'},
+  {label: 'Missions', value: 'missions'},
+  {label: 'Donation', value: 'donation'},
   {label: 'William Bryant Scholarship Fund', value: 'scholarship'},
   {label: 'Youth Ministry', value: 'youth'},
   {label: 'Sowing Seeds', value: 'seeds'}
