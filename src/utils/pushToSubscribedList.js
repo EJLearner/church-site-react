@@ -1,4 +1,5 @@
 import firebase from '../firebase';
+
 import constants from './constants';
 
 const pushToSubscribedList = function(email, subscribeSource, name) {

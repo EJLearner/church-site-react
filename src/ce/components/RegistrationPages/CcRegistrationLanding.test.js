@@ -1,4 +1,5 @@
 import CcRegistrationLanding from './CcRegistrationLanding';
+
 import {shallow} from 'enzyme';
 import React from 'react';
 

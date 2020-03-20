@@ -1,8 +1,7 @@
-import React from 'react';
+import Slider from './Slider';
 
 import {mount, shallow} from 'enzyme';
-
-import Slider from './Slider';
+import React from 'react';
 import {MemoryRouter} from 'react-router';
 
 describe('Slider', () => {

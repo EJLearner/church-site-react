@@ -1,6 +1,7 @@
-import React from 'react';
-import {shallow} from 'enzyme';
 import MainMenubar from './MainMenubar';
+
+import {shallow} from 'enzyme';
+import React from 'react';
 
 describe('MainHome', () => {
   it('renders', () => {

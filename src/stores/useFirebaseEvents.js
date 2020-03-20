@@ -1,5 +1,4 @@
 import firebase from '../firebase';
-import {useState, useEffect} from 'react';
 import constants from '../utils/constants';
 import {
   endOfYesterday,
@@ -7,6 +6,8 @@ import {
   startOfDay,
   isAfter
 } from '../utils/dateTimeUtils';
+
+import {useState, useEffect} from 'react';
 
 const sortEventsByStartTime = events => {
   return events.sort((a, b) => {

@@ -1,6 +1,7 @@
+import constants from '../../../utils/constants';
+
 import moment from 'moment';
 
-import constants from '../../../utils/constants';
 
 const validDateFormats = ['M/D/YY', 'M/D/YYYY', 'M-D-YYYY', 'M-D-YY'];
 

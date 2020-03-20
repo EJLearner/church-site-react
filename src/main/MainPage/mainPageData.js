@@ -1,13 +1,15 @@
 import choirThumb from '../../assets/main/images/choir-thumb.jpg';
+import christianEdPeopleThumb from '../../assets/main/images/christian-ed-people-thumb.jpg';
 import coronavirus from '../../assets/main/images/coronavirus-thumb.png';
 import dance from '../../assets/main/images/dance.jpg';
-import christianEdPeopleThumb from '../../assets/main/images/christian-ed-people-thumb.jpg';
 import shofarBlower from '../../assets/main/images/shofar-blower-thumb.png';
-
-import JubileeContent from './BoxContent/JubileeContent';
-import CultureAndFineArts from './BoxContent/CultureAndFineArts';
-import ChristianEducation from './BoxContent/ChristianEducation';
 import routePaths from '../../routePaths';
+
+import ChristianEducation from './BoxContent/ChristianEducation';
+import CultureAndFineArts from './BoxContent/CultureAndFineArts';
+import JubileeContent from './BoxContent/JubileeContent';
+
+
 // import GedProgram from './BoxContent/GedProgram';
 import WorshipExperience from './BoxContent/WorshipExperience';
 import CoronaVirusContent from './CoronaVirusContent';

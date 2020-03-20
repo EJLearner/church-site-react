@@ -1,6 +1,7 @@
 import firebase from '../firebase';
-import pushToSubscribedList from './pushToSubscribedList';
+
 import constants from './constants';
+import pushToSubscribedList from './pushToSubscribedList';
 
 // TODO: Get these tests working again
 describe.skip('pushToSubscribedList', () => {

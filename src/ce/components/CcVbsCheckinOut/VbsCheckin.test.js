@@ -1,11 +1,11 @@
-import React from 'react';
-import constants from '../../../utils/constants';
 import routePaths from '../../../routePaths';
-
-import {shallow} from 'enzyme';
+import utils from '../../../utils/commonUtils';
+import constants from '../../../utils/constants';
 
 import VbsCheckin from './VbsCheckin';
-import utils from '../../../utils/commonUtils';
+
+import {shallow} from 'enzyme';
+import React from 'react';
 
 describe('#render', () => {
   it('renders BaseCheckin', () => {

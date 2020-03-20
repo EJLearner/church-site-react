@@ -1,9 +1,12 @@
-import CcRegistrationChild from './CcRegistrationChild';
-import constants from '../../../utils/constants';
-import {shallow} from 'enzyme';
-import React from 'react';
 import routePaths from '../../../routePaths';
 import utils from '../../../utils/commonUtils';
+import constants from '../../../utils/constants';
+
+import CcRegistrationChild from './CcRegistrationChild';
+
+import {shallow} from 'enzyme';
+import React from 'react';
+
 jest.mock('../../../utils/commonUtils.js');
 
 describe('CcRegistrationChild', () => {

@@ -1,6 +1,6 @@
 import routePaths from '../routePaths';
-import constants from '../utils/constants';
 import commonUtils from '../utils/commonUtils';
+import constants from '../utils/constants';
 
 import moment from 'moment';
 

@@ -1,6 +1,7 @@
-import React from 'react';
-import {shallow} from 'enzyme';
 import MainWrapper from './MainWrapper';
+
+import {shallow} from 'enzyme';
+import React from 'react';
 
 describe('MainWrapper', () => {
   it('renders', () => {

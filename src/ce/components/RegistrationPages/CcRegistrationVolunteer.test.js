@@ -1,8 +1,11 @@
-import CcRegistrationVolunteer from './CcRegistrationVolunteer';
+import utils from '../../../utils/commonUtils';
 import constants from '../../../utils/constants';
+
+import CcRegistrationVolunteer from './CcRegistrationVolunteer';
+
 import {shallow} from 'enzyme';
 import React from 'react';
-import utils from '../../../utils/commonUtils';
+
 jest.mock('../../../utils/commonUtils.js');
 
 describe('CcRegistrationVolunteer', () => {

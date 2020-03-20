@@ -1,9 +1,9 @@
-import churchExterior from '../assets/main/images/church-exterior.jpg';
 import choir from '../assets/main/images/choir.jpg';
-import dance from '../assets/main/images/dance-crop-1.jpg';
 import christianEdPeople from '../assets/main/images/christian-ed-people.jpg';
-import shofarBlowers from '../assets/main/images/shofar-blowers.jpg';
+import churchExterior from '../assets/main/images/church-exterior.jpg';
+import dance from '../assets/main/images/dance-crop-1.jpg';
 import shofarBlower from '../assets/main/images/shofar-blower.png';
+import shofarBlowers from '../assets/main/images/shofar-blowers.jpg';
 
 const backgroundSources = {
   CHOIR: choir,

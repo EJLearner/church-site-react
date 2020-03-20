@@ -1,9 +1,10 @@
+import routePaths from '../routePaths';
+import constants from '../utils/constants';
+
 import _ from 'lodash';
 import moment from 'moment';
 
-import routePaths from '../routePaths';
 
-import constants from '../utils/constants';
 
 const {
   INTERNAL_DATE_FORMAT,
