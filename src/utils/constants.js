@@ -4,6 +4,7 @@ const constants = {
   INTERNAL_TIMESTAMP_FORMAT: 'YYYY-MM-DDTHH:mm:ss.SSSZ',
   DISPLAY_TIME_FORMAT: 'M/D/YY h:mm a',
   DISPLAY_DATE_FORMAT: 'M/D/YYYY',
+  DATE_FNS_DISPLAY_DATE_FORMAT: 'M/d/yyyy',
 
   FB_REF_EVENTS: 'dates',
 

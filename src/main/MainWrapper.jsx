@@ -8,6 +8,7 @@ import NotFound from '../ce/components/NotFound/NotFound';
 import AboutUsPage from './AboutUsPage';
 import MinistriesPage from './MinistriesPage';
 import GivingPage from './GivingPage';
+import NewsPage from './NewsPage';
 import Calendar from './CalendarPage';
 import MembersOnly from './MembersOnly';
 import ContactPage from './ContactPage';
@@ -82,6 +83,9 @@ function MainWrapper() {
         </Route>
         <Route path={routePaths.MAIN_SCHOLARSHIP}>
           <ScholarshipPage />
+        </Route>
+        <Route path={routePaths.MAIN_NEWS}>
+          <NewsPage />
         </Route>
         <Route>
           <NotFound />

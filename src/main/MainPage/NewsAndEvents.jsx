@@ -10,7 +10,7 @@ import routePaths from '../../routePaths';
 import PlainButton from '../commonComponents/PlainButton';
 import {Link} from 'react-router-dom';
 import useFirebaseEvents from '../../stores/useFirebaseEvents';
-import useFirebaseNews from '../../stores/useFirebaseNews';
+import useNews from '../../stores/useNews';
 import {parseISO, format} from '../../utils/dateTimeUtils';
 
 const NewsEventsStyle = styled.div`
@@ -140,7 +140,7 @@ const NewsAndEvents = () => {
     returnAsArray: true
   });
 
-  const news = useFirebaseNews();
+  const news = useNews();
 
   return (
     <NewsEventsStyle>

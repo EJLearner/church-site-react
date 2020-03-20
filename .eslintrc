@@ -2,6 +2,10 @@
   "extends": ["react-app", "eslint:recommended", "plugin:react/recommended"],
   "rules": {
     "comma-dangle": ["error", "never"],
+    "import/order": [
+      "warn",
+      {"alphabetize": {"order": "asc"}, "newlines-between": "always"}
+    ],
     "max-len": ["error", 120],
     "no-console": "error",
     "no-restricted-syntax": [
@@ -38,7 +42,8 @@
     "react/no-unused-prop-types": "error",
     "react/self-closing-comp": "error",
     "react/void-dom-elements-no-children": "error",
-    "semi": "error"
+    "semi": "error",
+    "sort-keys": "warn"
   },
   "overrides": [
     {
