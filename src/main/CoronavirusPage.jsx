@@ -1,19 +1,21 @@
-import React, {useState} from 'react';
-import StandardPageWrapper from './commonComponents/StandardPageWrapper';
-import MainMenubar from './MainMenubar';
-import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
-import TopInfoBox from './commonComponents/TopInfoBox';
-import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
-import AboveContentLinks from './commonComponents/AboveContentLinks';
-import routePaths from '../routePaths';
-import ContentAndSides from './commonComponents/ContentAndSides';
-import ContentLeftSide from './commonComponents/ContentLeftSide';
-import ContentWrapper from './commonComponents/ContentWrapper';
-import ContentRightSide from './commonComponents/ContentRightSide';
-import SideMenu from './commonComponents/SideMenu';
 import coronaVirusImage from '../assets/main/images/coronavirus.png';
 import yearginPicture from '../assets/main/images/grady-yeargin.jpg';
+import routePaths from '../routePaths';
+import {COLORS} from '../utils/styleVariables';
 
+import MainMenubar from './MainMenubar';
+import AboveContentLinks from './commonComponents/AboveContentLinks';
+import ContentAndSides from './commonComponents/ContentAndSides';
+import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
+import ContentLeftSide from './commonComponents/ContentLeftSide';
+import ContentRightSide from './commonComponents/ContentRightSide';
+import ContentWrapper from './commonComponents/ContentWrapper';
+import SideMenu from './commonComponents/SideMenu';
+import StandardPageWrapper from './commonComponents/StandardPageWrapper';
+import TopInfoBox from './commonComponents/TopInfoBox';
+import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
+
+import React, {useState} from 'react';
 import styled from 'styled-components';
 
 const StyleWrapper = styled.div`
@@ -23,7 +25,10 @@ const StyleWrapper = styled.div`
     height: auto;
     margin: 0 1em 1em 0;
   }
-
+  em {
+    color: ${COLORS.RED};
+    font-weight: bold;
+  }
   .corona-virus-image {
     width: 300px;
   }
@@ -32,8 +37,8 @@ const StyleWrapper = styled.div`
   }
 `;
 const IDS = {
-  INFO: 'info',
   IF_INFECTED: 'if-sick',
+  INFO: 'info',
   MEDITATION: 'meditation',
   PROCEDURE_CHANGES: 'church-procedure-changes'
 };
@@ -48,63 +53,51 @@ const image = (
 
 const meditation = (
   <div>
-    <h2>The Pastor</h2>
+    <h2>
+      <i>“A Meditation for these times!”</i>
+    </h2>
     <img alt="Grady Yeargin" className="yeargin-picture" src={yearginPicture} />
     <p>
-      The Rev. Dr. Grady Andrew Yeargin, Jr. was born on November 7, 1949 in
-      Greenville, South Carolina. He attended Sterling High School and was
-      admitted to Morehouse College in 1966 on an early admission scholarship.
-      In 1970, he graduated from Morehouse with a B.A. Degree in Philosophy and
-      Religion, he graduated from Colgate-Rochester Divinity School with a
-      Master of Divinity Degree in 1973, and he graduated from Wesley
-      Theological Seminary in 2005 with a Doctor of Ministry Degree.
+      In the 6th verse of the 46th Psalm, the pslamist declares that{' '}
+      <em>“The nations are in chaos, and their kingdoms crumble.”</em> These
+      words reflect the times in which we are presently living. Chaos has grown
+      out of the present pandemic from which the entire world is suffering. The
+      White House has been in chaos since the last election, and it has worsened
+      since the emergence of this pandemic. Stores have been in chaos as
+      shoppers have felt the need to stock-up on food and other necessities. And
+      there are those who believe that this pandemic is nothing but a hoax
+      cooked up by the Democratic Party.
     </p>
     <p>
-      Dr. Yeargin began his ministerial career in 1973 as the Associate Minister
-      of the Mount Zion Baptist Church in Newark, NJ under the pastorate of the
-      Rev. Dr. Granville A. Seward. Along with his responsibilities in the areas
-      of Youth Ministry, Christian Education and Neighborhood Ministry, Dr.
-      Yeargin was also responsible for assuming the pastoral responsibilities in
-      the absence of the Pastor.
+      However, there is a word from the 10th verse of that 46th Psalm that is
+      worthy of serious consideration. According to that text, God issues the
+      following command: <em>“Be still and know that I am God.”</em>
     </p>
     <p>
-      During his tenure at Mount Zion, Dr. Yeargin served as a board member of
-      the Campus Christian Foundation, the Youth Council of the American Baptist
-      Churches of New Jersey and of the Metropolitan Ecumenical Ministries
-      Committee on Neighborhood and Youth Ministry.
+      I do not believe that the God we serve is the author or creator of chaos
+      or suffering. We do enough of that without His help. Instead, the God I
+      know tends to involve Himself in the chaos and suffering we create and
+      cause, in order to transform it into healing and peace. I believe it is
+      for this reason that God commands us to{' '}
+      <em>“Be still and know that I am God!”</em> Make no mistake about it: God
+      works in mysterious ways.
     </p>
     <p>
-      In 1976, Dr. Yeargin was called to pastor the Mount Prospect Church in
-      Rock Hill, South Carolina. Along with providing a new dimension in the
-      area of teaching ministry in the church and in the local Bible College,
-      Dr. Yeargin held positions in both the local and state conventions along
-      with serving on several civic committees.
-    </p>
-    <p>
-      After serving Mount Prospect for nine years, Dr. Yeargin was called to
-      pastor the City Temple of Baltimore (Baptist) on September 10, 1985. He
-      began his pastorate in January 1986. Dr. Yeargin has brought a new
-      dimension of spiritual nourishment and growth to City Temple through
-      worship, study, and action. Under his direction several new ministries
-      have been established in City Temple that include: the Shelter Ministry,
-      the Dance Ministry, the New Members Counselors Ministry, the Christian
-      Education Ministry, the Courtesy Guild, the Tape Ministry as well as the
-      re-establishment of the Cultural and Fine Arts Ministry and the Building
-      Ministry.
-    </p>
-    <p>
-      Dr. Yeargin has been socially involved in the life of the community
-      through his participation in Baltimoreans United in Leadership Development
-      (B.U.I.L.D.) as well as serving for two years as a clergy co-chairperson,
-      the Interdenominational Ministerial Alliance, the Institute for Christian
-      and Jewish Studies, The United Missionary Baptist Convention of Maryland,
-      and was the previous co-chairperson of the Baltimore affiliate of the
-      National Black Leadership Commission on AIDS.
-    </p>
-    <p>
-      Dr. Yeargin is married to Patricia Ann Yeargin and they share two
-      daughters, Adia Joy and Candace. He also continues to maintain his sense
-      of fatherhood to his beloved daughter, Kimberly Rei, who is deceased.
+      Our lives have become so hectic, so fast-paced, so demanding, and yes, so
+      chaotic that we lose our sense of who we are. I think it so like God to
+      use this present pandemic and chaos to get our attention; to give us a
+      sense of what real life and living is; to come to experience the peace
+      that passeth all understanding. So, God, in His most unpredictable way,
+      uses “social distancing” to get us to see the chaos for what it is and
+      what it can do. Now, we have little or no choice but to separate ourselves
+      from the hustle and bustle of this life and begin to get our bearings
+      regarding who God is and what He is able to do. Now, we are being forced
+      to be still so that we cannot just bring a halt to this raging virus, but
+      so that we can take the time to know the God who is indeed God; to
+      recognize that He is God and God alone. In times like this, He is our
+      refuge and strength; in times like this, He is our very present help in
+      the time of trouble. Therefore, we will not fear whatever may come our
+      way.
     </p>
   </div>
 );
@@ -436,9 +429,9 @@ const procedureChangesContent = (
 
 const contentData = [
   {
-    id: IDS.MEDITATION,
     content: meditation,
-    title: 'Meditation from the pastor'
+    id: IDS.MEDITATION,
+    title: 'A Meditation from the pastor'
   },
   {id: IDS.INFO, content: preventingSickness, title: 'Preventing sickness'},
   {
@@ -464,21 +457,29 @@ export default function CoronavirusPage() {
         <MainMenubar />
         <TopInfoBoxWrapper>
           <TopInfoBox>
-            <h1>Faith in the “Great Physician”</h1>
+            <h1>In Response to the Coronavirus Pandemic</h1>
             <p>
-              The enemy uses every opportunity to steal, kill, and destroy—this
-              includes our hope, our peace, and our faith. However, God
-              instructs us still to “cast all of your cares upon Him, for He
-              cares for you” (I Peter 5:7). Faith is a spiritual muscle; and,
-              like all muscles, if left dormant, it withers and atrophies.
-              Trials and trouble remind us that on our own we are helpless. But
-              thanks to God who regards our helpless estate! In all things, we
-              already have the victory! Be an inspiration to those who are
-              down-hearted and worried. Offer comfort and love to those who
-              grieve. Pray and encourage others to pray for those affected by
-              the virus. Share facts of the virus to stop the spread of rumors
-              and discrimination. Exercise your faith through meditating on
-              scripture, prayer, and maintaining a positive outlook.
+              By now, we are fully aware of the Coronavirus or COVID-19
+              pandemic. It has radically changed our daily lives. It is clear
+              that one of the most important actions each of us can take at this
+              time is to participate in “social distancing,” which can slow down
+              and eventually stop the spread of this dangerous virus.
+            </p>
+            <p>
+              Therefore, in keeping with the principle precept of bioethics to
+              “First, do no harm” and adhering to the State of Emergency
+              declared by Governor Hogan and the Center for Disease Control, we
+              are cancelling our weekly worship service until further notice. I
+              believe this is in keeping with the second greatest commandment to
+              <i>“Love your neighbor as you love yourself”</i> (Mark 20:31). By
+              so doing, we lessen the possibility of contracting and/or
+              spreading the virus to others.{' '}
+            </p>
+            <p>
+              {' '}
+              We will be sending out further information in the days to come
+              regarding what we will be able to do to keep our church family
+              informed.
             </p>
           </TopInfoBox>
           <ContentAndSubCompassWrapper>
