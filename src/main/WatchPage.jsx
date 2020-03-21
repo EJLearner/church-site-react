@@ -1,124 +1,162 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import routePaths from '../routePaths';
-import useNews from '../stores/useNews';
 import constants from '../utils/constants';
-import {format, parseISO} from '../utils/dateTimeUtils';
+import dateTimeUtils from '../utils/dateTimeUtils';
+import {LOGICAL_COLORS, COLORS} from '../utils/styleVariables';
 
 import MainMenubar from './MainMenubar';
-import AboveContentLinks from './commonComponents/AboveContentLinks';
-import ContentAndSides from './commonComponents/ContentAndSides';
 import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
-import ContentLeftSide from './commonComponents/ContentLeftSide';
-import ContentRightSide from './commonComponents/ContentRightSide';
-import ContentWrapper from './commonComponents/ContentWrapper';
-import SideMenu from './commonComponents/SideMenu';
 import StandardPageWrapper from './commonComponents/StandardPageWrapper';
-import TopInfoBox from './commonComponents/TopInfoBox';
-import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
+
+const PREACHERS = {
+  G_YEARGIN: 'Rev. Dr. Grady A Yeargin, Jr.'
+};
+
+const orderedVideoData = [
+  {
+    audioLink: {},
+    date: '2019-06-17',
+    description:
+      'A one to two line blurb will go here to explain the point of the sermon',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 3:16',
+    title: 'The Providence of Faith',
+    videoLink: 'https://www.youtube.com/embed/QdzviEfS4EI'
+  },
+  {
+    audioLink: {},
+    date: '2019-04-17',
+    description:
+      'A one to two line blurb will go here to explain the point of the sermon',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 3:16',
+    title: 'The Providence of Faith',
+    videoLink: 'https://www.youtube.com/embed/QdzviEfS4EI'
+  },
+  {
+    audioLink: {},
+    date: '2019-08-17',
+    description:
+      'A one to two line blurb will go here to explain the point of the sermon',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 3:16',
+    title: 'The Providence of Faith',
+    videoLink: 'https://www.youtube.com/embed/QdzviEfS4EI'
+  }
+].sort((a, b) => a.date > b.date);
 
 const StyleWrapper = styled.div`
-  .news-item {
-    h2 {
-      font-size: 20px;
-      margin-bottom: 0;
-      margin-top: 35px;
+  padding: 1em 0;
+  color: ${COLORS.GRAY95};
+  font-weight: bold;
+  font-size: 14px;
+
+  h2 {
+    color: ${LOGICAL_COLORS.CT_PRIMARY};
+  }
+
+  .preacher-and-scripture {
+    display: flex;
+
+    label: {
     }
 
-    h2.first-header {
-      margin-top: 0em;
+    .value {
+      color: ${LOGICAL_COLORS.CT_PRIMARY};
     }
 
-    .update-date {
-      font-size: 16px;
+    div {
+      display: inline-block;
+    }
+
+    div:not(:first-child) {
+      margin-left: 1em;
+    }
+  }
+
+  .date {
+    font-weight: bold;
+    color: ${COLORS.GRAY95};
+    line-height: 200%;
+  }
+
+  .video-div {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
   }
 `;
 
-function getNewsItems(news) {
-  const newsItems = news.map((info, index) => {
-    const {id, title, updateDate, text} = info;
-    const className = index ? null : 'first-header';
-    let updatedDate;
-
-    if (updateDate) {
-      const jsUpdateDate = parseISO(updateDate);
-      updatedDate = format(
-        jsUpdateDate,
-        constants.DATE_FNS_DISPLAY_DATE_FORMAT
-      );
-    }
-
-    return (
-      <div className="news-item" key={id}>
-        <h2 className={className} id={id}>
-          {title}
-          {updatedDate && (
-            <span className="update-date"> - updated({updatedDate})</span>
-          )}
-        </h2>
-        {text}
-      </div>
-    );
-  });
-
-  return <div>{newsItems}</div>;
+function renderAllVideos() {
+  return <div className="all-videos">{null}</div>;
 }
 
-const topBoxContent = (
-  <div>
-    <div>
-      <h1>News</h1>
-    </div>
-    <p>
-      Ministry provides an effective way to offer tangible, practical help to
-      those in our church and community; and contribute to kingdom building. We
-      are inspired to minister in order to fulfill the Great Commandment of the
-      Lord: “You shall love the Lord your God with all your heart, with all your
-      soul, and with all your mind” and “You shall love your neighbor as
-      yourself,” and fulfill the Great Commission.
-    </p>
-  </div>
-);
+function renderFilter() {
+  return <div className="filter">{null}</div>;
+}
 
-const WatchPage = () => {
-  const news = useNews();
+function renderNewestVideo(videoData) {
+  const {date, preacher, scripture, title, videoLink} = videoData;
+
+  const jsSermonDate = dateTimeUtils.parseISO(date);
+  const sermonDate = dateTimeUtils.format(
+    jsSermonDate,
+    constants.DATE_FNS_DISPLAY_DATE_FORMAT
+  );
 
   return (
-    <StyleWrapper>
-      <StandardPageWrapper>
-        <MainMenubar />
-        <TopInfoBoxWrapper>
-          <TopInfoBox>{topBoxContent}</TopInfoBox>
-        </TopInfoBoxWrapper>
+    <div className="newest-video">
+      <h2>{title}</h2>
+      <div className="preacher-and-scripture">
+        <div>
+          <span className="label">Preacher:</span>{' '}
+          <span className="value">{preacher}</span>
+        </div>
+        <div>
+          <span className="label">Scripture:</span>{' '}
+          <span className="value">{scripture}</span>
+        </div>
+      </div>
+      <div className="date">{sermonDate}</div>
 
-        <ContentAndSubCompassWrapper>
-          <AboveContentLinks pagePath={routePaths.MAIN_NEWS} pageTitle="News" />
-          <ContentAndSides>
-            <ContentLeftSide>
-              <SideMenu
-                currentId="news"
-                menuData={[
-                  {
-                    id: 'news',
-                    subLinks: news.map(({title, id}) => ({
-                      elementId: id,
-                      title
-                    })),
-                    title: 'News'
-                  }
-                ]}
-                onClick={() => {}}
-                title="news"
-              />
-            </ContentLeftSide>
-            <ContentWrapper>{getNewsItems(news)}</ContentWrapper>
-            <ContentRightSide />
-          </ContentAndSides>
-        </ContentAndSubCompassWrapper>
-      </StandardPageWrapper>
-    </StyleWrapper>
+      <div className="video-div">
+        <iframe
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          frameBorder="0"
+          src={videoLink}
+          title="Artscape to Organscape"
+        />
+      </div>
+    </div>
+  );
+}
+
+const WatchPage = () => {
+  const newestVideo = orderedVideoData[0];
+
+  return (
+    <StandardPageWrapper>
+      <MainMenubar />
+
+      <ContentAndSubCompassWrapper>
+        <StyleWrapper>
+          {renderNewestVideo(newestVideo)}
+          {renderFilter()}
+          {renderAllVideos()}
+        </StyleWrapper>
+      </ContentAndSubCompassWrapper>
+    </StandardPageWrapper>
   );
 };
 

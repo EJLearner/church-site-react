@@ -22,7 +22,6 @@ const ADMIN_PATHS = {
 const MAIN_HOME_PATH = '/';
 
 const MAIN_ROOT_PATHS = {
-  MAIN_HOME: MAIN_HOME_PATH,
   MAIN_ABOUT_US: `${MAIN_HOME_PATH}about-us/`,
   MAIN_CALENDAR: `${MAIN_HOME_PATH}calendar/`,
   MAIN_CONTACT: `${MAIN_HOME_PATH}contact/`,
@@ -30,6 +29,7 @@ const MAIN_ROOT_PATHS = {
   MAIN_CULTURE_AND_ARTS: `${MAIN_HOME_PATH}culture-and-fine-arts/`,
   MAIN_GED: `${MAIN_HOME_PATH}ged/`,
   MAIN_GIVING: `${MAIN_HOME_PATH}giving/`,
+  MAIN_HOME: MAIN_HOME_PATH,
   MAIN_JUBILEE: `${MAIN_HOME_PATH}jubilee/`,
   MAIN_MEMBERS_ONLY: `${MAIN_HOME_PATH}members-only/`,
   MAIN_MINISTRIES: `${MAIN_HOME_PATH}ministries/`,
@@ -51,14 +51,14 @@ const MAIN_CALENDAR_PATHS = {
 };
 
 const CE_ROOT_PATHS = {
-  CE_HOME: '/ce/',
-
   CE_CALENDAR: '/ce/calendar/',
+
   CE_CC_CHECKIN: '/ce/cc-checkin/',
   CE_CC_CHECKOUT: '/ce/cc-checkout/',
   CE_CC_REG_CHILD: '/ce/cc-registration-child/',
   CE_CC_REG_LANDING: '/ce/cc-registration-landing/',
   CE_CC_REG_VOLUNTEER: '/ce/cc-registration-volunteer/',
+  CE_HOME: '/ce/',
   CE_IDEA_FORM: '/ce/idea-form/',
   CE_THANK_YOU: '/ce/thank-you/',
   CE_VBS_CHECKIN: '/ce/vbs-checkin/',
