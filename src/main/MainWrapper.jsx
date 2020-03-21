@@ -2,24 +2,26 @@ import React, {useEffect, useState} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import styled from 'styled-components';
 
-import MainContent from './MainPage';
-import routePaths from '../routePaths';
 import NotFound from '../ce/components/NotFound/NotFound';
-import AboutUsPage from './AboutUsPage';
-import MinistriesPage from './MinistriesPage';
-import GivingPage from './GivingPage';
-import NewsPage from './NewsPage';
-import Calendar from './CalendarPage';
-import MembersOnly from './MembersOnly';
-import ContactPage from './ContactPage';
-import ScholarshipPage from './ScholarshipPage';
-import JubileePage from './JubileePage';
-import MainFooter from './commonComponents/MainFooter';
-import CultureAndFineArtsPage from './CultureAndFineArtsPage';
+import routePaths from '../routePaths';
 import backgroundStore from '../stores/backgroundStore';
 import {SIZES} from '../utils/styleVariables';
+
+import AboutUsPage from './AboutUsPage';
+import Calendar from './CalendarPage';
+import ContactPage from './ContactPage';
 import CoronavirusPage from './CoronavirusPage';
+import CultureAndFineArtsPage from './CultureAndFineArtsPage';
 import GedPage from './GedPage';
+import GivingPage from './GivingPage';
+import JubileePage from './JubileePage';
+import MainContent from './MainPage';
+import MembersOnly from './MembersOnly';
+import MinistriesPage from './MinistriesPage';
+import NewsPage from './NewsPage';
+import ScholarshipPage from './ScholarshipPage';
+import WatchPage from './WatchPage';
+import MainFooter from './commonComponents/MainFooter';
 
 const WrapperDiv = styled.div`
   background-attachment: fixed;
@@ -86,6 +88,9 @@ function MainWrapper() {
         </Route>
         <Route path={routePaths.MAIN_NEWS}>
           <NewsPage />
+        </Route>
+        <Route path={routePaths.MAIN_WATCH}>
+          <WatchPage />
         </Route>
         <Route>
           <NotFound />

@@ -13,9 +13,9 @@ const ADMIN_PATH = '/admin/';
 const ADMIN_PATHS = {
   ADMIN: ADMIN_PATH,
 
+  ADMIN_CC: `${ADMIN_PATH}cc/`,
   ADMIN_EMAIL_SUBSCRIBERS: `${ADMIN_PATH}email-subscribers/`,
   ADMIN_EVENTS: `${ADMIN_PATH}events/`,
-  ADMIN_CC: `${ADMIN_PATH}cc/`,
   ADMIN_VBS: `${ADMIN_PATH}vbs/`
 };
 
@@ -27,6 +27,7 @@ const MAIN_ROOT_PATHS = {
   MAIN_CALENDAR: `${MAIN_HOME_PATH}calendar/`,
   MAIN_CONTACT: `${MAIN_HOME_PATH}contact/`,
   MAIN_CORONAVIRUS: `${MAIN_HOME_PATH}coronavirus/`,
+  MAIN_CULTURE_AND_ARTS: `${MAIN_HOME_PATH}culture-and-fine-arts/`,
   MAIN_GED: `${MAIN_HOME_PATH}ged/`,
   MAIN_GIVING: `${MAIN_HOME_PATH}giving/`,
   MAIN_JUBILEE: `${MAIN_HOME_PATH}jubilee/`,
@@ -34,19 +35,19 @@ const MAIN_ROOT_PATHS = {
   MAIN_MINISTRIES: `${MAIN_HOME_PATH}ministries/`,
   MAIN_NEWS: `${MAIN_HOME_PATH}news/`,
   MAIN_OUTREACH: `${MAIN_HOME_PATH}outreach/`,
-  MAIN_CULTURE_AND_ARTS: `${MAIN_HOME_PATH}culture-and-fine-arts/`,
   MAIN_SCHOLARSHIP: `${MAIN_HOME_PATH}scholarship`,
   MAIN_STREAM: `${MAIN_HOME_PATH}stream/`,
+  MAIN_WATCH: `${MAIN_HOME_PATH}watch/`,
   MAIN_WELCOME: `${MAIN_HOME_PATH}welcome/`
 };
 
 const {MAIN_CALENDAR} = MAIN_ROOT_PATHS;
 const MAIN_CALENDAR_PATHS = {
   MAIN_CALENDAR_DAY: `${MAIN_CALENDAR}day/`,
-  MAIN_CALENDAR_WEEK: `${MAIN_CALENDAR}week/`,
   MAIN_CALENDAR_MONTH: `${MAIN_CALENDAR}month/`,
-  MAIN_CALENDAR_YEAR: `${MAIN_CALENDAR}year/`,
-  MAIN_CALENDAR_UPCOMING: `${MAIN_CALENDAR}upcoming/`
+  MAIN_CALENDAR_UPCOMING: `${MAIN_CALENDAR}upcoming/`,
+  MAIN_CALENDAR_WEEK: `${MAIN_CALENDAR}week/`,
+  MAIN_CALENDAR_YEAR: `${MAIN_CALENDAR}year/`
 };
 
 const CE_ROOT_PATHS = {
@@ -78,17 +79,17 @@ const CE_ROOT_PATHS = {
 const {CE_CALENDAR} = CE_ROOT_PATHS;
 const CE_CALENDAR_PATHS = {
   CE_CALENDAR_DAY: `${CE_CALENDAR}day/`,
-  CE_CALENDAR_WEEK: `${CE_CALENDAR}week/`,
   CE_CALENDAR_MONTH: `${CE_CALENDAR}month/`,
-  CE_CALENDAR_YEAR: `${CE_CALENDAR}year/`,
-  CE_CALENDAR_UPCOMING: `${CE_CALENDAR}upcoming/`
+  CE_CALENDAR_UPCOMING: `${CE_CALENDAR}upcoming/`,
+  CE_CALENDAR_WEEK: `${CE_CALENDAR}week/`,
+  CE_CALENDAR_YEAR: `${CE_CALENDAR}year/`
 };
 
 const {CE_VISION} = CE_ROOT_PATHS;
 const CE_VISION_PATHS = {
-  CE_VISION_THE_VISION: `${CE_VISION}the-vision/`,
-  CE_VISION_POWERPOINT: `${CE_VISION}powerpoint/`,
   CE_VISION_PARTICIPANTS_2016: `${CE_VISION}participants-2016/`,
+  CE_VISION_POWERPOINT: `${CE_VISION}powerpoint/`,
+  CE_VISION_THE_VISION: `${CE_VISION}the-vision/`,
   CE_VISION_WORKGROUPS: `${CE_VISION}workgroups/`,
   OLD_PATHS_CE_VISION_PARTICIPANTS_2016: [`${CE_VISION}participants2016/`],
   OLD_PATHS_CE_VISION_THE_VISION: [`${CE_VISION}thevision/`]
@@ -109,9 +110,9 @@ const CE_YOUTH_PATHS = {
 
 const {CE_WHO} = CE_ROOT_PATHS;
 const CE_WHO_PATHS = {
-  CE_WHO_PASTOR: `${CE_WHO}pastor/`,
+  CE_WHO_CHRISTIAN_ED_STAFF: `${CE_WHO}christian-ed-staff/`,
   CE_WHO_CTBC: `${CE_WHO}ctbc/`,
-  CE_WHO_CHRISTIAN_ED_STAFF: `${CE_WHO}christian-ed-staff/`
+  CE_WHO_PASTOR: `${CE_WHO}pastor/`
 };
 
 const ALL_PATHS = {

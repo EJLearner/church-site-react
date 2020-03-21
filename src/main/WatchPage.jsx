@@ -82,7 +82,7 @@ const topBoxContent = (
   </div>
 );
 
-const NewsPage = () => {
+const WatchPage = () => {
   const news = useNews();
 
   return (
@@ -122,4 +122,4 @@ const NewsPage = () => {
   );
 };
 
-export default NewsPage;
+export default WatchPage;
