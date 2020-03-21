@@ -1,8 +1,9 @@
+import moment from 'moment';
+
 import routePaths from '../routePaths';
 import commonUtils from '../utils/commonUtils';
 import constants from '../utils/constants';
 
-import moment from 'moment';
 
 function useNews() {
   const allNews = [

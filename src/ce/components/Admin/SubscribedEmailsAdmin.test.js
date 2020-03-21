@@ -1,7 +1,8 @@
-import SubscribedEmailsAdmin from './SubscribedEmailsAdmin';
 
 import {shallow} from 'enzyme';
 import React from 'react';
+
+import SubscribedEmailsAdmin from './SubscribedEmailsAdmin';
 
 describe('', () => {
   it('render', () => {

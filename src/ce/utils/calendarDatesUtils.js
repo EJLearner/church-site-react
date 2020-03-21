@@ -1,6 +1,7 @@
+import _ from 'lodash';
+
 import firebase from '../../firebase';
 
-import _ from 'lodash';
 
 
 let datesStore = {};

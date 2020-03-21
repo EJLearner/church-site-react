@@ -1,8 +1,9 @@
-import App from './App';
 
 import {shallow} from 'enzyme';
 import moment from 'moment';
 import React from 'react';
+
+import App from './App';
 
 it('sets updateLocal function for moment', () => {
   moment.updateLocale = jest.fn();

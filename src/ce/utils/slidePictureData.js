@@ -1,6 +1,7 @@
+import moment from 'moment';
+
 import routePaths from '../../routePaths';
 
-import moment from 'moment';
 
 
 const getNextSaturdayBeforeFirstSunday = () => {

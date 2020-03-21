@@ -1,7 +1,8 @@
-import DisclaimerCheckbox from './DisclaimerCheckbox';
 
 import {shallow} from 'enzyme';
 import React from 'react';
+
+import DisclaimerCheckbox from './DisclaimerCheckbox';
 
 describe('DisclaimerCheckbox', () => {
   let props;

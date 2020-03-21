@@ -1,17 +1,17 @@
 import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
+import routePaths from '../../routePaths';
+import useFirebaseEvents from '../../stores/useFirebaseEvents';
+import useNews from '../../stores/useNews';
+import {parseISO, format} from '../../utils/dateTimeUtils';
 import {
   FONT_FAMILIES,
   COLORS,
   LOGICAL_COLORS
 } from '../../utils/styleVariables';
-import routePaths from '../../routePaths';
 import PlainButton from '../commonComponents/PlainButton';
-import {Link} from 'react-router-dom';
-import useFirebaseEvents from '../../stores/useFirebaseEvents';
-import useNews from '../../stores/useNews';
-import {parseISO, format} from '../../utils/dateTimeUtils';
 
 const NewsEventsStyle = styled.div`
   .news-and-events-content {

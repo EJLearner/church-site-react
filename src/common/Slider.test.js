@@ -1,8 +1,9 @@
-import Slider from './Slider';
 
 import {mount, shallow} from 'enzyme';
 import React from 'react';
 import {MemoryRouter} from 'react-router';
+
+import Slider from './Slider';
 
 describe('Slider', () => {
   let pictures;

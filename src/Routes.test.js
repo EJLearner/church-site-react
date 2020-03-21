@@ -1,10 +1,11 @@
+import {shallow} from 'enzyme';
+import React from 'react';
+import {MemoryRouter} from 'react-router-dom';
+
 import Routes from './Routes';
 import VbsCheckin from './ce/components/CcVbsCheckinOut/VbsCheckin';
 import routePaths from './routePaths';
 
-import {shallow} from 'enzyme';
-import React from 'react';
-import {MemoryRouter} from 'react-router-dom';
 
 
 describe('Routes', () => {

@@ -4,7 +4,18 @@
     "comma-dangle": ["error", "never"],
     "import/order": [
       "warn",
-      {"alphabetize": {"order": "asc"}, "newlines-between": "always"}
+      {
+        "alphabetize": {"order": "asc"},
+        "newlines-between": "always",
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ]
+      }
     ],
     "max-len": ["error", 120],
     "no-console": "error",

@@ -1,7 +1,8 @@
-import CcRegistrationLanding from './CcRegistrationLanding';
 
 import {shallow} from 'enzyme';
 import React from 'react';
+
+import CcRegistrationLanding from './CcRegistrationLanding';
 
 describe('CcRegistrationLanding', () => {
   it('renders without error', () => {

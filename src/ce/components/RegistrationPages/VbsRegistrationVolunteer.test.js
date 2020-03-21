@@ -1,10 +1,11 @@
+import {shallow} from 'enzyme';
+import React from 'react';
+
 import utils from '../../../utils/commonUtils';
 import constants from '../../../utils/constants';
 
 import VbsRegistrationVolunteer from './VbsRegistrationVolunteer';
 
-import {shallow} from 'enzyme';
-import React from 'react';
 
 jest.mock('../../../utils/commonUtils.js');
 

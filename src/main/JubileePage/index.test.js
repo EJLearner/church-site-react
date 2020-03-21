@@ -1,7 +1,8 @@
-import JubileePage from '.';
 
 import {shallow} from 'enzyme';
 import React from 'react';
+
+import JubileePage from '.';
 
 describe('JubileePage', () => {
   it('renders', () => {

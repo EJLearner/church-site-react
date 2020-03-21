@@ -1,10 +1,11 @@
+import {shallow} from 'enzyme';
+import React from 'react';
+
 import routePaths from '../../../routePaths';
 import ErrorList from '../Common/ErrorList';
 
 import BaseCcRegistrationChild from './BaseCcRegistrationChild';
 
-import {shallow} from 'enzyme';
-import React from 'react';
 jest.mock('firebase');
 jest.mock('./registrationUtils.js');
 

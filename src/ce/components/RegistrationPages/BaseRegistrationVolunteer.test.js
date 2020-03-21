@@ -1,7 +1,8 @@
-import BaseRegistrationVolunteer from './BaseRegistrationVolunteer';
 
 import {shallow} from 'enzyme';
 import React from 'react';
+
+import BaseRegistrationVolunteer from './BaseRegistrationVolunteer';
 
 describe('BaseRegistrationVolunteer', () => {
   let props;
