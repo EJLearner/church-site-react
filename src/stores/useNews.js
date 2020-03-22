@@ -35,13 +35,6 @@ function useNews() {
     },
     {
       text:
-        'Bible Study conference call number for Wednesday night bible study is 1-712-770-8094 code 990142.',
-      sortOrder: 10,
-      title: 'Bible Study Conference Call',
-      id: 'bible-study'
-    },
-    {
-      text:
         'The Ushers and Nurses will be selling patrons for their upcoming anniversary. ' +
         'The cost of the patrons is $2.00 per name. See any usher or nurse for more information. ' +
         'Thank you for your continued support.',
