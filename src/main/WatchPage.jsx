@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import constants from '../utils/constants';
 import dateTimeUtils from '../utils/dateTimeUtils';
 import {LOGICAL_COLORS, COLORS} from '../utils/styleVariables';
 
@@ -16,13 +15,13 @@ const PREACHERS = {
 const orderedVideoData = [
   {
     audioLink: {},
-    date: '2019-06-17',
+    date: '2020-03-22',
     description:
       'A one to two line blurb will go here to explain the point of the sermon',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'John 3:16',
-    title: 'The Providence of Faith',
-    videoLink: 'https://www.youtube.com/embed/QdzviEfS4EI'
+    scripture: 'John 16:29-33',
+    title: 'An Indestructible Hope',
+    videoLink: 'https://www.youtube.com/embed/3sgm_bRfXuw'
   },
   {
     audioLink: {},
@@ -44,7 +43,7 @@ const orderedVideoData = [
     title: 'The Providence of Faith',
     videoLink: 'https://www.youtube.com/embed/QdzviEfS4EI'
   }
-].sort((a, b) => a.date > b.date);
+].sort((a, b) => a.date < b.date);
 
 const StyleWrapper = styled.div`
   padding: 1em 0;
@@ -109,10 +108,7 @@ function renderNewestVideo(videoData) {
   const {date, preacher, scripture, title, videoLink} = videoData;
 
   const jsSermonDate = dateTimeUtils.parseISO(date);
-  const sermonDate = dateTimeUtils.format(
-    jsSermonDate,
-    constants.DATE_FNS_DISPLAY_DATE_FORMAT
-  );
+  const sermonDate = dateTimeUtils.format(jsSermonDate, 'MMMM d, yyyy');
 
   return (
     <div className="newest-video">
