@@ -1,12 +1,17 @@
-import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-
+import React, {Component} from 'react';
 import styled from 'styled-components';
+
 import {COLORS} from '../../../../utils/styleVariables';
 
-const STYLES = {
+const SHAPES = {
   OVAL: 'OVAL',
   RECT: 'RECT'
+};
+
+const BUTTON_COLORS = {
+  GRAY: 'GRAY',
+  ORANGE: 'ORANGE'
 };
 
 const StyledButton = styled.button`
@@ -15,14 +20,20 @@ const StyledButton = styled.button`
   min-height: 30px;
   color: black;
 
-  &.oval-button {
+  &.orange-button {
     background-color: orange;
+  }
+
+  &.gray-button {
+    background-color: gray;
+  }
+
+  &.oval-button {
     border: none;
     border-radius: 15px;
   }
 
   &.rect-button {
-    background-color: orange;
     border: none;
   }
 
@@ -35,6 +46,7 @@ class Button extends Component {
   render() {
     const {
       className,
+      color,
       disable,
       onClick,
       children,
@@ -45,7 +57,8 @@ class Button extends Component {
     } = this.props;
 
     const computedClassName = [
-      buttonShape === STYLES.RECT ? 'rect-button' : 'oval-button',
+      buttonShape === SHAPES.RECT ? 'rect-button' : 'oval-button',
+      color === BUTTON_COLORS.GRAY ? 'gray-button' : 'orange-button',
       className,
       disable && 'disabled'
     ]
@@ -67,14 +80,16 @@ class Button extends Component {
 }
 
 Button.defaultProps = {
-  buttonShape: STYLES.OVAL,
+  buttonShape: SHAPES.OVAL,
+  color: BUTTON_COLORS.ORANGE,
   disable: false
 };
 
 Button.propTypes = {
-  buttonShape: PropTypes.oneOf(Object.values(STYLES)),
+  buttonShape: PropTypes.oneOf(Object.values(SHAPES)),
   children: PropTypes.node,
   className: PropTypes.string,
+  color: PropTypes.oneOf(Object.values(BUTTON_COLORS)),
   disable: PropTypes.bool,
   name: PropTypes.string,
   onClick: PropTypes.func,
@@ -82,5 +97,6 @@ Button.propTypes = {
   value: PropTypes.string
 };
 
-export {STYLES};
+export {SHAPES as STYLES};
+export {SHAPES, BUTTON_COLORS};
 export default Button;
