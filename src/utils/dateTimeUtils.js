@@ -15,3 +15,13 @@ export {
   startOfToday,
   endOfYesterday
 };
+
+export default {
+  endOfYesterday,
+  format,
+  isAfter,
+  isSameDay,
+  parseISO,
+  startOfDay,
+  startOfToday
+};

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import {WIDTHS} from '../../utils/styleVariables';
 
 const ContentAndSubCompassWrapper = styled.div`
