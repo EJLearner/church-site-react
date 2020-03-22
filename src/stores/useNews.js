@@ -4,9 +4,27 @@ import routePaths from '../routePaths';
 import commonUtils from '../utils/commonUtils';
 import constants from '../utils/constants';
 
-
 function useNews() {
   const allNews = [
+    {
+      text:
+        'Due to COVID-19, no in-sanctuary service will be held. Watch Sunday’s sermon.',
+      linkPath: routePaths.MAIN_CORONAVIRUS,
+      sortOrder: 1,
+      expireDate: '2020-06-01',
+      title: 'On-line Sermon Posted',
+      id: 'coronavirus-info'
+    },
+    {
+      text:
+        'Coronavirus information posted. Visit the Coronavirus Update page for information' +
+        'on staying safe and changes in the church.',
+      linkPath: routePaths.MAIN_CORONAVIRUS,
+      sortOrder: 1,
+      expireDate: '2020-06-01',
+      title: 'Coronavirus Information',
+      id: 'coronavirus-info'
+    },
     {
       text:
         'Stewardship Reports for the 2019 tax year are now available. See Michele Williams for your statement!',
@@ -36,15 +54,6 @@ function useNews() {
       expireDate: '2020-05-01',
       title: 'Website Redesign',
       id: 'website-redesign'
-    },
-    {
-      text: 'Coronavirus information posted',
-      linkPath: routePaths.MAIN_CORONAVIRUS,
-      sortOrder: 1,
-      expireDate: '2020-06-01',
-      title: 'Coronavirus Information',
-      id: 'coronavirus-info',
-      updateDate: '2020-03-19'
     }
   ];
 

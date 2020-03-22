@@ -1,3 +1,6 @@
+import React from 'react';
+import styled from 'styled-components';
+
 import routePaths from '../routePaths';
 import useNews from '../stores/useNews';
 import constants from '../utils/constants';
@@ -15,9 +18,6 @@ import StandardPageWrapper from './commonComponents/StandardPageWrapper';
 import TopInfoBox from './commonComponents/TopInfoBox';
 import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
 
-import React from 'react';
-import styled from 'styled-components';
-
 const StyleWrapper = styled.div`
   .news-item {
     h2 {
@@ -29,10 +29,11 @@ const StyleWrapper = styled.div`
     h2.first-header {
       margin-top: 0em;
     }
-
-    .update-date {
-      font-size: 16px;
-    }
+  }
+  .update-date {
+    margin-bottom: 12px;
+    display: block;
+    font-size: 12px;
   }
 `;
 
@@ -63,7 +64,12 @@ function getNewsItems(news) {
     );
   });
 
-  return <div>{newsItems}</div>;
+  return (
+    <div>
+      <i className="update-date">posted 03/19/2020</i>
+      {newsItems}
+    </div>
+  );
 }
 
 const topBoxContent = (
@@ -72,12 +78,8 @@ const topBoxContent = (
       <h1>News</h1>
     </div>
     <p>
-      Ministry provides an effective way to offer tangible, practical help to
-      those in our church and community; and contribute to kingdom building. We
-      are inspired to minister in order to fulfill the Great Commandment of the
-      Lord: “You shall love the Lord your God with all your heart, with all your
-      soul, and with all your mind” and “You shall love your neighbor as
-      yourself,” and fulfill the Great Commission.
+      Stay informed! Read below for news updates and information regarding the
+      life of the church.
     </p>
   </div>
 );
