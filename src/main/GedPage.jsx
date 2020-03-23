@@ -1,27 +1,53 @@
 import React, {useState} from 'react';
-import StandardPageWrapper from './commonComponents/StandardPageWrapper';
-import MainMenubar from './MainMenubar';
-import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
-import TopInfoBox from './commonComponents/TopInfoBox';
-import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
-import AboveContentLinks from './commonComponents/AboveContentLinks';
-import routePaths from '../routePaths';
-import ContentAndSides from './commonComponents/ContentAndSides';
-import ContentLeftSide from './commonComponents/ContentLeftSide';
-import ContentWrapper from './commonComponents/ContentWrapper';
-import ContentRightSide from './commonComponents/ContentRightSide';
-import SideMenu from './commonComponents/SideMenu';
-import coronaVirusImage from '../assets/main/images/coronavirus.png';
-
 import styled from 'styled-components';
-import {LOGICAL_COLORS, SIZES} from '../utils/styleVariables';
+
+import coronaVirusImage from '../assets/main/images/coronavirus.png';
+import routePaths from '../routePaths';
+import {
+  LOGICAL_COLORS,
+  SIZES,
+  FONT_FAMILIES,
+  COLORS
+} from '../utils/styleVariables';
+
+import GedPageContactForm from './GetPageContactForm';
+import MainMenubar from './MainMenubar';
+import AboveContentLinks from './commonComponents/AboveContentLinks';
+import ContentAndSides from './commonComponents/ContentAndSides';
+import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
+import ContentLeftSide from './commonComponents/ContentLeftSide';
+import ContentRightSide from './commonComponents/ContentRightSide';
+import ContentWrapper from './commonComponents/ContentWrapper';
+import SideMenu from './commonComponents/SideMenu';
+import StandardPageWrapper from './commonComponents/StandardPageWrapper';
+import TopInfoBox from './commonComponents/TopInfoBox';
+import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
 
 const StyleWrapper = styled.div`
-  .corona-virus-image {
-    width: 300px;
+  h2 {
+    margin-bottom: 0;
   }
-  .mid-sentence {
-    color: #c00000;
+
+  .subtitle {
+    font-style: italic;
+  }
+
+  .info-block {
+    line-height: 180%;
+  }
+
+  .info-title {
+    font-weight: bold;
+  }
+
+  hr {
+    border-top: 0px solid white;
+    color: ${COLORS.GRAY180};
+  }
+
+  h3 {
+    font-family: ${FONT_FAMILIES.ARIAL};
+    font-weight: bold;
   }
 
   .ged-contact-us {
@@ -42,14 +68,9 @@ const StyleWrapper = styled.div`
   }
 `;
 const IDS = {
-  UPCOMING_CLASSES: 'upcoming-classes',
-  ABOUT: 'about'
+  ABOUT: 'about',
+  UPCOMING_CLASSES: 'upcoming-classes'
 };
-
-const menuData = [
-  {id: IDS.UPCOMING_CLASSES, title: 'Upcoming Classes & Registration'},
-  {id: IDS.ABOUT, title: 'About the GED Prep Program'}
-];
 
 const image = (
   <img
@@ -59,80 +80,44 @@ const image = (
   />
 );
 
-const upcomingClasses = (
-  <>
-    {image}
-    <h2>Upcoming Classes &amp; Registration</h2>
-    <p>
-      <b>
-        There is currently no vaccine to prevent coronavirus disease 2019
-        (COVID-19). The best way to prevent illness is to avoid being exposed to
-        this virus. However, as a reminder, CDC always recommends everyday
-        preventive actions to help prevent the spread of respiratory diseases,
-        including:
-      </b>
-    </p>
-    <ul>
-      <li>Avoid close contact with people who are sick.</li>
-      <li>Avoid touching your eyes, nose, and mouth.</li>
-      <li>Stay home when you are sick.</li>
-      <li>
-        Cover your cough or sneeze with a tissue, then throw the tissue in the
-        trash.
-      </li>
-      <li>
-        Clean and disinfect frequently touched objects and surfaces using a
-        regular household cleaning spray or wipe.
-      </li>
-      <li>
-        Follow CDC’s recommendations for using a facemask.
-        <ul>
-          <li>
-            CDC does not recommend that people who are well wear a facemask to
-            protect themselves from respiratory diseases, including COVID-19.
-          </li>
-        </ul>
-        <ul>
-          <li>
-            Facemasks should be used by people who show symptoms of COVID-19 to
-            help prevent the spread of the disease to others. The use of
-            facemasks is also crucial for health workers and people who are
-            taking care of someone in close settings (at home or in a health
-            care facility).
-          </li>
-        </ul>
-      </li>
-      <li>
-        Wash your hands often with soap and water for at least 20 seconds,
-        especially after going to the bathroom; before eating; and after blowing
-        your nose, coughing, or sneezing.
-        <ul>
-          <li>
-            If soap and water are not readily available, use an alcohol-based
-            hand sanitizer with at least 60% alcohol. Always wash hands with
-            soap and water if hands are visibly dirty.
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <p>
-      For information about handwashing, see{' '}
-      <a href="http://www.cdc.gov/handwashing/index.html">
-        <b>CDC’s Handwashing website.</b>
-      </a>
-    </p>
-    <p>
-      For information specific to healthcare, see{' '}
-      <a href="https://www.cdc.gov/handhygiene/index.html">
-        <b>CDC’s Hand Hygiene in Healthcare Settings.</b>
-      </a>
-    </p>
-    <p>
-      These are everyday habits that can help prevent the spread of several
-      viruses. CDC does have specific guidance for travelers.
-    </p>
-  </>
-);
+function getUpcomingClassesContent() {
+  return (
+    <>
+      <h2>Free GED Preparation Classes</h2>
+      <span className="subtitle">
+        Sponsored by W.W. Payne Outreach Center in Partnership with Baltimore
+        City Community College
+      </span>
+      <p className="info-block">
+        <span className="info-title">
+          Registration &amp; Testing for Winter 2020 GED Preparation Classes
+        </span>
+        <br />
+        Wednesday, December 18, 2019
+        <br />
+        9 am - 12 pm City Temple of Baltimore (Baptist)
+        <br />
+        Rev. Dr. Grady A. Yeargin, Jr., Pastor W.W. Payne Outreach Center
+        <br />
+        317 Dolphin Street
+        <br />
+        Baltimore, MD 21217
+      </p>
+      <p className="info-block">
+        <span className="info-title">GED Preparation Class Schedule</span>
+        <br />
+        January 13 - February 28, 2020
+        <br />
+        Every Monday, Wednesday, and Friday
+        <br />9 am - 12 pm
+      </p>
+      <hr />
+      <h3>Contact Us for Registration or More Info</h3>
+
+      <GedPageContactForm />
+    </>
+  );
+}
 
 const aboutContent = (
   <>
@@ -270,15 +255,26 @@ const aboutContent = (
   </>
 );
 
-const contentMap = {
-  [IDS.UPCOMING_CLASSES]: upcomingClasses,
-  [IDS.ABOUT]: aboutContent
-};
+const allContentData = [
+  {
+    getContent: getUpcomingClassesContent,
+    id: IDS.UPCOMING_CLASSES,
+    title: 'Upcoming Classes & Registration'
+  },
+  {
+    getContent: () => aboutContent,
+    id: IDS.ABOUT,
+    title: 'About the GED Prep Program'
+  }
+];
 
 export default function GedPage() {
-  const [contentId, setContentId] = useState(menuData[0].id);
+  const [contentId, setContentId] = useState(allContentData[0].id);
+  const [formInfo, setFormInfo] = useState({email: '', message: '', name: ''});
 
-  const content = contentMap[contentId];
+  const {getContent} = allContentData.find(({id}) => id === contentId);
+
+  const content = getContent(formInfo, setFormInfo);
 
   return (
     <StyleWrapper>
@@ -312,7 +308,7 @@ export default function GedPage() {
               <ContentLeftSide>
                 <SideMenu
                   currentId={contentId}
-                  menuData={menuData}
+                  menuData={allContentData}
                   onClick={id => setContentId(id)}
                   title="Ged Program"
                 />

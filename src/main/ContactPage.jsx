@@ -1,24 +1,24 @@
+import {post} from 'jquery';
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import {post} from 'jquery';
 
+import PostSubmitStatusMessage from '../ce/components/Common/PostSubmitStatusMessage';
+import Button, {STYLES} from '../ce/components/Reusable/Button/Button';
+import Textarea from '../common/components/Textarea';
+import Textbox from '../common/components/Textbox';
+import backgroundStore from '../stores/backgroundStore';
 import {COLORS, LOGICAL_COLORS, FONT_FAMILIES} from '../utils/styleVariables';
 
 import MainMenubar from './MainMenubar';
 import AboveContentLinks from './commonComponents/AboveContentLinks';
-import Textbox from '../common/components/Textbox';
-import Textarea from '../common/components/Textarea';
-import Button, {STYLES} from '../ce/components/Reusable/Button/Button';
-import PostSubmitStatusMessage from '../ce/components/Common/PostSubmitStatusMessage';
-import backgroundStore from '../stores/backgroundStore';
-import TopInfoBox from './commonComponents/TopInfoBox';
-import StandardPageWrapper from './commonComponents/StandardPageWrapper';
-import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
-import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
 import ContentAndSides from './commonComponents/ContentAndSides';
-import ContentWrapper from './commonComponents/ContentWrapper';
+import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
 import ContentLeftSide from './commonComponents/ContentLeftSide';
 import ContentRightSide from './commonComponents/ContentRightSide';
+import ContentWrapper from './commonComponents/ContentWrapper';
+import StandardPageWrapper from './commonComponents/StandardPageWrapper';
+import TopInfoBox from './commonComponents/TopInfoBox';
+import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
 
 const ContactPageStyles = styled.div`
   .content-and-sides {
