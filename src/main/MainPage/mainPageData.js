@@ -18,7 +18,7 @@ const contentSelectInfo = [
     linkPath: routePaths.MAIN_WATCH,
     render: WorshipExperience,
     thumbnail: choirThumb,
-    title: 'Worship Experience'
+    title: 'Watch Sunday’s Sermon'
   },
   {
     linkPath: routePaths.MAIN_JUBILEE,
