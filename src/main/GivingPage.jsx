@@ -1,23 +1,24 @@
 import React, {useState} from 'react';
-import Textbox from '../common/components/Textbox';
+import styled from 'styled-components';
+
 import Button from '../ce/components/Reusable/Button/Button';
 import Droplist from '../ce/components/Reusable/Droplist/Droplist';
 import SelectState from '../common/components/SelectState';
-import PlainButton from './commonComponents/PlainButton';
+import Textbox from '../common/components/Textbox';
 import routePaths from '../routePaths';
-import StandardPageWrapper from './commonComponents/StandardPageWrapper';
-import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
-import MainMenubar from './MainMenubar';
-import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
-import AboveContentLinks from './commonComponents/AboveContentLinks';
-import TopInfoBox from './commonComponents/TopInfoBox';
-import ContentLeftSide from './commonComponents/ContentLeftSide';
-import ContentWrapper from './commonComponents/ContentWrapper';
-import ContentRightSide from './commonComponents/ContentRightSide';
-import ContentAndSides from './commonComponents/ContentAndSides';
-
-import styled from 'styled-components';
 import {FONT_FAMILIES, COLORS} from '../utils/styleVariables';
+
+import MainMenubar from './MainMenubar';
+import AboveContentLinks from './commonComponents/AboveContentLinks';
+import ContentAndSides from './commonComponents/ContentAndSides';
+import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
+import ContentLeftSide from './commonComponents/ContentLeftSide';
+import ContentRightSide from './commonComponents/ContentRightSide';
+import ContentWrapper from './commonComponents/ContentWrapper';
+import PlainButton from './commonComponents/PlainButton';
+import StandardPageWrapper from './commonComponents/StandardPageWrapper';
+import TopInfoBox from './commonComponents/TopInfoBox';
+import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
 
 const AddAnotherTypeWrapper = styled.div`
   color: ${COLORS.GRAY180};
@@ -48,6 +49,7 @@ const donationTypeOptions = [
   {label: 'Building Fund', value: 'building'},
   {label: 'Outreach', value: 'outreach'},
   {label: 'Missions', value: 'missions'},
+  {label: 'Air Conditioner Pledge', value: 'pledge'},
   {label: 'Donation', value: 'donation'},
   {label: 'William Bryant Scholarship Fund', value: 'scholarship'},
   {label: 'Youth Ministry', value: 'youth'},
