@@ -31,15 +31,15 @@ const givingType = 'tithing';
 const USE_TEST_DATA = false;
 
 const testUserInfo = {
-  first_name: 'First',
-  last_name: 'Last',
   address1: 'My Address',
   address2: 'Address Line 2',
   city: 'City',
+  email: 'test@somethwere.com',
+  first_name: 'First',
+  last_name: 'Last',
   night_phone_a: '4109440396',
   state: 'MD',
-  zip: '21216',
-  email: 'test@somethwere.com'
+  zip: '21216'
 };
 
 const donationTypeOptions = [
@@ -49,7 +49,7 @@ const donationTypeOptions = [
   {label: 'Building Fund', value: 'building'},
   {label: 'Outreach', value: 'outreach'},
   {label: 'Missions', value: 'missions'},
-  {label: 'Air Conditioner Pledge', value: 'pledge'},
+  // {label: 'Air Conditioner Pledge', value: 'pledge'},
   {label: 'Donation', value: 'donation'},
   {label: 'William Bryant Scholarship Fund', value: 'scholarship'},
   {label: 'Youth Ministry', value: 'youth'},
@@ -59,7 +59,7 @@ const donationTypeOptions = [
 const initialDonationTypeInfo = donationTypeOptions.map((option, index) => {
   return index
     ? {}
-    : {type: option.value, amount: USE_TEST_DATA ? '10.00' : undefined};
+    : {amount: USE_TEST_DATA ? '10.00' : undefined, type: option.value};
 });
 
 const getCurrentDroplistOptions = (selectedValue, amounts) => {
