@@ -18,58 +18,64 @@ import StandardPageWrapper from './commonComponents/StandardPageWrapper';
 import TopInfoBox from './commonComponents/TopInfoBox';
 import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
 
-const StyleWrapper = styled.div`
-  .news-item {
-    h2 {
-      font-size: 20px;
-      margin-bottom: 0;
-      margin-top: 35px;
-    }
+const SPACE_BETWEEN_HEADERS = '35px';
 
-    h2.first-header {
-      margin-top: 0em;
-    }
+const StyleWrapper = styled.div`
+  h2.content-header {
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-top: ${SPACE_BETWEEN_HEADERS};
   }
+
+  .update-date + h2 {
+    margin-top: 0em;
+  }
+
   .update-date {
+    margin-top: 35px;
     margin-bottom: 12px;
     display: block;
     font-size: 12px;
   }
+
+  .update-date:first-of-type {
+    margin-top: 0;
+  }
 `;
 
 function getNewsItems(news) {
-  const newsItems = news.map((info, index) => {
-    const {id, title, updateDate, text} = info;
-    const className = index ? null : 'first-header';
-    let updatedDate;
+  let savedPostedDate;
 
-    if (updateDate) {
-      const jsUpdateDate = parseISO(updateDate);
-      updatedDate = format(
-        jsUpdateDate,
+  const newsItems = news.reduce((newsRender, info) => {
+    const {id, title, postedDate, text} = info;
+
+    if (postedDate !== savedPostedDate) {
+      savedPostedDate = postedDate;
+
+      const jsPostedDate = parseISO(postedDate);
+      const formattedUpdatedDate = format(
+        jsPostedDate,
         constants.DATE_FNS_DISPLAY_DATE_FORMAT
+      );
+
+      newsRender.push(
+        <i className="update-date">posted {formattedUpdatedDate}</i>
       );
     }
 
-    return (
-      <div className="news-item" key={id}>
-        <h2 className={className} id={id}>
+    newsRender.push(
+      <>
+        <h2 className="content-header" id={id}>
           {title}
-          {updatedDate && (
-            <span className="update-date"> - updated({updatedDate})</span>
-          )}
         </h2>
         {text}
-      </div>
+      </>
     );
-  });
 
-  return (
-    <div>
-      <i className="update-date">posted 03/19/2020</i>
-      {newsItems}
-    </div>
-  );
+    return newsRender;
+  }, []);
+
+  return <div>{newsItems}</div>;
 }
 
 const topBoxContent = (
