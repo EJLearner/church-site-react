@@ -7,6 +7,15 @@ import constants from '../utils/constants';
 function useNews() {
   const allNews = [
     {
+      expireDate: '2020-03-25',
+      id: 'no-sanctuary-service',
+      postedDate: '2020-03-23',
+      text:
+        'Please dial in to one of our church conference calls: 12 pm and 7 pm. Conference line: (425) 436-6358. ' +
+        'Participant code: 581086',
+      title: 'Church-wide Conference Call'
+    },
+    {
       expireDate: '2020-06-01',
       id: 'no-sanctuary-service',
       linkPath: routePaths.MAIN_CORONAVIRUS,
@@ -24,14 +33,6 @@ function useNews() {
         'Coronavirus information posted. Visit the Coronavirus Update page for information' +
         'on staying safe and changes in the church.',
       title: 'Coronavirus Information'
-    },
-    {
-      expireDate: '2020-03-15',
-      id: 'reports',
-      linkPath: routePaths.MAIN_HOME,
-      postedDate: '2020-03-19',
-      text:
-        'Stewardship Reports for the 2019 tax year are now available. See Michele Williams for your statement!'
     },
     {
       expireDate: '2020-04-04',
