@@ -13,7 +13,7 @@ import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
 import PurchaseHereLink from './commonComponents/PurchaseHereLink';
 
 const PageStyles = styled.div`
-  img {
+  img.above-content-image {
     width: 100%;
   }
 
@@ -83,7 +83,11 @@ const topBoxContent = (
 
 const performingArtsContent = (
   <div>
-    <img alt="Drumming Performance" src={drummer} />
+    <img
+      alt="Drumming Performance"
+      className="above-content-image"
+      src={drummer}
+    />
     <h2>Performing Arts Sunday</h2>
     <div>
       <p>
