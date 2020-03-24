@@ -15,6 +15,7 @@ import CoronaVirusContent from './CoronaVirusContent';
 
 const contentSelectInfo = [
   {
+    learnMoreText: 'Watch Sermon',
     linkPath: routePaths.MAIN_WATCH,
     render: WorshipExperience,
     thumbnail: choirThumb,

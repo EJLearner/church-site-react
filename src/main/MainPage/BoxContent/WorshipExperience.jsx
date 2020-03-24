@@ -1,21 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {COLORS, LOGICAL_COLORS} from '../../../utils/styleVariables';
+import {LOGICAL_COLORS} from '../../../utils/styleVariables';
+
 const StyleWrapper = styled.div`
   em {
     color: ${LOGICAL_COLORS.CT_ACCENT};
     font-weight: bold;
     font-style: normal;
+    text-transform: uppercase;
   }
 `;
+
 function WorshipExperience() {
   return (
     <StyleWrapper>
       <h1>Watch Sunday’s Sermon</h1>
       <p>
-        We are streaming our worship service! Click <em>LEARN MORE</em> below to
-        view Sunday’s sermon.
+        We are streaming our worship service! Click <em>Watch Sermon</em> below
+        to view Sunday’s sermon.
       </p>
       <p>
         To prevent the spread of the coronavirus, we are suspending Sunday
