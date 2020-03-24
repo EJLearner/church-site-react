@@ -2,13 +2,14 @@ import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
-import MainMenubar from '../MainMenubar';
-import {LOGICAL_COLORS, WIDTHS, COLORS} from '../../utils/styleVariables';
-import ContentSelectBoxes from './ContentSelectBoxes';
-import {contentSelectInfo} from './mainPageData';
-import MainTopInfoBox from '../commonComponents/MainTopInfoBox';
-import NewsAndEvents from './NewsAndEvents';
 import constants from '../../utils/constants';
+import {LOGICAL_COLORS, WIDTHS, COLORS} from '../../utils/styleVariables';
+import MainMenubar from '../MainMenubar';
+import MainTopInfoBox from '../commonComponents/MainTopInfoBox';
+
+import ContentSelectBoxes from './ContentSelectBoxes';
+import NewsAndEvents from './NewsAndEvents';
+import {contentSelectInfo} from './mainPageData';
 
 const StyledPage = styled.div`
   .main-text-and-news {
@@ -74,8 +75,10 @@ const StyledPage = styled.div`
 function MainContent() {
   const [contentIndex, setContentIndex] = useState(0);
 
-  const currentContent = contentSelectInfo[contentIndex];
-  const ContentComponent = currentContent.render;
+  const {learnMoreText = 'Learn More', linkPath, render} = contentSelectInfo[
+    contentIndex
+  ];
+  const ContentComponent = render;
 
   return (
     <StyledPage>
@@ -89,7 +92,7 @@ function MainContent() {
             <div className="arrow-and-learn-more">
               <div className="arrow-box">{constants.SLENDER_ARROW_RIGHT}</div>
               <div className="learn-more-box">
-                <Link to={currentContent.linkPath}>Learn more</Link>
+                <Link to={linkPath}>{learnMoreText}</Link>
               </div>
             </div>
           </MainTopInfoBox>
