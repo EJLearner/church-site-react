@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import coronaVirusImage from '../assets/main/images/coronavirus.png';
 import routePaths from '../routePaths';
 import {
   LOGICAL_COLORS,
@@ -72,14 +71,6 @@ const IDS = {
   UPCOMING_CLASSES: 'upcoming-classes'
 };
 
-const image = (
-  <img
-    alt="Coronavirus"
-    className="corona-virus-image"
-    src={coronaVirusImage}
-  />
-);
-
 function getUpcomingClassesContent() {
   return (
     <>
@@ -121,7 +112,6 @@ function getUpcomingClassesContent() {
 
 const aboutContent = (
   <>
-    {image}
     <h2>About the GED Prep Program</h2>
     <p>
       The W.W. Payne Education and Community Center was built to support Rev.
