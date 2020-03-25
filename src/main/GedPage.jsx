@@ -9,7 +9,7 @@ import {
   COLORS
 } from '../utils/styleVariables';
 
-import GedPageContactForm from './GetPageContactForm';
+import GedPageContactForm from './GedPageContactForm';
 import MainMenubar from './MainMenubar';
 import AboveContentLinks from './commonComponents/AboveContentLinks';
 import ContentAndSides from './commonComponents/ContentAndSides';
