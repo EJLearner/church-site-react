@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -13,6 +13,8 @@ import {
 } from '../../utils/styleVariables';
 import PlainButton from '../commonComponents/PlainButton';
 
+const NEWS_AND_EVENTS_BOX_HEIGHT = '300';
+
 const NewsEventsStyle = styled.div`
   .news-and-events-content {
     color: ${COLORS.WHITE};
@@ -21,11 +23,14 @@ const NewsEventsStyle = styled.div`
     padding: 1em;
     background-color: ${LOGICAL_COLORS.CT_PRIMARY};
     width: 300px;
-    height: 300px;
+    height: ${NEWS_AND_EVENTS_BOX_HEIGHT}px;
+    overflow-y: hidden;
 
     .news-item {
       margin-bottom: 2em;
     }
+
+    position: relative;
   }
 
   a {
@@ -42,6 +47,23 @@ const NewsEventsStyle = styled.div`
   .date-and-time {
     font-style: italic;
     margin-left: 4em;
+  }
+
+  .more-news-link {
+    color: white;
+    display: block;
+    font-size: 120%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+      ${LOGICAL_COLORS.CT_PRIMARY}00,
+      ${LOGICAL_COLORS.CT_PRIMARY}FF 24px,
+      ${LOGICAL_COLORS.CT_PRIMARY}
+    );
+    text-align: center;
+    padding: 30px 0 1em 0;
   }
 
   .more-link {
@@ -68,16 +90,17 @@ const DisplayButton = styled(PlainButton)`
   }
 `;
 
-function renderNews(news) {
-  return news.map((newsItem, index) => {
+function renderNews(news, showNewsLink) {
+  const newsItems = news.map((newsItem, index) => {
     const {linkPath, text} = newsItem;
-
     return (
       <div className="news-item" key={index}>
         <h3>{linkPath ? <Link to={linkPath}>{text}</Link> : text}</h3>
       </div>
     );
   });
+
+  return <div id="news-items">{newsItems}</div>;
 }
 
 function renderEventsList(events) {
@@ -108,6 +131,14 @@ function renderEventsList(events) {
   }, []);
 }
 
+function renderMoreNewsLink() {
+  return (
+    <Link className="more-news-link" to={routePaths.MAIN_NEWS}>
+      Click for More News
+    </Link>
+  );
+}
+
 function renderMoreEventsLink() {
   return (
     <Link className="more-link" to={routePaths.MAIN_CALENDAR_UPCOMING}>
@@ -134,6 +165,7 @@ const NewsAndEvents = () => {
   const NEWS_DISPLAY = 'news-content';
   const EVENTS_DISPLAY = 'events-display';
   const [displayType, setDisplayType] = useState(NEWS_DISPLAY);
+  const [showNewsLink, setShowNewsLink] = useState(false);
 
   const events = useFirebaseEvents({
     futureOnly: true,
@@ -142,10 +174,20 @@ const NewsAndEvents = () => {
 
   const news = useNews();
 
+  useEffect(() => {
+    const newsAndEventsContentHeight = document?.getElementById('news-items')
+      ?.offsetHeight;
+
+    if (newsAndEventsContentHeight > NEWS_AND_EVENTS_BOX_HEIGHT - 30) {
+      setShowNewsLink(true);
+    }
+  }, []);
+
   return (
     <NewsEventsStyle>
       <div className="news-and-events-content">
         {displayType === NEWS_DISPLAY ? renderNews(news) : renderEvents(events)}
+        {showNewsLink && renderMoreNewsLink()}
       </div>
       <DisplayButton
         onClick={() => setDisplayType(NEWS_DISPLAY)}

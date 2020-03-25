@@ -1,17 +1,19 @@
 import React, {useEffect} from 'react';
-import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
 import styled from 'styled-components';
-import {LOGICAL_COLORS} from '../utils/styleVariables';
-import PurchaseHereLink from './commonComponents/PurchaseHereLink';
+
 import aframMuseum from '../assets/main/images/afram-museum.jpg';
 import drummer from '../assets/main/images/drummer.jpg';
 import musicians from '../assets/main/images/musicians.jpg';
 import suicideBridgeSign from '../assets/main/images/suicide-bridge-sign.jpg';
 import routePaths from '../routePaths';
 import backgroundStore from '../stores/backgroundStore';
+import {LOGICAL_COLORS} from '../utils/styleVariables';
+
+import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
+import PurchaseHereLink from './commonComponents/PurchaseHereLink';
 
 const PageStyles = styled.div`
-  img {
+  img.above-content-image {
     width: 100%;
   }
 
@@ -81,7 +83,11 @@ const topBoxContent = (
 
 const performingArtsContent = (
   <div>
-    <img alt="Drumming Performance" src={drummer} />
+    <img
+      alt="Drumming Performance"
+      className="above-content-image"
+      src={drummer}
+    />
     <h2>Performing Arts Sunday</h2>
     <div>
       <p>
@@ -161,7 +167,7 @@ const upcomingEventsContent = (
           History and Culture
         </p>
         <p className="details">
-          March 23, 2020
+          May 23, 2020
           <br />
           All Day
           <br />

@@ -1,10 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import routePaths from '../../src/routePaths';
-
-import logo from '../assets/main/images/logo-ct-circle-white-cropped.png';
-
 import styled from 'styled-components';
+
+import routePaths from '../../src/routePaths';
+import logo from '../assets/main/images/logo-ct-circle-white-cropped.png';
 import {LOGICAL_COLORS, WIDTHS, FONT_FAMILIES} from '../utils/styleVariables';
 
 const StyledHeader = styled.header`
@@ -63,6 +62,7 @@ const MainMenubar = () => {
     {text: 'About Us', path: routePaths.MAIN_ABOUT_US},
     {text: 'Ministries', path: routePaths.MAIN_MINISTRIES},
     {text: 'Giving', path: routePaths.MAIN_GIVING},
+    {text: 'Watch', path: routePaths.MAIN_WATCH},
     {text: 'Church Calendar', path: routePaths.MAIN_CALENDAR},
     // TODO: Add later
     // {text: 'Members Only', path: routePaths.MAIN_MEMBERS_ONLY},
