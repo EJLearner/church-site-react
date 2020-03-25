@@ -1,3 +1,4 @@
+import GedThumb from '../../assets/main/images/GED-thumbnail.png';
 import choirThumb from '../../assets/main/images/choir-thumb.jpg';
 import christianEdPeopleThumb from '../../assets/main/images/christian-ed-people-thumb.jpg';
 import coronavirus from '../../assets/main/images/coronavirus-thumb.png';
@@ -48,7 +49,7 @@ const contentSelectInfo = [
     linkPath: routePaths.MAIN_GED,
     render: GedProgram,
     title: 'GED Program',
-    thumbnail: christianEdPeopleThumb
+    thumbnail: GedThumb
   }
 ];
 
