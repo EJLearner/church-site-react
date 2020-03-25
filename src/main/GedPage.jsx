@@ -119,22 +119,20 @@ const aboutContent = (
       community. In July 2005, in a meeting with Rev. Dr. Yeargin, Gary Hamiel,
       Marlene Jones and Patricia Payne, staff from the Baltimore City Community
       College presented a proposal to initiate a free, daytime GED class for
-      members and community of the City Temple of Baltimore Baptist Church.{' '}
+      members and community of the City Temple of Baltimore Baptist Church.
     </p>
-    <p>The first pre-GED class was introduced in January 2006.</p>{' '}
+    <p>The first pre-GED class was introduced in January 2006.</p>
     <p>
       The class was held in the Payne Center on Mondays and Wednesdays from 9:00
       a.m. to 12:00 noon. BCCC provided the teacher and all instructional
       materials and supplies, while City Temple agreed to provide a classroom
       with a blackboard. In addition, City Temple also agreed to:
     </p>
-    <p>
-      <ul>
-        <li>Offer lunch to the students enrolled in the program.</li>
-        <li>Provide duplicating privileges for the instructor’s use.</li>
-        <li>Purchase a file cabinet for the instructor’s use.</li>
-      </ul>
-    </p>
+    <ul>
+      <li>Offer lunch to the students enrolled in the program.</li>
+      <li>Provide duplicating privileges for the instructor’s use.</li>
+      <li>Purchase a file cabinet for the instructor’s use.</li>
+    </ul>
     <p>
       The largest commitment made by City Temple was the responsibility to
       recruit and retain 15-20 students for the class. Patricia A. Payne was
@@ -159,25 +157,25 @@ const aboutContent = (
       assigned, student retention stabilized significantly. In addition, an
       average of 20% of the students is promoted to the advanced GED classes,
       and 100% of those students go on to receive their GED certification.
-    </p>{' '}
+    </p>
     <p>
       The success of the day program motivated the administrators at BCCC to
       invite City Temple to initiate an evening program. Beginning in the fall
       2010, City Temple introduced an evening class held on Mondays and
       Wednesdays from 5:30 to 8:30 p.m. The population for this class satisfied
       the need to serve those who work during the daytime hours.
-    </p>{' '}
+    </p>
     <p>
       Both classes maintain an average attendance rate of 20-30 students per
       class, with an increase of 10-15% of its students promoting to advanced
-      GED classes each semester. This program has attracted students from
+      GED classes each semester. This program has attracted students from4@yahoo
       Baltimore City, Baltimore County, Harford County and Anne Arundel County.
-    </p>{' '}
+    </p>
     <p>
       Recognizing the success of this program, in 2011, BCCC expanded the
       pre-GED classes to three days a week, and introduced a year-round program
       so that classes would continue during the summer.
-    </p>{' '}
+    </p>
     <p>
       Pre- and post-testing revealed the need for literacy classes. Many of
       those interested in obtaining their GED technically did not qualify for
@@ -185,15 +183,15 @@ const aboutContent = (
       classes: one for the morning session and the other for the evening. The
       BRIDGE classes are currently two days a week. The class size for the
       BRIDGE class is generally 10-15 students.
-    </p>{' '}
+    </p>
     <p>
       With this expansion, coupled with the love and support provided by the
       City Temple family, the program has the potential to reach even greater
       heights.
-    </p>{' '}
+    </p>
     <p>
       For more information, please contact{' '}
-      <a href="mailto:cgaskins4@yahoo.com?Subject=GED Program">
+      <a href="mailto:carolyn.gaskins@thecitytemple.org?Subject=GED Program">
         <b>Carolyn Gaskins</b>
       </a>
       .
