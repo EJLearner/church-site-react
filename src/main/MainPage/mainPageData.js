@@ -7,9 +7,8 @@ import routePaths from '../../routePaths';
 
 import ChristianEducation from './BoxContent/ChristianEducation';
 import CultureAndFineArts from './BoxContent/CultureAndFineArts';
+import GedProgram from './BoxContent/GedProgram';
 import JubileeContent from './BoxContent/JubileeContent';
-
-// import GedProgram from './BoxContent/GedProgram';
 import WorshipExperience from './BoxContent/WorshipExperience';
 import CoronaVirusContent from './CoronaVirusContent';
 
@@ -44,15 +43,13 @@ const contentSelectInfo = [
     render: ChristianEducation,
     thumbnail: christianEdPeopleThumb,
     title: 'Christian Education'
+  },
+  {
+    linkPath: routePaths.MAIN_GED,
+    render: GedProgram,
+    title: 'GED Program',
+    thumbnail: christianEdPeopleThumb
   }
-
-  // TODO: add this back later
-  // {
-  //   linkPath: routePaths.CE_HOME,
-  //   render: GedProgram,
-  //   title: 'GED Program',
-  //   thumbnail: eventContentTemplate
-  // }
 ];
 
 export {contentSelectInfo};
