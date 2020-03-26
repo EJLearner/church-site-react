@@ -1,5 +1,7 @@
+import {post} from 'jquery';
 import React, {useState} from 'react';
 
+import PostSubmitStatusMessage from '../ce/components/Common/PostSubmitStatusMessage';
 import Button, {
   SHAPES,
   BUTTON_COLORS
@@ -11,6 +13,43 @@ export default function GedPageContactForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [showThanksMessage, setShowThanksMessage] = useState(false);
+  const [postStatus, setPostStatus] = useState(null);
+  const [error, setError] = useState(null);
+  const [responseError, setResponseError] = useState();
+
+  const submitData = () => {
+    const data = {
+      email: email || 'Not Provided',
+      message,
+      name: name || 'Not Provided'
+    };
+
+    post(
+      '/contactUsGed.php',
+      data,
+      responseError => {
+        if (responseError.success) {
+          setShowThanksMessage(true);
+        } else {
+          setPostStatus('failure');
+        }
+      },
+      'json'
+    ).fail(responseError => {
+      setPostStatus('failure');
+      setResponseError(responseError);
+    });
+  };
+
+  const validateAndSubmit = () => {
+    if (message.length) {
+      submitData();
+      setError(null);
+    } else {
+      setError('Please enter a message.');
+    }
+  };
 
   return (
     <>
@@ -37,6 +76,7 @@ export default function GedPageContactForm() {
       <Textarea
         characterLimit={300}
         columns={60}
+        errorMessage={error}
         id="message"
         label="Message"
         onChange={value => setMessage(value)}
@@ -48,10 +88,21 @@ export default function GedPageContactForm() {
         buttonShape={SHAPES.RECT}
         color={BUTTON_COLORS.GRAY}
         name="Send"
+        onClick={() => validateAndSubmit()}
         type="Submit"
       >
         Send
       </Button>
+      {Boolean(postStatus || error) && (
+        <PostSubmitStatusMessage
+          inputErrorMessage={error}
+          postStatus={postStatus}
+          responseError={responseError}
+        />
+      )}
+      {showThanksMessage && (
+        <p className="message-sent-notification">Your message was sent!</p>
+      )}
     </>
   );
 }

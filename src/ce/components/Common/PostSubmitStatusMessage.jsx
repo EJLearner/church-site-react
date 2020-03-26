@@ -1,11 +1,10 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-
+import React from 'react';
 import styled from 'styled-components';
 
 const POST_STATUSES = {
-  SUCCESS: 'success',
-  FAILURE: 'failure'
+  FAILURE: 'failure',
+  SUCCESS: 'success'
 };
 const PostSubmitStatusMessageStyle = styled.div`
   margin-top: 16px;
@@ -41,7 +40,7 @@ class PostSubmitStatusMessage extends React.Component {
     let message;
     if (postStatus === 'success') {
       className = 'success';
-      message = 'Success! Ready for more registration info';
+      message = 'Success! Information submitted';
     } else {
       className = 'failure';
 
@@ -54,7 +53,7 @@ class PostSubmitStatusMessage extends React.Component {
             <br />
             Message: {responseError.message}
             <br />
-            Please try again or contact the administrator
+            Please try again or contact the webmaster
           </div>
         );
       } else {
