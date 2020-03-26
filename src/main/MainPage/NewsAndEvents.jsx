@@ -14,6 +14,7 @@ import {
 import PlainButton from '../commonComponents/PlainButton';
 
 const NEWS_AND_EVENTS_BOX_HEIGHT = '300';
+const MAX_NEWS_DISPLAY_HEIGHT = NEWS_AND_EVENTS_BOX_HEIGHT - 40;
 
 const NewsEventsStyle = styled.div`
   .news-and-events-content {
@@ -24,7 +25,27 @@ const NewsEventsStyle = styled.div`
     background-color: ${LOGICAL_COLORS.CT_PRIMARY};
     width: 300px;
     height: ${NEWS_AND_EVENTS_BOX_HEIGHT}px;
-    overflow-y: hidden;
+
+    .truncated-news {
+      position: relative;
+    }
+
+    .fade-mask {
+      height: 24px;
+      background: linear-gradient(
+        ${LOGICAL_COLORS.CT_PRIMARY}00,
+        ${LOGICAL_COLORS.CT_PRIMARY}FF
+      );
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .truncated-news {
+      height: ${MAX_NEWS_DISPLAY_HEIGHT}px;
+      overflow-y: hidden;
+    }
 
     .news-item {
       margin-bottom: 2em;
@@ -100,7 +121,19 @@ function renderNews(news, showNewsLink) {
     );
   });
 
-  return <div id="news-items">{newsItems}</div>;
+  return (
+    <>
+      <div className={showNewsLink ? 'truncated-news' : null} id="news-items">
+        {newsItems}
+        {showNewsLink && <div className="fade-mask" />}
+      </div>
+      {showNewsLink && (
+        <Link className="more-link" to={routePaths.MAIN_NEWS}>
+          More News
+        </Link>
+      )}
+    </>
+  );
 }
 
 function renderEventsList(events) {
@@ -131,22 +164,6 @@ function renderEventsList(events) {
   }, []);
 }
 
-function renderMoreNewsLink() {
-  return (
-    <Link className="more-news-link" to={routePaths.MAIN_NEWS}>
-      Click for More News
-    </Link>
-  );
-}
-
-function renderMoreEventsLink() {
-  return (
-    <Link className="more-link" to={routePaths.MAIN_CALENDAR_UPCOMING}>
-      More Events
-    </Link>
-  );
-}
-
 function renderEvents(events) {
   const numberofEventsToDisplay = 3;
   const displayedEvents = events.slice(0, numberofEventsToDisplay);
@@ -156,7 +173,11 @@ function renderEvents(events) {
   return (
     <>
       {renderEventsList(displayedEvents)}
-      {eventsAreTruncated && renderMoreEventsLink()}
+      {eventsAreTruncated && (
+        <Link className="more-link" to={routePaths.MAIN_CALENDAR_UPCOMING}>
+          More Events
+        </Link>
+      )}
     </>
   );
 }
@@ -178,7 +199,7 @@ const NewsAndEvents = () => {
     const newsAndEventsContentHeight = document?.getElementById('news-items')
       ?.offsetHeight;
 
-    if (newsAndEventsContentHeight > NEWS_AND_EVENTS_BOX_HEIGHT - 30) {
+    if (newsAndEventsContentHeight > MAX_NEWS_DISPLAY_HEIGHT) {
       setShowNewsLink(true);
     }
   }, []);
@@ -186,8 +207,9 @@ const NewsAndEvents = () => {
   return (
     <NewsEventsStyle>
       <div className="news-and-events-content">
-        {displayType === NEWS_DISPLAY ? renderNews(news) : renderEvents(events)}
-        {showNewsLink && renderMoreNewsLink()}
+        {displayType === NEWS_DISPLAY
+          ? renderNews(news, showNewsLink)
+          : renderEvents(events)}
       </div>
       <DisplayButton
         onClick={() => setDisplayType(NEWS_DISPLAY)}

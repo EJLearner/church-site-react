@@ -7,15 +7,6 @@ import constants from '../utils/constants';
 function useNews() {
   const allNews = [
     {
-      expireDate: '2020-03-25',
-      id: 'no-sanctuary-service',
-      postedDate: '2020-03-23',
-      text:
-        'Please dial in to one of our church conference calls: 12 pm and 7 pm. Conference line: (425) 436-6358. ' +
-        'Participant code: 581086',
-      title: 'Church-wide Conference Call'
-    },
-    {
       expireDate: '2020-06-01',
       id: 'no-sanctuary-service',
       linkPath: routePaths.MAIN_CORONAVIRUS,
