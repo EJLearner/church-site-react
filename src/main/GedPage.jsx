@@ -1,27 +1,52 @@
 import React, {useState} from 'react';
-import StandardPageWrapper from './commonComponents/StandardPageWrapper';
-import MainMenubar from './MainMenubar';
-import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
-import TopInfoBox from './commonComponents/TopInfoBox';
-import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
-import AboveContentLinks from './commonComponents/AboveContentLinks';
-import routePaths from '../routePaths';
-import ContentAndSides from './commonComponents/ContentAndSides';
-import ContentLeftSide from './commonComponents/ContentLeftSide';
-import ContentWrapper from './commonComponents/ContentWrapper';
-import ContentRightSide from './commonComponents/ContentRightSide';
-import SideMenu from './commonComponents/SideMenu';
-import coronaVirusImage from '../assets/main/images/coronavirus.png';
-
 import styled from 'styled-components';
-import {LOGICAL_COLORS, SIZES} from '../utils/styleVariables';
+
+import routePaths from '../routePaths';
+import {
+  LOGICAL_COLORS,
+  SIZES,
+  FONT_FAMILIES,
+  COLORS
+} from '../utils/styleVariables';
+
+import GedPageContactForm from './GedPageContactForm';
+import MainMenubar from './MainMenubar';
+import AboveContentLinks from './commonComponents/AboveContentLinks';
+import ContentAndSides from './commonComponents/ContentAndSides';
+import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
+import ContentLeftSide from './commonComponents/ContentLeftSide';
+import ContentRightSide from './commonComponents/ContentRightSide';
+import ContentWrapper from './commonComponents/ContentWrapper';
+import SideMenu from './commonComponents/SideMenu';
+import StandardPageWrapper from './commonComponents/StandardPageWrapper';
+import TopInfoBox from './commonComponents/TopInfoBox';
+import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
 
 const StyleWrapper = styled.div`
-  .corona-virus-image {
-    width: 300px;
+  h2 {
+    margin-bottom: 0;
   }
-  .mid-sentence {
-    color: #c00000;
+
+  .subtitle {
+    font-style: italic;
+  }
+
+  .info-block {
+    line-height: 180%;
+  }
+
+  .info-title {
+    font-weight: bold;
+  }
+
+  hr {
+    border-top: 0px solid white;
+    color: ${COLORS.GRAY180};
+  }
+
+  h3 {
+    font-family: ${FONT_FAMILIES.ARIAL};
+    font-weight: bold;
   }
 
   .ged-contact-us {
@@ -42,243 +67,158 @@ const StyleWrapper = styled.div`
   }
 `;
 const IDS = {
-  UPCOMING_CLASSES: 'upcoming-classes',
-  ABOUT: 'about'
+  ABOUT: 'about',
+  UPCOMING_CLASSES: 'upcoming-classes'
 };
 
-const menuData = [
-  {id: IDS.UPCOMING_CLASSES, title: 'Upcoming Classes & Registration'},
-  {id: IDS.ABOUT, title: 'About the GED Prep Program'}
-];
+function getUpcomingClassesContent() {
+  return (
+    <>
+      <h2>Free GED Preparation Classes</h2>
+      <span className="subtitle">
+        Sponsored by W.W. Payne Outreach Center in Partnership with Baltimore
+        City Community College
+      </span>
+      <p className="info-block">
+        <span className="info-title">
+          Registration &amp; Testing for Winter 2020 GED Preparation Classes
+        </span>
+        <br />
+        Wednesday, December 18, 2019
+        <br />
+        9 am - 12 pm City Temple of Baltimore (Baptist)
+        <br />
+        Rev. Dr. Grady A. Yeargin, Jr., Pastor W.W. Payne Outreach Center
+        <br />
+        317 Dolphin Street
+        <br />
+        Baltimore, MD 21217
+      </p>
+      <p className="info-block">
+        <span className="info-title">GED Preparation Class Schedule</span>
+        <br />
+        January 13 - February 28, 2020
+        <br />
+        Every Monday, Wednesday, and Friday
+        <br />9 am - 12 pm
+      </p>
+      <hr />
+      <h3>Contact Us for Registration or More Info</h3>
 
-const image = (
-  <img
-    alt="Coronavirus"
-    className="corona-virus-image"
-    src={coronaVirusImage}
-  />
-);
-
-const upcomingClasses = (
-  <>
-    {image}
-    <h2>Upcoming Classes &amp; Registration</h2>
-    <p>
-      <b>
-        There is currently no vaccine to prevent coronavirus disease 2019
-        (COVID-19). The best way to prevent illness is to avoid being exposed to
-        this virus. However, as a reminder, CDC always recommends everyday
-        preventive actions to help prevent the spread of respiratory diseases,
-        including:
-      </b>
-    </p>
-    <ul>
-      <li>Avoid close contact with people who are sick.</li>
-      <li>Avoid touching your eyes, nose, and mouth.</li>
-      <li>Stay home when you are sick.</li>
-      <li>
-        Cover your cough or sneeze with a tissue, then throw the tissue in the
-        trash.
-      </li>
-      <li>
-        Clean and disinfect frequently touched objects and surfaces using a
-        regular household cleaning spray or wipe.
-      </li>
-      <li>
-        Follow CDC’s recommendations for using a facemask.
-        <ul>
-          <li>
-            CDC does not recommend that people who are well wear a facemask to
-            protect themselves from respiratory diseases, including COVID-19.
-          </li>
-        </ul>
-        <ul>
-          <li>
-            Facemasks should be used by people who show symptoms of COVID-19 to
-            help prevent the spread of the disease to others. The use of
-            facemasks is also crucial for health workers and people who are
-            taking care of someone in close settings (at home or in a health
-            care facility).
-          </li>
-        </ul>
-      </li>
-      <li>
-        Wash your hands often with soap and water for at least 20 seconds,
-        especially after going to the bathroom; before eating; and after blowing
-        your nose, coughing, or sneezing.
-        <ul>
-          <li>
-            If soap and water are not readily available, use an alcohol-based
-            hand sanitizer with at least 60% alcohol. Always wash hands with
-            soap and water if hands are visibly dirty.
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <p>
-      For information about handwashing, see{' '}
-      <a href="http://www.cdc.gov/handwashing/index.html">
-        <b>CDC’s Handwashing website.</b>
-      </a>
-    </p>
-    <p>
-      For information specific to healthcare, see{' '}
-      <a href="https://www.cdc.gov/handhygiene/index.html">
-        <b>CDC’s Hand Hygiene in Healthcare Settings.</b>
-      </a>
-    </p>
-    <p>
-      These are everyday habits that can help prevent the spread of several
-      viruses. CDC does have specific guidance for travelers.
-    </p>
-  </>
-);
+      <GedPageContactForm />
+    </>
+  );
+}
 
 const aboutContent = (
   <>
-    {image}
-    <h2>
-      What to do if you are sick with the coronavirus disease 2019 (COVID-19)
-    </h2>
+    <h2>About the GED Prep Program</h2>
     <p>
-      <b>
-        If you are sick with COVID-19 or suspect you are infected with the virus
-        that causes COVID-19, follow the steps below to help prevent the disease
-        from spreading to people in your home and community.
-      </b>
+      The W.W. Payne Education and Community Center was built to support Rev.
+      Dr. Grady A. Yeargin, Jr.’s vision to provide outreach services to the
+      community. In July 2005, in a meeting with Rev. Dr. Yeargin, Gary Hamiel,
+      Marlene Jones and Patricia Payne, staff from the Baltimore City Community
+      College presented a proposal to initiate a free, daytime GED class for
+      members and community of the City Temple of Baltimore Baptist Church.
     </p>
-    <b>Stay home except to get medical care</b>
+    <p>The first pre-GED class was introduced in January 2006.</p>
     <p>
-      You should restrict activities outside your home, except for getting
-      medical care. Do not go to work, school, or public areas. Avoid using
-      public transportation, ride-sharing, or taxis.
+      The class was held in the Payne Center on Mondays and Wednesdays from 9:00
+      a.m. to 12:00 noon. BCCC provided the teacher and all instructional
+      materials and supplies, while City Temple agreed to provide a classroom
+      with a blackboard. In addition, City Temple also agreed to:
     </p>
-    <b>Separate yourself from other people and animals in your home</b>
+    <ul>
+      <li>Offer lunch to the students enrolled in the program.</li>
+      <li>Provide duplicating privileges for the instructor’s use.</li>
+      <li>Purchase a file cabinet for the instructor’s use.</li>
+    </ul>
     <p>
-      <b>People: </b>As much as possible, you should stay in a specific room and
-      away from other people in your home. Also, you should use a separate
-      bathroom, if available.
+      The largest commitment made by City Temple was the responsibility to
+      recruit and retain 15-20 students for the class. Patricia A. Payne was
+      asked to lead this charge.
     </p>
     <p>
-      <b>Animals: </b>Do not handle pets or other animals while sick. See
-      <a href="https://www.cdc.gov/coronavirus/2019-ncov/faq.html#animals">
-        <b> COVID-19 and Animals for more information.</b>
+      The City Temple family has willingly and lovingly adopted this project.
+      They actively participate in the recruitment process. They provide
+      duplicating paper/services, markers, erasers, money, and instructional
+      materials for the program. Members have offered job opportunities, and
+      pertinent information about preparing for the GED examination. When
+      students are ready to take the actual GED examination, the Outreach
+      Ministry has offered to defray the cost for those unable to afford it.
+    </p>
+    <p>
+      With the support of the City Temple family and other external resources,
+      included but not limited to the Department of Social Services, Social
+      Security, Union Baptist Head Start, Dru-Mondawmin, and the University of
+      Maryland, each semester we have had student participation ranging from 15
+      to 50 students. There have been several teachers assigned to the program;
+      however, beginning in 2009 when the same instructor was permanently
+      assigned, student retention stabilized significantly. In addition, an
+      average of 20% of the students is promoted to the advanced GED classes,
+      and 100% of those students go on to receive their GED certification.
+    </p>
+    <p>
+      The success of the day program motivated the administrators at BCCC to
+      invite City Temple to initiate an evening program. Beginning in the fall
+      2010, City Temple introduced an evening class held on Mondays and
+      Wednesdays from 5:30 to 8:30 p.m. The population for this class satisfied
+      the need to serve those who work during the daytime hours.
+    </p>
+    <p>
+      Both classes maintain an average attendance rate of 20-30 students per
+      class, with an increase of 10-15% of its students promoting to advanced
+      GED classes each semester. This program has attracted students from4@yahoo
+      Baltimore City, Baltimore County, Harford County and Anne Arundel County.
+    </p>
+    <p>
+      Recognizing the success of this program, in 2011, BCCC expanded the
+      pre-GED classes to three days a week, and introduced a year-round program
+      so that classes would continue during the summer.
+    </p>
+    <p>
+      Pre- and post-testing revealed the need for literacy classes. Many of
+      those interested in obtaining their GED technically did not qualify for
+      the pre-GED class. Therefore, in January 2012, BCCC introduced two BRIDGE
+      classes: one for the morning session and the other for the evening. The
+      BRIDGE classes are currently two days a week. The class size for the
+      BRIDGE class is generally 10-15 students.
+    </p>
+    <p>
+      With this expansion, coupled with the love and support provided by the
+      City Temple family, the program has the potential to reach even greater
+      heights.
+    </p>
+    <p>
+      For more information, please contact{' '}
+      <a href="mailto:carolyn.gaskins@thecitytemple.org?Subject=GED Program">
+        <b>Carolyn Gaskins</b>
       </a>
-    </p>
-    <p>
-      <b>Call ahead before visiting your doctor</b>
-    </p>
-    <p>
-      If you have a medical appointment, call the healthcare provider and tell
-      them that you have or may have COVID-19. This will help the healthcare
-      provider’s office take steps to keep other people from getting infected or
-      exposed.
-    </p>
-    <p>
-      <b>Wear a facemask</b>
-    </p>
-    <p>
-      You should wear a facemask when you are around other people (e.g., sharing
-      a room or vehicle) or pets and before you enter a healthcare provider’s
-      office. If you are not able to wear a facemask (for example, because it
-      causes trouble breathing), then people who live with you should not stay
-      in the same room with you, or they should wear a facemask if they enter
-      your room.
-    </p>
-    <p>
-      <b and coughs Cover sneezes your />
-    </p>
-    <p>
-      Cover your mouth and nose with a tissue when you cough or sneeze. Throw
-      used tissues in a lined trash can; immediately wash your hands with soap
-      and water for at least 20 seconds or clean your hands with an
-      alcohol-based hand sanitizer that contains at least 60 to 95% alcohol,
-      covering all surfaces of your hands and rubbing them together until they
-      feel dry. Soap and water should be used preferentially if hands are
-      visibly dirty.
-    </p>
-    <p>
-      <b>Avoid sharing personal household items</b>
-    </p>
-    <p>
-      You should not share dishes, drinking glasses, cups, eating utensils,
-      towels, or bedding with other people or pets in your home. After using
-      these items, they should be washed thoroughly with soap and water.
-    </p>
-    <p>
-      <b>Clean your hands often</b>
-    </p>
-    <p>
-      Wash your hands often with soap and water for at least 20 seconds. If soap
-      and water are not available, clean your hands with an alcohol-based hand
-      sanitizer that contains at least 60% alcohol, covering all surfaces of
-      your hands and rubbing them together until they feel dry. Soap and water
-      should be used preferentially if hands are visibly dirty. Avoid touching
-      your eyes, nose, and mouth with unwashed hands.
-    </p>
-    <p>
-      <b>Clean all “high-touch” surfaces every day</b>
-    </p>
-    <p>
-      High touch surfaces include counters, tabletops, doorknobs, bathroom
-      fixtures, toilets, phones, keyboards, tablets, and bedside tables. Also,
-      clean any surfaces that may have blood, stool, or body fluids on them. Use
-      a household cleaning spray or wipe, according to the label instructions.
-      Labels contain instructions for safe and effective use of the cleaning
-      product including precautions you should take when applying the product,
-      such as wearing gloves and making sure you have good ventilation during
-      use of the product.
-    </p>
-    <p>
-      <b>Monitor your symptoms</b>
-    </p>
-    <p>
-      Seek prompt medical attention if your illness is worsening (e.g.,
-      difficulty breathing). Before seeking care, call your healthcare provider
-      and tell them that you have, or are being evaluated for, COVID-19. Put on
-      a facemask before you enter the facility. These steps will help the
-      healthcare provider’s office to keep other people in the office or waiting
-      room from getting infected or exposed.
-    </p>
-    <p>
-      Ask your healthcare provider to call the local or state health department.
-      Persons who are placed under active monitoring or facilitated
-      self-monitoring should follow instructions provided by their local health
-      department or occupational health professionals, as appropriate.
-    </p>
-    <p>
-      If you have a medical emergency and need to call 911, notify the dispatch
-      personnel that you have, or are being evaluated for, COVID-19. If
-      possible, put on a facemask before emergency medical services arrive.
-    </p>
-    <p>
-      <b>Discontinuing home isolation</b>
-    </p>
-    <p>
-      Patients with confirmed COVID-19 should remain under home isolation
-      precautions until the risk of secondary transmission to others is thought
-      to be low. The decision to discontinue home isolation precautions should
-      be made on a case-by-case basis, in consultation with healthcare providers
-      and state and local health departments.
-    </p>
-    <p>
-      <b>
-        For more information:{' '}
-        <a href="http://www.cdc.gov/COVID19">www.cdc.gov/COVID19</a>
-      </b>
+      .
     </p>
   </>
 );
 
-const contentMap = {
-  [IDS.UPCOMING_CLASSES]: upcomingClasses,
-  [IDS.ABOUT]: aboutContent
-};
+const allContentData = [
+  {
+    getContent: getUpcomingClassesContent,
+    id: IDS.UPCOMING_CLASSES,
+    title: 'Upcoming Classes & Registration'
+  },
+  {
+    getContent: () => aboutContent,
+    id: IDS.ABOUT,
+    title: 'About the GED Prep Program'
+  }
+];
 
 export default function GedPage() {
-  const [contentId, setContentId] = useState(menuData[0].id);
+  const [contentId, setContentId] = useState(allContentData[0].id);
+  const [formInfo, setFormInfo] = useState({email: '', message: '', name: ''});
 
-  const content = contentMap[contentId];
+  const {getContent} = allContentData.find(({id}) => id === contentId);
+
+  const content = getContent(formInfo, setFormInfo);
 
   return (
     <StyleWrapper>
@@ -286,21 +226,13 @@ export default function GedPage() {
         <MainMenubar />
         <TopInfoBoxWrapper>
           <TopInfoBox>
-            <h1>Faith in the “Great Physician”</h1>
+            <h1>Reach Your Potential</h1>
             <p>
-              The enemy uses every opportunity to steal, kill, and destroy—this
-              includes our hope, our peace, and our faith. However, God
-              instructs us still to “cast all of your cares upon Him, for He
-              cares for you” (I Peter 5:7). Faith is a spiritual muscle; and,
-              like all muscles, if left dormant, it withers and atrophies.
-              Trials and trouble remind us that on our own we are helpless. But
-              thanks to God who regards our helpless estate! In all things, we
-              already have the victory! Be an inspiration to those who are
-              down-hearted and worried. Offer comfort and love to those who
-              grieve. Pray and encourage others to pray for those affected by
-              the virus. Share facts of the virus to stop the spread of rumors
-              and discrimination. Exercise your faith through meditating on
-              scripture, prayer, and maintaining a positive outlook.
+              GED® test preparation includes classroom instruction, textbook,
+              calculator, test taking strategies, GED® Ready Practice Test, and
+              participation in transition activities. City Temple is proud to be
+              one of many locations throughout the city offering these free
+              preparation courses.
             </p>
           </TopInfoBox>
           <ContentAndSubCompassWrapper>
@@ -312,7 +244,7 @@ export default function GedPage() {
               <ContentLeftSide>
                 <SideMenu
                   currentId={contentId}
-                  menuData={menuData}
+                  menuData={allContentData}
                   onClick={id => setContentId(id)}
                   title="Ged Program"
                 />

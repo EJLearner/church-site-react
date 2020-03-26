@@ -1,3 +1,4 @@
+import GedThumb from '../../assets/main/images/GED-thumbnail.png';
 import choirThumb from '../../assets/main/images/choir-thumb.jpg';
 import christianEdPeopleThumb from '../../assets/main/images/christian-ed-people-thumb.jpg';
 import coronavirus from '../../assets/main/images/coronavirus-thumb.png';
@@ -7,9 +8,8 @@ import routePaths from '../../routePaths';
 
 import ChristianEducation from './BoxContent/ChristianEducation';
 import CultureAndFineArts from './BoxContent/CultureAndFineArts';
+import GedProgram from './BoxContent/GedProgram';
 import JubileeContent from './BoxContent/JubileeContent';
-
-// import GedProgram from './BoxContent/GedProgram';
 import WorshipExperience from './BoxContent/WorshipExperience';
 import CoronaVirusContent from './CoronaVirusContent';
 
@@ -45,15 +45,13 @@ const contentSelectInfo = [
     render: ChristianEducation,
     thumbnail: christianEdPeopleThumb,
     title: 'Christian Education'
+  },
+  {
+    linkPath: routePaths.MAIN_GED,
+    render: GedProgram,
+    title: 'GED Program',
+    thumbnail: GedThumb
   }
-
-  // TODO: add this back later
-  // {
-  //   linkPath: routePaths.CE_HOME,
-  //   render: GedProgram,
-  //   title: 'GED Program',
-  //   thumbnail: eventContentTemplate
-  // }
 ];
 
 export {contentSelectInfo};

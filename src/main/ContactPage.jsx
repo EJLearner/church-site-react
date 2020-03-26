@@ -1,24 +1,24 @@
+import {post} from 'jquery';
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import {post} from 'jquery';
 
+import PostSubmitStatusMessage from '../ce/components/Common/PostSubmitStatusMessage';
+import Button, {STYLES} from '../ce/components/Reusable/Button/Button';
+import Textarea from '../common/components/Textarea';
+import Textbox from '../common/components/Textbox';
+import backgroundStore from '../stores/backgroundStore';
 import {COLORS, LOGICAL_COLORS, FONT_FAMILIES} from '../utils/styleVariables';
 
 import MainMenubar from './MainMenubar';
 import AboveContentLinks from './commonComponents/AboveContentLinks';
-import Textbox from '../common/components/Textbox';
-import Textarea from '../common/components/Textarea';
-import Button, {STYLES} from '../ce/components/Reusable/Button/Button';
-import PostSubmitStatusMessage from '../ce/components/Common/PostSubmitStatusMessage';
-import backgroundStore from '../stores/backgroundStore';
-import TopInfoBox from './commonComponents/TopInfoBox';
-import StandardPageWrapper from './commonComponents/StandardPageWrapper';
-import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
-import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
 import ContentAndSides from './commonComponents/ContentAndSides';
-import ContentWrapper from './commonComponents/ContentWrapper';
+import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
 import ContentLeftSide from './commonComponents/ContentLeftSide';
 import ContentRightSide from './commonComponents/ContentRightSide';
+import ContentWrapper from './commonComponents/ContentWrapper';
+import StandardPageWrapper from './commonComponents/StandardPageWrapper';
+import TopInfoBox from './commonComponents/TopInfoBox';
+import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
 
 const ContactPageStyles = styled.div`
   .content-and-sides {
@@ -111,11 +111,6 @@ const ContactPageStyles = styled.div`
   }
 `;
 
-const ErrorMessage = styled.div`
-  color: red;
-  font-weight: bold;
-`;
-
 const googleMapSource =
   'https://www.google.com/maps/embed?pb=' +
   '!1m18!1m12!1m3!1d3087.345806781657!2d-76.6268381850241!3d39.30308427951011!2m3!1f0!2f0!3f0!3m2' +
@@ -166,9 +161,9 @@ function renderLeftSideInfo() {
 }
 
 const emptySendInfo = {
-  name: '',
   emailAddress: '',
-  message: ''
+  message: '',
+  name: ''
 };
 
 const thanksForInfoRender = (
@@ -201,9 +196,9 @@ const ContactPage = () => {
 
   const submitData = () => {
     const data = {
-      name: sendInfo.name || 'Not Provided',
       emailAddress: sendInfo.emailAddress || 'Not Provided',
-      message: sendInfo.message
+      message: sendInfo.message,
+      name: sendInfo.name || 'Not Provided'
     };
 
     post(
@@ -288,11 +283,7 @@ const ContactPage = () => {
               <Textarea
                 characterLimit={characterLimit}
                 columns={60}
-                errors={
-                  showError && (
-                    <ErrorMessage>You must enter a message.</ErrorMessage>
-                  )
-                }
+                errorMessage={showError ? 'You must enter a message.' : null}
                 id="message"
                 label="Message"
                 onChange={value => setSendInfo(value, 'message')}

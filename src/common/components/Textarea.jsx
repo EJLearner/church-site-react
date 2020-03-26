@@ -1,7 +1,10 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
+
 import {COLORS} from '../../utils/styleVariables';
+
+import InputError from './InputError';
 import InputLabel from './InputLabel';
 
 const TextareaStyle = styled.div`
@@ -36,7 +39,7 @@ const Textarea = props => {
   const {
     characterLimit,
     columns,
-    errors,
+    errorMessage,
     id,
     instructions,
     label,
@@ -54,7 +57,7 @@ const Textarea = props => {
   const instructionsId = `${id}-instructions`;
 
   const labelledBy = [
-    errors && errorsId,
+    errorMessage && errorsId,
     labelId,
     instructions && instructionsId,
     characterLimit && characterCountId
@@ -92,7 +95,7 @@ const Textarea = props => {
       <InputLabel htmlFor={id} id={labelId} required={required}>
         {label}
       </InputLabel>
-      {errors && <div id={errorsId}>{errors}</div>}
+      {errorMessage && <InputError id={errorsId}>{errorMessage}</InputError>}
       {inputOrTextarea}
       {characterCountRender}
     </TextareaStyle>
@@ -106,7 +109,7 @@ Textarea.defaultProps = {
 Textarea.propTypes = {
   characterLimit: PropTypes.number,
   columns: PropTypes.number,
-  errors: PropTypes.node,
+  errorMessage: PropTypes.string,
   id: PropTypes.string.isRequired,
   instructions: PropTypes.node,
   label: PropTypes.string.isRequired,
