@@ -1,18 +1,17 @@
+import moment from 'moment';
 import React, {Component} from 'react';
 import {Redirect, Route, Switch} from 'react-router-dom';
 
-import moment from 'moment';
+import routePaths from '../routePaths';
 
 import CalendarStyles from './CalendarStyles';
 import MainMenubar from './MainMenubar';
-import CalendarMenuBar from './commonComponents/Calendar/CalendarMenuBar';
-import routePaths from '../routePaths';
-
 import CalendarDay from './commonComponents/Calendar/CalendarDay';
+import CalendarMenuBar from './commonComponents/Calendar/CalendarMenuBar';
 import CalendarMonth from './commonComponents/Calendar/CalendarMonth';
+import CalendarUpcoming from './commonComponents/Calendar/CalendarUpcoming';
 import CalendarWeek from './commonComponents/Calendar/CalendarWeek';
 import CalendarYear from './commonComponents/Calendar/CalendarYear';
-import CalendarUpcoming from './commonComponents/Calendar/CalendarUpcoming';
 
 class Calendar extends Component {
   constructor(props) {

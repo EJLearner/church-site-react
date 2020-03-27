@@ -1,10 +1,13 @@
 import styled from 'styled-components';
+
 import {LOGICAL_COLORS, WIDTHS} from '../utils/styleVariables';
 
 const CalendarStyles = styled.div`
   .calendar-page {
     background-color: white;
-    padding: 1em ${WIDTHS.SIDE_CONTENT_PADDING};
+    padding: 1em;
+    margin: ${WIDTHS.SIDE_CONTENT_PADDING} ${WIDTHS.SIDE_CONTENT_PADDING} 0 ${WIDTHS.SIDE_CONTENT_PADDING};
+
 
     h1 {
       color: ${LOGICAL_COLORS.CT_PRIMARY}
