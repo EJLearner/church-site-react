@@ -1,22 +1,24 @@
 import React, {useState} from 'react';
-import yearginPicture from '../assets/main/images/grady-yeargin.jpg';
-import congregationPicture from '../assets/main/images/congregation.jpg';
-import organPicture from '../assets/main/images/organ-close.jpg';
+import styled from 'styled-components';
+
 import anniversaryChoirPicture from '../assets/main/images/30th-anniversary-choir.jpg';
+import congregationPicture from '../assets/main/images/congregation.jpg';
+import yearginPicture from '../assets/main/images/grady-yeargin.jpg';
+import organPicture from '../assets/main/images/organ-close.jpg';
 import revPaynePicture from '../assets/main/images/rev-payne.jpg';
 import routePaths from '../routePaths';
-import styled from 'styled-components';
-import StandardPageWrapper from './commonComponents/StandardPageWrapper';
+
 import MainMenubar from './MainMenubar';
-import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
-import TopInfoBox from './commonComponents/TopInfoBox';
-import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
 import AboveContentLinks from './commonComponents/AboveContentLinks';
-import ContentLeftSide from './commonComponents/ContentLeftSide';
-import SideMenu from './commonComponents/SideMenu';
-import ContentWrapper from './commonComponents/ContentWrapper';
-import ContentRightSide from './commonComponents/ContentRightSide';
 import ContentAndSides from './commonComponents/ContentAndSides';
+import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
+import ContentLeftSide from './commonComponents/ContentLeftSide';
+import ContentRightSide from './commonComponents/ContentRightSide';
+import ContentWrapper from './commonComponents/ContentWrapper';
+import SideMenu from './commonComponents/SideMenu';
+import StandardPageWrapper from './commonComponents/StandardPageWrapper';
+import TopInfoBox from './commonComponents/TopInfoBox';
+import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
 
 const StyleWrapper = styled.div`
   .yeargin-picture {
@@ -509,6 +511,28 @@ const historyContent = (
   </div>
 );
 
+// eslint-disable-next-line no-unused-vars
+const churchVisionContent = (
+  <div>
+    <h2>Church Vision</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nesciunt
+      quas quis commodi, sapiente nobis qui sint incidunt dolorum dolore quam
+      officia ullam aliquam. Porro aliquam accusantium eos dignissimos mollitia!
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nesciunt
+      quas quis commodi, sapiente nobis qui sint incidunt dolorum dolore quam
+      officia ullam aliquam. Porro aliquam accusantium eos dignissimos mollitia!
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nesciunt
+      quas quis commodi, sapiente nobis qui sint incidunt dolorum dolore quam
+      officia ullam aliquam. Porro aliquam accusantium eos dignissimos mollitia!
+    </p>
+  </div>
+);
+
 const bottomContentData = [
   {
     title: 'The Pastor',
@@ -517,6 +541,7 @@ const bottomContentData = [
   },
   {title: 'Membership', id: 'membership', content: membershipContent},
   {title: 'History', id: 'history', content: historyContent}
+  // {title: 'Church Vision', id: 'vision', content: churchVisionContent}
 ];
 
 const topBoxContent = (
