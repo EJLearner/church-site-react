@@ -1,9 +1,12 @@
 import styled from 'styled-components';
+
 import {
   LOGICAL_COLORS,
   COLORS,
   FONT_FAMILIES
 } from '../../utils/styleVariables';
+
+import contentWrapperH2Mixin from './contentWrapperH2Mixin';
 
 const ContentWrapper = styled.div`
   background-color: ${COLORS.WHITE};
@@ -14,10 +17,7 @@ const ContentWrapper = styled.div`
   width: 70%;
 
   h2 {
-    font-family: ${FONT_FAMILIES.ROBOTO};
-    font-size: 40px;
-    letter-spacing: 0.02em;
-    line-height: 100%;
+    ${contentWrapperH2Mixin}
   }
 
   h3 {

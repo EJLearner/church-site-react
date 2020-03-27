@@ -1,19 +1,18 @@
 import styled from 'styled-components';
 
-import {LOGICAL_COLORS, WIDTHS} from '../utils/styleVariables';
+import {WIDTHS} from '../utils/styleVariables';
+
+import contentWrapperH2Mixin from './commonComponents/contentWrapperH2Mixin';
 
 const CalendarStyles = styled.div`
   .calendar-page {
     background-color: white;
     padding: 1em;
-    margin: ${WIDTHS.SIDE_CONTENT_PADDING} ${WIDTHS.SIDE_CONTENT_PADDING} 0 ${WIDTHS.SIDE_CONTENT_PADDING};
-
+    margin: ${WIDTHS.SIDE_CONTENT_PADDING} ${WIDTHS.SIDE_CONTENT_PADDING} 0
+      ${WIDTHS.SIDE_CONTENT_PADDING};
 
     h1 {
-      color: ${LOGICAL_COLORS.CT_PRIMARY}
-      font-family: $century-gothic;
-      font-weight: normal;
-      margin-top: 0;
+      ${contentWrapperH2Mixin}
     }
   }
 
