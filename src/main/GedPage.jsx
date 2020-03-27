@@ -49,20 +49,27 @@ const StyleWrapper = styled.div`
     font-weight: bold;
   }
 
-  .ged-contact-us {
-    background-color: grey;
-    color: white;
-    font-weight: bold;
-    padding: 1em;
-    position: sticky;
-    top: 1em;
-    bottom: ${SIZES.FOOTER_HEIGHT};
-    text-align: center;
-    width: 175px;
+  .ged-right-info {
+    h3 {
+      color: black;
+    }
 
-    .free {
-      text-transform: uppercase;
-      color: ${LOGICAL_COLORS.CT_PRIMARY};
+    hr {
+      border-color: ${LOGICAL_COLORS.CT_PRIMARY};
+    }
+
+    p,
+    li {
+      line-height: 150%;
+    }
+
+    ul {
+      padding-left: 0;
+    }
+
+    li {
+      list-style: none;
+      padding-left: 0;
     }
   }
 `;
@@ -251,9 +258,24 @@ export default function GedPage() {
               </ContentLeftSide>
               <ContentWrapper>{content}</ContentWrapper>
               <ContentRightSide>
-                <div className="ged-contact-us">
-                  Contact us for more information about how you can sign up for{' '}
-                  <span className="free">free</span> GED Preparation Classes
+                <div className="ged-right-info">
+                  <h3>Contact</h3>
+                  <hr />
+                  <p>443-800-9231</p>
+                  <h3>
+                    GED® Test Preparation Classes Offered at No Cost to You
+                  </h3>
+                  <hr />
+                  <p>
+                    Preparation classes provide instruction in the skill areas
+                    of reading and math. These no cost classes are offered three
+                    times per week at the following times:
+                  </p>
+                  <ul>
+                    <li>Monday: 9 am - noon</li>
+                    <li>Wednesday: 9 am - noon</li>
+                    <li>Friday: 9 am - noon</li>
+                  </ul>
                 </div>
               </ContentRightSide>
             </ContentAndSides>
