@@ -6,18 +6,16 @@ import parseISO from 'date-fns/parseISO';
 import startOfDay from 'date-fns/startOfDay';
 import startOfToday from 'date-fns/startOfToday';
 
-export {
-  format,
-  isSameDay,
-  startOfDay,
-  parseISO,
-  isAfter,
-  startOfToday,
-  endOfYesterday
-};
+import constants from './constants';
 
-export default {
+const getLongDisplayDate = date => format(parseISO(date), 'MMMM d, yyyy');
+const getShortDisplayDate = date =>
+  format(parseISO(date), constants.DATE_FNS_DISPLAY_DATE_FORMAT);
+
+export {
   endOfYesterday,
+  getLongDisplayDate,
+  getShortDisplayDate,
   format,
   isAfter,
   isSameDay,
