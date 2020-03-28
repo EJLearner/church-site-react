@@ -2,12 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 
 import routePaths from '../routePaths';
-import {
-  LOGICAL_COLORS,
-  SIZES,
-  FONT_FAMILIES,
-  COLORS
-} from '../utils/styleVariables';
+import {LOGICAL_COLORS, FONT_FAMILIES, COLORS} from '../utils/styleVariables';
 
 import GedPageContactForm from './GedPageContactForm';
 import MainMenubar from './MainMenubar';
@@ -49,6 +44,10 @@ const StyleWrapper = styled.div`
     font-weight: bold;
   }
 
+  .ged-info-group {
+    margin-bottom: 5.5em;
+  }
+
   .ged-right-info {
     h3 {
       color: black;
@@ -61,6 +60,7 @@ const StyleWrapper = styled.div`
     p,
     li {
       line-height: 150%;
+      font-size: 13px;
     }
 
     ul {
@@ -259,23 +259,27 @@ export default function GedPage() {
               <ContentWrapper>{content}</ContentWrapper>
               <ContentRightSide>
                 <div className="ged-right-info">
-                  <h3>Contact</h3>
-                  <hr />
-                  <p>443-800-9231</p>
-                  <h3>
-                    GED® Test Preparation Classes Offered at No Cost to You
-                  </h3>
-                  <hr />
-                  <p>
-                    Preparation classes provide instruction in the skill areas
-                    of reading and math. These no cost classes are offered three
-                    times per week at the following times:
-                  </p>
-                  <ul>
-                    <li>Monday: 9 am - noon</li>
-                    <li>Wednesday: 9 am - noon</li>
-                    <li>Friday: 9 am - noon</li>
-                  </ul>
+                  <div className="ged-info-group">
+                    <h3>Contact</h3>
+                    <hr />
+                    <p>443-800-9231</p>
+                  </div>
+                  <div className="ged-info-group">
+                    <h3>
+                      GED® Test Preparation Classes Offered at No Cost to You
+                    </h3>
+                    <hr />
+                    <p>
+                      Preparation classes provide instruction in the skill areas
+                      of reading and math. These no cost classes are offered
+                      three times per week at the following times:
+                    </p>
+                    <ul>
+                      <li>Monday: 9 am - noon</li>
+                      <li>Wednesday: 9 am - noon</li>
+                      <li>Friday: 9 am - noon</li>
+                    </ul>
+                  </div>
                 </div>
               </ContentRightSide>
             </ContentAndSides>
