@@ -15,33 +15,25 @@ const PREACHERS = {
 const orderedVideoData = [
   {
     audioLink: {},
+    date: '2020-03-29',
+    description:
+      'A message from Psalms 27 that tells us what to do when we are fearful. Facing our fears requires waiting ' +
+      'on the Lord.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Psalm 27:1; 13-14',
+    title: 'Alleviating Our Anxious Fears',
+    videoLink: 'https://www.youtube.com/embed/-bsGGeVUInM'
+  },
+  {
+    audioLink: {},
     date: '2020-03-22',
     description:
-      'A one to two line blurb will go here to explain the point of the sermon',
+      'Given that we are facing a pandemic in these times, there is hope. And not just hope, but an indestructible ' +
+      'hope. It is indestructible because it is grounded and founded in our God.',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 16:29-33',
     title: 'An Indestructible Hope',
     videoLink: 'https://www.youtube.com/embed/3sgm_bRfXuw'
-  },
-  {
-    audioLink: {},
-    date: '2019-04-17',
-    description:
-      'A one to two line blurb will go here to explain the point of the sermon',
-    preacher: PREACHERS.G_YEARGIN,
-    scripture: 'John 3:16',
-    title: 'The Providence of Faith',
-    videoLink: 'https://www.youtube.com/embed/QdzviEfS4EI'
-  },
-  {
-    audioLink: {},
-    date: '2019-08-17',
-    description:
-      'A one to two line blurb will go here to explain the point of the sermon',
-    preacher: PREACHERS.G_YEARGIN,
-    scripture: 'John 3:16',
-    title: 'The Providence of Faith',
-    videoLink: 'https://www.youtube.com/embed/QdzviEfS4EI'
   }
 ].sort((a, b) => a.date < b.date);
 
@@ -121,6 +113,10 @@ const StyleWrapper = styled.div`
 
       .video-info {
         margin-left: 32px;
+
+        p {
+          width: 600px;
+        }
       }
 
       h3 {
@@ -144,9 +140,6 @@ function renderLabelValue(label, value) {
 }
 
 function renderArchiveVideos(otherVideos) {
-  return null;
-
-  // eslint-disable-next-line no-unreachable
   return (
     <div className="archive-videos">
       {otherVideos.map(videoData => {
