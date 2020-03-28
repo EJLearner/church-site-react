@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {getLongDisplayDate} from '../utils/dateTimeUtils';
+import {
+  getLongDisplayDate,
+  isBefore,
+  startOfTomorrow,
+  parseISO
+} from '../utils/dateTimeUtils';
 import {LOGICAL_COLORS, COLORS} from '../utils/styleVariables';
 
 import MainMenubar from './MainMenubar';
@@ -35,7 +40,9 @@ const orderedVideoData = [
     title: 'An Indestructible Hope',
     videoLink: 'https://www.youtube.com/embed/3sgm_bRfXuw'
   }
-].sort((a, b) => a.date < b.date);
+]
+  .filter(({date}) => isBefore(parseISO(date), startOfTomorrow()))
+  .sort((a, b) => a.date < b.date);
 
 const StyleWrapper = styled.div`
   padding: 1em 0;
