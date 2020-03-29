@@ -79,7 +79,7 @@ const allContentData = [
   {
     getContent: getVersesContent,
     id: IDS.VERSES,
-    title: 'Weekly Verses'
+    title: 'Daily Scripture Readings'
   }
 ];
 
