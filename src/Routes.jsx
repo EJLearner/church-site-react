@@ -1,36 +1,35 @@
 import React from 'react';
 import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
 
-import routePaths from './routePaths';
-
 import Admin from './ce/components/Admin/Admin';
 import Calendar from './ce/components/Calendar/Calendar';
 import CcCheckin from './ce/components/CcVbsCheckinOut/CcCheckin';
 import CcCheckout from './ce/components/CcVbsCheckinOut/CcCheckout';
-import CcRegistrationChild from './ce/components/RegistrationPages/CcRegistrationChild';
-import CcRegistrationLanding from './ce/components/RegistrationPages/CcRegistrationLanding';
-import CcRegistrationVolunteer from './ce/components/RegistrationPages/CcRegistrationVolunteer';
+import VbsCheckin from './ce/components/CcVbsCheckinOut/VbsCheckin';
+import VbsCheckout from './ce/components/CcVbsCheckinOut/VbsCheckout';
 import CeLogo from './ce/components/CeLogo/CeLogo';
 import Footer from './ce/components/Footer/Footer';
 import CeHome from './ce/components/Home/CeHome';
 import IdeaForm from './ce/components/IdeaForm/IdeaForm';
-import MainWrapper from './main/MainWrapper';
 import MenuBar from './ce/components/MenuBar/MenuBar';
 import Quote from './ce/components/Quote/Quote';
-import TitleBar from './ce/components/TitleBar/TitleBar';
-import ThankYouPage from './ce/components/Reusable/ThankYouPage/ThankYouPage';
-import VbsCheckin from './ce/components/CcVbsCheckinOut/VbsCheckin';
-import VbsCheckout from './ce/components/CcVbsCheckinOut/VbsCheckout';
+import CcRegistrationChild from './ce/components/RegistrationPages/CcRegistrationChild';
+import CcRegistrationLanding from './ce/components/RegistrationPages/CcRegistrationLanding';
+import CcRegistrationVolunteer from './ce/components/RegistrationPages/CcRegistrationVolunteer';
 import VbsRegistrationLanding from './ce/components/RegistrationPages/VbsRegistrationLanding';
 import VbsRegistrationStudent, {
   STUDENT_TYPES as regStudentTypes
 } from './ce/components/RegistrationPages/VbsRegistrationStudent';
 import VbsRegistrationVolunteer from './ce/components/RegistrationPages/VbsRegistrationVolunteer';
+import ThankYouPage from './ce/components/Reusable/ThankYouPage/ThankYouPage';
+import TitleBar from './ce/components/TitleBar/TitleBar';
 import Vision from './ce/components/Vision/Vision';
 import WhoWeAre from './ce/components/WhoWeAre/WhoWeAre';
 import Why from './ce/components/Why/Why';
 import Youth from './ce/components/Youth/Youth';
+import MainWrapper from './main/MainWrapper';
 import ScrollToTop from './main/commonComponents/ScrollToTop';
+import routePaths from './routePaths';
 
 function newRenderFullCePage(content) {
   const mainTopLinks = [
@@ -83,9 +82,6 @@ const Routes = () => {
       <ScrollToTop />
       <Switch>
         <Route component={MainWrapper} exact path={routePaths.MAIN_HOME} />
-        <Route path="/christianedu.html">
-          {newRenderFullCePage(<CeHome />)}
-        </Route>
         <Route exact path={routePaths.CE_HOME}>
           {newRenderFullCePage(<CeHome />)}
         </Route>
@@ -150,12 +146,11 @@ const Routes = () => {
           {newRenderFullCePage(<WhoWeAre />)}
         </Route>
         <Route path={routePaths.CE_WHY}>{newRenderFullCePage(<Why />)}</Route>
-        <Route path="/ce/where">{newRenderFullCePage(<Youth />)}</Route>
         <Route path={routePaths.CE_YOUTH}>
           {newRenderFullCePage(<Youth />)}
         </Route>
 
-        <Route component={MainWrapper} path="/" />
+        <Route component={MainWrapper} path={routePaths.MAIN_HOME} />
       </Switch>
     </BrowserRouter>
   );
