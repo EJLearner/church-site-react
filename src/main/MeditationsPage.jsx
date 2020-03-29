@@ -1,8 +1,11 @@
+import {startOfWeek, format, add} from 'date-fns';
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
 import Verse from '../common/components/Verse';
 import routePaths from '../routePaths';
+import {bibleComFormattedVerses} from '../stores/dailyVerses';
+import constants from '../utils/constants';
 import {FONT_FAMILIES} from '../utils/styleVariables';
 
 import MainMenubar from './MainMenubar';
@@ -39,8 +42,43 @@ const IDS = {
   VERSES: 'verses'
 };
 
+const getCurrentWeekDates = () => {
+  const jsSundayTime = startOfWeek(new Date());
+
+  const thisWeeksDates = [];
+  for (let i = 0; i < 7; i++) {
+    const jsDate = add(jsSundayTime, {days: i});
+    const standardDate = format(
+      jsDate,
+      constants.DATE_FNS_INTERNAL_DATE_FORMAT
+    );
+
+    const dayOfWeek = format(jsDate, 'EEEE');
+
+    thisWeeksDates.push({date: standardDate, day: dayOfWeek});
+  }
+
+  return thisWeeksDates;
+};
+
+const currentWeekDates = getCurrentWeekDates();
+
 function getVersesContent() {
-  return <Verse passage="Isaiah 39.9-40.5" />;
+  return currentWeekDates.map(({date, day}) => {
+    const {verse, referenceText} = bibleComFormattedVerses[date];
+
+    return (
+      <React.Fragment key={date}>
+        <h3 id={day}>{day}</h3>
+        <Verse
+          date={date}
+          key={date}
+          passage={verse}
+          referenceText={referenceText}
+        />
+      </React.Fragment>
+    );
+  });
 }
 
 const meditationContent = (
@@ -109,15 +147,14 @@ const allContentData = [
   {
     getContent: getVersesContent,
     id: IDS.VERSES,
-    title: 'Daily Scripture Readings'
+    title: 'Daily Scripture Readings',
+    subLinks: currentWeekDates.map(({day}) => ({title: day, elementId: day}))
   }
 ];
 
 export default function MeditationsPage() {
-  const [contentId, setContentId] = useState(allContentData[0].id);
-
-  const {getContent} = allContentData.find(({id}) => id === contentId);
-
+  const [contentId, setContentId] = useState(IDS.VERSES);
+  const {getContent, title} = allContentData.find(({id}) => id === contentId);
   const content = getContent();
 
   return (
@@ -139,7 +176,8 @@ export default function MeditationsPage() {
           <ContentAndSubCompassWrapper>
             <AboveContentLinks
               pagePath={routePaths.MAIN_GED}
-              pageTitle="Ged Program"
+              pageTitle="Meditations and Scriptures"
+              subPageTitle={title}
             />
             <ContentAndSides>
               <ContentLeftSide>
@@ -147,7 +185,7 @@ export default function MeditationsPage() {
                   currentId={contentId}
                   menuData={allContentData}
                   onClick={id => setContentId(id)}
-                  title="Ged Program"
+                  title="Meditations and Scriptures"
                 />
               </ContentLeftSide>
               <ContentWrapper>{content}</ContentWrapper>

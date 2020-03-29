@@ -2,8 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
-import {LOGICAL_COLORS, WIDTHS, SIZES} from '../../utils/styleVariables';
 import routePaths from '../../routePaths';
+import {LOGICAL_COLORS, WIDTHS, SIZES} from '../../utils/styleVariables';
 
 const footerData = [
   // TODO: add later
@@ -26,6 +26,11 @@ const footerData = [
     actionWord: 'Giving',
     path: routePaths.MAIN_GIVING,
     subject: 'Make A Gift'
+  },
+  {
+    actionWord: 'Spiritual',
+    path: routePaths.MAIN_MEDITATIONS,
+    subject: 'Meditations'
   }
   // TODO: add later
   // {

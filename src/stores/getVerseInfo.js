@@ -15,7 +15,7 @@ const getVerseInfo = (query, cb) => {
     xhr.onreadystatechange = function() {
       if (xhr.readyState === xhr.DONE) {
         const responseAsObject = JSON.parse(xhr.responseText);
-        memo[query] = responseAsObject.data.passages[0];
+        memo[query] = responseAsObject.data.passages;
         cb(memo[query]);
       }
     };
