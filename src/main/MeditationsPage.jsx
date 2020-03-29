@@ -46,26 +46,56 @@ function getVersesContent() {
 const meditationContent = (
   <>
     <h2>
-      Weekly Meditation <span className="subtitle">Meditation Title Here</span>
+      Weekly Meditation{' '}
+      <span className="subtitle">
+        From <i>God In Search of Man</i> by Abraham Joshua Herschel
+      </span>
     </h2>
 
     <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam iusto,
-      voluptate odio eum nostrum veritatis molestiae alias cumque suscipit
-      dolorem ratione ut ipsam placeat odit recusandae! Unde veritatis neque
-      impedit.
+      The world needs more than the secret holiness of individual inwardness. It
+      needs more than sacred sentiments and good intentions. God asks for the
+      heart because He needs the lives. It is by lives. It is by lives that the
+      world will be redeemed, by lives that beat in concordance with God, by
+      deeds that outbeat the finite charity of the human heart.
     </p>
     <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam iusto,
-      voluptate odio eum nostrum veritatis molestiae alias cumque suscipit
-      dolorem ratione ut ipsam placeat odit recusandae! Unde veritatis neque
-      impedit.
+      Man’s power of action is less vague than his power of intention. And an
+      action has intrinsic meaning; its value to the world is independent of
+      what it means to the person performing it. The act of giving food to a
+      helpless child is meaningful regardless of whether or not the moral
+      intention is present. God asks for the heart, and we must sell our answer
+      in terms of deeds.
     </p>
     <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam iusto,
-      voluptate odio eum nostrum veritatis molestiae alias cumque suscipit
-      dolorem ratione ut ipsam placeat odit recusandae! Unde veritatis neque
-      impedit.
+      It would be a device of conceit, if not presumption, to insist that purity
+      of the heart is the exclusive test of piety. Perfect purity is something
+      we rarely know how to obtain or how to retain. No one can claim to have
+      purged all the dross even from his finest desire. The self is finite, but
+      selfishness is infinite. God asks for the heart, but the heart is
+      oppressed with uncertainty in its own twilight. God asks for faith, and
+      the heart is not sure of its own faith. It is good that there is a dawn of
+      decision for the sight of the heart; deeds to objectify faith, definite
+      forms to verify belief.
+    </p>
+    <p>
+      The heart is often a lonely voice in the marketplace of living. Man may
+      entertain lofty ideals and behave like the ass that, as the saying goes,
+      “carries gold and eats thistles.” The problem of the soul is how to live
+      nobly in an animal environment; how to persuade and train the tongue and
+      the senses to behave in agreement with the insights of the soul.
+    </p>
+    <p>
+      The integrity of life is not exclusively a thing of the heart; it implies
+      more than consciousness of the moral law. The innermost chamber must be
+      guarded at the uttermost outposts. Religion is not the same as
+      spiritualism; what man does in his concrete, physical existence is
+      directly relevant to the divine. Spirituality is the goal, not the way of
+      man. In this world music is played on physical instruments, and to the Jew
+      the mitsvot are the instruments on which the holy is carried out. If man
+      were only mind, worship in thought would be the form in which to commune
+      with god. But man is body and soul, and his goal is so to live that both
+      “his heart and his flesh should sing to the living God.”
     </p>
   </>
 );
@@ -96,13 +126,14 @@ export default function MeditationsPage() {
         <MainMenubar />
         <TopInfoBoxWrapper>
           <TopInfoBox>
-            <h1>Reach Your Potential</h1>
+            <h1>Spiritual Meditations</h1>
             <p>
-              GED® test preparation includes classroom instruction, textbook,
-              calculator, test taking strategies, GED® Ready Practice Test, and
-              participation in transition activities. City Temple is proud to be
-              one of many locations throughout the city offering these free
-              preparation courses.
+              As with any relationship, in order to cultivate and nurture a
+              relationship with God, we must spend time. We spend time with God
+              when we read His word and meditate on it while listening for the
+              still, quiet voice. Join us in participating in our daily
+              devotional and weekly meditations as we continue to strengthen our
+              relationship with God through our savior Jesus Christ.
             </p>
           </TopInfoBox>
           <ContentAndSubCompassWrapper>
