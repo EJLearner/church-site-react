@@ -32,6 +32,7 @@ const MAIN_ROOT_PATHS = {
   MAIN_GED: `${MAIN_HOME_PATH}ged/`,
   MAIN_GIVING: `${MAIN_HOME_PATH}giving/`,
   MAIN_JUBILEE: `${MAIN_HOME_PATH}jubilee/`,
+  MAIN_MEDITATIONS: `${MAIN_HOME_PATH}meditations/`,
   MAIN_MEMBERS_ONLY: `${MAIN_HOME_PATH}members-only/`,
   MAIN_MINISTRIES: `${MAIN_HOME_PATH}ministries/`,
   MAIN_NEWS: `${MAIN_HOME_PATH}news/`,

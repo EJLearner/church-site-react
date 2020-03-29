@@ -16,6 +16,7 @@ import GedPage from './GedPage';
 import GivingPage from './GivingPage';
 import JubileePage from './JubileePage';
 import MainContent from './MainPage';
+import MeditationsPage from './MeditationsPage';
 import MembersOnly from './MembersOnly';
 import MinistriesPage from './MinistriesPage';
 import NewsPage from './NewsPage';
@@ -62,6 +63,9 @@ function MainWrapper() {
         <Route path={routePaths.MAIN_CORONAVIRUS}>
           <CoronavirusPage />
         </Route>
+        <Route path={routePaths.MAIN_CULTURE_AND_ARTS}>
+          <CultureAndFineArtsPage />
+        </Route>
         <Route path={routePaths.MAIN_GED}>
           <GedPage />
         </Route>
@@ -74,20 +78,20 @@ function MainWrapper() {
         <Route exact path={routePaths.MAIN_HOME}>
           <MainContent />
         </Route>
+        <Route path={routePaths.MAIN_MEDITATIONS}>
+          <MeditationsPage />
+        </Route>
         <Route path={routePaths.MAIN_MEMBERS_ONLY}>
           <MembersOnly />
         </Route>
         <Route path={routePaths.MAIN_MINISTRIES}>
           <MinistriesPage />
         </Route>
-        <Route path={routePaths.MAIN_CULTURE_AND_ARTS}>
-          <CultureAndFineArtsPage />
+        <Route path={routePaths.MAIN_NEWS}>
+          <NewsPage />
         </Route>
         <Route path={routePaths.MAIN_SCHOLARSHIP}>
           <ScholarshipPage />
-        </Route>
-        <Route path={routePaths.MAIN_NEWS}>
-          <NewsPage />
         </Route>
         <Route path={routePaths.MAIN_WATCH}>
           <WatchPage />
