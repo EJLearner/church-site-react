@@ -7,9 +7,9 @@ import './Footer.css';
 
 class Footer extends Component {
   render() {
-    return (
-      // TODO: See if I can make links out to other city temple sites relational
+    // TODO: See if I can make links out to other city temple sites and update php site links
 
+    return (
       <div id="footerbar">
         <div className="cf" id="footer">
           <div id="footerlinks">
