@@ -64,6 +64,12 @@ const StyleWrapper = styled.div`
       height: auto;
     }
   }
+  .header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
 `;
 
 const pastorContent = (
@@ -511,29 +517,67 @@ const historyContent = (
   </div>
 );
 
-// eslint-disable-next-line no-unused-vars
 const churchVisionContent = (
   <div>
-    <h2>Church Vision</h2>
+    <h2>Church Vision &amp; Covenant</h2>
+    <h3 className="header">Church Vision </h3>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nesciunt
-      quas quis commodi, sapiente nobis qui sint incidunt dolorum dolore quam
-      officia ullam aliquam. Porro aliquam accusantium eos dignissimos mollitia!
+      We shall become a spiritually mature Christian fellowship in order to
+      provide an effective witness for Christ in this world!
+    </p>
+    <h3 className="header">Church Covenant</h3>
+    <p>
+      <b>ALL:</b> O come, let us praise the Lord by the renewing of our covenant
+      relationship with God through our Lord and Savior Jesus Christ and with
+      one another by the aid of the Holy Spirit.
     </p>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nesciunt
-      quas quis commodi, sapiente nobis qui sint incidunt dolorum dolore quam
-      officia ullam aliquam. Porro aliquam accusantium eos dignissimos mollitia!
+      <b>MINISTER:</b> In the presence of God and this sacred assembly, we
+      acknowledge that the Lord is our God.
     </p>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nesciunt
-      quas quis commodi, sapiente nobis qui sint incidunt dolorum dolore quam
-      officia ullam aliquam. Porro aliquam accusantium eos dignissimos mollitia!
+      <b>PEOPLE:</b> In response to the love of God as displayed through the
+      saving grace of Jesus Christ, we accept that love and by the power of the
+      Holy Spirit we seek to serve this present age as one body in Christ with
+      all thanksgiving.
+    </p>
+    <p>
+      <b>MINISTER:</b> We now rededicate and recommit ourselves to our covenant
+      relationship with God by lovingly and willingly following the call of our
+      Lord Jesus Christ to Christian Discipleship as issued in the commission of
+      Christ to go into the world and make disciples of all humanity.
+    </p>
+    <p>
+      <b>PEOPLE:</b> To that end, we pledge ourselves anew to love the Lord our
+      God with all our hearts, all our souls, all our minds, and all our
+      strength; to love one another even as Christ has loved us. We further
+      pledge to exemplify that love by consciously seeking to cultivate the
+      Fruit of the Spirit as defined by Paul in the fifth chapter of his letter
+      to Galatians.
+    </p>
+    <p>
+      <b>MINISTER:</b> As a part of this act of renewal, we also confess our
+      past failure to be faithful to this covenant relationship.
+    </p>
+    <p>
+      <b>ALL:</b> We, therefore, confess our many sins, those conscious and
+      unconscious. We seek the forgiveness of God through the sacrificial
+      suffering and death of Jesus Christ; we acknowledge our deep need for the
+      Holy Spirit to keep us faithful to our calling. We further recommit
+      ourselves to one another as brothers and sisters in Christ and pledge to
+      encourage, inspire, pray for, and support one another as one body in
+      Christ. To that end, we do now give ourselves fully and without
+      reservation to the cause of the kingdom of God.
     </p>
   </div>
 );
 
 const bottomContentData = [
+  {
+    title: 'Church Vision & Covenant',
+    id: 'vision',
+    content: churchVisionContent
+  },
   {
     title: 'The Pastor',
     id: 'thePastor',
@@ -541,7 +585,6 @@ const bottomContentData = [
   },
   {title: 'Membership', id: 'membership', content: membershipContent},
   {title: 'History', id: 'history', content: historyContent}
-  // {title: 'Church Vision', id: 'vision', content: churchVisionContent}
 ];
 
 const topBoxContent = (
