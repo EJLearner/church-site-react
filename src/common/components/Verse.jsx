@@ -9,6 +9,11 @@ const StyleWrapper = styled.div`
     vertical-align: super;
     font-size: 10px;
   }
+
+  .reference {
+    font-style: italic;
+    font-weight: bold;
+  }
 `;
 
 function renderPassages(passages) {
@@ -34,7 +39,9 @@ function Verse({className, passage, referenceText}) {
 
   return (
     <StyleWrapper className={className ?? undefined}>
-      <span>{referenceText || passages?.[0]?.reference}</span>
+      <span className="reference">
+        {referenceText || passages?.[0]?.reference}
+      </span>
       {renderPassages(passages)}
     </StyleWrapper>
   );

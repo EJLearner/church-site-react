@@ -35,6 +35,10 @@ const StyleWrapper = styled.div`
     font-family: ${FONT_FAMILIES.ARIAL};
     font-weight: bold;
   }
+
+  h3:first-of-type {
+    margin-top: 0;
+  }
 `;
 
 const IDS = {
@@ -175,7 +179,7 @@ export default function MeditationsPage() {
           </TopInfoBox>
           <ContentAndSubCompassWrapper>
             <AboveContentLinks
-              pagePath={routePaths.MAIN_GED}
+              pagePath={routePaths.MAIN_MEDITATIONS}
               pageTitle="Meditations and Scriptures"
               subPageTitle={title}
             />
