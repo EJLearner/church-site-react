@@ -73,6 +73,8 @@ const FooterItem = styled.div`
 `;
 
 const MainFooter = () => {
+  const filteredFoolterDate = footerData;
+
   return (
     <Styledfooter>
       <NavStyleWrapper>
