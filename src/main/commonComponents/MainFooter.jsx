@@ -28,7 +28,7 @@ const footerData = [
     subject: 'Make A Gift'
   },
   {
-    actionWord: 'Spiritual',
+    actionWord: 'Scriptures',
     path: routePaths.MAIN_MEDITATIONS,
     subject: 'Meditations'
   }
