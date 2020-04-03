@@ -150,10 +150,6 @@ const meditationContent = {
   )
 };
 
-function getMeditationContent(date) {
-  return meditationContent[date];
-}
-
 const noContentMessage = (
   <>
     <h2>Content unavailable</h2>
@@ -163,7 +159,7 @@ const noContentMessage = (
 
 const allContentData = [
   {
-    getContent: () => getMeditationContent('2020-03-29'),
+    getContent: () => meditationContent[currentWeekDates[0].date],
     id: IDS.MEDITATION,
     title: 'Weekly Meditation'
   },
