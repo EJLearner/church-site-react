@@ -1,3 +1,6 @@
+import React, {useState} from 'react';
+import styled from 'styled-components';
+
 import coronaVirusImage from '../assets/main/images/coronavirus.png';
 import yearginPicture from '../assets/main/images/grady-yeargin.jpg';
 import routePaths from '../routePaths';
@@ -14,9 +17,6 @@ import SideMenu from './commonComponents/SideMenu';
 import StandardPageWrapper from './commonComponents/StandardPageWrapper';
 import TopInfoBox from './commonComponents/TopInfoBox';
 import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
-
-import React, {useState} from 'react';
-import styled from 'styled-components';
 
 const StyleWrapper = styled.div`
   .yeargin-picture {
@@ -332,16 +332,14 @@ const procedureChangesContent = (
       <div>
         <ul>
           <li>
-            Church service will be held at 9 am each Sunday unless otherwise
-            noted and communicated.
+            Church service is cancelled until further notice. Please visit our
+            website and go to “WATCH”, visit our Facebook page, or go to our
+            church’s YouTube channel in order to view the Sunday sermons.
           </li>
           <li>
-            If you have a cold, or cold- or flu-like symptoms, please do not
-            attend church service.
-          </li>
-          <li>
-            Church service will not exceed 60 minutes in order to limit
-            opportunity for germs to spread.
+            We will participate in a virtual Communion on each first Sunday. You
+            can find the Church Vision and Church Covenant on the “About Us”
+            page.
           </li>
         </ul>
       </div>
@@ -377,8 +375,9 @@ const procedureChangesContent = (
       <div>
         <ul>
           <li>
-            Please continue to send your tithes and offering to your church! We
-            suggest three methods for sending in your offering:
+            Please continue to send your tithes and offering to your church!
+            While we can no longer accept offering at church, you can send us
+            your offering by:
             <ul>
               <li>
                 Church website: Make your tithing, offering, or donation on-line
@@ -390,10 +389,6 @@ const procedureChangesContent = (
               <li>
                 Mail to church: 317 Dolphin Street, Baltimore, MD 21217 (please,
                 no cash)
-              </li>
-              <li>
-                Drop off: Leave in the mail slot on Eutaw Place or bring in to
-                the church office between 9 am - 1 pm (please, no cash)
               </li>
             </ul>
           </li>
@@ -410,11 +405,11 @@ const procedureChangesContent = (
           </li>
           <li>
             If your contact information has changed in the last 6 months, please
-            update it with the church office.
+            contact Sis. Marshell Jenkins or Dea. Racquel Smith.
           </li>
           <li>Lenten services have been cancelled.</li>
           <li>
-            All church events scheduled for March and April have been postponed
+            All church events scheduled for April and May have been postponed
             &mdash; new dates <b>to be determined</b>.
           </li>
           <li>
@@ -429,6 +424,11 @@ const procedureChangesContent = (
 
 const contentData = [
   {
+    id: IDS.PROCEDURE_CHANGES,
+    content: procedureChangesContent,
+    title: 'City Temple’s Response to COVID-19'
+  },
+  {
     content: meditation,
     id: IDS.MEDITATION,
     title: 'A Meditation from the pastor'
@@ -438,11 +438,6 @@ const contentData = [
     id: IDS.IF_INFECTED,
     content: ifInfectedContent,
     title: 'What to do if infected'
-  },
-  {
-    id: IDS.PROCEDURE_CHANGES,
-    content: procedureChangesContent,
-    title: 'City Temple’s Response to COVID-19'
   }
 ];
 
