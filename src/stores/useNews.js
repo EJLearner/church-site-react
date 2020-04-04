@@ -9,6 +9,7 @@ function useNews() {
     {
       expireDate: '2020-06-01',
       id: 'no-sanctuary-service',
+
       linkPath: routePaths.MAIN_CORONAVIRUS,
       postedDate: '2020-03-19',
       text:
@@ -19,10 +20,9 @@ function useNews() {
       expireDate: '2020-06-01',
       id: 'coronavirus-info-posted',
       linkPath: routePaths.MAIN_CORONAVIRUS,
-      postedDate: '2020-03-19',
+      postedDate: '2020-04-04',
       text:
-        'Coronavirus information posted. Visit the Coronavirus Update page for information' +
-        'on staying safe and changes in the church.',
+        'Coronavirus information has been updated. Visit the Coronavirus Update page for more information.',
       title: 'Coronavirus Information'
     },
     {
@@ -41,6 +41,24 @@ function useNews() {
       postedDate: '2020-03-19',
       text: 'Website redesign is live!',
       title: 'Website Redesign'
+    },
+    {
+      expireDate: '2020-06-01',
+      id: 'church-covenant',
+      postedDate: '2020-04-04',
+      text:
+        'Find the Church Covenant and Church Vision on the About Us page for use during ' +
+        'Communion Sunday.',
+      title: 'Church Covenant for Communion'
+    },
+    {
+      expireDate: '2020-06-01',
+      id: 'scriptures-meditation',
+      postedDate: '2020-04-04',
+      text:
+        'Daily scriptures and weekly meditation are posted weekly. Find the link in the ' +
+        'footer menu bar below.',
+      title: 'Daily Scriptures and Weekly Meditation'
     }
   ];
 
