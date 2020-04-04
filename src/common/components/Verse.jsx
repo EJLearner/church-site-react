@@ -9,32 +9,49 @@ const StyleWrapper = styled.div`
     vertical-align: super;
     font-size: 10px;
   }
+
+  .reference {
+    font-style: italic;
+    font-weight: bold;
+  }
 `;
 
-function Verse({className, passage}) {
-  const [passageInfo, setPassageInfo] = useState('');
+function renderPassages(passages) {
+  return passages.map(passage => {
+    return (
+      <div
+        dangerouslySetInnerHTML={{__html: passage.content}}
+        key={passage.reference}
+      />
+    );
+  });
+}
+
+function Verse({className, passage, referenceText}) {
+  const [passages, setPassages] = useState([]);
 
   useEffect(() => {
     getVerseInfo(passage, response => {
-      setPassageInfo(response);
+      setPassages(response);
     });
+    // setPassages([{reference: passage, content: `${passage} content`}]);
   }, [passage]);
 
   return (
     <StyleWrapper className={className ?? undefined}>
-      <h3>Daily Devotional</h3>
-      <span>{passageInfo.reference}</span>
-      <div
-        className="verses"
-        dangerouslySetInnerHTML={{__html: passageInfo.content}}
-      />
+      <span className="reference">
+        {referenceText || passages?.[0]?.reference}
+      </span>
+      {renderPassages(passages)}
     </StyleWrapper>
   );
 }
 
 Verse.propTypes = {
   className: PropTypes.string,
-  passage: PropTypes.string.isRequired
+  passage: PropTypes.string.isRequired,
+  /** String used to display which verses are used if provided */
+  referenceText: PropTypes.string
 };
 
 export default Verse;
