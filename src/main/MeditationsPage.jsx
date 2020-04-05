@@ -1,4 +1,4 @@
-import {startOfWeek, format, add} from 'date-fns';
+import {format, add} from 'date-fns';
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
@@ -7,6 +7,7 @@ import routePaths from '../routePaths';
 import {bibleComFormattedVerses} from '../stores/dailyVerses';
 import weeklyMeditations from '../stores/weeklyMeditations';
 import constants from '../utils/constants';
+import {getStartOfWeek} from '../utils/dateTimeUtils';
 import {FONT_FAMILIES} from '../utils/styleVariables';
 
 import MainMenubar from './MainMenubar';
@@ -48,7 +49,7 @@ const IDS = {
 };
 
 const getCurrentWeekDates = () => {
-  const jsSundayTime = startOfWeek(new Date());
+  const jsSundayTime = getStartOfWeek();
 
   const thisWeeksDates = [];
   for (let i = 0; i < 7; i++) {

@@ -1,3 +1,4 @@
+import {startOfWeek} from 'date-fns';
 import endOfYesterday from 'date-fns/endOfYesterday';
 import format from 'date-fns/format';
 import isAfter from 'date-fns/isAfter';
@@ -14,9 +15,16 @@ const getLongDisplayDate = date => format(parseISO(date), 'MMMM d, yyyy');
 const getShortDisplayDate = date =>
   format(parseISO(date), constants.DATE_FNS_DISPLAY_DATE_FORMAT);
 
+const getStartOfWeek = formatString => {
+  const jsSundayTime = startOfWeek(new Date());
+
+  return formatString ? format(jsSundayTime, formatString) : jsSundayTime;
+};
+
 export {
   endOfYesterday,
   format,
+  getStartOfWeek,
   getLongDisplayDate,
   getShortDisplayDate,
   isAfter,
