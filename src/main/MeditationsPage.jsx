@@ -100,16 +100,20 @@ const noContentMessage = (
 );
 
 const getMeditationForDate = date => {
-  const {subTitle, content} = weeklyMeditations[date];
+  const weeklyMeditationInfo = weeklyMeditations[date];
 
-  return (
-    <>
-      <h2>
-        Weekly Meditation <span className="subtitle">{subTitle}</span>
-      </h2>
-      {content}
-    </>
-  );
+  if (weeklyMeditationInfo) {
+    const {subTitle, content} = weeklyMeditationInfo;
+
+    return (
+      <>
+        <h2>
+          Weekly Meditation <span className="subtitle">{subTitle}</span>
+        </h2>
+        {content}
+      </>
+    );
+  }
 };
 
 const allContentData = [
