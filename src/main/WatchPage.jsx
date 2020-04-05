@@ -20,6 +20,17 @@ const PREACHERS = {
 const orderedVideoData = [
   {
     audioLink: {},
+    date: '2020-04-05',
+    description:
+      'This sermon is about Jesus’ riding into Jerusalem on Palm Sunday.  He rides in as if He were a king. When in ' +
+      'truth He is THE KING OF GLORY!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Luke 19:28-40',
+    title: 'The Triumphant Entry of Jesus Into Jerusalem',
+    videoLink: 'https://www.youtube.com/embed/aO-U_Zh9of4'
+  },
+  {
+    audioLink: {},
     date: '2020-03-29',
     description:
       'A message from Psalms 27 that tells us what to do when we are fearful. Facing our fears requires waiting ' +
