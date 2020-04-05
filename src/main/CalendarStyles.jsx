@@ -13,6 +13,7 @@ const CalendarStyles = styled.div`
 
     h1 {
       ${contentWrapperH2Mixin}
+      text-transform: uppercase;
     }
   }
 

@@ -147,6 +147,39 @@ const meditationContent = {
         God.”
       </p>
     </>
+  ),
+  '2020-04-05': (
+    <>
+      <h2>
+        Weekly Meditation{' '}
+        <span className="subtitle">
+          From <i>Spirituality for Ministry</i> by Urban T. Holmes, III
+        </span>
+      </h2>
+
+      <p>
+        Many persons, ordained or not, live in a fairly constant state of noise,
+        with their unresolved past and the uncertain present breaking in on
+        them. They lack a still center and it is only for such a quiet point
+        that we can listen attentively. When I was in my first parish, which was
+        located in the middle of the city, a constant stream of indigents came
+        through. One came into my office and wanted to tell me his story. I sat
+        as if to listen but was deeply troubled inside over some issue now long
+        forgotten. I remember I was fiddling with a pencil. The man stopped his
+        story, looked at me and said, “Young Father, the least you can do is
+        listen.” He was right. There was no still center in me.
+      </p>
+      <p>
+        Thomas Merton (1915 – 1968), the fascinating Cistercian monk whose
+        writings continue to increase in popularity, found the busy life of a
+        Trappist very disconcerting. Despite the fact that speaking is severely
+        curtailed in a Cistercian monastery, he found the place incredibly
+        noisy. For many years he sought permission to live as a hermit on the
+        property of the monastery. He needed the quiet that he might listen. Too
+        frequently we do not understand the hermit’s discipline, a discipline
+        that needs to be ours in spirit, if not in fact.
+      </p>
+    </>
   )
 };
 
