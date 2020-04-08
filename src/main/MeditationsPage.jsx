@@ -167,23 +167,25 @@ const goodFridayMeditation = (
   </>
 );
 
-const getMeditationForDate = date => {
-  // remove code starting here after 2020-04-12
+// TODO: Remove this function after 2020-04-12
+const showGoodFridayMessage = () => {
   const beginningOfThursday = startOfDay(parseISO('2020-04-09'));
   const endOfSaturday = endOfDay(parseISO('2020-04-11'));
   const now = new Date();
 
-  const showGoodFridayMessage =
-    isAfter(now, beginningOfThursday) && isBefore(now, endOfSaturday);
+  return isAfter(now, beginningOfThursday) && isBefore(now, endOfSaturday);
+};
 
-  if (showGoodFridayMessage) {
+const getMeditationForDate = date => {
+  // TODO: remove code starting here after 2020-04-12
+  if (showGoodFridayMessage()) {
     const subTitle =
       'GOOD FRIDAY: A TIME OF MEDITATION, REFLECTION AND PRAYER!!';
 
     return (
       <>
         <h2>
-          Weekly Meditation <span className="subtitle">{subTitle}</span>
+          Good Friday Meditation <span className="subtitle">{subTitle}</span>
         </h2>
         {goodFridayMeditation}
       </>
@@ -211,7 +213,10 @@ const allContentData = [
   {
     getContent: () => getMeditationForDate(currentWeekDates[0].date),
     id: IDS.MEDITATION,
-    title: 'Weekly Meditation'
+    // TODO: Remove good firday meditation branch after 2020-04-12
+    title: showGoodFridayMessage()
+      ? 'Good Friday Meditation'
+      : 'Weekly Meditation'
   },
   {
     getContent: getVersesContent,
