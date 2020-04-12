@@ -9,6 +9,7 @@ import routePaths from '../routePaths';
 import backgroundStore from '../stores/backgroundStore';
 import {LOGICAL_COLORS} from '../utils/styleVariables';
 
+// import PerformingArtsForm from './PerformingArtsForm';
 import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
 import PurchaseHereLink from './commonComponents/PurchaseHereLink';
 
@@ -114,6 +115,7 @@ const performingArtsContent = (
         The Performing Arts Team thanks you in advance for helping to make City
         Temple’s 4th Sunday a joyous worship experience!
       </p>
+      {/* <PerformingArtsForm /> */}
     </div>
   </div>
 );
