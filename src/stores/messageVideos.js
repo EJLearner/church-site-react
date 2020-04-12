@@ -6,6 +6,18 @@ const {PREACHERS} = constants;
 const allVideoData = [
   {
     audioLink: {},
+    date: '2020-04-12',
+    description:
+      'Biblical scholars are in agreement that Mark’s Gospel ends with the women in fear because of what an angel ' +
+      'told them when they reached the empty tomb. According to Mark out of fear, they told no one. This message ' +
+      'tells the rest of the story!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Mark 16:1-8',
+    title: 'Finishing The Unfinished Gospel',
+    videoLink: 'https://www.youtube.com/embed/-qk8yNI1XIs'
+  },
+  {
+    audioLink: {},
     date: '2020-04-09',
     description:
       'A Message for Maundy Thursday: All of us will know failure in our faith. But we have the assurance that ' +

@@ -16,7 +16,17 @@ const bibleComFormattedVerses = {
   '2020-04-08': {verse: '2 Corinthians 1.3-11'},
   '2020-04-09': {verse: 'Isaiah 53.1-6'},
   '2020-04-10': {verse: 'Isaiah 53.7-9'},
-  '2020-04-11': {verse: 'Isaiah 53.10-12'}
+  '2020-04-11': {verse: 'Isaiah 53.10-12'},
+  '2020-04-12': {verse: 'Psalm 118.14-24'},
+  '2020-04-13': {verse: 'John 12.1-11'},
+  '2020-04-14': {verse: 'Ezekiel 37.1-14'},
+  '2020-04-15': {verse: 'John 13.21-38'},
+  '2020-04-16': {verse: 'Mark 14.12-26'},
+  '2020-04-17': {
+    verse: 'John 18.1-40, John 19.1-42',
+    referenceText: 'John 18-19'
+  },
+  '2020-04-18': {verse: 'John 21.1-14'}
 };
 
 export {bibleComFormattedVerses};

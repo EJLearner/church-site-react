@@ -176,7 +176,7 @@ const showGoodFridayMessage = () => {
   return isAfter(now, beginningOfThursday) && isBefore(now, endOfSaturday);
 };
 
-const getMeditationForDate = date => {
+const getMeditationForDate = (date) => {
   // TODO: remove code starting here after 2020-04-12
   if (showGoodFridayMessage()) {
     const subTitle =
@@ -258,7 +258,7 @@ export default function MeditationsPage() {
                 <SideMenu
                   currentId={contentId}
                   menuData={allContentData}
-                  onClick={id => setContentId(id)}
+                  onClick={(id) => setContentId(id)}
                   title="Meditation and Scriptures"
                 />
               </ContentLeftSide>
