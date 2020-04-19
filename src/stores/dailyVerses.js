@@ -30,7 +30,7 @@ const bibleComFormattedVerses = {
   '2020-04-19': {verse: 'Psalm 16.5-11'},
   '2020-04-20': {verse: 'Acts 11.19-26'},
   '2020-04-21': {verse: 'John 10.1-18'},
-  '2020-04-22': {verse: '2 Crointhians 5.1-10}'},
+  '2020-04-22': {verse: '2 Corinthians 5.1-10}'},
   '2020-04-23': {verse: '2 Corinthians 4'},
   '2020-04-24': {verse: '1 John 3.11-24'},
   '2020-04-25': {verse: 'John 15.1-11'}
