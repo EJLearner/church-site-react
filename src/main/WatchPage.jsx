@@ -1,48 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import {
-  getLongDisplayDate,
-  isBefore,
-  startOfTomorrow,
-  parseISO
-} from '../utils/dateTimeUtils';
+import {currentVideoData} from '../stores/messageVideos';
+import {getLongDisplayDate} from '../utils/dateTimeUtils';
 import {LOGICAL_COLORS, COLORS} from '../utils/styleVariables';
 
 import MainMenubar from './MainMenubar';
 import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
 import StandardPageWrapper from './commonComponents/StandardPageWrapper';
-
-const PREACHERS = {
-  G_YEARGIN: 'Rev. Dr. Grady A Yeargin, Jr.'
-};
-
-const orderedVideoData = [
-  {
-    audioLink: {},
-    date: '2020-03-29',
-    description:
-      'A message from Psalms 27 that tells us what to do when we are fearful. Facing our fears requires waiting ' +
-      'on the Lord.',
-    preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Psalm 27:1; 13-14',
-    title: 'Alleviating Our Anxious Fears',
-    videoLink: 'https://www.youtube.com/embed/-bsGGeVUInM'
-  },
-  {
-    audioLink: {},
-    date: '2020-03-22',
-    description:
-      'Given that we are facing a pandemic in these times, there is hope. And not just hope, but an indestructible ' +
-      'hope. It is indestructible because it is grounded and founded in our God.',
-    preacher: PREACHERS.G_YEARGIN,
-    scripture: 'John 16:29-33',
-    title: 'An Indestructible Hope',
-    videoLink: 'https://www.youtube.com/embed/3sgm_bRfXuw'
-  }
-]
-  .filter(({date}) => isBefore(parseISO(date), startOfTomorrow()))
-  .sort((a, b) => a.date < b.date);
 
 const StyleWrapper = styled.div`
   padding: 1em 0;
@@ -149,7 +114,7 @@ function renderLabelValue(label, value) {
 function renderArchiveVideos(otherVideos) {
   return (
     <div className="archive-videos">
-      {otherVideos.map(videoData => {
+      {otherVideos.map((videoData) => {
         const {
           date,
           title,
@@ -221,7 +186,7 @@ function renderNewestVideo(videoData) {
 }
 
 const WatchPage = () => {
-  const [newestVideo, ...otherVideos] = orderedVideoData;
+  const [newestVideo, ...otherVideos] = currentVideoData;
 
   return (
     <StandardPageWrapper>

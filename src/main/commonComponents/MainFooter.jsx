@@ -3,7 +3,13 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 import routePaths from '../../routePaths';
+import {bibleComFormattedVerses} from '../../stores/dailyVerses';
+import weeklyMeditations from '../../stores/weeklyMeditations';
+import constants from '../../utils/constants';
+import {getStartOfWeek} from '../../utils/dateTimeUtils';
 import {LOGICAL_COLORS, WIDTHS, SIZES} from '../../utils/styleVariables';
+
+const SCRIPTURES_ID = 'scriptures';
 
 const footerData = [
   // TODO: add later
@@ -29,6 +35,7 @@ const footerData = [
   },
   {
     actionWord: 'Scriptures',
+    id: SCRIPTURES_ID,
     path: routePaths.MAIN_MEDITATIONS,
     subject: 'Meditations'
   }
@@ -39,6 +46,17 @@ const footerData = [
   //   subject: 'Social Media'
   // }
 ];
+
+const showScriptures = () => {
+  const firstDateOfWeek = getStartOfWeek(
+    constants.DATE_FNS_INTERNAL_DATE_FORMAT
+  );
+
+  return Boolean(
+    weeklyMeditations[firstDateOfWeek] &&
+      bibleComFormattedVerses[firstDateOfWeek]
+  );
+};
 
 const Styledfooter = styled.footer`
   position: fixed;
@@ -73,10 +91,16 @@ const FooterItem = styled.div`
 `;
 
 const MainFooter = () => {
+  let displayedFooterData = footerData;
+
+  if (!showScriptures()) {
+    displayedFooterData = footerData.filter(({id}) => id !== SCRIPTURES_ID);
+  }
+
   return (
     <Styledfooter>
       <NavStyleWrapper>
-        {footerData.map(({path, actionWord, subject}) => (
+        {displayedFooterData.map(({path, actionWord, subject}) => (
           <FooterItem key={actionWord}>
             <Link to={path}>
               <div>{actionWord}</div>

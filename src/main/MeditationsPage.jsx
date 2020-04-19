@@ -1,11 +1,14 @@
-import {startOfWeek, format, add} from 'date-fns';
+import {format, add, parseISO, startOfDay, isAfter, isBefore} from 'date-fns';
+import {endOfDay} from 'date-fns/esm';
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
 import Verse from '../common/components/Verse';
 import routePaths from '../routePaths';
 import {bibleComFormattedVerses} from '../stores/dailyVerses';
+import weeklyMeditations from '../stores/weeklyMeditations';
 import constants from '../utils/constants';
+import {getStartOfWeek} from '../utils/dateTimeUtils';
 import {FONT_FAMILIES} from '../utils/styleVariables';
 
 import MainMenubar from './MainMenubar';
@@ -47,7 +50,7 @@ const IDS = {
 };
 
 const getCurrentWeekDates = () => {
-  const jsSundayTime = startOfWeek(new Date());
+  const jsSundayTime = getStartOfWeek();
 
   const thisWeeksDates = [];
   for (let i = 0; i < 7; i++) {
@@ -90,162 +93,6 @@ function getVersesContent() {
   });
 }
 
-const meditationContent = {
-  '2020-03-29': (
-    <>
-      <h2>
-        Weekly Meditation{' '}
-        <span className="subtitle">
-          From <i>God In Search of Man</i> by Abraham Joshua Herschel
-        </span>
-      </h2>
-
-      <p>
-        The world needs more than the secret holiness of individual inwardness.
-        It needs more than sacred sentiments and good intentions. God asks for
-        the heart because He needs the lives. It is by lives. It is by lives
-        that the world will be redeemed, by lives that beat in concordance with
-        God, by deeds that outbeat the finite charity of the human heart.
-      </p>
-      <p>
-        Man’s power of action is less vague than his power of intention. And an
-        action has intrinsic meaning; its value to the world is independent of
-        what it means to the person performing it. The act of giving food to a
-        helpless child is meaningful regardless of whether or not the moral
-        intention is present. God asks for the heart, and we must sell our
-        answer in terms of deeds.
-      </p>
-      <p>
-        It would be a device of conceit, if not presumption, to insist that
-        purity of the heart is the exclusive test of piety. Perfect purity is
-        something we rarely know how to obtain or how to retain. No one can
-        claim to have purged all the dross even from his finest desire. The self
-        is finite, but selfishness is infinite. God asks for the heart, but the
-        heart is oppressed with uncertainty in its own twilight. God asks for
-        faith, and the heart is not sure of its own faith. It is good that there
-        is a dawn of decision for the sight of the heart; deeds to objectify
-        faith, definite forms to verify belief.
-      </p>
-      <p>
-        The heart is often a lonely voice in the marketplace of living. Man may
-        entertain lofty ideals and behave like the ass that, as the saying goes,
-        “carries gold and eats thistles.” The problem of the soul is how to live
-        nobly in an animal environment; how to persuade and train the tongue and
-        the senses to behave in agreement with the insights of the soul.
-      </p>
-      <p>
-        The integrity of life is not exclusively a thing of the heart; it
-        implies more than consciousness of the moral law. The innermost chamber
-        must be guarded at the uttermost outposts. Religion is not the same as
-        spiritualism; what man does in his concrete, physical existence is
-        directly relevant to the divine. Spirituality is the goal, not the way
-        of man. In this world music is played on physical instruments, and to
-        the Jew the mitsvot are the instruments on which the holy is carried
-        out. If man were only mind, worship in thought would be the form in
-        which to commune with god. But man is body and soul, and his goal is so
-        to live that both “his heart and his flesh should sing to the living
-        God.”
-      </p>
-    </>
-  ),
-  '2020-04-05': (
-    <>
-      <h2>
-        Weekly Meditation{' '}
-        <span className="subtitle">
-          From <i>Spirituality for Ministry</i> by Urban T. Holmes, III
-        </span>
-      </h2>
-
-      <p>
-        Many persons, ordained or not, live in a fairly constant state of noise,
-        with their unresolved past and the uncertain present breaking in on
-        them. They lack a still center and it is only for such a quiet point
-        that we can listen attentively. When I was in my first parish, which was
-        located in the middle of the city, a constant stream of indigents came
-        through. One came into my office and wanted to tell me his story. I sat
-        as if to listen but was deeply troubled inside over some issue now long
-        forgotten. I remember I was fiddling with a pencil. The man stopped his
-        story, looked at me and said, “Young Father, the least you can do is
-        listen.” He was right. There was no still center in me.
-      </p>
-      <p>
-        Thomas Merton (1915 – 1968), the fascinating Cistercian monk whose
-        writings continue to increase in popularity, found the busy life of a
-        Trappist very disconcerting. Despite the fact that speaking is severely
-        curtailed in a Cistercian monastery, he found the place incredibly
-        noisy. For many years he sought permission to live as a hermit on the
-        property of the monastery. He needed the quiet that he might listen. Too
-        frequently we do not understand the hermit’s discipline, a discipline
-        that needs to be ours in spirit, if not in fact.
-      </p>
-    </>
-  ),
-  '2020-04-12': (
-    <>
-      <h2>
-        Weekly Meditation{' '}
-        <span className="subtitle">
-          From <i>Footsteps in the Path of Life</i> by Marcus Dods
-        </span>
-      </h2>
-
-      <p>
-        The purpose of God in the history of man was accomplished when Jesus
-        breathed his last upon the cross. The cry “It is finished” was not the
-        mere gasp of a wornout life; it was not the cry of satisfaction with
-        which a career of pain and sorrow is terminated; it was the deliberate
-        utterance of a clear consciousness on the part of God’s appointed
-        Revealer that now all had been done that could be done to make God known
-        to men and to identify him with men. God’s purpose had ever been one and
-        indivisible – declared to men in various ways, a hint here, a broad
-        light there, now by a gleam of insight in the mind of a prophet, now by
-        a deed of heroism in king or leader, through rude symbolic contrivances
-        and through the tenderest of human affections and the highest human
-        thoughts. God had been making men ever more and more sensible that his
-        one purpose was to come closer and closer into fellowship with them, and
-        to draw them into a perfect harmony with him. Forgiveness and
-        deliverance from sin were provided for them, knowledge of God’s law and
-        will, thus they might learn to know and serve him – all theses were
-        secured when Jesus cried “It is finished.”
-      </p>
-    </>
-  ),
-  '2020-04-19': (
-    <>
-      <h2>
-        Weekly Meditation{' '}
-        <span className="subtitle">
-          From <i>Footsteps in the Path of Life</i> by Marcus Dods
-        </span>
-      </h2>
-
-      <p>
-        The purpose of God in the history of man was accomplished when Jesus
-        breathed his last upon the cross. The cry “It is finished” was not the
-        mere gasp of a wornout life; it was not the cry of satisfaction with
-        which a career of pain and sorrow is terminated; it was the deliberate
-        utterance of a clear consciousness on the part of God’s appointed
-        Revealer that now all had been done that could be done to make God known
-        to men and to identify him with men. God’s purpose had ever been one and
-        indivisible – declared to men in various ways, a hint here, a broad
-        light there, now by a gleam of insight in the mind of a prophet, now by
-        a deed of heroism in king or leader, through rude symbolic contrivances
-        and through the tenderest of human affections and the highest human
-        thoughts. God had been making men ever more and more sensible that his
-        one purpose was to come closer and closer into fellowship with them, and
-        to draw them into a perfect harmony with him. Forgiveness and
-        deliverance from sin were provided for them, knowledge of God’s law and
-        will, thus they might learn to know and serve him – all theses were
-        secured when Jesus cried “It is finished.”
-      </p>
-    </>
-};
-
-function getMeditationContent(date) {
-  return meditationContent[date];
-}
-
 const noContentMessage = (
   <>
     <h2>Content unavailable</h2>
@@ -253,11 +100,123 @@ const noContentMessage = (
   </>
 );
 
+const goodFridayMeditation = (
+  <>
+    <p>
+      As you know, due to the coronavirus, and the guidelines that have been put
+      in place for our safety, we will not be able to participate in our annual
+      Good Friday service. However, that does not mean that we will not be able
+      to participate in this very special day.
+    </p>
+    <p>
+      Therefore, I am asking that we take the time on Good Friday, between the
+      hours of 12:00 noon and 3:00 pm to reflect on the seven last words of
+      Christ, what those words mean to us and spend some time in prayer. If
+      there are those of you who are still working during the day in an office
+      or at home at the time given above, I am asking that you participate in
+      this time of meditation and prayer between the hours of 6:00 pm and 9:00
+      pm. Should there is another time period other than to two listed above,
+      please feel free spend time during the day, that is convenient for you. My
+      concern is that you participate in this special session on Good Friday no
+      matter the time.
+    </p>
+    In order for us to be a part of this observance,
+    <ol>
+      <li>
+        Begin by taking a few moments to be still and after the moments of
+        stillness, ask God to be with you as you read the Seven Last Words of
+        Christ. Ask Him to reveal what He desires to share with you.
+      </li>
+      <li>
+        Then begin to read the text of the Seven Last Words. After reading of
+        each of the text, take the time to meditate and reflect over what you
+        have read. Think about what each word is saying to you and what it means
+        to you. If you happen to be sharing your time with someone else, share
+        your thoughts with them. There is value in hearing what others have to
+        say and what it means to them.
+        <ol type="a">
+          <li>The First Word - Luke 23:33-34; </li>
+          <li>The Second Word – Luke 23:39-43; </li>
+          <li>The Third Word – John 19:25-27; </li>
+          <li>The Fourth Word – Mark 15:33-34: </li>
+          <li>The Fifth Word – John 19:28; </li>
+          <li>The Sixth Word – John 19:30; </li>
+          <li>The Seventh Word – Luke 23:44-46</li>
+        </ol>
+      </li>
+      <li>
+        When you have completed reflecting on all seven of the last words, spend
+        some time in prayer. Ask God to reveal to you what He wants you to know.
+        Share with God what the words mean to you and how they can be helpful to
+        you in your life.
+      </li>
+    </ol>
+    <p>
+      I urge all of us to take the time to participate in this time of personal
+      worship and growth. I believe that it will enable us to take that next
+      step forward in our spiritual growth as member of the body of Christ.
+    </p>
+    <p>
+      Although Good Friday is filled with agony and rejection, scorn and pain,
+      it ultimately reveals the matchless glory that is God’s and God’s alone.
+    </p>
+    <p>
+      May God bless you as you spend this time with Jesus on the cross at
+      Calvary.
+    </p>
+  </>
+);
+
+// TODO: Remove this function after 2020-04-12
+const showGoodFridayMessage = () => {
+  const beginningOfThursday = startOfDay(parseISO('2020-04-09'));
+  const endOfSaturday = endOfDay(parseISO('2020-04-11'));
+  const now = new Date();
+
+  return isAfter(now, beginningOfThursday) && isBefore(now, endOfSaturday);
+};
+
+const getMeditationForDate = (date) => {
+  // TODO: remove code starting here after 2020-04-12
+  if (showGoodFridayMessage()) {
+    const subTitle =
+      'GOOD FRIDAY: A TIME OF MEDITATION, REFLECTION AND PRAYER!!';
+
+    return (
+      <>
+        <h2>
+          Good Friday Meditation <span className="subtitle">{subTitle}</span>
+        </h2>
+        {goodFridayMeditation}
+      </>
+    );
+  }
+  // and ending here
+
+  const weeklyMeditationInfo = weeklyMeditations[date];
+
+  if (weeklyMeditationInfo) {
+    const {subTitle, content} = weeklyMeditationInfo;
+
+    return (
+      <>
+        <h2>
+          Weekly Meditation <span className="subtitle">{subTitle}</span>
+        </h2>
+        {content}
+      </>
+    );
+  }
+};
+
 const allContentData = [
   {
-    getContent: () => getMeditationContent('2020-03-29'),
+    getContent: () => getMeditationForDate(currentWeekDates[0].date),
     id: IDS.MEDITATION,
-    title: 'Weekly Meditation'
+    // TODO: Remove good firday meditation branch after 2020-04-12
+    title: showGoodFridayMessage()
+      ? 'Good Friday Meditation'
+      : 'Weekly Meditation'
   },
   {
     getContent: getVersesContent,

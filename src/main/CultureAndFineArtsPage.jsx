@@ -9,6 +9,7 @@ import routePaths from '../routePaths';
 import backgroundStore from '../stores/backgroundStore';
 import {LOGICAL_COLORS} from '../utils/styleVariables';
 
+// import PerformingArtsForm from './PerformingArtsForm';
 import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
 import PurchaseHereLink from './commonComponents/PurchaseHereLink';
 
@@ -114,13 +115,18 @@ const performingArtsContent = (
         The Performing Arts Team thanks you in advance for helping to make City
         Temple’s 4th Sunday a joyous worship experience!
       </p>
+      {/* <PerformingArtsForm /> */}
     </div>
   </div>
 );
 
 const pocContent = (
   <div>
-    <img alt="Organscape Artists" src={musicians} />
+    <img
+      alt="Organscape Artists"
+      className="above-content-image"
+      src={musicians}
+    />
     <h2>Perpetual Organ Committee</h2>
     <div>
       <p>
@@ -146,7 +152,7 @@ const pocContent = (
         through the vision of Rev. William W. Payne, and Dr. Kenneth Dean, the
         organ was rebuilt, thanks to the late Ernest Horning and Ronald Unger of
         the Shantz Organ Co. Throughout the years this organ has been upgraded
-        to the beautiful instrument it is today.{' '}
+        to the beautiful instrument it is today.
       </p>
       <p>
         The Perpetual Organ Committee is a sub-committee of the Music Ministry’s
