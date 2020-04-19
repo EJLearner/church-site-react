@@ -6,6 +6,17 @@ const {PREACHERS} = constants;
 const allVideoData = [
   {
     audioLink: {},
+    date: '2020-04-19',
+    description:
+      'We are living in a time of great fear. This pandemic has disrupted our lifestyle and way of ' +
+      'living. However there is One who speaks to us and can move us from fear to faith. Mark 6:45-51',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Mark 6:45-51',
+    title: 'Spoken Beyond Fear',
+    videoLink: 'https://www.youtube.com/embed/XQLNReiATwo'
+  },
+  {
+    audioLink: {},
     date: '2020-04-12',
     description:
       'Biblical scholars are in agreement that Mark’s Gospel ends with the women in fear because of what an angel ' +
