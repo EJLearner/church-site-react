@@ -121,5 +121,35 @@ export default {
         secured when Jesus cried “It is finished.”
       </p>
     )
+  },
+  '2020-04-19': {
+    subTitle: (
+      <>
+        From <i>The Problem of Pain</i> by C.S. Lewis
+      </>
+    ),
+    content: (
+      <p>
+        “Scripture and tradition habitually put the joys of Heaven into the
+        scale against the sufferings of earth, and no solution of the problem of
+        pain which does not do so can be called a Christian one. We are very shy
+        nowadays of even mentioning Heaven. We are afraid of the jeer about “pie
+        in the sky,” and of being told that we are trying to “escape” from the
+        duty of making a happy world here and now into dreams of a happy world
+        elsewhere. But either there is “pie in the sky” or there is not. If
+        there is not, then Christianity is false, for this doctrine is woven
+        into its whole fabric. If there is, then this truth, like any other,
+        must be faced, whether it is useful at political meetings or no. Again,
+        we are afraid that Heaven is a bribe, and that if we make it our goal we
+        shall no longer be disinterested. It is not so. Heaven offers nothing
+        that a mercenary soul can desire. It is safe to tell the pure in heart
+        that they shall see God, for only the pure in heart want to. There are
+        rewards that do not sully motives. A man’s love for a woman is not
+        mercenary because he wants to marry her, nor his love for poetry
+        mercenary because he wants to read it, nor his love of exercise less
+        disinterested because he wants to run and leap and walk. Love, by
+        definition, seeks to enjoy its object.”
+      </p>
+    )
   }
 };
