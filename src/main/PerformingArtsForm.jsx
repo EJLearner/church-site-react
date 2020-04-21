@@ -27,7 +27,7 @@ export default function PerformingArtsForm() {
     };
 
     post(
-      '/contactUsGed.php',
+      '/contactUsPerformingArts.php',
       data,
       (responseError) => {
         if (responseError.success) {
