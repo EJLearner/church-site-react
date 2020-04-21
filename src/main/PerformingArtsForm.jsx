@@ -22,7 +22,8 @@ export default function PerformingArtsForm() {
   const submitData = () => {
     const data = {
       email: email || 'Not Provided',
-      message: talentArea,
+      phone: phone || 'Not Provided',
+      talentArea,
       name: name || 'Not Provided'
     };
 
