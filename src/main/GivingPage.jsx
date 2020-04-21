@@ -49,7 +49,7 @@ const donationTypeOptions = [
   {label: 'Building Fund', value: 'building'},
   {label: 'Outreach', value: 'outreach'},
   {label: 'Missions', value: 'missions'},
-  // {label: 'Air Conditioner Pledge', value: 'pledge'},
+  {label: 'Air Conditioner Pledge', value: 'ac-pledge'},
   {label: 'Donation', value: 'donation'},
   {label: 'William Bryant Scholarship Fund', value: 'scholarship'},
   {label: 'Youth Ministry', value: 'youth'},
@@ -63,7 +63,7 @@ const initialDonationTypeInfo = donationTypeOptions.map((option, index) => {
 });
 
 const getCurrentDroplistOptions = (selectedValue, amounts) => {
-  return donationTypeOptions.filter(option => {
+  return donationTypeOptions.filter((option) => {
     const selectedByThisDroplist = option.value === selectedValue;
     const selectedValues = amounts.map(({type}) => type).filter(Boolean);
     const selectedByAnyDroplist = selectedValues.includes(option.value);
@@ -77,11 +77,11 @@ const GivingPage = () => {
   const [amounts, setAmounts] = useState(initialDonationTypeInfo);
 
   const setUserInfoProp = (value, id) => {
-    setUserInfo(currentUserInfo => ({...currentUserInfo, [id]: value}));
+    setUserInfo((currentUserInfo) => ({...currentUserInfo, [id]: value}));
   };
 
   const setPaymentInfo = (value, index, prop) => {
-    setAmounts(currentPaymentInfo => {
+    setAmounts((currentPaymentInfo) => {
       if (!currentPaymentInfo[index]) {
         currentPaymentInfo[index] = {};
       }
@@ -92,19 +92,19 @@ const GivingPage = () => {
   };
 
   const setPaymentAmount = (value, index) => {
-    setAmounts(currentPaymentInfo => {
+    setAmounts((currentPaymentInfo) => {
       currentPaymentInfo[index].amount = value;
 
       return [...currentPaymentInfo];
     });
   };
 
-  const renderStateSelect = id => {
+  const renderStateSelect = (id) => {
     return (
       <>
         <SelectState
           id={id}
-          onChange={value => setUserInfoProp(value, id)}
+          onChange={(value) => setUserInfoProp(value, id)}
           value={userInfo[id] ?? ''}
         />
         <br />
@@ -120,7 +120,7 @@ const GivingPage = () => {
         <Textbox
           id={id}
           label={label}
-          onChange={value => setUserInfoProp(value, id)}
+          onChange={(value) => setUserInfoProp(value, id)}
           required={required}
           size={40}
           type={type}
@@ -139,7 +139,7 @@ const GivingPage = () => {
         <Textbox
           id={`amount_${currentNumber}`}
           label="Amount"
-          onChange={value => setPaymentAmount(value, index)}
+          onChange={(value) => setPaymentAmount(value, index)}
           required={required}
           size={40}
           value={amounts[index].amount ?? ''}
@@ -149,9 +149,9 @@ const GivingPage = () => {
     );
   };
 
-  const renderPaymentboxes = paymentInfo => {
+  const renderPaymentboxes = (paymentInfo) => {
     return paymentInfo
-      .filter(paymentItem => paymentItem.type)
+      .filter((paymentItem) => paymentItem.type)
       .map((paymentItem, index) => {
         const currentNumber = index + 1;
         const droplistId = `item_name_${currentNumber}`;
@@ -167,7 +167,7 @@ const GivingPage = () => {
             <Droplist
               id={droplistId}
               label="Giving Type"
-              onChange={value => setPaymentInfo(value, index, 'type')}
+              onChange={(value) => setPaymentInfo(value, index, 'type')}
               options={dropListOptions}
               value={paymentItem.type}
             />
@@ -177,7 +177,7 @@ const GivingPage = () => {
   };
 
   const addPaymentOption = (firstUnusedType, event) => {
-    const unusedPaymentItemIndex = amounts.findIndex(amount => !amount.type);
+    const unusedPaymentItemIndex = amounts.findIndex((amount) => !amount.type);
     setPaymentInfo(firstUnusedType, unusedPaymentItemIndex, 'type');
 
     event.preventDefault();
@@ -187,9 +187,9 @@ const GivingPage = () => {
     return <input name={name} type="hidden" value={value} />;
   };
 
-  const usedTypes = amounts.map(amount => amount.type).filter(Boolean);
+  const usedTypes = amounts.map((amount) => amount.type).filter(Boolean);
   const firstUnusedType = donationTypeOptions.find(
-    option => !usedTypes.includes(option.value)
+    (option) => !usedTypes.includes(option.value)
   )?.value;
 
   const renderTithingFields = () => {
@@ -203,7 +203,7 @@ const GivingPage = () => {
           <AddAnotherTypeWrapper>
             <PlainButton
               className="add-another"
-              onClick={event => addPaymentOption(firstUnusedType, event)}
+              onClick={(event) => addPaymentOption(firstUnusedType, event)}
             >
               + Add another donation type
             </PlainButton>
