@@ -11,8 +11,9 @@ import Textbox from '../common/components/Textbox';
 
 export default function PerformingArtsForm() {
   const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [talentArea, setTalentArea] = useState('');
   const [showThanksMessage, setShowThanksMessage] = useState(false);
   const [postStatus, setPostStatus] = useState(null);
   const [error, setError] = useState(null);
@@ -21,7 +22,7 @@ export default function PerformingArtsForm() {
   const submitData = () => {
     const data = {
       email: email || 'Not Provided',
-      message,
+      message: talentArea,
       name: name || 'Not Provided'
     };
 
@@ -43,11 +44,11 @@ export default function PerformingArtsForm() {
   };
 
   const validateAndSubmit = () => {
-    if (message.length) {
+    if (talentArea.length) {
       submitData();
       setError(null);
     } else {
-      setError('Please enter a message.');
+      setError('Please describe your talent area.');
     }
   };
 
@@ -66,6 +67,14 @@ export default function PerformingArtsForm() {
       />
       <br />
       <Textbox
+        id="phone"
+        label="Phone Number"
+        onChange={(value) => setPhone(value)}
+        size={14}
+        value={phone}
+      />
+      <br />
+      <Textbox
         id="email"
         label="Email Address"
         onChange={(value) => setEmail(value)}
@@ -77,11 +86,11 @@ export default function PerformingArtsForm() {
         characterLimit={300}
         columns={60}
         errorMessage={error}
-        id="message"
-        label="Message"
-        onChange={(value) => setMessage(value)}
+        id="talentArea"
+        label="Talent Area"
+        onChange={(value) => setTalentArea(value)}
         required
-        value={message}
+        value={talentArea}
       />
       <br />
       <Button
