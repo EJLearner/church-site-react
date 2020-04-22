@@ -7,16 +7,20 @@ const POST_STATUSES = {
   SUCCESS: 'success'
 };
 const PostSubmitStatusMessageStyle = styled.div`
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
   margin-top: 16px;
-  border: 1px solid $black;
-  width: 300px;
+  border: 3px solid;
+  border-radius: 10px;
+  padding: 0.5em;
 
   &.success {
-    background-color: green;
+    border-color: green;
   }
 
   &.failure {
-    background-color: red;
+    border-color: red;
   }
 `;
 
@@ -62,15 +66,17 @@ class PostSubmitStatusMessage extends React.Component {
     }
 
     return (
-      <PostSubmitStatusMessageStyle
-        className={className}
-        id="success-or-error-box"
-        ref={node => (this.errorBox = node)}
-        tabIndex="0"
-        type={className}
-      >
-        {message}
-      </PostSubmitStatusMessageStyle>
+      <div>
+        <PostSubmitStatusMessageStyle
+          className={className}
+          id="success-or-error-box"
+          ref={(node) => (this.errorBox = node)}
+          tabIndex="0"
+          type={className}
+        >
+          {message}
+        </PostSubmitStatusMessageStyle>
+      </div>
     );
   }
 }
