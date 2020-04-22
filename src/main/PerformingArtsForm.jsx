@@ -1,7 +1,9 @@
 import {post} from 'jquery';
 import React, {useState} from 'react';
 
-import PostSubmitStatusMessage from '../ce/components/Common/PostSubmitStatusMessage';
+import PostSubmitStatusMessage, {
+  POST_STATUSES
+} from '../ce/components/Common/PostSubmitStatusMessage';
 import Button, {
   SHAPES,
   BUTTON_COLORS
@@ -33,6 +35,10 @@ export default function PerformingArtsForm() {
       (responseError) => {
         if (responseError.success) {
           setShowThanksMessage(true);
+          setName('');
+          setPhone('');
+          setEmail('');
+          setTalentArea('');
         } else {
           setPostStatus('failure');
         }
@@ -111,7 +117,7 @@ export default function PerformingArtsForm() {
         />
       )}
       {showThanksMessage && (
-        <p className="message-sent-notification">Your message was sent!</p>
+        <PostSubmitStatusMessage postStatus={POST_STATUSES.SUCCESS} />
       )}
     </>
   );
