@@ -6,6 +6,17 @@ const {PREACHERS} = constants;
 const allVideoData = [
   {
     audioLink: {},
+    date: '2020-04-26',
+    description:
+      '1st John 3: 1-2 There are times when life becomes complicated. We wrestle with a variety of influences ' +
+      'which causes us to forget who we are. When this happens, God calls us to “be still and remember who we are!”',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: '1st John 3: 1-2',
+    title: 'Remembering Who We Are',
+    videoLink: 'https://www.youtube.com/embed/FflhfJyEce4'
+  },
+  {
+    audioLink: {},
     date: '2020-04-19',
     description:
       'We are living in a time of great fear. This pandemic has disrupted our lifestyle and way of ' +
