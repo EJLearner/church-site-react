@@ -151,5 +151,38 @@ export default {
         definition, seeks to enjoy its object.”
       </p>
     )
+  },
+  '2020-04-26': {
+    subTitle: (
+      <>
+        From <i>Upon A Hill</i> by Miriam LeFevre Crouse
+      </>
+    ),
+    content: (
+      <p>
+        Three men shared death upon a hill, <br />
+        But only one dies;
+        <br />
+        The other two –<br />
+        A thief and God himself – <br />
+        Made rendezvous. <br />
+        Three crosses still
+        <br />
+        Are borne up Calvary’s Hill, <br />
+        Where Sin still lifts them high: <br />
+        Upon the one, sag broken men
+        <br />
+        Who, cursing, die;
+        <br />
+        Another holds the praying thief,
+        <br />
+        Or those who penitent as he,
+        <br />
+        Still find the Christ
+        <br />
+        Beside them on the tree.
+        <br />
+      </p>
+    )
   }
 };
