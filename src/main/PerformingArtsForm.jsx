@@ -1,7 +1,9 @@
 import {post} from 'jquery';
 import React, {useState} from 'react';
 
-import PostSubmitStatusMessage from '../ce/components/Common/PostSubmitStatusMessage';
+import PostSubmitStatusMessage, {
+  POST_STATUSES
+} from '../ce/components/Common/PostSubmitStatusMessage';
 import Button, {
   SHAPES,
   BUTTON_COLORS
@@ -11,8 +13,9 @@ import Textbox from '../common/components/Textbox';
 
 export default function PerformingArtsForm() {
   const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [talentArea, setTalentArea] = useState('');
   const [showThanksMessage, setShowThanksMessage] = useState(false);
   const [postStatus, setPostStatus] = useState(null);
   const [error, setError] = useState(null);
@@ -21,16 +24,21 @@ export default function PerformingArtsForm() {
   const submitData = () => {
     const data = {
       email: email || 'Not Provided',
-      message,
+      phone: phone || 'Not Provided',
+      talentArea,
       name: name || 'Not Provided'
     };
 
     post(
-      '/contactUsGed.php',
+      '/contactUsPerformingArts.php',
       data,
       (responseError) => {
         if (responseError.success) {
           setShowThanksMessage(true);
+          setName('');
+          setPhone('');
+          setEmail('');
+          setTalentArea('');
         } else {
           setPostStatus('failure');
         }
@@ -43,11 +51,11 @@ export default function PerformingArtsForm() {
   };
 
   const validateAndSubmit = () => {
-    if (message.length) {
+    if (talentArea.length) {
       submitData();
       setError(null);
     } else {
-      setError('Please enter a message.');
+      setError('Please describe your talent area.');
     }
   };
 
@@ -66,6 +74,14 @@ export default function PerformingArtsForm() {
       />
       <br />
       <Textbox
+        id="phone"
+        label="Phone Number"
+        onChange={(value) => setPhone(value)}
+        size={14}
+        value={phone}
+      />
+      <br />
+      <Textbox
         id="email"
         label="Email Address"
         onChange={(value) => setEmail(value)}
@@ -77,11 +93,11 @@ export default function PerformingArtsForm() {
         characterLimit={300}
         columns={60}
         errorMessage={error}
-        id="message"
-        label="Message"
-        onChange={(value) => setMessage(value)}
+        id="talentArea"
+        label="Talent Area"
+        onChange={(value) => setTalentArea(value)}
         required
-        value={message}
+        value={talentArea}
       />
       <br />
       <Button
@@ -101,7 +117,7 @@ export default function PerformingArtsForm() {
         />
       )}
       {showThanksMessage && (
-        <p className="message-sent-notification">Your message was sent!</p>
+        <PostSubmitStatusMessage postStatus={POST_STATUSES.SUCCESS} />
       )}
     </>
   );
