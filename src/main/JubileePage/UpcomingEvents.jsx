@@ -1,8 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import {LOGICAL_COLORS} from '../../utils/styleVariables';
 import format from 'date-fns/format';
 import parseISO from 'date-fns/parseISO';
+import React from 'react';
+import styled from 'styled-components';
+
+import {LOGICAL_COLORS} from '../../utils/styleVariables';
 
 const EventsWrapper = styled.div`
   h3 {

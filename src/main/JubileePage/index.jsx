@@ -1,11 +1,13 @@
 import React, {useEffect} from 'react';
+import styled from 'styled-components';
 
-import GeneralPageTemplate from '../commonComponents/GeneralPageTemplate';
+import avisPicture from '../../assets/main/images/avis.jpg';
 import routePaths from '../../routePaths';
 import backgroundStore from '../../stores/backgroundStore';
+import GeneralPageTemplate from '../commonComponents/GeneralPageTemplate';
+
+import StoreContent from './StoreContent';
 import UpcomingEvents from './UpcomingEvents';
-import styled from 'styled-components';
-import avisPicture from '../../assets/main/images/avis.jpg';
 
 const JubileePageStyles = styled.div`
   .image-and-caption {
@@ -113,23 +115,14 @@ const calendarContent = (
   </div>
 );
 
-// eslint-disable-next-line no-unused-vars
-const storeContent = `
-    Store, ipsum dolor sit amet consectetur adipisicing elit. Tempore officia
-    necessitatibus atque molestiae? Eveniet debitis itaque ad iure. Cumque
-    reiciendis eveniet quia fugiat eius nostrum vel doloremque dignissimos,
-    quisquam atque.
-  `;
-
 const bottomContentData = [
+  {title: 'Store', id: 'store', content: <StoreContent />},
   {
     title: '50th Anniversary Celebration',
     id: '50thAnniversary',
     content: anniversaryContent
   },
   {title: 'Event Calendar', id: 'calendar', content: calendarContent}
-  // TODO: add these back
-  // {title: 'Store', id: 'store', content: storeContent}
 ];
 
 const topBoxContent = (
