@@ -5,7 +5,16 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
-    audioLink: {},
+    date: '2020-05-02',
+    description:
+      'Mark 11: 12-14; 20-25 - We were taught that there is power in prayer. However, we need to know how to approach' +
+      ' prayer. This message teaches how to engage the power of prayer.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Mark 11: 12-14; 20-25',
+    title: 'Engaging The Power of Prayer',
+    videoLink: 'https://www.youtube.com/embed/lHLcCaL33A8'
+  },
+  {
     date: '2020-04-26',
     description:
       '1st John 3: 1-2 There are times when life becomes complicated. We wrestle with a variety of influences ' +
@@ -16,7 +25,6 @@ const allVideoData = [
     videoLink: 'https://www.youtube.com/embed/FflhfJyEce4'
   },
   {
-    audioLink: {},
     date: '2020-04-19',
     description:
       'We are living in a time of great fear. This pandemic has disrupted our lifestyle and way of ' +
@@ -27,7 +35,6 @@ const allVideoData = [
     videoLink: 'https://www.youtube.com/embed/XQLNReiATwo'
   },
   {
-    audioLink: {},
     date: '2020-04-12',
     description:
       'Biblical scholars are in agreement that Mark’s Gospel ends with the women in fear because of what an angel ' +
@@ -39,7 +46,6 @@ const allVideoData = [
     videoLink: 'https://www.youtube.com/embed/-qk8yNI1XIs'
   },
   {
-    audioLink: {},
     date: '2020-04-09',
     description:
       'A Message for Maundy Thursday: All of us will know failure in our faith. But we have the assurance that ' +
@@ -50,7 +56,6 @@ const allVideoData = [
     videoLink: 'https://www.youtube.com/embed/oYi8THK6f44'
   },
   {
-    audioLink: {},
     date: '2020-04-05',
     description:
       'This sermon is about Jesus’ riding into Jerusalem on Palm Sunday.  He rides in as if He were a king. When in ' +
@@ -61,7 +66,6 @@ const allVideoData = [
     videoLink: 'https://www.youtube.com/embed/aO-U_Zh9of4'
   },
   {
-    audioLink: {},
     date: '2020-03-29',
     description:
       'A message from Psalms 27 that tells us what to do when we are fearful. Facing our fears requires waiting ' +
@@ -72,7 +76,6 @@ const allVideoData = [
     videoLink: 'https://www.youtube.com/embed/-bsGGeVUInM'
   },
   {
-    audioLink: {},
     date: '2020-03-22',
     description:
       'Given that we are facing a pandemic in these times, there is hope. And not just hope, but an indestructible ' +
