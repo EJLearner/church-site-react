@@ -40,7 +40,14 @@ const bibleComFormattedVerses = {
   '2020-04-29': {verse: 'Romans 8.1-11'},
   '2020-04-30': {verse: 'Galatians 2.11-20'},
   '2020-05-01': {verse: 'Leviticus 26.1-13'},
-  '2020-05-02': {verse: 'Acts 4.23-37'}
+  '2020-05-02': {verse: 'Acts 4.23-37'},
+  '2020-05-03': {verse: 'Psalm 23'},
+  '2020-05-04': {verse: 'Jeremiah 23'},
+  '2020-05-05': {verse: '1 Peter 5.1-11'},
+  '2020-05-06': {verse: 'Ezekiel 34.11-16'},
+  '2020-05-07': {verse: 'Isaiah 40.9-11'},
+  '2020-05-08': {verse: '1 Timothy 3.1-13}'},
+  '2020-05-09': {verse: '2 Corinthians 4'}
 };
 
 export {bibleComFormattedVerses};
