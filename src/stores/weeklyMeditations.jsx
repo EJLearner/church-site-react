@@ -184,5 +184,30 @@ export default {
         <br />
       </p>
     )
+  },
+  '2020-05-03': {
+    subTitle: (
+      <>
+        From <i>The Prophetic Imagination</i> by Walter Brueggemann
+      </>
+    ),
+    content: (
+      <p>
+        “Jesus in his solidarity with the marginal ones is moved to compassion.
+        Compassion constitutes a radical form of criticism, for it announces
+        that the hurt is to be taken seriously, that the hurt is not to be
+        accepted as normal and natural but is an abnormal and unacceptable
+        condition for humanness. In the arrangement of “lawfulness” in Jesus’
+        time, as in the ancient empire of Pharaoh, the one unpermitted quality
+        of relation was compassion. Empires are never built or maintained on the
+        basis of compassion. The norms of law (social control) are never
+        accommodated to persons, but persons are accommodated to the norms.
+        Otherwise the norms will collapse and with them the whole power
+        arrangement. Thus the compassion of Jesus is to be understood not simply
+        as a personal emotional reaction but as a public criticism in which he
+        dares to act upon his concern against the entire numbness of his social
+        context.”
+      </p>
+    )
   }
 };
