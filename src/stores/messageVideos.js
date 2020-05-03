@@ -5,7 +5,7 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
-    date: '2020-05-02',
+    date: '2020-05-03',
     description:
       'Mark 11: 12-14; 20-25 - We were taught that there is power in prayer. However, we need to know how to approach' +
       ' prayer. This message teaches how to engage the power of prayer.',
