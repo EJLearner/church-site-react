@@ -11,7 +11,8 @@ const StoreItemStyling = styled.div`
   margin-bottom: 2em;
 
   img {
-    max-width: 90%;
+    height: 200px;
+    width: auto;
 
     &:hover {
       cursor: pointer;
