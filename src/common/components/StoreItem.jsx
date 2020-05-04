@@ -2,23 +2,42 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-import PlainButton from '../../main/commonComponents/PlainButton';
-
 const StoreItemStyling = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  width: 45%;
+  margin-bottom: 2em;
+
   img {
-    max-height: 200px;
+    max-width: 90%;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .item-name {
+    text-transform: uppercase;
+  }
+
+  .item-cost {
+    font-weight: bold;
   }
 `;
 
 function StoreItem(props) {
   return (
     <StoreItemStyling>
-      <PlainButton onClick={() => props.onClick(props.id)}>
-        <img alt={props.name} src={props.imgSource} />
-      </PlainButton>
+      <img
+        alt={props.name}
+        onClick={() => props.onClick(props.id)}
+        src={props.imgSource}
+      />
 
-      {props.name}
-      {props.cost}
+      <div className="item-name">{props.name}</div>
+      <div className="item-cost">${Number(props.cost).toFixed(2)}</div>
     </StoreItemStyling>
   );
 }
