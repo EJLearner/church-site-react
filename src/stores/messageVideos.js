@@ -5,6 +5,17 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-05-10',
+    description:
+      'II Kings: 4: 1-7 - “MOTHER’S DAY SERMON” - A mother is defined as a female who has borne offspring and ' +
+      'exercises protective care. That protective care is essential in determining how her children will ' +
+      'live out their lives.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'II Kings: 4: 1-7',
+    title: 'The Importance of A Mother’s Oil',
+    videoLink: 'https://www.youtube.com/embed/GDDqCBlu7_k'
+  },
+  {
     date: '2020-05-03',
     description:
       'Mark 11: 12-14; 20-25 - We were taught that there is power in prayer. However, we need to know how to approach' +
