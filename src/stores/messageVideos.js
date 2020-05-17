@@ -5,6 +5,16 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-05-17',
+    description:
+      'Philippians 4:15-20 - We are living in times of scarcity due to Covid19. However we serve a God who is able ' +
+      'to supply all our needs according to His riches in glory.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Philippians 4:15-20',
+    title: 'Supplying Our Every Need',
+    videoLink: 'https://www.youtube.com/embed/3Q1VfZfuf-w'
+  },
+  {
     date: '2020-05-10',
     description:
       'II Kings: 4: 1-7 - “MOTHER’S DAY SERMON” - A mother is defined as a female who has borne offspring and ' +
