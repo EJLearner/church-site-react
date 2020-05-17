@@ -233,5 +233,39 @@ export default {
         </p>
       </>
     )
+  },
+  '2020-05-17': {
+    subTitle: (
+      <>
+        From <i>The God Who Comes</i> by Carlo Carretto
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “The God-who-is has always been searching for me. By his choice, his
+          relationship with me is presence, as a call, as a guide; he is not
+          satisfied with speaking to me, or showing things to me, or asking
+          things of me. He does much more. He is Life, and he knows his creature
+          can do nothing without him; he knows his child would die of hunger
+          without bread.
+        </p>
+        <p>
+          But our bread is God himself, and God gives himself to us as food.
+        </p>
+        <p>Only eternal life can feed one who is destined for eternal life.</p>
+        <p>
+          The bread of earth can nourish us only for this finite earth; it can
+          sustain us only as far as the frontier of the Invisible. If we want to
+          penetrate this frontier, the bread from our fields is not sufficient;
+          if we want to march along the roads of the Invisible, we must feed on
+          bread from heaven.
+        </p>
+        <p>
+          This bread from heaven is God himself. He becomes food to us walking
+          in the Invisible.”
+        </p>
+      </>
+    )
   }
 };
