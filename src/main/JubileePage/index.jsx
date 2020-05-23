@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import avisPicture from '../../assets/main/images/avis.jpg';
 import routePaths from '../../routePaths';
 import backgroundStore from '../../stores/backgroundStore';
+import StoreContent from '../JubileeStore/StoreContent';
 import GeneralPageTemplate from '../commonComponents/GeneralPageTemplate';
 
-import StoreContent from './StoreContent';
 import UpcomingEvents from './UpcomingEvents';
 
 const JubileePageStyles = styled.div`

@@ -4,9 +4,6 @@ import moment from 'moment';
 import routePaths from '../routePaths';
 import constants from '../utils/constants';
 
-
-
-
 const {
   INTERNAL_DATE_FORMAT,
   INTERNAL_TIMESTAMP_FORMAT,
@@ -29,6 +26,59 @@ let lastPushTime = 0;
 const lastRandChars = [];
 
 const commonUtils = {
+  formatCurrency(amount) {
+    return `$${amount.toFixed(2)}`;
+  },
+
+  /**
+   * Converts Time in iso format to a more readable one
+   * @param {string} date - in iso format
+   */
+  formatDate(date) {
+    if (!date) {
+      return '';
+    }
+
+    return moment(date, INTERNAL_DATE_FORMAT).format(DISPLAY_DATE_FORMAT);
+  },
+
+  /**
+   * Formats a string containing ten digits into a phone number
+   * disregarding anything that is not a digit
+   * @param {string} number - ten digit phone number
+   * @param {bool} nonbreaking - use nonbreaking spaces when truthy
+   */
+  formatPhoneNumber(number, nonbreaking) {
+    const onlyDigits = number && number.replace(/[^0-9]/g, '');
+    const valid = onlyDigits && onlyDigits.length === 10;
+    if (onlyDigits && valid) {
+      const firstThree = onlyDigits.substr(0, 3);
+      const secondThree = onlyDigits.substr(3, 3);
+      const lastFour = onlyDigits.substr(6);
+
+      const space = nonbreaking ? String.fromCharCode(160) : ' ';
+      const hyphen = nonbreaking ? String.fromCharCode(8209) : '-';
+
+      return `(${firstThree})${space}${secondThree}${hyphen}${lastFour}`;
+    }
+
+    return number;
+  },
+
+  /**
+   * Converts Time in iso format to a more readable one
+   * @param {string} time - in iso format
+   */
+  formatTime(timeStamp) {
+    if (!timeStamp) {
+      return '';
+    }
+
+    return moment(timeStamp, INTERNAL_TIMESTAMP_FORMAT, true).format(
+      DISPLAY_TIME_FORMAT
+    );
+  },
+
   /**
    * Fancy ID generator that creates 20-character string identifiers with the following properties:
    *
@@ -86,55 +136,6 @@ const commonUtils = {
     return moment().diff(dobMoment, 'years');
   },
 
-  /**
-   * Formats a string containing ten digits into a phone number
-   * disregarding anything that is not a digit
-   * @param {string} number - ten digit phone number
-   * @param {bool} nonbreaking - use nonbreaking spaces when truthy
-   */
-  formatPhoneNumber(number, nonbreaking) {
-    const onlyDigits = number && number.replace(/[^0-9]/g, '');
-    const valid = onlyDigits && onlyDigits.length === 10;
-    if (onlyDigits && valid) {
-      const firstThree = onlyDigits.substr(0, 3);
-      const secondThree = onlyDigits.substr(3, 3);
-      const lastFour = onlyDigits.substr(6);
-
-      const space = nonbreaking ? String.fromCharCode(160) : ' ';
-      const hyphen = nonbreaking ? String.fromCharCode(8209) : '-';
-
-      return `(${firstThree})${space}${secondThree}${hyphen}${lastFour}`;
-    }
-
-    return number;
-  },
-
-  /**
-   * Converts Time in iso format to a more readable one
-   * @param {string} date - in iso format
-   */
-  formatDate(date) {
-    if (!date) {
-      return '';
-    }
-
-    return moment(date, INTERNAL_DATE_FORMAT).format(DISPLAY_DATE_FORMAT);
-  },
-
-  /**
-   * Converts Time in iso format to a more readable one
-   * @param {string} time - in iso format
-   */
-  formatTime(timeStamp) {
-    if (!timeStamp) {
-      return '';
-    }
-
-    return moment(timeStamp, INTERNAL_TIMESTAMP_FORMAT, true).format(
-      DISPLAY_TIME_FORMAT
-    );
-  },
-
   getCcDbYear() {
     const currentMoment = moment();
     const currentYear = currentMoment.year();
@@ -150,11 +151,6 @@ const commonUtils = {
     return currentYear;
   },
 
-  getVbsDbYear() {
-    // for now, just always return the current year
-    return moment().year();
-  },
-
   getComputedPath(path, pathKey) {
     if (path) {
       return path;
@@ -168,6 +164,11 @@ const commonUtils = {
     throw new Error(
       `Can not get valid route from path ${path} and pathKey ${pathKey}`
     );
+  },
+
+  getVbsDbYear() {
+    // for now, just always return the current year
+    return moment().year();
   },
 
   range: (startIndex, endIndex) => _.range(startIndex, endIndex),
