@@ -267,5 +267,38 @@ export default {
         </p>
       </>
     )
+  },
+  '2020-05-24': {
+    subTitle: (
+      <>
+        From <i>Life Together</i> by Dietrich Bonhoeffer
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “Let him who cannot be alone beware of community. He will only do harm
+          to himself and to the community. Alone you stood before God when he
+          called you; alone you had to answer that call; alone you had to
+          struggle and pray; and alone you will die and give an account to God.
+          You cannot escape from yourself; for God has singled you out. If you
+          refuse to be alone you are rejecting Christ’s call to you, and you can
+          have no part in the community of those who are called. “The challenge
+          of death comes to us all, and no one can die for another. Everyone
+          must fight his own battle with death by himself, alone…I will not be
+          with you then, nor you with me” (Luther).
+        </p>
+        <p>
+          But the reverse is also true: Let him who is not in community beware
+          of being alone. Into the community you were called, you bear your
+          cross, you struggle, you pray. You are not alone, even in death, and
+          on the Last Day you will be only one member of the great congregation
+          of Jesus Christ. If you scorn the fellowship of the brethren, you
+          reject the call of Jesus Christ, and thus your solitude can only be
+          hurtful to you. “If I die, then I am not alone in death; if I suffer
+          they [the fellowship] suffer with me” (Luther).”
+        </p>
+      </>
+    )
   }
 };
