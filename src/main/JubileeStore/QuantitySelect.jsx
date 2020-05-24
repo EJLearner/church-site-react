@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import purchasesStore from '../../stores/purchasesStore';
+import commonUtils from '../../utils/commonUtils';
 
 import {STORE_ITEMS} from './jubileeStoreConstants';
 
@@ -35,7 +36,7 @@ export function QuantitySelect({itemId}) {
       </div>
       <div>
         <div className="label">{label}</div>
-        {purchasesStore.getCost(itemId)}
+        {commonUtils.formatCurrency(purchasesStore.getCost(itemId))}
       </div>
     </QuantitySelectStyle>
   );
