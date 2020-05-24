@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 
 import Button from '../ce/components/Reusable/Button/Button';
-import Droplist from '../ce/components/Reusable/Droplist/Droplist';
+import Droplist from '../common/components/Droplist';
 import SelectState from '../common/components/SelectState';
 import Textbox from '../common/components/Textbox';
 import routePaths from '../routePaths';

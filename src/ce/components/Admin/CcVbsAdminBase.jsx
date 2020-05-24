@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
-import firebase from '../../../firebase';
 import PropTypes from 'prop-types';
+import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 
+import Droplist from '../../../common/components/Droplist';
+import firebase from '../../../firebase';
 import commonUtils from '../../../utils/commonUtils';
 import {CHILD_STATUS} from '../CcVbsCheckinOut/BaseCheckinOutConstants';
 import Table from '../Reusable/Table/Table';
-import Droplist from '../Reusable/Droplist/Droplist';
 
 class CcVbsAdminBase extends Component {
   static propTypes = {
@@ -73,7 +73,7 @@ class CcVbsAdminBase extends Component {
     firebase
       .database()
       .ref(refPath)
-      .on('value', snapshot => {
+      .on('value', (snapshot) => {
         const tableRows = this.getRowsFromSnapshot(
           snapshot,
           generateRowObject,
@@ -87,10 +87,10 @@ class CcVbsAdminBase extends Component {
     firebase
       .database()
       .ref(refPath)
-      .on('value', snapshot => {
+      .on('value', (snapshot) => {
         const props = {};
 
-        snapshot.forEach(snapshotItem => {
+        snapshot.forEach((snapshotItem) => {
           const key = `${stateName}-${snapshotItem.key}`;
           const tableRows = this.getRowsFromSnapshot(
             snapshotItem,
@@ -107,7 +107,7 @@ class CcVbsAdminBase extends Component {
 
   getRowsFromSnapshot(snapshot, generateRowObject, instance) {
     const tableRows = [];
-    snapshot.forEach(snapshotItem => {
+    snapshot.forEach((snapshotItem) => {
       const object = snapshotItem.val();
       tableRows.push(
         generateRowObject.bind(instance)(snapshotItem.key, object)
@@ -351,7 +351,7 @@ class CcVbsAdminBase extends Component {
   }
 
   yearSelectDropdown() {
-    const options = ['2017', '2018', '2019'].map(year => {
+    const options = ['2017', '2018', '2019'].map((year) => {
       return {
         label: year,
         value: year
@@ -361,7 +361,7 @@ class CcVbsAdminBase extends Component {
     return (
       <Droplist
         label="Select Data Year"
-        onChange={value => {
+        onChange={(value) => {
           this.setState({dataYear: value});
         }}
         options={options}
@@ -371,7 +371,7 @@ class CcVbsAdminBase extends Component {
   }
 
   daySelectDropdown(dates, selectedDate) {
-    const options = dates.map(date => {
+    const options = dates.map((date) => {
       return {
         label: commonUtils.formatDate(date),
         value: date
@@ -381,7 +381,7 @@ class CcVbsAdminBase extends Component {
     return (
       <Droplist
         label="Select Sign In Date"
-        onChange={value => {
+        onChange={(value) => {
           this.setState({currentSigninDate: value});
         }}
         options={options}

@@ -1,6 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import Droplist from '../../ce/components/Reusable/Droplist/Droplist';
+import React from 'react';
+
+import Droplist from './Droplist';
 
 const stateOptions = [
   {label: 'Alabama', value: 'AL'},

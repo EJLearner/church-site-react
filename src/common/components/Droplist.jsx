@@ -1,8 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-
+import React from 'react';
 import styled from 'styled-components';
-import InputLabel from '../../../../common/components/InputLabel';
+
+import InputLabel from './InputLabel';
+
 const DroplistStyle = styled.div`
   display: inline-block;
   margin-right: 2em;
@@ -16,7 +17,7 @@ const DroplistStyle = styled.div`
 `;
 
 function renderedOptions(options) {
-  return options.map(option => {
+  return options.map((option) => {
     const {label, value} = option;
 
     return (
@@ -34,7 +35,7 @@ const Droplist = ({onChange, id, options, value, label}) => {
       <select
         id={id}
         name={id}
-        onChange={event => onChange(event.target.value, id, event)}
+        onChange={(event) => onChange(event.target.value, id, event)}
         value={value}
       >
         {renderedOptions(options)}
