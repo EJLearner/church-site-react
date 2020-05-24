@@ -5,7 +5,48 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
-    audioLink: {},
+    date: '2020-05-24',
+    description:
+      'John 14: 15-21  When the disciples were told that Jesus was leaving them, they were heartbroken ' +
+      'and shattered. However, Jesus promised them that they would not be alone. They would comforted and ' +
+      'empowered by “The Holy Spirit.”',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 14: 15-21',
+    title: 'The Promise of The Holy Spirit',
+    videoLink: 'https://www.youtube.com/embed/toTpl05RCXY'
+  },
+  {
+    date: '2020-05-17',
+    description:
+      'Philippians 4:15-20 - We are living in times of scarcity due to Covid19. However we serve a God who is able ' +
+      'to supply all our needs according to His riches in glory.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Philippians 4:15-20',
+    title: 'Supplying Our Every Need',
+    videoLink: 'https://www.youtube.com/embed/3Q1VfZfuf-w'
+  },
+  {
+    date: '2020-05-10',
+    description:
+      'II Kings: 4: 1-7 - “MOTHER’S DAY SERMON” - A mother is defined as a female who has borne offspring and ' +
+      'exercises protective care. That protective care is essential in determining how her children will ' +
+      'live out their lives.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'II Kings: 4: 1-7',
+    title: 'The Importance of A Mother’s Oil',
+    videoLink: 'https://www.youtube.com/embed/GDDqCBlu7_k'
+  },
+  {
+    date: '2020-05-03',
+    description:
+      'Mark 11: 12-14; 20-25 - We were taught that there is power in prayer. However, we need to know how to approach' +
+      ' prayer. This message teaches how to engage the power of prayer.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Mark 11: 12-14; 20-25',
+    title: 'Engaging The Power of Prayer',
+    videoLink: 'https://www.youtube.com/embed/lHLcCaL33A8'
+  },
+  {
     date: '2020-04-26',
     description:
       '1st John 3: 1-2 There are times when life becomes complicated. We wrestle with a variety of influences ' +
@@ -16,7 +57,6 @@ const allVideoData = [
     videoLink: 'https://www.youtube.com/embed/FflhfJyEce4'
   },
   {
-    audioLink: {},
     date: '2020-04-19',
     description:
       'We are living in a time of great fear. This pandemic has disrupted our lifestyle and way of ' +
@@ -27,7 +67,6 @@ const allVideoData = [
     videoLink: 'https://www.youtube.com/embed/XQLNReiATwo'
   },
   {
-    audioLink: {},
     date: '2020-04-12',
     description:
       'Biblical scholars are in agreement that Mark’s Gospel ends with the women in fear because of what an angel ' +
@@ -39,7 +78,6 @@ const allVideoData = [
     videoLink: 'https://www.youtube.com/embed/-qk8yNI1XIs'
   },
   {
-    audioLink: {},
     date: '2020-04-09',
     description:
       'A Message for Maundy Thursday: All of us will know failure in our faith. But we have the assurance that ' +
@@ -50,7 +88,6 @@ const allVideoData = [
     videoLink: 'https://www.youtube.com/embed/oYi8THK6f44'
   },
   {
-    audioLink: {},
     date: '2020-04-05',
     description:
       'This sermon is about Jesus’ riding into Jerusalem on Palm Sunday.  He rides in as if He were a king. When in ' +
@@ -61,7 +98,6 @@ const allVideoData = [
     videoLink: 'https://www.youtube.com/embed/aO-U_Zh9of4'
   },
   {
-    audioLink: {},
     date: '2020-03-29',
     description:
       'A message from Psalms 27 that tells us what to do when we are fearful. Facing our fears requires waiting ' +
@@ -72,7 +108,6 @@ const allVideoData = [
     videoLink: 'https://www.youtube.com/embed/-bsGGeVUInM'
   },
   {
-    audioLink: {},
     date: '2020-03-22',
     description:
       'Given that we are facing a pandemic in these times, there is hope. And not just hope, but an indestructible ' +

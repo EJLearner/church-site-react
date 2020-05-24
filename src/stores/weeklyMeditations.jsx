@@ -184,5 +184,121 @@ export default {
         <br />
       </p>
     )
+  },
+  '2020-05-03': {
+    subTitle: (
+      <>
+        From <i>The Prophetic Imagination</i> by Walter Brueggemann
+      </>
+    ),
+    content: (
+      <p>
+        “Jesus in his solidarity with the marginal ones is moved to compassion.
+        Compassion constitutes a radical form of criticism, for it announces
+        that the hurt is to be taken seriously, that the hurt is not to be
+        accepted as normal and natural but is an abnormal and unacceptable
+        condition for humanness. In the arrangement of “lawfulness” in Jesus’
+        time, as in the ancient empire of Pharaoh, the one unpermitted quality
+        of relation was compassion. Empires are never built or maintained on the
+        basis of compassion. The norms of law (social control) are never
+        accommodated to persons, but persons are accommodated to the norms.
+        Otherwise the norms will collapse and with them the whole power
+        arrangement. Thus the compassion of Jesus is to be understood not simply
+        as a personal emotional reaction but as a public criticism in which he
+        dares to act upon his concern against the entire numbness of his social
+        context.”
+      </p>
+    )
+  },
+  '2020-05-10': {
+    subTitle: (
+      <>
+        From <i>Visions of a World Hungry</i> by Thomas G. Pettepiece
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “James considers it natural that a person with faith also has works.
+          It is not a heavy and moralistic Christian duty; it is a Christian
+          possibility and life-style – response comes with true faith.
+        </p>
+        <p>
+          On this theme, the Bible is clear and direct in both Testaments – God
+          loves and cares for the poor. Jesus is said to be perfect. In other
+          words, to be imitators of the perfect love and care for the poor and
+          hungry, too. “You will know them by their fruits” (Matt. 7:16a RSV) he
+          said, and he meant that we are known by our ethical behavior and
+          illustrated by life experience.”
+        </p>
+      </>
+    )
+  },
+  '2020-05-17': {
+    subTitle: (
+      <>
+        From <i>The God Who Comes</i> by Carlo Carretto
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “The God-who-is has always been searching for me. By his choice, his
+          relationship with me is presence, as a call, as a guide; he is not
+          satisfied with speaking to me, or showing things to me, or asking
+          things of me. He does much more. He is Life, and he knows his creature
+          can do nothing without him; he knows his child would die of hunger
+          without bread.
+        </p>
+        <p>
+          But our bread is God himself, and God gives himself to us as food.
+        </p>
+        <p>Only eternal life can feed one who is destined for eternal life.</p>
+        <p>
+          The bread of earth can nourish us only for this finite earth; it can
+          sustain us only as far as the frontier of the Invisible. If we want to
+          penetrate this frontier, the bread from our fields is not sufficient;
+          if we want to march along the roads of the Invisible, we must feed on
+          bread from heaven.
+        </p>
+        <p>
+          This bread from heaven is God himself. He becomes food to us walking
+          in the Invisible.”
+        </p>
+      </>
+    )
+  },
+  '2020-05-24': {
+    subTitle: (
+      <>
+        From <i>Life Together</i> by Dietrich Bonhoeffer
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “Let him who cannot be alone beware of community. He will only do harm
+          to himself and to the community. Alone you stood before God when he
+          called you; alone you had to answer that call; alone you had to
+          struggle and pray; and alone you will die and give an account to God.
+          You cannot escape from yourself; for God has singled you out. If you
+          refuse to be alone you are rejecting Christ’s call to you, and you can
+          have no part in the community of those who are called. “The challenge
+          of death comes to us all, and no one can die for another. Everyone
+          must fight his own battle with death by himself, alone…I will not be
+          with you then, nor you with me” (Luther).
+        </p>
+        <p>
+          But the reverse is also true: Let him who is not in community beware
+          of being alone. Into the community you were called, you bear your
+          cross, you struggle, you pray. You are not alone, even in death, and
+          on the Last Day you will be only one member of the great congregation
+          of Jesus Christ. If you scorn the fellowship of the brethren, you
+          reject the call of Jesus Christ, and thus your solitude can only be
+          hurtful to you. “If I die, then I am not alone in death; if I suffer
+          they [the fellowship] suffer with me” (Luther).”
+        </p>
+      </>
+    )
   }
 };
