@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
+import ShoppingCart from '../../common/components/ShoppingCart';
+
 import {QuantitySelect} from './QuantitySelect';
 import StoreFront from './StoreFront';
-import {CALENDAR_2020} from './jubileeStoreConstants';
 
 const StoreContentStyle = styled.div`
   .store-items {
@@ -13,16 +14,35 @@ const StoreContentStyle = styled.div`
   }
 `;
 
+const VIEWS = {
+  CART: 'cart',
+  QUANTITY_SELECT: 'quantitySelect',
+  STORE_FRONT: 'storeFront'
+};
 function StoreContent(props) {
-  const [quantitySelect, setQuantitySelect] = useState(CALENDAR_2020);
+  const [viewInfo, setViewInfo] = useState({view: VIEWS.STORE_FRONT});
+  const {view} = viewInfo;
 
-  if (quantitySelect) {
-    return <QuantitySelect itemId={quantitySelect} />;
+  if (view === VIEWS.QUANTITY_SELECT) {
+    return (
+      <QuantitySelect
+        itemId={viewInfo.itemId}
+        onCartNavigate={() => setViewInfo({view: VIEWS.CART})}
+      />
+    );
+  }
+
+  if (view === VIEWS.CART) {
+    return <ShoppingCart />;
   }
   return (
     <StoreContentStyle>
       <h2>Store</h2>
-      <StoreFront setQuantitySelect={setQuantitySelect} />
+      <StoreFront
+        onItemClick={(itemId) =>
+          setViewInfo({view: VIEWS.QUANTITY_SELECT, itemId})
+        }
+      />
     </StoreContentStyle>
   );
 }

@@ -10,9 +10,7 @@ import {
   TICKET_YOUTH_50_ANNIVERSARY
 } from './jubileeStoreConstants';
 
-function StoreFront({setQuantitySelect}) {
-  const onItemClick = (id) => setQuantitySelect(id);
-
+function StoreFront({onItemClick}) {
   return (
     <div className="store-items">
       <StoreItem id={CALENDAR_2020} onClick={onItemClick} />
@@ -24,6 +22,6 @@ function StoreFront({setQuantitySelect}) {
 }
 
 StoreFront.propTypes = {
-  setQuantitySelect: PropTypes.func.isRequired
+  onItemClick: PropTypes.func.isRequired
 };
 export default StoreFront;
