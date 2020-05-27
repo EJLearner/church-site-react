@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import InputLabel from './InputLabel';
 
-const DroplistStyle = styled.div`
+const SelectStyle = styled.div`
   display: inline-block;
   margin-right: 2em;
 
@@ -28,10 +28,10 @@ function renderedOptions(options) {
   });
 }
 
-const Droplist = ({onChange, id, options, value, label}) => {
+const Select = ({onChange, id, options, value, label}) => {
   return (
-    <DroplistStyle className="select-outer-div">
-      {label && <InputLabel>{label}</InputLabel>}
+    <SelectStyle className="select-outer-div">
+      {label && <InputLabel inline>{label}</InputLabel>}
       <select
         id={id}
         name={id}
@@ -40,11 +40,11 @@ const Droplist = ({onChange, id, options, value, label}) => {
       >
         {renderedOptions(options)}
       </select>
-    </DroplistStyle>
+    </SelectStyle>
   );
 };
 
-Droplist.propTypes = {
+Select.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string,
   onChange: PropTypes.func.isRequired,
@@ -54,7 +54,7 @@ Droplist.propTypes = {
       value: PropTypes.string.isRequired
     })
   ).isRequired,
-  value: PropTypes.string
+  value: PropTypes.string.isRequired
 };
 
-export default Droplist;
+export default Select;

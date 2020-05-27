@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 
-import Droplist from '../../../common/components/Droplist';
+import Select from '../../../common/components/Select';
 import firebase from '../../../firebase';
 import commonUtils from '../../../utils/commonUtils';
 import {CHILD_STATUS} from '../CcVbsCheckinOut/BaseCheckinOutConstants';
@@ -359,7 +359,7 @@ class CcVbsAdminBase extends Component {
     });
 
     return (
-      <Droplist
+      <Select
         label="Select Data Year"
         onChange={(value) => {
           this.setState({dataYear: value});
@@ -379,7 +379,7 @@ class CcVbsAdminBase extends Component {
     });
 
     return (
-      <Droplist
+      <Select
         label="Select Sign In Date"
         onChange={(value) => {
           this.setState({currentSigninDate: value});
@@ -390,7 +390,7 @@ class CcVbsAdminBase extends Component {
     );
   }
 
-  renderSigninTableAndDroplist(signinDates) {
+  renderSigninTableAndSelect(signinDates) {
     const {currentSigninDate} = this.state;
 
     const dateForTable =
@@ -428,7 +428,7 @@ class CcVbsAdminBase extends Component {
         />
         <h3>Sign in and out Records</h3>
         {signinDates.length ? (
-          this.renderSigninTableAndDroplist(signinDates)
+          this.renderSigninTableAndSelect(signinDates)
         ) : (
           <p>No Records To List</p>
         )}

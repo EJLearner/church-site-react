@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 
 import Button from '../ce/components/Reusable/Button/Button';
-import Droplist from '../common/components/Droplist';
+import Select from '../common/components/Select';
 import SelectState from '../common/components/SelectState';
 import Textbox from '../common/components/Textbox';
 import routePaths from '../routePaths';
@@ -62,13 +62,13 @@ const initialDonationTypeInfo = donationTypeOptions.map((option, index) => {
     : {amount: USE_TEST_DATA ? '10.00' : undefined, type: option.value};
 });
 
-const getCurrentDroplistOptions = (selectedValue, amounts) => {
+const getCurrentSelectOptions = (selectedValue, amounts) => {
   return donationTypeOptions.filter((option) => {
-    const selectedByThisDroplist = option.value === selectedValue;
+    const selectedByThisSelect = option.value === selectedValue;
     const selectedValues = amounts.map(({type}) => type).filter(Boolean);
-    const selectedByAnyDroplist = selectedValues.includes(option.value);
+    const selectedByAnySelect = selectedValues.includes(option.value);
 
-    return selectedByThisDroplist || !selectedByAnyDroplist;
+    return selectedByThisSelect || !selectedByAnySelect;
   });
 };
 
@@ -156,7 +156,7 @@ const GivingPage = () => {
         const currentNumber = index + 1;
         const droplistId = `item_name_${currentNumber}`;
 
-        const dropListOptions = getCurrentDroplistOptions(
+        const dropListOptions = getCurrentSelectOptions(
           paymentItem.type,
           amounts
         );
@@ -164,7 +164,7 @@ const GivingPage = () => {
         return (
           <div className="" key={index}>
             {renderPaymentAmount(index, true)}
-            <Droplist
+            <Select
               id={droplistId}
               label="Giving Type"
               onChange={(value) => setPaymentInfo(value, index, 'type')}

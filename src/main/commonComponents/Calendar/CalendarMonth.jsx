@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 import withDatesSubscription from '../../../ce/components/Hocs/withDatesSubscription';
 import calendarDatesUtils from '../../../ce/utils/calendarDatesUtils';
-import Droplist from '../../../common/components/Droplist';
+import Select from '../../../common/components/Select';
 import routePaths from '../../../routePaths';
 
 const MonthCalendarStyle = styled.div`
@@ -182,7 +182,7 @@ class CalendarMonth extends Component {
     });
 
     return (
-      <Droplist
+      <Select
         onChange={this.onChangeYear}
         options={options}
         value={this.state.selectedMoment.format('YYYY')}
@@ -202,7 +202,7 @@ class CalendarMonth extends Component {
     });
 
     return (
-      <Droplist
+      <Select
         onChange={this.onChangeMonth}
         options={options}
         value={selectedMonth}

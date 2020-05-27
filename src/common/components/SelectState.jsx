@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Droplist from './Droplist';
+import Select from './Select';
 
 const stateOptions = [
   {label: 'Alabama', value: 'AL'},
@@ -70,7 +70,7 @@ const stateOptions = [
 
 function SelectState({id, label, onChange, value}) {
   return (
-    <Droplist
+    <Select
       id={id}
       label="State"
       onChange={onChange}
