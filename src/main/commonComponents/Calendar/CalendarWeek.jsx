@@ -1,22 +1,20 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-
 import moment from 'moment';
+import PropTypes from 'prop-types';
+import React, {Component} from 'react';
 
-import EventsListPage from './EventsListPage';
 import withDatesSubscription from '../../../ce/components/Hocs/withDatesSubscription';
 import commonUtils from '../../../utils/commonUtils';
 import constants from '../../../utils/constants';
+
+import EventsListPage from './EventsListPage';
 
 const {INTERNAL_DATE_FORMAT} = constants;
 
 function getDates(selectedDay) {
   const firstDay = moment(selectedDay).startOf('week');
 
-  return commonUtils.range(0, 7).map(daysAdded => {
-    return moment(firstDay)
-      .add(daysAdded, 'days')
-      .format(INTERNAL_DATE_FORMAT);
+  return commonUtils.range(0, 6).map((daysAdded) => {
+    return moment(firstDay).add(daysAdded, 'days').format(INTERNAL_DATE_FORMAT);
   });
 }
 
@@ -41,7 +39,7 @@ class CalendarWeek extends Component {
       <EventsListPage
         dates={getDates(selectedDay)}
         highlightWeek
-        onDateChange={newSelectedDay => {
+        onDateChange={(newSelectedDay) => {
           return this.setState({selectedDay: newSelectedDay});
         }}
         pageTitle="Events This Week"

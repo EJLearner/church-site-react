@@ -171,7 +171,7 @@ const commonUtils = {
     return moment().year();
   },
 
-  range: (startIndex, endIndex) => _.range(startIndex, endIndex),
+  range: (startIndex, endIndex) => _.range(startIndex, endIndex + 1),
 
   sort(array, getSortValue, direction = SORT_DIRECTION_ASCENDING) {
     return array?.sort((a, b) => {
