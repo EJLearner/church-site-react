@@ -64,7 +64,7 @@ const bibleComFormattedVerses = {
   '2020-05-23': {verse: '1 Peter 2.1-10'},
   '2020-05-24': {verse: 'Psalm 68.1-10'},
   '2020-05-25': {verse: 'Ephesians 4.1-16'},
-  '2020-05-26': {verse: 'Philemon'},
+  '2020-05-26': {verse: 'Philemon 1'},
   '2020-05-27': {verse: '1 Corinthians 6.1-10'},
   '2020-05-28': {verse: '1 Corinthians 3.5-23'},
   '2020-05-29': {verse: 'Romans 12.1-21'},

@@ -5,6 +5,17 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-05-24',
+    description:
+      'John 14: 15-21  When the disciples were told that Jesus was leaving them, they were heartbroken ' +
+      'and shattered. However, Jesus promised them that they would not be alone. They would comforted and ' +
+      'empowered by “The Holy Spirit.”',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 14: 15-21',
+    title: 'The Promise of The Holy Spirit',
+    videoLink: 'https://www.youtube.com/embed/toTpl05RCXY'
+  },
+  {
     date: '2020-05-17',
     description:
       'Philippians 4:15-20 - We are living in times of scarcity due to Covid19. However we serve a God who is able ' +
