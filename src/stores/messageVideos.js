@@ -5,6 +5,16 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-05-30',
+    description:
+      'Acts 2: 1-13 - Jesus informed the disciples that without Him they could do nothing. Therefore, ' +
+      'He promised them that God would send them another advocate. That advocate is the “Holy Spirit.”',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Acts 2: 1-13',
+    title: 'Pentecost',
+    videoLink: 'https://www.youtube.com/embed/hHIaxONs6v4'
+  },
+  {
     date: '2020-05-24',
     description:
       'John 14: 15-21  When the disciples were told that Jesus was leaving them, they were heartbroken ' +
