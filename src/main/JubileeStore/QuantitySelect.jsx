@@ -28,8 +28,12 @@ const QuantitySelectStyle = styled.div`
   }
 `;
 
-export function QuantitySelect({itemId, onCartNavigate}) {
-  const [stringQuantity, setStringQuantity] = useState('');
+export function QuantitySelect({
+  itemId,
+  onCartNavigate,
+  onContinueShoppingClick
+}) {
+  const [stringQuantity, setStringQuantity] = useState('1');
   const [showConfirmation, setShowConfirmation] = useState(false);
 
   const {thumbImageSource, label} = STORE_ITEMS[itemId];
@@ -47,7 +51,7 @@ export function QuantitySelect({itemId, onCartNavigate}) {
       <div className="qs-right-side">
         <div className="qs-right-top">
           <div className="label">{label}</div>
-          {commonUtils.formatCurrency(purchasesStore.getCost(itemId))}
+          {commonUtils.formatCurrency(purchasesStore.getItemCost(itemId))}
           <div>
             <Select
               label="Quantity"
@@ -76,7 +80,7 @@ export function QuantitySelect({itemId, onCartNavigate}) {
           <div>
             <Button
               buttonShape={SHAPES.RECT}
-              onClick={() => setShowConfirmation(false)}
+              onClick={() => onContinueShoppingClick()}
             >
               Continue Shopping
             </Button>
@@ -89,5 +93,6 @@ export function QuantitySelect({itemId, onCartNavigate}) {
 
 QuantitySelect.propTypes = {
   itemId: PropTypes.string.isRequired,
-  onCartNavigate: PropTypes.func.isRequired
+  onCartNavigate: PropTypes.func.isRequired,
+  onContinueShoppingClick: PropTypes.func.isRequired
 };

@@ -45,7 +45,7 @@ function StoreItem(props) {
 
       <div className="item-name">{label}</div>
       <div className="item-cost">
-        {commonUtils.formatCurrency(purchasesStore.getCost(props.id))}
+        {commonUtils.formatCurrency(purchasesStore.getItemCost(props.id))}
       </div>
     </StoreItemStyling>
   );

@@ -14,18 +14,39 @@ const costs = Object.freeze({
 
 const cart = {};
 
-const purchasesStore = {
-  getCost: (itemId) => costs[itemId],
+function initializeIfEmpty(itemId) {
+  if (!cart[itemId]) {
+    cart[itemId] = {quantity: 0};
+  }
+}
 
+const purchasesStore = {
   addToCart: (itemId, quantity) => {
-    if (!cart[itemId]) {
-      cart[itemId] = {quantity: 0};
-    }
+    initializeIfEmpty(itemId);
 
     cart[itemId].quantity += quantity;
   },
 
-  getCartAmount: (itemId) => cart[itemId]?.quantity ?? 0
+  getItemCost: (itemId) => costs[itemId],
+
+  getAllItemsTotal: () => {
+    return Object.entries(cart).reduce((totalCost, idInfoPair) => {
+      const [itemId, itemInfo] = idInfoPair;
+
+      const itemCost = purchasesStore.getItemCost(itemId);
+      const itemQuantity = itemInfo.quantity ?? 0;
+
+      return totalCost + itemCost * itemQuantity;
+    }, 0);
+  },
+
+  getItemQuantity: (itemId) => cart[itemId]?.quantity ?? 0,
+
+  setItemQuantity: (itemId) => {
+    initializeIfEmpty(itemId);
+
+    cart[itemId].quantity = 0;
+  }
 };
 
 export default purchasesStore;
