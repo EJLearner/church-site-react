@@ -16,6 +16,9 @@ function ShoppingCart(props) {
       <div key={id}>
         Label: {label} Quantity: {quantity} Cost:{' '}
         {purchasesStore.getItemCost(id)}
+        <button onClick={() => purchasesStore.setItemQuantity(0)}>
+          Remove
+        </button>
       </div>
     );
   }
