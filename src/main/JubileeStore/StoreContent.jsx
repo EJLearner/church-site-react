@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useReducer} from 'react';
 import styled from 'styled-components';
 
 import ShoppingCart from '../../common/components/ShoppingCart';
+import purchasesStore from '../../stores/purchasesStore';
 
 import {QuantitySelect} from './QuantitySelect';
 import StoreFront from './StoreFront';
@@ -19,24 +20,44 @@ const VIEWS = {
   QUANTITY_SELECT: 'quantitySelect',
   STORE_FRONT: 'storeFront'
 };
-function StoreContent(props) {
-  const [viewInfo, setViewInfo] = useState({view: VIEWS.STORE_FRONT});
-  const {view} = viewInfo;
 
-  const setNewView = (view, itemId) => {
-    const viewInfo = {view};
+function storeDataReducer(state, action) {
+  switch (action.type) {
+    case 'add-to-cart':
+      purchasesStore.addToCart(action.itemId, action.quantity);
 
-    if (itemId) {
-      viewInfo.itemId = itemId;
+      return {...state, cart: purchasesStore.getCart()};
+
+    case 'set-view-info': {
+      return {...state, viewInfo: action.viewInfo};
     }
 
-    setViewInfo(viewInfo);
+    default:
+      break;
+  }
+}
+
+function StoreContent(props) {
+  const [storeData, storeDataDispatch] = useReducer(storeDataReducer, {
+    viewInfo: {view: VIEWS.STORE_FRONT}
+  });
+  const {viewInfo} = storeData;
+  const {view, viewItemId} = viewInfo;
+
+  const setNewView = (view, viewItemId) => {
+    const viewInfo = {view};
+
+    if (viewItemId) {
+      viewInfo.viewItemId = viewItemId;
+    }
+
+    storeDataDispatch({type: 'set-view-info', viewInfo});
   };
 
   if (view === VIEWS.QUANTITY_SELECT) {
     return (
       <QuantitySelect
-        itemId={viewInfo.itemId}
+        itemId={viewItemId}
         onCartNavigate={() => setNewView(VIEWS.CART)}
         onContinueShoppingClick={() => setNewView(VIEWS.STORE_FRONT)}
       />
@@ -51,7 +72,9 @@ function StoreContent(props) {
     <StoreContentStyle>
       <h2>Store</h2>
       <StoreFront
-        onItemClick={(itemId) => setNewView(VIEWS.QUANTITY_SELECT, itemId)}
+        onItemClick={(viewItemId) =>
+          setNewView(VIEWS.QUANTITY_SELECT, viewItemId)
+        }
       />
     </StoreContentStyle>
   );

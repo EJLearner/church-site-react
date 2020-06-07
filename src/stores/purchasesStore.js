@@ -27,6 +27,8 @@ const purchasesStore = {
     cart[itemId].quantity += quantity;
   },
 
+  getCart: () => cart,
+
   getItemCost: (itemId) => costs[itemId],
 
   getAllItemsTotal: () => {
