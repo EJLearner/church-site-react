@@ -1,11 +1,11 @@
 import React, {useReducer} from 'react';
 import styled from 'styled-components';
 
-import ShoppingCart from '../../common/components/ShoppingCart';
-import purchasesStore from '../../stores/purchasesStore';
+import {QuantitySelect} from '../../common/components/Shopping/QuantitySelect';
+import ShoppingCart from '../../common/components/Shopping/ShoppingCart';
+import StoreFront from '../../common/components/Shopping/StoreFront';
 
-import {QuantitySelect} from './QuantitySelect';
-import StoreFront from './StoreFront';
+import {STORE_ITEMS} from './jubileeStoreConstants';
 
 const StoreContentStyle = styled.div`
   .store-items {
@@ -21,26 +21,51 @@ const VIEWS = {
   STORE_FRONT: 'storeFront'
 };
 
+let persistentState = {
+  cart: {},
+  viewInfo: {view: VIEWS.STORE_FRONT}
+};
+
 function storeDataReducer(state, action) {
   switch (action.type) {
-    case 'add-to-cart':
-      purchasesStore.addToCart(action.itemId, action.quantity);
+    case 'add-to-cart': {
+      const newCart = {...persistentState.cart};
+      if (!newCart[action.itemId]) {
+        newCart[action.itemId] = {quantity: 0};
+      }
 
-      return {...state, cart: purchasesStore.getCart()};
+      newCart[action.itemId].quantity += action.quantity;
+
+      persistentState = {...persistentState, cart: newCart};
+      return persistentState;
+    }
 
     case 'set-view-info': {
-      return {...state, viewInfo: action.viewInfo};
+      persistentState = {...persistentState, viewInfo: action.viewInfo};
+      return persistentState;
+    }
+
+    case 'remove-item': {
+      const newCart = {...persistentState.cart};
+
+      if (newCart[action.itemId]) {
+        newCart[action.itemId].quantity = 0;
+      }
+
+      persistentState = {...persistentState, cart: newCart};
+      return persistentState;
     }
 
     default:
-      break;
+      return persistentState;
   }
 }
 
 function StoreContent(props) {
-  const [storeData, storeDataDispatch] = useReducer(storeDataReducer, {
-    viewInfo: {view: VIEWS.STORE_FRONT}
-  });
+  const [storeData, storeDataDispatch] = useReducer(
+    storeDataReducer,
+    persistentState
+  );
   const {viewInfo} = storeData;
   const {view, viewItemId} = viewInfo;
 
@@ -57,7 +82,11 @@ function StoreContent(props) {
   if (view === VIEWS.QUANTITY_SELECT) {
     return (
       <QuantitySelect
+        cost={STORE_ITEMS[viewItemId].cost}
         itemId={viewItemId}
+        onAddToCartClick={(itemId, quantity) =>
+          storeDataDispatch({type: 'add-to-cart', itemId, quantity})
+        }
         onCartNavigate={() => setNewView(VIEWS.CART)}
         onContinueShoppingClick={() => setNewView(VIEWS.STORE_FRONT)}
       />
@@ -65,7 +94,15 @@ function StoreContent(props) {
   }
 
   if (view === VIEWS.CART) {
-    return <ShoppingCart />;
+    return (
+      <ShoppingCart
+        cartData={storeData.cart}
+        onItemRemove={(itemId) =>
+          storeDataDispatch({type: 'remove-item', itemId})
+        }
+        storeItems={STORE_ITEMS}
+      />
+    );
   }
 
   return (
@@ -75,6 +112,7 @@ function StoreContent(props) {
         onItemClick={(viewItemId) =>
           setNewView(VIEWS.QUANTITY_SELECT, viewItemId)
         }
+        storeItems={STORE_ITEMS}
       />
     </StoreContentStyle>
   );

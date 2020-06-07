@@ -2,9 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-import {STORE_ITEMS} from '../../main/JubileeStore/jubileeStoreConstants';
-import purchasesStore from '../../stores/purchasesStore';
-import commonUtils from '../../utils/commonUtils';
+import {STORE_ITEMS} from '../../../main/JubileeStore/jubileeStoreConstants';
+import commonUtils from '../../../utils/commonUtils';
 
 const StoreItemStyling = styled.div`
   display: flex;
@@ -32,26 +31,20 @@ const StoreItemStyling = styled.div`
   }
 `;
 
-function StoreItem(props) {
-  const {thumbImageSource, label} = STORE_ITEMS[props.id];
+function StoreItem({id, onClick, cost}) {
+  const {thumbImageSource, label} = STORE_ITEMS[id];
 
   return (
     <StoreItemStyling>
-      <img
-        alt={label}
-        onClick={() => props.onClick(props.id)}
-        src={thumbImageSource}
-      />
-
+      <img alt={label} onClick={() => onClick(id)} src={thumbImageSource} />
       <div className="item-name">{label}</div>
-      <div className="item-cost">
-        {commonUtils.formatCurrency(purchasesStore.getItemCost(props.id))}
-      </div>
+      <div className="item-cost">{commonUtils.formatCurrency(cost)}</div>
     </StoreItemStyling>
   );
 }
 
 StoreItem.propTypes = {
+  cost: PropTypes.number.isRequired,
   id: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired
 };

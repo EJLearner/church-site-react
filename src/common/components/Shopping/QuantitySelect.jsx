@@ -2,12 +2,10 @@ import PropTypes from 'prop-types';
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import Button, {SHAPES} from '../../ce/components/Reusable/Button/Button';
-import Select from '../../common/components/Select';
-import purchasesStore from '../../stores/purchasesStore';
-import commonUtils from '../../utils/commonUtils';
-
-import {STORE_ITEMS} from './jubileeStoreConstants';
+import Button, {SHAPES} from '../../../ce/components/Reusable/Button/Button';
+import {STORE_ITEMS} from '../../../main/JubileeStore/jubileeStoreConstants';
+import commonUtils from '../../../utils/commonUtils';
+import Select from '../Select';
 
 const QuantitySelectStyle = styled.div`
   display: flex;
@@ -29,7 +27,9 @@ const QuantitySelectStyle = styled.div`
 `;
 
 export function QuantitySelect({
+  cost,
   itemId,
+  onAddToCartClick,
   onCartNavigate,
   onContinueShoppingClick
 }) {
@@ -39,7 +39,7 @@ export function QuantitySelect({
   const {thumbImageSource, label} = STORE_ITEMS[itemId];
 
   const addToCart = () => {
-    purchasesStore.addToCart(itemId, Number(stringQuantity));
+    onAddToCartClick(itemId, Number(stringQuantity));
     setShowConfirmation(true);
   };
 
@@ -51,7 +51,7 @@ export function QuantitySelect({
       <div className="qs-right-side">
         <div className="qs-right-top">
           <div className="label">{label}</div>
-          {commonUtils.formatCurrency(purchasesStore.getItemCost(itemId))}
+          {commonUtils.formatCurrency(cost ?? 0)}
           <div>
             <Select
               label="Quantity"
@@ -92,7 +92,9 @@ export function QuantitySelect({
 }
 
 QuantitySelect.propTypes = {
+  cost: PropTypes.number.isRequired,
   itemId: PropTypes.string.isRequired,
+  onAddToCartClick: PropTypes.func.isRequired,
   onCartNavigate: PropTypes.func.isRequired,
   onContinueShoppingClick: PropTypes.func.isRequired
 };

@@ -6,22 +6,26 @@ const TICKET_YOUTH_50_ANNIVERSARY = '50th-anniversary-banquest-ticket-child';
 const TICKET_ADULT_50_ANNIVERSARY = '50th-anniversary-banquest-ticket-adult';
 
 const STORE_ITEMS = {
-  [SHIRT_50_ANNIVERSARY]: {
-    thumbImageSource: TICKET_THUMB_SRC,
-    id: SHIRT_50_ANNIVERSARY,
-    label: 'Anniversary Commemorative T-Shirt'
-  },
   [CALENDAR_2020]: {
+    cost: 25,
     thumbImageSource: CALENDAR_THUMB_SRC,
     id: CALENDAR_2020,
     label: 'Jubilee Edition 2020 Calendar'
   },
+  [SHIRT_50_ANNIVERSARY]: {
+    cost: 15,
+    thumbImageSource: TICKET_THUMB_SRC,
+    id: SHIRT_50_ANNIVERSARY,
+    label: 'Anniversary Commemorative T-Shirt'
+  },
   [TICKET_YOUTH_50_ANNIVERSARY]: {
+    cost: 50,
     thumbImageSource: TICKET_THUMB_SRC,
     id: TICKET_YOUTH_50_ANNIVERSARY,
     label: '50th Anniversary Child Banquet Ticket'
   },
   [TICKET_ADULT_50_ANNIVERSARY]: {
+    cost: 100,
     thumbImageSource: TICKET_THUMB_SRC,
     id: TICKET_ADULT_50_ANNIVERSARY,
     label: '50th Anniversary Adult Banquet Ticket'
