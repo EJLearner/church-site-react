@@ -64,11 +64,25 @@ const bibleComFormattedVerses = {
   '2020-05-23': {verse: '1 Peter 2.1-10'},
   '2020-05-24': {verse: 'Psalm 68.1-10'},
   '2020-05-25': {verse: 'Ephesians 4.1-16'},
-  '2020-05-26': {verse: 'Philemon'},
+  '2020-05-26': {verse: 'Philemon 1'},
   '2020-05-27': {verse: '1 Corinthians 6.1-10'},
   '2020-05-28': {verse: '1 Corinthians 3.5-23'},
   '2020-05-29': {verse: 'Romans 12.1-21'},
-  '2020-05-30': {verse: 'Colossians 3.5-17'}
+  '2020-05-30': {verse: 'Colossians 3.5-17'},
+  '2020-05-31': {verse: 'Psalm 104.24-34'},
+  '2020-06-01': {verse: 'Acts 2.43-47'},
+  '2020-06-02': {verse: 'Acts 3.1-10'},
+  '2020-06-03': {verse: 'Acts 4.32-37'},
+  '2020-06-04': {verse: 'Zechariah 4.1-10'},
+  '2020-06-05': {verse: 'Ephesians 4.17-5.2'},
+  '2020-06-06': {verse: 'Romans 8.1-17'},
+  '2020-06-07': {verse: 'Psalm 33.1-12'},
+  '2020-06-08': {verse: 'Deuteronomy 6.4-25'},
+  '2020-06-09': {verse: 'John 5.19-47'},
+  '2020-06-10': {verse: '1 Corinthians 12.1-11'},
+  '2020-06-11': {verse: 'Ephesians 1.3-14'},
+  '2020-06-12': {verse: 'Ephesians 3.14-20'},
+  '2020-06-13': {verse: 'Colossians 2.1-15'}
 };
 
 export {bibleComFormattedVerses};

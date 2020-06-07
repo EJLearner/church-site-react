@@ -5,6 +5,27 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-06-07',
+    description:
+      'Psalm 100 - This Psalm expresses praise to God. We are living in a culture which is self-centered and ' +
+      'self-directed. Praising God is a means of shifting our lives from self to centering ourselves on God. In so ' +
+      'doing we become concerned about justice, freedom and equality for all.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Psalm 100',
+    title: 'The Protest of Praise',
+    videoLink: 'https://www.youtube.com/embed/9pPt5yafh0I'
+  },
+  {
+    date: '2020-05-30',
+    description:
+      'Acts 2: 1-13 - Jesus informed the disciples that without Him they could do nothing. Therefore, ' +
+      'He promised them that God would send them another advocate. That advocate is the “Holy Spirit.”',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Acts 2: 1-13',
+    title: 'Pentecost',
+    videoLink: 'https://www.youtube.com/embed/hHIaxONs6v4'
+  },
+  {
     date: '2020-05-24',
     description:
       'John 14: 15-21  When the disciples were told that Jesus was leaving them, they were heartbroken ' +

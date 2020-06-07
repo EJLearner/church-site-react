@@ -300,5 +300,49 @@ export default {
         </p>
       </>
     )
+  },
+  '2020-05-31': {
+    subTitle: (
+      <>
+        From <i>The Church of the Spirit</i>
+      </>
+    ),
+    content: (
+      <p>
+        “It is possible either to sustain and strengthen this burning of the
+        spirit, or to quench it. It is warmed above all by acts of love towards
+        God and our neighbor – this, indeed, is the essence of the spiritual
+        life – by a general fidelity to all God’s commandments, with a quiet
+        conscience, by deeds that are pitiless to our own soul and body, and by
+        prayer and thoughts of God. The spirit is quenched by distraction of the
+        attention from God and God’s works, by excessive anxiety about worldly
+        matters, by indulgence in sensual pleasure, by pandering to carnal
+        desires, and by infatuation with material things. If this spirit is
+        quenched, then the Christian life will be quenched too.”
+      </p>
+    )
+  },
+  '2020-06-07': {
+    subTitle: (
+      <>
+        From <i>The Church</i> by Hans Kung
+      </>
+    ),
+    content: (
+      <p>
+        “God himself must free the man who is unfree and incapable of winning
+        his own freedom, must free him for freedom. He can turn “slaves of sin”
+        into “slaves of God”, who have been “set free from sin” (Rom. 6:20, 22).
+        God does this for the man who believes, whether Jew or Gentile, through
+        his eschatological act of salvation in Jesus Christ. In Christ, the new
+        free man, God promised and revealed and created the way to a new and
+        true freedom. Sinful man thinks he can find freedom by self-confidently
+        controlling himself and his own life. But he is warned that he can only
+        win freedom by abdicating this control to another – not to men, who
+        would reduce him to the rank of a slave, but to God, who will accept him
+        as his child. To be able to do what one wants is only the appearance of
+        freedom; true freedom is to will what God does.”
+      </p>
+    )
   }
 };

@@ -16,6 +16,12 @@ const StyleWrapper = styled.div`
   }
 `;
 
+const LOAD_STATES = {
+  loading: 'loading',
+  complete: 'complete',
+  error: 'error'
+};
+
 function LoadingMessage() {
   return (
     <div>
@@ -26,33 +32,38 @@ function LoadingMessage() {
 
 function renderPassages(passages) {
   return passages.map(({content, reference}, index) => {
-    if (content) {
-      return (
-        <div dangerouslySetInnerHTML={{__html: content}} key={reference} />
-      );
-    }
-
-    return <LoadingMessage key={index} />;
+    return <div dangerouslySetInnerHTML={{__html: content}} key={reference} />;
   });
 }
 
 function Verse({className, passage, referenceText}) {
   const [passages, setPassages] = useState([]);
+  const [loadState, setLoadState] = useState(LOAD_STATES.loading);
 
   useEffect(() => {
-    getVerseInfo(passage, response => {
+    getVerseInfo(passage, (response) => {
       setPassages(response);
+
+      const newLoadState = response ? LOAD_STATES.complete : LOAD_STATES.error;
+      setLoadState(newLoadState);
     });
   }, [passage]);
 
-  const loadingMessage = <LoadingMessage />;
+  const getReferenceTextLine = () => {
+    switch (loadState) {
+      case LOAD_STATES.complete:
+        return referenceText || passages?.[0]?.reference;
+      case LOAD_STATES.error:
+        return `Error loading ${passage}`;
+      default:
+        return <LoadingMessage />;
+    }
+  };
 
   return (
     <StyleWrapper className={className ?? undefined}>
-      <span className="reference">
-        {referenceText || passages?.[0]?.reference || loadingMessage}
-      </span>
-      {renderPassages(passages)}
+      <span className="reference">{getReferenceTextLine()}</span>
+      {loadState === LOAD_STATES.complete && renderPassages(passages)}
     </StyleWrapper>
   );
 }
