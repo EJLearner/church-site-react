@@ -185,15 +185,18 @@ function renderEvents(events) {
 const NewsAndEvents = () => {
   const NEWS_DISPLAY = 'news-content';
   const EVENTS_DISPLAY = 'events-display';
-  const [displayType, setDisplayType] = useState(NEWS_DISPLAY);
-  const [showNewsLink, setShowNewsLink] = useState(false);
-
+  const news = useNews();
   const events = useFirebaseEvents({
     futureOnly: true,
     returnAsArray: true
   });
+  const hasNews = Boolean(news.length);
+  const hasEvents = Boolean(events.length);
 
-  const news = useNews();
+  const [displayType, setDisplayType] = useState(
+    hasNews ? NEWS_DISPLAY : EVENTS_DISPLAY
+  );
+  const [showNewsLink, setShowNewsLink] = useState(false);
 
   useEffect(() => {
     const newsAndEventsContentHeight = document?.getElementById('news-items')
@@ -204,27 +207,35 @@ const NewsAndEvents = () => {
     }
   }, []);
 
-  return (
-    <NewsEventsStyle>
-      <div className="news-and-events-content">
-        {displayType === NEWS_DISPLAY
-          ? renderNews(news, showNewsLink)
-          : renderEvents(events)}
-      </div>
-      <DisplayButton
-        onClick={() => setDisplayType(NEWS_DISPLAY)}
-        selected={displayType === NEWS_DISPLAY}
-      >
-        News
-      </DisplayButton>
-      <DisplayButton
-        onClick={() => setDisplayType(EVENTS_DISPLAY)}
-        selected={displayType === EVENTS_DISPLAY}
-      >
-        Events
-      </DisplayButton>
-    </NewsEventsStyle>
-  );
+  if (hasEvents || hasNews) {
+    return (
+      <NewsEventsStyle>
+        <div className="news-and-events-content">
+          {displayType === NEWS_DISPLAY
+            ? renderNews(news, showNewsLink)
+            : renderEvents(events)}
+        </div>
+        {hasNews && (
+          <DisplayButton
+            onClick={() => setDisplayType(NEWS_DISPLAY)}
+            selected={displayType === NEWS_DISPLAY}
+          >
+            News
+          </DisplayButton>
+        )}
+        {hasEvents && (
+          <DisplayButton
+            onClick={() => setDisplayType(EVENTS_DISPLAY)}
+            selected={displayType === EVENTS_DISPLAY}
+          >
+            Events
+          </DisplayButton>
+        )}
+      </NewsEventsStyle>
+    );
+  }
+
+  return null;
 };
 
 export default NewsAndEvents;

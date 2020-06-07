@@ -62,7 +62,7 @@ function useNews() {
     }
   ];
 
-  const filteredNews = allNews.filter(newsItem => {
+  const filteredNews = allNews.filter((newsItem) => {
     const {id, expireDate, postedDate} = newsItem;
 
     if (!postedDate) {
@@ -85,7 +85,7 @@ function useNews() {
 
   return commonUtils.sort(
     filteredNews,
-    news => news.postedDate,
+    (news) => news.postedDate,
     constants.SORT_DIRECTION_DESCENDING
   );
 }
