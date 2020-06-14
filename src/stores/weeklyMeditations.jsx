@@ -344,5 +344,28 @@ export default {
         freedom; true freedom is to will what God does.”
       </p>
     )
+  },
+  '2020-06-14': {
+    subTitle: (
+      <>
+        From <i>The Spiritual Life</i> by Evelyn Underhill
+      </>
+    ),
+    content: (
+      <p>
+        “If, then, we desire a simple test of the quality of our spiritual life,
+        a consideration of the tranquility, gentleness and strength with which
+        we deal with the circumstances of our outward life will serve us better
+        than anything that is based on the loftiness of our religious notions,
+        or fervour of our religious feelings. It is a test that can be applied
+        anywhere and at any time. Tranquility, gentleness and strength, carrying
+        us through the changes of weather, the ups and downs of the route, the
+        varied surface of the road; the inequalities of family life, emotional
+        and professional disappointments, the sudden intervention of bad fortune
+        or bad health, the rising and falling of our religious temperature. This
+        is the threefold imprint of the Spirit on the souls surrendered to his
+        great action.”
+      </p>
+    )
   }
 };
