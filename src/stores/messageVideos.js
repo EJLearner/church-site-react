@@ -5,6 +5,18 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-06-14',
+    description:
+      'II Kings 4:8-37  By all evidence our children face many challenges. As parents and caregivers, we must ' +
+      'remember that their first impressions about the world, their values, and life itself comes from us. ' +
+      'Therefore, “ Start children off on the way they should go, and even when they are old they will not ' +
+      'leave it.” (Proverbs 22:6)',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'II Kings 4:8-37',
+    title: 'Is It Well With the Children?',
+    videoLink: 'https://www.youtube.com/embed/NxJywh2f_DM'
+  },
+  {
     date: '2020-06-07',
     description:
       'Psalm 100 - This Psalm expresses praise to God. We are living in a culture which is self-centered and ' +
