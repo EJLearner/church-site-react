@@ -111,12 +111,26 @@ const DisplayButton = styled(PlainButton)`
   }
 `;
 
+function getLink(newsItem) {
+  const {external, linkPath, text} = newsItem;
+
+  if (external) {
+    return (
+      <a href={linkPath} rel="noopener noreferrer" target="_blank">
+        {text}
+      </a>
+    );
+  }
+
+  return <Link to={linkPath}>{text}</Link>;
+}
+
 function renderNews(news, showNewsLink) {
   const newsItems = news.map((newsItem, index) => {
     const {linkPath, text} = newsItem;
     return (
       <div className="news-item" key={index}>
-        <h3>{linkPath ? <Link to={linkPath}>{text}</Link> : text}</h3>
+        <h3>{linkPath ? getLink(newsItem) : text}</h3>
       </div>
     );
   });

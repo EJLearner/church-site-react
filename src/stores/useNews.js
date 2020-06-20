@@ -7,6 +7,15 @@ import constants from '../utils/constants';
 function useNews() {
   const allNews = [
     {
+      expireDate: '2020-06-23',
+      id: 'sermon-in-solidarity',
+      external: true,
+      linkPath: 'https://www.youtube.com/watch?v=uBRcxBm2600&feature=youtu.be',
+      postedDate: '2020-06-19',
+      text: 'A Sermon in Solidarity',
+      title: 'A Sermon in Solidarity'
+    },
+    {
       expireDate: '2020-06-01',
       id: 'no-sanctuary-service',
 
