@@ -367,5 +367,27 @@ export default {
         great action.”
       </p>
     )
+  },
+  '2020-06-21': {
+    subTitle: (
+      <>
+        From <i>The Meaning of Prayer</i> by Harry Emerson Fosdick
+      </>
+    ),
+    content: (
+      <p>
+        “During a dry season in the New Hebrides, John G. Paton the missionary
+        awakened the derision of the natives by digging for water. They said
+        water always came down from heaven, not up through the earth. But Paton
+        revealed a larger truth than they had seen before by discovering to them
+        that heaven could give them water through their own land. So men insist
+        on waiting for God to send them blessing in some supernormal way, when
+        all the while he is giving them abundant supply if they would only learn
+        to retreat into the fertile places of their own spirits where, as Jesus
+        said, the wells of living waters seek to rise. We need to learn
+        Eckhart’s lesson. “God is nearer to me than I am to myself; he is just
+        as near to wood and stone, but they do not know it.”
+      </p>
+    )
   }
 };
