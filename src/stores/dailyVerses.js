@@ -89,7 +89,14 @@ const bibleComFormattedVerses = {
   '2020-06-17': {verse: 'Philippians 2.12-18'},
   '2020-06-18': {verse: '1 Timothy 4.6-16'},
   '2020-06-19': {verse: '2 Timothy 2.1-13'},
-  '2020-06-20': {verse: '1 John 4'}
+  '2020-06-20': {verse: '1 John 4'},
+  '2020-06-21': {verse: 'Psalm 91.1-10'},
+  '2020-06-22': {verse: '1 Corinthians 2.1-13'},
+  '2020-06-23': {verse: 'Psalm 28'},
+  '2020-06-24': {verse: 'Isaiah 40.12-31'},
+  '2020-06-25': {verse: 'Philippians 4.10-20'},
+  '2020-06-26': {verse: '2 Corinthians 9.6-15'},
+  '2020-06-27': {verse: 'Ephesians 3.14-21'}
 };
 
 export {bibleComFormattedVerses};
