@@ -5,6 +5,17 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-06-20',
+    description:
+      'Psalm 23 - The prevailing opinion of psychologists is that fathers play an essential role in ' +
+      'the lives of their children. Through the examination of the 23rd Psalm, this message speaks of the ' +
+      'importance of a father’s role.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Psalm 23',
+    title: 'Father’s Day - “A Reflection On The 23rd Psalm”',
+    videoLink: 'https://www.youtube.com/embed/LPeZCzH7ca0'
+  },
+  {
     date: '2020-06-19',
     title: 'Sermon in Solidarity Coming Soon',
     videoLink: 'https://www.youtube.com/embed/uBRcxBm2600'
