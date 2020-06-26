@@ -1,6 +1,3 @@
-import React from 'react';
-import styled from 'styled-components';
-
 import powerPointFile from '../../assets/main/2020-graduates.pptx';
 import GedThumb from '../../assets/main/images/GED-thumbnail.png';
 import choirThumb from '../../assets/main/images/choir-thumb.jpg';
@@ -9,47 +6,16 @@ import coronavirus from '../../assets/main/images/coronavirus-thumb.png';
 import dance from '../../assets/main/images/dance.jpg';
 import shofarBlower from '../../assets/main/images/shofar-blower-thumb.png';
 import slideshowThumb from '../../assets/main/images/slideshow-thumb.png';
-import slideshow from '../../assets/main/images/slideshow.png';
 import routePaths from '../../routePaths';
 import {endOfYesterday, isAfter, parseISO} from '../../utils/dateTimeUtils';
-import {LOGICAL_COLORS} from '../../utils/styleVariables';
 
 import ChristianEducation from './BoxContent/ChristianEducation';
 import CultureAndFineArts from './BoxContent/CultureAndFineArts';
 import GedProgram from './BoxContent/GedProgram';
+import GraduateSlideshow from './BoxContent/GraduateSlideshow';
 import JubileeContent from './BoxContent/JubileeContent';
 import WorshipExperience from './BoxContent/WorshipExperience';
 import CoronaVirusContent from './CoronaVirusContent';
-
-const StyleWrapper = styled.div`
-  text-align: center;
-
-  img {
-    width 95%;
-    height: auto;
-  }
-
-  em {
-    color: ${LOGICAL_COLORS.CT_ACCENT};
-    font-weight: bold;
-    font-style: normal;
-    text-transform: uppercase;
-  }
-`;
-
-// TODO remove this after it stops showing
-function SlideShow() {
-  return (
-    // eslint-disable-next-line react/jsx-filename-extension
-    <StyleWrapper>
-      <h1>Congratulations Graduates!</h1>
-
-      <a href={powerPointFile}>
-        <img alt="Graduates Slideshow" src={slideshow} />
-      </a>
-    </StyleWrapper>
-  );
-}
 
 const contentSelectInfo = [
   {
@@ -57,7 +23,7 @@ const contentSelectInfo = [
     externalLink: true,
     learnMoreText: 'Watch Slideshow',
     linkPath: powerPointFile,
-    Component: SlideShow,
+    Component: GraduateSlideshow,
     thumbnail: slideshowThumb,
     title: 'Congrats Graduates!!'
   },
