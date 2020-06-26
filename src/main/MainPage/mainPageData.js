@@ -17,37 +17,38 @@ const contentSelectInfo = [
   {
     learnMoreText: 'Watch Sermon',
     linkPath: routePaths.MAIN_WATCH,
-    render: WorshipExperience,
+    Component: WorshipExperience,
     thumbnail: choirThumb,
     title: 'Watch Sunday’s Sermon'
   },
   {
     linkPath: routePaths.MAIN_JUBILEE,
-    render: JubileeContent,
+    Component: JubileeContent,
     showUntil: '2021-01-01',
     thumbnail: shofarBlower,
     title: '50th Anniversary Celebration'
   },
   {
     linkPath: routePaths.MAIN_CORONAVIRUS,
-    render: CoronaVirusContent,
+    Component: CoronaVirusContent,
     thumbnail: coronavirus,
     title: 'Coronavirus Update'
   },
   {
     linkPath: routePaths.MAIN_CULTURE_AND_ARTS,
-    render: CultureAndFineArts,
+    Component: CultureAndFineArts,
     thumbnail: dance,
     title: 'Culture & Fine Arts'
   },
   {
     linkPath: routePaths.CE_HOME,
-    render: ChristianEducation,
+    Component: ChristianEducation,
     thumbnail: christianEdPeopleThumb,
     title: 'Christian Education'
   },
   {
     linkPath: routePaths.MAIN_GED,
+    Component: GedProgram,
     render: GedProgram,
     title: 'GED Program',
     thumbnail: GedThumb

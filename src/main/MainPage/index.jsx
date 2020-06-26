@@ -75,10 +75,9 @@ const StyledPage = styled.div`
 function MainContent() {
   const [contentIndex, setContentIndex] = useState(0);
 
-  const {learnMoreText = 'Learn More', linkPath, render} = contentSelectInfo[
+  const {learnMoreText = 'Learn More', linkPath, Component} = contentSelectInfo[
     contentIndex
   ];
-  const ContentComponent = render;
 
   return (
     <StyledPage>
@@ -87,7 +86,7 @@ function MainContent() {
         <div className="top-box-wrapper">
           <MainTopInfoBox>
             <div className="content-component-wrapper">
-              <ContentComponent />
+              <Component />
             </div>
             <div className="arrow-and-learn-more">
               <div className="arrow-box">{constants.SLENDER_ARROW_RIGHT}</div>
@@ -102,7 +101,7 @@ function MainContent() {
       <div className="content-select-box-wrapper">
         <ContentSelectBoxes
           contentIndex={contentIndex}
-          onContentSelect={index => setContentIndex(index)}
+          onContentSelect={(index) => setContentIndex(index)}
         />
       </div>
     </StyledPage>
