@@ -5,7 +5,19 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
-    date: '2020-06-20',
+    date: '2020-06-28',
+    description:
+      'Matthew 25:14-30  This is a service in recognition of all graduates. You were all born with ' +
+      'specific gifts and talents. Today’s message encourages you to use your gifts and talents to make a ' +
+      'difference in this world. When you fail to use your gifts and talents, you run the risk of losing them, and ' +
+      'as a result the world also suffers a great loss.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 25:14-30',
+    title: 'Use It Or Lose It',
+    videoLink: 'https://www.youtube.com/embed/fwFj22DGuw4'
+  },
+  {
+    date: '2020-06-21',
     description:
       'Psalm 23 - The prevailing opinion of psychologists is that fathers play an essential role in ' +
       'the lives of their children. Through the examination of the 23rd Psalm, this message speaks of the ' +
