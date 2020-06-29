@@ -5,6 +5,46 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-06-28',
+    description:
+      'Matthew 25:14-30  This is a service in recognition of all graduates. You were all born with ' +
+      'specific gifts and talents. Today’s message encourages you to use your gifts and talents to make a ' +
+      'difference in this world. When you fail to use your gifts and talents, you run the risk of losing them, and ' +
+      'as a result the world also suffers a great loss.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 25:14-30',
+    title: 'Use It Or Lose It',
+    videoLink: 'https://www.youtube.com/embed/fwFj22DGuw4'
+  },
+  {
+    date: '2020-06-21',
+    description:
+      'Psalm 23 - The prevailing opinion of psychologists is that fathers play an essential role in ' +
+      'the lives of their children. Through the examination of the 23rd Psalm, this message speaks of the ' +
+      'importance of a father’s role.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Psalm 23',
+    title: 'Father’s Day - “A Reflection On The 23rd Psalm”',
+    videoLink: 'https://www.youtube.com/embed/LPeZCzH7ca0'
+  },
+  {
+    date: '2020-06-19',
+    title: 'Sermon in Solidarity Coming Soon',
+    videoLink: 'https://www.youtube.com/embed/uBRcxBm2600'
+  },
+  {
+    date: '2020-06-14',
+    description:
+      'II Kings 4:8-37  By all evidence our children face many challenges. As parents and caregivers, we must ' +
+      'remember that their first impressions about the world, their values, and life itself comes from us. ' +
+      'Therefore, “ Start children off on the way they should go, and even when they are old they will not ' +
+      'leave it.” (Proverbs 22:6)',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'II Kings 4:8-37',
+    title: 'Is It Well With the Children?',
+    videoLink: 'https://www.youtube.com/embed/NxJywh2f_DM'
+  },
+  {
     date: '2020-06-07',
     description:
       'Psalm 100 - This Psalm expresses praise to God. We are living in a culture which is self-centered and ' +

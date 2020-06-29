@@ -7,6 +7,15 @@ import constants from '../utils/constants';
 function useNews() {
   const allNews = [
     {
+      expireDate: '2020-06-23',
+      id: 'sermon-in-solidarity',
+      external: true,
+      linkPath: 'https://www.youtube.com/watch?v=uBRcxBm2600&feature=youtu.be',
+      postedDate: '2020-06-19',
+      text: 'A Sermon in Solidarity',
+      title: 'A Sermon in Solidarity'
+    },
+    {
       expireDate: '2020-06-01',
       id: 'no-sanctuary-service',
 
@@ -62,7 +71,7 @@ function useNews() {
     }
   ];
 
-  const filteredNews = allNews.filter(newsItem => {
+  const filteredNews = allNews.filter((newsItem) => {
     const {id, expireDate, postedDate} = newsItem;
 
     if (!postedDate) {
@@ -85,7 +94,7 @@ function useNews() {
 
   return commonUtils.sort(
     filteredNews,
-    news => news.postedDate,
+    (news) => news.postedDate,
     constants.SORT_DIRECTION_DESCENDING
   );
 }

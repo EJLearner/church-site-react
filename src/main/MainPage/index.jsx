@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
+import Anchor from '../../common/components/Anchor';
 import constants from '../../utils/constants';
 import {LOGICAL_COLORS, WIDTHS, COLORS} from '../../utils/styleVariables';
 import MainMenubar from '../MainMenubar';
@@ -75,10 +75,12 @@ const StyledPage = styled.div`
 function MainContent() {
   const [contentIndex, setContentIndex] = useState(0);
 
-  const {learnMoreText = 'Learn More', linkPath, render} = contentSelectInfo[
-    contentIndex
-  ];
-  const ContentComponent = render;
+  const {
+    learnMoreText = 'Learn More',
+    linkPath,
+    Component,
+    externalLink
+  } = contentSelectInfo[contentIndex];
 
   return (
     <StyledPage>
@@ -87,12 +89,14 @@ function MainContent() {
         <div className="top-box-wrapper">
           <MainTopInfoBox>
             <div className="content-component-wrapper">
-              <ContentComponent />
+              <Component />
             </div>
             <div className="arrow-and-learn-more">
               <div className="arrow-box">{constants.SLENDER_ARROW_RIGHT}</div>
               <div className="learn-more-box">
-                <Link to={linkPath}>{learnMoreText}</Link>
+                <Anchor external={Boolean(externalLink)} path={linkPath}>
+                  {learnMoreText}
+                </Anchor>
               </div>
             </div>
           </MainTopInfoBox>
@@ -102,7 +106,7 @@ function MainContent() {
       <div className="content-select-box-wrapper">
         <ContentSelectBoxes
           contentIndex={contentIndex}
-          onContentSelect={index => setContentIndex(index)}
+          onContentSelect={(index) => setContentIndex(index)}
         />
       </div>
     </StyledPage>

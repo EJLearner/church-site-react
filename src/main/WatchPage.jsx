@@ -161,14 +161,18 @@ function renderNewestVideo(videoData) {
     <div>
       <h2>{title}</h2>
       <div className="preacher-and-scripture">
-        <div>
-          <span className="label">Preacher:</span>{' '}
-          <span className="value">{preacher}</span>
-        </div>
-        <div>
-          <span className="label">Scripture:</span>{' '}
-          <span className="value">{scripture}</span>
-        </div>
+        {preacher && (
+          <div>
+            <span className="label">Preacher:</span>{' '}
+            <span className="value">{preacher}</span>
+          </div>
+        )}
+        {scripture && (
+          <div>
+            <span className="label">Scripture:</span>{' '}
+            <span className="value">{scripture}</span>
+          </div>
+        )}
       </div>
       <div className="date">{getLongDisplayDate(date)}</div>
 

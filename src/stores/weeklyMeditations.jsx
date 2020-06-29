@@ -344,5 +344,71 @@ export default {
         freedom; true freedom is to will what God does.”
       </p>
     )
+  },
+  '2020-06-14': {
+    subTitle: (
+      <>
+        From <i>The Spiritual Life</i> by Evelyn Underhill
+      </>
+    ),
+    content: (
+      <p>
+        “If, then, we desire a simple test of the quality of our spiritual life,
+        a consideration of the tranquility, gentleness and strength with which
+        we deal with the circumstances of our outward life will serve us better
+        than anything that is based on the loftiness of our religious notions,
+        or fervour of our religious feelings. It is a test that can be applied
+        anywhere and at any time. Tranquility, gentleness and strength, carrying
+        us through the changes of weather, the ups and downs of the route, the
+        varied surface of the road; the inequalities of family life, emotional
+        and professional disappointments, the sudden intervention of bad fortune
+        or bad health, the rising and falling of our religious temperature. This
+        is the threefold imprint of the Spirit on the souls surrendered to his
+        great action.”
+      </p>
+    )
+  },
+  '2020-06-21': {
+    subTitle: (
+      <>
+        From <i>The Meaning of Prayer</i> by Harry Emerson Fosdick
+      </>
+    ),
+    content: (
+      <p>
+        “During a dry season in the New Hebrides, John G. Paton the missionary
+        awakened the derision of the natives by digging for water. They said
+        water always came down from heaven, not up through the earth. But Paton
+        revealed a larger truth than they had seen before by discovering to them
+        that heaven could give them water through their own land. So men insist
+        on waiting for God to send them blessing in some supernormal way, when
+        all the while he is giving them abundant supply if they would only learn
+        to retreat into the fertile places of their own spirits where, as Jesus
+        said, the wells of living waters seek to rise. We need to learn
+        Eckhart’s lesson. “God is nearer to me than I am to myself; he is just
+        as near to wood and stone, but they do not know it.”
+      </p>
+    )
+  },
+  '2020-06-28': {
+    subTitle: (
+      <>
+        From <i>The Cloud of Unknowing</i>
+      </>
+    ),
+    content: (
+      <p>
+        “It is not what you are nor what you have been that God sees with his
+        all-merciful eyes, but what you desire to be. St. Gregory declares that
+        “all holy desires heighten in intensity with the delay of fulfillment,
+        and desire which fades with delay was never holy desire at all.” For if
+        you experience less and less joy when you discover anew the sudden
+        presence of great desires you had formerly pursued, your first desire
+        was not holy desire. Possibly you felt a natural tendency toward the
+        good but this should not be confused with holy desire. St. Augustine
+        explains what I mean by holy desire when he says that “the entire life
+        of a good Christian is nothing less than holy desire.”
+      </p>
+    )
   }
 };
