@@ -31,7 +31,8 @@ export function QuantitySelect({
   itemId,
   onAddToCartClick,
   onCartNavigate,
-  onContinueShoppingClick
+  onContinueShoppingClick,
+  onReturnToStoreClick
 }) {
   const [stringQuantity, setStringQuantity] = useState('1');
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -68,6 +69,10 @@ export function QuantitySelect({
           <Button buttonShape={SHAPES.RECT} onClick={addToCart}>
             Add to cart
           </Button>
+
+          <Button buttonShape={SHAPES.RECT} onClick={onReturnToStoreClick}>
+            Return to store
+          </Button>
         </div>
       </div>
       {showConfirmation && (
@@ -96,5 +101,6 @@ QuantitySelect.propTypes = {
   itemId: PropTypes.string.isRequired,
   onAddToCartClick: PropTypes.func.isRequired,
   onCartNavigate: PropTypes.func.isRequired,
-  onContinueShoppingClick: PropTypes.func.isRequired
+  onContinueShoppingClick: PropTypes.func.isRequired,
+  onReturnToStoreClick: PropTypes.func.isRequired
 };

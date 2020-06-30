@@ -5,7 +5,12 @@ import commonUtils from '../../../utils/commonUtils';
 
 import shoppingUtils from './shoppingUtils';
 
-function ShoppingCart({cartData, onItemRemove, storeItems}) {
+function ShoppingCart({
+  cartData,
+  onItemRemove,
+  onReturnToStoreClick,
+  storeItems
+}) {
   function renderItemLIne(id, info) {
     const quantity = info.quantity;
 
@@ -28,6 +33,7 @@ function ShoppingCart({cartData, onItemRemove, storeItems}) {
       {Object.entries(cartData).map(([id, info]) => renderItemLIne(id, info))}
       Subtotal:{' '}
       {commonUtils.formatCurrency(shoppingUtils.getCartSubTotal(cartData))}
+      <button onClick={onReturnToStoreClick}>Return to store</button>
     </div>
   );
 }
@@ -35,6 +41,7 @@ function ShoppingCart({cartData, onItemRemove, storeItems}) {
 ShoppingCart.propTypes = {
   cartData: PropTypes.object.isRequired,
   onItemRemove: PropTypes.func.isRequired,
+  onReturnToStoreClick: PropTypes.func.isRequired,
   storeItems: PropTypes.object.isRequired
 };
 
