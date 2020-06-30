@@ -20,6 +20,12 @@ const StyledButton = styled.button`
   min-height: 30px;
   color: black;
 
+  margin-left: 1em;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
   &.orange-button {
     background-color: orange;
   }
