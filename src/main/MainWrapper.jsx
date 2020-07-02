@@ -23,6 +23,7 @@ import MinistriesPage from './MinistriesPage';
 import NewsPage from './NewsPage';
 import ScholarshipPage from './ScholarshipPage';
 import WatchPage from './WatchPage';
+import GlobalCartLink from './commonComponents/GlobalCartLink';
 import MainFooter from './commonComponents/MainFooter';
 
 const StyledWrapperDiv = styled.div`
@@ -32,6 +33,13 @@ const StyledWrapperDiv = styled.div`
   background-size: cover;
   padding-bottom: ${SIZES.FOOTER_HEIGHT};
   min-height: 100%;
+
+  .shopping-cart-link {
+    position: fixed;
+
+    bottom: 100px;
+    right: 80px;
+  }
 `;
 
 const PAGE_ID = 'main-wrapper';
@@ -103,6 +111,7 @@ function MainWrapper() {
           </Route>
         </Switch>
         <MainFooter />
+        <GlobalCartLink />
       </StyledWrapperDiv>
     </GlobalStoreWrapper>
   );
