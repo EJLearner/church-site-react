@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useCallback, useEffect} from 'react';
 import styled from 'styled-components';
 
 import {QuantitySelect} from '../../common/components/Shopping/QuantitySelect';
@@ -24,15 +24,24 @@ function StoreContent(props) {
   const {viewInfo} = state;
   const {view, viewItemId} = viewInfo;
 
-  const setNewView = (view, viewItemId) => {
-    const viewInfo = {view};
+  const setNewView = useCallback(
+    (view, viewItemId) => {
+      const viewInfo = {view};
 
-    if (viewItemId) {
-      viewInfo.viewItemId = viewItemId;
-    }
+      if (viewItemId) {
+        viewInfo.viewItemId = viewItemId;
+      }
 
-    dispatch({type: 'set-view-info', viewInfo});
-  };
+      dispatch({type: 'set-view-info', viewInfo});
+    },
+    [dispatch]
+  );
+
+  useEffect(() => {
+    return () => {
+      setNewView(VIEWS.STORE_FRONT);
+    };
+  }, [setNewView]);
 
   if (view === VIEWS.QUANTITY_SELECT) {
     return (
