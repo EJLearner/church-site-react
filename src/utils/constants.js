@@ -32,6 +32,12 @@ const constants = {
 
   SUBSCRIBED_EMAILS_REF_NAME: 'subscribedEmails',
 
+  VIEWS: {
+    CART: 'cart',
+    QUANTITY_SELECT: 'quantitySelect',
+    STORE_FRONT: 'storeFront'
+  },
+
   VBS_LOGBOOK_REF_NAME: 'vbsLogbook',
   VBS_REGISTERED_CHILDREN_REF_NAME: 'vbsRegisteredChildren',
   VBS_REGISTERED_CHILD_ID_PROP: 'vbsRegisteredChildrenId',

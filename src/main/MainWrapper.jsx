@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import NotFound from '../ce/components/NotFound/NotFound';
 import routePaths from '../routePaths';
+import GlobalStoreWrapper from '../stores/GlobalStoreWrapper';
 import backgroundStore from '../stores/backgroundStore';
 import {SIZES} from '../utils/styleVariables';
 
@@ -24,9 +25,9 @@ import ScholarshipPage from './ScholarshipPage';
 import WatchPage from './WatchPage';
 import MainFooter from './commonComponents/MainFooter';
 
-const WrapperDiv = styled.div`
+const StyledWrapperDiv = styled.div`
   background-attachment: fixed;
-  background-image: url(${props => props.backgroundSource});
+  background-image: url(${(props) => props.backgroundSource});
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: ${SIZES.FOOTER_HEIGHT};
@@ -41,7 +42,7 @@ function MainWrapper() {
   );
 
   useEffect(() => {
-    backgroundStore.subscribe(PAGE_ID, newBackgroundSource => {
+    backgroundStore.subscribe(PAGE_ID, (newBackgroundSource) => {
       setBackgroundSource(newBackgroundSource);
     });
 
@@ -49,59 +50,61 @@ function MainWrapper() {
   });
 
   return (
-    <WrapperDiv backgroundSource={backgroundSource}>
-      <Switch>
-        <Route path={routePaths.MAIN_ABOUT_US}>
-          <AboutUsPage />
-        </Route>
-        <Route path={routePaths.MAIN_CALENDAR}>
-          <Calendar />
-        </Route>
-        <Route path={routePaths.MAIN_CONTACT}>
-          <ContactPage />
-        </Route>
-        <Route path={routePaths.MAIN_CORONAVIRUS}>
-          <CoronavirusPage />
-        </Route>
-        <Route path={routePaths.MAIN_CULTURE_AND_ARTS}>
-          <CultureAndFineArtsPage />
-        </Route>
-        <Route path={routePaths.MAIN_GED}>
-          <GedPage />
-        </Route>
-        <Route path={routePaths.MAIN_GIVING}>
-          <GivingPage />
-        </Route>
-        <Route path={routePaths.MAIN_JUBILEE}>
-          <JubileePage />
-        </Route>
-        <Route exact path={routePaths.MAIN_HOME}>
-          <MainContent />
-        </Route>
-        <Route path={routePaths.MAIN_MEDITATIONS}>
-          <MeditationsPage />
-        </Route>
-        <Route path={routePaths.MAIN_MEMBERS_ONLY}>
-          <MembersOnly />
-        </Route>
-        <Route path={routePaths.MAIN_MINISTRIES}>
-          <MinistriesPage />
-        </Route>
-        <Route path={routePaths.MAIN_NEWS}>
-          <NewsPage />
-        </Route>
-        <Route path={routePaths.MAIN_SCHOLARSHIP}>
-          <ScholarshipPage />
-        </Route>
-        <Route path={routePaths.MAIN_WATCH}>
-          <WatchPage />
-        </Route>
-        <Route>
-          <NotFound />
-        </Route>
-      </Switch>
-      <MainFooter />
-    </WrapperDiv>
+    <GlobalStoreWrapper>
+      <StyledWrapperDiv backgroundSource={backgroundSource}>
+        <Switch>
+          <Route path={routePaths.MAIN_ABOUT_US}>
+            <AboutUsPage />
+          </Route>
+          <Route path={routePaths.MAIN_CALENDAR}>
+            <Calendar />
+          </Route>
+          <Route path={routePaths.MAIN_CONTACT}>
+            <ContactPage />
+          </Route>
+          <Route path={routePaths.MAIN_CORONAVIRUS}>
+            <CoronavirusPage />
+          </Route>
+          <Route path={routePaths.MAIN_CULTURE_AND_ARTS}>
+            <CultureAndFineArtsPage />
+          </Route>
+          <Route path={routePaths.MAIN_GED}>
+            <GedPage />
+          </Route>
+          <Route path={routePaths.MAIN_GIVING}>
+            <GivingPage />
+          </Route>
+          <Route path={routePaths.MAIN_JUBILEE}>
+            <JubileePage />
+          </Route>
+          <Route exact path={routePaths.MAIN_HOME}>
+            <MainContent />
+          </Route>
+          <Route path={routePaths.MAIN_MEDITATIONS}>
+            <MeditationsPage />
+          </Route>
+          <Route path={routePaths.MAIN_MEMBERS_ONLY}>
+            <MembersOnly />
+          </Route>
+          <Route path={routePaths.MAIN_MINISTRIES}>
+            <MinistriesPage />
+          </Route>
+          <Route path={routePaths.MAIN_NEWS}>
+            <NewsPage />
+          </Route>
+          <Route path={routePaths.MAIN_SCHOLARSHIP}>
+            <ScholarshipPage />
+          </Route>
+          <Route path={routePaths.MAIN_WATCH}>
+            <WatchPage />
+          </Route>
+          <Route>
+            <NotFound />
+          </Route>
+        </Switch>
+        <MainFooter />
+      </StyledWrapperDiv>
+    </GlobalStoreWrapper>
   );
 }
 
