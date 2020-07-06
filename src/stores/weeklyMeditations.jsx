@@ -410,5 +410,25 @@ export default {
         of a good Christian is nothing less than holy desire.”
       </p>
     )
+  },
+  '2020-07-05': {
+    subTitle: (
+      <>
+        From <i>I, Francis</i> by Carlo Carretto
+      </>
+    ),
+    content: (
+      <p>
+        “…And so when we had a decision to make, we would open the Gospel at
+        random, after having said a little prayer, and then we did whatever was
+        written, without adding anything. This manner of action gave us a
+        boundless liberty, and nurtured simplicity of heart with some solid
+        food. Another important element taking shape in the community we were
+        forming was the primacy of faith instead of structures. What made us one
+        was Christ, and the imitation of him gave meaning to the manner of
+        living of each one of us. There was the whole expressions around us of
+        the life of a simple Christian.”
+      </p>
+    )
   }
 };

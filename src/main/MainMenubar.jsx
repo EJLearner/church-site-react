@@ -64,7 +64,7 @@ const MainMenubar = () => {
     {text: 'Giving', path: routePaths.MAIN_GIVING},
     {text: 'Watch', path: routePaths.MAIN_WATCH},
     {text: 'Church Calendar', path: routePaths.MAIN_CALENDAR},
-    // TODO: Add later
+    // TODO:add when members only section exists
     // {text: 'Members Only', path: routePaths.MAIN_MEMBERS_ONLY},
     {text: 'Contact', path: routePaths.MAIN_CONTACT}
   ];

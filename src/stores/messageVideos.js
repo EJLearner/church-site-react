@@ -5,6 +5,16 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-07-05',
+    description:
+      'Rev. 1:8 We are living in chaotic times. But the good news is, our God who is Sovereign, is in the midst of' +
+      'the chaos. Therefore we have no reason to fear.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Rev. 1:8',
+    title: 'The Sovereignty of God',
+    videoLink: 'https://www.youtube.com/embed/pvMA1AFMZhs'
+  },
+  {
     date: '2020-06-28',
     description:
       'Matthew 25:14-30  This is a service in recognition of all graduates. You were all born with ' +
