@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -7,8 +8,46 @@ import {
   FONT_FAMILIES
 } from '../../utils/styleVariables';
 
-import PropTypes from 'prop-types';
 import PlainButton from './PlainButton';
+
+const subMenu = (subLinks) => {
+  return (
+    <ul>
+      {subLinks.map(({elementId, title}) => (
+        <li key={elementId}>
+          <a href={`#${elementId}`}>{title}</a>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+const renderMenuItem = (menuItemData) => {
+  const {
+    id,
+    isSelected,
+    onClick,
+    subLinks,
+    renderMenuItemTitle,
+    title
+  } = menuItemData;
+
+  return (
+    <React.Fragment key={id}>
+      {renderMenuItemTitle && (
+        // don't show title if there is only one - helpful when we have a
+        // single menu item with a within page anchors
+        <li
+          className={isSelected ? 'selected' : null}
+          onClick={() => onClick(id)}
+        >
+          <ContentButton>{title}</ContentButton>
+        </li>
+      )}
+      {subLinks && isSelected && subMenu(subLinks)}
+    </React.Fragment>
+  );
+};
 
 const LeftSide = styled.div`
   background-color: ${COLORS.WHITE};
@@ -47,54 +86,15 @@ const ContentButton = styled(PlainButton)`
   line-height: 150%;
 `;
 
-const subMenu = subLinks => {
-  return (
-    <ul>
-      {subLinks.map(({elementId, title}) => (
-        <li key={elementId}>
-          <a href={`#${elementId}`}>{title}</a>
-        </li>
-      ))}
-    </ul>
-  );
-};
-
-const renderMenuItem = menuItemData => {
-  const {
-    id,
-    isSelected,
-    onClick,
-    subLinks,
-    renderMenuItemTitle,
-    title
-  } = menuItemData;
-
-  return (
-    <React.Fragment key={id}>
-      {renderMenuItemTitle && (
-        // don't show title if there is only one - helpful when we have a
-        // single menu item with a within page anchors
-        <li
-          className={isSelected ? 'selected' : null}
-          onClick={() => onClick(id)}
-        >
-          <ContentButton>{title}</ContentButton>
-        </li>
-      )}
-      {subLinks && isSelected && subMenu(subLinks)}
-    </React.Fragment>
-  );
-};
-
 const SideMenu = ({currentId, onClick, menuData, title}) => {
   return (
     <LeftSide>
       <h2>{title}</h2>
       <ul>
-        {menuData.map(menuItemInfo =>
+        {menuData.map((menuItemInfo) =>
           renderMenuItem({
             ...menuItemInfo,
-            onClick,
+            onClick: onClick,
             isSelected: menuItemInfo.id === currentId,
             renderMenuItemTitle: Boolean(menuData.length > 1)
           })

@@ -120,7 +120,7 @@ function eventsRenders(orderedEvents) {
       const monthName = format(jsDate, 'MMMM');
       const year = format(jsDate, 'yyyy');
       render.push(
-        <h3>
+        <h3 key={monthName}>
           {monthName} <span className="year">{year}</span>
         </h3>
       );

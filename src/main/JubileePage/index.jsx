@@ -1,11 +1,22 @@
+import PropTypes from 'prop-types';
 import React, {useEffect} from 'react';
+import {Route, Switch, withRouter} from 'react-router-dom';
 import styled from 'styled-components';
 
 import avisPicture from '../../assets/main/images/avis.jpg';
 import routePaths from '../../routePaths';
 import backgroundStore from '../../stores/backgroundStore';
 import StoreContent from '../JubileeStore/StoreContent';
-import GeneralPageTemplate from '../commonComponents/GeneralPageTemplate';
+import MainMenubar from '../MainMenubar';
+import AboveContentLinks from '../commonComponents/AboveContentLinks';
+import ContentAndSides from '../commonComponents/ContentAndSides';
+import ContentAndSubCompassWrapper from '../commonComponents/ContentAndSubCompassWrapper';
+import ContentLeftSide from '../commonComponents/ContentLeftSide';
+import ContentWrapper from '../commonComponents/ContentWrapper';
+import SideMenu from '../commonComponents/SideMenu';
+import StandardPageWrapper from '../commonComponents/StandardPageWrapper';
+import TopInfoBox from '../commonComponents/TopInfoBox';
+import TopInfoBoxWrapper from '../commonComponents/TopInfoBoxWrapper';
 
 import UpcomingEvents from './UpcomingEvents';
 
@@ -116,13 +127,18 @@ const calendarContent = (
 );
 
 const bottomContentData = [
-  {title: 'Store', id: 'store', content: <StoreContent />},
+  {
+    title: 'Store',
+    id: routePaths.MAIN_JUBILEE_STORE
+  },
   {
     title: '50th Anniversary Celebration',
-    id: '50thAnniversary',
-    content: anniversaryContent
+    id: routePaths.MAIN_JUBILEE_50TH_ANNIVERSARY
   },
-  {title: 'Event Calendar', id: 'calendar', content: calendarContent}
+  {
+    title: 'Event Calendar',
+    id: routePaths.MAIN_JUBILEE_EVENT_CALENDAR
+  }
 ];
 
 const topBoxContent = (
@@ -138,25 +154,73 @@ const topBoxContent = (
   </div>
 );
 
-function JubileePage() {
+function JubileePage({history, location}) {
+  const contentId = location.pathname;
   useEffect(() => {
     backgroundStore.setBackgroundSource(
       backgroundStore.backgroundSources.SHOFARBLOWER
     );
 
-    return () => backgroundStore.resetBackground();
+    return () => {
+      backgroundStore.resetBackground();
+    };
   }, []);
+
+  const menuTitle = 'Anniversary';
+
+  const {title} = bottomContentData.find(({id}) => id === contentId);
+
+  const sideMenu = (
+    <SideMenu
+      currentId={contentId}
+      menuData={bottomContentData}
+      onClick={(id) => history.push(id)}
+      title={menuTitle}
+    />
+  );
 
   return (
     <JubileePageStyles>
-      <GeneralPageTemplate
-        bottomContentData={bottomContentData}
-        menuTitle="Anniversary"
-        pagePath={routePaths.MAIN_JUBILEE}
-        topBoxContent={topBoxContent}
-      />
+      <StandardPageWrapper>
+        <MainMenubar />
+        <TopInfoBoxWrapper>
+          <TopInfoBox>{topBoxContent}</TopInfoBox>
+        </TopInfoBoxWrapper>
+
+        <ContentAndSubCompassWrapper>
+          <AboveContentLinks
+            pagePath={routePaths.MAIN_JUBILEE}
+            pageTitle={menuTitle}
+            subPageTitle={title}
+          />
+          <ContentAndSides>
+            <ContentLeftSide>{sideMenu}</ContentLeftSide>
+            <ContentWrapper>
+              <Switch>
+                <Route path={routePaths.MAIN_JUBILEE_STORE}>
+                  <StoreContent />
+                </Route>
+                <Route path={routePaths.MAIN_JUBILEE_50TH_ANNIVERSARY}>
+                  {anniversaryContent}
+                </Route>
+                <Route path={routePaths.MAIN_JUBILEE_EVENT_CALENDAR}>
+                  {calendarContent}
+                </Route>
+                <Route>
+                  <StoreContent />
+                </Route>
+              </Switch>
+            </ContentWrapper>
+          </ContentAndSides>
+        </ContentAndSubCompassWrapper>
+      </StandardPageWrapper>
     </JubileePageStyles>
   );
 }
 
-export default JubileePage;
+JubileePage.propTypes = {
+  history: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
+};
+
+export default withRouter(JubileePage);
