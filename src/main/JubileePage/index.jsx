@@ -168,7 +168,8 @@ function JubileePage({history, location}) {
 
   const menuTitle = 'Anniversary';
 
-  const {title} = bottomContentData.find(({id}) => id === contentId);
+  const {title} =
+    bottomContentData.find(({id}) => id === contentId) || bottomContentData[0];
 
   const sideMenu = (
     <SideMenu
@@ -206,7 +207,7 @@ function JubileePage({history, location}) {
                 <Route path={routePaths.MAIN_JUBILEE_EVENT_CALENDAR}>
                   {calendarContent}
                 </Route>
-                <Route>
+                <Route exact path={routePaths.MAIN_JUBILEE}>
                   <StoreContent />
                 </Route>
               </Switch>
