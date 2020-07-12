@@ -110,7 +110,14 @@ const bibleComFormattedVerses = {
   '2020-07-08': {verse: 'Ephesians 1.1-14'},
   '2020-07-09': {verse: '2 Corinthians 12.1-10'},
   '2020-07-10': {verse: '1 Peter 1.1-9'},
-  '2020-07-11': {verse: '1 Corinthians 1.18-31'}
+  '2020-07-11': {verse: '1 Corinthians 1.18-31'},
+  '2020-07-12': {verse: 'Psalm 69.6-15'},
+  '2020-07-13': {verse: 'Isaiah 1.10-17'},
+  '2020-07-14': {verse: 'Matthew 10.1-10'},
+  '2020-07-15': {verse: 'Romans 15.1-13'},
+  '2020-07-16': {verse: '1 Corinthians 9.15-23'},
+  '2020-07-17': {verse: 'John 17.20-26'},
+  '2020-07-18': {verse: 'Romans 14'}
 };
 
 export {bibleComFormattedVerses};
