@@ -5,14 +5,14 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
-    date: '2020-07-05',
+    date: '2020-07-12',
     description:
-      'Rev. 1:8 We are living in chaotic times. But the good news is, our God who is Sovereign, is in the midst of' +
-      'the chaos. Therefore we have no reason to fear.',
+      'John16:25-33 -  We are living in chaotic times and it may feel as if all will be lost. However,  the Good ' +
+      'News is that Jesus has overcome the world which gives us reason to rejoice!',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Rev. 1:8',
-    title: 'The Sovereignty of God',
-    videoLink: 'https://www.youtube.com/embed/pvMA1AFMZhs'
+    scripture: 'John 16:25-33',
+    title: 'Overcoming The World',
+    videoLink: 'https://www.youtube.com/embed/LpT1uHrFf7U'
   },
   {
     date: '2020-06-28',
