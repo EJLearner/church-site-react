@@ -14,6 +14,7 @@ let initialState = {
 
 const GlobalStoreWrapper = ({children}) => {
   const [state, dispatch] = useReducer(globalReducer, initialState);
+  console.log('GlobalStoreWrapper -> state', state);
 
   return (
     <Context.Provider value={[state, dispatch]}>{children}</Context.Provider>

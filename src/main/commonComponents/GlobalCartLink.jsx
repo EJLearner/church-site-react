@@ -3,7 +3,9 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 import shoppingUtils from '../../common/components/Shopping/shoppingUtils';
+import routePaths from '../../routePaths';
 import {Context} from '../../stores/GlobalStoreWrapper';
+import constants from '../../utils/constants';
 import {LOGICAL_COLORS} from '../../utils/styleVariables';
 
 const StyledWrapperDiv = styled.div`
@@ -22,14 +24,26 @@ const StyledWrapperDiv = styled.div`
 `;
 
 function GlobalCartLink() {
-  const [state] = useContext(Context);
+  const [state, dispatch] = useContext(Context);
 
   const cartHasItems = shoppingUtils.getCartSubTotal(state.cart);
 
   if (cartHasItems) {
     return (
       <StyledWrapperDiv className="shopping-cart-link">
-        <Link to>
+        <Link
+          onClick={() => {
+            console.log(
+              'GlobalCartLink -> constants.VIEWS.CART',
+              constants.VIEWS.CART
+            );
+            dispatch({
+              type: 'set-view-info',
+              viewInfo: {view: constants.VIEWS.CART}
+            });
+          }}
+          to={routePaths.MAIN_JUBILEE_STORE}
+        >
           <i className="fa fa-shopping-cart fa-2x" title="Shopping Cart" />
         </Link>
       </StyledWrapperDiv>

@@ -23,6 +23,7 @@ function StoreContent(props) {
   const [state, dispatch] = useContext(Context);
   const {viewInfo} = state;
   const {view, viewItemId} = viewInfo;
+  console.log('StoreContent -> view', view);
 
   const setNewView = useCallback(
     (view, viewItemId) => {
