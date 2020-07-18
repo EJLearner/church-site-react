@@ -5,6 +5,16 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-07-19',
+    description:
+      'John 11:30-35 - All of us have experienced being moved to tears. These are not tears of joy, rather they ' +
+      'are tears of pain and suffering. The good news is, we never cry alone because God through Jesus weeps with us!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 11:30-35',
+    title: 'A Peek Into The Heart Of God',
+    videoLink: 'https://www.youtube.com/embed/pdZxkWcG1Ho'
+  },
+  {
     date: '2020-07-12',
     description:
       'John16:25-33 -  We are living in chaotic times and it may feel as if all will be lost. However,  the Good ' +
