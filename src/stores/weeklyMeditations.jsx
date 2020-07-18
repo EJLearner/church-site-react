@@ -449,5 +449,20 @@ export default {
         horizons.”
       </p>
     )
+  },
+  '2020-07-19': {
+    subTitle: (
+      <>
+        From <i>The Art of Prayer</i>
+      </>
+    ),
+    content: (
+      <p>
+        “Complete serenity of mind is a gift of God; but this serenity is not
+        given without our own intense effort. You will achieve nothing by your
+        own efforts alone; yet God will not give you anything, unless you work
+        with all your strength. This is an unbreakable law.”
+      </p>
+    )
   }
 };
