@@ -124,7 +124,14 @@ const bibleComFormattedVerses = {
   '2020-07-22': {verse: 'Micah 7'},
   '2020-07-23': {verse: 'Colossians 3.12-17'},
   '2020-07-24': {verse: 'Luke 8.11-15'},
-  '2020-07-25': {verse: 'James 5.7-11'}
+  '2020-07-25': {verse: 'James 5.7-11'},
+  '2020-07-26': {verse: 'Psalm 105.1-11'},
+  '2020-07-27': {verse: 'Psalm 44.1-8'},
+  '2020-07-28': {verse: 'Isaiah 41.1-10'},
+  '2020-07-29': {verse: 'Hebrews 10.19-25'},
+  '2020-07-30': {verse: 'Revelation 21.1-8'},
+  '2020-07-31': {verse: '1 Corinthians 1.9'},
+  '2020-08-01': {verse: 'Hebrews 6.13-20'}
 };
 
 export {bibleComFormattedVerses};
