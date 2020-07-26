@@ -5,7 +5,7 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
-    date: '2020-07-19',
+    date: '2020-07-26',
     description:
       'Genesis 28:10-17.  God’s ways are not our ways. We are not always aware that God is with us, however, ' +
       'when we least expect it, know that God is with us!',
@@ -13,6 +13,16 @@ const allVideoData = [
     scripture: 'Genesis 28:10-17',
     title: 'When You Least Expect It, Expect It',
     videoLink: 'https://www.youtube.com/embed/fDaeW4mmVIE'
+  },
+  {
+    date: '2020-07-19',
+    description:
+      'John 11:30-35 - All of us have experienced being moved to tears. These are not tears of joy, rather they ' +
+      'are tears of pain and suffering. The good news is, we never cry alone because God through Jesus weeps with us!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 11:30-35',
+    title: 'A Peek Into The Heart Of God',
+    videoLink: 'https://www.youtube.com/embed/pdZxkWcG1Ho'
   },
   {
     date: '2020-07-12',
