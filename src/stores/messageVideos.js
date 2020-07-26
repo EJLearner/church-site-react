@@ -5,6 +5,16 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-07-19',
+    description:
+      'Genesis 28:10-17.  God’s ways are not our ways. We are not always aware that God is with us, however, ' +
+      'when we least expect it, know that God is with us!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Genesis 28:10-17',
+    title: 'When You Least Expect It, Expect It',
+    videoLink: 'https://www.youtube.com/embed/fDaeW4mmVIE'
+  },
+  {
     date: '2020-07-12',
     description:
       'John16:25-33 -  We are living in chaotic times and it may feel as if all will be lost. However,  the Good ' +
