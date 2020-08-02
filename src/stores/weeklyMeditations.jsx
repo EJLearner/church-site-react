@@ -483,5 +483,22 @@ export default {
         justice dwells and where people love one another.”
       </p>
     )
+  },
+  '2020-08-02': {
+    subTitle: (
+      <>
+        From <i>The Spiritual Life</i> by Evelyn Underhill
+      </>
+    ),
+    content: (
+      <p>
+        “We are the agents of the Creative Spirit in this world. Real advance in
+        the spiritual life, then, means accepting this vocation with all it
+        involves. Not merely turning over the pages of an engineering magazine
+        and enjoying the pictures, but putting on overalls and getting on with
+        the job. The real spiritual life must be horizontal as well as vertical;
+        spread more and more as well as aspire more and more.”
+      </p>
+    )
   }
 };
