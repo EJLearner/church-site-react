@@ -171,6 +171,10 @@ const commonUtils = {
     return moment().year();
   },
 
+  lodashForEach() {
+    return _.forEach;
+  },
+
   range: (startIndex, endIndex) => _.range(startIndex, endIndex + 1),
 
   sort(array, getSortValue, direction = SORT_DIRECTION_ASCENDING) {

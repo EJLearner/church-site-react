@@ -1,14 +1,11 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-
 import moment from 'moment';
-import _ from 'lodash';
-
-import calendarDatesUtils from '../../../ce/utils/calendarDatesUtils';
+import PropTypes from 'prop-types';
+import React, {Component} from 'react';
+import styled from 'styled-components';
 
 import withDatesSubscription from '../../../ce/components/Hocs/withDatesSubscription';
-
-import styled from 'styled-components';
+import calendarDatesUtils from '../../../ce/utils/calendarDatesUtils';
+import commonUtils from '../../../utils/commonUtils';
 import {LOGICAL_COLORS} from '../../../utils/styleVariables';
 
 const CONTROLS = {
@@ -108,10 +105,8 @@ class MiniCalendar extends Component {
   }
 
   renderTableHeader() {
-    const headerCells = _.range(0, 7).map(dayOfWeekIndex => {
-      const stringDayOfWeek = moment()
-        .weekday(dayOfWeekIndex)
-        .format('dd');
+    const headerCells = commonUtils.range(0, 7).map((dayOfWeekIndex) => {
+      const stringDayOfWeek = moment().weekday(dayOfWeekIndex).format('dd');
 
       return <th key={stringDayOfWeek}>{stringDayOfWeek}</th>;
     });
@@ -131,7 +126,7 @@ class MiniCalendar extends Component {
       selectedDay
     } = this.props;
 
-    const renderedDays = _.range(0, 7).map(dayOfWeekIndex => {
+    const renderedDays = commonUtils.range(0, 7).map((dayOfWeekIndex) => {
       const dayMoment = moment(selectedDay)
         .year(year)
         .startOf('year')
@@ -161,7 +156,7 @@ class MiniCalendar extends Component {
           'selected-day',
         highlightWeek && isSelectedWeek && 'selected-week'
       ]
-        .filter(text => text)
+        .filter((text) => text)
         .join(' ');
 
       let daysEventsMessage = '';
@@ -200,14 +195,14 @@ class MiniCalendar extends Component {
         .week();
     }
 
-    const weekNumbers = _.range(
+    const weekNumbers = commonUtils.range(
       firstWeekOfMonth,
       lastWeekOfMonthInSameYear + 1
     );
 
     const year = todayMoment.year();
 
-    const renderedWeeks = weekNumbers.map(week => {
+    const renderedWeeks = weekNumbers.map((week) => {
       return this.renderTableBodyRow(week, year);
     });
 

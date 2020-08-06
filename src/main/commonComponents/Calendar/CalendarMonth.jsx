@@ -9,6 +9,7 @@ import withDatesSubscription from '../../../ce/components/Hocs/withDatesSubscrip
 import calendarDatesUtils from '../../../ce/utils/calendarDatesUtils';
 import Select from '../../../common/components/Select';
 import routePaths from '../../../routePaths';
+import commonUtils from '../../../utils/commonUtils';
 
 const MonthCalendarStyle = styled.div`
   background-color: white;
@@ -61,7 +62,7 @@ class CalendarMonth extends Component {
   }
 
   renderTableHeader() {
-    const headerCells = _.range(0, 7).map((dayOfWeekIndex) => {
+    const headerCells = commonUtils.range(0, 7).map((dayOfWeekIndex) => {
       const stringDayOfWeek = moment().weekday(dayOfWeekIndex).format('dddd');
 
       return <th key={stringDayOfWeek}>{stringDayOfWeek}</th>;
@@ -102,7 +103,7 @@ class CalendarMonth extends Component {
   }
 
   renderTableBodyRow(weekNumber, year) {
-    const renderedDays = _.range(0, 7).map((dayOfWeekIndex) => {
+    const renderedDays = commonUtils.range(0, 7).map((dayOfWeekIndex) => {
       const dayMoment = this.state.selectedMoment
         .clone()
         .year(year)
@@ -153,7 +154,7 @@ class CalendarMonth extends Component {
         .week();
     }
 
-    const weekNumbers = _.range(
+    const weekNumbers = commonUtils.range(
       firstWeekOfMonth,
       lastWeekOfMonthInSameYear + 1
     );
@@ -173,13 +174,15 @@ class CalendarMonth extends Component {
   renderYearDropDown() {
     // make these props
     const currentYear = moment().year();
-    const options = _.range(currentYear - 1, currentYear + 4).map((year) => {
-      const stringYear = String(year);
-      return {
-        label: stringYear,
-        value: stringYear
-      };
-    });
+    const options = commonUtils
+      .range(currentYear - 1, currentYear + 4)
+      .map((year) => {
+        const stringYear = String(year);
+        return {
+          label: stringYear,
+          value: stringYear
+        };
+      });
 
     return (
       <Select
@@ -193,7 +196,7 @@ class CalendarMonth extends Component {
   renderMonthDropDown() {
     const selectedMonth = this.state.selectedMoment.format('MMM').toLowerCase();
 
-    const options = _.range(0, 12).map((monthNum) => {
+    const options = commonUtils.range(0, 12).map((monthNum) => {
       const momentMonth = moment().month(monthNum);
       return {
         label: momentMonth.format('MMMM'),

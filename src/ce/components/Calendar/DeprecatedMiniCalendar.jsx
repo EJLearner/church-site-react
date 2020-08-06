@@ -1,14 +1,12 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-
 import moment from 'moment';
-import _ from 'lodash';
+import PropTypes from 'prop-types';
+import React, {Component} from 'react';
 
+import commonUtils from '../../../utils/commonUtils';
 import calendarDatesUtils from '../../utils/calendarDatesUtils';
-
-import './MiniCalendar.css';
 import withDatesSubscription from '../Hocs/withDatesSubscription';
 
+import './MiniCalendar.css';
 const CONTROLS = {
   PREV: 'PREV',
   NEXT: 'NEXT'
@@ -18,11 +16,11 @@ class DeprecatedMiniCalendar extends Component {
   constructor(props) {
     super(props);
 
-    this._onClickCell = this._onClickCell.bind(this);
-    this._addMonth = this._addMonth.bind(this);
+    this.onClickCell = this.onClickCell.bind(this);
+    this.addMonth = this.addMonth.bind(this);
   }
 
-  _addMonth(monthsToAdd) {
+  addMonth(monthsToAdd) {
     if (this.props.onDateChange) {
       const newDate = moment(this.props.selectedDay)
         .add(monthsToAdd, 'months')
@@ -32,7 +30,7 @@ class DeprecatedMiniCalendar extends Component {
     }
   }
 
-  _onClickCell(dayString, daysEventsCount) {
+  onClickCell(dayString, daysEventsCount) {
     if (this.props.onDateChange) {
       this.props.onDateChange(dayString, daysEventsCount);
     }
@@ -45,11 +43,9 @@ class DeprecatedMiniCalendar extends Component {
     }
   }
 
-  _renderTableHeader() {
-    const headerCells = _.range(0, 7).map(dayOfWeekIndex => {
-      const stringDayOfWeek = moment()
-        .weekday(dayOfWeekIndex)
-        .format('dd');
+  renderTableHeader() {
+    const headerCells = commonUtils.range(0, 7).map((dayOfWeekIndex) => {
+      const stringDayOfWeek = moment().weekday(dayOfWeekIndex).format('dd');
 
       return <th key={stringDayOfWeek}>{stringDayOfWeek}</th>;
     });
@@ -61,7 +57,7 @@ class DeprecatedMiniCalendar extends Component {
     );
   }
 
-  _renderTableBodyRow(weekNumber, year) {
+  renderTableBodyRow(weekNumber, year) {
     const {
       allDatesClickable,
       highlightSelectedDay,
@@ -69,7 +65,7 @@ class DeprecatedMiniCalendar extends Component {
       selectedDay
     } = this.props;
 
-    const renderedDays = _.range(0, 7).map(dayOfWeekIndex => {
+    const renderedDays = commonUtils.range(0, 7).map((dayOfWeekIndex) => {
       const dayMoment = moment(selectedDay)
         .year(year)
         .startOf('year')
@@ -99,7 +95,7 @@ class DeprecatedMiniCalendar extends Component {
           'selected-day',
         highlightWeek && isSelectedWeek && 'selected-week'
       ]
-        .filter(text => text)
+        .filter((text) => text)
         .join(' ');
 
       let daysEventsMessage = '';
@@ -113,7 +109,7 @@ class DeprecatedMiniCalendar extends Component {
         <td
           className={tdClassName}
           key={dayOfWeekIndex}
-          onClick={_.partial(this._onClickCell, dayString, daysEventsCount)}
+          onClick={() => this.onClickCell(dayString, daysEventsCount)}
           title={dayMoment.format('LL') + daysEventsMessage}
         >
           <div>{dayMoment.date()}</div>
@@ -138,19 +134,19 @@ class DeprecatedMiniCalendar extends Component {
         .week();
     }
 
-    const weekNumbers = _.range(
+    const weekNumbers = commonUtils.range(
       firstWeekOfMonth,
       lastWeekOfMonthInSameYear + 1
     );
 
     const year = todayMoment.year();
 
-    const renderedWeeks = weekNumbers.map(week => {
-      return this._renderTableBodyRow(week, year);
+    const renderedWeeks = weekNumbers.map((week) => {
+      return this.renderTableBodyRow(week, year);
     });
 
     if (includesNextYear) {
-      renderedWeeks.push(this._renderTableBodyRow(1, year + 1));
+      renderedWeeks.push(this.renderTableBodyRow(1, year + 1));
     }
 
     return <tbody>{renderedWeeks}</tbody>;
@@ -165,7 +161,7 @@ class DeprecatedMiniCalendar extends Component {
       return (
         <i
           className={`fa fa-angle-double-${direction}`}
-          onClick={_.partial(this._addMonth, addition)}
+          onClick={() => this.addMonth(addition)}
           tabIndex="0"
         />
       );
@@ -187,8 +183,8 @@ class DeprecatedMiniCalendar extends Component {
           {this.renderControls(CONTROLS.NEXT)}
         </div>
         <table>
-          {this._renderTableHeader()}
-          {this._renderTableBody()}
+          {this.renderTableHeader()}
+          {this.renderTableBody()}
         </table>
       </div>
     );

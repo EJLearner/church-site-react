@@ -1,19 +1,16 @@
-import React, {Component} from 'react';
+import moment from 'moment';
 import PropTypes from 'prop-types';
+import React, {Component} from 'react';
 import {Redirect} from 'react-router';
 
 import routePaths from '../../../routePaths';
-
-import moment from 'moment';
-import _ from 'lodash';
+import commonUtils from '../../../utils/commonUtils';
 
 import MiniCalendar from './MiniCalendar';
 
 function getMiniCalendarMonths(firstMonth) {
-  return _.range(0, 12).map(monthsAdded => {
-    return moment(firstMonth)
-      .add(monthsAdded, 'months')
-      .format('YYYY-MM-DD');
+  return commonUtils.range(0, 12).map((monthsAdded) => {
+    return moment(firstMonth).add(monthsAdded, 'months').format('YYYY-MM-DD');
   });
 }
 
@@ -25,7 +22,7 @@ class CalendarYear extends Component {
   }
 
   renderMonths() {
-    return getMiniCalendarMonths(this.props.firstMonth).map(monthDate => {
+    return getMiniCalendarMonths(this.props.firstMonth).map((monthDate) => {
       let selectedDay = monthDate;
       let highlightSelectedDay = false;
 
@@ -39,7 +36,9 @@ class CalendarYear extends Component {
           <MiniCalendar
             allDatesClickable
             highlightSelectedDay={highlightSelectedDay}
-            onDateClick={dayString => this.setState({redirectDate: dayString})}
+            onDateClick={(dayString) =>
+              this.setState({redirectDate: dayString})
+            }
             selectedDay={selectedDay}
             yearDisplayMode
           />
