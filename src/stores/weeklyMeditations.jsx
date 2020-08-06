@@ -449,5 +449,56 @@ export default {
         horizons.”
       </p>
     )
+  },
+  '2020-07-19': {
+    subTitle: (
+      <>
+        From <i>The Art of Prayer</i>
+      </>
+    ),
+    content: (
+      <p>
+        “Complete serenity of mind is a gift of God; but this serenity is not
+        given without our own intense effort. You will achieve nothing by your
+        own efforts alone; yet God will not give you anything, unless you work
+        with all your strength. This is an unbreakable law.”
+      </p>
+    )
+  },
+  '2020-07-26': {
+    subTitle: (
+      <>
+        From <i>In the Christian Spirit</i> by Louis Evely
+      </>
+    ),
+    content: (
+      <p>
+        “Bad religion has always favored escape, passivity, irresponsibility. By
+        dint of fixing one’s eyes on heaven above, one does not see what takes
+        place on earth here below. The upward-looking must come to an
+        understanding with the forward-looking. We believe that our God (up
+        above) calls us to go forward. Our faith in an absolute does not
+        immobilize us in contemplation, but invites us to discover him according
+        to our means of creating a world inspired by his love: a world where
+        justice dwells and where people love one another.”
+      </p>
+    )
+  },
+  '2020-08-02': {
+    subTitle: (
+      <>
+        From <i>The Spiritual Life</i> by Evelyn Underhill
+      </>
+    ),
+    content: (
+      <p>
+        “We are the agents of the Creative Spirit in this world. Real advance in
+        the spiritual life, then, means accepting this vocation with all it
+        involves. Not merely turning over the pages of an engineering magazine
+        and enjoying the pictures, but putting on overalls and getting on with
+        the job. The real spiritual life must be horizontal as well as vertical;
+        spread more and more as well as aspire more and more.”
+      </p>
+    )
   }
 };

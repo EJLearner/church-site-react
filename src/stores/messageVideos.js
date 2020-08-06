@@ -5,6 +5,37 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-08-02',
+    description:
+      'Mark 9:2-10  We are living in a time of chaos and confusion. Therefore, it is necessary that we lift ' +
+      'up our heads and open our eyes to experience the glory that God’s and God’s alone. Today’s message ' +
+      'encourages us to do so!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Genesis 28:10-17',
+    title: 'A Glimpse of Glory',
+    videoLink: 'https://www.youtube.com/embed/G-IWmeMJf3s'
+  },
+  {
+    date: '2020-07-26',
+    description:
+      'Genesis 28:10-17.  God’s ways are not our ways. We are not always aware that God is with us, however, ' +
+      'when we least expect it, know that God is with us!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Genesis 28:10-17',
+    title: 'When You Least Expect It, Expect It',
+    videoLink: 'https://www.youtube.com/embed/fDaeW4mmVIE'
+  },
+  {
+    date: '2020-07-19',
+    description:
+      'John 11:30-35 - All of us have experienced being moved to tears. These are not tears of joy, rather they ' +
+      'are tears of pain and suffering. The good news is, we never cry alone because God through Jesus weeps with us!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 11:30-35',
+    title: 'A Peek Into The Heart Of God',
+    videoLink: 'https://www.youtube.com/embed/pdZxkWcG1Ho'
+  },
+  {
     date: '2020-07-12',
     description:
       'John16:25-33 -  We are living in chaotic times and it may feel as if all will be lost. However,  the Good ' +

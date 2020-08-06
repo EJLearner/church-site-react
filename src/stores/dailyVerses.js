@@ -117,7 +117,28 @@ const bibleComFormattedVerses = {
   '2020-07-15': {verse: 'Romans 15.1-13'},
   '2020-07-16': {verse: '1 Corinthians 9.15-23'},
   '2020-07-17': {verse: 'John 17.20-26'},
-  '2020-07-18': {verse: 'Romans 14'}
+  '2020-07-18': {verse: 'Romans 14'},
+  '2020-07-19': {verse: 'Psalm 103.1-13'},
+  '2020-07-20': {verse: 'Psalm 25.1-21'},
+  '2020-07-21': {verse: 'Luke 12.35-40'},
+  '2020-07-22': {verse: 'Micah 7'},
+  '2020-07-23': {verse: 'Colossians 3.12-17'},
+  '2020-07-24': {verse: 'Luke 8.11-15'},
+  '2020-07-25': {verse: 'James 5.7-11'},
+  '2020-07-26': {verse: 'Psalm 105.1-11'},
+  '2020-07-27': {verse: 'Psalm 44.1-8'},
+  '2020-07-28': {verse: 'Isaiah 41.1-10'},
+  '2020-07-29': {verse: 'Hebrews 10.19-25'},
+  '2020-07-30': {verse: 'Revelation 21.1-8'},
+  '2020-07-31': {verse: '1 Corinthians 1.9'},
+  '2020-08-01': {verse: 'Hebrews 6.13-20'},
+  '2020-08-02': {verse: 'Psalm 143.1-10'},
+  '2020-08-03': {verse: 'Deuteronomy 7.6-14'},
+  '2020-08-04': {verse: 'Exodus 16.1-21'},
+  '2020-08-05': {verse: 'Romans 8.31-39'},
+  '2020-08-06': {verse: '2 Corinthians 5.16-21'},
+  '2020-08-07': {verse: 'Colossians 1.1-14'},
+  '2020-08-08': {verse: 'Revelation 19.1-10'}
 };
 
 export {bibleComFormattedVerses};
