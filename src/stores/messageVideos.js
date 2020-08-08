@@ -5,6 +5,14 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-08-09',
+    description: 'Genesis 6:5-8 and Rev. 13: 5-8',
+    preacher: PREACHERS.T_CURLEY,
+    scripture: 'Genesis 6:5-8 and Rev. 13: 5-8',
+    title: 'Everybody’s Going Through Something',
+    videoLink: 'https://www.youtube.com/embed/5I1Pe8hyV8Q'
+  },
+  {
     date: '2020-08-02',
     description:
       'Mark 9:2-10  We are living in a time of chaos and confusion. Therefore, it is necessary that we lift ' +

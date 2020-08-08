@@ -21,7 +21,8 @@ const constants = {
   FB_REF_EVENTS: 'dates',
 
   PREACHERS: {
-    G_YEARGIN: 'Rev. Dr. Grady A Yeargin, Jr.'
+    G_YEARGIN: 'Rev. Dr. Grady A Yeargin, Jr.',
+    T_CURLEY: 'Rev. Tyra Curley'
   },
 
   SLENDER_ARROW_LEFT: '‹',
