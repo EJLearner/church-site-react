@@ -49,23 +49,21 @@ export function QuantitySelect({
       <div>
         <img alt={label} src={thumbImageSource} />
       </div>
-      <div className="qs-right-side">
-        <div className="qs-right-top">
-          <div className="label">{label}</div>
-          {commonUtils.formatCurrency(cost ?? 0)}
-          <div>
-            <Select
-              label="Quantity"
-              onChange={(value) => setStringQuantity(value)}
-              options={commonUtils
-                .range(1, 5)
-                .map((item) => String(item))
-                .map((item) => ({label: item, value: item}))}
-              value={stringQuantity}
-            />
-          </div>
+      <div>
+        <div className="label">{label}</div>
+        {commonUtils.formatCurrency(cost ?? 0)}
+        <div>
+          <Select
+            label="Quantity"
+            onChange={(value) => setStringQuantity(value)}
+            options={commonUtils
+              .range(1, 5)
+              .map((item) => String(item))
+              .map((item) => ({label: item, value: item}))}
+            value={stringQuantity}
+          />
         </div>
-        <div className="qs-right-bottom">
+        <div>
           <Button buttonShape={SHAPES.RECT} onClick={addToCart}>
             Add to cart
           </Button>
@@ -76,7 +74,7 @@ export function QuantitySelect({
         </div>
       </div>
       {showConfirmation && (
-        <div>
+        <>
           <div>
             <Button buttonShape={SHAPES.RECT} onClick={() => onCartNavigate()}>
               View your cart
@@ -90,7 +88,7 @@ export function QuantitySelect({
               Continue Shopping
             </Button>
           </div>
-        </div>
+        </>
       )}
     </QuantitySelectStyle>
   );
