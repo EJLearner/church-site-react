@@ -12,5 +12,12 @@ export default {
 
       return currentTotal;
     }, 0);
+  },
+
+  getTotalItemsCount: (cart) => {
+    return Object.values(cart).reduce((amount, itemInfo) => {
+      const {quantity} = itemInfo;
+      return quantity ? amount + quantity : amount;
+    }, 0);
   }
 };
