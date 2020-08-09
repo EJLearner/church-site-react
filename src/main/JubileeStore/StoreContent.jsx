@@ -23,7 +23,6 @@ function StoreContent(props) {
   const [state, dispatch] = useContext(Context);
   const {viewInfo} = state;
   const {view, viewItemId} = viewInfo;
-  console.log('StoreContent -> view', view);
 
   const setNewView = useCallback(
     (view, viewItemId) => {
@@ -47,6 +46,7 @@ function StoreContent(props) {
   if (view === VIEWS.QUANTITY_SELECT) {
     return (
       <QuantitySelect
+        cartData={state.cart}
         cost={STORE_ITEMS[viewItemId].cost}
         itemId={viewItemId}
         onAddToCartClick={(itemId, quantity) =>
