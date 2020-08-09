@@ -175,6 +175,14 @@ const commonUtils = {
     return _.forEach;
   },
 
+  pluralizer(word, count) {
+    if (typeof word === 'string') {
+      return count === 1 ? word : `${word}s`;
+    }
+
+    return count === 1 ? word[0] : word[1];
+  },
+
   range: (startIndex, endIndex) => _.range(startIndex, endIndex + 1),
 
   sort(array, getSortValue, direction = SORT_DIRECTION_ASCENDING) {
