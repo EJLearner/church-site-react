@@ -6,38 +6,40 @@ import './Modal.css';
 class Modal extends Component {
   componentDidMount() {
     document.body.style.overflowY = 'hidden';
-    this._modal.focus();
+    this.modal.focus();
   }
 
   componentWillUnmount() {
     document.body.style.overflowY = 'auto';
   }
 
-  _renderCloseButton() {
-    return (
-      <i
-        className="close-icon fa fa-2x fa-times-circle"
-        onClick={this.props.onCloseClick}
-        tabIndex="0"
-        title="Close Button"
-      />
-    );
-  }
   render() {
-    const modalContentClass = [this.props.className, 'modal-content'].join(' ');
+    const {className, children, onCloseClick} = this.props;
+
+    const modalContentClass = [className, 'modal-content']
+      .filter(Boolean)
+      .join(' ');
 
     return (
       <div>
-        <div className="modal-overlay" />
-        <div className="modal-box">
-          <div
-            className={modalContentClass}
-            ref={node => (this._modal = node)}
-            tabIndex="0"
-          >
-            {this.props.children}
+        <div className="modal-overlay">
+          <div className="modal-box">
+            <div
+              className={modalContentClass}
+              ref={(node) => (this.modal = node)}
+              tabIndex="0"
+            >
+              {children}
+            </div>
+            {onCloseClick && (
+              <i
+                className="close-icon fa fa-2x fa-times-circle"
+                onClick={onCloseClick}
+                tabIndex="0"
+                title="Close Button"
+              />
+            )}
           </div>
-          {this._renderCloseButton()}
         </div>
       </div>
     );
