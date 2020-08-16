@@ -5,6 +5,14 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-08-16',
+    description: 'Exodus 14: 13-14',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'Exodus 14: 13-14',
+    title: 'God Will Fight Our Battles',
+    videoLink: 'https://www.youtube.com/embed/JO_mKPqa4sg'
+  },
+  {
     date: '2020-08-09',
     description: 'Genesis 6:5-8 and Rev. 13: 5-8',
     preacher: PREACHERS.T_CURLEY,

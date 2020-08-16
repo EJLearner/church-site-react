@@ -21,6 +21,7 @@ const constants = {
   FB_REF_EVENTS: 'dates',
 
   PREACHERS: {
+    D_HICKMAN: 'Rev. Debra Hickman',
     G_YEARGIN: 'Rev. Dr. Grady A Yeargin, Jr.',
     T_CURLEY: 'Rev. Tyra Curley'
   },
