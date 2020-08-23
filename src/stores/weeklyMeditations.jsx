@@ -525,7 +525,7 @@ export default {
   '2020-08-16': {
     subTitle: (
       <>
-        From <i>Doctor Johnson’s PrayersReaching Out</i> edited by Henri J. M.
+        From <i>Doctor Johnson’s Prayers Reaching Out</i> edited by Henri J. M.
         Nouwen
       </>
     ),
@@ -542,6 +542,26 @@ export default {
         adhere to but the documentation of the most profound human experiences,
         which transcending time and place, are handed over from generation to
         generation as a light in our darkness.”
+      </p>
+    )
+  },
+  '2020-08-23': {
+    subTitle: (
+      <>
+        From <i>Meditations of a Hermit</i> edited by Charles de Foucauld
+      </>
+    ),
+    content: (
+      <p>
+        “The hour in our life in which we are best employed is the hour in which
+        we best love Jesus. A soul does good to others not in the measure of its
+        knowledge or intelligence but in that of its holiness. For me, all men
+        should be enveloped in God’s sight, in the same love and the same
+        indifference. I must no more trouble about health or life than a tree
+        troubles about a falling leaf. I must remember only Jesus, think only of
+        Jesus, estimating as a gain any loss at the price of which I have more
+        room in myself for thought and knowledge of Jesus, beside whom
+        everything else is nothing. I must reserve all my strength for Jesus.”
       </p>
     )
   }
