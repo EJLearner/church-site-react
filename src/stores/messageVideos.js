@@ -5,6 +5,14 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-08-23',
+    description: 'Amos 5: 1-7',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'Amos 5: 1-7',
+    title: 'Injustice and Bitterness Rots The Soul',
+    videoLink: 'https://www.youtube.com/embed/qCaD6d7zmtk'
+  },
+  {
     date: '2020-08-16',
     description: 'Exodus 14: 13-14',
     preacher: PREACHERS.D_HICKMAN,
