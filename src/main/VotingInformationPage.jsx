@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
+import bottomButtonsImage from '../assets/main/images/voting-banner.png';
 import {getDaysUntilDate} from '../utils/dateTimeUtils';
 import {LOGICAL_COLORS, FONT_FAMILIES} from '../utils/styleVariables';
 
@@ -43,7 +44,9 @@ const VotingInfoStyles = styled.div`
   }
 
   h2 {
+    font-size: 18px;
     font-weight: normal;
+    line-height: 150%;
 
     .here-are-rules {
       color: #8e131b;
@@ -52,6 +55,18 @@ const VotingInfoStyles = styled.div`
 
   .questions-and-answers {
     padding: 0 32px;
+  }
+
+  .closing {
+    font-weight: bold;
+    line-height: 150%;
+    text-align: center;
+  }
+
+  img {
+    display: block;
+    margin: auto;
+    width: 90%;
   }
 `;
 
@@ -185,7 +200,7 @@ const VotingInformationPage = () => {
               question="When is the last day I can vote early in person?"
             />
           </div>
-          <p>
+          <p className="closing">
             The above information was provided online by the NBC News Network on
             August 17, 2020. You can find further information regarding voting
             and voter registration at{' '}
@@ -198,6 +213,7 @@ const VotingInformationPage = () => {
             </a>{' '}
             Hopefully, you will find this information helpful.
           </p>
+          <img alt="Vote Decorative Buttons" src={bottomButtonsImage} />
         </VotingInfoStyles>
       </ContentAndSubCompassWrapper>
     </StandardPageWrapper>
