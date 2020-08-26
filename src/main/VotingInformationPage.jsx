@@ -68,6 +68,14 @@ const VotingInfoStyles = styled.div`
     margin: auto;
     width: 90%;
   }
+
+  a {
+    color: ${VOTE_AND_IT_BLUE};
+
+    &:visited {
+      color: ${DOES_BLUE};
+    }
+  }
 `;
 
 const QAndAStyle = styled.div`
