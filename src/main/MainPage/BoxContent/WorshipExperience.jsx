@@ -3,22 +3,21 @@ import styled from 'styled-components';
 
 import {LOGICAL_COLORS} from '../../../utils/styleVariables';
 
-const StyleWrapper = styled.div`
-  em {
-    color: ${LOGICAL_COLORS.CT_ACCENT};
-    font-weight: bold;
-    font-style: normal;
-    text-transform: uppercase;
-  }
+const HighlightedWordsStyle = styled.em`
+  color: ${LOGICAL_COLORS.CT_ACCENT};
+  font-weight: bold;
+  font-style: normal;
+  text-transform: uppercase;
 `;
 
 function WorshipExperience() {
   return (
-    <StyleWrapper>
+    <div>
       <h1>Watch Sunday’s Sermon</h1>
       <p>
-        We are streaming our worship service! Click <em>Watch Sermon</em> below
-        to view Sunday’s sermon.
+        We are streaming our worship service! Click{' '}
+        <HighlightedWordsStyle>Watch Sermon</HighlightedWordsStyle> below to
+        view Sunday’s sermon.
       </p>
       <p>
         To prevent the spread of the coronavirus, we are suspending Sunday
@@ -26,7 +25,7 @@ function WorshipExperience() {
         often and check your voice mails, text messages, and emails for
         up-to-date information as we go through this time of quarantine.
       </p>
-    </StyleWrapper>
+    </div>
   );
 }
 

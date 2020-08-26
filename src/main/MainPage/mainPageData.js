@@ -11,10 +11,18 @@ import ChristianEducation from './BoxContent/ChristianEducation';
 import CultureAndFineArts from './BoxContent/CultureAndFineArts';
 import GedProgram from './BoxContent/GedProgram';
 import JubileeContent from './BoxContent/JubileeContent';
+import VotingInformation from './BoxContent/VotingInformation';
 import WorshipExperience from './BoxContent/WorshipExperience';
 import CoronaVirusContent from './CoronaVirusContent';
 
 const contentSelectInfo = [
+  {
+    learnMoreText: '2020 Voting Information',
+    linkPath: routePaths.MAIN_VOTING_INFORMATION,
+    Component: VotingInformation,
+    thumbnail: choirThumb,
+    title: '2020 Voting Information'
+  },
   {
     learnMoreText: 'Watch Sermon',
     linkPath: routePaths.MAIN_WATCH,

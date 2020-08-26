@@ -1,14 +1,15 @@
+import PropTypes from 'prop-types';
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
-import {contentSelectInfo} from './mainPageData';
 import {
   LOGICAL_COLORS,
   FONT_FAMILIES,
   COLORS
 } from '../../utils/styleVariables';
+
 import ContentSelectArrow from './ContentSelectArrow';
+import {contentSelectInfo} from './mainPageData';
 
 const ContentSelectBoxesWrapper = styled.div`
   display: flex;
@@ -16,10 +17,10 @@ const ContentSelectBoxesWrapper = styled.div`
 `;
 
 const EventBox = styled.div`
-  background-color: ${props =>
+  background-color: ${(props) =>
     props.selected ? COLORS.WHITE : LOGICAL_COLORS.CT_PRIMARY};
   box-sizing: content-box;
-  color: ${props =>
+  color: ${(props) =>
     props.selected
       ? LOGICAL_COLORS.CT_PRIMARY
       : LOGICAL_COLORS.CT_TEXT_ON_PRIMARY};
@@ -48,7 +49,7 @@ const Thumbnail = styled.img`
 `;
 
 function handleKeyPress(onContentSelect, index) {
-  return event => {
+  return (event) => {
     const keyIsHandled = ['Enter', ' '].includes(event.key);
     if (keyIsHandled) {
       onContentSelect(index);
