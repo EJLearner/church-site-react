@@ -159,7 +159,14 @@ const bibleComFormattedVerses = {
   '2020-08-26': {verse: 'Hebrews 10.19-25'},
   '2020-08-27': {verse: 'Matthew 8.18-27'},
   '2020-08-28': {verse: 'Luke 5.27-39'},
-  '2020-08-29': {verse: 'John 12.20-36'}
+  '2020-08-29': {verse: 'John 12.20-36'},
+  '2020-08-30': {verse: 'Psalm 114'},
+  '2020-08-31': {verse: 'Matthew 23.1-36'},
+  '2020-09-01': {verse: 'Matthew 20.20-28'},
+  '2020-09-02': {verse: 'Matthew 6.1-24'},
+  '2020-09-03': {verse: 'Matthew 6.25-34'},
+  '2020-09-04': {verse: 'Matthew 5.1-11'},
+  '2020-09-05': {verse: 'Matthew 5.13-20'}
 };
 
 export {bibleComFormattedVerses};
