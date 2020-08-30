@@ -564,5 +564,31 @@ export default {
         everything else is nothing. I must reserve all my strength for Jesus.”
       </p>
     )
+  },
+  '2020-08-30': {
+    subTitle: (
+      <>
+        From <i>As A Man Thinketh</i> by James Allen
+      </>
+    ),
+    content: (
+      <p>
+        “And you, too, youthful reader, will realize the Vision (not the idle
+        wish) of your heart, be it base or beautiful, or a mixture of both, for
+        you will always gravitate toward that which you, secretly, most love.
+        Into your hands will be placed the exact results of your own thought;
+        you will receive that which you earn; no more, no less. Whatever your
+        present environment may be, you will fall, remain, or rise with your
+        thought, your Vision, your Ideal. You will become as small as your
+        controlling desire; as great as your dominant aspiration. In all human
+        affairs there are efforts, and there are results, and the strength of
+        the effort is the measure of the result. Chance is not. “Gifts”, powers,
+        material, intellectual, and spiritual possessions are the fruits of
+        effort; they are thoughts completed, objects accomplished, visions
+        realized. The Vision that you glorify in your mind, the Ideal that you
+        enthrone in your heart – this you will build your life by, this you will
+        become.”
+      </p>
+    )
   }
 };
