@@ -5,6 +5,14 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-08-30',
+    description: 'Job 1:6-8',
+    preacher: PREACHERS.M_HAMIEL,
+    scripture: 'Job 1:6-8',
+    title: 'Will You Make Your Daddy Proud?',
+    videoLink: 'https://www.youtube.com/embed/VIqIHw4w20o'
+  },
+  {
     date: '2020-08-23',
     description: 'Amos 5: 1-7',
     preacher: PREACHERS.D_HICKMAN,
