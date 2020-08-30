@@ -176,7 +176,7 @@ const VotingInformationPage = () => {
               question="Can I vote by mail without an excuse?"
             />
             <QandA
-              answer="All registered voters receive their application automatically."
+              answer="Your request must be received (not just mailed) by Tuesday, October 20, 2020"
               question="When is the deadline to request a mail-in ballot?"
             />
             <QandA
