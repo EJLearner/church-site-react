@@ -49,7 +49,7 @@ const donationTypeOptions = [
   {label: 'Building Fund', value: 'building'},
   {label: 'Outreach', value: 'outreach'},
   {label: 'Missions', value: 'missions'},
-  {label: 'Air Conditioner Pledge', value: 'ac-pledge'},
+  {label: 'Sunday School', value: 'sunday-school'},
   {label: 'Donation', value: 'donation'},
   {label: 'William Bryant Scholarship Fund', value: 'scholarship'},
   {label: 'Youth Ministry', value: 'youth'},
