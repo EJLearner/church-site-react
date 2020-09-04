@@ -1,9 +1,11 @@
 import React from 'react';
-import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
-import outdoorPicture from '../assets/main/images/outdoor-ct-shirts.jpg';
-
-import routePaths from '../routePaths';
 import styled from 'styled-components';
+
+import outdoorPicture from '../assets/main/images/outdoor-ct-shirts.jpg';
+import BackToTop from '../common/components/BackToTop';
+import routePaths from '../routePaths';
+
+import GeneralPageTemplate from './commonComponents/GeneralPageTemplate';
 
 const MinistriesPageWrapper = styled.div`
   h2 {
@@ -358,6 +360,7 @@ const allContent = (
   <MinistriesPageWrapper>
     <img alt="Outdoor Members" src={outdoorPicture} />
     {combinedMinistriesContent}
+    <BackToTop />
   </MinistriesPageWrapper>
 );
 
