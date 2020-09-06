@@ -5,7 +5,7 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
-    date: '2020-09-05',
+    date: '2020-09-06',
     description:
       'Ephesians 6:10-13 In 59 days we will elect the President of the United States of America. This is ' +
       'the most crucial election in the history of this nation.It is crucial because it will decide the moral ' +
