@@ -590,5 +590,37 @@ export default {
         become.”
       </p>
     )
+  },
+  '2020-09-06': {
+    subTitle: (
+      <>
+        From <i>Letters from the Desert</i> by Carlo Carretto
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “Yes, I too must go beyond justice. To triumph over the sickness of
+          victimization I must go beyond it. Like Jesus and in imitation of him,
+          I must wearily climb again the slope of my pain, and throw myself
+          courageously in the descent towards my brothers and sisters, above all
+          towards those whom the short-sightedness of my sick eyes sees as the
+          cause of my evils.{' '}
+        </p>
+        <p>
+          There is no other solution. There is no true peace and union with
+          Jesus without it. As long as I waste time defending myself I get
+          nothing done and I am not truly Christian; I do not know the depths of
+          the heart of Jesus.
+        </p>
+        <p>
+          {' '}
+          To forgive, really forgive, means convincing ourselves deep down that
+          we merited the wrong done to us. What is more, it is good to suffer in
+          silence. Jesus taught that the beatitude is reserved for those who are
+          persecuted for the sake of justice.”
+        </p>
+      </>
+    )
   }
 };
