@@ -5,6 +5,18 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-09-05',
+    description:
+      'Ephesians 6:10-13 In 59 days we will elect the President of the United States of America. This is ' +
+      'the most crucial election in the history of this nation.It is crucial because it will decide the moral ' +
+      'character of our nation. Therefore It is imperative that we seek God’s guidance and direction in our decision ' +
+      'that we make.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Ephesians 6:10-13',
+    title: 'Don’t Get It Twisted',
+    videoLink: 'https://www.youtube.com/embed/-_CiQ9Vz6UU'
+  },
+  {
     date: '2020-08-30',
     description: 'Job 1:6-8',
     preacher: PREACHERS.M_HAMIEL,
