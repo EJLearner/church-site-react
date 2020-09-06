@@ -605,7 +605,7 @@ export default {
           I must wearily climb again the slope of my pain, and throw myself
           courageously in the descent towards my brothers and sisters, above all
           towards those whom the short-sightedness of my sick eyes sees as the
-          cause of my evils.{' '}
+          cause of my evils.
         </p>
         <p>
           There is no other solution. There is no true peace and union with
@@ -614,7 +614,6 @@ export default {
           the heart of Jesus.
         </p>
         <p>
-          {' '}
           To forgive, really forgive, means convincing ourselves deep down that
           we merited the wrong done to us. What is more, it is good to suffer in
           silence. Jesus taught that the beatitude is reserved for those who are
