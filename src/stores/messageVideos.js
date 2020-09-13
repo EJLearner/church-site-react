@@ -5,6 +5,17 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-09-13',
+    description:
+      'John 12:20-28 In this life we experience defining moments: moments that reveal who we are and why we ' +
+      'are here. Not even Jesus could avoid such a moment. As a result, because He could not, we are given the gift ' +
+      'of eternal life.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 12:20-28',
+    title: 'The Master’s Defining Moment',
+    videoLink: 'https://www.youtube.com/embed/F5MDLBccokw'
+  },
+  {
     date: '2020-09-06',
     description:
       'Ephesians 6:10-13 In 59 days we will elect the President of the United States of America. This is ' +
