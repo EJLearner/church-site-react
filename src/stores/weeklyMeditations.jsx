@@ -605,7 +605,7 @@ export default {
           I must wearily climb again the slope of my pain, and throw myself
           courageously in the descent towards my brothers and sisters, above all
           towards those whom the short-sightedness of my sick eyes sees as the
-          cause of my evils.{' '}
+          cause of my evils.
         </p>
         <p>
           There is no other solution. There is no true peace and union with
@@ -614,13 +614,34 @@ export default {
           the heart of Jesus.
         </p>
         <p>
-          {' '}
           To forgive, really forgive, means convincing ourselves deep down that
           we merited the wrong done to us. What is more, it is good to suffer in
           silence. Jesus taught that the beatitude is reserved for those who are
           persecuted for the sake of justice.”
         </p>
       </>
+    )
+  },
+  '2020-09-13': {
+    subTitle: (
+      <>
+        From <i>Thomas Merton: Contemplative Critic</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “Here we have come back to the compassion that must be formed in one’s
+        heart, a compassion that comes out of a deep experience of solidarity,
+        in which one recognizes that the evil, sin and violence which one sees
+        in the world and in the other, are deeply rooted in one’s own heart.
+        Only when you want to confess this and want to rely on the merciful God
+        who can bring good out of evil are you in a position to receive
+        forgiveness and also to give it to other men and women who threaten you
+        with violence. Precisely because Merton had discovered this nonviolent
+        compassion in his solitude could he in a real sense be a monk, that is
+        to say, one who unmasks through his criticism the illusions of a violent
+        society and who wants to change the world in spirit and truth.”
+      </p>
     )
   }
 };
