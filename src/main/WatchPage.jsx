@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 
 import {currentVideoData} from '../stores/messageVideos';
@@ -7,7 +7,10 @@ import {LOGICAL_COLORS, COLORS} from '../utils/styleVariables';
 
 import MainMenubar from './MainMenubar';
 import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
+import PlainButton from './commonComponents/PlainButton';
 import StandardPageWrapper from './commonComponents/StandardPageWrapper';
+
+const INITIAL_VIDEO_SHOW_COUNT = 10;
 
 const StyleWrapper = styled.div`
   padding: 1em 0;
@@ -100,6 +103,21 @@ const StyleWrapper = styled.div`
       }
     }
   }
+
+  .show-more {
+    display: flex;
+    justify-content: center;
+
+    button {
+      color: black;
+      display: block;
+      text-align: center;
+    }
+
+    i {
+      color: ${LOGICAL_COLORS.CT_PRIMARY};
+    }
+  }
 `;
 
 function renderLabelValue(label, value) {
@@ -189,8 +207,27 @@ function renderNewestVideo(videoData) {
   );
 }
 
+function renderShowMore(setArchiveVideoShowCount, archiveVideoShowCount) {
+  return (
+    <div className="show-more">
+      <PlainButton
+        onClick={() => setArchiveVideoShowCount(archiveVideoShowCount + 10)}
+      >
+        <i className="fa fa-angle-double-down" /> Show More Videos{' '}
+        <i className="fa fa-angle-double-down" />
+      </PlainButton>
+    </div>
+  );
+}
+
 const WatchPage = () => {
+  const [archiveVideoShowCount, setArchiveVideoShowCount] = useState(
+    INITIAL_VIDEO_SHOW_COUNT
+  );
   const [newestVideo, ...otherVideos] = currentVideoData;
+
+  const filteredVideos = otherVideos.slice(0, archiveVideoShowCount);
+  const renderShowMoreContent = otherVideos.length >= archiveVideoShowCount;
 
   return (
     <StandardPageWrapper>
@@ -200,7 +237,9 @@ const WatchPage = () => {
         <StyleWrapper>
           {renderNewestVideo(newestVideo)}
           {renderFilter()}
-          {renderArchiveVideos(otherVideos)}
+          {renderArchiveVideos(filteredVideos)}
+          {renderShowMoreContent &&
+            renderShowMore(setArchiveVideoShowCount, archiveVideoShowCount)}
         </StyleWrapper>
       </ContentAndSubCompassWrapper>
     </StandardPageWrapper>
