@@ -180,7 +180,14 @@ const bibleComFormattedVerses = {
   '2020-09-16': {verse: 'Psalm 25'},
   '2020-09-17': {verse: 'Ephesians 2'},
   '2020-09-18': {verse: 'Romans 6.1-14'},
-  '2020-09-19': {verse: 'Romans 3.21-31'}
+  '2020-09-19': {verse: 'Romans 3.21-31'},
+  '2020-09-20': {verse: 'Psalm 106.7-8'},
+  '2020-09-21': {verse: 'Ecclesiastes 9.13-18'},
+  '2020-09-22': {verse: '1 Kings 3.3-28'},
+  '2020-09-23': {verse: 'James 3.13-18'},
+  '2020-09-24': {verse: 'Ephesians 3.1-20'},
+  '2020-09-25': {verse: '2 Corinthians 6.1-10'},
+  '2020-09-26': {verse: '1 Corinthians 4.1-13'}
 };
 
 export {bibleComFormattedVerses};
