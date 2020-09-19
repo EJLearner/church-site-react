@@ -643,5 +643,43 @@ export default {
         society and who wants to change the world in spirit and truth.”
       </p>
     )
+  },
+  '2020-09-20': {
+    subTitle: (
+      <>
+        From <i>As a Man Thinketh</i> by James Allen
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “The soul attracts that which it secretly harbors; that which it
+          loves, and also that which it fears; it reaches the height of its
+          cherished aspirations; it falls to the level of it unchastened
+          desires, and circumstances are the means by which the soul receives
+          its own.
+        </p>
+        <p>
+          Every thought-seed sown or allowed to fall into the mind, and to take
+          root there, produces its own, blossoming sooner or later into act, and
+          bearing its own fruitage of opportunity and circumstance. Good
+          thoughts bear good fruit, bad thoughts bear bad fruit.
+        </p>
+        <p>
+          The outer world of circumstance shapes itself to the inner world of
+          thought, and both pleasant and unpleasant external conditions are
+          factors which make for the ultimate good of the individual. As the
+          reaper of his own harvest man learns both by suffering and bliss.
+        </p>
+        <p>
+          Following the inmost desires, aspirations, thoughts, by which one
+          allows oneself to be dominated (pursuing the will-o’-the-wisps of
+          impure imagining or steadfastly walking the highway of strong and high
+          endeavor), a person at last arrives at their fruition and fulfillment
+          in the outer condition of life.
+        </p>
+        <p>The laws of growth and adjustment everywhere obtain.</p>
+      </>
+    )
   }
 };
