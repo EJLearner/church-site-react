@@ -5,6 +5,17 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-09-20',
+    description:
+      'Matthew 6:7-8; Luke 11:1 During ordinary times prayer is essential. We are now living in extraordinary ' +
+      'times which present some realities that we cannot handle alone. In times such as these, we have a God to ' +
+      'whom we can turn to for He knows all of our needs. That makes prayer even more essential.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 6:7-8; Luke 11:1',
+    title: 'Why Prayer Is Essential',
+    videoLink: 'https://www.youtube.com/embed/nr53AhF0-qg'
+  },
+  {
     date: '2020-09-13',
     description:
       'John 12:20-28 In this life we experience defining moments: moments that reveal who we are and why we ' +
