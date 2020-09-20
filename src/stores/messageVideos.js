@@ -21,7 +21,7 @@ const allVideoData = [
       'John 12:20-28 In this life we experience defining moments: moments that reveal who we are and why we ' +
       'are here. Not even Jesus could avoid such a moment. As a result, because He could not, we are given the gift ' +
       'of eternal life.',
-    preacher: PREACHERS.G_YEARGIN,
+    // preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 12:20-28',
     title: 'The Master’s Defining Moment',
     videoLink: 'https://www.youtube.com/embed/F5MDLBccokw'

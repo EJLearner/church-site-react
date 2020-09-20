@@ -1,8 +1,13 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
+import Button from '../ce/components/Reusable/Button/Button';
+import Textbox from '../common/components/Textbox';
 import {currentVideoData} from '../stores/messageVideos';
-import {getLongDisplayDate} from '../utils/dateTimeUtils';
+import {
+  convertTypedDateToIso,
+  getLongDisplayDate
+} from '../utils/dateTimeUtils';
 import {LOGICAL_COLORS, COLORS} from '../utils/styleVariables';
 
 import MainMenubar from './MainMenubar';
@@ -11,6 +16,18 @@ import PlainButton from './commonComponents/PlainButton';
 import StandardPageWrapper from './commonComponents/StandardPageWrapper';
 
 const INITIAL_VIDEO_SHOW_COUNT = 10;
+
+const titleSearchId = 'title-search';
+const preacherSearchId = 'preacher-search';
+const dateSearchId = 'date-search';
+const scriptureSearchId = 'scripture-search';
+
+const initialSearchInfo = {
+  [titleSearchId]: '',
+  [preacherSearchId]: '',
+  [dateSearchId]: '',
+  [scriptureSearchId]: ''
+};
 
 const StyleWrapper = styled.div`
   padding: 1em 0;
@@ -168,8 +185,49 @@ function renderArchiveVideos(otherVideos) {
   );
 }
 
-function renderFilter() {
-  return <div className="filter">{null}</div>;
+function renderFilter(searchInfo, setSearchInfo, onFilterClick) {
+  const updateTextbox = (newValue, id) => {
+    setSearchInfo({
+      ...searchInfo,
+      [id]: newValue
+    });
+  };
+
+  return (
+    <div className="filter">
+      <Textbox
+        id={titleSearchId}
+        label="Sermon Title"
+        onChange={updateTextbox}
+        onEnter={onFilterClick}
+        value={searchInfo[titleSearchId]}
+      />
+      <Textbox
+        id={preacherSearchId}
+        label="Preacher"
+        onChange={updateTextbox}
+        onEnter={onFilterClick}
+        value={searchInfo[preacherSearchId]}
+      />
+      <Textbox
+        id={dateSearchId}
+        label="Date"
+        onChange={updateTextbox}
+        onEnter={onFilterClick}
+        placeholder="mm/dd/yyyy"
+        value={searchInfo[dateSearchId]}
+      />
+      {/* <Textbox
+        id={scriptureSearchId}
+        label="Scripture"
+        onChange={updateTextbox}
+        onEnter={onFilterClick}
+        value={searchInfo[scriptureSearchId]}
+      /> */}
+      <Button onClick={onFilterClick}>Filter</Button>
+      <Button onClick={() => setSearchInfo(initialSearchInfo)}>Clear</Button>
+    </div>
+  );
 }
 
 function renderNewestVideo(videoData) {
@@ -224,10 +282,38 @@ const WatchPage = () => {
   const [archiveVideoShowCount, setArchiveVideoShowCount] = useState(
     INITIAL_VIDEO_SHOW_COUNT
   );
+  const [searchInfo, setSearchInfo] = useState(initialSearchInfo);
   const [newestVideo, ...otherVideos] = currentVideoData;
+  const [filteredVideos, setFilteredVideos] = useState(otherVideos);
 
-  const filteredVideos = otherVideos.slice(0, archiveVideoShowCount);
-  const renderShowMoreContent = otherVideos.length >= archiveVideoShowCount;
+  const onFilterClick = () => {
+    const caseInsensitiveIncludes = function (string, searchString) {
+      return string?.toLowerCase()?.includes(searchString?.toLowerCase());
+    };
+
+    const newFilteredVideos = otherVideos.filter((videoInfo) => {
+      return (
+        caseInsensitiveIncludes(
+          videoInfo.preacher,
+          searchInfo[preacherSearchId]
+        ) &&
+        caseInsensitiveIncludes(videoInfo.title, searchInfo[titleSearchId]) &&
+        caseInsensitiveIncludes(
+          videoInfo.date,
+          convertTypedDateToIso(searchInfo[dateSearchId])
+        ) &&
+        caseInsensitiveIncludes(
+          videoInfo.scripture,
+          searchInfo[scriptureSearchId]
+        )
+      );
+    });
+
+    setFilteredVideos(newFilteredVideos);
+  };
+
+  const displayedVideos = filteredVideos.slice(0, archiveVideoShowCount);
+  const renderShowMoreContent = filteredVideos.length >= archiveVideoShowCount;
 
   return (
     <StandardPageWrapper>
@@ -236,8 +322,8 @@ const WatchPage = () => {
       <ContentAndSubCompassWrapper>
         <StyleWrapper>
           {renderNewestVideo(newestVideo)}
-          {renderFilter()}
-          {renderArchiveVideos(filteredVideos)}
+          {renderFilter(searchInfo, setSearchInfo, onFilterClick)}
+          {renderArchiveVideos(displayedVideos)}
           {renderShowMoreContent &&
             renderShowMore(setArchiveVideoShowCount, archiveVideoShowCount)}
         </StyleWrapper>

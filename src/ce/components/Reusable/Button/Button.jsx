@@ -92,7 +92,7 @@ Button.propTypes = {
   color: PropTypes.oneOf(Object.values(BUTTON_COLORS)),
   disable: PropTypes.bool,
   name: PropTypes.string,
-  onClick: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
   type: PropTypes.string,
   value: PropTypes.string
 };
