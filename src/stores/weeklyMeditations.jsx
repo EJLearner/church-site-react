@@ -681,5 +681,30 @@ export default {
         <p>The laws of growth and adjustment everywhere obtain.</p>
       </>
     )
+  },
+  '2020-09-27': {
+    subTitle: (
+      <>
+        From <i>The Prayers of Peter Marshall</i> edited by Catherine Marshall
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “Father I am beginning to know how much I miss when I fail to talk to
+          thee in prayer, and through prayer to receive into my life the
+          strength and the guidance which only thou canst give. Forgive me for
+          the pride and the presumption that make me continue to struggle to
+          manage my own affairs to the exhaustion of my body, the weariness of
+          my mind, the trial of my faith.
+        </p>
+        <p>
+          “In a moment like this I know that thou couldst have worked thy good
+          in me with so little strain, with so little effort. And then to thee
+          would have been given the praise and the glory. When I neglect to
+          pray, mine is the loss. Forgive me, Lord. Amen.”
+        </p>
+      </>
+    )
   }
 };
