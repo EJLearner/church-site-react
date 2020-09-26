@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import Button from '../ce/components/Reusable/Button/Button';
-import Textbox from '../common/components/Textbox';
 import {currentVideoData} from '../stores/messageVideos';
 import {
   convertTypedDateToIso,
@@ -11,22 +9,25 @@ import {
 import {LOGICAL_COLORS, COLORS} from '../utils/styleVariables';
 
 import MainMenubar from './MainMenubar';
+import WatchPageFilter from './WatchPageFilter';
 import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
 import PlainButton from './commonComponents/PlainButton';
 import StandardPageWrapper from './commonComponents/StandardPageWrapper';
 
 const INITIAL_VIDEO_SHOW_COUNT = 10;
 
-const titleSearchId = 'title-search';
-const preacherSearchId = 'preacher-search';
-const dateSearchId = 'date-search';
-const scriptureSearchId = 'scripture-search';
+const FIELD_IDS = Object.freeze({
+  titleSearchId: 'title-search',
+  preacherSearchId: 'preacher-search',
+  dateSearchId: 'date-search',
+  scriptureSearchId: 'scripture-search'
+});
 
-const initialSearchInfo = {
-  [titleSearchId]: '',
-  [preacherSearchId]: '',
-  [dateSearchId]: '',
-  [scriptureSearchId]: ''
+export const initialSearchInfo = {
+  [FIELD_IDS.titleSearchId]: '',
+  [FIELD_IDS.preacherSearchId]: '',
+  [FIELD_IDS.dateSearchId]: '',
+  [FIELD_IDS.scriptureSearchId]: ''
 };
 
 const StyleWrapper = styled.div`
@@ -185,51 +186,6 @@ function renderArchiveVideos(otherVideos) {
   );
 }
 
-function renderFilter(searchInfo, setSearchInfo, onFilterClick) {
-  const updateTextbox = (newValue, id) => {
-    setSearchInfo({
-      ...searchInfo,
-      [id]: newValue
-    });
-  };
-
-  return (
-    <div className="filter">
-      <Textbox
-        id={titleSearchId}
-        label="Sermon Title"
-        onChange={updateTextbox}
-        onEnter={onFilterClick}
-        value={searchInfo[titleSearchId]}
-      />
-      <Textbox
-        id={preacherSearchId}
-        label="Preacher"
-        onChange={updateTextbox}
-        onEnter={onFilterClick}
-        value={searchInfo[preacherSearchId]}
-      />
-      <Textbox
-        id={dateSearchId}
-        label="Date"
-        onChange={updateTextbox}
-        onEnter={onFilterClick}
-        placeholder="mm/dd/yyyy"
-        value={searchInfo[dateSearchId]}
-      />
-      <Textbox
-        id={scriptureSearchId}
-        label="Scripture"
-        onChange={updateTextbox}
-        onEnter={onFilterClick}
-        value={searchInfo[scriptureSearchId]}
-      />
-      <Button onClick={onFilterClick}>Filter</Button>
-      <Button onClick={() => setSearchInfo(initialSearchInfo)}>Clear</Button>
-    </div>
-  );
-}
-
 function renderNewestVideo(videoData) {
   const {date, preacher, scripture, title, videoLink} = videoData;
 
@@ -295,16 +251,19 @@ const WatchPage = () => {
       return (
         caseInsensitiveIncludes(
           videoInfo.preacher,
-          searchInfo[preacherSearchId]
+          searchInfo[FIELD_IDS.preacherSearchId]
         ) &&
-        caseInsensitiveIncludes(videoInfo.title, searchInfo[titleSearchId]) &&
+        caseInsensitiveIncludes(
+          videoInfo.title,
+          searchInfo[FIELD_IDS.titleSearchId]
+        ) &&
         caseInsensitiveIncludes(
           videoInfo.date,
-          convertTypedDateToIso(searchInfo[dateSearchId])
+          convertTypedDateToIso(searchInfo[FIELD_IDS.dateSearchId])
         ) &&
         caseInsensitiveIncludes(
           videoInfo.scripture,
-          searchInfo[scriptureSearchId]
+          searchInfo[FIELD_IDS.scriptureSearchId]
         )
       );
     });
@@ -322,7 +281,13 @@ const WatchPage = () => {
       <ContentAndSubCompassWrapper>
         <StyleWrapper>
           {renderNewestVideo(newestVideo)}
-          {renderFilter(searchInfo, setSearchInfo, onFilterClick)}
+          <WatchPageFilter
+            ids={FIELD_IDS}
+            onFilterClick={onFilterClick}
+            onResetClick={() => setSearchInfo(initialSearchInfo)}
+            searchInfo={searchInfo}
+            setSearchInfo={setSearchInfo}
+          />
           {renderArchiveVideos(displayedVideos)}
           {renderShowMoreContent &&
             renderShowMore(setArchiveVideoShowCount, archiveVideoShowCount)}
