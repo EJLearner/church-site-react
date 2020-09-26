@@ -235,6 +235,35 @@ function renderShowMore(setArchiveVideoShowCount, archiveVideoShowCount) {
   );
 }
 
+function filterVideos(otherVideos, searchInfo) {
+  const caseInsensitiveIncludes = function (string, searchString) {
+    return (
+      !string || string?.toLowerCase()?.includes(searchString?.toLowerCase())
+    );
+  };
+
+  return otherVideos.filter((videoInfo) => {
+    return (
+      caseInsensitiveIncludes(
+        videoInfo.preacher,
+        searchInfo[FIELD_IDS.preacherSearchId]
+      ) &&
+      caseInsensitiveIncludes(
+        videoInfo.title,
+        searchInfo[FIELD_IDS.titleSearchId]
+      ) &&
+      caseInsensitiveIncludes(
+        videoInfo.date,
+        convertTypedDateToIso(searchInfo[FIELD_IDS.dateSearchId])
+      ) &&
+      caseInsensitiveIncludes(
+        videoInfo.scripture,
+        searchInfo[FIELD_IDS.scriptureSearchId]
+      )
+    );
+  });
+}
+
 const WatchPage = () => {
   const [archiveVideoShowCount, setArchiveVideoShowCount] = useState(
     INITIAL_VIDEO_SHOW_COUNT
@@ -243,51 +272,24 @@ const WatchPage = () => {
   const [newestVideo, ...otherVideos] = currentVideoData;
   const [filteredVideos, setFilteredVideos] = useState(otherVideos);
 
-  const onFilterClick = () => {
-    const caseInsensitiveIncludes = function (string, searchString) {
-      return string?.toLowerCase()?.includes(searchString?.toLowerCase());
-    };
-
-    const newFilteredVideos = otherVideos.filter((videoInfo) => {
-      return (
-        caseInsensitiveIncludes(
-          videoInfo.preacher,
-          searchInfo[FIELD_IDS.preacherSearchId]
-        ) &&
-        caseInsensitiveIncludes(
-          videoInfo.title,
-          searchInfo[FIELD_IDS.titleSearchId]
-        ) &&
-        caseInsensitiveIncludes(
-          videoInfo.date,
-          convertTypedDateToIso(searchInfo[FIELD_IDS.dateSearchId])
-        ) &&
-        caseInsensitiveIncludes(
-          videoInfo.scripture,
-          searchInfo[FIELD_IDS.scriptureSearchId]
-        )
-      );
-    });
-
-    setFilteredVideos(newFilteredVideos);
-  };
-
   const displayedVideos = filteredVideos.slice(0, archiveVideoShowCount);
   const renderShowMoreContent = filteredVideos.length >= archiveVideoShowCount;
 
   return (
     <StandardPageWrapper>
       <MainMenubar />
-
       <ContentAndSubCompassWrapper>
         <StyleWrapper>
           {renderNewestVideo(newestVideo)}
           <WatchPageFilter
             ids={FIELD_IDS}
-            onFilterClick={onFilterClick}
+            onFilterClick={() =>
+              setFilteredVideos(filterVideos(otherVideos, searchInfo))
+            }
             onResetClick={() => setSearchInfo(initialSearchInfo)}
             searchInfo={searchInfo}
             setSearchInfo={setSearchInfo}
+            textColor={PAGE_TEXT_COLOR}
           />
           {renderArchiveVideos(displayedVideos)}
           {renderShowMoreContent &&
