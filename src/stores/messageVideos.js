@@ -135,11 +135,6 @@ const allVideoData = [
     videoLink: 'https://www.youtube.com/embed/LPeZCzH7ca0'
   },
   {
-    date: '2020-06-19',
-    title: 'Sermon in Solidarity Coming Soon',
-    videoLink: 'https://www.youtube.com/embed/uBRcxBm2600'
-  },
-  {
     date: '2020-06-14',
     description:
       'II Kings 4:8-37  By all evidence our children face many challenges. As parents and caregivers, we must ' +
