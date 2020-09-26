@@ -217,13 +217,13 @@ function renderFilter(searchInfo, setSearchInfo, onFilterClick) {
         placeholder="mm/dd/yyyy"
         value={searchInfo[dateSearchId]}
       />
-      {/* <Textbox
+      <Textbox
         id={scriptureSearchId}
         label="Scripture"
         onChange={updateTextbox}
         onEnter={onFilterClick}
         value={searchInfo[scriptureSearchId]}
-      /> */}
+      />
       <Button onClick={onFilterClick}>Filter</Button>
       <Button onClick={() => setSearchInfo(initialSearchInfo)}>Clear</Button>
     </div>
