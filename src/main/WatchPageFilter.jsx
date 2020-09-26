@@ -1,15 +1,42 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import styled from 'styled-components';
 
-import Button from '../ce/components/Reusable/Button/Button';
+import Button, {
+  BUTTON_COLORS,
+  SHAPES
+} from '../ce/components/Reusable/Button/Button';
 import Textbox from '../common/components/Textbox';
+import {LOGICAL_COLORS} from '../utils/styleVariables';
+
+const Filter = styled.div`
+  padding-left: 2em;
+  margin-bottom: 4em;
+
+  h3 {
+    color: ${(props) => props.textColor || LOGICAL_COLORS.STANDARD_TEXT};
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .textboxes {
+    display: flex;
+    margin-bottom: 1em;
+
+    div {
+      margin-right: 4em;
+    }
+  }
+`;
 
 function WatchPageFilter({
   ids,
   searchInfo,
   setSearchInfo,
   onFilterClick,
-  onResetClick
+  onResetClick,
+  textColor
 }) {
   const updateTextbox = (newValue, id) => {
     setSearchInfo({
@@ -18,40 +45,59 @@ function WatchPageFilter({
     });
   };
 
+  const buttonOptions = {
+    buttonShape: SHAPES.RECT,
+    color: BUTTON_COLORS.GRAY,
+    hasRightMargin: true
+  };
+
   return (
-    <div className="filter">
-      <Textbox
-        id={ids.titleSearchId}
-        label="Sermon Title"
-        onChange={updateTextbox}
-        onEnter={onFilterClick}
-        value={searchInfo[ids.titleSearchId]}
-      />
-      <Textbox
-        id={ids.preacherSearchId}
-        label="Preacher"
-        onChange={updateTextbox}
-        onEnter={onFilterClick}
-        value={searchInfo[ids.preacherSearchId]}
-      />
-      <Textbox
-        id={ids.dateSearchId}
-        label="Date"
-        onChange={updateTextbox}
-        onEnter={onFilterClick}
-        placeholder="mm/dd/yyyy"
-        value={searchInfo[ids.dateSearchId]}
-      />
-      <Textbox
-        id={ids.scriptureSearchId}
-        label="Scripture"
-        onChange={updateTextbox}
-        onEnter={onFilterClick}
-        value={searchInfo[ids.scriptureSearchId]}
-      />
-      <Button onClick={onFilterClick}>Filter</Button>
-      <Button onClick={onResetClick}>Clear</Button>
-    </div>
+    <Filter textColor={textColor}>
+      <h3>Filter:</h3>
+      <div className="textboxes">
+        <div>
+          <Textbox
+            id={ids.titleSearchId}
+            label="Sermon Title"
+            onChange={updateTextbox}
+            onEnter={onFilterClick}
+            value={searchInfo[ids.titleSearchId]}
+          />
+          <br />
+          <Textbox
+            id={ids.preacherSearchId}
+            label="Preacher"
+            onChange={updateTextbox}
+            onEnter={onFilterClick}
+            value={searchInfo[ids.preacherSearchId]}
+          />
+        </div>
+        <div>
+          <Textbox
+            id={ids.dateSearchId}
+            label="Date"
+            onChange={updateTextbox}
+            onEnter={onFilterClick}
+            placeholder="mm/dd/yyyy"
+            value={searchInfo[ids.dateSearchId]}
+          />
+          <br />
+          <Textbox
+            id={ids.scriptureSearchId}
+            label="Scripture"
+            onChange={updateTextbox}
+            onEnter={onFilterClick}
+            value={searchInfo[ids.scriptureSearchId]}
+          />
+        </div>
+      </div>
+      <Button {...buttonOptions} onClick={onFilterClick}>
+        Filter
+      </Button>
+      <Button {...buttonOptions} onClick={onResetClick}>
+        Clear
+      </Button>
+    </Filter>
   );
 }
 
@@ -65,7 +111,8 @@ WatchPageFilter.propTypes = {
   onFilterClick: PropTypes.func.isRequired,
   onResetClick: PropTypes.func.isRequired,
   searchInfo: PropTypes.object.isRequired,
-  setSearchInfo: PropTypes.func.isRequired
+  setSearchInfo: PropTypes.func.isRequired,
+  textColor: PropTypes.string
 };
 
 export default WatchPageFilter;

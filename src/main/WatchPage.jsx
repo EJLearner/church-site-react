@@ -15,6 +15,7 @@ import PlainButton from './commonComponents/PlainButton';
 import StandardPageWrapper from './commonComponents/StandardPageWrapper';
 
 const INITIAL_VIDEO_SHOW_COUNT = 10;
+const PAGE_TEXT_COLOR = COLORS.GRAY95;
 
 const FIELD_IDS = Object.freeze({
   titleSearchId: 'title-search',
@@ -32,7 +33,7 @@ export const initialSearchInfo = {
 
 const StyleWrapper = styled.div`
   padding: 1em 0;
-  color: ${COLORS.GRAY95};
+  color: ${PAGE_TEXT_COLOR};
   font-weight: bold;
   font-size: 14px;
 
@@ -61,7 +62,7 @@ const StyleWrapper = styled.div`
 
   .date {
     font-weight: bold;
-    color: ${COLORS.GRAY95};
+    color: ${PAGE_TEXT_COLOR};
     line-height: 200%;
   }
 

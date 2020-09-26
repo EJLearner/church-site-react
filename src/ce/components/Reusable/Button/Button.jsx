@@ -19,7 +19,7 @@ const StyledButton = styled.button`
   min-width: 80px;
   min-height: 30px;
   color: black;
-
+  margin-right: ${(props) => (props.hasRightMargin ? '25px' : 0)};
   &.orange-button {
     background-color: orange;
   }
@@ -51,6 +51,7 @@ class Button extends Component {
       onClick,
       children,
       buttonShape,
+      hasRightMargin,
       name,
       value,
       type
@@ -68,6 +69,7 @@ class Button extends Component {
     return (
       <StyledButton
         className={computedClassName}
+        hasRightMargin={hasRightMargin}
         name={name}
         onClick={onClick}
         type={type}
@@ -82,7 +84,8 @@ class Button extends Component {
 Button.defaultProps = {
   buttonShape: SHAPES.OVAL,
   color: BUTTON_COLORS.ORANGE,
-  disable: false
+  disable: false,
+  hasRightMargin: false
 };
 
 Button.propTypes = {
@@ -91,6 +94,7 @@ Button.propTypes = {
   className: PropTypes.string,
   color: PropTypes.oneOf(Object.values(BUTTON_COLORS)),
   disable: PropTypes.bool,
+  hasRightMargin: PropTypes.bool,
   name: PropTypes.string,
   onClick: PropTypes.func.isRequired,
   type: PropTypes.string,
@@ -98,5 +102,6 @@ Button.propTypes = {
 };
 
 export {SHAPES as STYLES};
+
 export {SHAPES, BUTTON_COLORS};
 export default Button;
