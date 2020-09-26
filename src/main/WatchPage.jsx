@@ -286,7 +286,10 @@ const WatchPage = () => {
             onFilterClick={() =>
               setFilteredVideos(filterVideos(otherVideos, searchInfo))
             }
-            onResetClick={() => setSearchInfo(initialSearchInfo)}
+            onResetClick={() => {
+              setSearchInfo(initialSearchInfo);
+              setFilteredVideos(filterVideos(otherVideos, initialSearchInfo));
+            }}
             searchInfo={searchInfo}
             setSearchInfo={setSearchInfo}
             textColor={PAGE_TEXT_COLOR}
