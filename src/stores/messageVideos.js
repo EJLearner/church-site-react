@@ -5,6 +5,18 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-09-27',
+    description:
+      'Genesis 28:10-22. There are occasions in our lives when we would rather avoid having an encounter with God. ' +
+      'We have not lived as best we should; we have done things we thought we would never do; we are haunted by the ' +
+      'hurt that we have caused others. However, these situations may well be the best time to meet God in ' +
+      'unexpected places!!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Genesis 28:10-22',
+    title: 'Meeting God In Unexpected Places!!',
+    videoLink: 'https://www.youtube.com/embed/tvavUdqnyxw'
+  },
+  {
     date: '2020-09-20',
     description:
       'Matthew 6:7-8; Luke 11:1 During ordinary times prayer is essential. We are now living in extraordinary ' +
