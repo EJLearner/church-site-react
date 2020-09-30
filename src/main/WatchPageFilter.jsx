@@ -47,8 +47,7 @@ function WatchPageFilter({
 
   const buttonOptions = {
     buttonShape: SHAPES.RECT,
-    color: BUTTON_COLORS.GRAY,
-    hasRightMargin: true
+    color: BUTTON_COLORS.GRAY
   };
 
   return (
@@ -91,12 +90,14 @@ function WatchPageFilter({
           />
         </div>
       </div>
-      <Button {...buttonOptions} onClick={onFilterClick}>
-        Filter
-      </Button>
-      <Button {...buttonOptions} onClick={onResetClick}>
-        Clear
-      </Button>
+      <div>
+        <Button {...buttonOptions} onClick={onFilterClick}>
+          Filter
+        </Button>
+        <Button {...buttonOptions} onClick={onResetClick}>
+          Clear
+        </Button>
+      </div>
     </Filter>
   );
 }
