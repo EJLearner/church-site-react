@@ -22,6 +22,7 @@ import MembersOnly from './MembersOnly';
 import MinistriesPage from './MinistriesPage';
 import NewsPage from './NewsPage';
 import ScholarshipPage from './ScholarshipPage';
+import VotingInformationPage from './VotingInformationPage';
 import WatchPage from './WatchPage';
 import GlobalCartLink from './commonComponents/GlobalCartLink';
 import MainFooter from './commonComponents/MainFooter';
@@ -102,6 +103,9 @@ function MainWrapper() {
           </Route>
           <Route path={routePaths.MAIN_SCHOLARSHIP}>
             <ScholarshipPage />
+          </Route>
+          <Route path={routePaths.MAIN_VOTING_INFORMATION}>
+            <VotingInformationPage />
           </Route>
           <Route path={routePaths.MAIN_WATCH}>
             <WatchPage />

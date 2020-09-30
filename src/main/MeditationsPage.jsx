@@ -2,6 +2,7 @@ import {format, add} from 'date-fns';
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
+import BackToTop from '../common/components/BackToTop';
 import Verse from '../common/components/Verse';
 import routePaths from '../routePaths';
 import {bibleComFormattedVerses} from '../stores/dailyVerses';
@@ -75,7 +76,7 @@ function getVersesContent() {
     return noContentMessage;
   }
 
-  return currentWeekDates.map(({date, day}) => {
+  const verses = currentWeekDates.map(({date, day}) => {
     const {verse, referenceText} = bibleComFormattedVerses[date];
 
     return (
@@ -90,6 +91,13 @@ function getVersesContent() {
       </React.Fragment>
     );
   });
+
+  return (
+    <div>
+      {verses}
+      <BackToTop />
+    </div>
+  );
 }
 
 const noContentMessage = (

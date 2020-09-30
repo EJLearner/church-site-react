@@ -4,6 +4,7 @@ import christianEdPeopleThumb from '../../assets/main/images/christian-ed-people
 import coronavirus from '../../assets/main/images/coronavirus-thumb.png';
 import dance from '../../assets/main/images/dance.jpg';
 import shofarBlower from '../../assets/main/images/shofar-blower-thumb.png';
+import voteThumb from '../../assets/main/images/vote-thumb.png';
 import routePaths from '../../routePaths';
 import {endOfYesterday, isAfter, parseISO} from '../../utils/dateTimeUtils';
 
@@ -11,10 +12,18 @@ import ChristianEducation from './BoxContent/ChristianEducation';
 import CultureAndFineArts from './BoxContent/CultureAndFineArts';
 import GedProgram from './BoxContent/GedProgram';
 import JubileeContent from './BoxContent/JubileeContent';
+import VotingInformation from './BoxContent/VotingInformation';
 import WorshipExperience from './BoxContent/WorshipExperience';
 import CoronaVirusContent from './CoronaVirusContent';
 
 const contentSelectInfo = [
+  {
+    learnMoreText: '2020 Voting Information',
+    linkPath: routePaths.MAIN_VOTING_INFORMATION,
+    Component: VotingInformation,
+    thumbnail: voteThumb,
+    title: '2020 Voting Information'
+  },
   {
     learnMoreText: 'Watch Sermon',
     linkPath: routePaths.MAIN_WATCH,

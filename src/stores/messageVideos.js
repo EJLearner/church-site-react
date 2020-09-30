@@ -5,6 +5,84 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-09-27',
+    description:
+      'Genesis 28:10-22. There are occasions in our lives when we would rather avoid having an encounter with God. ' +
+      'We have not lived as best we should; we have done things we thought we would never do; we are haunted by the ' +
+      'hurt that we have caused others. However, these situations may well be the best time to meet God in ' +
+      'unexpected places!!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Genesis 28:10-22',
+    title: 'Meeting God In Unexpected Places!!',
+    videoLink: 'https://www.youtube.com/embed/tvavUdqnyxw'
+  },
+  {
+    date: '2020-09-20',
+    description:
+      'Matthew 6:7-8; Luke 11:1 During ordinary times prayer is essential. We are now living in extraordinary ' +
+      'times which present some realities that we cannot handle alone. In times such as these, we have a God to ' +
+      'whom we can turn to for He knows all of our needs. That makes prayer even more essential.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 6:7-8; Luke 11:1',
+    title: 'Why Prayer Is Essential',
+    videoLink: 'https://www.youtube.com/embed/nr53AhF0-qg'
+  },
+  {
+    date: '2020-09-13',
+    description:
+      'John 12:20-28 In this life we experience defining moments: moments that reveal who we are and why we ' +
+      'are here. Not even Jesus could avoid such a moment. As a result, because He could not, we are given the gift ' +
+      'of eternal life.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 12:20-28',
+    title: 'The Master’s Defining Moment',
+    videoLink: 'https://www.youtube.com/embed/F5MDLBccokw'
+  },
+  {
+    date: '2020-09-06',
+    description:
+      'Ephesians 6:10-13 In 59 days we will elect the President of the United States of America. This is ' +
+      'the most crucial election in the history of this nation.It is crucial because it will decide the moral ' +
+      'character of our nation. Therefore It is imperative that we seek God’s guidance and direction in our decision ' +
+      'that we make.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Ephesians 6:10-13',
+    title: 'Don’t Get It Twisted',
+    videoLink: 'https://www.youtube.com/embed/-_CiQ9Vz6UU'
+  },
+  {
+    date: '2020-08-30',
+    description: 'Job 1:6-8',
+    preacher: PREACHERS.M_HAMIEL,
+    scripture: 'Job 1:6-8',
+    title: 'Will You Make Your Daddy Proud?',
+    videoLink: 'https://www.youtube.com/embed/VIqIHw4w20o'
+  },
+  {
+    date: '2020-08-23',
+    description: 'Amos 5: 1-7',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'Amos 5: 1-7',
+    title: 'Injustice and Bitterness Rots The Soul',
+    videoLink: 'https://www.youtube.com/embed/qCaD6d7zmtk'
+  },
+  {
+    date: '2020-08-16',
+    description: 'Exodus 14: 13-14',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'Exodus 14: 13-14',
+    title: 'God Will Fight Our Battles',
+    videoLink: 'https://www.youtube.com/embed/JO_mKPqa4sg'
+  },
+  {
+    date: '2020-08-09',
+    description: 'Genesis 6:5-8 and Rev. 13: 5-8',
+    preacher: PREACHERS.T_CURLEY,
+    scripture: 'Genesis 6:5-8 and Rev. 13: 5-8',
+    title: 'Everybody’s Going Through Something',
+    videoLink: 'https://www.youtube.com/embed/5I1Pe8hyV8Q'
+  },
+  {
     date: '2020-08-02',
     description:
       'Mark 9:2-10  We are living in a time of chaos and confusion. Therefore, it is necessary that we lift ' +
@@ -67,11 +145,6 @@ const allVideoData = [
     scripture: 'Psalm 23',
     title: 'Father’s Day - “A Reflection On The 23rd Psalm”',
     videoLink: 'https://www.youtube.com/embed/LPeZCzH7ca0'
-  },
-  {
-    date: '2020-06-19',
-    title: 'Sermon in Solidarity Coming Soon',
-    videoLink: 'https://www.youtube.com/embed/uBRcxBm2600'
   },
   {
     date: '2020-06-14',

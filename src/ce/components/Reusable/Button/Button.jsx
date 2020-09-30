@@ -117,11 +117,12 @@ Button.propTypes = {
   color: PropTypes.oneOf(Object.values(BUTTON_COLORS)),
   disable: PropTypes.bool,
   name: PropTypes.string,
-  onClick: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
   type: PropTypes.string,
   value: PropTypes.string
 };
 
 export {SHAPES as STYLES};
+
 export {SHAPES, BUTTON_COLORS};
 export default Button;

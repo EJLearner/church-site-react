@@ -500,5 +500,211 @@ export default {
         spread more and more as well as aspire more and more.”
       </p>
     )
+  },
+  '2020-08-09': {
+    subTitle: (
+      <>
+        From <i>Doctor Johnson’s Prayers</i> by Elton Trueblood
+      </>
+    ),
+    content: (
+      <p>
+        “O Lord, in whose hands are life and death, by whose power I am
+        sustained, and by whose mercy I am spared, look down upon me with pity.
+        Forgive me, that I have this day neglected the duty which Thou hast
+        assigned to it, and suffered the hours, of which I must give account, to
+        pass away without any endeavor to accomplish thy will, or to promote my
+        own salvation. Make me to remember, O God, that every day is thy gift,
+        and ought to be used according to thy command. Grant me, therefore, so
+        to repent of my negligence, that I may obtain mercy from Thee, and pass
+        the time which Thou shalt yet allow me, in diligent performance of thy
+        commands, through Jesus Christ. Amen.”
+      </p>
+    )
+  },
+  '2020-08-16': {
+    subTitle: (
+      <>
+        From <i>Doctor Johnson’s Prayers Reaching Out</i> edited by Henri J. M.
+        Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “Only when we have come in touch with our own life experiences and have
+        learned to listen to our inner cravings for liberation and new life can
+        we realize that Jesus did not just speak, but that he reached out to us
+        in our most personal needs. The Gospel doesn’t just contain ideas worth
+        remembering. It is a message responding to our individual human
+        condition. The Church is not an institution forcing us to follow its
+        rules. It is a community of people inviting us to still our hunger and
+        thirst at its tables. Doctrines are not alien formulations which we must
+        adhere to but the documentation of the most profound human experiences,
+        which transcending time and place, are handed over from generation to
+        generation as a light in our darkness.”
+      </p>
+    )
+  },
+  '2020-08-23': {
+    subTitle: (
+      <>
+        From <i>Meditations of a Hermit</i> edited by Charles de Foucauld
+      </>
+    ),
+    content: (
+      <p>
+        “The hour in our life in which we are best employed is the hour in which
+        we best love Jesus. A soul does good to others not in the measure of its
+        knowledge or intelligence but in that of its holiness. For me, all men
+        should be enveloped in God’s sight, in the same love and the same
+        indifference. I must no more trouble about health or life than a tree
+        troubles about a falling leaf. I must remember only Jesus, think only of
+        Jesus, estimating as a gain any loss at the price of which I have more
+        room in myself for thought and knowledge of Jesus, beside whom
+        everything else is nothing. I must reserve all my strength for Jesus.”
+      </p>
+    )
+  },
+  '2020-08-30': {
+    subTitle: (
+      <>
+        From <i>As A Man Thinketh</i> by James Allen
+      </>
+    ),
+    content: (
+      <p>
+        “And you, too, youthful reader, will realize the Vision (not the idle
+        wish) of your heart, be it base or beautiful, or a mixture of both, for
+        you will always gravitate toward that which you, secretly, most love.
+        Into your hands will be placed the exact results of your own thought;
+        you will receive that which you earn; no more, no less. Whatever your
+        present environment may be, you will fall, remain, or rise with your
+        thought, your Vision, your Ideal. You will become as small as your
+        controlling desire; as great as your dominant aspiration. In all human
+        affairs there are efforts, and there are results, and the strength of
+        the effort is the measure of the result. Chance is not. “Gifts”, powers,
+        material, intellectual, and spiritual possessions are the fruits of
+        effort; they are thoughts completed, objects accomplished, visions
+        realized. The Vision that you glorify in your mind, the Ideal that you
+        enthrone in your heart – this you will build your life by, this you will
+        become.”
+      </p>
+    )
+  },
+  '2020-09-06': {
+    subTitle: (
+      <>
+        From <i>Letters from the Desert</i> by Carlo Carretto
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “Yes, I too must go beyond justice. To triumph over the sickness of
+          victimization I must go beyond it. Like Jesus and in imitation of him,
+          I must wearily climb again the slope of my pain, and throw myself
+          courageously in the descent towards my brothers and sisters, above all
+          towards those whom the short-sightedness of my sick eyes sees as the
+          cause of my evils.
+        </p>
+        <p>
+          There is no other solution. There is no true peace and union with
+          Jesus without it. As long as I waste time defending myself I get
+          nothing done and I am not truly Christian; I do not know the depths of
+          the heart of Jesus.
+        </p>
+        <p>
+          To forgive, really forgive, means convincing ourselves deep down that
+          we merited the wrong done to us. What is more, it is good to suffer in
+          silence. Jesus taught that the beatitude is reserved for those who are
+          persecuted for the sake of justice.”
+        </p>
+      </>
+    )
+  },
+  '2020-09-13': {
+    subTitle: (
+      <>
+        From <i>Thomas Merton: Contemplative Critic</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “Here we have come back to the compassion that must be formed in one’s
+        heart, a compassion that comes out of a deep experience of solidarity,
+        in which one recognizes that the evil, sin and violence which one sees
+        in the world and in the other, are deeply rooted in one’s own heart.
+        Only when you want to confess this and want to rely on the merciful God
+        who can bring good out of evil are you in a position to receive
+        forgiveness and also to give it to other men and women who threaten you
+        with violence. Precisely because Merton had discovered this nonviolent
+        compassion in his solitude could he in a real sense be a monk, that is
+        to say, one who unmasks through his criticism the illusions of a violent
+        society and who wants to change the world in spirit and truth.”
+      </p>
+    )
+  },
+  '2020-09-20': {
+    subTitle: (
+      <>
+        From <i>As a Man Thinketh</i> by James Allen
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “The soul attracts that which it secretly harbors; that which it
+          loves, and also that which it fears; it reaches the height of its
+          cherished aspirations; it falls to the level of it unchastened
+          desires, and circumstances are the means by which the soul receives
+          its own.
+        </p>
+        <p>
+          Every thought-seed sown or allowed to fall into the mind, and to take
+          root there, produces its own, blossoming sooner or later into act, and
+          bearing its own fruitage of opportunity and circumstance. Good
+          thoughts bear good fruit, bad thoughts bear bad fruit.
+        </p>
+        <p>
+          The outer world of circumstance shapes itself to the inner world of
+          thought, and both pleasant and unpleasant external conditions are
+          factors which make for the ultimate good of the individual. As the
+          reaper of his own harvest man learns both by suffering and bliss.
+        </p>
+        <p>
+          Following the inmost desires, aspirations, thoughts, by which one
+          allows oneself to be dominated (pursuing the will-o’-the-wisps of
+          impure imagining or steadfastly walking the highway of strong and high
+          endeavor), a person at last arrives at their fruition and fulfillment
+          in the outer condition of life.
+        </p>
+        <p>The laws of growth and adjustment everywhere obtain.</p>
+      </>
+    )
+  },
+  '2020-09-27': {
+    subTitle: (
+      <>
+        From <i>The Prayers of Peter Marshall</i> edited by Catherine Marshall
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “Father I am beginning to know how much I miss when I fail to talk to
+          thee in prayer, and through prayer to receive into my life the
+          strength and the guidance which only thou canst give. Forgive me for
+          the pride and the presumption that make me continue to struggle to
+          manage my own affairs to the exhaustion of my body, the weariness of
+          my mind, the trial of my faith.
+        </p>
+        <p>
+          “In a moment like this I know that thou couldst have worked thy good
+          in me with so little strain, with so little effort. And then to thee
+          would have been given the praise and the glory. When I neglect to
+          pray, mine is the loss. Forgive me, Lord. Amen.”
+        </p>
+      </>
+    )
   }
 };
