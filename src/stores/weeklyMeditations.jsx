@@ -706,5 +706,23 @@ export default {
         </p>
       </>
     )
+  },
+  '2020-10-04': {
+    subTitle: (
+      <>
+        From <i>Meditations of a Hermit</i> by Charles de Foucauld
+      </>
+    ),
+    content: (
+      <p>
+        “What is our Lord doing in this last hour before his arrest, before his
+        Passion begins? He goes away alone to pray. So we, when we have a severe
+        trial to undergo, or some danger or some suffering to face, go aside to
+        pray in solitude, and so pass the last hours that separate us from our
+        trial. Let us do this in every serious event in our lives. Let us
+        prepare for it, gather strength, light, grace to behave well, by praying
+        and praying alone during the last hour before our trial.”
+      </p>
+    )
   }
 };
