@@ -5,6 +5,24 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-10-04',
+    description:
+      'John 16:29-33 - There is no denying that we are living in rather troubling times. Jesus acknowledged ' +
+      'that reality when he said, “Here on earth you will have many trials and sorrows.” In essence, He is ' +
+      'saying “It is what it is!” However, the Master does not end with that reality. He then makes an ' +
+      'incredible affirmation by declaring, “But take heart, because I have overcome the world!”',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 16:29-33',
+    title: 'An Incredible Affirmation',
+    videoLink: 'https://www.youtube.com/embed/YCxLUylQCZo'
+  },
+  {
+    date: '2020-10-03',
+    preacher: PREACHERS.G_YEARGIN,
+    title: 'A Prayer For Our Nation',
+    videoLink: 'https://www.youtube.com/embed/z7kWNgr4z5c'
+  },
+  {
     date: '2020-09-27',
     description:
       'Genesis 28:10-22. There are occasions in our lives when we would rather avoid having an encounter with God. ' +
