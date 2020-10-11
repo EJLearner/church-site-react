@@ -724,5 +724,36 @@ export default {
         and praying alone during the last hour before our trial.”
       </p>
     )
+  },
+  '2020-10-11': {
+    subTitle: (
+      <>
+        From <i>Spirituality for Ministry</i> by Urban T. Holmes, III
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “To be a spiritual friend one must have detachment, discretion and
+          discernment, with all that prepares for those gifts. Spiritual
+          companionship is a gentle art, demanding a willingness to listen as if
+          one had a third ear attuned to the inner self. It is neither
+          psychotherapy nor is it the sacrament of reconciliation. Sometimes one
+          needs to confront, but far more often the best intervention of the
+          spiritual guide is in parabolic language, nudging the friend into a
+          new way of seeing. The journey belongs to the other and that person’s
+          uniqueness must always be honored.
+        </p>
+        <p>
+          The friend of the soul is an instrumental image. Such a person is not
+          to be a “buddy, but someone who listens, comforts and supports. He or
+          she serves as a hermeneut, which means that he or she is a means, not
+          an end. It is important for me not to think too highly of myself in
+          the relationship but to stand in awe of what God is doing in the life
+          of the other person. Often this requires me to get out of the way.
+          When in ignorance I have nothing to say, I must remain silent.”
+        </p>
+      </>
+    )
   }
 };
