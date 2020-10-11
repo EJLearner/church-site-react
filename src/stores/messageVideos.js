@@ -5,6 +5,18 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-10-11',
+    description:
+      'Several weeks ago, I preached a sermon entitled, “Why Prayer Is Essential.” Prayer is essential because ' +
+      'troubles that we cannot handle on our own are woven into the fabric of our life and living. ' +
+      'Therefore, we need to ask Jesus, “Lord, teach us to pray.” Then we will discover that the power of prayer' +
+      ' is grounded and founded in the make-up  and nature of our relationship with God!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Luke 11:1-4',
+    title: 'Lord Teach Us To Pray!',
+    videoLink: 'https://www.youtube.com/embed/LVmzLU2d-OE'
+  },
+  {
     date: '2020-10-04',
     description:
       'John 16:29-33 - There is no denying that we are living in rather troubling times. Jesus acknowledged ' +
