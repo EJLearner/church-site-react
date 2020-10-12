@@ -174,7 +174,7 @@ function renderArchiveVideos(otherVideos) {
             <div className="video-info">
               <h3>{title}</h3>
               {renderLabelValue('Preacher', preacher)}
-              {renderLabelValue('Scripture', scripture)}
+              {scripture && renderLabelValue('Scripture', scripture)}
               <br />
               {getLongDisplayDate(date)}
               <br />
