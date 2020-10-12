@@ -19,7 +19,7 @@ const StoreContentStyle = styled.div`
   }
 `;
 
-function StoreContent(props) {
+function StoreContent() {
   const [state, dispatch] = useContext(Context);
   const {viewInfo} = state;
   const {view, viewItemId} = viewInfo;
@@ -43,8 +43,9 @@ function StoreContent(props) {
     };
   }, [setNewView]);
 
+  let content;
   if (view === VIEWS.QUANTITY_SELECT) {
-    return (
+    content = (
       <QuantitySelect
         cartData={state.cart}
         cost={STORE_ITEMS[viewItemId].cost}
@@ -57,10 +58,8 @@ function StoreContent(props) {
         onReturnToStoreClick={() => setNewView(VIEWS.STORE_FRONT)}
       />
     );
-  }
-
-  if (view === VIEWS.CART) {
-    return (
+  } else if (view === VIEWS.CART) {
+    content = (
       <ShoppingCart
         cartData={state.cart}
         onItemRemove={(itemId) => dispatch({type: 'remove-item', itemId})}
@@ -68,18 +67,24 @@ function StoreContent(props) {
         storeItems={STORE_ITEMS}
       />
     );
+  } else {
+    content = (
+      <StoreContentStyle>
+        <StoreFront
+          onItemClick={(viewItemId) =>
+            setNewView(VIEWS.QUANTITY_SELECT, viewItemId)
+          }
+          storeItems={STORE_ITEMS}
+        />
+      </StoreContentStyle>
+    );
   }
 
   return (
-    <StoreContentStyle>
+    <>
       <h2>Store</h2>
-      <StoreFront
-        onItemClick={(viewItemId) =>
-          setNewView(VIEWS.QUANTITY_SELECT, viewItemId)
-        }
-        storeItems={STORE_ITEMS}
-      />
-    </StoreContentStyle>
+      {content}
+    </>
   );
 }
 
