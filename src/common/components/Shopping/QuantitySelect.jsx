@@ -125,7 +125,7 @@ export function QuantitySelect({
         </div>
       </div>
       {showConfirmation && (
-        <Modal>
+        <Modal onCloseClick={() => onContinueShoppingClick()}>
           <CartAddedStyle>
             <div className="image-and-count">
               <div className="image-container">
