@@ -17,7 +17,16 @@ export default {
   getTotalItemsCount: (cart) => {
     return Object.values(cart).reduce((amount, itemInfo) => {
       const {quantity} = itemInfo;
-      return quantity ? amount + quantity : amount;
+      return amount + (quantity || 0);
     }, 0);
+  },
+
+  getItemsForPaypalSubmit: (cart) => {
+    return Object.entries(cart).map(([itemId, itemInfo]) => {
+      const {quantity} = itemInfo;
+      const {cost, id, label} = STORE_ITEMS[itemId];
+
+      return {name: label, itemNumber: id, amount: cost, quantity};
+    });
   }
 };
