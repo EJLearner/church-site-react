@@ -40,7 +40,30 @@ const StyledCart = styled.div`
     background-color: ${LOGICAL_COLORS.CT_ACCENT};
     border-radius: 50%;
     padding: 1px 6px;
-    color: ${LOGICAL_COLORS.CT_TEXT_ON_DARK};
+  }
+
+  .cart-items-grid {
+    column-gap: 25px;
+    row-gap: 35px;
+    display: grid;
+    grid-template-columns: 25% auto 10% 10%;
+    place-items: center;
+    text-transform: uppercase;
+
+    img {
+      max-height: 200px;
+      max-width: 100%;
+      margin: auto;
+    }
+
+    > div {
+      align-self: center;
+    }
+
+    .description,
+    .price {
+      justify-self: start;
+    }
   }
 `;
 
@@ -60,13 +83,19 @@ function renderItemline(id, info, onItemRemove, storeItems) {
     return null;
   }
 
-  const {cost, label} = storeItems[id];
+  const {cost, label, thumbImageSource} = storeItems[id];
 
   return (
-    <div key={id}>
-      Label: {label} Quantity: {quantity} Cost: {cost}
-      <Button onClick={() => onItemRemove(id)}>Remove</Button>
-    </div>
+    <React.Fragment key={id}>
+      <div className="item-picture">
+        <img alt={label} src={thumbImageSource} />
+      </div>
+      <div className="description">{label}</div>
+      <div className="description">{commonUtils.formatCurrency(cost)}</div>
+      <div>
+        <Button onClick={() => onItemRemove(id)}>X</Button>
+      </div>
+    </React.Fragment>
   );
 }
 
@@ -80,9 +109,15 @@ function ShoppingCart({
   return (
     <StyledCart>
       <h3>Shopping Cart {renderTotalItemCount(cartData)}</h3>
-      {Object.entries(cartData).map(([id, info]) =>
-        renderItemline(id, info, onItemRemove, storeItems)
-      )}
+      <div className="cart-items-grid">
+        <div>Item</div>
+        <div>Description</div>
+        <div>Price</div>
+        <div>Remove</div>
+        {Object.entries(cartData).map(([id, info]) =>
+          renderItemline(id, info, onItemRemove, storeItems)
+        )}
+      </div>
       Subtotal:{' '}
       {commonUtils.formatCurrency(shoppingUtils.getCartSubTotal(cartData))}
       <Button onClick={onReturnToStoreClick}>Return to store</Button>
