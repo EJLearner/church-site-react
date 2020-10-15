@@ -58,7 +58,7 @@ function StoreContent() {
         onReturnToStoreClick={() => setNewView(VIEWS.STORE_FRONT)}
       />
     );
-  } else if (view === VIEWS.CART) {
+  } else if (true) {
     content = (
       <ShoppingCart
         cartData={state.cart}

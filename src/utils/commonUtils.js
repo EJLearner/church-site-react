@@ -65,6 +65,10 @@ const commonUtils = {
     return number;
   },
 
+  formatShippingCost(number) {
+    return number ? commonUtils.formatCurrency(number) : 'Free';
+  },
+
   /**
    * Converts Time in iso format to a more readable one
    * @param {string} time - in iso format

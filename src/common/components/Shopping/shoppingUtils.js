@@ -14,6 +14,11 @@ export default {
     }, 0);
   },
 
+  getShippingCost: (cart) => {
+    // just a stub for now until we really come up with a shipping cost algorithm
+    return 0;
+  },
+
   getTotalItemsCount: (cart) => {
     return Object.values(cart).reduce((amount, itemInfo) => {
       const {quantity} = itemInfo;
