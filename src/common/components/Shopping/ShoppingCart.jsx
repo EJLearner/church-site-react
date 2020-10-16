@@ -3,6 +3,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Button from '../../../ce/components/Reusable/Button/Button';
+import ContentRightSide from '../../../main/commonComponents/ContentRightSide';
+import ContentWrapper from '../../../main/commonComponents/ContentWrapper';
 import commonUtils from '../../../utils/commonUtils';
 import {
   COLORS,
@@ -29,6 +31,32 @@ const testCartData = {
 };
 
 const StyledCart = styled.div`
+  .items-and-order-summary {
+    display: flex;
+
+    & > div {
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+  }
+
+  .cart-side {
+    border-right: 1px solid ${COLORS.GRAY217};
+    width: 80%;
+  }
+
+  .summary-side {
+    align-self: flex-start;
+    padding-top: 4em;
+    position: sticky;
+    top: 20px;
+
+    .costs {
+      display: grid;
+      grid-template-columns: 80% 20%;
+    }
+  }
+
   h3 {
     color: ${LOGICAL_COLORS.STANDARD_TEXT};
     font-family: ${FONT_FAMILIES.ARIAL};
@@ -138,28 +166,34 @@ function ShoppingCart({
 
   return (
     <StyledCart>
-      <div>
-        <h3>Shopping Cart {renderTotalItemCount(testCartData)}</h3>
-        <div className="cart-items-grid">
-          <div>Item</div>
-          <div>Description</div>
-          <div>Price</div>
-          <div>Remove</div>
-          <div className="line" />
-          {Object.entries(testCartData).map(([id, info]) =>
-            renderItemline(id, info, onItemRemove, storeItems)
-          )}
-        </div>
-        <div>
-          <h4>Order Summary</h4>
-          <div>Subtotal: {commonUtils.formatCurrency(itemsTotal)}</div>
-          <div>
-            Ground Shipping: {commonUtils.formatShippingCost(shippingCost)}
+      <div className="items-and-order-summary">
+        <ContentWrapper>
+          <h2>Store</h2>
+          <h3>Shopping Cart {renderTotalItemCount(testCartData)}</h3>
+          <div className="cart-items-grid">
+            <div>Item</div>
+            <div>Description</div>
+            <div>Price</div>
+            <div>Remove</div>
+            <div className="line" />
+            {Object.entries(testCartData).map(([id, info]) =>
+              renderItemline(id, info, onItemRemove, storeItems)
+            )}
           </div>
-          <div>
-            Total: {commonUtils.formatCurrency(itemsTotal + shippingCost)}
+        </ContentWrapper>
+        <ContentRightSide>
+          <div className="summary-side">
+            <h4>Order Summary</h4>
+            <div className="costs">
+              <div>Subtotal:</div>
+              <div>{commonUtils.formatCurrency(itemsTotal)}</div>
+              <div>Ground Shipping:</div>
+              <div>{commonUtils.formatShippingCost(shippingCost)}</div>
+              <div>Total:</div>
+              <div>{commonUtils.formatCurrency(itemsTotal + shippingCost)}</div>
+            </div>
           </div>
-        </div>
+        </ContentRightSide>
       </div>
       <Button onClick={onReturnToStoreClick}>Return to store</Button>
       <PaypalSubmitOrder items={items} shipping />

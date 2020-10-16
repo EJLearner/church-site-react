@@ -196,22 +196,22 @@ function JubileePage({history, location}) {
           />
           <ContentAndSides>
             <ContentLeftSide>{sideMenu}</ContentLeftSide>
-            <ContentWrapper>
-              <Switch>
-                <Route path={routePaths.MAIN_JUBILEE_STORE}>
+            <Switch>
+              <Route path={routePaths.MAIN_JUBILEE_STORE}>
+                <StoreContent />
+              </Route>
+              <Route path={routePaths.MAIN_JUBILEE_50TH_ANNIVERSARY}>
+                <ContentWrapper fullWidth>{anniversaryContent}</ContentWrapper>
+              </Route>
+              <Route path={routePaths.MAIN_JUBILEE_EVENT_CALENDAR}>
+                <ContentWrapper fullWidth>{calendarContent}</ContentWrapper>
+              </Route>
+              <Route exact path={routePaths.MAIN_JUBILEE}>
+                <ContentWrapper fullWidth>
                   <StoreContent />
-                </Route>
-                <Route path={routePaths.MAIN_JUBILEE_50TH_ANNIVERSARY}>
-                  {anniversaryContent}
-                </Route>
-                <Route path={routePaths.MAIN_JUBILEE_EVENT_CALENDAR}>
-                  {calendarContent}
-                </Route>
-                <Route exact path={routePaths.MAIN_JUBILEE}>
-                  <StoreContent />
-                </Route>
-              </Switch>
-            </ContentWrapper>
+                </ContentWrapper>
+              </Route>
+            </Switch>
           </ContentAndSides>
         </ContentAndSubCompassWrapper>
       </StandardPageWrapper>

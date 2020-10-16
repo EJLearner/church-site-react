@@ -6,6 +6,7 @@ import ShoppingCart from '../../common/components/Shopping/ShoppingCart';
 import StoreFront from '../../common/components/Shopping/StoreFront';
 import {Context} from '../../stores/GlobalStoreWrapper';
 import constants from '../../utils/constants';
+import ContentWrapper from '../commonComponents/ContentWrapper';
 
 import {STORE_ITEMS} from './jubileeStoreConstants';
 
@@ -43,23 +44,26 @@ function StoreContent() {
     };
   }, [setNewView]);
 
-  let content;
   if (view === VIEWS.QUANTITY_SELECT) {
-    content = (
-      <QuantitySelect
-        cartData={state.cart}
-        cost={STORE_ITEMS[viewItemId].cost}
-        itemId={viewItemId}
-        onAddToCartClick={(itemId, quantity) =>
-          dispatch({type: 'add-to-cart', itemId, quantity})
-        }
-        onCartNavigate={() => setNewView(VIEWS.CART)}
-        onContinueShoppingClick={() => setNewView(VIEWS.STORE_FRONT)}
-        onReturnToStoreClick={() => setNewView(VIEWS.STORE_FRONT)}
-      />
+    return (
+      <ContentWrapper fullWidth>
+        <h2>Store</h2>
+        <QuantitySelect
+          cartData={state.cart}
+          cost={STORE_ITEMS[viewItemId].cost}
+          itemId={viewItemId}
+          onAddToCartClick={(itemId, quantity) =>
+            dispatch({type: 'add-to-cart', itemId, quantity})
+          }
+          onCartNavigate={() => setNewView(VIEWS.CART)}
+          onContinueShoppingClick={() => setNewView(VIEWS.STORE_FRONT)}
+          onReturnToStoreClick={() => setNewView(VIEWS.STORE_FRONT)}
+        />
+      </ContentWrapper>
     );
   } else if (true) {
-    content = (
+    // header for shopping cart is rendered by shopping cart because of unique layout
+    return (
       <ShoppingCart
         cartData={state.cart}
         onItemRemove={(itemId) => dispatch({type: 'remove-item', itemId})}
@@ -68,24 +72,20 @@ function StoreContent() {
       />
     );
   } else {
-    content = (
-      <StoreContentStyle>
-        <StoreFront
-          onItemClick={(viewItemId) =>
-            setNewView(VIEWS.QUANTITY_SELECT, viewItemId)
-          }
-          storeItems={STORE_ITEMS}
-        />
-      </StoreContentStyle>
+    return (
+      <ContentWrapper fullWidth>
+        <h2>Store</h2>
+        <StoreContentStyle>
+          <StoreFront
+            onItemClick={(viewItemId) =>
+              setNewView(VIEWS.QUANTITY_SELECT, viewItemId)
+            }
+            storeItems={STORE_ITEMS}
+          />
+        </StoreContentStyle>
+      </ContentWrapper>
     );
   }
-
-  return (
-    <>
-      <h2>Store</h2>
-      {content}
-    </>
-  );
 }
 
 export default StoreContent;
