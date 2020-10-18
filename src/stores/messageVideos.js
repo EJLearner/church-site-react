@@ -5,6 +5,17 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-10-18',
+    description:
+      'Luke:12:22-23; 29-32 - We are living in a time of great anxiety, worry and fear. There are those  ' +
+      'who have discovered that anxiety, worry and fear will not resolve our concerns. The message of Jesus, to  ' +
+      'all of us is “Seek the Kingdom of God above all else and He will give you everything you need.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Luke:12:22-23; 29-32',
+    title: 'God’s Greatest Delight',
+    videoLink: 'https://www.youtube.com/embed/Vq00x6UyVJo'
+  },
+  {
     date: '2020-10-11',
     description:
       'Several weeks ago, I preached a sermon entitled, “Why Prayer Is Essential.” Prayer is essential because ' +
