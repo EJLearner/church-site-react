@@ -755,5 +755,24 @@ export default {
         </p>
       </>
     )
+  },
+  '2020-10-18': {
+    subTitle: <>by Evelyn Underhill</>,
+    content: (
+      <p>
+        “For a spiritual life is simply a life in which all that we do comes
+        from the center, where we are anchored in God: a life soaked through and
+        through by a sense of his reality and claim, and self-given to the great
+        movement of his will. Most of our conflicts and difficulties come from
+        trying to deal with the spiritual and practical aspects of our life
+        separately instead of realizing them as parts of one whole. If our
+        practical life is centered on our own interest, cluttered up by
+        possessions, distracted by ambitions, passions, wants and worries, beset
+        by our own rights and importance, or anxieties for our own future, or
+        longings for our own success, we need not expect that our spiritual life
+        will be a contrast to all of this. The soul’s house is not built on such
+        a convenient plan: there are few soundproof partitions in it.”
+      </p>
+    )
   }
 };
