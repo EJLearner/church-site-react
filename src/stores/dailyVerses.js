@@ -208,7 +208,14 @@ const bibleComFormattedVerses = {
   '2020-10-14': {verse: '1 Samuel 18.1-12'},
   '2020-10-15': {verse: 'Hebrews 8.1-12'},
   '2020-10-16': {verse: 'Hebrews 13.1-21'},
-  '2020-10-17': {verse: 'John 15.1-17'}
+  '2020-10-17': {verse: 'John 15.1-17'},
+  '2020-10-18': {verse: 'Luke 18.1-8'},
+  '2020-10-19': {verse: 'Matthew 10.1-15'},
+  '2020-10-20': {verse: 'Matthew 10.16-23'},
+  '2020-10-21': {verse: 'Matthew 10.24-42'},
+  '2020-10-22': {verse: '2 Corinthians 11.7-12.10'},
+  '2020-10-23': {verse: '2 Corinthias 4.1-6'},
+  '2020-10-24': {verse: '2 Timothy 2.14-26'}
 };
 
 export {bibleComFormattedVerses};
