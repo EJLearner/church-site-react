@@ -774,5 +774,33 @@ export default {
         a convenient plan: there are few soundproof partitions in it.”
       </p>
     )
+  },
+  '2020-10-25': {
+    subTitle: (
+      <>
+        From <i>The Weight of Glory</i> by C.S. Lewis
+      </>
+    ),
+    content: (
+      <p>
+        All our merely natural activities will be accepted, if they are offered
+        to God, even the humblest: and all of them, even the noblest, will be
+        sinful if they are not. Christianity does not simply replace our natural
+        life and substitute a new one: it is rather a new organization which
+        exploits, to its own supernatural ends, these natural materials. No
+        doubt, in a given situation, it demands the surrender of some, or of
+        all, our merely human pursuits: it is better to be saved with one eye,
+        than, having two, to be cast into Gehenna. But it does this, in a sense,
+        per accidens – because, in those special circumstances, it has ceased to
+        be possible to practice this or that activity to the glory of God. There
+        is no essential quarrel between the spiritual life and the human
+        activities as such. Thus the omnipresence of obedience to God in a
+        Christian’s life is, in a way analogous to the omnipresence of God in
+        space. God does not fill space as a body fills it, in the sense that
+        parts of him are in different parts of space, excluding other objects
+        from them. Yet he is everywhere – totally present as every point of
+        space – according to good theologians.
+      </p>
+    )
   }
 };
