@@ -5,6 +5,17 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-10-25',
+    description:
+      'Matthew 5:6. We live in a world that suggests that our living can be fulfilling if we buy into what ' +
+      'the world has to offer. However, with the passing of time we discover that this is not the case. For ' +
+      'there is within all of us a hunger and thirst that only God can provide.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 5:6',
+    title: 'From Dire Need To Delightful Fulfillment!',
+    videoLink: 'https://www.youtube.com/embed/sNBj4u-sVPk'
+  },
+  {
     date: '2020-10-18',
     description:
       'Luke:12:22-23; 29-32 - We are living in a time of great anxiety, worry and fear. There are those  ' +
