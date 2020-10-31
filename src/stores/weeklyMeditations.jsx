@@ -774,5 +774,31 @@ export default {
         a convenient plan: there are few soundproof partitions in it.”
       </p>
     )
+  },
+  '2020-11-01': {
+    subTitle: (
+      <>
+        From <i>Making All Things New</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “The spiritual life can be lived in as many ways as there are people.
+          What is new is that we have moved from the many things to the kingdom
+          of God. What is new is that we are set free from the compulsions of
+          our world and have set our hearts on the only necessary thing. What is
+          new is that we no longer experience the many things, people and events
+          as endless causes for worry, but begin to experience them as the rich
+          variety of ways in which God makes his presence known to us.
+        </p>
+        <p>
+          Indeed, living a spiritual life requires a change of heart, a
+          conversion. Such a conversion may be marked by a sudden inner change,
+          or it can take place through a long, quiet process of transformation.
+          But it always involves an inner experience of oneness.”
+        </p>
+      </>
+    )
   }
 };
