@@ -1,17 +1,39 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 
 import {currentVideoData} from '../stores/messageVideos';
-import {getLongDisplayDate} from '../utils/dateTimeUtils';
+import {
+  convertTypedDateToIso,
+  getLongDisplayDate
+} from '../utils/dateTimeUtils';
 import {LOGICAL_COLORS, COLORS} from '../utils/styleVariables';
 
 import MainMenubar from './MainMenubar';
+import WatchPageFilter from './WatchPageFilter';
 import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
+import PlainButton from './commonComponents/PlainButton';
 import StandardPageWrapper from './commonComponents/StandardPageWrapper';
+
+const INITIAL_VIDEO_SHOW_COUNT = 10;
+const PAGE_TEXT_COLOR = COLORS.GRAY95;
+
+const FIELD_IDS = Object.freeze({
+  titleSearchId: 'title-search',
+  preacherSearchId: 'preacher-search',
+  dateSearchId: 'date-search',
+  scriptureSearchId: 'scripture-search'
+});
+
+export const initialSearchInfo = {
+  [FIELD_IDS.titleSearchId]: '',
+  [FIELD_IDS.preacherSearchId]: '',
+  [FIELD_IDS.dateSearchId]: '',
+  [FIELD_IDS.scriptureSearchId]: ''
+};
 
 const StyleWrapper = styled.div`
   padding: 1em 0;
-  color: ${COLORS.GRAY95};
+  color: ${PAGE_TEXT_COLOR};
   font-weight: bold;
   font-size: 14px;
 
@@ -40,7 +62,7 @@ const StyleWrapper = styled.div`
 
   .date {
     font-weight: bold;
-    color: ${COLORS.GRAY95};
+    color: ${PAGE_TEXT_COLOR};
     line-height: 200%;
   }
 
@@ -100,6 +122,21 @@ const StyleWrapper = styled.div`
       }
     }
   }
+
+  .show-more {
+    display: flex;
+    justify-content: center;
+
+    button {
+      color: black;
+      display: block;
+      text-align: center;
+    }
+
+    i {
+      color: ${LOGICAL_COLORS.CT_PRIMARY};
+    }
+  }
 `;
 
 function renderLabelValue(label, value) {
@@ -137,7 +174,7 @@ function renderArchiveVideos(otherVideos) {
             <div className="video-info">
               <h3>{title}</h3>
               {renderLabelValue('Preacher', preacher)}
-              {renderLabelValue('Scripture', scripture)}
+              {scripture && renderLabelValue('Scripture', scripture)}
               <br />
               {getLongDisplayDate(date)}
               <br />
@@ -148,10 +185,6 @@ function renderArchiveVideos(otherVideos) {
       })}
     </div>
   );
-}
-
-function renderFilter() {
-  return <div className="filter">{null}</div>;
 }
 
 function renderNewestVideo(videoData) {
@@ -189,18 +222,81 @@ function renderNewestVideo(videoData) {
   );
 }
 
+function renderShowMore(setArchiveVideoShowCount, archiveVideoShowCount) {
+  return (
+    <div className="show-more">
+      <PlainButton
+        onClick={() => setArchiveVideoShowCount(archiveVideoShowCount + 10)}
+      >
+        <i className="fa fa-angle-double-down" /> Show More Videos{' '}
+        <i className="fa fa-angle-double-down" />
+      </PlainButton>
+    </div>
+  );
+}
+
+function filterVideos(otherVideos, searchInfo) {
+  const caseInsensitiveIncludes = function (string, searchString) {
+    return (
+      !string || string?.toLowerCase()?.includes(searchString?.toLowerCase())
+    );
+  };
+
+  return otherVideos.filter((videoInfo) => {
+    return (
+      caseInsensitiveIncludes(
+        videoInfo.preacher,
+        searchInfo[FIELD_IDS.preacherSearchId]
+      ) &&
+      caseInsensitiveIncludes(
+        videoInfo.title,
+        searchInfo[FIELD_IDS.titleSearchId]
+      ) &&
+      caseInsensitiveIncludes(
+        videoInfo.date,
+        convertTypedDateToIso(searchInfo[FIELD_IDS.dateSearchId])
+      ) &&
+      caseInsensitiveIncludes(
+        videoInfo.scripture,
+        searchInfo[FIELD_IDS.scriptureSearchId]
+      )
+    );
+  });
+}
+
 const WatchPage = () => {
+  const [archiveVideoShowCount, setArchiveVideoShowCount] = useState(
+    INITIAL_VIDEO_SHOW_COUNT
+  );
+  const [searchInfo, setSearchInfo] = useState(initialSearchInfo);
   const [newestVideo, ...otherVideos] = currentVideoData;
+  const [filteredVideos, setFilteredVideos] = useState(otherVideos);
+
+  const displayedVideos = filteredVideos.slice(0, archiveVideoShowCount);
+  const renderShowMoreContent = filteredVideos.length >= archiveVideoShowCount;
 
   return (
     <StandardPageWrapper>
       <MainMenubar />
-
       <ContentAndSubCompassWrapper>
         <StyleWrapper>
           {renderNewestVideo(newestVideo)}
-          {renderFilter()}
-          {renderArchiveVideos(otherVideos)}
+          <WatchPageFilter
+            ids={FIELD_IDS}
+            onFilterClick={() =>
+              setFilteredVideos(filterVideos(otherVideos, searchInfo))
+            }
+            onResetClick={() => {
+              setSearchInfo(initialSearchInfo);
+              setFilteredVideos(filterVideos(otherVideos, initialSearchInfo));
+            }}
+            searchInfo={searchInfo}
+            setSearchInfo={setSearchInfo}
+            textColor={PAGE_TEXT_COLOR}
+          />
+          {renderArchiveVideos(displayedVideos)}
+          {renderShowMoreContent &&
+            renderShowMore(setArchiveVideoShowCount, archiveVideoShowCount)}
         </StyleWrapper>
       </ContentAndSubCompassWrapper>
     </StandardPageWrapper>

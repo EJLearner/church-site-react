@@ -1,31 +1,28 @@
-import powerPointFile from '../../assets/main/2020-graduates.pptx';
 import GedThumb from '../../assets/main/images/GED-thumbnail.png';
 import choirThumb from '../../assets/main/images/choir-thumb.jpg';
 import christianEdPeopleThumb from '../../assets/main/images/christian-ed-people-thumb.jpg';
 import coronavirus from '../../assets/main/images/coronavirus-thumb.png';
 import dance from '../../assets/main/images/dance.jpg';
 import shofarBlower from '../../assets/main/images/shofar-blower-thumb.png';
-import slideshowThumb from '../../assets/main/images/slideshow-thumb.png';
+import voteThumb from '../../assets/main/images/vote-thumb.png';
 import routePaths from '../../routePaths';
 import {endOfYesterday, isAfter, parseISO} from '../../utils/dateTimeUtils';
 
 import ChristianEducation from './BoxContent/ChristianEducation';
 import CultureAndFineArts from './BoxContent/CultureAndFineArts';
 import GedProgram from './BoxContent/GedProgram';
-import GraduateSlideshow from './BoxContent/GraduateSlideshow';
 import JubileeContent from './BoxContent/JubileeContent';
+import VotingInformation from './BoxContent/VotingInformation';
 import WorshipExperience from './BoxContent/WorshipExperience';
 import CoronaVirusContent from './CoronaVirusContent';
 
 const contentSelectInfo = [
   {
-    expirationDate: '2020-07-01',
-    externalLink: true,
-    learnMoreText: 'Watch Slideshow',
-    linkPath: powerPointFile,
-    Component: GraduateSlideshow,
-    thumbnail: slideshowThumb,
-    title: 'Congrats Graduates!!'
+    learnMoreText: '2020 Voting Information',
+    linkPath: routePaths.MAIN_VOTING_INFORMATION,
+    Component: VotingInformation,
+    thumbnail: voteThumb,
+    title: '2020 Voting Information'
   },
   {
     learnMoreText: 'Watch Sermon',

@@ -1,8 +1,8 @@
-import {format, add, parseISO, startOfDay, isAfter, isBefore} from 'date-fns';
-import {endOfDay} from 'date-fns/esm';
+import {format, add} from 'date-fns';
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
+import BackToTop from '../common/components/BackToTop';
 import Verse from '../common/components/Verse';
 import routePaths from '../routePaths';
 import {bibleComFormattedVerses} from '../stores/dailyVerses';
@@ -76,7 +76,7 @@ function getVersesContent() {
     return noContentMessage;
   }
 
-  return currentWeekDates.map(({date, day}) => {
+  const verses = currentWeekDates.map(({date, day}) => {
     const {verse, referenceText} = bibleComFormattedVerses[date];
 
     return (
@@ -91,6 +91,13 @@ function getVersesContent() {
       </React.Fragment>
     );
   });
+
+  return (
+    <div>
+      {verses}
+      <BackToTop />
+    </div>
+  );
 }
 
 const noContentMessage = (
@@ -100,99 +107,7 @@ const noContentMessage = (
   </>
 );
 
-const goodFridayMeditation = (
-  <>
-    <p>
-      As you know, due to the coronavirus, and the guidelines that have been put
-      in place for our safety, we will not be able to participate in our annual
-      Good Friday service. However, that does not mean that we will not be able
-      to participate in this very special day.
-    </p>
-    <p>
-      Therefore, I am asking that we take the time on Good Friday, between the
-      hours of 12:00 noon and 3:00 pm to reflect on the seven last words of
-      Christ, what those words mean to us and spend some time in prayer. If
-      there are those of you who are still working during the day in an office
-      or at home at the time given above, I am asking that you participate in
-      this time of meditation and prayer between the hours of 6:00 pm and 9:00
-      pm. Should there is another time period other than to two listed above,
-      please feel free spend time during the day, that is convenient for you. My
-      concern is that you participate in this special session on Good Friday no
-      matter the time.
-    </p>
-    In order for us to be a part of this observance,
-    <ol>
-      <li>
-        Begin by taking a few moments to be still and after the moments of
-        stillness, ask God to be with you as you read the Seven Last Words of
-        Christ. Ask Him to reveal what He desires to share with you.
-      </li>
-      <li>
-        Then begin to read the text of the Seven Last Words. After reading of
-        each of the text, take the time to meditate and reflect over what you
-        have read. Think about what each word is saying to you and what it means
-        to you. If you happen to be sharing your time with someone else, share
-        your thoughts with them. There is value in hearing what others have to
-        say and what it means to them.
-        <ol type="a">
-          <li>The First Word - Luke 23:33-34; </li>
-          <li>The Second Word – Luke 23:39-43; </li>
-          <li>The Third Word – John 19:25-27; </li>
-          <li>The Fourth Word – Mark 15:33-34: </li>
-          <li>The Fifth Word – John 19:28; </li>
-          <li>The Sixth Word – John 19:30; </li>
-          <li>The Seventh Word – Luke 23:44-46</li>
-        </ol>
-      </li>
-      <li>
-        When you have completed reflecting on all seven of the last words, spend
-        some time in prayer. Ask God to reveal to you what He wants you to know.
-        Share with God what the words mean to you and how they can be helpful to
-        you in your life.
-      </li>
-    </ol>
-    <p>
-      I urge all of us to take the time to participate in this time of personal
-      worship and growth. I believe that it will enable us to take that next
-      step forward in our spiritual growth as member of the body of Christ.
-    </p>
-    <p>
-      Although Good Friday is filled with agony and rejection, scorn and pain,
-      it ultimately reveals the matchless glory that is God’s and God’s alone.
-    </p>
-    <p>
-      May God bless you as you spend this time with Jesus on the cross at
-      Calvary.
-    </p>
-  </>
-);
-
-// TODO: Remove this function after 2020-04-12
-const showGoodFridayMessage = () => {
-  const beginningOfThursday = startOfDay(parseISO('2020-04-09'));
-  const endOfSaturday = endOfDay(parseISO('2020-04-11'));
-  const now = new Date();
-
-  return isAfter(now, beginningOfThursday) && isBefore(now, endOfSaturday);
-};
-
 const getMeditationForDate = (date) => {
-  // TODO: remove code starting here after 2020-04-12
-  if (showGoodFridayMessage()) {
-    const subTitle =
-      'GOOD FRIDAY: A TIME OF MEDITATION, REFLECTION AND PRAYER!!';
-
-    return (
-      <>
-        <h2>
-          Good Friday Meditation <span className="subtitle">{subTitle}</span>
-        </h2>
-        {goodFridayMeditation}
-      </>
-    );
-  }
-  // and ending here
-
   const weeklyMeditationInfo = weeklyMeditations[date];
 
   if (weeklyMeditationInfo) {
@@ -213,10 +128,7 @@ const allContentData = [
   {
     getContent: () => getMeditationForDate(currentWeekDates[0].date),
     id: IDS.MEDITATION,
-    // TODO: Remove good firday meditation branch after 2020-04-12
-    title: showGoodFridayMessage()
-      ? 'Good Friday Meditation'
-      : 'Weekly Meditation'
+    title: 'Weekly Meditation'
   },
   {
     getContent: getVersesContent,

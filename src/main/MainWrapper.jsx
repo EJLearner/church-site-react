@@ -21,12 +21,13 @@ import MembersOnly from './MembersOnly';
 import MinistriesPage from './MinistriesPage';
 import NewsPage from './NewsPage';
 import ScholarshipPage from './ScholarshipPage';
+import VotingInformationPage from './VotingInformationPage';
 import WatchPage from './WatchPage';
 import MainFooter from './commonComponents/MainFooter';
 
 const WrapperDiv = styled.div`
   background-attachment: fixed;
-  background-image: url(${props => props.backgroundSource});
+  background-image: url(${(props) => props.backgroundSource});
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: ${SIZES.FOOTER_HEIGHT};
@@ -41,7 +42,7 @@ function MainWrapper() {
   );
 
   useEffect(() => {
-    backgroundStore.subscribe(PAGE_ID, newBackgroundSource => {
+    backgroundStore.subscribe(PAGE_ID, (newBackgroundSource) => {
       setBackgroundSource(newBackgroundSource);
     });
 
@@ -92,6 +93,9 @@ function MainWrapper() {
         </Route>
         <Route path={routePaths.MAIN_SCHOLARSHIP}>
           <ScholarshipPage />
+        </Route>
+        <Route path={routePaths.MAIN_VOTING_INFORMATION}>
+          <VotingInformationPage />
         </Route>
         <Route path={routePaths.MAIN_WATCH}>
           <WatchPage />

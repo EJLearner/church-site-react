@@ -5,7 +5,190 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
-    date: '2020-06-20',
+    date: '2020-10-25',
+    description:
+      'Matthew 5:6. We live in a world that suggests that our living can be fulfilling if we buy into what ' +
+      'the world has to offer. However, with the passing of time we discover that this is not the case. For ' +
+      'there is within all of us a hunger and thirst that only God can provide.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 5:6',
+    title: 'From Dire Need To Delightful Fulfillment!',
+    videoLink: 'https://www.youtube.com/embed/sNBj4u-sVPk'
+  },
+  {
+    date: '2020-10-18',
+    description:
+      'Luke:12:22-23; 29-32 - We are living in a time of great anxiety, worry and fear. There are those  ' +
+      'who have discovered that anxiety, worry and fear will not resolve our concerns. The message of Jesus, to  ' +
+      'all of us is “Seek the Kingdom of God above all else and He will give you everything you need.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Luke:12:22-23; 29-32',
+    title: 'God’s Greatest Delight',
+    videoLink: 'https://www.youtube.com/embed/Vq00x6UyVJo'
+  },
+  {
+    date: '2020-10-11',
+    description:
+      'Several weeks ago, I preached a sermon entitled, “Why Prayer Is Essential.” Prayer is essential because ' +
+      'troubles that we cannot handle on our own are woven into the fabric of our life and living. ' +
+      'Therefore, we need to ask Jesus, “Lord, teach us to pray.” Then we will discover that the power of prayer' +
+      ' is grounded and founded in the make-up  and nature of our relationship with God!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Luke 11:1-4',
+    title: 'Lord Teach Us To Pray!',
+    videoLink: 'https://www.youtube.com/embed/LVmzLU2d-OE'
+  },
+  {
+    date: '2020-10-04',
+    description:
+      'John 16:29-33 - There is no denying that we are living in rather troubling times. Jesus acknowledged ' +
+      'that reality when he said, “Here on earth you will have many trials and sorrows.” In essence, He is ' +
+      'saying “It is what it is!” However, the Master does not end with that reality. He then makes an ' +
+      'incredible affirmation by declaring, “But take heart, because I have overcome the world!”',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 16:29-33',
+    title: 'An Incredible Affirmation',
+    videoLink: 'https://www.youtube.com/embed/YCxLUylQCZo'
+  },
+  {
+    date: '2020-10-03',
+    preacher: PREACHERS.G_YEARGIN,
+    title: 'A Prayer For Our Nation',
+    videoLink: 'https://www.youtube.com/embed/z7kWNgr4z5c'
+  },
+  {
+    date: '2020-09-27',
+    description:
+      'Genesis 28:10-22. There are occasions in our lives when we would rather avoid having an encounter with God. ' +
+      'We have not lived as best we should; we have done things we thought we would never do; we are haunted by the ' +
+      'hurt that we have caused others. However, these situations may well be the best time to meet God in ' +
+      'unexpected places!!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Genesis 28:10-22',
+    title: 'Meeting God In Unexpected Places!!',
+    videoLink: 'https://www.youtube.com/embed/tvavUdqnyxw'
+  },
+  {
+    date: '2020-09-20',
+    description:
+      'Matthew 6:7-8; Luke 11:1 During ordinary times prayer is essential. We are now living in extraordinary ' +
+      'times which present some realities that we cannot handle alone. In times such as these, we have a God to ' +
+      'whom we can turn to for He knows all of our needs. That makes prayer even more essential.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 6:7-8; Luke 11:1',
+    title: 'Why Prayer Is Essential',
+    videoLink: 'https://www.youtube.com/embed/nr53AhF0-qg'
+  },
+  {
+    date: '2020-09-13',
+    description:
+      'John 12:20-28 In this life we experience defining moments: moments that reveal who we are and why we ' +
+      'are here. Not even Jesus could avoid such a moment. As a result, because He could not, we are given the gift ' +
+      'of eternal life.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 12:20-28',
+    title: 'The Master’s Defining Moment',
+    videoLink: 'https://www.youtube.com/embed/F5MDLBccokw'
+  },
+  {
+    date: '2020-09-06',
+    description:
+      'Ephesians 6:10-13 In 59 days we will elect the President of the United States of America. This is ' +
+      'the most crucial election in the history of this nation.It is crucial because it will decide the moral ' +
+      'character of our nation. Therefore It is imperative that we seek God’s guidance and direction in our decision ' +
+      'that we make.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Ephesians 6:10-13',
+    title: 'Don’t Get It Twisted',
+    videoLink: 'https://www.youtube.com/embed/-_CiQ9Vz6UU'
+  },
+  {
+    date: '2020-08-30',
+    description: 'Job 1:6-8',
+    preacher: PREACHERS.M_HAMIEL,
+    scripture: 'Job 1:6-8',
+    title: 'Will You Make Your Daddy Proud?',
+    videoLink: 'https://www.youtube.com/embed/VIqIHw4w20o'
+  },
+  {
+    date: '2020-08-23',
+    description: 'Amos 5: 1-7',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'Amos 5: 1-7',
+    title: 'Injustice and Bitterness Rots The Soul',
+    videoLink: 'https://www.youtube.com/embed/qCaD6d7zmtk'
+  },
+  {
+    date: '2020-08-16',
+    description: 'Exodus 14: 13-14',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'Exodus 14: 13-14',
+    title: 'God Will Fight Our Battles',
+    videoLink: 'https://www.youtube.com/embed/JO_mKPqa4sg'
+  },
+  {
+    date: '2020-08-09',
+    description: 'Genesis 6:5-8 and Rev. 13: 5-8',
+    preacher: PREACHERS.T_CURLEY,
+    scripture: 'Genesis 6:5-8 and Rev. 13: 5-8',
+    title: 'Everybody’s Going Through Something',
+    videoLink: 'https://www.youtube.com/embed/5I1Pe8hyV8Q'
+  },
+  {
+    date: '2020-08-02',
+    description:
+      'Mark 9:2-10  We are living in a time of chaos and confusion. Therefore, it is necessary that we lift ' +
+      'up our heads and open our eyes to experience the glory that God’s and God’s alone. Today’s message ' +
+      'encourages us to do so!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Genesis 28:10-17',
+    title: 'A Glimpse of Glory',
+    videoLink: 'https://www.youtube.com/embed/G-IWmeMJf3s'
+  },
+  {
+    date: '2020-07-26',
+    description:
+      'Genesis 28:10-17.  God’s ways are not our ways. We are not always aware that God is with us, however, ' +
+      'when we least expect it, know that God is with us!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Genesis 28:10-17',
+    title: 'When You Least Expect It, Expect It',
+    videoLink: 'https://www.youtube.com/embed/fDaeW4mmVIE'
+  },
+  {
+    date: '2020-07-19',
+    description:
+      'John 11:30-35 - All of us have experienced being moved to tears. These are not tears of joy, rather they ' +
+      'are tears of pain and suffering. The good news is, we never cry alone because God through Jesus weeps with us!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 11:30-35',
+    title: 'A Peek Into The Heart Of God',
+    videoLink: 'https://www.youtube.com/embed/pdZxkWcG1Ho'
+  },
+  {
+    date: '2020-07-12',
+    description:
+      'John16:25-33 -  We are living in chaotic times and it may feel as if all will be lost. However,  the Good ' +
+      'News is that Jesus has overcome the world which gives us reason to rejoice!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 16:25-33',
+    title: 'Overcoming The World',
+    videoLink: 'https://www.youtube.com/embed/LpT1uHrFf7U'
+  },
+  {
+    date: '2020-06-28',
+    description:
+      'Matthew 25:14-30  This is a service in recognition of all graduates. You were all born with ' +
+      'specific gifts and talents. Today’s message encourages you to use your gifts and talents to make a ' +
+      'difference in this world. When you fail to use your gifts and talents, you run the risk of losing them, and ' +
+      'as a result the world also suffers a great loss.',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 25:14-30',
+    title: 'Use It Or Lose It',
+    videoLink: 'https://www.youtube.com/embed/fwFj22DGuw4'
+  },
+  {
+    date: '2020-06-21',
     description:
       'Psalm 23 - The prevailing opinion of psychologists is that fathers play an essential role in ' +
       'the lives of their children. Through the examination of the 23rd Psalm, this message speaks of the ' +
@@ -14,11 +197,6 @@ const allVideoData = [
     scripture: 'Psalm 23',
     title: 'Father’s Day - “A Reflection On The 23rd Psalm”',
     videoLink: 'https://www.youtube.com/embed/LPeZCzH7ca0'
-  },
-  {
-    date: '2020-06-19',
-    title: 'Sermon in Solidarity Coming Soon',
-    videoLink: 'https://www.youtube.com/embed/uBRcxBm2600'
   },
   {
     date: '2020-06-14',

@@ -12,7 +12,7 @@ import {LOGICAL_COLORS, WIDTHS, SIZES} from '../../utils/styleVariables';
 const SCRIPTURES_ID = 'scriptures';
 
 const footerData = [
-  // TODO: add later
+  // TODO: add when william bryant scholarship application exists
   // {
   //   actionWord: 'Apply',
   //   path: routePaths.MAIN_SCHOLARSHIP,
@@ -39,7 +39,7 @@ const footerData = [
     path: routePaths.MAIN_MEDITATIONS,
     subject: 'Meditations'
   }
-  // TODO: add later
+  // TODO: add when follow us exists
   // {
   //   actionWord: 'Follow Us',
   //   path: routePaths.MAIN_CONTACT,
