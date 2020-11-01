@@ -1,11 +1,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Button from '../../ce/components/Reusable/Button/Button';
+import Button, {SHAPES} from '../../ce/components/Reusable/Button/Button';
 
 import HiddenInput from './HiddenInput';
 
-function PaypalSubmitOrder({items, shipping}) {
+function PaypalSubmitOrderButton({
+  buttonShape,
+  className,
+  items,
+  label,
+  shipping
+}) {
   return (
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
       <HiddenInput name="cmd" value="_cart" />
@@ -36,14 +42,22 @@ function PaypalSubmitOrder({items, shipping}) {
         );
       })}
 
-      <Button name="submit" type="submit" value="Checkout">
-        Checkout
+      <Button
+        buttonShape={buttonShape}
+        className={className}
+        name="submit"
+        type="submit"
+        value="Checkout"
+      >
+        {label}
       </Button>
     </form>
   );
 }
 
-PaypalSubmitOrder.propTypes = {
+PaypalSubmitOrderButton.propTypes = {
+  buttonShape: PropTypes.string,
+  className: PropTypes.string,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       amount: PropTypes.number.isRequired,
@@ -52,7 +66,14 @@ PaypalSubmitOrder.propTypes = {
       quantity: PropTypes.number
     })
   ),
+  label: PropTypes.node,
   shipping: PropTypes.bool.isRequired
 };
 
-export default PaypalSubmitOrder;
+PaypalSubmitOrderButton.defaultProps = {
+  label: 'Checkout'
+};
+
+export {SHAPES};
+
+export default PaypalSubmitOrderButton;

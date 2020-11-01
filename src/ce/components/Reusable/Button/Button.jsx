@@ -52,6 +52,10 @@ const StyledButton = styled.button`
   &.disabled {
     background-color: ${COLORS.GRAY180};
   }
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 function getColorStyle(color) {

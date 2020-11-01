@@ -2,16 +2,16 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-import Button from '../../../ce/components/Reusable/Button/Button';
 import ContentRightSide from '../../../main/commonComponents/ContentRightSide';
 import ContentWrapper from '../../../main/commonComponents/ContentWrapper';
+import PlainButton from '../../../main/commonComponents/PlainButton';
 import commonUtils from '../../../utils/commonUtils';
 import {
   COLORS,
   FONT_FAMILIES,
   LOGICAL_COLORS
 } from '../../../utils/styleVariables';
-import PaypalSubmitOrder from '../PaypalSubmitOrder';
+import PaypalSubmitOrderButton, {SHAPES} from '../PaypalSubmitOrderButton';
 
 import shoppingUtils from './shoppingUtils';
 
@@ -30,7 +30,7 @@ const testCartData = {
   }
 };
 
-const StyledCart = styled.div`
+const StyledShoppingCart = styled.div`
   .items-and-order-summary {
     display: flex;
 
@@ -45,15 +45,65 @@ const StyledCart = styled.div`
     width: 80%;
   }
 
+  .right-side {
+    width: 25%;
+  }
+
   .summary-side {
     align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
     padding-top: 4em;
     position: sticky;
     top: 20px;
+    width: 100%;
+
+    h4 {
+      font-size: 18px;
+    }
 
     .costs {
       display: grid;
       grid-template-columns: 80% 20%;
+
+      .free-cost {
+        color: red;
+      }
+
+      & > div {
+        padding-bottom: 1em;
+      }
+
+      & > div.line {
+        padding-bottom: 0;
+        background-color: ${COLORS.GRAY180};
+        grid-column-start: 1;
+        grid-column-end: 2;
+        height: 1px;
+        width: 100%;
+      }
+
+      .total {
+        text-transform: uppercase;
+      }
+    }
+
+    .continue-shopping-button,
+    .checkout-button {
+      align-self: center;
+    }
+
+    button.checkout-button {
+      background-color: ${COLORS.PAYPAL_BLUE};
+      color: ${LOGICAL_COLORS.CT_TEXT_ON_DARK};
+      display: block;
+      font-style: italic;
+      font-weight: bold;
+      font-size: 16px;
+      margin-left: 0;
+      margin-bottom: 3em;
+      width: 100%;
     }
   }
 
@@ -154,6 +204,14 @@ function renderItemline(id, info, onItemRemove, storeItems) {
   );
 }
 
+function renderShippingCost(shippingCost) {
+  if (shippingCost) {
+    return commonUtils.formatCurrency(shippingCost);
+  }
+
+  return <span className="free-cost">Free</span>;
+}
+
 function ShoppingCart({
   cartData,
   onItemRemove,
@@ -165,7 +223,7 @@ function ShoppingCart({
   const shippingCost = shoppingUtils.getShippingCost(testCartData);
 
   return (
-    <StyledCart>
+    <StyledShoppingCart>
       <div className="items-and-order-summary">
         <ContentWrapper>
           <h2>Store</h2>
@@ -181,23 +239,38 @@ function ShoppingCart({
             )}
           </div>
         </ContentWrapper>
-        <ContentRightSide>
+        <ContentRightSide className="right-side">
           <div className="summary-side">
             <h4>Order Summary</h4>
             <div className="costs">
               <div>Subtotal:</div>
               <div>{commonUtils.formatCurrency(itemsTotal)}</div>
               <div>Ground Shipping:</div>
-              <div>{commonUtils.formatShippingCost(shippingCost)}</div>
-              <div>Total:</div>
+              <div>{renderShippingCost(shippingCost)}</div>
+              <div className="total">Total:</div>
               <div>{commonUtils.formatCurrency(itemsTotal + shippingCost)}</div>
             </div>
+            <PaypalSubmitOrderButton
+              buttonShape={SHAPES.RECT}
+              className="checkout-button"
+              items={items}
+              label={
+                <span>
+                  <i className="fa fa-paypal" /> PayPal
+                </span>
+              }
+              shipping
+            />
+            <PlainButton
+              className="continue-shopping-button"
+              onClick={onReturnToStoreClick}
+            >
+              Continue Shopping?
+            </PlainButton>
           </div>
         </ContentRightSide>
       </div>
-      <Button onClick={onReturnToStoreClick}>Return to store</Button>
-      <PaypalSubmitOrder items={items} shipping />
-    </StyledCart>
+    </StyledShoppingCart>
   );
 }
 

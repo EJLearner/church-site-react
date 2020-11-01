@@ -26,9 +26,10 @@ const COLORS = {
   // TODO: make this the logical disabled color
   GRAY180: 'rgb(180, 180, 180)',
   GRAY217: 'rgb(217, 217, 217)',
-  LIGHT_BLUE: '#5b9bd5',
   LIGHTER_BLUE: 'rgb(190,215,239)',
+  LIGHT_BLUE: '#5b9bd5',
   BLUE_50: 'rgb(0, 112, 192)',
+  PAYPAL_BLUE: 'rgb(0, 121, 193)',
   BLACK: 'black',
   WHITE: 'white',
   BLACKISH: 'rgb(34, 34, 34)',
