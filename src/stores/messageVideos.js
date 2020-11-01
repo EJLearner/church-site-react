@@ -5,6 +5,17 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-11-01',
+    description:
+      'Anxiety, seems to have become a part of our daily lives. It has become even more so as we face ' +
+      'this upcoming presidential election. According to the wisdom teachings, in the book of Proverbs, there is a ' +
+      'remedy that brings an end to our anxious fears. The remedy is “A matter of trusting in the Lord!”',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Proverbs  3:5-6',
+    title: 'It’s A Matter of Trust',
+    videoLink: 'https://www.youtube.com/embed/dh8nvLZhrug'
+  },
+  {
     date: '2020-10-25',
     description:
       'Matthew 5:6. We live in a world that suggests that our living can be fulfilling if we buy into what ' +
@@ -22,7 +33,7 @@ const allVideoData = [
       'who have discovered that anxiety, worry and fear will not resolve our concerns. The message of Jesus, to  ' +
       'all of us is “Seek the Kingdom of God above all else and He will give you everything you need.',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Luke:12:22-23; 29-32',
+    scripture: 'Luke 12:22-23; 29-32',
     title: 'God’s Greatest Delight',
     videoLink: 'https://www.youtube.com/embed/Vq00x6UyVJo'
   },
