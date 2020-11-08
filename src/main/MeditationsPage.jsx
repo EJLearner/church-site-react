@@ -77,7 +77,7 @@ function getVersesContent() {
   }
 
   const verses = currentWeekDates.map(({date, day}) => {
-    const {verse, referenceText} = bibleComFormattedVerses[date];
+    const {verse, referenceText} = bibleComFormattedVerses?.[date] ?? {};
 
     return (
       <React.Fragment key={date}>
