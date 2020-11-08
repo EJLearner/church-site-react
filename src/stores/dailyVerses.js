@@ -229,7 +229,14 @@ const bibleComFormattedVerses = {
   '2020-11-04': {verse: 'John 9'},
   '2020-11-05': {verse: 'Luke 19.1-10'},
   '2020-11-06': {verse: 'Acts 26.2-29'},
-  '2020-11-07': {verse: 'Colossians 3.1-17'}
+  '2020-11-07': {verse: 'Colossians 3.1-17'},
+  '2020-11-08': {verse: 'Psalm 50:7-15'},
+  '2020-11-09': {verse: 'Luke 12:35-59'},
+  '2020-11-10': {verse: 'Hebrews 11:32-12:2'},
+  '2020-11-11': {verse: '1 Peter 1:3-9'},
+  '2020-11-12': {verse: 'Acts 17:16-34'},
+  '2020-11-13': {verse: 'John 11:1-44'},
+  '2020-11-14': {verse: '1 Corinthians 15:51-58'}
 };
 
 export {bibleComFormattedVerses};

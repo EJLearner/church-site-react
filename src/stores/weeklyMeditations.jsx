@@ -828,5 +828,38 @@ export default {
         </p>
       </>
     )
+  },
+  '2020-11-08': {
+    subTitle: (
+      <>
+        From <i>The God Who Comes</i> by Carlo Carretto
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “God became bread in Christ to nourish us with eternal life. “He who
+          feeds on my flesh and drinks my blood has eternal life.” (John 6:54)
+        </p>
+
+        <p>
+          But what is this eternal life Jesus is speaking of? He has defined it
+          himself: “Eternal life is this: to know you, the only true God, and
+          him whom you have sent, Jesus Christ.” (John 17:3)
+        </p>
+
+        <p>
+          We cannot blame Jesus for any lack of clarity: “Eternal life is
+          knowledge of God.”
+        </p>
+
+        <p>It is true authentic knowledge.</p>
+
+        <p>
+          That is why I call the God of my faith the “God who is,” not the “God
+          who seems to me to be.”
+        </p>
+      </>
+    )
   }
 };

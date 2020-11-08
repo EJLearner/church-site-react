@@ -5,6 +5,17 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-11-08',
+    description:
+      'Isaiah 40: 27-31 - For the past four years, we have experienced being anxious and unsettled. We have been ' +
+      'ill at ease and weary. However we have come to that moment when that reality can be changed. That change ' +
+      'will happen by waiting on the Lord!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Isaiah 40: 27-31',
+    title: 'Waiting On The Lord!!',
+    videoLink: 'https://www.youtube.com/embed/SEjRichM4uo'
+  },
+  {
     date: '2020-11-01',
     description:
       'Anxiety, seems to have become a part of our daily lives. It has become even more so as we face ' +
