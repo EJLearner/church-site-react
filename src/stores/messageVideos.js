@@ -5,6 +5,18 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-11-15',
+    description:
+      'Over the past four years,  I have always believed that God has had His hand in the direction of ' +
+      'this nation. In spite of that belief, many of us lived with fear, anxiety and despair. However, on ' +
+      'November 7, 2020 God revealed His hand for this nation when we heard the news that Joe Biden had become ' +
+      'the president elect. Therefore, I extend an invitation to you to join with me in “Praising the Lord!”',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Psalm 100',
+    title: 'An Invitation To Praise',
+    videoLink: 'https://www.youtube.com/embed/Du1f-JmR8wE'
+  },
+  {
     date: '2020-11-08',
     description:
       'Isaiah 40: 27-31 - For the past four years, we have experienced being anxious and unsettled. We have been ' +
