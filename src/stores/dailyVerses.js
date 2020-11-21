@@ -243,7 +243,14 @@ const bibleComFormattedVerses = {
   '2020-11-18': {verse: '1 Thessalonians 5'},
   '2020-11-19': {verse: '2 Thessalonians 2'},
   '2020-11-20': {verse: '2 Thessalonians 3'},
-  '2020-11-21': {verse: 'John 4.31-38'}
+  '2020-11-21': {verse: 'John 4.31-38'},
+  '2020-11-22': {verse: 'Psalm 23'},
+  '2020-11-23': {verse: 'John 1.43-51'},
+  '2020-11-24': {verse: 'Luke 8.22-56'},
+  '2020-11-25': {verse: 'Acts 17.1-9'},
+  '2020-11-26': {verse: 'Luke 19.28-40'},
+  '2020-11-27': {verse: '1 Corinthians 15.1-28'},
+  '2020-11-28': {verse: 'Matthew 26.1-29'}
 };
 
 export {bibleComFormattedVerses};
