@@ -5,6 +5,19 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-11-22',
+    description:
+      'Romans 8:28 - Have you ever wondered what God does with our mistakes and mess ups with our faults and flaws; ' +
+      'even with our troubles and trials? I used to think that God takes them away to give us a chance to be the ' +
+      'best we can be. However, life has taught me that God does not take away our mistakes and flaws, our ' +
+      'troubles and trials. Actually, God uses them to help us become better persons. It is called the Divine ' +
+      'Grace of Recycling!!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Romans 8:28',
+    title: 'The Divine Grace of Recycling',
+    videoLink: 'https://www.youtube.com/embedOxFZzjqWhbw'
+  },
+  {
     date: '2020-11-15',
     description:
       'Over the past four years,  I have always believed that God has had His hand in the direction of ' +
