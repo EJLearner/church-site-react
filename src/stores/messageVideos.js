@@ -15,7 +15,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Romans 8:28',
     title: 'The Divine Grace of Recycling',
-    videoLink: 'https://www.youtube.com/embedOxFZzjqWhbw'
+    videoLink: 'https://www.youtube.com/embed/OxFZzjqWhbw'
   },
   {
     date: '2020-11-15',
