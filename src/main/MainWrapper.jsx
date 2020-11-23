@@ -15,7 +15,7 @@ import CultureAndFineArtsPage from './CultureAndFineArtsPage';
 import GedPage from './GedPage';
 import GivingPage from './GivingPage';
 import JubileePage from './JubileePage';
-import MainContent from './MainPage';
+import MainPage from './MainPage';
 import MeditationsPage from './MeditationsPage';
 import MembersOnly from './MembersOnly';
 import MinistriesPage from './MinistriesPage';
@@ -77,7 +77,7 @@ function MainWrapper() {
           <JubileePage />
         </Route>
         <Route exact path={routePaths.MAIN_HOME}>
-          <MainContent />
+          <MainPage />
         </Route>
         <Route path={routePaths.MAIN_MEDITATIONS}>
           <MeditationsPage />
