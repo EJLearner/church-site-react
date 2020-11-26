@@ -5,6 +5,7 @@ import format from 'date-fns/format';
 import formatISO from 'date-fns/formatISO';
 import isAfter from 'date-fns/isAfter';
 import isBefore from 'date-fns/isBefore';
+import isPast from 'date-fns/isPast';
 import isSameDay from 'date-fns/isSameDay';
 import isValid from 'date-fns/isValid';
 import parse from 'date-fns/parse';
@@ -44,6 +45,7 @@ export {
   getShortDisplayDate,
   isAfter,
   isBefore,
+  isPast,
   isSameDay,
   parseISO,
   startOfDay,

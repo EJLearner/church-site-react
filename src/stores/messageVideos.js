@@ -1,9 +1,15 @@
 import constants from '../utils/constants';
-import {isBefore, startOfTomorrow, parseISO} from '../utils/dateTimeUtils';
+import {isPast, parseISO} from '../utils/dateTimeUtils';
 
 const {PREACHERS} = constants;
 
 const allVideoData = [
+  {
+    date: '2020-11-26T10:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    title: 'Thanksgiving Reflection',
+    videoLink: 'https://www.youtube.com/embed/mfhFol-eJyM'
+  },
   {
     date: '2020-11-22',
     description:
@@ -394,7 +400,9 @@ const allVideoData = [
 ];
 
 const currentVideoData = allVideoData
-  .filter(({date}) => isBefore(parseISO(date), startOfTomorrow()))
+  .filter(({date}) => {
+    return isPast(parseISO(date));
+  })
   .sort((a, b) => a.date < b.date);
 
 export {currentVideoData, allVideoData};
