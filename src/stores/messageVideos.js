@@ -5,6 +5,17 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-11-29T09:00:00',
+    description:
+      'Today is the beginning of the Advent season for all Christians. It is the season when we are called to ' +
+      'prepare the way for the coming of the glory of God. However, preparing for the coming of the glory of God ' +
+      'requires us to let go of those things in our lives that impedes us from experiencing God’s glory. It ' +
+      'is a matter of letting go and letting God.',
+    preacher: PREACHERS.G_YEARGIN,
+    title: 'Preparing The Way For The Glory of the Lord',
+    videoLink: 'https://www.youtube.com/embed/l6L6QomNGzY'
+  },
+  {
     date: '2020-11-26T10:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'Thanksgiving Reflection',
