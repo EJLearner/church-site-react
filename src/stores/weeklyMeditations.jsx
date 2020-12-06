@@ -954,7 +954,7 @@ export default {
       </>
     )
   },
-  '2020-12-05': {
+  '2020-12-06': {
     subTitle: (
       <>
         From <i>The Double Search</i> by Rufus M. Jones
