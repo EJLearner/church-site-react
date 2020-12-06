@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-12-06T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 10:10',
+    title: 'Why We Need Christmas',
+    videoLink: 'https://www.youtube.com/embed/TKYTWWRzPY4'
+  },
+  {
     date: '2020-11-29T09:00:00',
     description:
       'Today is the beginning of the Advent season for all Christians. It is the season when we are called to ' +
