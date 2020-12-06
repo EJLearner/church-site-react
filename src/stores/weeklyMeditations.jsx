@@ -953,5 +953,33 @@ export default {
         </p>
       </>
     )
+  },
+  '2020-12-05': {
+    subTitle: (
+      <>
+        From <i>The Double Search</i> by Rufus M. Jones
+      </>
+    ),
+    content: (
+      <p>
+        “It is a primary truth of Christianity that God reaches us directly. No
+        person is insulated. As ocean floods the inlets, as sunlight environs
+        the plant, so God enfolds and enwreathes the finite spirit. There is
+        this difference, however, inlet and plant are penetrated whether they
+        will or not. Sea and sunshine crowd themselves in a tergo. Not so with
+        God. He can be received only through appreciation and conscious
+        appropriation. He comes only through doors that are purposely opened for
+        him. A person may live as near God as the bubble is to the ocean and yet
+        not find him. He may be “closer than breathing, nearer than hands or
+        feet,” and still be missed. Historical Christianity is dry and formal
+        when it lacks the immediate and inward response to our Great Companion;
+        but our spirits are trained to know him, to appreciate him, by the
+        mediation of historical revelation. A person’s spiritual life is always
+        dwarfed when cut apart from history. Mysticism is empty unless it is
+        enriched by outward and historical revelation. The supreme education of
+        the soul comes through an intimate acquaintance with Jesus Christ of
+        history.”
+      </p>
+    )
   }
 };
