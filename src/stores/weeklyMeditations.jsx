@@ -981,5 +981,43 @@ export default {
         history.”
       </p>
     )
+  },
+  '2020-12-13': {
+    subTitle: (
+      <>
+        From <i>The God Who Comes</i> by Carlo Carretto
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “God presents himself to us little by little. The whole story of
+          salvation is the story of God who comes.
+        </p>
+        <p>
+          It is always he who comes, even if he has not yet come in his
+          fullness. But there is indeed one unique moment in his coming; the
+          others were only preparations and announcement.
+        </p>
+        <p>The hour of his coming is the Incarnation.</p>
+        <p>
+          The Incarnation brings the world his presence. It is a presence so
+          complete that it overshadows every presence before it.
+        </p>
+        <p>
+          God is made human in Christ. God makes himself present to us with such
+          a special presence, such an obvious presence, as to overthrow all the
+          complicated calculations made about him in the past.
+        </p>
+        <p>
+          “The invisible, intangible God has made himself visible and tangible
+          in Christ.”
+        </p>
+        <p>
+          If Jesus is truly God, everything is clear; if I cannot believe this,
+          everything darkens again.”
+        </p>
+      </>
+    )
   }
 };

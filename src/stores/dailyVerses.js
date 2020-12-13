@@ -264,7 +264,14 @@ const bibleComFormattedVerses = {
   '2020-12-09': {verse: 'Matthew 3.1-2'},
   '2020-12-10': {verse: 'Isaiah 62'},
   '2020-12-11': {verse: 'John 1.6-34'},
-  '2020-12-12': {verse: 'Mark 1.1-8'}
+  '2020-12-12': {verse: 'Mark 1.1-8'},
+  '2020-12-13': {verse: 'Psalm 146.5-10'},
+  '2020-12-14': {verse: 'Mark 13.1-13; 13.24-37'},
+  '2020-12-15': {verse: 'Luke 21.25-36'},
+  '2020-12-16': {verse: 'Revelation 1.1-8'},
+  '2020-12-17': {verse: 'Ezekiel 34.1-10'},
+  '2020-12-18': {verse: 'Luke 12.35-48'},
+  '2020-12-19': {verse: 'Acts 1.1-11'}
 };
 
 export {bibleComFormattedVerses};
