@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-12-13T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Luke 1:26-38',
+    title: 'The Favor Of The Lord',
+    videoLink: 'https://www.youtube.com/embed/jVq3TsR8Vf4'
+  },
+  {
     date: '2020-12-06T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 10:10',
