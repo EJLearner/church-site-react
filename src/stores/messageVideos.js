@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-12-20T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Luke 2:8-15',
+    title: 'Glory to God in the Highest',
+    videoLink: 'https://www.youtube.com/embed/5LMjYM3jTGc'
+  },
+  {
     date: '2020-12-13T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 1:26-38',
