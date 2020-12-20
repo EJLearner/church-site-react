@@ -155,7 +155,7 @@ function renderEventsList(events) {
     const {dateString, linkPath, title, timeStart} = event;
 
     const to = linkPath ?? {
-      pathname: routePaths.CE_CALENDAR_DAY,
+      pathname: routePaths.MAIN_CALENDAR_DAY,
       state: {selectedDay: dateString}
     };
 
