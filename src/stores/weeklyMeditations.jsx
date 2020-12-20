@@ -1019,5 +1019,28 @@ export default {
         </p>
       </>
     )
+  },
+  '2020-12-20': {
+    subTitle: (
+      <>
+        From <i>The Captivating Presence</i> by Albert Edward Day
+      </>
+    ),
+    content: (
+      <p>
+        “But God is present in reality no matter what unreality our practices
+        and our ponderings imply. He is forever trying to establish
+        communication; forever aware of the wrong directions we are taking and
+        wishing to warn us; forever offering solutions for the problems that
+        baffle us; forever standing at the door of our loneliness, eager to
+        bring us such comrandeship as the most intelligent living mortal could
+        not supply; forever clinging to our indifference in the hope that
+        someday our needs, or at least our tragedies will waken us to respond to
+        his advances. The Real Presence is just that, real and
+        life-transforming. Nor are the conditions for the manifestation of his
+        splendors out of the reach of any of us! Here they are; otherness,
+        openness, obedience, obsession.
+      </p>
+    )
   }
 };
