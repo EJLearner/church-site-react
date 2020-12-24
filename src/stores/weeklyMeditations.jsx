@@ -1042,5 +1042,34 @@ export default {
         openness, obedience, obsession.
       </p>
     )
+  },
+  '2020-12-27': {
+    subTitle: (
+      <>
+        From <i>Waiting for God</i> by Simone Weil
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “The love of our neighbor is the love that comes down from God to man.
+          It precedes that which rises from men to God. God is longing to come
+          down to those in affliction. As soon as a soul is disposed to consent,
+          thought it were the last, the most miserable, the most deformed of
+          souls, God will precipitate himself into it in order, through it, to
+          look at and listen to the afflicted. Only as time passes does the soul
+          become aware that he is there. But, though it finds no name for him,
+          wherever the afflicted are loved, for themselves alone, it is God who
+          is present.
+        </p>
+        <p>
+          God is not present, even if we invoke him, where the afflicted are
+          merely regarded as an occasion for doing good. They may even be loved
+          on this account, but then they are in their natural role, the role of
+          matter and of things. We have to bring to them in their inert,
+          anonymous condition a personal love.”
+        </p>
+      </>
+    )
   }
 };
