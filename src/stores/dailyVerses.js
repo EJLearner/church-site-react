@@ -278,7 +278,14 @@ const bibleComFormattedVerses = {
   '2020-12-23': {verse: 'Isaiah 40.1-11; 40.28-31'},
   '2020-12-24': {verse: 'Ezekiel 34.11-16'},
   '2020-12-25': {verse: 'Isaiah 9.1-7'},
-  '2020-12-26': {verse: 'Philippians 4.4-9'}
+  '2020-12-26': {verse: 'Philippians 4.4-9'},
+  '2020-12-27': {verse: 'Psalm 111'},
+  '2020-12-28': {verse: 'Isaiah 43.1-13'},
+  '2020-12-29': {verse: 'Galatians 3.23-47'},
+  '2020-12-30': {verse: '2 Corinthians 5.16-21'},
+  '2020-12-31': {verse: 'Ephesians 4.17-32'},
+  '2021-01-01': {verse: 'John 3.1-8'},
+  '2021-01-02': {verse: 'Revelation 21.1-7'}
 };
 
 export {bibleComFormattedVerses};
