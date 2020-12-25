@@ -5,6 +5,19 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2020-12-27T09:00:00',
+    preacher: PREACHERS.L_FORD,
+    scripture: 'Isaiah 43:16-21',
+    title: 'Fresh Water for The New Thing!',
+    videoLink: 'https://www.youtube.com/embed/q9oBsM30OLs'
+  },
+  {
+    date: '2020-12-25T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    title: 'A Christmas Meditation',
+    videoLink: 'https://www.youtube.com/embed/5UuBSeEK0Fk'
+  },
+  {
     date: '2020-12-20T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 2:8-15',

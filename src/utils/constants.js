@@ -21,6 +21,7 @@ const constants = {
   FB_REF_EVENTS: 'dates',
 
   PREACHERS: {
+    L_FORD: 'Minister Lori Ford',
     M_HAMIEL: 'Rev Michelle Hamiel',
     D_HICKMAN: 'Rev. Debra Hickman',
     G_YEARGIN: 'Rev. Dr. Grady A Yeargin, Jr.',
