@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-01-03T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Philippians 4:4-7',
+    title: 'A Portrait For Handling The New Year!',
+    videoLink: 'https://www.youtube.com/embed/PPBfWJH-00o'
+  },
+  {
     date: '2020-12-27T09:00:00',
     preacher: PREACHERS.L_FORD,
     scripture: 'Isaiah 43:16-21',
