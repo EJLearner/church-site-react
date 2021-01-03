@@ -9,7 +9,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Philippians 4:4-7',
     title: 'A Portrait For Handling The New Year!',
-    videoLink: 'https://www.youtube.com/embed/2BdjN0_V|1A'
+    videoLink: 'https://www.youtube.com/embed/2BdjN0_Vl1A'
   },
   {
     date: '2020-12-27T09:00:00',
