@@ -1071,5 +1071,23 @@ export default {
         </p>
       </>
     )
+  },
+  '2021-01-03': {
+    subTitle: (
+      <>
+        From <i>Love Is My Meaning</i> by Elizabeth Basset
+      </>
+    ),
+    content: (
+      <p>
+        “My God, I desire to love thee perfectly. With all my heart which thou
+        madest for thyself With all my mind, which only thou canst satisfy With
+        all my soul, which feign would soar to thee. With all my strength, my
+        feeble strength, which shrinks before So great a task and yet can choose
+        naught else but spend itself In loving thee, Claim thou my heart, Fill
+        thou my mind, Uplift my soul and Reinforce my strength, That when I fail
+        thou mayest succeed in me And make me love thee perfectly.”
+      </p>
+    )
   }
 };
