@@ -1089,5 +1089,21 @@ export default {
         thou mayest succeed in me And make me love thee perfectly.”
       </p>
     )
+  },
+  '2021-01-10': {
+    subTitle: (
+      <>
+        From <i>The Church</i> by Hans Kung
+      </>
+    ),
+    content: (
+      <p>
+        “The Lord’s Supper is fellowship with Christ, and so{' '}
+        <b>fellowship with other Christians</b>, their common union with Christ
+        naturally leads to a union of those who share the Lord’s Supper, a
+        communion of Christians among themselves. The one is not possible
+        without the other, because they all partake of the same bread, Christ.”
+      </p>
+    )
   }
 };
