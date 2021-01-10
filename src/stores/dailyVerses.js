@@ -297,7 +297,7 @@ const bibleComFormattedVerses = {
   '2021-01-11': {verse: 'Mark 1.21-28'},
   '2021-01-12': {verse: 'John 1.35-42'},
   '2021-01-13': {verse: 'John 5.19-24'},
-  '2021-01-14': {verse: 'Luke 10.1; 10.3; 10.17-24'},
+  '2021-01-14': {verse: 'Luke 10.1; 10.3; 10.17-24', referenceText: 'Luke 10:1, 3, 17-24'},
   '2021-01-15': {verse: 'Hebrews 1.1-12'},
   '2021-01-16': {verse: '1 John 4'}
 };
