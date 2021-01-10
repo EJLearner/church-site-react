@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-01-10T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Mark 9:14-27',
+    title: 'Caught Between Belief And Unbelief',
+    videoLink: 'https://www.youtube.com/embed/pRTQ7VHHbII'
+  },
+  {
     date: '2021-01-03T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Philippians 4:4-7',
