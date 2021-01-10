@@ -9,7 +9,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Mark 9:14-27',
     title: 'Caught Between Belief And Unbelief',
-    videoLink: 'https://www.youtube.com/embed/pRTQ7VHHbII'
+    videoLink: 'https://www.youtube.com/embed/dHjOF_DXj9I'
   },
   {
     date: '2021-01-03T09:00:00',
