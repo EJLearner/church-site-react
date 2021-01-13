@@ -37,7 +37,8 @@
         "consistent": true
       }
     ],
-    "prefer-destructuring": "warn",
+    "prefer-const": "error",
+    "prefer-destructuring": "error",
     "prefer-template": "error",
     "quotes": [
       "error",
