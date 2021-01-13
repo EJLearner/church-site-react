@@ -7,7 +7,7 @@ let lastRoutePath;
  */
 const getRegistrationData = removeNameAndDob => {
   if (lastSubmittedRegistration) {
-    let returnedData = Object.assign({}, lastSubmittedRegistration);
+    const returnedData = Object.assign({}, lastSubmittedRegistration);
 
     if (removeNameAndDob) {
       delete returnedData.studentName;

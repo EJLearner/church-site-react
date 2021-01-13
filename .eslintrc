@@ -38,7 +38,7 @@
       }
     ],
     "prefer-const": "error",
-    "prefer-destructuring": "error",
+    "prefer-destructuring": ["error", {"array": false, "object": true}],
     "prefer-template": "error",
     "quotes": [
       "error",
