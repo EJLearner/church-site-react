@@ -14,7 +14,7 @@ const ContentWrapper = styled.div`
   font-size: 13px;
   line-height: 150%;
   padding: 1em;
-  width: 70%;
+  width: ${(props) => (props.fullWidth ? '100%' : '70%')};
 
   h2 {
     ${contentWrapperH2Mixin}

@@ -1,11 +1,24 @@
+import PropTypes from 'prop-types';
 import React, {useEffect} from 'react';
+import {Route, Switch, withRouter} from 'react-router-dom';
+import styled from 'styled-components';
 
-import GeneralPageTemplate from '../commonComponents/GeneralPageTemplate';
+import avisPicture from '../../assets/main/images/avis.jpg';
 import routePaths from '../../routePaths';
 import backgroundStore from '../../stores/backgroundStore';
+import StoreContent from '../JubileeStore/StoreContent';
+import MainMenubar from '../MainMenubar';
+import AboveContentLinks from '../commonComponents/AboveContentLinks';
+import ContentAndSides from '../commonComponents/ContentAndSides';
+import ContentAndSubCompassWrapper from '../commonComponents/ContentAndSubCompassWrapper';
+import ContentLeftSide from '../commonComponents/ContentLeftSide';
+import ContentWrapper from '../commonComponents/ContentWrapper';
+import SideMenu from '../commonComponents/SideMenu';
+import StandardPageWrapper from '../commonComponents/StandardPageWrapper';
+import TopInfoBox from '../commonComponents/TopInfoBox';
+import TopInfoBoxWrapper from '../commonComponents/TopInfoBoxWrapper';
+
 import UpcomingEvents from './UpcomingEvents';
-import styled from 'styled-components';
-import avisPicture from '../../assets/main/images/avis.jpg';
 
 const JubileePageStyles = styled.div`
   .image-and-caption {
@@ -113,23 +126,19 @@ const calendarContent = (
   </div>
 );
 
-// eslint-disable-next-line no-unused-vars
-const storeContent = `
-    Store, ipsum dolor sit amet consectetur adipisicing elit. Tempore officia
-    necessitatibus atque molestiae? Eveniet debitis itaque ad iure. Cumque
-    reiciendis eveniet quia fugiat eius nostrum vel doloremque dignissimos,
-    quisquam atque.
-  `;
-
 const bottomContentData = [
   {
-    title: '50th Anniversary Celebration',
-    id: '50thAnniversary',
-    content: anniversaryContent
+    title: 'Store',
+    id: routePaths.MAIN_JUBILEE_STORE
   },
-  {title: 'Event Calendar', id: 'calendar', content: calendarContent}
-  // TODO: add these back
-  // {title: 'Store', id: 'store', content: storeContent}
+  {
+    title: '50th Anniversary Celebration',
+    id: routePaths.MAIN_JUBILEE_50TH_ANNIVERSARY
+  },
+  {
+    title: 'Event Calendar',
+    id: routePaths.MAIN_JUBILEE_EVENT_CALENDAR
+  }
 ];
 
 const topBoxContent = (
@@ -145,25 +154,74 @@ const topBoxContent = (
   </div>
 );
 
-function JubileePage() {
+function JubileePage({history, location}) {
+  const contentId = location.pathname;
   useEffect(() => {
     backgroundStore.setBackgroundSource(
       backgroundStore.backgroundSources.SHOFARBLOWER
     );
 
-    return () => backgroundStore.resetBackground();
+    return () => {
+      backgroundStore.resetBackground();
+    };
   }, []);
+
+  const menuTitle = 'Anniversary';
+
+  const {title} =
+    bottomContentData.find(({id}) => id === contentId) || bottomContentData[0];
+
+  const sideMenu = (
+    <SideMenu
+      currentId={contentId}
+      menuData={bottomContentData}
+      onClick={(id) => history.push(id)}
+      title={menuTitle}
+    />
+  );
 
   return (
     <JubileePageStyles>
-      <GeneralPageTemplate
-        bottomContentData={bottomContentData}
-        menuTitle="Anniversary"
-        pagePath={routePaths.MAIN_JUBILEE}
-        topBoxContent={topBoxContent}
-      />
+      <StandardPageWrapper>
+        <MainMenubar />
+        <TopInfoBoxWrapper>
+          <TopInfoBox>{topBoxContent}</TopInfoBox>
+        </TopInfoBoxWrapper>
+
+        <ContentAndSubCompassWrapper>
+          <AboveContentLinks
+            pagePath={routePaths.MAIN_JUBILEE}
+            pageTitle={menuTitle}
+            subPageTitle={title}
+          />
+          <ContentAndSides>
+            <ContentLeftSide>{sideMenu}</ContentLeftSide>
+            <Switch>
+              <Route path={routePaths.MAIN_JUBILEE_STORE}>
+                <StoreContent />
+              </Route>
+              <Route path={routePaths.MAIN_JUBILEE_50TH_ANNIVERSARY}>
+                <ContentWrapper fullWidth>{anniversaryContent}</ContentWrapper>
+              </Route>
+              <Route path={routePaths.MAIN_JUBILEE_EVENT_CALENDAR}>
+                <ContentWrapper fullWidth>{calendarContent}</ContentWrapper>
+              </Route>
+              <Route exact path={routePaths.MAIN_JUBILEE}>
+                <ContentWrapper fullWidth>
+                  <StoreContent />
+                </ContentWrapper>
+              </Route>
+            </Switch>
+          </ContentAndSides>
+        </ContentAndSubCompassWrapper>
+      </StandardPageWrapper>
     </JubileePageStyles>
   );
 }
 
-export default JubileePage;
+JubileePage.propTypes = {
+  history: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
+};
+
+export default withRouter(JubileePage);

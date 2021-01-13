@@ -1,6 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
+
 import {COLORS} from '../../utils/styleVariables';
 
 const TextStyle = styled.div`
@@ -36,7 +37,13 @@ function handleChange(event, onChange, id, characterLimit) {
   }
 }
 
-const Text = props => {
+/**
+ * Text component
+ * @param {object} props - react props
+ *
+ * @deprecated
+ */
+const Text = (props) => {
   const {
     characterLimit,
     columns,
@@ -55,7 +62,7 @@ const Text = props => {
     value
   } = props;
 
-  const onKeyPress = event => {
+  const onKeyPress = (event) => {
     onEnter && event.key === 'Enter' && onEnter(event.target.value, id, event);
   };
 
@@ -78,7 +85,7 @@ const Text = props => {
     cols: columns,
     id,
     name,
-    onChange: event => handleChange(event, onChange, id, characterLimit),
+    onChange: (event) => handleChange(event, onChange, id, characterLimit),
     onKeyPress,
     placeholder,
     rows,
@@ -127,6 +134,11 @@ Text.propTypes = {
   errors: PropTypes.node,
   id: PropTypes.string.isRequired,
   instructions: PropTypes.node,
+  /**
+   * Use textbox or textare instead
+   *
+   * @deprecated
+   */
   label: PropTypes.string.isRequired,
   name: PropTypes.string,
   onChange: PropTypes.func.isRequired,

@@ -1,6 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-import Droplist from '../../ce/components/Reusable/Droplist/Droplist';
+import React from 'react';
+
+import Select from './Select';
 
 const stateOptions = [
   {label: 'Alabama', value: 'AL'},
@@ -69,7 +70,7 @@ const stateOptions = [
 
 function SelectState({id, label, onChange, value}) {
   return (
-    <Droplist
+    <Select
       id={id}
       label="State"
       onChange={onChange}

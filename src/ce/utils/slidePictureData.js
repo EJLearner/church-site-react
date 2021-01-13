@@ -2,8 +2,6 @@ import moment from 'moment';
 
 import routePaths from '../../routePaths';
 
-
-
 const getNextSaturdayBeforeFirstSunday = () => {
   const selectedSunday = moment().day(0);
 
@@ -72,10 +70,11 @@ const allPictures = [
   }
 ];
 
-const filterAndLimit = function(maxPics) {
+const filterAndLimit = function (maxPics) {
   return allPictures
-    .filter(picture => {
-      let {annual, displayBeg, displayEnd} = picture;
+    .filter((picture) => {
+      const {annual} = picture;
+      let {displayBeg, displayEnd} = picture;
 
       if (annual) {
         const currentYear = moment().year();

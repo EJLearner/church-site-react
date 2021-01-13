@@ -1,12 +1,12 @@
-import _ from 'lodash';
-import React, {Component} from 'react';
-import firebase from '../../../firebase';
-import moment from 'moment';
 import {Parser as HtmlToReactParser} from 'html-to-react';
+import moment from 'moment';
+import React, {Component} from 'react';
 
+import Text from '../../../common/components/Text';
+import firebase from '../../../firebase';
+import commonUtils from '../../../utils/commonUtils';
 import Button from '../Reusable/Button/Button';
 import Checklist from '../Reusable/Checklist/Checklist';
-import Text from '../../../common/components/Text';
 
 const TIME_FORMAT = {
   SIMPLE_TIME: 'h:mm a',
@@ -47,7 +47,7 @@ class EventAdmin extends Component {
     // FBH add a listener to the dates object, update on value change (guessing)
     // listener gets the dates object using snapshot.val();
     // then pushes the udpated date object into the state
-    datesRef.on('value', snapshot => {
+    datesRef.on('value', (snapshot) => {
       const dates = snapshot.val();
 
       this.setState({
@@ -198,7 +198,7 @@ class EventAdmin extends Component {
     // FBH get specific date reference from firebase using key
     const eventRef = this._getEventRef(dateString, key);
 
-    eventRef.once('value', snapshot => {
+    eventRef.once('value', (snapshot) => {
       const value = snapshot.val();
       const title = typeof value === 'string' ? value : value.title;
       const confirmMessage = `Are you sure you want to delete the event titled ${title}?`;
@@ -212,18 +212,18 @@ class EventAdmin extends Component {
   _renderItems() {
     const rows = [];
 
-    const getTime = dateTime => (dateTime ? dateTime.substring(11) : '');
-    const listOptions = event => {
+    const getTime = (dateTime) => (dateTime ? dateTime.substring(11) : '');
+    const listOptions = (event) => {
       const options = ['isAnnouncement', 'followsWorship'];
-      const enabledOptions = options.filter(option => {
+      const enabledOptions = options.filter((option) => {
         return event[option];
       });
 
       return enabledOptions.join(', ');
     };
 
-    _.forEach(this.state.dates, (date, dateString) => {
-      _.forEach(date.events, (event, key) => {
+    commonUtils.lodashForEach(this.state.dates, (date, dateString) => {
+      commonUtils.lodashForEach(date.events, (event, key) => {
         if (event) {
           const eventObject =
             typeof event === 'string' ? {title: event} : event;
@@ -346,7 +346,7 @@ class EventAdmin extends Component {
           onChange={this._onChange}
         />
         <div>
-          <Button onClick={event => this._submit(isNew, key, event)}>
+          <Button onClick={(event) => this._submit(isNew, key, event)}>
             Submit
           </Button>
           <Button onClick={this._cancelEdit}>Cancel</Button>

@@ -1,14 +1,12 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-
-import moment from 'moment';
-import _ from 'lodash';
 import {Parser as HtmlToReactParser} from 'html-to-react';
-
-import MiniCalendar from './MiniCalendar';
+import moment from 'moment';
+import PropTypes from 'prop-types';
+import React, {Component} from 'react';
+import styled from 'styled-components';
 
 import calendarDatesUtils from '../../../ce/utils/calendarDatesUtils';
-import styled from 'styled-components';
+
+import MiniCalendar from './MiniCalendar';
 
 const EventsListPageStyles = styled.div`
   display: flex;
@@ -89,16 +87,16 @@ class EventsListPage extends Component {
 
     const showDate = dates.length > 1;
 
-    dates.forEach(date => {
+    dates.forEach((date) => {
       const eventsForDate = calendarDatesUtils.getEventsForDate(
         storedDates,
         date
       );
 
-      const eventsForDateWithDateAddedAsProp = eventsForDate.map(event => {
+      const eventsForDateWithDateAddedAsProp = eventsForDate.map((event) => {
         let eventWithDate;
         if (typeof event === 'object') {
-          eventWithDate = _.cloneDeep(event);
+          eventWithDate = {...event};
         } else {
           eventWithDate = {
             title: event

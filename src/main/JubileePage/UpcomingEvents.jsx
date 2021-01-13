@@ -1,8 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import {LOGICAL_COLORS} from '../../utils/styleVariables';
 import format from 'date-fns/format';
 import parseISO from 'date-fns/parseISO';
+import React from 'react';
+import styled from 'styled-components';
+
+import {LOGICAL_COLORS} from '../../utils/styleVariables';
 
 const EventsWrapper = styled.div`
   h3 {
@@ -119,7 +120,7 @@ function eventsRenders(orderedEvents) {
       const monthName = format(jsDate, 'MMMM');
       const year = format(jsDate, 'yyyy');
       render.push(
-        <h3>
+        <h3 key={monthName}>
           {monthName} <span className="year">{year}</span>
         </h3>
       );

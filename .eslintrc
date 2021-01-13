@@ -20,6 +20,7 @@
     ],
     "max-len": ["error", 120],
     "no-console": "error",
+    "no-unused-expressions": "error",
     "no-restricted-syntax": [
       "error",
       {
@@ -36,6 +37,8 @@
         "consistent": true
       }
     ],
+    "prefer-const": "error",
+    "prefer-destructuring": ["error", {"array": false, "object": true}],
     "prefer-template": "error",
     "quotes": [
       "error",
@@ -48,10 +51,11 @@
     "react/jsx-sort-props": "error",
     "react/jsx-filename-extension": "warn",
     "react/jsx-no-useless-fragment": "error",
+    "react/no-typos": "error",
+    "react/no-unused-prop-types": "error",
     "react/sort-prop-types": "error",
     "react/sort-comp": "error",
     "react/prop-types": "error",
-    "react/no-unused-prop-types": "error",
     "react/self-closing-comp": "error",
     "react/void-dom-elements-no-children": "error",
     "semi": "error"
