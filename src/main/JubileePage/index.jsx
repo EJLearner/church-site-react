@@ -126,7 +126,7 @@ const calendarContent = (
   </div>
 );
 
-const bottomContentData = [
+let bottomContentData = [
   {
     title: 'Store',
     id: routePaths.MAIN_JUBILEE_STORE
@@ -140,6 +140,8 @@ const bottomContentData = [
     id: routePaths.MAIN_JUBILEE_EVENT_CALENDAR
   }
 ];
+
+bottomContentData = bottomContentData.filter(({title}) => title !== 'Store');
 
 const topBoxContent = (
   <div>
@@ -197,9 +199,12 @@ function JubileePage({history, location}) {
           <ContentAndSides>
             <ContentLeftSide>{sideMenu}</ContentLeftSide>
             <Switch>
+              {/*
+              keep commented until store is ready for release
               <Route path={routePaths.MAIN_JUBILEE_STORE}>
                 <StoreContent />
               </Route>
+              */}
               <Route path={routePaths.MAIN_JUBILEE_50TH_ANNIVERSARY}>
                 <ContentWrapper fullWidth>{anniversaryContent}</ContentWrapper>
               </Route>
