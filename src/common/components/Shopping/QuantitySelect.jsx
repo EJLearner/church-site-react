@@ -105,6 +105,7 @@ export function QuantitySelect({
           <div>
             <Select
               label="Quantity"
+              labelSameLine
               onChange={(value) => setStringQuantity(value)}
               options={commonUtils
                 .range(1, 5)

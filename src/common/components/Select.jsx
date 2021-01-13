@@ -28,10 +28,10 @@ function renderedOptions(options) {
   });
 }
 
-const Select = ({onChange, id, options, value, label}) => {
+const Select = ({onChange, id, labelSameLine, options, value, label}) => {
   return (
     <SelectStyle className="select-outer-div">
-      {label && <InputLabel inline>{label}</InputLabel>}
+      {label && <InputLabel inline={labelSameLine}>{label}</InputLabel>}
       <select
         id={id}
         name={id}
@@ -47,6 +47,7 @@ const Select = ({onChange, id, options, value, label}) => {
 Select.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string,
+  labelSameLine: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(
     PropTypes.shape({

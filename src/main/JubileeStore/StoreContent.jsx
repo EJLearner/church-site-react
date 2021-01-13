@@ -61,7 +61,7 @@ function StoreContent() {
         />
       </ContentWrapper>
     );
-  } else if (true) {
+  } else if (view === VIEWS.CART) {
     // header for shopping cart is rendered by shopping cart because of unique layout
     return (
       <ShoppingCart

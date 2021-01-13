@@ -15,20 +15,20 @@ import PaypalSubmitOrderButton, {SHAPES} from '../PaypalSubmitOrderButton';
 
 import shoppingUtils from './shoppingUtils';
 
-const testCartData = {
-  'jubilee-2020-calendar': {
-    quantity: 1
-  },
-  '50th-anniversary-shirt': {
-    quantity: 2
-  },
-  '50th-anniversary-banquest-ticket-child': {
-    quantity: 3
-  },
-  '50th-anniversary-banquest-ticket-adult': {
-    quantity: 1
-  }
-};
+// const testCartData = {
+//   'jubilee-2020-calendar': {
+//     quantity: 1
+//   },
+//   '50th-anniversary-shirt': {
+//     quantity: 2
+//   },
+//   '50th-anniversary-banquest-ticket-child': {
+//     quantity: 3
+//   },
+//   '50th-anniversary-banquest-ticket-adult': {
+//     quantity: 1
+//   }
+// };
 
 const StyledShoppingCart = styled.div`
   .items-and-order-summary {
@@ -218,23 +218,23 @@ function ShoppingCart({
   onReturnToStoreClick,
   storeItems
 }) {
-  const items = shoppingUtils.getItemsForPaypalSubmit(testCartData);
-  const itemsTotal = shoppingUtils.getCartSubTotal(testCartData);
-  const shippingCost = shoppingUtils.getShippingCost(testCartData);
+  const items = shoppingUtils.getItemsForPaypalSubmit(cartData);
+  const itemsTotal = shoppingUtils.getCartSubTotal(cartData);
+  const shippingCost = shoppingUtils.getShippingCost(cartData);
 
   return (
     <StyledShoppingCart>
       <div className="items-and-order-summary">
         <ContentWrapper>
           <h2>Store</h2>
-          <h3>Shopping Cart {renderTotalItemCount(testCartData)}</h3>
+          <h3>Shopping Cart {renderTotalItemCount(cartData)}</h3>
           <div className="cart-items-grid">
             <div>Item</div>
             <div>Description</div>
             <div>Price</div>
             <div>Remove</div>
             <div className="line" />
-            {Object.entries(testCartData).map(([id, info]) =>
+            {Object.entries(cartData).map(([id, info]) =>
               renderItemline(id, info, onItemRemove, storeItems)
             )}
           </div>
