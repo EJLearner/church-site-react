@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-01-17T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Amos 5:18​-24',
+    title: 'Remembering Our Drum Major For Justice',
+    videoLink: 'https://www.youtube.com/embed/yLsCm8gaTME'
+  },
+  {
     date: '2021-01-10T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Mark 9:14-27',
