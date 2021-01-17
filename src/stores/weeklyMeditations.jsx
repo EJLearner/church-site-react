@@ -1105,5 +1105,37 @@ export default {
         without the other, because they all partake of the same bread, Christ.”
       </p>
     )
+  },
+  '2021-01-17': {
+    subTitle: (
+      <>
+        From <i>Meditations of a Hermit</i> by Charles de Foucauld
+      </>
+    ),
+    content: (
+      <p>
+        “Our Lord asks great faith from us, and he is right. We owe him great
+        faith. After Our Lord said ‘Come’ to him, Peter had no more fear and
+        walked upon the waters. So that when Jesus has quite certainly called us
+        to certain circumstances in life, given us a certain vocation, we need
+        fear nothing, but should attack the most insurmountable obstacles
+        without hesitation. If Jesus has said, ‘Come,’ we have the grace to walk
+        upon the waters. It may seem to us impossible, but Jesus overmasters the
+        impossible. So we need three things: first, to call out to Our Lord very
+        clearly, and then, when we have distinctly heard his ‘Come’ (without
+        this summons we have not the right to throw ourselves into the waters –
+        it would be presumptuous, imprudent and rash, and a risk to the life of
+        the soul; it would be sinful, even to mortal sin, for to risk the life
+        of the soul is even greater than to risk the life of the body), once his
+        ‘Come’ is heard by the soul (till that moment our duty is simply to pray
+        and wait), we must hesitate no more but throw ourselves into the waters
+        like S. Peter and, confident in the call that God has given, walk over
+        the waves, without hesitation, without the least doubt or fear, sure
+        that if we go forward in faith and confidence the path that Jesus calls
+        to us to follow will become easy to us by the virtue of his call ‘Come’.
+        So let us walk with perfect faith in the way along which he calls us,
+        for heaven and earth shall pass away but his words shall not pass .”
+      </p>
+    )
   }
 };

@@ -299,7 +299,14 @@ const bibleComFormattedVerses = {
   '2021-01-13': {verse: 'John 5.19-24'},
   '2021-01-14': {verse: 'Luke 10.1; 10.3; 10.17-24', referenceText: 'Luke 10:1, 3, 17-24'},
   '2021-01-15': {verse: 'Hebrews 1.1-12'},
-  '2021-01-16': {verse: '1 John 4'}
+  '2021-01-16': {verse: '1 John 4'},
+  '2021-01-17': {verse: 'Psalm 63.1-8'},
+  '2021-01-18': {verse: 'John 1.35-51'},
+  '2021-01-19': {verse: 'Matthew 4.17-22'},
+  '2021-01-20': {verse: 'Luke 9.23-27; 9.57-62', referenceText: 'Luke 9:23-27, 57-62'},
+  '2021-01-21': {verse: 'Matthew 10.34-42'},
+  '2021-01-22': {verse: 'Matthew 11.25-30'},
+  '2021-01-23': {verse: 'Matthew 19.16-30'}
 };
 
 export {bibleComFormattedVerses};
