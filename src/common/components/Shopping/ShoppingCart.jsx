@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components';
 
 import ContentRightSide from '../../../main/commonComponents/ContentRightSide';
@@ -92,6 +92,10 @@ const StyledShoppingCart = styled.div`
     .continue-shopping-button,
     .checkout-button {
       align-self: center;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     button.checkout-button {
@@ -221,6 +225,12 @@ function ShoppingCart({
   const items = shoppingUtils.getItemsForPaypalSubmit(cartData);
   const itemsTotal = shoppingUtils.getCartSubTotal(cartData);
   const shippingCost = shoppingUtils.getShippingCost(cartData);
+
+  useEffect(() => {
+    if (itemsTotal === 0) {
+      onReturnToStoreClick();
+    }
+  }, [itemsTotal, onReturnToStoreClick]);
 
   return (
     <StyledShoppingCart>

@@ -7,7 +7,7 @@ import globalReducer from './globalReducer';
 
 const {VIEWS} = constants;
 
-let initialState = {
+const initialState = {
   cart: {},
   viewInfo: {view: VIEWS.STORE_FRONT}
 };

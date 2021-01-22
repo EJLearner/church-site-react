@@ -12,14 +12,16 @@ const StoreItemStyling = styled.div`
   justify-content: flex-end;
   width: 45%;
   margin-bottom: 2em;
+  transition: transform 0.1s;
+
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
 
   img {
     height: 200px;
     width: auto;
-
-    &:hover {
-      cursor: pointer;
-    }
   }
 
   .item-name {
@@ -35,8 +37,8 @@ function StoreItem({id, onClick, cost}) {
   const {thumbImageSource, label} = STORE_ITEMS[id];
 
   return (
-    <StoreItemStyling>
-      <img alt={label} onClick={() => onClick(id)} src={thumbImageSource} />
+    <StoreItemStyling onClick={() => onClick(id)}>
+      <img alt={label} src={thumbImageSource} />
       <div className="item-name">{label}</div>
       <div className="item-cost">{commonUtils.formatCurrency(cost)}</div>
     </StoreItemStyling>
