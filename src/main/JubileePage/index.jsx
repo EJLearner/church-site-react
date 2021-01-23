@@ -207,9 +207,7 @@ function JubileePage({history, location}) {
                 <ContentWrapper fullWidth>{calendarContent}</ContentWrapper>
               </Route>
               <Route exact path={routePaths.MAIN_JUBILEE}>
-                <ContentWrapper fullWidth>
-                  <StoreContent />
-                </ContentWrapper>
+                <StoreContent />
               </Route>
             </Switch>
           </ContentAndSides>
