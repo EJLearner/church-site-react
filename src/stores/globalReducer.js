@@ -1,3 +1,13 @@
+import constants from '../utils/constants';
+
+function updateCartCookie(cart) {
+  const threeDaysInSeconds = 60 * 60 * 24 * 3;
+
+  document.cookie = `${constants.COOKIE_KEYS.CART_DATA}=${encodeURIComponent(
+    JSON.stringify(cart)
+  )};max-age=${threeDaysInSeconds}`;
+}
+
 function globalReducer(state, action) {
   switch (action.type) {
     case 'add-to-cart': {
@@ -9,6 +19,8 @@ function globalReducer(state, action) {
       newCart[action.itemId].quantity += action.quantity;
 
       state = {...state, cart: newCart};
+
+      updateCartCookie(newCart);
       return state;
     }
 
@@ -25,6 +37,8 @@ function globalReducer(state, action) {
       }
 
       state = {...state, cart: newCart};
+
+      updateCartCookie(newCart);
       return state;
     }
 

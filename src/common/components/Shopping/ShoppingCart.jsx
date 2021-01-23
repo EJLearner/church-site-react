@@ -279,6 +279,7 @@ function ShoppingCart({
                   <i className="fa fa-paypal" /> PayPal
                 </span>
               }
+              onClick={() => resetCookie('cart')}
               shipping
             />
             <PlainButton

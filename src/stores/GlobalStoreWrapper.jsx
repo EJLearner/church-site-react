@@ -2,13 +2,17 @@ import PropTypes from 'prop-types';
 import React, {createContext, useReducer} from 'react';
 
 import constants from '../utils/constants';
+import {getCookie} from '../utils/cookieUtils';
 
 import globalReducer from './globalReducer';
 
 const {VIEWS} = constants;
 
+const savedCartCookie = getCookie(constants.COOKIE_KEYS.CART_DATA);
+const savedCartValue = savedCartCookie && JSON.parse(savedCartCookie);
+
 const initialState = {
-  cart: {},
+  cart: savedCartValue || {},
   viewInfo: {view: VIEWS.STORE_FRONT}
 };
 
