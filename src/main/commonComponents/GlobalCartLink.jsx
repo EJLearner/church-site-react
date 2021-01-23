@@ -31,10 +31,10 @@ const StyledWrapperDiv = styled.div`
 function GlobalCartLink() {
   const [state, dispatch] = useContext(Context);
 
-  const cartHasItems = shoppingUtils.getCartSubTotal(state.cart);
+  const itemCount = shoppingUtils.getTotalItemsCount(state.cart);
   const inCart = state.viewInfo.view === constants.VIEWS.CART;
 
-  if (!cartHasItems || inCart) {
+  if (!itemCount || inCart) {
     return null;
   }
 
@@ -49,7 +49,10 @@ function GlobalCartLink() {
         }}
         to={routePaths.MAIN_JUBILEE_STORE}
       >
-        <i className="fa fa-shopping-cart fa-2x" title="Shopping Cart" />
+        <i
+          className="fa fa-shopping-cart fa-2x"
+          title={`Shopping Cart has ${itemCount} items`}
+        />
       </Link>
     </StyledWrapperDiv>
   );

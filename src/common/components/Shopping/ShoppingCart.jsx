@@ -6,6 +6,7 @@ import ContentRightSide from '../../../main/commonComponents/ContentRightSide';
 import ContentWrapper from '../../../main/commonComponents/ContentWrapper';
 import PlainButton from '../../../main/commonComponents/PlainButton';
 import commonUtils from '../../../utils/commonUtils';
+import {resetCookie} from '../../../utils/cookieUtils';
 import {
   COLORS,
   FONT_FAMILIES,
@@ -156,8 +157,8 @@ const StyledShoppingCart = styled.div`
       margin-bottom: 1em;
     }
 
-    .description,
-    .price {
+    .quantity-text {
+      text-transform: initial;
     }
 
     i {
@@ -189,13 +190,22 @@ function renderItemline(id, info, onItemRemove, storeItems) {
 
   const {cost, label, thumbImageSource} = storeItems[id];
 
+  let quantityText;
+
+  if (quantity > 1) {
+    quantityText = <span className="quantity-text"> (x {quantity})</span>;
+  }
+
   return (
     <React.Fragment key={id}>
       <div className="item-picture">
         <img alt={label} src={thumbImageSource} />
       </div>
-      <div className="description">{label}</div>
-      <div className="description">{commonUtils.formatCurrency(cost)}</div>
+      <div>
+        {label}
+        {quantityText}
+      </div>
+      <div>{commonUtils.formatCurrency(cost * quantity)}</div>
       <div>
         <i
           className="close-icon fa fa-2x fa-times-circle"
