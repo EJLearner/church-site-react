@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-01-24T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Ephesians 3:14​-19',
+    title: 'The Perfect Prayer For Spiritual Perfection',
+    videoLink: 'https://www.youtube.com/embed/u_a6RdGl0yA'
+  },
+  {
     date: '2021-01-17T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Amos 5:18​-24',
