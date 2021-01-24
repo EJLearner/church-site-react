@@ -306,7 +306,14 @@ const bibleComFormattedVerses = {
   '2021-01-20': {verse: 'Luke 9.23-27; 9.57-62', referenceText: 'Luke 9:23-27, 57-62'},
   '2021-01-21': {verse: 'Matthew 10.34-42'},
   '2021-01-22': {verse: 'Matthew 11.25-30'},
-  '2021-01-23': {verse: 'Matthew 19.16-30'}
+  '2021-01-23': {verse: 'Matthew 19.16-30'},
+  '2021-01-24': {verse: 'Psalm 62.5-12'},
+  '2021-01-25': {verse: 'Isaiah 6.1-8'},
+  '2021-01-26': {verse: 'Luke 5.1-11'},
+  '2021-01-27': {verse: 'Acts 9.1-22'},
+  '2021-01-28': {verse: '1 Corinthians 1.26-31'},
+  '2021-01-29': {verse: '2 Corinthians 4'},
+  '2021-01-30': {verse: 'John 21.15-19'}
 };
 
 export {bibleComFormattedVerses};
