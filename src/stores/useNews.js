@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import moment from 'moment';
 
 import routePaths from '../routePaths';
@@ -7,13 +8,31 @@ import constants from '../utils/constants';
 function useNews() {
   const allNews = [
     {
+      id: 'new-zoom-info',
+      postedDate: '2021-01-26',
+      text: `
+        Effective February 9, 2021, the church will use Zoom for bible study, Sunday sermons, and Wednesday night prayer services.
+
+        To join by phone, use the dial-in information below:
+        877 853 5257 US Toll-free
+        Meeting ID: 623 453 5359
+        Passcode: 966703
+        `
+    },
+    {
+      id: 'new-zoom-info-link',
+      linkPath: routePaths.MAIN_ZOOM_INFO,
+      postedDate: '2021-01-26',
+      text:
+        'Click here for login instructions for browsers, tablets and other devices.'
+    },
+    {
       expireDate: '2020-06-23',
       id: 'sermon-in-solidarity',
       external: true,
       linkPath: 'https://www.youtube.com/watch?v=uBRcxBm2600&feature=youtu.be',
       postedDate: '2020-06-19',
-      text: 'A Sermon in Solidarity',
-      title: 'A Sermon in Solidarity'
+      text: 'A Sermon in Solidarity'
     },
     {
       expireDate: '2020-06-01',
@@ -22,8 +41,7 @@ function useNews() {
       linkPath: routePaths.MAIN_CORONAVIRUS,
       postedDate: '2020-03-19',
       text:
-        'Due to COVID-19, no in-sanctuary service will be held. Watch Sunday’s sermon.',
-      title: 'On-line Sermon Posted'
+        'Due to COVID-19, no in-sanctuary service will be held. Watch Sunday’s sermon.'
     },
     {
       expireDate: '2020-06-01',
@@ -31,8 +49,7 @@ function useNews() {
       linkPath: routePaths.MAIN_CORONAVIRUS,
       postedDate: '2020-04-04',
       text:
-        'Coronavirus information has been updated. Visit the Coronavirus Update page for more information.',
-      title: 'Coronavirus Information'
+        'Coronavirus information has been updated. Visit the Coronavirus Update page for more information.'
     },
     {
       expireDate: '2020-04-04',
@@ -41,15 +58,13 @@ function useNews() {
       text:
         'The Ushers and Nurses will be selling patrons for their upcoming anniversary. ' +
         'The cost of the patrons is $2.00 per name. See any usher or nurse for more information. ' +
-        'Thank you for your continued support.',
-      title: 'Anniversary Patrons'
+        'Thank you for your continued support.'
     },
     {
       expireDate: '2020-05-01',
       id: 'website-redesign',
       postedDate: '2020-03-19',
-      text: 'Website redesign is live!',
-      title: 'Website Redesign'
+      text: 'Website redesign is live!'
     },
     {
       expireDate: '2020-06-01',
@@ -57,8 +72,7 @@ function useNews() {
       postedDate: '2020-04-04',
       text:
         'Find the Church Covenant and Church Vision on the About Us page for use during ' +
-        'Communion Sunday.',
-      title: 'Church Covenant for Communion'
+        'Communion Sunday.'
     },
     {
       expireDate: '2020-06-01',
@@ -66,8 +80,7 @@ function useNews() {
       postedDate: '2020-04-04',
       text:
         'Daily scriptures and weekly meditation are posted weekly. Find the link in the ' +
-        'footer menu bar below.',
-      title: 'Daily Scriptures and Weekly Meditation'
+        'footer menu bar below.'
     }
   ];
 

@@ -63,6 +63,7 @@ const NewsEventsStyle = styled.div`
     font-weight: bold;
     font-size: 13px;
     margin-bottom: 6px;
+    white-space: pre-line;
   }
 
   .date-and-time {

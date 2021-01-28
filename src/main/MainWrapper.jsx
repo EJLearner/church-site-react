@@ -17,6 +17,7 @@ import GedPage from './GedPage';
 import GivingPage from './GivingPage';
 import JubileePage from './JubileePage';
 import MainContent from './MainPage';
+import ZoomInfoPage from './MainPage/ZoomInfoPage';
 import MeditationsPage from './MeditationsPage';
 import MembersOnly from './MembersOnly';
 import MinistriesPage from './MinistriesPage';
@@ -73,6 +74,9 @@ function MainWrapper() {
           </Route>
           <Route path={routePaths.MAIN_CORONAVIRUS}>
             <CoronavirusPage />
+          </Route>
+          <Route path={routePaths.MAIN_ZOOM_INFO}>
+            <ZoomInfoPage />
           </Route>
           <Route path={routePaths.MAIN_CULTURE_AND_ARTS}>
             <CultureAndFineArtsPage />
