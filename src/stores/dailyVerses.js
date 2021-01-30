@@ -313,7 +313,14 @@ const bibleComFormattedVerses = {
   '2021-01-27': {verse: 'Acts 9.1-22'},
   '2021-01-28': {verse: '1 Corinthians 1.26-31'},
   '2021-01-29': {verse: '2 Corinthians 4'},
-  '2021-01-30': {verse: 'John 21.15-19'}
+  '2021-01-30': {verse: 'John 21.15-19'},
+  '2021-01-31': {verse: 'Psalm 111'},
+  '2021-02-01': {verse: 'Genesis 1'},
+  '2021-02-02': {verse: 'John 15.1-11'},
+  '2021-02-03': {verse: 'Acts 27.21-26'},
+  '2021-02-04': {verse: 'Acts 10.1-43'},
+  '2021-02-05': {verse: 'Luke 6.17-45'},
+  '2021-02-06': {verse: 'Luke 8.40-56'}
 };
 
 export {bibleComFormattedVerses};

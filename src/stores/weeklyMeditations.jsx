@@ -1157,5 +1157,24 @@ export default {
         that moment all fear died within me. Or rather, true freedom began.”
       </p>
     )
+  },
+  '2021-01-31': {
+    subTitle: (
+      <>
+        From <i>Merton’s Palace of Nowhere</i> by James Finley
+      </>
+    ),
+    content: (
+      <p>
+        “Merton once told me to quit trying so hard in prayers. It’s said: “How
+        does an apple ripen? It just sits in the sun.” A small green apple
+        cannot ripen in one night by tightening all its muscles, squinting its
+        eyes and tightening its jaw in order to find itself the next morning
+        miraculously large, red, ripe and juicy beside its small green
+        counterparts. Like the birth of a baby or the opening of a rose, the
+        birth of the true self takes place in God’s time. We must wait for God,
+        we must be awake; we must trust in his hidden action within us.”
+      </p>
+    )
   }
 };
