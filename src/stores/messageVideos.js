@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-01-31T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'I John 3:1-3',
+    title: 'Getting The Who Right!',
+    videoLink: 'https://www.youtube.com/embed/QOQIOSqlNWE'
+  },
+  {
     date: '2021-01-24T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Ephesians 3:14​-19',
