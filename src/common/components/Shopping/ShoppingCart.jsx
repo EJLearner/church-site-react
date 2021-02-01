@@ -16,21 +16,6 @@ import PaypalSubmitOrderButton, {SHAPES} from '../PaypalSubmitOrderButton';
 
 import shoppingUtils from './shoppingUtils';
 
-// const testCartData = {
-//   'jubilee-2020-calendar': {
-//     quantity: 1
-//   },
-//   '50th-anniversary-shirt': {
-//     quantity: 2
-//   },
-//   '50th-anniversary-banquest-ticket-child': {
-//     quantity: 3
-//   },
-//   '50th-anniversary-banquest-ticket-adult': {
-//     quantity: 1
-//   }
-// };
-
 const StyledShoppingCart = styled.div`
   .items-and-order-summary {
     display: flex;
