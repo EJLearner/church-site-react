@@ -6,6 +6,8 @@ import styled from 'styled-components';
 import avisPicture from '../../assets/main/images/avis.jpg';
 import routePaths from '../../routePaths';
 import backgroundStore from '../../stores/backgroundStore';
+import constants from '../../utils/constants';
+import featureFlagStatuses from '../../utils/featureFlagStatuses';
 import StoreContent from '../JubileeStore/StoreContent';
 import MainMenubar from '../MainMenubar';
 import AboveContentLinks from '../commonComponents/AboveContentLinks';
@@ -57,6 +59,9 @@ const JubileePageStyles = styled.div`
     }
   }
 `;
+
+const showStore =
+  featureFlagStatuses[constants.FEATURE_FLAGS.ANNIVERSARY_STORE];
 
 const anniversaryContent = (
   <div>
@@ -126,7 +131,7 @@ const calendarContent = (
   </div>
 );
 
-const bottomContentData = [
+let bottomContentData = [
   {
     title: 'Store',
     id: routePaths.MAIN_JUBILEE_STORE
@@ -140,6 +145,11 @@ const bottomContentData = [
     id: routePaths.MAIN_JUBILEE_EVENT_CALENDAR
   }
 ];
+
+!showStore &&
+  (bottomContentData = bottomContentData.filter(
+    ({title}) => title !== 'Store'
+  ));
 
 const topBoxContent = (
   <div>
@@ -197,9 +207,11 @@ function JubileePage({history, location}) {
           <ContentAndSides>
             <ContentLeftSide>{sideMenu}</ContentLeftSide>
             <Switch>
-              <Route path={routePaths.MAIN_JUBILEE_STORE}>
-                <StoreContent />
-              </Route>
+              {showStore && (
+                <Route path={routePaths.MAIN_JUBILEE_STORE}>
+                  <StoreContent />
+                </Route>
+              )}
               <Route path={routePaths.MAIN_JUBILEE_50TH_ANNIVERSARY}>
                 <ContentWrapper fullWidth>{anniversaryContent}</ContentWrapper>
               </Route>

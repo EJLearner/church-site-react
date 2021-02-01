@@ -12,6 +12,10 @@ const dateConstants = {
   VALID_INPUT_DATE_FORMATS: ['M/D/YY', 'M/D/YYYY', 'M-D-YYYY', 'M-D-YY']
 };
 
+const FEATURE_FLAGS = {
+  ANNIVERSARY_STORE: 'ANNIVERSARY_STORE'
+};
+
 const constants = {
   ...dateConstants,
 
@@ -23,6 +27,8 @@ const constants = {
   CC_REGISTRY_ACCESS_REF_NAME: 'user_groups/ccRegAccess',
 
   COOKIE_KEYS,
+
+  FEATURE_FLAGS,
 
   FB_REF_EVENTS: 'dates',
 
