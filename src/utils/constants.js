@@ -1,3 +1,7 @@
+const COOKIE_KEYS = {
+  CART_DATA: 'cart-data'
+};
+
 const dateConstants = {
   DATE_FNS_DISPLAY_DATE_FORMAT: 'M/d/yyyy',
   DATE_FNS_INTERNAL_DATE_FORMAT: 'yyyy-MM-dd',
@@ -17,6 +21,8 @@ const constants = {
   CC_REGISTERED_VOLUNTEER_ID_PROP: 'ccRegisteredVolunteersId',
   CC_REGISTERED_VOLUNTEER_REF_NAME: 'ccRegisteredVolunteers',
   CC_REGISTRY_ACCESS_REF_NAME: 'user_groups/ccRegAccess',
+
+  COOKIE_KEYS,
 
   FB_REF_EVENTS: 'dates',
 

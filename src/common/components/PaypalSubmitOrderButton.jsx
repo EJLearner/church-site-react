@@ -10,6 +10,7 @@ function PaypalSubmitOrderButton({
   className,
   items,
   label,
+  onClick,
   shipping
 }) {
   return (
@@ -46,6 +47,7 @@ function PaypalSubmitOrderButton({
         buttonShape={buttonShape}
         className={className}
         name="submit"
+        onClick={onClick}
         type="submit"
         value="Checkout"
       >
@@ -67,6 +69,7 @@ PaypalSubmitOrderButton.propTypes = {
     })
   ),
   label: PropTypes.node,
+  onClick: PropTypes.func,
   shipping: PropTypes.bool.isRequired
 };
 
