@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-02-07T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Deuteronomy 6:10​-12',
+    title: 'Be Careful Not To Forget',
+    videoLink: 'https://www.youtube.com/embed/Hurc3xNZBT4'
+  },
+  {
     date: '2021-01-31T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'I John 3:1-3',
