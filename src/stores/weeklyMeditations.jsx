@@ -1176,5 +1176,30 @@ export default {
         we must be awake; we must trust in his hidden action within us.”
       </p>
     )
+  },
+  '2021-02-07': {
+    subTitle: (
+      <>
+        From <i>Reaching Out</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “Real training for service asks for a hard and often painful process of
+        self-emptying. The main problem of service is to be the way without
+        being ‘in the way’. And if there are any tools, techniques and skills to
+        be learned they are primarily to plow the field, to cut the weeds and to
+        clip the branches, that is, to take away the obstacles for real growth
+        and development. Training for service is not a training to become rich
+        but to become voluntarily poor; not to fulfill ourselves but to empty
+        ourselves; not to conquer God but to surrender to his saving power. All
+        this is very hard to accept in our contemporary world, which tells us
+        about the importance of power and influence. But it is important that in
+        this world there remain a few voices crying out that if there is
+        anything to boast of, we should boast of our weakness. Our fulfillment
+        is in offering emptiness, our usefulness in becoming useless, our power
+        in becoming powerless.”
+      </p>
+    )
   }
 };
