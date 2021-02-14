@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-02-14T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Mark 12:28-34',
+    title: 'The Greatest Commandment',
+    videoLink: 'https://www.youtube.com/embed/aqbQI38mYXo'
+  },
+  {
     date: '2021-02-07T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Deuteronomy 6:10​-12',
