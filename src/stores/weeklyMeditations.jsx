@@ -1201,5 +1201,40 @@ export default {
         in becoming powerless.”
       </p>
     )
+  },
+  '2021-02-14': {
+    subTitle: (
+      <>
+        From <i>The Spiritual Life</i> by Evelyn Underhill
+      </>
+    ),
+    content: (
+      <p>
+        “Our place is not the auditorium but the stage – or, as the case may be,
+        the field, workshop, study, laboratory – because we ourselves form part
+        of the creative apparatus of God, or at least are meant to form part of
+        the creative apparatus of God. He made us in order to use us and use us
+        in the most profitable way; for his purpose, not ours. To live a
+        spiritual life means subordinating all other interests to that single
+        fact. Sometimes our position seems to be that of tools; taken up when
+        wanted, used in ways which we had not expected for an object on which
+        our opinion is not asked, and then laid down. Sometimes we are the
+        currency used in some great operation, of which the purpose is not
+        revealed to us. Sometimes we are servants, left year in, year out to the
+        same monotonous job. Sometimes we are conscious fellow workers with the
+        Perfect, striving to bring the Kingdom in. But whatever our particular
+        place or job may be, it means the austere conditions of the workshop,
+        not the free-lance activities of the messy but well-meaning amateur;
+        clocking in at the right time and tending the machine in the right way.
+        Sometimes, perhaps, carrying on for years with a machine we do not very
+        well understand and do not enjoy; because it needs doing, and no one
+        else is available. Or accepting the situation quite quietly, when a job
+        we felt that we were managing excellently is taken away. Taking
+        responsibility if we are called to it, or just bringing the workers
+        their dinner, cleaning and sharpening the tools. All self-willed choices
+        and obstinacy drained out of what we thought to be our work; so that it
+        becomes more and more God’s work in us.”
+      </p>
+    )
   }
 };
