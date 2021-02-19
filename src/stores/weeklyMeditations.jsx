@@ -1236,5 +1236,31 @@ export default {
         becomes more and more God’s work in us.”
       </p>
     )
+  },
+  '2021-02-21': {
+    subTitle: (
+      <>
+        From <i>The Prophetic Imagination</i> by Walter Brueggerman
+      </>
+    ),
+    content: (
+      <p>
+        “It is the crucifixion of Jesus that is the decisive criticism of the
+        royal consciousness. The crucifixion of Jesus is not to be understood
+        simply in good liberal fashion as the sacrifice of a noble man, nor
+        should we too quickly assign a cultic, priestly theory of atonement to
+        the event. Rather, we might see in the crucifixion of Jesus the ultimate
+        act of prophetic criticism in which Jesus announces the end of a world
+        of death (the same announcement as that of Jeremiah) and takes death
+        into his own person. Therefore, we say that the ultimate criticism is
+        that God himself embraces the death that his people must die. The
+        criticism exists not in standing over against but in standing with; the
+        ultimate criticism is not one of triumphant indignation but one of
+        passion and compassion that completely and irresistibly undermine the
+        world of competence and competition. The contrast is stark and total:
+        this <b>passionate</b> man set in the midst of <b>numbed</b> Jerusalem.
+        And only the <b>passion</b> can penetrate the <b>numbness</b>.”
+      </p>
+    )
   }
 };
