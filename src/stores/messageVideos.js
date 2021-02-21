@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+  date: '2021-02-21T09:00:00',
+  preacher: PREACHERS.G_YEARGIN,
+  scripture: 'John 14:1-6',
+  title: 'Lessons From Our Ancestors',
+  videoLink: 'https://www.youtube.com/embed/i2spFTwJnB8'
+  },
+  {
     date: '2021-02-14T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Mark 12:28-34',
