@@ -32,12 +32,12 @@ class EventAdmin extends Component {
       user: null
     };
 
-    this._onChange = this._onChange.bind(this);
-    this._getDateTimeFromSimple = this._getDateTimeFromSimple.bind(this);
-    this._submit = this._submit.bind(this);
-    this._editItem = this._editItem.bind(this);
-    this._cancelEdit = this._cancelEdit.bind(this);
-    this._removeItem = this._removeItem.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.getDateTimeFromSimple = this.getDateTimeFromSimple.bind(this);
+    this.submit = this.submit.bind(this);
+    this.editItem = this.editItem.bind(this);
+    this.cancelEdit = this.cancelEdit.bind(this);
+    this.removeItem = this.removeItem.bind(this);
   }
 
   componentDidMount() {
@@ -56,11 +56,11 @@ class EventAdmin extends Component {
     });
   }
 
-  _onChange(value, id) {
+  onChange(value, id) {
     this.setState({[id]: value});
   }
 
-  _getDateTimeFromSimple(date, time) {
+  getDateTimeFromSimple(date, time) {
     if (time) {
       const timeMoment = time
         ? moment(time, TIME_FORMAT.SIMPLE_TIME, true)
@@ -79,7 +79,7 @@ class EventAdmin extends Component {
     return time ? false : null;
   }
 
-  _getSimpleTimeFromDateTime(dateTimeString) {
+  getSimpleTimeFromDateTime(dateTimeString) {
     if (dateTimeString) {
       return moment(dateTimeString)
         .format(TIME_FORMAT.SIMPLE_TIME)
@@ -89,13 +89,13 @@ class EventAdmin extends Component {
     return '';
   }
 
-  _isValid(event) {
+  isValid(event) {
     const {title, timeStart, timeEnd} = event;
 
     return title && timeStart !== false && timeEnd !== false;
   }
 
-  _submit(isNew, key) {
+  submit(isNew, key) {
     // FBH get 'dates' reference from firebase
     const {
       originalDate,
@@ -113,14 +113,14 @@ class EventAdmin extends Component {
     // make new date object
     const event = {
       title: title,
-      timeStart: this._getDateTimeFromSimple(date, timeStart),
-      timeEnd: this._getDateTimeFromSimple(date, timeEnd),
+      timeStart: this.getDateTimeFromSimple(date, timeStart),
+      timeEnd: this.getDateTimeFromSimple(date, timeEnd),
       longDescription: longDescription || null,
       followsWorship: followsWorship || null,
       isAnnouncement: isAnnouncement || null
     };
 
-    const dataIsValid = this._isValid(event) && hasValidDate;
+    const dataIsValid = this.isValid(event) && hasValidDate;
 
     if (dataIsValid) {
       if (isNew) {
@@ -129,12 +129,12 @@ class EventAdmin extends Component {
         // push date object into 'dates' reference
 
         dateRef.push(event);
-        this._resetData();
+        this.resetData();
         this.setState({currentEdit: null});
       } else {
         const sameDate = date === originalDate;
 
-        const eventRef = this._getEventRef(originalDate, key);
+        const eventRef = this.getEventRef(originalDate, key);
         if (sameDate) {
           eventRef.set(event);
         } else {
@@ -147,7 +147,7 @@ class EventAdmin extends Component {
     }
   }
 
-  _resetData() {
+  resetData() {
     this.setState({
       date: '',
       title: '',
@@ -160,11 +160,11 @@ class EventAdmin extends Component {
   }
 
   // FBH get specific date reference from firebase using key
-  _getEventRef(dateString, key) {
+  getEventRef(dateString, key) {
     return firebase.database().ref(`/dates/${dateString}/events/${key}`);
   }
 
-  _editItem(dateTitleKey, date, eventObject) {
+  editItem(dateTitleKey, date, eventObject) {
     const {
       isAnnouncement,
       followsWorship,
@@ -180,8 +180,8 @@ class EventAdmin extends Component {
       originalDate: date,
       date,
       title,
-      timeStart: this._getSimpleTimeFromDateTime(timeStart),
-      timeEnd: this._getSimpleTimeFromDateTime(timeEnd),
+      timeStart: this.getSimpleTimeFromDateTime(timeStart),
+      timeEnd: this.getSimpleTimeFromDateTime(timeEnd),
       shortDescription,
       longDescription,
       isAnnouncement,
@@ -189,14 +189,14 @@ class EventAdmin extends Component {
     });
   }
 
-  _cancelEdit() {
+  cancelEdit() {
     this.setState({currentEdit: null});
-    this._resetData();
+    this.resetData();
   }
 
-  _removeItem(dateString, key) {
+  removeItem(dateString, key) {
     // FBH get specific date reference from firebase using key
-    const eventRef = this._getEventRef(dateString, key);
+    const eventRef = this.getEventRef(dateString, key);
 
     eventRef.once('value', (snapshot) => {
       const value = snapshot.val();
@@ -209,7 +209,7 @@ class EventAdmin extends Component {
     });
   }
 
-  _renderItems() {
+  renderItems() {
     const rows = [];
 
     const getTime = (dateTime) => (dateTime ? dateTime.substring(11) : '');
@@ -235,7 +235,7 @@ class EventAdmin extends Component {
             longDescription
           } = eventObject;
 
-          const dateTitleKey = dateString + title;
+          const dateTitleKey = dateString + title + timeStart;
           const currentlyEditing = dateTitleKey === this.state.currentEdit;
           const htmlToReactParser = new HtmlToReactParser();
           const longDescriptionRender = htmlToReactParser.parse(
@@ -260,17 +260,17 @@ class EventAdmin extends Component {
                 </div>
               ) : null}
               {currentlyEditing ? (
-                <div>{this._renderEditInput(false, key)} </div>
+                <div>{this.renderEditInput(false, key)} </div>
               ) : (
                 <div>
                   <Button
                     onClick={() =>
-                      this._editItem(dateTitleKey, dateString, eventObject)
+                      this.editItem(dateTitleKey, dateString, eventObject)
                     }
                   >
                     Edit
                   </Button>{' '}
-                  <Button onClick={() => this._removeItem(dateString, key)}>
+                  <Button onClick={() => this.removeItem(dateString, key)}>
                     Remove
                   </Button>
                 </div>
@@ -284,7 +284,7 @@ class EventAdmin extends Component {
     return <div>{rows}</div>;
   }
 
-  _getOptionsList({isAnnouncement, followsWorship}) {
+  getOptionsList({isAnnouncement, followsWorship}) {
     return [
       {
         checked: Boolean(isAnnouncement),
@@ -299,33 +299,33 @@ class EventAdmin extends Component {
     ];
   }
 
-  _renderEditInput(isNew, key) {
+  renderEditInput(isNew, key) {
     return (
       <div>
         <Text
           id="date"
           label="Date"
-          onChange={this._onChange}
+          onChange={this.onChange}
           placeholder="YYYY-MM-DD"
           value={this.state.date}
         />
         <Text
           id="title"
           label="Title"
-          onChange={this._onChange}
+          onChange={this.onChange}
           value={this.state.title}
         />
         <Text
           id="timeStart"
           label="Start Time"
-          onChange={this._onChange}
+          onChange={this.onChange}
           placeholder="HH:MM am"
           value={this.state.timeStart}
         />
         <Text
           id="timeEnd"
           label="End Time"
-          onChange={this._onChange}
+          onChange={this.onChange}
           placeholder="HH:MM am"
           value={this.state.timeEnd}
         />
@@ -334,22 +334,22 @@ class EventAdmin extends Component {
             columns={80}
             id="longDescription"
             label="Long Description"
-            onChange={this._onChange}
+            onChange={this.onChange}
             textArea
             value={this.state.longDescription || ''}
           />
         </div>
         <Checklist
-          checklistItems={this._getOptionsList(this.state)}
+          checklistItems={this.getOptionsList(this.state)}
           id="options-checklist"
           label="Options"
-          onChange={this._onChange}
+          onChange={this.onChange}
         />
         <div>
-          <Button onClick={(event) => this._submit(isNew, key, event)}>
+          <Button onClick={(event) => this.submit(isNew, key, event)}>
             Submit
           </Button>
-          <Button onClick={this._cancelEdit}>Cancel</Button>
+          <Button onClick={this.cancelEdit}>Cancel</Button>
         </div>
       </div>
     );
@@ -366,8 +366,8 @@ class EventAdmin extends Component {
         <div>
           <Button onClick={onAddItemClick}>Add Item</Button>
         </div>
-        {addingEvent && this._renderEditInput(true)}
-        <div>{this._renderItems()}</div>
+        {addingEvent && this.renderEditInput(true)}
+        <div>{this.renderItems()}</div>
       </div>
     );
   }

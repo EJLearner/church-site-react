@@ -175,8 +175,12 @@ const commonUtils = {
     return moment().year();
   },
 
-  lodashForEach() {
-    return _.forEach;
+  lodashForEach(data, func) {
+    return _.forEach(data, func);
+  },
+
+  merge(...args) {
+    _.merge(...args);
   },
 
   pluralizer(word, count) {
