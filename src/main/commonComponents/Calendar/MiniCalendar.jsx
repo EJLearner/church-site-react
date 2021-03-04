@@ -105,7 +105,7 @@ class MiniCalendar extends Component {
   }
 
   renderTableHeader() {
-    const headerCells = commonUtils.range(0, 7).map((dayOfWeekIndex) => {
+    const headerCells = commonUtils.range(0, 6).map((dayOfWeekIndex) => {
       const stringDayOfWeek = moment().weekday(dayOfWeekIndex).format('dd');
 
       return <th key={stringDayOfWeek}>{stringDayOfWeek}</th>;
@@ -126,7 +126,7 @@ class MiniCalendar extends Component {
       selectedDay
     } = this.props;
 
-    const renderedDays = commonUtils.range(0, 7).map((dayOfWeekIndex) => {
+    const renderedDays = commonUtils.range(0, 6).map((dayOfWeekIndex) => {
       const dayMoment = moment(selectedDay)
         .year(year)
         .startOf('year')
