@@ -227,14 +227,12 @@ const GivingPage = () => {
         </i>
       </p>
       <p>
-        When Abram gave the king of Salem, Melchizedek, a tenth of his
-        possessions, he did it not to invoke God’s blessing, but in response to
-        God’s blessings. The generosity we show God and the spirit in which we
-        give are reflections of the gratitude we have for all He has done for
-        us. Tithes and offerings also have the very practical purpose of
-        providing a source of income for the church to operate and fulfill its
-        missions. City Temple thanks you for your open-hearted generosity and
-        contributions to its kingdom-building efforts.
+        We thank you for remaining faithful in your giving. You can place your
+        offering by completing the form below, by mailing your offering to The
+        City Temple of Baltimore (Baptist), 317 Dolphin Street, Baltimore, MD
+        21217, or by using cash tag $citytemple317 through CashApp. For City
+        Temple church members, if you choose the CashApp option, please remember
+        to include your envelope number in the memo line.
       </p>
     </>
   );

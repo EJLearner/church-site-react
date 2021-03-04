@@ -1,32 +1,31 @@
 import _ from 'lodash';
 
 import firebase from '../../firebase';
-
-
+import constants from '../../utils/constants';
 
 let datesStore = {};
 const callbacks = {};
 
 const callAllCallbacks = () => {
-  _.forEach(callbacks, callback => {
+  _.forEach(callbacks, (callback) => {
     callback();
   });
 };
 
 const loadDates = () => {
   // FBH get a reference for the 'dates' top level prop of the data
-  const datesRef = firebase.database().ref('dates');
+  const datesRef = firebase.database().ref(constants.FB_REF_EVENTS);
 
-  // FBH add a listener to the dates object, update on value change (guessing)
+  // FBH add a listener to the dates object, update on value change
   // listener gets the dates object using snapshot.val();
-  // then pushes the udpated date object into the state
-  datesRef.on('value', snapshot => {
+  // then pushes the updated date object into the state
+  datesRef.on('value', (snapshot) => {
     const retrievedDates = snapshot.val();
     const newState = {};
 
     _.forEach(retrievedDates, (date, key) => {
       // make an array of events
-      const events = _.map(date.events, event => event);
+      const events = _.map(date.events, (event) => event);
       _.set(newState, `${key}.events`, events);
     });
 
@@ -64,7 +63,7 @@ const calendarDatesUtils = {
     return (callbacks[id] = callback);
   },
 
-  unlisten: id => {
+  unlisten: (id) => {
     delete callbacks[id];
   }
 };
