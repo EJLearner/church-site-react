@@ -8,6 +8,13 @@ import constants from '../utils/constants';
 function useNews() {
   const allNews = [
     {
+      expireDate: '2021-06-30',
+      id: 'cash-app',
+      postedDate: '2020-03-03',
+      text:
+        'You can now use CashApp to donate! Use CashApp tag “$citytemple317”.'
+    },
+    {
       id: 'new-zoom-info',
       postedDate: '2021-01-26',
       text: `
