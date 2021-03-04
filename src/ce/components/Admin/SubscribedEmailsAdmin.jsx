@@ -1,7 +1,8 @@
 import React from 'react';
+
 import firebase from '../../../firebase';
-import Table from '../Reusable/Table/Table';
 import commonUtils from '../../../utils/commonUtils';
+import Table from '../Reusable/Table/Table';
 
 const getColumns = () => {
   return [
@@ -12,7 +13,7 @@ const getColumns = () => {
   ];
 };
 
-const getRows = subscribedEmails => {
+const getRows = (subscribedEmails) => {
   return Object.values(subscribedEmails).map(
     ({email, name, subscribeSource, subscribeTime}) => {
       return {
@@ -40,8 +41,8 @@ class SubscribedEmailsAdmin extends React.Component {
 
     // FBH add a listener to the subscribedEmails object, update on value change (guessing)
     // listener gets the subscribedEmails object using snapshot.val();
-    // then pushes the udpated subScribedEmails object into the state
-    subscribedEmailsRef.on('value', snapshot => {
+    // then pushes the updated subScribedEmails object into the state
+    subscribedEmailsRef.on('value', (snapshot) => {
       const subscribedEmails = snapshot.val() || {};
 
       this.setState({

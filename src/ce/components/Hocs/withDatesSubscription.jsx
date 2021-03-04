@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
+
 import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
 
 function withDatesSubscription(WrappedComponent) {
-  class WithDatesSubscription extends Component {
+  class withDatesSubscription extends Component {
     constructor(props) {
       super(props);
 
@@ -33,9 +34,9 @@ function withDatesSubscription(WrappedComponent) {
   const componentDisplayName =
     WrappedComponent.displayName || WrappedComponent.name || 'Component';
   const displayName = `WithDatesSubscription(${componentDisplayName})`;
-  WithDatesSubscription.displayName = displayName;
+  withDatesSubscription.displayName = displayName;
 
-  return WithDatesSubscription;
+  return withDatesSubscription;
 }
 
 export default withDatesSubscription;
