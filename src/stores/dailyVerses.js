@@ -348,7 +348,14 @@ const bibleComFormattedVerses = {
   '2021-03-03': {verse: 'John 15.12-27'},
   '2021-03-04': {verse: 'Acts 6.8-15'},
   '2021-03-05': {verse: 'James 1.2-18'},
-  '2021-03-06': {verse: '1 Peter 4.12-19'}
+  '2021-03-06': {verse: '1 Peter 4.12-19'},
+  '2021-03-07': {verse: 'Psalm 19.7-14'},
+  '2021-03-08': {verse: 'Psalm 63.1-8'},
+  '2021-03-09': {verse: 'Isaiah 55'},
+  '2021-03-10': {verse: 'John 7.37-44'},
+  '2021-03-11': {verse: 'John 6.22-40'},
+  '2021-03-12': {verse: 'Romans 8.18-25'},
+  '2021-03-13': {verse: 'Psalm 84'}
 };
 
 export {bibleComFormattedVerses};

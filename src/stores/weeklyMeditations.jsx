@@ -1288,5 +1288,29 @@ export default {
         received by the marginal victims of the old order.”
       </p>
     )
+  },
+  '2021-03-07': {
+    subTitle: (
+      <>
+        From <i>Theophan the Recluse</i>
+      </>
+    ),
+    content: (
+      <p>
+        “I have often reminded you, about the remembrance of God, and now I tell
+        you again: unless you work and sweat to impress on your heart and mind
+        this awe-inspiring Name, you keep silence in vain, you sing in vain, you
+        fast in vain, you watch in vain. In short, all a nun’s work will be
+        useless without this activity, without recollection of God. This is the
+        beginning of silence for the Lord’s sake, and it is also the end. This
+        most desirable Name is the soul of stillness and silence. By calling it
+        to mind we gain joy and gladness, forgiveness of sings and a wealth of
+        virtues. Few have been able to find this most glorious Name, save only
+        in stillness and silence. We can attain it in no other way, even with
+        great effort. Therefore, knowing the power of this advice, I entreat you
+        for the love of Christ always to be still and silent, since these
+        virtues enrich remembrance of God within us.”
+      </p>
+    )
   }
 };
