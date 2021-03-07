@@ -5,6 +5,12 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-03-07T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    title: 'The Rejection of Jesus',
+    videoLink: 'https://www.youtube.com/embed/FRoJDZ2hUDw'
+  },
+  {
     date: '2021-02-28T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'Let Us Go and Die with Him!!',
