@@ -1,10 +1,27 @@
 import _ from 'lodash';
 
 import firebase from '../../firebase';
+import commonUtils from '../../utils/commonUtils';
 import constants from '../../utils/constants';
+import {generateRecurringEvents} from '../../utils/eventUtils';
 
-let datesStore = {};
+let singleEvents = {};
+let processedDates = {};
+let recurringEvents = {};
 const callbacks = {};
+
+const recombineEvents = () => {
+  const rawDates = {};
+  commonUtils.merge(rawDates, singleEvents, recurringEvents);
+
+  processedDates = {};
+
+  _.forEach(rawDates, (date, key) => {
+    // make an array of events
+    const events = _.map(date.events, (event) => event);
+    _.set(processedDates, `${key}.events`, events);
+  });
+};
 
 const callAllCallbacks = () => {
   _.forEach(callbacks, (callback) => {
@@ -21,41 +38,51 @@ const loadDates = () => {
   // then pushes the updated date object into the state
   datesRef.on('value', (snapshot) => {
     const retrievedDates = snapshot.val();
-    const newState = {};
 
-    _.forEach(retrievedDates, (date, key) => {
-      // make an array of events
-      const events = _.map(date.events, (event) => event);
-      _.set(newState, `${key}.events`, events);
-    });
+    singleEvents = retrievedDates;
 
-    datesStore = newState;
+    recombineEvents();
     callAllCallbacks();
   });
 };
 
+const fakeStoreRecurringEvents = [
+  {
+    title: 'Better Bible Study',
+    timeStart: '20:00',
+    reccurence: {day: constants.daysOfWeek.MONDAY, frequency: 'weekly'},
+    skippedDays: []
+    // would also like to do 'nth and last of a weekday in a month'
+  }
+];
+
+const loadRecurringEvents = () => {
+  recurringEvents = generateRecurringEvents(fakeStoreRecurringEvents);
+
+  recombineEvents();
+  callAllCallbacks();
+};
+
 loadDates();
+loadRecurringEvents();
 
 const calendarDatesUtils = {
-  getAllDates: () => datesStore,
+  getAllDates: () => processedDates,
 
   getEventsForDate: (allDates, dateString) => {
     const dateObject = allDates[dateString];
-    const unsortedEvents = (dateObject && dateObject.events) || [];
+    const unsortedEvents = dateObject?.events || [];
 
     return unsortedEvents.sort((a, b) => {
       const timeStartA = a.timeStart || '';
       const timeStartB = b.timeStart || '';
 
-      if (timeStartA < timeStartB) {
-        return -1;
+      if (timeStartA === timeStartB) {
+        return 0;
       }
 
-      if (timeStartA > timeStartB) {
-        return 1;
-      }
-
-      return 0;
+      // just doing string compare since standard date-time string is used
+      return timeStartA < timeStartB ? -1 : 1;
     });
   },
 

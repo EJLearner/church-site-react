@@ -4,8 +4,11 @@ import styled from 'styled-components';
 
 import routePaths from '../../routePaths';
 import useFirebaseEvents from '../../stores/useFirebaseEvents';
+import useFirebaseRecurringEvents from '../../stores/useFirebaseRecurringEvents';
 import useNews from '../../stores/useNews';
+import commonUtils from '../../utils/commonUtils';
 import {parseISO, format} from '../../utils/dateTimeUtils';
+import {eventsToArray} from '../../utils/eventUtils';
 import {
   FONT_FAMILIES,
   COLORS,
@@ -201,12 +204,14 @@ const NewsAndEvents = () => {
   const NEWS_DISPLAY = 'news-content';
   const EVENTS_DISPLAY = 'events-display';
   const news = useNews();
-  const events = useFirebaseEvents({
-    futureOnly: true,
-    returnAsArray: true
-  });
+  const eventsObject = useFirebaseEvents({futureOnly: true});
+  const recurringEventsObject = useFirebaseRecurringEvents();
+  const allEventsObject = {};
+  commonUtils.merge(allEventsObject, eventsObject, recurringEventsObject);
+
+  const allEvents = eventsToArray(allEventsObject);
   const hasNews = Boolean(news.length);
-  const hasEvents = Boolean(events.length);
+  const hasEvents = Boolean(allEvents.length);
 
   const [displayType, setDisplayType] = useState(
     hasNews ? NEWS_DISPLAY : EVENTS_DISPLAY
@@ -228,7 +233,7 @@ const NewsAndEvents = () => {
         <div className="news-and-events-content">
           {displayType === NEWS_DISPLAY
             ? renderNews(news, showNewsLink)
-            : renderEvents(events)}
+            : renderEvents(allEvents)}
         </div>
         {hasNews && (
           <DisplayButton
