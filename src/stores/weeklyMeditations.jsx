@@ -1312,5 +1312,32 @@ export default {
         virtues enrich remembrance of God within us.”
       </p>
     )
+  },
+  '2021-03-14': {
+    subTitle: (
+      <>
+        From <i>The Joyful Christian</i> by C.S. Lewis
+      </>
+    ),
+    content: (
+      <p>
+        “People often think of Christian morality as a kind of bargain in which
+        God says, “If you keep a lot of rules, I’ll reward you, and if you
+        don’t, I’ll do the other thing.” I do not think that is the best way of
+        looking at it. I would much rather say that every time you make a choice
+        you are turning the central part of you, the part of you that chooses,
+        into something a little different from what it was before. And taking
+        your life as a whole, with all your innumerable choices, all your life
+        long you are slowly turning this central thing either into a Heaven
+        creature or into a hellish creature: either into a creature who is in
+        harmony with God, and with other creatures, and with itself, or else
+        into one that is in a state of war and hatred with God, and with its
+        fellow creatures, and with itself. To be the one kind of creature is
+        Heaven: that is, it is joy, and peace, and knowledge, and power. To be
+        the other means madness, horror, idiocy, rage, impotence, and eternal
+        loneliness. Each of us at each moment is progressing to the one state or
+        the other.”
+      </p>
+    )
   }
 };
