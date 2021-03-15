@@ -360,7 +360,7 @@ const bibleComFormattedVerses = {
   '2021-03-15': {verse: 'Deuteronomy 30.15-20'},
   '2021-03-16': {verse: 'Joshua 24.14-28'},
   '2021-03-17': {verse: 'Hebrews 2.1-18'},
-  '2021-03-18': {verse: 'Philemon 8.21'},
+  '2021-03-18': {verse: 'Philemon 1.8-21'},
   '2021-03-19': {verse: 'Colossians 3.1-17'},
   '2021-03-20': {verse: 'Romans 12'}
 };
