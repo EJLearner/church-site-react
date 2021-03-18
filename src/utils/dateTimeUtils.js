@@ -34,6 +34,11 @@ const convertValidTypedDateToIso = (date) => {
 const getDaysUntilDate = (date) =>
   differenceInCalendarDays(parseISO(date), new Date());
 
+const isoTimeHasPassed = (time) => {
+  const dateObj = parseISO(time);
+  return isPast(dateObj);
+};
+
 export {
   convertValidTypedDateToIso as convertTypedDateToIso,
   convertValidTypedDateToIso,
@@ -45,6 +50,7 @@ export {
   getShortDisplayDate,
   isAfter,
   isBefore,
+  isoTimeHasPassed,
   isPast,
   isSameDay,
   parseISO,

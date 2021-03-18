@@ -6,6 +6,8 @@ import routePaths from '../../src/routePaths';
 import logo from '../assets/main/images/logo-ct-circle-white-cropped.png';
 import {LOGICAL_COLORS, WIDTHS, FONT_FAMILIES} from '../utils/styleVariables';
 
+import getAnnouncementsContentArray from './MainPage/AnnouncementsContent/getAnnouncementsContentArray';
+
 const StyledHeader = styled.header`
   font-family: ${FONT_FAMILIES.CENTURY_GOTHIC};
   margin: 0 ${WIDTHS.SIDE_CONTENT_PADDING};
@@ -57,6 +59,8 @@ const StyledMainMenuBar = styled.nav`
 `;
 
 const MainMenubar = () => {
+  const hasAnnouncements = getAnnouncementsContentArray().length;
+
   const menuItems = [
     {text: 'Home', path: routePaths.MAIN_HOME},
     {text: 'About Us', path: routePaths.MAIN_ABOUT_US},
@@ -66,13 +70,17 @@ const MainMenubar = () => {
     {text: 'Church Calendar', path: routePaths.MAIN_CALENDAR},
     // TODO:add when members only section exists
     // {text: 'Members Only', path: routePaths.MAIN_MEMBERS_ONLY},
-    {text: 'Contact', path: routePaths.MAIN_CONTACT}
-  ];
+    {text: 'Contact', path: routePaths.MAIN_CONTACT},
+    hasAnnouncements && {
+      text: 'Announcements',
+      path: routePaths.MAIN_ANNOUNCEMENTS
+    }
+  ].filter(Boolean);
 
-  const renderedMenuItems = menuItems.map(({text, path}) => {
+  const renderedMenuItems = menuItems.map(({hash = '', text, path}) => {
     return (
       <div className="main-menu-item" key={text}>
-        <Link to={path}>{text}</Link>
+        <Link to={path + hash}>{text}</Link>
       </div>
     );
   });

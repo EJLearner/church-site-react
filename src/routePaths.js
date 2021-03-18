@@ -42,6 +42,7 @@ const MAIN_ROOT_PATHS = {
   MAIN_VOTING_INFORMATION: `${MAIN_HOME_PATH}voting/`,
   MAIN_WATCH: `${MAIN_HOME_PATH}watch/`,
   MAIN_WELCOME: `${MAIN_HOME_PATH}welcome/`,
+  MAIN_ANNOUNCEMENTS: `${MAIN_HOME_PATH}announcements/`,
   MAIN_ZOOM_INFO: `${MAIN_HOME_PATH}zoom-info/`
 };
 
