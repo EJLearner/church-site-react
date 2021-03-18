@@ -1349,20 +1349,26 @@ export default {
     content: (
       <p>
         “We are not happy because we are unforgiving, and we are unforgiving
-        because we feel superior to others.” Mercy is the fruit of the highest
-        degree of love, because love creates equals, and a greater love makes us
-        inferior. First let us establish three premises: Those who do not love,
-        feel superior to everyone else. Those who love, feel equal to everyone
-        else. Those who love, much gladly take the lower place. Each one of us
-        can identify his position somewhere along this spectrum, which comprises
-        the three degrees of the spiritual life here on earth: Death for those
-        who do not love. Life for those who love. Holiness for those who love
-        much. The beatitudes of the merciful relates, like all the beatitudes,
-        to the realm of holiness and we have to admit that Jesus set his sights
-        high when he had the courage and confidence to place this lofty ideal
-        before us. It is the beatitude that he himself lived to the full,
-        stooping, out of love, to the lowest place, even to the extent of being
-        rejected as a common criminal, set only to be hung on a gibbet.
+        because we feel superior to others.”
+        <br /> Mercy is the fruit of the highest degree of love, because love
+        creates equals, and a greater love makes us inferior.
+        <br /> First let us establish three premises:
+        <br /> Those who do not love, feel superior to everyone else.
+        <br /> Those who love, feel equal to everyone else.
+        <br /> Those who love, much gladly take the lower place.
+        <br /> Each one of us can identify his position somewhere along this
+        spectrum, which comprises the three degrees of the spiritual life here
+        on earth:
+        <br /> Death for those who do not love.
+        <br /> Life for those who love.
+        <br /> Holiness for those who love much.
+        <br /> The beatitudes of the merciful relates, like all the beatitudes,
+        to the realm of holiness and we have to admit that Jesus set
+        <br /> his sights high when he had the courage and confidence to place
+        this lofty ideal before us. It is the beatitude that he <br /> himself
+        lived to the full, stooping, out of love, to the lowest place, even to
+        the extent of being rejected as a common
+        <br /> criminal, set only to be hung on a gibbet.
       </p>
     )
   }
