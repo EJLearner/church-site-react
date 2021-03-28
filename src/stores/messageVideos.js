@@ -5,6 +5,12 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-03-28T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    title: 'The Anointing of Jesus',
+    videoLink: 'https://www.youtube.com/embed/KyVzhcTXpgM'
+  },
+  {
     date: '2021-03-21T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'Possessed By A Passion!!',
