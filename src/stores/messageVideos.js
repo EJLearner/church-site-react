@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-04-02T12:00:00',
+    // TODO: handle this better, video page should say "Preachers" when this is used and search should work for it
+    preacher: PREACHERS.MINISTERS,
+    title: 'Seven Last Words - From the Cross',
+    videoLink: 'https://www.youtube.com/embed/IIRepOmhf_g'
+  },
+  {
     date: '2021-03-28T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'The Anointing of Jesus',
