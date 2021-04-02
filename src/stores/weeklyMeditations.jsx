@@ -1400,5 +1400,33 @@ export default {
         ours in spirit, if not in fact.”
       </p>
     )
+  },
+  '2021-04-04': {
+    subTitle: (
+      <>
+        From <i>Footsteps in the Path of Life</i> by Marcus Dods
+      </>
+    ),
+    content: (
+      <p>
+        “The purpose of God in the history of man was accomplished when Jesus
+        breathed his last upon the cross. The cry “It is finished” was not the
+        mere gasp of a wornout life; it was not the cry of satisfaction with
+        which a career of pain and sorrow is terminated; it was the deliberate
+        utterance of a clear consciousness on the part of God’s appointed
+        Revealer that now all had been done that could be done to make God known
+        to men and to identify him with men. God’s purpose had ever been one and
+        indivisible – declared to men in various ways, a hint here, a broad
+        light there, now by a gleam of insight in the mind of a prophet, now by
+        a deed of heroism in king or leader, through rude symbolic contrivances
+        and through the tenderest of human affections and the highest human
+        thoughts. God had been making men ever more sensible that his one
+        purpose was to come closer and closer into fellowship with them, and to
+        draw them into a perfect harmony with him. Forgiveness and deliverance
+        from sin were provided for them, knowledge of God’s law and will, thus
+        they might learn to know and to serve him – all these were secured when
+        Jesus cried, “It is finished.”
+      </p>
+    )
   }
 };
