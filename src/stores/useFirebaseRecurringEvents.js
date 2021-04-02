@@ -1,17 +1,7 @@
 import {useState, useEffect} from 'react';
 
-import constants from '../utils/constants';
+import {fakeStoreRecurringEvents} from '../ce/utils/fakeStoreRecurringEvents';
 import {generateRecurringEvents} from '../utils/eventUtils';
-
-const fakeStoreRecurringEvents = [
-  {
-    title: 'Better Bible Study',
-    timeStart: '20:00',
-    reccurence: {day: constants.daysOfWeek.MONDAY, frequency: 'weekly'},
-    skippedDays: []
-    // would also like to do 'nth and last of a weekday in a month'
-  }
-];
 
 function useFirebaseRecurringEvents(options = {}) {
   const {futureOnly} = options;

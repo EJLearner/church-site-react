@@ -5,6 +5,8 @@ import commonUtils from '../../utils/commonUtils';
 import constants from '../../utils/constants';
 import {generateRecurringEvents} from '../../utils/eventUtils';
 
+import {fakeStoreRecurringEvents} from './fakeStoreRecurringEvents';
+
 let singleEvents = {};
 let processedDates = {};
 let recurringEvents = {};
@@ -45,16 +47,6 @@ const loadDates = () => {
     callAllCallbacks();
   });
 };
-
-const fakeStoreRecurringEvents = [
-  {
-    title: 'Better Bible Study',
-    timeStart: '20:00',
-    reccurence: {day: constants.daysOfWeek.MONDAY, frequency: 'weekly'},
-    skippedDays: []
-    // would also like to do 'nth and last of a weekday in a month'
-  }
-];
 
 const loadRecurringEvents = () => {
   recurringEvents = generateRecurringEvents(fakeStoreRecurringEvents);

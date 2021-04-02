@@ -1,16 +1,17 @@
 import constants from '../utils/constants';
 import {
   addDays,
+  addYears,
   format,
   getHours,
   getMinutes,
   getStandardDateString,
-  isSameMonth,
   parse,
   parseISO,
   startOfToday,
   set,
-  getDay
+  getDay,
+  isBefore
 } from '../utils/dateTimeUtils';
 function sortEventsByStartTime(events) {
   return events.sort((a, b) => {
@@ -45,20 +46,25 @@ function eventsToArray(events) {
   return sortEventsByStartTime(datesAsArray);
 }
 
-function generateRecurringEvents(recurringEvents) {
+function generateRecurringEvents(recurringEvents, span = {}) {
+  const {endTime = addYears(new Date(), 1)} = span;
   const today = startOfToday();
   let currentDate = today;
 
   const recurringEventDates = {};
 
-  while (isSameMonth(currentDate, today)) {
+  while (isBefore(currentDate, endTime)) {
+    const dateString = getStandardDateString(currentDate);
     // seems safe, tested that the correct values are retrieved
     // eslint-disable-next-line no-loop-func
-    const recurringEventsWithSameDay = recurringEvents.filter((event) => {
-      return getDay(currentDate) === event.reccurence.day;
+    const eventsWithSameDayAndNotSkipped = recurringEvents.filter((event) => {
+      return (
+        getDay(currentDate) === event.reccurence.day &&
+        !event.skippedDates?.includes(dateString)
+      );
     });
 
-    const recurringEventsWithCorrectFrequency = recurringEventsWithSameDay;
+    const recurringEventsWithCorrectFrequency = eventsWithSameDayAndNotSkipped;
 
     if (recurringEventsWithCorrectFrequency.length) {
       const dateString = getStandardDateString(currentDate);
@@ -86,6 +92,7 @@ function generateRecurringEvents(recurringEvents) {
         };
       });
     }
+
     currentDate = addDays(currentDate, 1);
   }
 

@@ -1,5 +1,6 @@
 import addDays from 'date-fns/addDays';
 import addMonths from 'date-fns/addMonths';
+import addYears from 'date-fns/addYears';
 import differenceInCalendarDays from 'date-fns/differenceInCalendarDays';
 import endOfYesterday from 'date-fns/endOfYesterday';
 import format from 'date-fns/format';
@@ -46,6 +47,7 @@ const getStandardDateString = (date) => format(date, 'yyyy-MM-dd');
 export {
   addDays,
   addMonths,
+  addYears,
   convertValidTypedDateToIso as convertTypedDateToIso,
   convertValidTypedDateToIso,
   endOfYesterday,
