@@ -205,6 +205,14 @@ const commonUtils = {
 
       return valueA < valueB ? -1 * reverseMultiplier : 1 * reverseMultiplier;
     });
+  },
+
+  titleCase(string) {
+    return String(string)
+      .toLowerCase()
+      .split(' ')
+      .map(([first, ...rest]) => [first.toUpperCase(), ...rest].join(''))
+      .join(' ');
   }
 };
 

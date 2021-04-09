@@ -1,6 +1,7 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
+
 import InputLabel from './InputLabel';
 
 const TextboxStyle = styled.div`
@@ -16,7 +17,7 @@ const TextboxStyle = styled.div`
   }
 `;
 
-const Textbox = props => {
+const Textbox = (props) => {
   const {
     errors,
     id,
@@ -32,7 +33,7 @@ const Textbox = props => {
     value
   } = props;
 
-  const onKeyPress = event => {
+  const onKeyPress = (event) => {
     onEnter && event.key === 'Enter' && onEnter(event.target.value, id, event);
   };
 
@@ -59,7 +60,7 @@ const Textbox = props => {
         aria-labelledby={labelledBy}
         id={id}
         name={name || id}
-        onChange={event => onChange(event.target.value, id, event)}
+        onChange={(event) => onChange(event.target.value, id, event)}
         onKeyPress={onKeyPress}
         placeholder={placeholder}
         size={size}

@@ -1,16 +1,15 @@
 import React, {Component} from 'react';
-import firebase, {auth, provider} from '../../../firebase';
-
-import Button from '../Reusable/Button/Button';
-import CcVbsAdminBase from './CcVbsAdminBase';
-import EventAdmin from './EventAdmin';
-
-import MenuBar from '../MenuBar/MenuBar';
-import routePaths from '../../../routePaths';
 import {Route, Switch} from 'react-router-dom';
 
-import './Admin.css';
+import firebase, {auth, provider} from '../../../firebase';
+import routePaths from '../../../routePaths';
+import MenuBar from '../MenuBar/MenuBar';
+import Button from '../Reusable/Button/Button';
+
+import CcVbsAdminBase from './CcVbsAdminBase';
+import EventAdmin from './EventAdmin';
 import SubscribedEmailsAdmin from './SubscribedEmailsAdmin';
+import './Admin.css';
 
 class Admin extends Component {
   constructor(props) {
@@ -28,13 +27,13 @@ class Admin extends Component {
     // update adminUsers state based on firebase data status
     const adminUsersRef = firebase.database().ref('user_groups/admins');
 
-    adminUsersRef.on('value', snapshot => {
+    adminUsersRef.on('value', (snapshot) => {
       const adminUsers = snapshot.val();
       this.setState({adminUsers});
     });
 
     // keeps user logged in on a page refresh
-    auth.onAuthStateChanged(user => {
+    auth.onAuthStateChanged((user) => {
       if (user) {
         this.setState({user});
       }
@@ -42,7 +41,7 @@ class Admin extends Component {
   }
 
   login() {
-    auth.signInWithPopup(provider).then(result => {
+    auth.signInWithPopup(provider).then((result) => {
       const {user} = result;
       this.setState({user});
     });
@@ -65,8 +64,8 @@ class Admin extends Component {
         <div>
           <Button onClick={onAddItemClick}>Add Item</Button>
         </div>
-        {addingEvent && this._renderEditInput(true)}
-        <div>{this._renderItems()}</div>
+        {addingEvent && this.renderEditInput(true)}
+        <div>{this.renderItems()}</div>
       </div>
     );
   }

@@ -135,7 +135,7 @@ Text.propTypes = {
   id: PropTypes.string.isRequired,
   instructions: PropTypes.node,
   /**
-   * Use textbox or textare instead
+   * Use textbox or textarea instead
    *
    * @deprecated
    */

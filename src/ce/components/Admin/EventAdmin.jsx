@@ -2,9 +2,12 @@ import {Parser as HtmlToReactParser} from 'html-to-react';
 import moment from 'moment';
 import React, {Component} from 'react';
 
-import Text from '../../../common/components/Text';
+import Select from '../../../common/components/Select';
+import Textarea from '../../../common/components/Textarea';
+import Textbox from '../../../common/components/Textbox';
 import firebase from '../../../firebase';
 import commonUtils from '../../../utils/commonUtils';
+import constants from '../../../utils/constants';
 import Button from '../Reusable/Button/Button';
 import Checklist from '../Reusable/Checklist/Checklist';
 
@@ -12,6 +15,11 @@ const TIME_FORMAT = {
   SIMPLE_TIME: 'h:mm a',
   DATE_TIME: 'YYYY-MM-DDTHH:mm:ss',
   STD_DATE: 'YYYY-MM-DD'
+};
+
+const MODES = {
+  SINGLE_EVENT: 'SINGLE_EVENT',
+  RECURRING: 'RECURRING'
 };
 
 class EventAdmin extends Component {
@@ -127,7 +135,6 @@ class EventAdmin extends Component {
         const dateRef = firebase.database().ref(`dates/${date}/events`);
 
         // push date object into 'dates' reference
-
         dateRef.push(event);
         this.resetData();
         this.setState({currentEdit: null});
@@ -144,6 +151,8 @@ class EventAdmin extends Component {
           dateRef.push(event);
         }
       }
+    } else {
+      alert('Data invalid: Enter valid date and title.');
     }
   }
 
@@ -260,7 +269,7 @@ class EventAdmin extends Component {
                 </div>
               ) : null}
               {currentlyEditing ? (
-                <div>{this.renderEditInput(false, key)} </div>
+                <div>{this.renderEditInputSingle(false, key)} </div>
               ) : (
                 <div>
                   <Button
@@ -299,30 +308,32 @@ class EventAdmin extends Component {
     ];
   }
 
-  renderEditInput(isNew, key) {
+  renderEditInputSingle(isNew, key) {
     return (
       <div>
-        <Text
+        <Textbox
           id="date"
           label="Date"
           onChange={this.onChange}
           placeholder="YYYY-MM-DD"
+          required
           value={this.state.date}
         />
-        <Text
+        <Textbox
           id="title"
           label="Title"
           onChange={this.onChange}
+          required
           value={this.state.title}
         />
-        <Text
+        <Textbox
           id="timeStart"
           label="Start Time"
           onChange={this.onChange}
           placeholder="HH:MM am"
           value={this.state.timeStart}
         />
-        <Text
+        <Textbox
           id="timeEnd"
           label="End Time"
           onChange={this.onChange}
@@ -330,7 +341,68 @@ class EventAdmin extends Component {
           value={this.state.timeEnd}
         />
         <div>
-          <Text
+          <Textarea
+            columns={80}
+            id="longDescription"
+            label="Long Description"
+            onChange={this.onChange}
+            textArea
+            value={this.state.longDescription || ''}
+          />
+        </div>
+        <Checklist
+          checklistItems={this.getOptionsList(this.state)}
+          id="options-checklist"
+          label="Options"
+          onChange={this.onChange}
+        />
+        <div>
+          <Button onClick={(event) => this.submit(isNew, key, event)}>
+            Submit
+          </Button>
+          <Button onClick={this.cancelEdit}>Cancel</Button>
+        </div>
+      </div>
+    );
+  }
+
+  renderEditInputRecurring(isNew, key) {
+    return (
+      <div>
+        <Textbox
+          id="title"
+          label="Title"
+          onChange={this.onChange}
+          required
+          value={this.state.title}
+        />
+        <Select
+          id="weekday"
+          label="Weekday"
+          onChange={this.onChange}
+          options={Object.entries(constants.daysOfWeek).map(([key, value]) => ({
+            label: commonUtils.titleCase(key),
+            value: String(value)
+          }))}
+          required
+          value={this.state.date}
+        />
+        <Textbox
+          id="timeStart"
+          label="Start Time"
+          onChange={this.onChange}
+          placeholder="HH:MM am"
+          value={this.state.timeStart}
+        />
+        <Textbox
+          id="timeEnd"
+          label="End Time"
+          onChange={this.onChange}
+          placeholder="HH:MM am"
+          value={this.state.timeEnd}
+        />
+        <div>
+          <Textarea
             columns={80}
             id="longDescription"
             label="Long Description"
@@ -356,17 +428,29 @@ class EventAdmin extends Component {
   }
 
   render() {
-    const addingEvent = this.state.currentEdit === 'new';
-    const onAddItemClick = () => {
-      this.setState({currentEdit: 'new'});
-    };
+    const addingSingleEvent = this.state.currentEdit === MODES.SINGLE_EVENT;
+    const addingRecurringEvent = this.state.currentEdit === MODES.RECURRING;
 
     return (
       <div>
         <div>
-          <Button onClick={onAddItemClick}>Add Item</Button>
+          <Button
+            onClick={() => {
+              this.setState({currentEdit: MODES.SINGLE_EVENT});
+            }}
+          >
+            Add One Time Event
+          </Button>
+          <Button
+            onClick={() => {
+              this.setState({currentEdit: MODES.RECURRING});
+            }}
+          >
+            Add Recurring Event
+          </Button>
         </div>
-        {addingEvent && this.renderEditInput(true)}
+        {addingSingleEvent && this.renderEditInputSingle(true)}
+        {addingRecurringEvent && this.renderEditInputRecurring(true)}
         <div>{this.renderItems()}</div>
       </div>
     );
