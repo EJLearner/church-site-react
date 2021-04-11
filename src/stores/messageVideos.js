@@ -5,6 +5,12 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-04-11T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    title: 'A Word of Encouragement to the Church',
+    videoLink: 'https://www.youtube.com/embed/mEwD48vhw2k'
+  },
+  {
     date: '2021-04-04T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'The Resurrection',
