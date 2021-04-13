@@ -15,18 +15,6 @@ function useNews() {
         'You can now use CashApp to donate! Use CashApp tag “$citytemple317”.'
     },
     {
-      id: 'new-zoom-info',
-      postedDate: '2021-01-26',
-      text: `
-        Effective February 9, 2021, the church will use Zoom for bible study, Sunday sermons, and Wednesday night prayer services.
-
-        To join by phone, use the dial-in information below:
-        877 853 5257 US Toll-free
-        Meeting ID: 623 453 5359
-        Passcode: 966703
-        `
-    },
-    {
       id: 'new-zoom-info-link',
       linkPath: routePaths.MAIN_ZOOM_INFO,
       postedDate: '2021-01-26',
