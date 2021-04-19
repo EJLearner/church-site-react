@@ -1458,5 +1458,19 @@ export default {
         definition, seeks to enjoy its object.”
       </p>
     )
+  },
+  '2021-04-18': {
+    subTitle: <>By John Wesley</>,
+    content: (
+      <p>
+        “After my return home, I was much buffeted with temptations; but cried
+        out, and they fled away. They returned again and again. I as often
+        lifted up my eyes, and he “sent me help from his holy place.” And herein
+        I found the difference between this and my former state chiefly
+        consisted. I was striving, yea, fighting with all my might under the
+        law, as well as under grace. But then I was sometimes, if not often,
+        conquered; now, I was always conqueror.”
+      </p>
+    )
   }
 };
