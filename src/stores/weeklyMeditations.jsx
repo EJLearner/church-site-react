@@ -1494,7 +1494,7 @@ export default {
         </p>
         <p>
           And for this one does not have to shut oneself in a monastery or fix
-          strange and inhumane regimes for one's life. It is enough to accept
+          strange and inhumane regimes for one’s life. It is enough to accept
           the realities of life period work is one of these realities;
           motherhood comma the rearing of children comma family life with all
           its obligations or others. ”
