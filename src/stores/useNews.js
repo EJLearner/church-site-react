@@ -32,7 +32,6 @@ function useNews() {
     {
       expireDate: '2020-06-01',
       id: 'no-sanctuary-service',
-
       linkPath: routePaths.MAIN_CORONAVIRUS,
       postedDate: '2020-03-19',
       text:

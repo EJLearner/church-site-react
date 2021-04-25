@@ -5,6 +5,18 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-04-25T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    title: 'Saved By Doubt',
+    videoLink: 'https://www.youtube.com/embed/vDXRInqZhi4'
+  },
+  {
+    date: '2021-04-18T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    title: 'The Pentecost Prophecy!',
+    videoLink: 'https://www.youtube.com/embed/y3th4fXDPes'
+  },
+  {
     date: '2021-04-11T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'A Word of Encouragement to the Church',
