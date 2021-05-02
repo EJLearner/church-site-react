@@ -404,7 +404,14 @@ const bibleComFormattedVerses = {
   '2021-04-28': {verse: 'Ezekiel 34.11-16'},
   '2021-04-29': {verse: 'Isaiah 40.9-11'},
   '2021-04-30': {verse: '1 Timothy 3.1-13'},
-  '2021-05-01': {verse: '2 Corinthians 4'}
+  '2021-05-01': {verse: '2 Corinthians 4'},
+  '2021-05-02': {verse: 'Psalm 22.25-31'},
+  '2021-05-03': {verse: 'Galatians 5.13-24'},
+  '2021-05-04': {verse: 'Romans 5.1-11'},
+  '2021-05-05': {verse: 'Ephesians 5.1-20'},
+  '2021-05-06': {verse: 'Hebrews 13.1-6'},
+  '2021-05-07': {verse: 'Deuteronomy 7.6-16'},
+  '2021-05-08': {verse: '1 Corinthians 13.1-13'}
 };
 
 export {bibleComFormattedVerses};
