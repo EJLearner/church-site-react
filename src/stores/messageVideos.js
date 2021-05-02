@@ -5,6 +5,12 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-05-02T09:00:00',
+    preacher: PREACHERS.D_HICKMAN,
+    title: 'Remember God’s Faithfulness When He Seems Silent!',
+    videoLink: 'https://www.youtube.com/embed/WK9qXOXs1jE'
+  },
+  {
     date: '2021-04-25T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'Saved By Doubt',
