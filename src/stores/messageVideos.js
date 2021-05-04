@@ -5,6 +5,67 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-05-02T09:00:00',
+    preacher: PREACHERS.D_HICKMAN,
+    title: 'Remember God’s Faithfulness When He Seems Silent!',
+    videoLink: 'https://www.youtube.com/embed/WK9qXOXs1jE'
+  },
+  {
+    date: '2021-04-25T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    title: 'Saved By Doubt',
+    videoLink: 'https://www.youtube.com/embed/vDXRInqZhi4'
+  },
+  {
+    date: '2021-04-18T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    title: 'The Pentecost Prophecy!',
+    videoLink: 'https://www.youtube.com/embed/y3th4fXDPes'
+  },
+  {
+    date: '2021-04-11T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    title: 'A Word of Encouragement to the Church',
+    videoLink: 'https://www.youtube.com/embed/mEwD48vhw2k'
+  },
+  {
+    date: '2021-04-04T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    title: 'The Resurrection',
+    videoLink: 'https://www.youtube.com/embed/jarFc9dbpMI'
+  },
+  {
+    date: '2021-04-02T12:00:00',
+    // TODO: handle this better, video page should say "Preachers" when this is used and search should work for it
+    preacher: PREACHERS.MINISTERS,
+    title: 'Seven Last Words - From the Cross',
+    videoLink: 'https://www.youtube.com/embed/IIRepOmhf_g'
+  },
+  {
+    date: '2021-03-28T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    title: 'The Anointing of Jesus',
+    videoLink: 'https://www.youtube.com/embed/KyVzhcTXpgM'
+  },
+  {
+    date: '2021-03-21T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    title: 'Possessed By A Passion!!',
+    videoLink: 'https://www.youtube.com/embed/0ng_HXJIT9Q'
+  },
+  {
+    date: '2021-03-14T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    title: 'Forgive Us',
+    videoLink: 'https://www.youtube.com/embed/KdnPEQMtXwg'
+  },
+  {
+    date: '2021-03-07T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    title: 'The Rejection of Jesus',
+    videoLink: 'https://www.youtube.com/embed/FRoJDZ2hUDw'
+  },
+  {
     date: '2021-02-28T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'Let Us Go and Die with Him!!',

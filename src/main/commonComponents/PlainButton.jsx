@@ -10,6 +10,10 @@ const PlainButton = styled.button`
   font-weight: inherit;
   padding: 0;
   text-align: left;
+
+  &:hover {
+    opacity: 0.95;
+  }
 `;
 
 export default PlainButton;

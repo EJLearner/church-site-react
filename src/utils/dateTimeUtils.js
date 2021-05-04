@@ -44,6 +44,11 @@ const getDaysUntilDate = (date) =>
 
 const getStandardDateString = (date) => format(date, 'yyyy-MM-dd');
 
+const isoTimeHasPassed = (time) => {
+  const dateObj = parseISO(time);
+  return isPast(dateObj);
+};
+
 export {
   addDays,
   addMonths,
@@ -62,6 +67,7 @@ export {
   getShortDisplayDate,
   isAfter,
   isBefore,
+  isoTimeHasPassed,
   isPast,
   isSameDay,
   isSameMonth,

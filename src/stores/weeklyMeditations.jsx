@@ -1288,5 +1288,238 @@ export default {
         received by the marginal victims of the old order.”
       </p>
     )
+  },
+  '2021-03-07': {
+    subTitle: (
+      <>
+        From <i>Theophan the Recluse</i>
+      </>
+    ),
+    content: (
+      <p>
+        “I have often reminded you, about the remembrance of God, and now I tell
+        you again: unless you work and sweat to impress on your heart and mind
+        this awe-inspiring Name, you keep silence in vain, you sing in vain, you
+        fast in vain, you watch in vain. In short, all a nun’s work will be
+        useless without this activity, without recollection of God. This is the
+        beginning of silence for the Lord’s sake, and it is also the end. This
+        most desirable Name is the soul of stillness and silence. By calling it
+        to mind we gain joy and gladness, forgiveness of sings and a wealth of
+        virtues. Few have been able to find this most glorious Name, save only
+        in stillness and silence. We can attain it in no other way, even with
+        great effort. Therefore, knowing the power of this advice, I entreat you
+        for the love of Christ always to be still and silent, since these
+        virtues enrich remembrance of God within us.”
+      </p>
+    )
+  },
+  '2021-03-14': {
+    subTitle: (
+      <>
+        From <i>The Joyful Christian</i> by C.S. Lewis
+      </>
+    ),
+    content: (
+      <p>
+        “People often think of Christian morality as a kind of bargain in which
+        God says, “If you keep a lot of rules, I’ll reward you, and if you
+        don’t, I’ll do the other thing.” I do not think that is the best way of
+        looking at it. I would much rather say that every time you make a choice
+        you are turning the central part of you, the part of you that chooses,
+        into something a little different from what it was before. And taking
+        your life as a whole, with all your innumerable choices, all your life
+        long you are slowly turning this central thing either into a Heaven
+        creature or into a hellish creature: either into a creature who is in
+        harmony with God, and with other creatures, and with itself, or else
+        into one that is in a state of war and hatred with God, and with its
+        fellow creatures, and with itself. To be the one kind of creature is
+        Heaven: that is, it is joy, and peace, and knowledge, and power. To be
+        the other means madness, horror, idiocy, rage, impotence, and eternal
+        loneliness. Each of us at each moment is progressing to the one state or
+        the other.”
+      </p>
+    )
+  },
+  '2021-03-21': {
+    subTitle: (
+      <>
+        From <i>In Search of the Beyond </i> by Carlo Carretto
+      </>
+    ),
+    content: (
+      <p>
+        “We are not happy because we are unforgiving, and we are unforgiving
+        because we feel superior to others.”
+        <br /> Mercy is the fruit of the highest degree of love, because love
+        creates equals, and a greater love makes us inferior.
+        <br /> First let us establish three premises:
+        <br /> Those who do not love, feel superior to everyone else.
+        <br /> Those who love, feel equal to everyone else.
+        <br /> Those who love, much gladly take the lower place.
+        <br /> Each one of us can identify his position somewhere along this
+        spectrum, which comprises the three degrees of the spiritual life here
+        on earth:
+        <br /> Death for those who do not love.
+        <br /> Life for those who love.
+        <br /> Holiness for those who love much.
+        <br /> The beatitudes of the merciful relates, like all the beatitudes,
+        to the realm of holiness and we have to admit that Jesus set
+        <br /> his sights high when he had the courage and confidence to place
+        this lofty ideal before us. It is the beatitude that he <br /> himself
+        lived to the full, stooping, out of love, to the lowest place, even to
+        the extent of being rejected as a common
+        <br /> criminal, set only to be hung on a gibbet.
+      </p>
+    )
+  },
+  '2021-03-28': {
+    subTitle: (
+      <>
+        From <i>Spirituality for Ministry</i> by Urban T. Holmes, III
+      </>
+    ),
+    content: (
+      <p>
+        “Many persons, ordained or not, live in a fairly constant state of
+        noise, with their unresolved past and the uncertain present breaking in
+        on them. They lack a still center and it is only for such a quiet point
+        that we can listen attentively. When I was in my first parish, which was
+        located in the middle of the city, a constant stream of indigents came
+        through. One came into my office and wanted to tell me his story. I sat
+        as if to listen but was deeply troubled inside over some issue now long
+        forgotten. I remember I was fiddling with a pencil. The man stopped his
+        story, looked at me and said, “Young Father, the least you can do is
+        listen”. He was right. There was no still center in me. Thomas Merton
+        (1915 – 1968), the fascinating Cistercian monk whose writings continue
+        to increase in popularity, found the busy life of a Trappist very
+        disconcerting. Despite the fact that speaking is severely curtailed in a
+        Cistercian monastery, he found the place incredibly noisy. For many
+        years he sought permission to live as a hermit on the property of the
+        monastery. He needed the quiet that he might listen. Too frequently we
+        do not understand the hermit’s discipline, a discipline that needs to be
+        ours in spirit, if not in fact.”
+      </p>
+    )
+  },
+  '2021-04-04': {
+    subTitle: (
+      <>
+        From <i>Footsteps in the Path of Life</i> by Marcus Dods
+      </>
+    ),
+    content: (
+      <p>
+        “The purpose of God in the history of man was accomplished when Jesus
+        breathed his last upon the cross. The cry “It is finished” was not the
+        mere gasp of a wornout life; it was not the cry of satisfaction with
+        which a career of pain and sorrow is terminated; it was the deliberate
+        utterance of a clear consciousness on the part of God’s appointed
+        Revealer that now all had been done that could be done to make God known
+        to men and to identify him with men. God’s purpose had ever been one and
+        indivisible – declared to men in various ways, a hint here, a broad
+        light there, now by a gleam of insight in the mind of a prophet, now by
+        a deed of heroism in king or leader, through rude symbolic contrivances
+        and through the tenderest of human affections and the highest human
+        thoughts. God had been making men ever more sensible that his one
+        purpose was to come closer and closer into fellowship with them, and to
+        draw them into a perfect harmony with him. Forgiveness and deliverance
+        from sin were provided for them, knowledge of God’s law and will, thus
+        they might learn to know and to serve him – all these were secured when
+        Jesus cried, “It is finished.”
+      </p>
+    )
+  },
+  '2021-04-11': {
+    subTitle: (
+      <>
+        From <i>The Problem of Pain</i> by C. S. Lewis
+      </>
+    ),
+    content: (
+      <p>
+        “Scripture and tradition habitually put the joys of Heaven into the
+        scale against the sufferings of earth, an no solution of the problem of
+        pain which does not do so can be called a Christian one. We are very shy
+        nowadays of even mentioning Heaven. We are afraid of the jeer about “pie
+        in the sky”, and of being told that we are trying to “escape” from the
+        duty of making a happy world here and now into dreams of a happy world
+        elsewhere. But whether there is “pie in the sky”, or there is not if
+        there is not, then Christianity is false, for this doctrine is woven
+        into its whole fabric. If there is, then this truth, like any other,
+        must be faced, whether it is useful at political meetings or no. Again,
+        we are afraid that Heaven is a bribe, and that if we make it our goal we
+        shall no longer be disinterested. It is not so. Heaven offers nothing
+        that a mercenary soul can desire. It is safe to tell the pure in heart
+        that they shall see God, for only the pure in heart want to. There are
+        rewards that do not sully motives. A man’s love for a woman is not
+        mercenary because he wants to marry her, nor his love for poetry
+        mercenary because he wants to read it, nor his love for exercise less
+        disinterested because he wants to run and leap and walk. Love, by
+        definition, seeks to enjoy its object.”
+      </p>
+    )
+  },
+  '2021-04-18': {
+    subTitle: <>By John Wesley</>,
+    content: (
+      <p>
+        “After my return home, I was much buffeted with temptations; but cried
+        out, and they fled away. They returned again and again. I as often
+        lifted up my eyes, and he “sent me help from his holy place.” And herein
+        I found the difference between this and my former state chiefly
+        consisted. I was striving, yea, fighting with all my might under the
+        law, as well as under grace. But then I was sometimes, if not often,
+        conquered; now, I was always conqueror.”
+      </p>
+    )
+  },
+  '2021-04-25': {
+    subTitle: (
+      <>
+        From <i> Letters from the Desert </i> by Carlo Carretto
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “Joy or sadness, war or peace, love or hate, purity or impurity,
+          charity or greed, all are tremendous realities which are the hinges of
+          our interior life. Everyday things, relationships with other people,
+          daily work, love of our family -- all of these may breed saints.”
+          Jesus at Nazareth taught us to live every hour of the day as saints.
+          Every hour of the day is useful and may lead to divine inspiration,
+          the will of the Father, the prayer of contemplation – holiness. Every
+          hour of the day is holy. What matters is to live it as Jesus taught
+          us.
+        </p>
+        <p>
+          And for this one does not have to shut oneself in a monastery or fix
+          strange and inhumane regimes for one’s life. It is enough to accept
+          the realities of life period work is one of these realities;
+          motherhood comma the rearing of children comma family life with all
+          its obligations or others. ”
+        </p>
+      </>
+    )
+  },
+  '2021-05-02': {
+    subTitle: (
+      <>
+        From <i> Visions of a World Hungry </i> by Thomas G. Pettepiece
+      </>
+    ),
+    content: (
+      <p>
+        “James considers it natural that a person with faith also has works. It
+        is not a heavy and moralistic Christian duty; it is the Christian
+        possibility and life-style – response comes with true faith. On this
+        theme, the Bible is clear and direct in both Testaments – God loves and
+        cares for the poor. Jesus said to be perfect. In other words, to be
+        imitators of the perfect God, to do as God does. If we are to love God,
+        we are to love and care for the poor and hungry too. “You will know them
+        by their fruits.” [Matt. 7:16a RSV] he said, and he meant that we are
+        known by our ethical behavior as illustrated by life experience.”
+      </p>
+    )
   }
 };
