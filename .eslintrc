@@ -20,6 +20,7 @@
     ],
     "max-len": ["error", 120],
     "no-console": "error",
+    "no-shadow": "warn",
     "no-unused-expressions": "error",
     "no-restricted-syntax": [
       "error",

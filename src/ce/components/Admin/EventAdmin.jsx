@@ -8,6 +8,7 @@ import Textbox from '../../../common/components/Textbox';
 import firebase from '../../../firebase';
 import commonUtils from '../../../utils/commonUtils';
 import constants from '../../../utils/constants';
+import {format, parse} from '../../../utils/dateTimeUtils';
 import Button from '../Reusable/Button/Button';
 import Checklist from '../Reusable/Checklist/Checklist';
 
@@ -33,6 +34,7 @@ class EventAdmin extends Component {
       date: '',
       dates: {},
       longDescription: '',
+      recurrence: 'weekly',
       removeKey: '',
       timeEnd: '',
       timeStart: '',
@@ -42,7 +44,7 @@ class EventAdmin extends Component {
 
     this.onChange = this.onChange.bind(this);
     this.getDateTimeFromSimple = this.getDateTimeFromSimple.bind(this);
-    this.submit = this.submit.bind(this);
+    this.submit = this.submitSingleEvent.bind(this);
     this.editItem = this.editItem.bind(this);
     this.cancelEdit = this.cancelEdit.bind(this);
     this.removeItem = this.removeItem.bind(this);
@@ -103,7 +105,7 @@ class EventAdmin extends Component {
     return title && timeStart !== false && timeEnd !== false;
   }
 
-  submit(isNew, key) {
+  submitSingleEvent(isNew, key) {
     // FBH get 'dates' reference from firebase
     const {
       originalDate,
@@ -131,9 +133,8 @@ class EventAdmin extends Component {
     const dataIsValid = this.isValid(event) && hasValidDate;
 
     if (dataIsValid) {
+      const dateRef = firebase.database().ref(`dates/${date}/events`);
       if (isNew) {
-        const dateRef = firebase.database().ref(`dates/${date}/events`);
-
         // push date object into 'dates' reference
         dateRef.push(event);
         this.resetData();
@@ -146,8 +147,54 @@ class EventAdmin extends Component {
           eventRef.set(event);
         } else {
           eventRef.set(null);
+          dateRef.push(event);
+        }
+      }
+    } else {
+      alert('Data invalid: Enter valid date and title.');
+    }
+  }
 
-          const dateRef = firebase.database().ref(`dates/${date}/events`);
+  submitRecurringEvent(isNew, key) {
+    // FBH get 'dates' reference from firebase
+    const {
+      originalDate,
+      date,
+      timeEnd,
+      timeStart,
+      title,
+      longDescription,
+      followsWorship,
+      isAnnouncement
+    } = this.state;
+
+    const startDateObject = parse(timeStart, 'hh:mm a', new Date());
+    const endDateObject = parse(timeEnd, 'hh:mm a', new Date());
+    // make new date object
+    const event = {
+      title: title,
+      timeStart: format(startDateObject, 'HH:MM'),
+      timeEnd: format(endDateObject, 'HH:MM'),
+      longDescription: longDescription || null,
+      followsWorship: followsWorship || null,
+      isAnnouncement: isAnnouncement || null
+    };
+
+    if (this.isValid(event)) {
+      const dateRef = firebase.database().ref('recurringEvents/');
+      if (isNew) {
+        // push date object into 'dates' reference
+        dateRef.push(event);
+        this.resetData();
+        this.setState({currentEdit: null});
+      } else {
+        const sameDate = date === originalDate;
+
+        const eventRef = this.getEventRef(originalDate, key);
+        if (sameDate) {
+          eventRef.set(event);
+        } else {
+          eventRef.set(null);
           dateRef.push(event);
         }
       }
@@ -357,7 +404,7 @@ class EventAdmin extends Component {
           onChange={this.onChange}
         />
         <div>
-          <Button onClick={(event) => this.submit(isNew, key, event)}>
+          <Button onClick={() => this.submitSingleEvent(isNew, key)}>
             Submit
           </Button>
           <Button onClick={this.cancelEdit}>Cancel</Button>
@@ -387,6 +434,15 @@ class EventAdmin extends Component {
           required
           value={this.state.date}
         />
+        Occurs weekly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {/* <Select
+          id="recurrence"
+          label="Recurrence"
+          onChange={this.onChange}
+          options={[{label: 'Weekly', value: 'weekly'}]}
+          required
+          value={this.state.recurrence}
+        /> */}
         <Textbox
           id="timeStart"
           label="Start Time"
@@ -418,7 +474,7 @@ class EventAdmin extends Component {
           onChange={this.onChange}
         />
         <div>
-          <Button onClick={(event) => this.submit(isNew, key, event)}>
+          <Button onClick={() => this.submitRecurringEvent(isNew, key)}>
             Submit
           </Button>
           <Button onClick={this.cancelEdit}>Cancel</Button>
@@ -428,8 +484,10 @@ class EventAdmin extends Component {
   }
 
   render() {
-    const addingSingleEvent = this.state.currentEdit === MODES.SINGLE_EVENT;
-    const addingRecurringEvent = this.state.currentEdit === MODES.RECURRING;
+    const {currentEdit} = this.state;
+
+    const addingSingleEvent = currentEdit === MODES.SINGLE_EVENT;
+    const addingRecurringEvent = currentEdit === MODES.RECURRING;
 
     return (
       <div>
