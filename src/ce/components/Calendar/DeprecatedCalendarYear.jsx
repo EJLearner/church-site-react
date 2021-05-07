@@ -1,11 +1,10 @@
-import React, {Component} from 'react';
+import _ from 'lodash';
+import moment from 'moment';
 import PropTypes from 'prop-types';
+import React, {Component} from 'react';
 import {Redirect} from 'react-router';
 
 import routePaths from '../../../routePaths';
-
-import moment from 'moment';
-import _ from 'lodash';
 
 import DeprecatedMiniCalendar from './DeprecatedMiniCalendar';
 
@@ -26,7 +25,7 @@ class CalendarYear extends Component {
   }
 
   _getMiniCalendarMonths() {
-    return _.range(0, 12).map(monthsAdded => {
+    return _.range(0, 11).map((monthsAdded) => {
       return moment(this.props.firstMonth)
         .add(monthsAdded, 'months')
         .format('YYYY-MM-DD');
@@ -34,7 +33,7 @@ class CalendarYear extends Component {
   }
 
   _renderMonths() {
-    return this._getMiniCalendarMonths().map(monthDate => {
+    return this._getMiniCalendarMonths().map((monthDate) => {
       let selectedDay = monthDate;
       let highlightSelectedDay = false;
 

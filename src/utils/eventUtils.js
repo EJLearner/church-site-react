@@ -59,7 +59,7 @@ function generateRecurringEvents(recurringEvents, span = {}) {
     // eslint-disable-next-line no-loop-func
     const eventsWithSameDayAndNotSkipped = recurringEvents.filter((event) => {
       return (
-        getDay(currentDate) === event.reccurence.day &&
+        getDay(currentDate) === event.recurrence.day &&
         !event.skippedDates?.includes(dateString)
       );
     });
@@ -99,4 +99,59 @@ function generateRecurringEvents(recurringEvents, span = {}) {
   return recurringEventDates;
 }
 
-export {eventsToArray, generateRecurringEvents};
+function generateRecurringEventsFromFb(recurringEvents, span = {}) {
+  const {endTime = addYears(new Date(), 1)} = span;
+  const today = startOfToday();
+  let currentDate = today;
+
+  const recurringEventDates = {};
+
+  while (isBefore(currentDate, endTime)) {
+    const dateString = getStandardDateString(currentDate);
+    // seems safe, tested that the correct values are retrieved
+    const eventsWithSameDayAndNotSkipped = Object.values(
+      recurringEvents
+      // eslint-disable-next-line no-loop-func
+    ).filter((event) => {
+      return (
+        getDay(currentDate) === event.recurrence.day &&
+        !event.skippedDates?.includes(dateString)
+      );
+    });
+
+    const recurringEventsWithCorrectFrequency = eventsWithSameDayAndNotSkipped;
+
+    if (recurringEventsWithCorrectFrequency.length) {
+      const dateString = getStandardDateString(currentDate);
+
+      if (!recurringEventDates[dateString]) {
+        recurringEventDates[dateString] = {events: {}};
+      }
+
+      recurringEventsWithCorrectFrequency.forEach((event) => {
+        const eventDate = parseISO(dateString);
+        const eventTime = parse(event.timeStart, 'HH:mm', new Date());
+        const eventTimeObject = set(eventDate, {
+          hours: getHours(eventTime),
+          minutes: getMinutes(eventTime)
+        });
+
+        const eventDateTime = format(
+          eventTimeObject,
+          constants.DATE_FNS_DATE_TIME
+        );
+
+        recurringEventDates[dateString].events[eventDateTime + event.title] = {
+          timeStart: eventDateTime,
+          title: event.title
+        };
+      });
+    }
+
+    currentDate = addDays(currentDate, 1);
+  }
+
+  return recurringEventDates;
+}
+
+export {eventsToArray, generateRecurringEvents, generateRecurringEventsFromFb};

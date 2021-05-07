@@ -9,7 +9,7 @@ import commonUtils from '../../../utils/commonUtils';
 import MiniCalendar from './MiniCalendar';
 
 function getMiniCalendarMonths(firstMonth) {
-  return commonUtils.range(0, 12).map((monthsAdded) => {
+  return commonUtils.range(0, 11).map((monthsAdded) => {
     return moment(firstMonth).add(monthsAdded, 'months').format('YYYY-MM-DD');
   });
 }

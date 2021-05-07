@@ -5,7 +5,7 @@ import differenceInCalendarDays from 'date-fns/differenceInCalendarDays';
 import endOfYesterday from 'date-fns/endOfYesterday';
 import format from 'date-fns/format';
 import formatISO from 'date-fns/formatISO';
-import getDay from 'date-fns/getDay';
+import getDayAsNumber from 'date-fns/getDay';
 import getHours from 'date-fns/getHours';
 import getMinutes from 'date-fns/getMinutes';
 import isAfter from 'date-fns/isAfter';
@@ -47,6 +47,10 @@ const getStandardDateString = (date) => format(date, 'yyyy-MM-dd');
 const isoTimeHasPassed = (time) => {
   const dateObj = parseISO(time);
   return isPast(dateObj);
+};
+
+const getDay = (date) => {
+  return String(getDayAsNumber(date));
 };
 
 export {

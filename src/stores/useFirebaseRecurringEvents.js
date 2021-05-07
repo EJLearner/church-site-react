@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react';
 
-import {fakeStoreRecurringEvents} from '../ce/utils/fakeStoreRecurringEvents';
+import firebase from '../firebase';
+import constants from '../utils/constants';
 import {generateRecurringEvents} from '../utils/eventUtils';
 
 function useFirebaseRecurringEvents(options = {}) {
@@ -9,22 +10,30 @@ function useFirebaseRecurringEvents(options = {}) {
   const [events, setEventsList] = useState({});
 
   useEffect(() => {
-    const recurringEventDates = generateRecurringEvents(
-      fakeStoreRecurringEvents
-    );
+    const recurringEventesRef = firebase
+      .database()
+      .ref(constants.FB_REC_EVENTS);
 
-    const newState = {};
+    recurringEventesRef.on('value', (snapshot) => {
+      const recurringEventDates = generateRecurringEvents(
+        Object.values(snapshot.val() ?? {})
+      );
 
-    Object.keys(recurringEventDates).forEach((date) => {
-      const eventInfo = recurringEventDates[date];
-      // make an array of events
-      if (eventInfo.events) {
-        const events = Object.values(eventInfo.events).map((event) => event);
-        newState[date] = {events};
-      }
+      const newState = {};
+
+      Object.keys(recurringEventDates).forEach((date) => {
+        const eventInfo = recurringEventDates[date];
+        // make an array of events
+        if (eventInfo.events) {
+          const dateEvents = Object.values(eventInfo.events).map(
+            (event) => event
+          );
+          newState[date] = {events: dateEvents};
+        }
+      });
+
+      setEventsList(newState);
     });
-
-    setEventsList(newState);
   }, [futureOnly]);
 
   return events;

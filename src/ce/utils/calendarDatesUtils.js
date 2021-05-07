@@ -5,8 +5,6 @@ import commonUtils from '../../utils/commonUtils';
 import constants from '../../utils/constants';
 import {generateRecurringEvents} from '../../utils/eventUtils';
 
-import {fakeStoreRecurringEvents} from './fakeStoreRecurringEvents';
-
 let singleEvents = {};
 let processedDates = {};
 let recurringEvents = {};
@@ -49,7 +47,20 @@ const loadDates = () => {
 };
 
 const loadRecurringEvents = () => {
-  recurringEvents = generateRecurringEvents(fakeStoreRecurringEvents);
+  // FBH get a reference for the 'dates' top level prop of the data
+  const recurringEventsRef = firebase.database().ref(constants.FB_REC_EVENTS);
+
+  // FBH add a listener to the dates object, update on value change
+  // listener gets the dates object using snapshot.val();
+  // then pushes the updated date object into the state
+  recurringEventsRef.on('value', (snapshot) => {
+    const retrievedDates = Object.values(snapshot.val() ?? {});
+
+    recurringEvents = generateRecurringEvents(retrievedDates);
+
+    recombineEvents();
+    callAllCallbacks();
+  });
 
   recombineEvents();
   callAllCallbacks();

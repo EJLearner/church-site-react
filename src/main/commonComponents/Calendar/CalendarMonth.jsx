@@ -10,6 +10,7 @@ import calendarDatesUtils from '../../../ce/utils/calendarDatesUtils';
 import Select from '../../../common/components/Select';
 import routePaths from '../../../routePaths';
 import commonUtils from '../../../utils/commonUtils';
+import constants from '../../../utils/constants';
 
 const MonthCalendarStyle = styled.div`
   background-color: white;
@@ -62,11 +63,13 @@ class CalendarMonth extends Component {
   }
 
   renderTableHeader() {
-    const headerCells = commonUtils.range(0, 7).map((dayOfWeekIndex) => {
-      const stringDayOfWeek = moment().weekday(dayOfWeekIndex).format('dddd');
+    const headerCells = Object.values(constants.daysOfWeek).map(
+      (dayOfWeekIndex) => {
+        const stringDayOfWeek = moment().weekday(dayOfWeekIndex).format('dddd');
 
-      return <th key={stringDayOfWeek}>{stringDayOfWeek}</th>;
-    });
+        return <th key={stringDayOfWeek}>{stringDayOfWeek}</th>;
+      }
+    );
 
     return (
       <thead>
@@ -103,39 +106,41 @@ class CalendarMonth extends Component {
   }
 
   renderTableBodyRow(weekNumber, year) {
-    const renderedDays = commonUtils.range(0, 7).map((dayOfWeekIndex) => {
-      const dayMoment = this.state.selectedMoment
-        .clone()
-        .year(year)
-        .startOf('year')
-        .week(weekNumber)
-        .startOf('week')
-        .add(dayOfWeekIndex, 'day');
+    const renderedDays = Object.values(constants.daysOfWeek).map(
+      (dayOfWeekIndex) => {
+        const dayMoment = this.state.selectedMoment
+          .clone()
+          .year(year)
+          .startOf('year')
+          .week(weekNumber)
+          .startOf('week')
+          .add(dayOfWeekIndex, 'day');
 
-      const dayEvents = this.renderDaysEvents(dayMoment.format('YYYY-MM-DD'));
+        const dayEvents = this.renderDaysEvents(dayMoment.format('YYYY-MM-DD'));
 
-      const isOtherMonth = !dayMoment.isSame(
-        this.state.selectedMoment,
-        'month'
-      );
+        const isOtherMonth = !dayMoment.isSame(
+          this.state.selectedMoment,
+          'month'
+        );
 
-      const tdClassName = ['date-cell', isOtherMonth && 'other-month']
-        .filter((name) => name)
-        .join(' ');
+        const tdClassName = ['date-cell', isOtherMonth && 'other-month']
+          .filter((name) => name)
+          .join(' ');
 
-      return (
-        <td
-          className={tdClassName}
-          key={dayOfWeekIndex}
-          title={dayMoment.format('LL')}
-        >
-          <div>
-            <div className="date-area">{dayMoment.date()}</div>
-            <div className="events-area">{dayEvents}</div>
-          </div>
-        </td>
-      );
-    });
+        return (
+          <td
+            className={tdClassName}
+            key={dayOfWeekIndex}
+            title={dayMoment.format('LL')}
+          >
+            <div>
+              <div className="date-area">{dayMoment.date()}</div>
+              <div className="events-area">{dayEvents}</div>
+            </div>
+          </td>
+        );
+      }
+    );
 
     return <tr key={weekNumber}>{renderedDays}</tr>;
   }
@@ -196,7 +201,7 @@ class CalendarMonth extends Component {
   renderMonthDropDown() {
     const selectedMonth = this.state.selectedMoment.format('MMM').toLowerCase();
 
-    const options = commonUtils.range(0, 12).map((monthNum) => {
+    const options = commonUtils.range(0, 11).map((monthNum) => {
       const momentMonth = moment().month(monthNum);
       return {
         label: momentMonth.format('MMMM'),
@@ -245,11 +250,6 @@ CalendarMonth.propTypes = {
   id: PropTypes.string,
   isCe: PropTypes.bool,
   storedDates: PropTypes.object
-};
-
-CalendarMonth.propTypes = {
-  id: 'calendar-month-div',
-  isCe: false
 };
 
 export default withDatesSubscription(CalendarMonth);

@@ -28,6 +28,7 @@ class EventAdmin extends Component {
     super(props);
 
     this.state = {
+      day: constants.daysOfWeek.SUNDAY,
       isAnnouncement: false,
       followsWorship: false,
       name: '',
@@ -159,7 +160,9 @@ class EventAdmin extends Component {
     // FBH get 'dates' reference from firebase
     const {
       originalDate,
+      day,
       date,
+      recurrence,
       timeEnd,
       timeStart,
       title,
@@ -168,20 +171,22 @@ class EventAdmin extends Component {
       isAnnouncement
     } = this.state;
 
-    const startDateObject = parse(timeStart, 'hh:mm a', new Date());
-    const endDateObject = parse(timeEnd, 'hh:mm a', new Date());
+    const startDateObject =
+      timeStart && parse(timeStart, 'hh:mm a', new Date());
+    const endDateObject = timeEnd && parse(timeEnd, 'hh:mm a', new Date());
     // make new date object
     const event = {
       title: title,
-      timeStart: format(startDateObject, 'HH:MM'),
-      timeEnd: format(endDateObject, 'HH:MM'),
+      timeStart: timeStart ? format(startDateObject, 'HH:mm') : null,
+      timeEnd: timeEnd ? format(endDateObject, 'HH:mm') : null,
+      recurrence: {day: day, frequency: recurrence},
       longDescription: longDescription || null,
       followsWorship: followsWorship || null,
       isAnnouncement: isAnnouncement || null
     };
 
     if (this.isValid(event)) {
-      const dateRef = firebase.database().ref('recurringEvents/');
+      const dateRef = firebase.database().ref(constants.FB_REC_EVENTS);
       if (isNew) {
         // push date object into 'dates' reference
         dateRef.push(event);
@@ -424,17 +429,20 @@ class EventAdmin extends Component {
           value={this.state.title}
         />
         <Select
-          id="weekday"
+          id="day"
           label="Weekday"
           onChange={this.onChange}
-          options={Object.entries(constants.daysOfWeek).map(([key, value]) => ({
-            label: commonUtils.titleCase(key),
-            value: String(value)
-          }))}
+          options={Object.entries(constants.daysOfWeek).map(
+            ([dayOfWeek, value]) => ({
+              label: commonUtils.titleCase(dayOfWeek),
+              value
+            })
+          )}
           required
-          value={this.state.date}
+          value={this.state.day}
         />
         Occurs weekly&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {/* TODO: allow more options for frecurrence */}
         {/* <Select
           id="recurrence"
           label="Recurrence"
