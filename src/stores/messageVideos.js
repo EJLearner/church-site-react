@@ -5,6 +5,12 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-05-0T09:00:00',
+    preacher: PREACHERS.M_HAMIEL,
+    title: 'The Assignment',
+    videoLink: 'https://www.youtube.com/embed/QQZJg-ewas8'
+  },
+  {
     date: '2021-05-02T09:00:00',
     preacher: PREACHERS.D_HICKMAN,
     title: 'Remember God’s Faithfulness When He Seems Silent!',
