@@ -5,7 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
-    date: '2021-05-0T09:00:00',
+    date: '2021-05-16T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    title: 'The Most Important Thing We Need To Know!!!',
+    videoLink: 'https://www.youtube.com/embed/RsWoscyxDio'
+  },
+  {
+    date: '2021-05-09T09:00:00',
     preacher: PREACHERS.M_HAMIEL,
     title: 'The Assignment',
     videoLink: 'https://www.youtube.com/embed/QQZJg-ewas8'
