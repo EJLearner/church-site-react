@@ -1559,5 +1559,27 @@ export default {
         </p>
       </>
     )
+  },
+  '2021-05-16': {
+    subTitle: (
+      <>
+        From <i> Liberation of Life </i> by Harvey and Lois Seifert
+      </>
+    ),
+    content: (
+      <p>
+        “To make way for a new birth of authentic being, we are not only
+        willing, but even eager to give up present habits and imperfections and
+        prejudices. No matter how far we have moved in the Christian life, we
+        can still know that every opinion we hold and every act we perform is
+        something less than the best. We never have the Holy Spirit in our
+        pockets, completely domesticated and supporting everything we are doing.
+        Any such sanctifying of present imperfections in an obstacle to further
+        growth. Instead of clutching fiercely to any foibles and fallacies, I
+        had better cultivate the ability to change my mind, my political
+        opinion, and my lifestyle when it becomes clear that this is the will of
+        God.”
+      </p>
+    )
   }
 };
