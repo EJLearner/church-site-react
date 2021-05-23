@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-05-21T09:00:00',
+    preacher: PREACHERS.T_CURLEY,
+    scripture: 'Mark 11:22-24',
+    title: 'Uplifting Faith in Hard Times!',
+    videoLink: 'https://www.youtube.com/embed/36ZyZ9m7Bkg'
+  },
+  {
     date: '2021-05-16T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'The Most Important Thing We Need To Know!!!',
