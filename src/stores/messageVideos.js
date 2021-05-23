@@ -5,7 +5,7 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
-    date: '2021-05-21T09:00:00',
+    date: '2021-05-23T09:00:00',
     preacher: PREACHERS.T_CURLEY,
     scripture: 'Mark 11:22-24',
     title: 'Uplifting Faith in Hard Times!',
