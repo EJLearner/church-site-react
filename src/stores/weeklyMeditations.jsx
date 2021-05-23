@@ -1581,5 +1581,26 @@ export default {
         God.”
       </p>
     )
+  },
+  '2021-05-23': {
+    subTitle: (
+      <>
+        From <i> The Art of Prayer </i>
+      </>
+    ),
+    content: (
+      <p>
+        “It is possible either to sustain and strengthen this burning of the
+        spirit, or to quench it. It is warmed above all by acts of love towards
+        God and our neighbour – this, indeed, is the essence of the spiritual
+        life – by a general fidelity to all God’s commandments, with a quiet
+        conscience, by deeds that are pitiless to our own soul and body, and by
+        prayer and thoughts of God. The spirit is quenched by distraction of the
+        attention from God and God’s works, by excessive anxiety about worldly
+        matters, by indulgence in sensual pleasure, by pandering to carnal
+        desires, and by infatuation with material things. If this spirit is
+        quenched, then the Christian life will be quenched too.”
+      </p>
+    )
   }
 };
