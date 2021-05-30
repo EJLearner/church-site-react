@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-05-30T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Luke 12:32',
+    title: 'Fearlessness In the Face of Fear',
+    videoLink: 'https://www.youtube.com/embed/ejR-vA8IQA8'
+  },
+  {
     date: '2021-05-23T09:00:00',
     preacher: PREACHERS.T_CURLEY,
     scripture: 'Mark 11:22-24',
