@@ -445,7 +445,14 @@ const bibleComFormattedVerses = {
   '2021-06-02': {verse: '1 Corinthians 12.1 - 11'},
   '2021-06-03': {verse: 'Ephesians 1.3 - 14'},
   '2021-06-04': {verse: 'Ephesians 3.14 - 20'},
-  '2021-06-05': {verse: 'Colossians 2.1 - 15'}
+  '2021-06-05': {verse: 'Colossians 2.1 - 15'},
+  '2021-06-06': {verse: 'Psalm 57'},
+  '2021-06-07': {verse: 'Luke 15.1-10'},
+  '2021-06-08': {verse: 'Acts 3.17-26'},
+  '2021-06-09': {verse: 'Ephesians 2.1-10'},
+  '2021-06-10': {verse: 'Romans 6.1-14'},
+  '2021-06-11': {verse: 'Luke 7.36-50'},
+  '2021-06-12': {verse: 'John 4.7-42'}
 };
 
 export {bibleComFormattedVerses};
