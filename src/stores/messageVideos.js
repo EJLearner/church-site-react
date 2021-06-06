@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-06-06T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: '1 Peter 2:9-10',
+    title: 'A Word About The Church!!',
+    videoLink: 'https://www.youtube.com/embed/voipvS-Nras'
+  },
+  {
     date: '2021-05-30T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 12:32',
