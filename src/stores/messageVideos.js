@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-06-13T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 5:6',
+    title: 'The Joy of Desperate Desire!!',
+    videoLink: 'https://www.youtube.com/embed/R5YUBBwDqc0'
+  },
+  {
     date: '2021-06-06T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: '1 Peter 2:9-10',
