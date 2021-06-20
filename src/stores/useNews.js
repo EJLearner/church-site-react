@@ -11,15 +11,7 @@ function useNews() {
       expireDate: '2021-06-30',
       id: 'cash-app',
       postedDate: '2020-03-03',
-      text:
-        'You can now use CashApp to donate! Use CashApp tag “$citytemple317”.'
-    },
-    {
-      id: 'new-zoom-info-link',
-      linkPath: routePaths.MAIN_ZOOM_INFO,
-      postedDate: '2021-01-26',
-      text:
-        'Click here for login instructions for browsers, tablets and other devices.'
+      text: 'You can now use CashApp to donate! Use CashApp tag “$citytemple317”.'
     },
     {
       expireDate: '2020-06-23',
@@ -34,16 +26,14 @@ function useNews() {
       id: 'no-sanctuary-service',
       linkPath: routePaths.MAIN_CORONAVIRUS,
       postedDate: '2020-03-19',
-      text:
-        'Due to COVID-19, no in-sanctuary service will be held. Watch Sunday’s sermon.'
+      text: 'Due to COVID-19, no in-sanctuary service will be held. Watch Sunday’s sermon.'
     },
     {
       expireDate: '2020-06-01',
       id: 'coronavirus-info-posted',
       linkPath: routePaths.MAIN_CORONAVIRUS,
       postedDate: '2020-04-04',
-      text:
-        'Coronavirus information has been updated. Visit the Coronavirus Update page for more information.'
+      text: 'Coronavirus information has been updated. Visit the Coronavirus Update page for more information.'
     },
     {
       expireDate: '2020-04-04',
