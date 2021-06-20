@@ -1681,5 +1681,30 @@ export default {
         great action.”
       </p>
     )
+  },
+  '2021-06-20': {
+    subTitle: (
+      <>
+        From <i> Prayer </i> by Simon Tugwell
+      </>
+    ),
+    content: (
+      <p>
+        “It is assumed that if God is omnipotent he can do anything; but this is
+        not strictly true. What God’s omnipotence does mean is that nothing can
+        obstruct him, nothing can prevent his being fully and eternally himself.
+        But this means that it is actually a part of his omnipotence that God
+        does not contradict himself. He is free to determine the manner of his
+        own working; and in fact, as we know from revelation, he has chosen to
+        work in such a way that we can interfere, and interfere very
+        drastically, with his creation. God made man such that man could rebel
+        against him, and set up his own “world” in opposition to God. Of course,
+        God is not without allies even in “our” world he knows that we can never
+        really be satisfied with any world of our own devising, so that it will
+        always be vulnerable to his influence in one way or another; and God
+        exploits this to the full. But he always respects the freedom and
+        independence that he has given us.”
+      </p>
+    )
   }
 };
