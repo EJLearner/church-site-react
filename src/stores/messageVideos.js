@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-06-20T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 1:24-25; 3:16-17',
+    title: 'When Dads Don’t Disappear!!',
+    videoLink: 'https://www.youtube.com/embed/--cnkLzW42k'
+  },
+  {
     date: '2021-06-13T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 5:6',
