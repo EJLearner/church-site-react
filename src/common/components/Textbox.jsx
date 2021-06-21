@@ -1,6 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
+
+import {FONT_FAMILIES} from '../../utils/styleVariables';
+
 import InputLabel from './InputLabel';
 
 const TextboxStyle = styled.div`
@@ -11,12 +14,12 @@ const TextboxStyle = styled.div`
     border: 1px solid gray;
     border-radius: 5px;
     box-shadow: 2px 2px 2px 0 #c2c2c2;
-    font-family: $century-gothic;
+    font-family: ${FONT_FAMILIES.CENTURY_GOTHIC};
     padding: 6px;
   }
 `;
 
-const Textbox = props => {
+const Textbox = (props) => {
   const {
     errors,
     id,
@@ -32,7 +35,7 @@ const Textbox = props => {
     value
   } = props;
 
-  const onKeyPress = event => {
+  const onKeyPress = (event) => {
     onEnter && event.key === 'Enter' && onEnter(event.target.value, id, event);
   };
 
@@ -59,7 +62,7 @@ const Textbox = props => {
         aria-labelledby={labelledBy}
         id={id}
         name={name || id}
-        onChange={event => onChange(event.target.value, id, event)}
+        onChange={(event) => onChange(event.target.value, id, event)}
         onKeyPress={onKeyPress}
         placeholder={placeholder}
         size={size}
