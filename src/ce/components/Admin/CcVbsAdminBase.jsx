@@ -19,9 +19,9 @@ class CcVbsAdminBase extends Component {
     super(props);
 
     this.state = {
-      childrenTableRows: [],
+      studentTableRows: [],
       volunteerTableRows: [],
-      dataYear: '2019'
+      dataYear: '2021'
     };
 
     this.getInfoFromFirebase();
@@ -44,7 +44,7 @@ class CcVbsAdminBase extends Component {
 
     this.convertFbObjectToState(
       'students',
-      'childrenTableRows',
+      'studentTableRows',
       this.generateChildRowObject
     );
 
@@ -61,7 +61,7 @@ class CcVbsAdminBase extends Component {
     if (type === 'volunteers') {
       registerTypeString = 'Volunteers';
     } else if (type === 'students') {
-      registerTypeString = 'Children';
+      registerTypeString = 'Students';
     }
 
     if (!registerTypeString) {
@@ -250,24 +250,27 @@ class CcVbsAdminBase extends Component {
       address1,
       address2,
       childDob,
-      childName,
       city,
       knownAllergies,
-      parentEmail,
-      parentName,
-      parentPhone,
+      email,
+      parentNames,
+      phone,
       state,
+      studentName,
       subscribe,
       registerTime,
+      type,
       zip
     } = childObject;
 
-    return {
+    const isChild = type === 'CHILD';
+    const rowData = {
       id: key,
-      childName,
-      parentPhone: commonUtils.formatPhoneNumber(parentPhone, true),
-      parentEmail,
-      parentName,
+      studentName,
+      type: 'Child',
+      phone: commonUtils.formatPhoneNumber(phone, true),
+      email: email,
+      parentNames: parentNames?.join(' & '),
       address: (
         <div>
           {address1}
@@ -280,14 +283,22 @@ class CcVbsAdminBase extends Component {
       age: commonUtils.getAge(childDob),
       registerTime: commonUtils.formatTime(registerTime)
     };
+
+    if (!isChild) {
+      rowData.parentNames = 'N/A';
+      rowData.age = 'N/A';
+      rowData.type = 'Adult';
+    }
+
+    return rowData;
   }
 
   getChildrenTableColumns() {
     return [
-      {label: 'Child Name', name: 'childName'},
-      {label: 'Parent Name', name: 'parentName'},
-      {label: 'Parent Phone', name: 'parentPhone'},
-      {label: 'Parent Email', name: 'parentEmail'},
+      {label: 'Student Name', name: 'studentName'},
+      {label: 'Parent Names', name: 'parentNames'},
+      {label: 'Phone', name: 'phone'},
+      {label: 'Email', name: 'email'},
       {label: 'Address', name: 'address'},
       {label: 'Known Allergies', name: 'allergies'},
       {label: 'Subscribed', name: 'subscribed'},
@@ -351,7 +362,7 @@ class CcVbsAdminBase extends Component {
   }
 
   yearSelectDropdown() {
-    const options = ['2017', '2018', '2019'].map((year) => {
+    const options = ['2017', '2018', '2019', '2021'].map((year) => {
       return {
         label: year,
         value: year
@@ -410,7 +421,7 @@ class CcVbsAdminBase extends Component {
   }
 
   render() {
-    const {childrenTableRows, volunteerTableRows} = this.state;
+    const {studentTableRows, volunteerTableRows} = this.state;
     const signinDates = this.getSignInDates();
 
     return (
@@ -424,7 +435,7 @@ class CcVbsAdminBase extends Component {
         <h2>Children</h2>
         <Table
           columns={this.getChildrenTableColumns()}
-          rows={childrenTableRows}
+          rows={studentTableRows}
         />
         <h3>Sign in and out Records</h3>
         {signinDates.length ? (
