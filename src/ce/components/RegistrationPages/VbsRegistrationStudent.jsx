@@ -1,32 +1,31 @@
-import firebase from '../../../firebase';
+import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import {Redirect} from 'react-router';
-import moment from 'moment';
-import constants from '../../../utils/constants';
 
-import Button from '../Reusable/Button/Button';
-import Checkbox from '../Reusable/Checklist/Checkbox';
-import Modal from '../Reusable/Modal/Modal';
-import Text from '../../../common/components/Text';
-
-import fieldValidators from './fieldValidators';
-import registrationUtils from './registrationUtils';
-
+import Textarea from '../../../common/components/Textarea';
+import Textbox from '../../../common/components/Textbox';
+import firebase from '../../../firebase';
 import routePaths from '../../../routePaths';
-import utils from '../../../utils/commonUtils';
-
 import {
   saveRegistrationData,
   getRegistrationData,
   resetRegistrationData
 } from '../../../stores/lastSubmittedRegistration';
-
-import './Registration.css';
+import utils from '../../../utils/commonUtils';
+import constants from '../../../utils/constants';
+import pushToSubscribedList from '../../../utils/pushToSubscribedList';
 import ErrorList from '../Common/ErrorList';
 import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
+import Button from '../Reusable/Button/Button';
+import Checkbox from '../Reusable/Checklist/Checkbox';
+import Modal from '../Reusable/Modal/Modal';
+
 import DisclaimerCheckbox from './DisclaimerCheckbox';
-import pushToSubscribedList from '../../../utils/pushToSubscribedList';
+import fieldValidators from './fieldValidators';
+import registrationUtils from './registrationUtils';
+
+import './Registration.css';
 
 const WIDTH_BASE = 15;
 const USE_TEST_DATA = false;
@@ -43,7 +42,7 @@ class VbsRegistrationStudent extends Component {
     studentType: PropTypes.oneOf(Object.values(STUDENT_TYPES))
   };
 
-  state = this._initialState;
+  state = this.initialState;
 
   componentDidUpdate(prevProps, prevState) {
     if (!prevState.postStatus && this.state.postStatus) {
@@ -52,7 +51,7 @@ class VbsRegistrationStudent extends Component {
     }
   }
 
-  get _fieldsInfo() {
+  get fieldsInfo() {
     const fieldObject = {
       studentName: {
         fieldId: 'studentName',
@@ -144,7 +143,7 @@ class VbsRegistrationStudent extends Component {
     return fieldObject;
   }
 
-  get _initialState() {
+  get initialState() {
     const registrationData = getRegistrationData(true) || {};
     resetRegistrationData();
 
@@ -166,7 +165,7 @@ class VbsRegistrationStudent extends Component {
     const fieldStates = {};
 
     // setting values for field states
-    Object.values(this._fieldsInfo).forEach(fieldData => {
+    Object.values(this.fieldsInfo).forEach((fieldData) => {
       const {fieldId} = fieldData;
       let value = registrationData[fieldId] || '';
 
@@ -190,11 +189,11 @@ class VbsRegistrationStudent extends Component {
     };
   }
 
-  _onChangeInput = (value, id) => {
+  onChangeInput = (value, id) => {
     this.setState({[id]: value, postStatus: undefined});
   };
 
-  _pushToFirebase(studentType) {
+  pushToFirebase(studentType) {
     const vbsYear = utils.getVbsDbYear();
     const studentIdPropName = constants.VBS_REGISTERED_STUDENT_ID_PROP;
     const refName = `${constants.VBS_REGISTERED_STUDENT_REF_NAME}/${vbsYear}`;
@@ -205,7 +204,7 @@ class VbsRegistrationStudent extends Component {
       registerTime: new Date().toISOString()
     };
 
-    Object.values(this._fieldsInfo).forEach(({fieldId}) => {
+    Object.values(this.fieldsInfo).forEach(({fieldId}) => {
       student[fieldId] = this.state[fieldId];
     });
 
@@ -240,7 +239,7 @@ class VbsRegistrationStudent extends Component {
         saveRegistrationData(student, regAnotherStudentPath);
         this.setState({redirect: true});
       })
-      .catch(responseError => {
+      .catch((responseError) => {
         this.setState({postStatus: 'failure', responseError});
       });
 
@@ -253,10 +252,10 @@ class VbsRegistrationStudent extends Component {
     }
   }
 
-  _onSubmitClick() {
+  onSubmitClick() {
     const errors = registrationUtils.getPageErrors(
       this.state,
-      Object.values(this._fieldsInfo)
+      Object.values(this.fieldsInfo)
     );
 
     this.setState({
@@ -266,11 +265,11 @@ class VbsRegistrationStudent extends Component {
     });
   }
 
-  _toggleModal() {
+  toggleModal() {
     this.setState({showModal: !this.state.showModal});
   }
 
-  _renderHeaderContent() {
+  renderHeaderContent() {
     return (
       <div>
         <h1 className="vbs-header">Vacation Bible School</h1>
@@ -284,12 +283,12 @@ class VbsRegistrationStudent extends Component {
     );
   }
 
-  _renderChildNameInput() {
+  renderChildNameInput() {
     return (
-      <Text
+      <Textbox
         id="childDob"
         label="Child’s Date of Birth"
-        onChange={(value, id) => this._onChangeInput(value, id)}
+        onChange={(value, id) => this.onChangeInput(value, id)}
         placeholder="mm/dd/yyyy"
         required
         size={1 * WIDTH_BASE}
@@ -298,12 +297,12 @@ class VbsRegistrationStudent extends Component {
     );
   }
 
-  _renderParentNameInput() {
+  renderParentNameInput() {
     return (
-      <Text
+      <Textbox
         id="parentName"
         label="Parent Name"
-        onChange={(value, id) => this._onChangeInput(value, id)}
+        onChange={(value, id) => this.onChangeInput(value, id)}
         required
         size={2 * WIDTH_BASE}
         value={this.state.parentName}
@@ -311,84 +310,84 @@ class VbsRegistrationStudent extends Component {
     );
   }
 
-  _renderFormFields() {
+  renderFormFields() {
     const isChild = this.props.studentType === STUDENT_TYPES.CHILD;
     return (
       <div id="form-fields">
-        <Text
+        <Textbox
           id="studentName"
           label="Student’s Name"
-          onChange={(value, id) => this._onChangeInput(value, id)}
+          onChange={(value, id) => this.onChangeInput(value, id)}
           required
           size={2 * WIDTH_BASE}
           value={this.state.studentName}
         />
         {isChild && (
           <>
-            {this._renderChildNameInput()}
+            {this.renderChildNameInput()}
             <h3>Parent/Guardian Information</h3>
           </>
         )}
-        <Text
+        <Textbox
           id="email"
           label="Email Address"
-          onChange={(value, id) => this._onChangeInput(value, id)}
+          onChange={(value, id) => this.onChangeInput(value, id)}
           size={2 * WIDTH_BASE}
           value={this.state.email}
         />
         {isChild && (
           <>
             <br />
-            {this._renderParentNameInput()}
+            {this.renderParentNameInput()}
           </>
         )}
-        <Text
+        <Textbox
           id="phone"
           label="Best Phone Number to Reach You"
-          onChange={(value, id) => this._onChangeInput(value, id)}
+          onChange={(value, id) => this.onChangeInput(value, id)}
           required
           size={1 * WIDTH_BASE}
           value={this.state.phone}
         />
         <br />
-        <Text
+        <Textbox
           id="address1"
           label="Address Line 1"
-          onChange={(value, id) => this._onChangeInput(value, id)}
+          onChange={(value, id) => this.onChangeInput(value, id)}
           required
           size={4 * WIDTH_BASE}
           value={this.state.address1}
         />
         <br />
-        <Text
+        <Textbox
           id="address2"
           label="Address Line 2"
-          onChange={(value, id) => this._onChangeInput(value, id)}
+          onChange={(value, id) => this.onChangeInput(value, id)}
           size={4 * WIDTH_BASE}
           value={this.state.address2}
         />
         <br />
-        <Text
+        <Textbox
           id="city"
           label="City"
-          onChange={(value, id) => this._onChangeInput(value, id)}
+          onChange={(value, id) => this.onChangeInput(value, id)}
           required
           size={1.5 * WIDTH_BASE}
           value={this.state.city}
         />
-        <Text
+        <Textbox
           id="state"
           label="State"
-          onChange={(value, id) => this._onChangeInput(value, id)}
+          onChange={(value, id) => this.onChangeInput(value, id)}
           required
           size={1.5 * WIDTH_BASE}
           value={this.state.state}
         />
         <br />
-        <Text
+        <Textbox
           id="zip"
           label="ZIP Code"
-          onChange={(value, id) => this._onChangeInput(value, id)}
+          onChange={(value, id) => this.onChangeInput(value, id)}
           required
           size={Math.floor(0.8 * WIDTH_BASE)}
           value={this.state.zip}
@@ -398,34 +397,33 @@ class VbsRegistrationStudent extends Component {
           className="registration-checkbox"
           id="subscribe"
           label="Send emails about exciting events going on in the Temple!"
-          onChange={(value, id) => this._onChangeInput(value, id)}
+          onChange={(value, id) => this.onChangeInput(value, id)}
           value="subscribe"
         />
         <br />
-        <Text
+        <Textarea
           columns={4 * WIDTH_BASE}
           id="knownAllergies"
           label="List any known food allergies. Mark N/A if none."
-          onChange={(value, id) => this._onChangeInput(value, id)}
+          onChange={(value, id) => this.onChangeInput(value, id)}
           required
           size={200}
-          textArea
           value={this.state.knownAllergies}
         />
         <br />
         <DisclaimerCheckbox
           checked={this.state[agreementCheckedId]}
           id={agreementCheckedId}
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
         />
-        <Button onClick={() => this._onSubmitClick()}>Submit</Button>
+        <Button onClick={() => this.onSubmitClick()}>Submit</Button>
       </div>
     );
   }
 
-  _renderSummaryModal() {
+  renderSummaryModal() {
     const {studentType} = this.props;
-    const fieldSummaryItems = Object.values(this._fieldsInfo).reduce(
+    const fieldSummaryItems = Object.values(this.fieldsInfo).reduce(
       (items, field) => {
         const {fieldId, label} = field;
 
@@ -455,14 +453,14 @@ class VbsRegistrationStudent extends Component {
     return (
       <Modal
         className="registration-modal"
-        onCloseClick={() => this._toggleModal()}
+        onCloseClick={() => this.toggleModal()}
       >
         <h2>Please take a moment to confirm your data</h2>
         <ul>{fieldSummaryItems}</ul>
-        <Button onClick={() => this._pushToFirebase(studentType)}>
+        <Button onClick={() => this.pushToFirebase(studentType)}>
           Confirm
         </Button>
-        <Button onClick={() => this._toggleModal()}>Edit</Button>
+        <Button onClick={() => this.toggleModal()}>Edit</Button>
       </Modal>
     );
   }
@@ -488,16 +486,16 @@ class VbsRegistrationStudent extends Component {
 
     return (
       <div className="registration-page">
-        {this._renderHeaderContent()}
+        {this.renderHeaderContent()}
         {hasErrors && <ErrorList errors={errors} />}
-        {this._renderFormFields()}
+        {this.renderFormFields()}
         {Boolean(hasErrors || postStatus) && (
           <PostSubmitStatusMessage
             postStatus={postStatus}
             responseError={responseError}
           />
         )}
-        {showModal && postStatus !== 'failure' && this._renderSummaryModal()}
+        {showModal && postStatus !== 'failure' && this.renderSummaryModal()}
       </div>
     );
   }
