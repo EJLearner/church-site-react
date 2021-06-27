@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import moment from 'moment';
 
 import routePaths from '../routePaths';
@@ -7,6 +6,12 @@ import constants from '../utils/constants';
 
 function useNews() {
   const allNews = [
+    {
+      expireDate: '2021-07-06',
+      id: 'sermon-phone-recording',
+      postedDate: '2021-06-26',
+      text: 'The audio of the current week’s sermon is now available 24/7 at 443-203-1958'
+    },
     {
       expireDate: '2021-07-06',
       id: 'vbs-registration-landing',
