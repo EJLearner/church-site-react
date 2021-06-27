@@ -1706,5 +1706,30 @@ export default {
         independence that he has given us.”
       </p>
     )
+  },
+  '2021-06-27': {
+    subTitle: (
+      <>
+        From <i> The Spiritual Life </i> by John H. Westerhoff, III and John D.
+        Eusen
+      </>
+    ),
+    content: (
+      <p>
+        “For too long we have thought of the Christian life as essentially
+        either involvement in political, economic, social concerns that wear us
+        out and result in depression or activity which keeps the church intact
+        and doctrinally pure. Our primary orientation cannot be an institution
+        or some great cause or even other people, but first and forever to God.
+        Unless our identity is hidden in God, we will never know who we are or
+        what we are to do. Our first act must be prayer, Oratio. To be human is
+        to pray, to meditate both day and night on the love and activity of God.
+        We are called to be continuously formed and transformed by the thought
+        of God within us. Prayer is a disciplined dedication to paying
+        attention. Without the single minded attentiveness of prayer we will
+        rarely hear anything worth repeating or catch a vision worth asking
+        anyone else to gaze upon.”
+      </p>
+    )
   }
 };
