@@ -1731,5 +1731,26 @@ export default {
         anyone else to gaze upon.”
       </p>
     )
+  },
+  '2021-07-02': {
+    subTitle: (
+      <>
+        From <i> I, Francis </i> by Carlo Carretto
+      </>
+    ),
+    content: (
+      <p>
+        “And so when we had a decision to make, we would open the Gospel at
+        random, after having said a little prayer, and then we did whatever was
+        written, without adding anything. This manner of action gave us a
+        boundless liberty, and nurtured simplicity of heart with some solid
+        food. Another important element taking shape in the community we were
+        forming was the primacy of faith instead of structures. We felt
+        ourselves to be a community in search of God, not a seminary for the
+        priesthood. What made us one was Christ, and the imitation of him gave
+        meaning to the manner of living of each one of us. There was the whole
+        expression around us of the life of a simple Christian.”
+      </p>
+    )
   }
 };
