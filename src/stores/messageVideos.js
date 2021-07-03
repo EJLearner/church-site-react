@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-07-04T09:00:00',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'Isaiah 9:1-4 and Matthew 14:13-23',
+    title: 'Commune With The Light Within',
+    videoLink: 'https://www.youtube.com/embed/Qe7H7G9CDXI'
+  },
+  {
     date: '2021-06-27T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Exodus 14:1-14',
