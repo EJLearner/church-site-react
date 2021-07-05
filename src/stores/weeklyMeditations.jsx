@@ -1732,7 +1732,7 @@ export default {
       </p>
     )
   },
-  '2021-07-02': {
+  '2021-07-04': {
     subTitle: (
       <>
         From <i> I, Francis </i> by Carlo Carretto
