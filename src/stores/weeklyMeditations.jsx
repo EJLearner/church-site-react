@@ -1732,7 +1732,7 @@ export default {
       </p>
     )
   },
-  '2021-07-02': {
+  '2021-07-04': {
     subTitle: (
       <>
         From <i> I, Francis </i> by Carlo Carretto
@@ -1750,6 +1750,25 @@ export default {
         priesthood. What made us one was Christ, and the imitation of him gave
         meaning to the manner of living of each one of us. There was the whole
         expression around us of the life of a simple Christian.”
+      </p>
+    )
+  },
+  '2021-07-11': {
+    subTitle: (
+      <>
+        From <i> Thomas Merton: Contemplative Critic </i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “It is impressive to see how prayer opens one’s eyes to nature. Prayer
+        makes men contemplative and attentive. In place of manipulating, the man
+        who prays stands receptive before the world. He no longer grabs but
+        caresses, he no longer bites, but kisses, he no longer examines but
+        admires. To this man, as for Merton, nature can show itself completely
+        renewed. Instead of an obstacle, it becomes a way; instead of an
+        invulnerable shield, it becomes a veil which gives a preview of unknown
+        horizons.”
       </p>
     )
   }
