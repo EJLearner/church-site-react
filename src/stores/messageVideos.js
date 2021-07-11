@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-07-11T09:00:00',
+    preacher: PREACHERS.M_HAMIEL,
+    scripture: 'Psalm 45:10',
+    title: 'Be still and know God more',
+    videoLink: 'https://www.youtube.com/embed/4a5ZMGIHV54'
+  },
+  {
     date: '2021-07-04T09:00:00',
     preacher: PREACHERS.D_HICKMAN,
     scripture: 'Isaiah 9:1-4 and Matthew 14:13-23',
