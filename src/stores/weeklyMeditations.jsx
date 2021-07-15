@@ -1771,5 +1771,25 @@ export default {
         horizons.”
       </p>
     )
+  },
+  '2021-07-18': {
+    subTitle: (
+      <>
+        From <i> A Cry For Mercy </i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “I call to you, O Lord, from my quiet darkness. Show me your mercy and
+        love. Let me see your face, hear your voice, touch the hem of your
+        cloak. I want to love you, be with you, speak to you and simply stand in
+        your presence. But I cannot make it happen. Pressing my eyes against my
+        hands is not praying, and reading about your presence is not living in
+        it. But there is that moment in which you will come to me, as you did to
+        your fearful disciples, and say, “Do not be afraid; it is I.” Let that
+        moment come soon, O Lord. And if you want to delay it, then make me
+        patient. Amen.”
+      </p>
+    )
   }
 };
