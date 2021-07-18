@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-07-18T09:00:00',
+    preacher: PREACHERS.D_NELSON,
+    scripture: 'Matthew 5:43-48',
+    title: 'What Perfected Love Looks Like',
+    videoLink: 'https://www.youtube.com/embed/scRkf0P0mbI'
+  },
+  {
     date: '2021-07-11T09:00:00',
     preacher: PREACHERS.M_HAMIEL,
     scripture: 'Psalm 45:10',
