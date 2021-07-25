@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-07-25T09:00:00',
+    preacher: PREACHERS.T_CURLEY,
+    scripture: 'James 4:4-10',
+    title: 'Grace to the Willing Humble',
+    videoLink: 'https://www.youtube.com/embed/qcdXenQhzak'
+  },
+  {
     date: '2021-07-18T09:00:00',
     preacher: PREACHERS.D_NELSON,
     scripture: 'Matthew 5:43-48',
