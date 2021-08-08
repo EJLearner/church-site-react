@@ -1827,5 +1827,26 @@ export default {
         spread more and more as well as aspire more and more.”
       </p>
     )
+  },
+  '2021-08-08': {
+    subTitle: (
+      <>
+        From <i> Doctor Johnson’s Prayers </i> by Elton Trueblood
+      </>
+    ),
+    content: (
+      <p>
+        “O Lord, in whose hands are life and death, by whose power I am
+        sustained, and by whose mercy I am spared, look down upon me with pity.
+        Forgive me, that I have this day neglected the duty which Thou hast
+        assigned to it, and suffered the hours, of which I must give account, to
+        pass away without any endeavour to accomplish thy will, or to promote my
+        own salvation. Make me to remember, O God, that every day is thy gift,
+        and ought to be used according to thy command. Grant me, therefore, so
+        to repent of my negligence, that I may obtain mercy from Thee, and pass
+        the time which Thou shalt yet allow me, in diligent performance of thy
+        commands, through Jesus Christ. Amen.”
+      </p>
+    )
   }
 };
