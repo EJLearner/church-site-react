@@ -1791,5 +1791,84 @@ export default {
         patient. Amen.”
       </p>
     )
+  },
+  '2021-07-25': {
+    subTitle: (
+      <>
+        From <i> In The Christian Spirit </i> by Louis Evely
+      </>
+    ),
+    content: (
+      <p>
+        “Bad religion has always favored escape, passivity, irresponsibility. By
+        dint of fixing one’s eyes on heaven above, one does not see what takes
+        place on earth here below. The upward-looking must come to an
+        understanding with the forward-looking. We believe that our God (up
+        above) calls us to go forward. Our faith in an absolute does not
+        immobilize us in contemplation, but invites us to discover him according
+        to our means of creating a world inspired by his love: a world where
+        justice dwells and where people love one another.”
+      </p>
+    )
+  },
+  '2021-08-01': {
+    subTitle: (
+      <>
+        From <i> The Spiritual Life </i> by Evelyn Underhill
+      </>
+    ),
+    content: (
+      <p>
+        “We are the agents of the Creative Spirit in this world. Real advance in
+        the spiritual life, then, means accepting this vocation with all it
+        involves. Not merely turning over the pages of an engineering magazine
+        and enjoying the pictures, but putting on overalls and getting on with
+        the job. The real spiritual life must be horizontal as well as vertical;
+        spread more and more as well as aspire more and more.”
+      </p>
+    )
+  },
+  '2021-08-08': {
+    subTitle: (
+      <>
+        From <i> Doctor Johnson’s Prayers </i> by Elton Trueblood
+      </>
+    ),
+    content: (
+      <p>
+        “O Lord, in whose hands are life and death, by whose power I am
+        sustained, and by whose mercy I am spared, look down upon me with pity.
+        Forgive me, that I have this day neglected the duty which Thou hast
+        assigned to it, and suffered the hours, of which I must give account, to
+        pass away without any endeavour to accomplish thy will, or to promote my
+        own salvation. Make me to remember, O God, that every day is thy gift,
+        and ought to be used according to thy command. Grant me, therefore, so
+        to repent of my negligence, that I may obtain mercy from Thee, and pass
+        the time which Thou shalt yet allow me, in diligent performance of thy
+        commands, through Jesus Christ. Amen.”
+      </p>
+    )
+  },
+  '2021-08-15': {
+    subTitle: (
+      <>
+        From <i> Reaching Out </i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “Only when we have come in touch with our own life experiences and have
+        learned to listen to our inner cravings for liberation and new life can
+        we realize that Jesus did not just speak, but that he reached out to us
+        in our most personal needs. The Gospel doesn’t just contain ideas worth
+        remembering. It is a message responding to our individual human
+        condition. The Church is not an institution forcing us to follow its
+        rules. It is a community of people inviting us to still our hunger and
+        thirst at its tables. Doctrines are not alien formations which we must
+        adhere to but the documentation of the most profound human experiences
+        which, transcending time and place, are handed over from generation to
+        generation as a light in our darkness.”
+      </p>
+    )
   }
 };
