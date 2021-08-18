@@ -5,6 +5,27 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-08-15T09:00:00',
+    preacher: PREACHERS.D_NELSON,
+    scripture: 'Matthew 6:14-15',
+    title: 'Forgive Like You Want to be Forgiven',
+    videoLink: 'https://www.youtube.com/embed/RG3_GDqA608'
+  },
+  {
+    date: '2021-08-08T09:00:00',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: '1 Chronicles 16:11',
+    title: 'Seeking and Worshipping God!',
+    videoLink: 'https://www.youtube.com/embed/aXBJA7oillA'
+  },
+  {
+    date: '2021-08-01T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Psalm 121',
+    title: 'Being Kept!!',
+    videoLink: 'https://www.youtube.com/embed/ZeN8L9a11-Y'
+  },
+  {
     date: '2021-07-25T09:00:00',
     preacher: PREACHERS.T_CURLEY,
     scripture: 'James 4:4-10',
