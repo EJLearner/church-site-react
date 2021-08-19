@@ -1870,5 +1870,19 @@ export default {
         generation as a light in our darkness.”
       </p>
     )
+  },
+  '2021-08-22': {
+    subTitle: (
+      <>
+        From <i> A Gift for God </i> by Mother Teresa
+      </>
+    ),
+    content: (
+      <p>
+        “Put yourself completely under the influence of Jesus, so that he may
+        think his thoughts in your mind, do his work through your hands, for you
+        will be all-powerful with him to strengthen you.”
+      </p>
+    )
   }
 };
