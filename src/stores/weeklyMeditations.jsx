@@ -1884,5 +1884,20 @@ export default {
         will be all-powerful with him to strengthen you.”
       </p>
     )
+  },
+  '2021-08-29': {
+    subTitle: (
+      <>
+        From <i> I Will Lift Up Mine Eyes </i> by Glenn Clark
+      </>
+    ),
+    content: (
+      <p>
+        “Our Father, we take our loved ones and all those who need us deeply
+        into our hearts and there we give them completely to thee. My thy peace,
+        the peace which passeth all understanding, rest with them, bringing thy
+        perfect fulfillment to all their needs. Amen.”
+      </p>
+    )
   }
 };
