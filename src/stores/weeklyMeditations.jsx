@@ -1917,5 +1917,27 @@ export default {
         Holy Word, for Jesus Christ’s sake. Amen.”
       </p>
     )
+  },
+  '2021-09-12': {
+    subTitle: (
+      <>
+        From <i> Thomas Merton: Contemplative Critic </i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “Here we have come back to the compassion that must be formed in one’s
+        heart, a compassion that comes out of a deep experience of solidarity,
+        in which on recognizes that the evil, sin and violence which one sees in
+        the world and in the other, are deeply rooted in one’s own heart. Only
+        when you want to confess this and want to rely on the merciful God who
+        can bring good out of evil are you in a position to receive forgiveness
+        and also to give it to other men and women who threaten you with
+        violence. Precisely because Merton had discovered this nonviolent
+        compassion in his solitude could he in a real sense be a monk, that is
+        to say, one who unmasks through his criticism the illusions of a violent
+        society and who wants to change the world in spirit and truth.”
+      </p>
+    )
   }
 };
