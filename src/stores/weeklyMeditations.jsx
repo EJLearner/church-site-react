@@ -1986,7 +1986,7 @@ export default {
     ),
     content: (
       <p>
-        “Humility sees that each person is a bearer of Christ f rom whom we can
+        “Humility sees that each person is a bearer of Christ from whom we can
         learn and a child of God whom we must not judge. It also acknowledges
         that none of us is God and no matter the depth of our spiritual
         practices or our holy habits we will never match the holiness of God.
