@@ -1976,5 +1976,23 @@ export default {
         When I neglect to pray, mine is the loss. Forgive me, Lord. Amen.”
       </p>
     )
+  },
+  '2021-10-03': {
+    subTitle: (
+      <>
+        From <i> Gentle and Humble of Heart - Weavings </i> by Michael E.
+        Williams
+      </>
+    ),
+    content: (
+      <p>
+        “Humility sees that each person is a bearer of Christ f rom whom we can
+        learn and a child of God whom we must not judge. It also acknowledges
+        that none of us is God and no matter the depth of our spiritual
+        practices or our holy habits we will never match the holiness of God.
+        This is not bad news for those steeped in humility, however, for it
+        drives us straight into God’s arms of grace and mercy.”
+      </p>
+    )
   }
 };
