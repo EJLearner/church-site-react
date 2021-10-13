@@ -1870,5 +1870,144 @@ export default {
         generation as a light in our darkness.”
       </p>
     )
+  },
+  '2021-08-22': {
+    subTitle: (
+      <>
+        From <i> A Gift for God </i> by Mother Teresa
+      </>
+    ),
+    content: (
+      <p>
+        “Put yourself completely under the influence of Jesus, so that he may
+        think his thoughts in your mind, do his work through your hands, for you
+        will be all-powerful with him to strengthen you.”
+      </p>
+    )
+  },
+  '2021-08-29': {
+    subTitle: (
+      <>
+        From <i> I Will Lift Up Mine Eyes </i> by Glenn Clark
+      </>
+    ),
+    content: (
+      <p>
+        “Our Father, we take our loved ones and all those who need us deeply
+        into our hearts and there we give them completely to thee. My thy peace,
+        the peace which passeth all understanding, rest with them, bringing thy
+        perfect fulfillment to all their needs. Amen.”
+      </p>
+    )
+  },
+  '2021-09-05': {
+    subTitle: (
+      <>
+        From <i> Doctor Johnson’s Prayers </i> by Elton Trueblood
+      </>
+    ),
+    content: (
+      <p>
+        “Almighty and most merciful Father, whose clemency I now presume to
+        implore, after a long life of carelessness and wickedness, have mercy
+        upon me. I have committed many trespasses; I have neglected many duties.
+        I have done what Thou hast forbidden, and left undone what Thou hast
+        commanded. Forgive, merciful Lord, my sins, negligences, and ignorances,
+        and enable me, by the Holy Spirit, to amend my life according to thy
+        Holy Word, for Jesus Christ’s sake. Amen.”
+      </p>
+    )
+  },
+  '2021-09-12': {
+    subTitle: (
+      <>
+        From <i> Thomas Merton: Contemplative Critic </i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “Here we have come back to the compassion that must be formed in one’s
+        heart, a compassion that comes out of a deep experience of solidarity,
+        in which on recognizes that the evil, sin and violence which one sees in
+        the world and in the other, are deeply rooted in one’s own heart. Only
+        when you want to confess this and want to rely on the merciful God who
+        can bring good out of evil are you in a position to receive forgiveness
+        and also to give it to other men and women who threaten you with
+        violence. Precisely because Merton had discovered this nonviolent
+        compassion in his solitude could he in a real sense be a monk, that is
+        to say, one who unmasks through his criticism the illusions of a violent
+        society and who wants to change the world in spirit and truth.”
+      </p>
+    )
+  },
+  '2021-09-19': {
+    subTitle: (
+      <>
+        From <i> The Spiritual Life </i> by Evelyn Underhill
+      </>
+    ),
+    content: (
+      <p>
+        “We are always praying, when we are doing our duty and turning it into
+        work for God.” He added that among the things which we should regard as
+        spiritual in this sense are our household or professional work, the
+        social duties of our station, friendly visits, kind actions and small
+        courtesies, and also, necessary recreation of body and of mind; so long
+        as we link all these by intention with God and the great movement of his
+        Will.”
+      </p>
+    )
+  },
+  '2021-09-26': {
+    subTitle: (
+      <>
+        From <i> The Prayers of Peter Marshall </i> by Catherine Marshall
+      </>
+    ),
+    content: (
+      <p>
+        “Father, I am beginning to know how much I miss when I fail to talk to
+        thee in prayer, and through prayer to receive into my life the strength
+        and the guidance which only thou canst give. Forgive me for the pride
+        and the presumption that make me continue to struggle to manage my own
+        mind, the trial of my faith In a moment like this I know that thou
+        couldst have worked thy good in me with so little strain, with so little
+        effort. And then to thee would have been given the praise and the glory.
+        When I neglect to pray, mine is the loss. Forgive me, Lord. Amen.”
+      </p>
+    )
+  },
+  '2021-10-03': {
+    subTitle: (
+      <>
+        From <i> Gentle and Humble of Heart - Weavings </i> by Michael E.
+        Williams
+      </>
+    ),
+    content: (
+      <p>
+        “Humility sees that each person is a bearer of Christ from whom we can
+        learn and a child of God whom we must not judge. It also acknowledges
+        that none of us is God and no matter the depth of our spiritual
+        practices or our holy habits we will never match the holiness of God.
+        This is not bad news for those steeped in humility, however, for it
+        drives us straight into God’s arms of grace and mercy.”
+      </p>
+    )
+  },
+  '2021-10-10': {
+    subTitle: (
+      <>
+        From <i> Meditations of a Hermit </i> by Charles de Foucauld
+      </>
+    ),
+    content: (
+      <p>
+        “Though I’m silent, I can make known to those ignorant brothers of mine
+        the meaning of our holy religion, and of the Christian spirit, and the
+        Sacred Heart of Jesus, not by preaching, but by example and charity to
+        all.”
+      </p>
+    )
   }
 };
