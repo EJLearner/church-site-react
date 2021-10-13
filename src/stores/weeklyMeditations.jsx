@@ -1994,5 +1994,20 @@ export default {
         drives us straight into God’s arms of grace and mercy.”
       </p>
     )
+  },
+  '2021-10-10': {
+    subTitle: (
+      <>
+        From <i> Meditations of a Hermit </i> by Charles de Foucauld
+      </>
+    ),
+    content: (
+      <p>
+        “Though I’m silent, I can make known to those ignorant brothers of mine
+        the meaning of our holy religion, and of the Christian spirit, and the
+        Sacred Heart of Jesus, not by preaching, but by example and charity to
+        all.”
+      </p>
+    )
   }
 };
