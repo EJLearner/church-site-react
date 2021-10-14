@@ -5,6 +5,62 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-10-10T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 7:7-11',
+    title: 'A Word About The God to Whom We Pray!!',
+    videoLink: 'https://www.youtube.com/embed/lSBrLEJC2TE'
+  },
+  {
+    date: '2021-10-03T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Hebrews 10:23-25',
+    title: 'A Mature Approach  to Attending Worship!!!',
+    videoLink: 'https://www.youtube.com/embed/UUybG69sOEM'
+  },
+  {
+    date: '2021-09-26T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Philippians 3:12-15',
+    title: 'In Passionate Pursuit',
+    videoLink: 'https://www.youtube.com/embed/eU601W57FDI'
+  },
+  {
+    date: '2021-09-19T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Mark 8:34-35',
+    title: 'Discipleship’s Prime Directive!',
+    videoLink: 'https://www.youtube.com/embed/uylPa-8jg9M'
+  },
+  {
+    date: '2021-09-12T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Luke 11:1-4',
+    title: 'Lord, Teach Us to Pray!!',
+    videoLink: 'https://www.youtube.com/embed/_Ed4qcA54wg'
+  },
+  {
+    date: '2021-09-05T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Ezekiel 36:22-24',
+    title: 'Why God Grants Us Grace!!',
+    videoLink: 'https://www.youtube.com/embed/84PwFpbkiZE'
+  },
+  {
+    date: '2021-08-29T09:00:00',
+    preacher: PREACHERS.M_HAMIEL,
+    scripture: 'Matthew 28:16-20',
+    title: 'Future Disciples are Watching You',
+    videoLink: 'https://www.youtube.com/embed/kPuO5T7KQk4'
+  },
+  {
+    date: '2021-08-22T09:00:00',
+    preacher: PREACHERS.T_CURLEY,
+    scripture: 'Isaiah 60:1-3; Ephesians 5:8',
+    title: 'Turn the Light On',
+    videoLink: 'https://www.youtube.com/embed/wvbCNmW_Rmo'
+  },
+  {
     date: '2021-08-15T09:00:00',
     preacher: PREACHERS.D_NELSON,
     scripture: 'Matthew 6:14-15',
