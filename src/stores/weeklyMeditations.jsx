@@ -2009,5 +2009,21 @@ export default {
         all.”
       </p>
     )
+  },
+  '2021-10-17': {
+    subTitle: (
+      <>
+        From <i> The Spiritual Life </i> by Evelyn Underhill
+      </>
+    ),
+    content: (
+      <p>
+        “Our spiritual life is his affair; because, whatever we may think to the
+        contrary, it is really produced by his steady attraction, and our humble
+        and self-forgetful response to it. It consists in being drawn, at his
+        pace and in his way, to the place where he wants us to be; not the place
+        we fancied for ourselves.”
+      </p>
+    )
   }
 };
