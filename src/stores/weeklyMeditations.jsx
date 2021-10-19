@@ -2025,5 +2025,34 @@ export default {
         we fancied for ourselves.”
       </p>
     )
+  },
+  '2021-10-24': {
+    subTitle: (
+      <>
+        From <i> I Will Lift Up Mine Eyes </i> by Glenn Clark
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “It has been my observation that all great praying men are simple,
+          relaxed men. Mrs. Thomas A. Edison once said to me, “Mr. Edison’s
+          methods are just like yours. He is always perfectly natural and always
+          perfectly relaxed. He feels that all of his discoveries have ‘come
+          through him,’ that he is but a channel for forces greater than
+          himself.
+        </p>
+        <p>
+          Always natural, and always relaxed! I do not like to see men work too
+          hard at their prayers. Beware lest the zeal of thy house shall eat
+          thee up. When one strains and labors over his dream he is too often
+          carving ivory and not polishing horn. Don’t cut too deeply, don’t
+          carve too hard, don’t paint it through you. Wrote Gutzon Borglum.
+          “When I carve a statue, it is very simple. I merely cut away the
+          pieces that don’t belong there and the statue itself presently comes
+          into view. It was there all the time.”
+        </p>
+      </>
+    )
   }
 };
