@@ -2054,5 +2054,66 @@ export default {
         </p>
       </>
     )
+  },
+  '2021-10-31': {
+    subTitle: (
+      <>
+        From <i> The World’s Last Night </i> by C. S. Lewis
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “Some years ago I got up one morning intending to have my hair cut in
+          preparation for a visit to London, and the first letter I opened made
+          it clear I need not go to London. So I decided to put the haircut off
+          too. But then there began the most unaccountable little nagging in my
+          mind, almost like a voice saying, “Get it cut all the same. Go and get
+          it cut.” In the end I could stand it no longer. I went. Now my barber
+          at that time was a fellow Christian and a man of many troubles whom my
+          brother and I had sometimes been able to help. The moment I opened his
+          shop door he said, “Oh, I was praying you might come today.” And, in
+          fact, if I had come a day or so later, I should have been of no use to
+          him.
+        </p>
+        <p>
+          It awed me; it awes me still. But, of course, one cannot rigorously
+          prove a causal connection between the barber’s prayers and my visit.
+          It might be telepathy. It might be accident. I have stood by the
+          bedside of a woman whose thigh-bone was eaten through with cancer and
+          who had thriving colonies of the disease in many other bones as well.
+          It took three people to move her in bed. The doctors predicted a few
+          months of life; the nurses (who often know better), a few weeks. A
+          good man laid his hands on her and prayed. A year later the patient
+          was walking (uphill, too, through rough woodland) and the man who took
+          the last X-ray photos was saying, “These bones are as solid as rock.
+          It’s miraculous.”
+        </p>
+        <p>
+          But once again there is no rigorous proof. Medicine, as all true
+          doctors admit, is not an exact science. We need not invoke the
+          supernatural to explain the falsification of its prophecies. You need
+          not, unless you choose, believe in a causal connection between the
+          prayers and the recovery.
+        </p>
+        <p>
+          The question then arises, “What sort of evidence would prove the
+          efficacy of prayer?” The thing we pray for may happen anyway? Even if
+          the thing were indisputably miraculous, it would not follow that the
+          miracle had occurred because of your prayers. The answer surely is
+          that a compulsive empirical proof such as we have in the sciences can
+          never be attained.
+        </p>
+        <p>
+          Some things are proved by the unbroken uniformity of our experiences.
+          The law of gravitation is established by the fact that, in our
+          experience, all bodies without exception obey it. Now even if all the
+          things that people prayed for happened, which they do not, this would
+          prove what Christians mean by the efficacy of prayer. For prayer is
+          request. The essence of request, as distinct from compulsion, is that
+          it may or may not be granted.”
+        </p>
+      </>
+    )
   }
 };
