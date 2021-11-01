@@ -5,6 +5,27 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-10-31T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 25:1-13',
+    title: 'There Are Some Things In This Life That Cannot Be Shared!!',
+    videoLink: 'https://www.youtube.com/embed/D1ZswJljxNk'
+  },
+  {
+    date: '2021-10-24T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Ephesians 4:11-13',
+    title: 'Why We Are Here!!!',
+    videoLink: 'https://www.youtube.com/embed/fZHPEME3UAk'
+  },
+  {
+    date: '2021-10-17T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Luke 12:22-32',
+    title: 'Fearlessness In The Face of Fear!!!',
+    videoLink: 'https://www.youtube.com/embed/vD3Y6O4GxsU'
+  },
+  {
     date: '2021-10-10T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 7:7-11',
