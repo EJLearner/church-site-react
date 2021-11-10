@@ -2142,5 +2142,48 @@ export default {
         </p>
       </>
     )
+  },
+  '2021-11-14': {
+    subTitle: (
+      <>
+        From <i> In The Christian Spirit </i> by Louis Evely
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “To believe in God is to believe in the salvation of the world. The
+          paradox of our time is that those who believe in God do not believe in
+          the salvation of the world, and those who believe in the future of the
+          world do not believe in God.
+        </p>
+        <p>
+          Christians believe in “the end of the world,” they expect the final
+          catastrophe, the punishment of others.
+        </p>
+        <p>
+          Atheists in their turn invent doctrines of salvation, try to give a
+          meaning to life, work, the future of humankind, and refuse to believe
+          in God because Christians believe in him and take no interest in the
+          world.
+        </p>
+        <p>
+          All ignore the true God: he who has so loved the world! But which is
+          the more culpable ignorance?
+        </p>
+        <p>
+          To love God is to love the world. To love God passionately is to love
+          the world passionately. To hope in God is to hope for the salvation of
+          the world.
+        </p>
+        <p>
+          I often say to myself that, in our religion, God must feel very much
+          alone: for is there anyone besides God who believes in the salvation
+          of the world? God seeks among us sons and daughters who resemble him
+          enough, who love the world enough that he could send them into the
+          world to save it.”
+        </p>
+      </>
+    )
   }
 };
