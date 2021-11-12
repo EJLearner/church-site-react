@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-11-07T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Ephesians 3:14-21',
+    title: 'Glorifying God Through The Church!!!',
+    videoLink: 'https://www.youtube.com/embed/MYArLACc10M '
+  },
+  {
     date: '2021-10-31T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 25:1-13',
