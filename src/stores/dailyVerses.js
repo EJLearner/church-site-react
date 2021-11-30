@@ -620,7 +620,14 @@ const bibleComFormattedVerses = {
   '2021-11-24': {verse: 'Ephesians 1.1-14'},
   '2021-11-25': {verse: '2 Corinthians 12.1-10'},
   '2021-11-26': {verse: '1 Peter 1.1-9'},
-  '2021-11-27': {verse: '1 Corinthians 1.18-31'}
+  '2021-11-27': {verse: '1 Corinthians 1.18-31'},
+  '2021-11-28': {verse: 'Psalm 25.1-10'},
+  '2021-11-29': {verse: 'Mark 1.1-18'},
+  '2021-11-30': {verse: 'Psalm 131'},
+  '2021-12-01': {verse: 'Zephaniah 3.14-17'},
+  '2021-12-02': {verse: 'Isaiah 40.1-5'},
+  '2021-12-03': {verse: 'Isaiah 40.6-11'},
+  '2021-12-04': {verse: 'Luke 12.35-38'}
 };
 
 export {bibleComFormattedVerses};
