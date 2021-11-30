@@ -5,11 +5,32 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-11-28T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 1:1 & 14',
+    title: 'The Supreme Miracle!',
+    videoLink: 'https://www.youtube.com/embed/XXm-X1CwM0o'
+  },
+  {
+    date: '2021-11-21T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: '1 Peter 1:1-5',
+    title: 'A Living Hope!!',
+    videoLink: 'https://www.youtube.com/embed/dSmlFN53Yto'
+  },
+  {
+    date: '2021-11-14T09:00:00',
+    preacher: 'Rev. Dr. Douglas Summers',
+    scripture: 'John 19:38-42',
+    title: 'Secret Servant',
+    videoLink: 'https://www.youtube.com/embed/edjKn9B34AE'
+  },
+  {
     date: '2021-11-07T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Ephesians 3:14-21',
     title: 'Glorifying God Through The Church!!!',
-    videoLink: 'https://www.youtube.com/embed/MYArLACc10M '
+    videoLink: 'https://www.youtube.com/embed/MYArLACc10M'
   },
   {
     date: '2021-10-31T09:00:00',
