@@ -2221,5 +2221,21 @@ export default {
         </p>
       </>
     )
+  },
+  '2021-11-28': {
+    subTitle: (
+      <>
+        From <i> The Complete Writings of Menno Simons [c. 1496 – 1561] </i>
+      </>
+    ),
+    content: (
+      <p>
+        “Believe the Gospel, that is, believe the joyful news of divine grace
+        through Jesus Christ. Cease from sin; manifest repentance for your past
+        lives; submit obediently to the Word and will of the Lord; and you will
+        become companions, citizens, children and heirs of the new and heavenly
+        Jerusalem…Walk according to the Spirit and not according to the flesh.”
+      </p>
+    )
   }
 };
