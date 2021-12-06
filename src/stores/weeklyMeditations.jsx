@@ -2237,5 +2237,35 @@ export default {
         Jerusalem…Walk according to the Spirit and not according to the flesh.”
       </p>
     )
+  },
+  '2021-12-05': {
+    subTitle: (
+      <>
+        From <i> Abiding Hope </i> by Ann Hagmann
+      </>
+    ),
+    content: (
+      <p>
+        <p>
+          “Ironic as it is, we are always shocked when we realize that we have
+          little control over our lives or the lives of those around us. We
+          thought we were in charge. After all, aren’t we independent and
+          self-sufficient? But serious illness throws a wrench into our illusion
+          of control.
+        </p>
+        <p>
+          What should we do when we are in the midst of circumstances beyond our
+          control? It is wise to realize that we are helpless, to assess our
+          support and resources, and to act to seek the help we need…
+        </p>
+        <p>
+          Certainly, illness is a wake-up call to rely on God. The wonderful
+          thing is that even though the situation prodding us to rely on One
+          greater than ourselves is terrible, it also bears the wonderful fruit
+          of faith. All we need to do is ask God for help and then be alert to
+          God’s provision.”
+        </p>
+      </p>
+    )
   }
 };
