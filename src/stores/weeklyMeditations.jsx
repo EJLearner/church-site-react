@@ -2245,7 +2245,7 @@ export default {
       </>
     ),
     content: (
-      <p>
+      <>
         <p>
           “Ironic as it is, we are always shocked when we realize that we have
           little control over our lives or the lives of those around us. We
@@ -2265,7 +2265,7 @@ export default {
           of faith. All we need to do is ask God for help and then be alert to
           God’s provision.”
         </p>
-      </p>
+      </>
     )
   }
 };
