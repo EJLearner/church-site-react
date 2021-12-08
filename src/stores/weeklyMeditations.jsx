@@ -2267,5 +2267,26 @@ export default {
         </p>
       </>
     )
+  },
+  '2021-12-12': {
+    subTitle: (
+      <>
+        From <i> The Mind of Jesus </i> by William Barclay
+      </>
+    ),
+    content: (
+      <p>
+        “Paul Tournier, the great Christian doctor, declares that life, in order
+        to be life, must necessarily be dialogue. No one can find life in any
+        real sense of the term in isolation. He must find it in contact, in
+        dialogue, with others. The supreme dialogue of life is the dialogue with
+        God. Paul Tournier writes: ‘Jesus Christ is the dialogue re-established.
+        He is God coming to us because we cannot go to him.’ Jesus came with the
+        good news that God is not a God who hides himself, that God is not a God
+        whom only the philosophers may know, that God is the God who at all
+        costs desires to be known, and who is the most costly way has revealed
+        himself to all.”
+      </p>
+    )
   }
 };
