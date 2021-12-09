@@ -5,11 +5,11 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
-    date: '2021-11-28T09:00:00',
+    date: '2021-12-03T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'John 1:1 & 14',
-    title: 'The Supreme Miracle!',
-    videoLink: 'https://www.youtube.com/embed/XXm-X1CwM0o'
+    scripture: 'Matthew 1:18-23',
+    title: 'Immanuel!',
+    videoLink: 'https://www.youtube.com/embed/N4BPKTWTNOY '
   },
   {
     date: '2021-11-21T09:00:00',
