@@ -2288,5 +2288,24 @@ export default {
         himself to all.”
       </p>
     )
+  },
+  '2021-12-19': {
+    subTitle: (
+      <>
+        From <i> The Way of Forgiveness </i> by Marjorie J. Thompson
+      </>
+    ),
+    content: (
+      <p>
+        “God created us for a purpose more astonishing and sublime than we can
+        imagine. Every great Christian theologian and saint has borne witness to
+        this high purpose. The human being is created in the divine image and
+        likeness in order to have continual and intimate communion with the One
+        who made us. We are created to love and be loved by God, born to serve
+        and be served by Christ, destined to enjoy the vitality of the Holy
+        Spirit and in turn receive God’s delight in us forever! Such is God’s
+        good pleasure and our highest bliss.”
+      </p>
+    )
   }
 };
