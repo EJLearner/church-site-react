@@ -5,11 +5,18 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-12-12T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Luke 1:26-38',
+    title: 'Mary’s Greatest Virtue: Reawakening the Sense of Awe!',
+    videoLink: 'https://www.youtube.com/embed/7uqAm2Xm2Z0'
+  },
+  {
     date: '2021-12-03T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 1:18-23',
     title: 'Immanuel!',
-    videoLink: 'https://www.youtube.com/embed/N4BPKTWTNOY '
+    videoLink: 'https://www.youtube.com/embed/N4BPKTWTNOY'
   },
   {
     date: '2021-11-21T09:00:00',
