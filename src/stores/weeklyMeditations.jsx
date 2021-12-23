@@ -2307,5 +2307,23 @@ export default {
         good pleasure and our highest bliss.”
       </p>
     )
+  },
+  '2021-12-26': {
+    subTitle: (
+      <>
+        From <i> Reflections for Ragamuffins </i> by Brennan Manning
+      </>
+    ),
+    content: (
+      <p>
+        “Is there anyone in our midst who pretends to understand the awesome
+        love in the heart of the Abba of Jesus that inspired, motivated, and
+        brought about Christmas?... God entered into our world not with the
+        crushing impact of unbearable glory, but in the way of weakness,
+        vulnerability and need. On the wintry night in an obscure cave, the
+        infant Jesus as a humble, naked, helpless God who allowed us to get
+        close.”
+      </p>
+    )
   }
 };
