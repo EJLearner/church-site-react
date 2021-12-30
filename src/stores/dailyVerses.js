@@ -655,7 +655,14 @@ const bibleComFormattedVerses = {
   '2021-12-29': {verse: 'John 3.1-16'},
   '2021-12-30': {verse: 'John 1.29-34'},
   '2021-12-31': {verse: 'Matthew 1.18-25'},
-  '2022-01-01': {verse: 'Romans 1.1-7'}
+  '2022-01-01': {verse: 'Romans 1.1-7'},
+  '2022-01-02': {verse: 'Psalm 147.12-20'},
+  '2022-01-03': {verse: 'James 1.2-8'},
+  '2022-01-04': {verse: 'Isaiah 9.1-7'},
+  '2022-01-05': {verse: 'Matthew 16.1-4'},
+  '2022-01-06': {verse: 'Acts 2.22-24'},
+  '2022-01-07': {verse: '1 Kings 3.1-9'},
+  '2022-01-08': {verse: 'Hebrews 5.11-14'}
 };
 
 export {bibleComFormattedVerses};
