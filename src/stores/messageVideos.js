@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2021-12-19T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 3:16-17',
+    title: 'Why Jesus Came!!',
+    videoLink: 'https://www.youtube.com/embed/Ti2ulDYG6Ig'
+  },
+  {
     date: '2021-12-12T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 1:26-38',
