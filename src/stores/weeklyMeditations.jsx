@@ -2307,5 +2307,43 @@ export default {
         good pleasure and our highest bliss.”
       </p>
     )
+  },
+  '2021-12-26': {
+    subTitle: (
+      <>
+        From <i> Reflections for Ragamuffins </i> by Brennan Manning
+      </>
+    ),
+    content: (
+      <p>
+        “Is there anyone in our midst who pretends to understand the awesome
+        love in the heart of the Abba of Jesus that inspired, motivated, and
+        brought about Christmas?... God entered into our world not with the
+        crushing impact of unbearable glory, but in the way of weakness,
+        vulnerability and need. On the wintry night in an obscure cave, the
+        infant Jesus as a humble, naked, helpless God who allowed us to get
+        close.”
+      </p>
+    )
+  },
+  '2022-01-02': {
+    subTitle: (
+      <>
+        From <i> Illuminated Life </i> by Joan Chittister
+      </>
+    ),
+    content: (
+      <p>
+        “Contemplation breaks us open to ourselves. The fruit of contemplation
+        is self-knowledge, not self-justification. “The nearer we draw to God,”
+        Abba Mateos said, “the more we see ourselves as sinners.” We see
+        ourselves as we really are, and knowing ourselves we cannot condemn the
+        other. We remember with a blush the public sin that made us mortal. We
+        recognize with dismay the private sin that curls within us in fear of
+        exposure. Then the whole world changes when we know ourselves. We gentle
+        it. The fruit of self-knowledge is kindness. Broken ourselves, we bind
+        tenderly the wounds of the other.”
+      </p>
+    )
   }
 };

@@ -648,7 +648,21 @@ const bibleComFormattedVerses = {
   '2021-12-22': {verse: '1 Samuel 3.15-21'},
   '2021-12-23': {verse: 'Psalm 10.12-18'},
   '2021-12-24': {verse: 'Matthew 9.9-13'},
-  '2021-12-25': {verse: 'Acts 10.34-43'}
+  '2021-12-25': {verse: 'Acts 10.34-43'},
+  '2021-12-26': {verse: 'Psalm 96'},
+  '2021-12-27': {verse: 'Luke 2.1-14'},
+  '2021-12-28': {verse: 'Isaiah 42.1-9'},
+  '2021-12-29': {verse: 'John 3.1-16'},
+  '2021-12-30': {verse: 'John 1.29-34'},
+  '2021-12-31': {verse: 'Matthew 1.18-25'},
+  '2022-01-01': {verse: 'Romans 1.1-7'},
+  '2022-01-02': {verse: 'Psalm 147.12-20'},
+  '2022-01-03': {verse: 'James 1.2-8'},
+  '2022-01-04': {verse: 'Isaiah 9.1-7'},
+  '2022-01-05': {verse: 'Matthew 16.1-4'},
+  '2022-01-06': {verse: 'Acts 2.22-24'},
+  '2022-01-07': {verse: '1 Kings 3.1-9'},
+  '2022-01-08': {verse: 'Hebrews 5.11-14'}
 };
 
 export {bibleComFormattedVerses};
