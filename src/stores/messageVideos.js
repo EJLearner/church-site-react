@@ -5,6 +5,20 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2022-01-09T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 5:6',
+    title: 'From Dire Need to Delightful Fulfillment',
+    videoLink: 'https://www.youtube.com/embed/BCRK-XiQUnY '
+  },
+  {
+    date: '2022-01-02T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Philippians 4:10-13',
+    title: 'The Key to Coping',
+    videoLink: 'https://www.youtube.com/embed/hICJ5H-A8f8'
+  },
+  {
     date: '2021-12-19T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 3:16-17',
