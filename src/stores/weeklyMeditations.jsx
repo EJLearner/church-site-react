@@ -2345,5 +2345,23 @@ export default {
         tenderly the wounds of the other.”
       </p>
     )
+  },
+  '2022-01-09': {
+    subTitle: (
+      <>
+        From <i> Rueben P. Job </i>
+      </>
+    ),
+    content: (
+      <p>
+        Meditation “For Jesus the call of God had the shadow of the cross upon
+        it. Surely Jesus’ sacrifice on the cross, made for us, makes our
+        sacrifice on the cross unnecessary. Can we then expect to escape the
+        shadow of the cross on our journey? Probably not. But we can pray for
+        and receive guidance and strength that will take us safely and
+        victoriously through the dangers and risks we encounter in saying yes to
+        the call of God in our time.”
+      </p>
+    )
   }
 };
