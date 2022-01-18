@@ -5,11 +5,25 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2022-01-16T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Mark 9:28-29',
+    title: 'Why Some of Our Prayers Fail!',
+    videoLink: 'https://www.youtube.com/embed/hyDguKTxsUU '
+  },
+  {
+    date: '2022-01-13T09:00:00',
+    preacher: 'Dr. Irving',
+    preacherLabel: 'Guest Speaker',
+    title: 'A Conversation about Covid with Dr. Irving',
+    videoLink: 'https://www.youtube.com/embed/sdtucPfv3w4 '
+  },
+  {
     date: '2022-01-09T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 5:6',
     title: 'From Dire Need to Delightful Fulfillment',
-    videoLink: 'https://www.youtube.com/embed/BCRK-XiQUnY '
+    videoLink: 'https://www.youtube.com/embed/BCRK-XiQUnY'
   },
   {
     date: '2022-01-02T09:00:00',
