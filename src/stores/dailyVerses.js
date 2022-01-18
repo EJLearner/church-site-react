@@ -669,7 +669,14 @@ const bibleComFormattedVerses = {
   '2022-01-12': {verse: 'John 1.35-42'},
   '2022-01-13': {verse: '2 Corinthians 11.1-15'},
   '2022-01-14': {verse: '2 Corinthians 11.16-30'},
-  '2022-01-15': {verse: 'Matthew 10.34-39'}
+  '2022-01-15': {verse: 'Matthew 10.34-39'},
+  '2022-01-16': {verse: 'Psalm 36.5-10'},
+  '2022-01-17': {verse: 'Psalm 63.1-8'},
+  '2022-01-18': {verse: 'Jeremiah 29.10-14; Isaiah 55.1-9'},
+  '2022-01-19': {verse: 'Matthew 5.1-11'},
+  '2022-01-20': {verse: 'John 8.12-20'},
+  '2022-01-21': {verse: 'Ephesians 1.15-23'},
+  '2022-01-22': {verse: 'Luke 19.1-10'}
 };
 
 export {bibleComFormattedVerses};
