@@ -2363,5 +2363,30 @@ export default {
         the call of God in our time.”
       </p>
     )
+  },
+  '2022-01-30': {
+    subTitle: (
+      <>
+        From <i> Concerning The Inner Life </i> by Evelyn Underhill
+      </>
+    ),
+    content: (
+      <p>
+        “There are two movements which must be plainly present in every complete
+        spiritual life. The energy of its prayer must be directed on the one
+        hand towards God; and on the other towards [people]. The first movement
+        embraces the whole range of spiritual communion between the soul and
+        God; in it we turn toward Divine Reality in adoration, bathing, so to
+        speak, our souls in the Eternal Light. In the second we return, with the
+        added peace and energy thus gained, to the natural world; there to do
+        spiritual work for and with God for [others]. Thus prayer, like the
+        whole of [the] inner life, “swings between the unseen and the seen.” Now
+        both these movements are of course necessary in all Christians; but the
+        point is that the second will only be well done where the first has the
+        central place. The deepening of the soul’s unseen attachments must
+        precede, in order that it may safeguard, the outward swing towards the
+        world.”
+      </p>
+    )
   }
 };
