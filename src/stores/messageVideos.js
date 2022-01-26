@@ -5,18 +5,25 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2022-01-23T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 12:20-28',
+    title: 'Praying for God’s Glory!',
+    videoLink: 'https://www.youtube.com/embed/J_t-9y4m6io'
+  },
+  {
     date: '2022-01-16T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Mark 9:28-29',
     title: 'Why Some of Our Prayers Fail!',
-    videoLink: 'https://www.youtube.com/embed/hyDguKTxsUU '
+    videoLink: 'https://www.youtube.com/embed/hyDguKTxsUU'
   },
   {
     date: '2022-01-13T09:00:00',
     preacher: 'Dr. Irving',
     preacherLabel: 'Guest Speaker',
     title: 'A Conversation about Covid with Dr. Irving',
-    videoLink: 'https://www.youtube.com/embed/sdtucPfv3w4 '
+    videoLink: 'https://www.youtube.com/embed/sdtucPfv3w4'
   },
   {
     date: '2022-01-09T09:00:00',
