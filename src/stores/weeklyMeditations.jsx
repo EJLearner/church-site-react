@@ -2388,5 +2388,32 @@ export default {
         world.”
       </p>
     )
+  },
+  '2022-02-06': {
+    subTitle: (
+      <>
+        From <i> Life of the Beloved </i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “Becoming the Beloved is the great spiritual journey we have to make.
+        Augustine’s words: “My soul is restless until it rests in you, O God,”
+        capture well this journey. I know that the fact that I am always
+        searching for God, always struggling to discover the fullness of Love,
+        always yearning for the complete truth, tells me that I have already
+        been given a taste of God, of Love and of Truth. I can only look for
+        something that I have, to some degree, already found. How can I search
+        for beauty and truth unless that beauty and truth are already known to
+        me in the depth of my heart? It seems that all of us human beings have
+        deep inner memories of the paradise that we have lost. Maybe the word
+        “innocence” is better than the word “paradise.” We were innocent before
+        we started feeling guilty; we were in the light before we entered into
+        the darkness; we were at home before we started to search for a home.
+        Deep in the recesses of our minds and hearts there lies hidden the
+        treasure we seek. We know its preciousness, and we know that it holds
+        the gift we most desire: a life stronger than death.
+      </p>
+    )
   }
 };
