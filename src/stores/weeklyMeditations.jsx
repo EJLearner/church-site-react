@@ -2415,5 +2415,36 @@ export default {
         the gift we most desire: a life stronger than death.
       </p>
     )
+  },
+  '2022-02-13': {
+    subTitle: (
+      <>
+        From <i> Power Through Constructive Thinking </i> by Emmet Fox
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “When life is very difficult, people sometimes lay hold of resources
+          that they never knew they had. The easy-going, self-centered exterior
+          is cast off and a person of heroic stature emerges. Under pressure,
+          false and foolish facades slip away. A new person emerges, or rather
+          the one who has lain dormant these many years, tyrannized by an
+          outward image bearing little resemblance to what was within. Suffering
+          causes the mirror to crack. As the pieces fall away, we see what is
+          hidden behind.
+        </p>
+        <p>
+          In the culture of the industrialized Western world, it is difficult to
+          accept suffering. We are led to expect that it should not occur. If we
+          lack acceptance or love of self-confidence, perhaps some consumer item
+          will redeem the situation. Like some vast pharmacy, our technological
+          society offers a remedy for almost every ailment. We come to believe
+          it is not right to experience pain. We are encouraged to block it out,
+          to forget our misery, to act “normally.” Millions of people walk
+          around pretending to be “normal.”
+        </p>
+      </>
+    )
   }
 };
