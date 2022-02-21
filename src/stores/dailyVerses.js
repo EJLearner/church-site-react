@@ -690,7 +690,14 @@ const bibleComFormattedVerses = {
   '2022-02-16': {verse: 'Psalm 69.1-3'},
   '2022-02-17': {verse: 'Mark 15.25-32'},
   '2022-02-18': {verse: 'Matthew 28.1-10'},
-  '2022-02-19': {verse: 'James 1.12-18'}
+  '2022-02-19': {verse: 'James 1.12-18'},
+  '2022-02-20': {verse: 'Psalm 119.33-40'},
+  '2022-02-21': {verse: 'Matthew 4.1-11'},
+  '2022-02-22': {verse: 'James 4.1-10'},
+  '2022-02-23': {verse: 'Psalm 91.1-16'},
+  '2022-02-24': {verse: 'Luke 22.24-30'},
+  '2022-02-25': {verse: '1 Corinthians 10.1-13'},
+  '2022-02-26': {verse: 'Hebrews 4.14-16'}
 };
 
 export {bibleComFormattedVerses};
