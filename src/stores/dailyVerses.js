@@ -697,7 +697,21 @@ const bibleComFormattedVerses = {
   '2022-02-23': {verse: 'Psalm 91.1-16'},
   '2022-02-24': {verse: 'Luke 22.24-30'},
   '2022-02-25': {verse: '1 Corinthians 10.1-13'},
-  '2022-02-26': {verse: 'Hebrews 4.14-16'}
+  '2022-02-26': {verse: 'Hebrews 4.14-16'},
+  '2022-03-06': {verse: 'Psalm 32'},
+  '2022-03-07': {verse: 'Luke 22.24-30'},
+  '2022-03-08': {verse: 'Isaiah 41.8-10'},
+  '2022-03-09': {verse: 'Luke 16.10-13'},
+  '2022-03-10': {verse: 'Matthew 12.15-21'},
+  '2022-03-11': {verse: '1 Corinthians 4.1-5'},
+  '2022-03-12': {verse: 'John 15.12-16'},
+  '2022-03-13': {verse: 'Psalm 121'},
+  '2022-03-14': {verse: 'Matthew 16.24-28'},
+  '2022-03-15': {verse: 'Acts 14.21-23'},
+  '2022-03-16': {verse: '2 Timothy 2.8-13'},
+  '2022-03-17': {verse: 'Romans 6.5-11'},
+  '2022-03-18': {verse: '1 Thessalonians 3.1-13'},
+  '2022-03-19': {verse: 'Luke 14.25-33'}
 };
 
 export {bibleComFormattedVerses};
