@@ -2463,5 +2463,55 @@ export default {
         have not the virtue to resist.”
       </p>
     )
+  },
+  '2022-03-06': {
+    subTitle: (
+      <>
+        From <i> The Fruits of the Spirit </i> by Evelyn Underhill
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “Faithfulness is consecration in overalls. It is the steady acceptance
+          and performance of the common duty and immediate task without any
+          reference to personal preferences – because it is there to be done and
+          so is a manifestation of the Will of God. It is Elizabeth Leseur
+          settling down each day to do the household accounts quite perfectly
+          (when she would much rather have been in church) and saying, “The
+          duties of my station come before everything else.” It is Brother
+          Lawrence taking his turn in the kitchen, and Saint Francis de Sales
+          taking the burden of a difficult diocese and saying, “I have now
+          little time for prayer – but I do what is the same.
+        </p>
+        <p>
+          The fruits of the Spirit get less and less showing as we go on.
+          Faithfulness means continuing quietly with the job we have been given,
+          in the situation where we have been placed; not yielding to the
+          restless desire for change. It means tending the lamp quietly for God
+          without wondering how much longer it has got to go on.”
+        </p>
+      </>
+    )
+  },
+  '2022-03-13': {
+    subTitle: (
+      <>
+        From <i> Mere Christianity </i> by C. S. Lewis
+      </>
+    ),
+    content: (
+      <p>
+        “The Christian way is different: harder, and easier. Christ says, “Give
+        me All. I don’t want so much of your time and so much of your money and
+        so much of your work: I want You. I have not come to torment your
+        natural self, but to kill it. No half-measures are any good. I don’t
+        want to cut off a branch here and a branch there, I want to have the
+        whole tree down…Hand over the whole natural self, all the desires which
+        you think innocent as well as the ones you think wicked – the whole
+        outfit. I will give you a new self instead. In fact, I will give you
+        Myself: my own will shall become yours.”
+      </p>
+    )
   }
 };
