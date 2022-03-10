@@ -2426,5 +2426,130 @@ export default {
         world.”
       </p>
     )
+  },
+  '2022-02-06': {
+    subTitle: (
+      <>
+        From <i> Life of the Beloved </i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “Becoming the Beloved is the great spiritual journey we have to make.
+        Augustine’s words: “My soul is restless until it rests in you, O God,”
+        capture well this journey. I know that the fact that I am always
+        searching for God, always struggling to discover the fullness of Love,
+        always yearning for the complete truth, tells me that I have already
+        been given a taste of God, of Love and of Truth. I can only look for
+        something that I have, to some degree, already found. How can I search
+        for beauty and truth unless that beauty and truth are already known to
+        me in the depth of my heart? It seems that all of us human beings have
+        deep inner memories of the paradise that we have lost. Maybe the word
+        “innocence” is better than the word “paradise.” We were innocent before
+        we started feeling guilty; we were in the light before we entered into
+        the darkness; we were at home before we started to search for a home.
+        Deep in the recesses of our minds and hearts there lies hidden the
+        treasure we seek. We know its preciousness, and we know that it holds
+        the gift we most desire: a life stronger than death.
+      </p>
+    )
+  },
+  '2022-02-13': {
+    subTitle: (
+      <>
+        From <i> Power Through Constructive Thinking </i> by Emmet Fox
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “When life is very difficult, people sometimes lay hold of resources
+          that they never knew they had. The easy-going, self-centered exterior
+          is cast off and a person of heroic stature emerges. Under pressure,
+          false and foolish facades slip away. A new person emerges, or rather
+          the one who has lain dormant these many years, tyrannized by an
+          outward image bearing little resemblance to what was within. Suffering
+          causes the mirror to crack. As the pieces fall away, we see what is
+          hidden behind.
+        </p>
+        <p>
+          In the culture of the industrialized Western world, it is difficult to
+          accept suffering. We are led to expect that it should not occur. If we
+          lack acceptance or love of self-confidence, perhaps some consumer item
+          will redeem the situation. Like some vast pharmacy, our technological
+          society offers a remedy for almost every ailment. We come to believe
+          it is not right to experience pain. We are encouraged to block it out,
+          to forget our misery, to act “normally.” Millions of people walk
+          around pretending to be “normal.”
+        </p>
+      </>
+    )
+  },
+  '2022-02-20': {
+    subTitle: (
+      <>
+        From <i> A Celebration of Faith </i> by Austin Farrer
+      </>
+    ),
+    content: (
+      <p>
+        “Temptation is what distracts us, beguiles us or bullies us off the
+        path. Temptation is what makes real life different from the world of our
+        dreams. We dream a world which is wax under the moulding of our
+        ambitions or of our aspirations; we meet a world which faces us with
+        trials we have not the character to surmount, and with seductions we
+        have not the virtue to resist.”
+      </p>
+    )
+  },
+  '2022-03-06': {
+    subTitle: (
+      <>
+        From <i> The Fruits of the Spirit </i> by Evelyn Underhill
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “Faithfulness is consecration in overalls. It is the steady acceptance
+          and performance of the common duty and immediate task without any
+          reference to personal preferences – because it is there to be done and
+          so is a manifestation of the Will of God. It is Elizabeth Leseur
+          settling down each day to do the household accounts quite perfectly
+          (when she would much rather have been in church) and saying, “The
+          duties of my station come before everything else.” It is Brother
+          Lawrence taking his turn in the kitchen, and Saint Francis de Sales
+          taking the burden of a difficult diocese and saying, “I have now
+          little time for prayer – but I do what is the same.
+        </p>
+        <p>
+          The fruits of the Spirit get less and less showing as we go on.
+          Faithfulness means continuing quietly with the job we have been given,
+          in the situation where we have been placed; not yielding to the
+          restless desire for change. It means tending the lamp quietly for God
+          without wondering how much longer it has got to go on.”
+        </p>
+      </>
+    )
+  },
+  '2022-03-13': {
+    subTitle: (
+      <>
+        From <i> Mere Christianity </i> by C. S. Lewis
+      </>
+    ),
+    content: (
+      <p>
+        “The Christian way is different: harder, and easier. Christ says, “Give
+        me All. I don’t want so much of your time and so much of your money and
+        so much of your work: I want You. I have not come to torment your
+        natural self, but to kill it. No half-measures are any good. I don’t
+        want to cut off a branch here and a branch there, I want to have the
+        whole tree down…Hand over the whole natural self, all the desires which
+        you think innocent as well as the ones you think wicked – the whole
+        outfit. I will give you a new self instead. In fact, I will give you
+        Myself: my own will shall become yours.”
+      </p>
+    )
   }
 };
