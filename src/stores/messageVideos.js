@@ -5,6 +5,40 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2022-03-06T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Mark 10:32-34',
+    title: 'Going Up to Jerusalem!!',
+    videoLink: 'https://www.youtube.com/embed/WXCQevwfILg'
+  },
+  {
+    date: '2022-02-27T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Judges 3:15',
+    title: 'Handicapped Heroes',
+    videoLink: 'https://www.youtube.com/embed/0DTca4kBiBU'
+  },
+  {
+    date: '2022-02-20T09:00:00',
+    preacher: PREACHERS.D_NELSON,
+    title: 'Who Am I',
+    videoLink: 'https://www.youtube.com/embed/e5mJQstvm4g'
+  },
+  {
+    date: '2022-02-06T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 14:12-14',
+    title: 'A Calling to Greater Things',
+    videoLink: 'https://www.youtube.com/embed/L9KeMe-HmbI'
+  },
+  {
+    date: '2022-01-30T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Isaiah 9:2',
+    title: 'When the Darkness Is Not Dark!',
+    videoLink: 'https://www.youtube.com/embed/KRn-41pjS_U'
+  },
+  {
     date: '2022-01-23T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 12:20-28',
