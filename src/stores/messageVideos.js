@@ -5,11 +5,11 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
-    date: '2022-03-06T09:00:00',
+    date: '2022-03-13T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Mark 10:32-34',
-    title: 'Going Up to Jerusalem!!',
-    videoLink: 'https://www.youtube.com/embed/WXCQevwfILg'
+    title: 'Satan’s Temporary Leave of Absence',
+    videoLink: 'https://www.youtube.com/embed/4vGGW_mDeFA'
   },
   {
     date: '2022-02-27T09:00:00',
