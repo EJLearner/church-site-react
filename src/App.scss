@@ -1,5 +1,3 @@
-@import './_variables.scss';
-
 html {
   height: 100%;
   font-family: var(--century-gothic);
@@ -72,7 +70,10 @@ a:hover {
 }
 
 #leftcontent {
-  @include content-widths();
+  width: 80%;
+  min-width: 800px;
+  max-width: 1000px;
+  margin: auto;
   font-family: var(--calibri);
   color: var(--gray63);
 
@@ -82,7 +83,7 @@ a:hover {
     padding-right: 100px;
     margin-left: 1em;
     margin-bottom: 2em;
-    border-bottom: 1px solid : var(--green-50);
+    border-bottom: 1px solid var(--green-50);
     font-family: var(--calibri);
     font-size: 80%;
     text-transform: uppercase;

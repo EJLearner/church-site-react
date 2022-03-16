@@ -1,5 +1,7 @@
 @import '../../../_variables';
 
+$temp-variable-for-css-variable-green-50: rgb(115, 175, 85);
+
 .check-in-out-page {
   padding: 1em;
 
@@ -31,7 +33,10 @@
 
     .check-in-button {
       background-color: var(--green-50);
-      background-image: linear-gradient(lighten($green-50, 15), $green-50);
+      background-image: linear-gradient(
+        lighten($temp-variable-for-css-variable-green-50, 15),
+        var(--green-50)
+      );
     }
 
     .disabled {
