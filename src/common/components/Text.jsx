@@ -17,7 +17,7 @@ const TextStyle = styled.div`
     border: 1px solid gray;
     border-radius: 5px;
     box-shadow: 2px 2px 2px 0 #c2c2c2;
-    font-family: $century-gothic;
+    font-family: var(--century-gothic);
     padding: 6px;
   }
 

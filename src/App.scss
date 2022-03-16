@@ -2,11 +2,11 @@
 
 html {
   height: 100%;
-  font-family: $century-gothic;
+  font-family: var(--century-gothic);
 }
 
 body {
-  background-color: $standard-background;
+  background-color: var(--standard-background);
   color: rgb(34, 34, 34);
   height: 100%;
   padding: 0px;
@@ -34,7 +34,7 @@ input[type='radio'] {
 
   li a,
   li a:visited {
-    color: $black;
+    color: var(--black);
     text-align: center;
     text-decoration: none;
   }
@@ -49,12 +49,12 @@ input[type='radio'] {
   }
 
   li:last-child {
-    color: $green-80;
+    color: var(--green-80);
   }
 
   li:last-child a,
   li:last-child a:visited {
-    color: $green-80;
+    color: var(--green-80);
   }
 }
 
@@ -73,8 +73,8 @@ a:hover {
 
 #leftcontent {
   @include content-widths();
-  font-family: $calibri;
-  color: $gray63;
+  font-family: var(--calibri);
+  color: var(--gray63);
 
   h1 {
     display: inline-block;
@@ -82,8 +82,8 @@ a:hover {
     padding-right: 100px;
     margin-left: 1em;
     margin-bottom: 2em;
-    border-bottom: 1px solid $green-50;
-    font-family: $calibri;
+    border-bottom: 1px solid : var(--green-50);
+    font-family: var(--calibri);
     font-size: 80%;
     text-transform: uppercase;
     color: var(--green-20);
@@ -91,7 +91,7 @@ a:hover {
 
     span {
       font-size: 150%;
-      color: $green-50;
+      color: var(--green-50);
     }
   }
 
@@ -110,7 +110,7 @@ a:hover {
 }
 
 .fancy-title {
-  color: $blue-50;
+  color: var(--blue-50);
   text-transform: uppercase;
 
   &::first-letter {
@@ -183,17 +183,17 @@ a:hover {
   font-weight: lighter;
 }
 .maroon {
-  color: $maroon;
+  color: var(--maroon);
 }
 .bold {
   font-weight: bolder;
 }
 .black {
-  color: $black;
+  color: var(--black);
 }
 .white {
-  color: $white;
+  color: var(--white);
 }
 .gray {
-  color: $gray41;
+  color: var(--gray41);
 }

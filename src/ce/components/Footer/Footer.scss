@@ -2,7 +2,7 @@
 
 // footer area
 #footerbar {
-  background-color: $gray180;
+  background-color: var(--gray180);
 }
 
 #footer {
@@ -15,8 +15,8 @@
 #footerlinks {
   float: left;
   overflow: hidden;
-  color: $gray77;
-  font-family: $calibri;
+  color: var(--gray77);
+  font-family: var(--calibri);
 }
 
 .footlinklist {
@@ -40,12 +40,12 @@
   }
 
   a {
-    color: $gray77;
+    color: var(--gray77);
     text-decoration: none;
   }
 
   a:visited {
-    color: $gray77;
+    color: var(--gray77);
     text-decoration: none;
   }
 }
@@ -53,7 +53,7 @@
 #socialcopyright {
   margin-left: 800px;
   padding-top: 15px;
-  font-family: $calibri;
+  font-family: var(--calibri);
 
   i {
     border-bottom: 1px solid blue;
@@ -66,6 +66,6 @@
 
   a,
   a:visited {
-    color: $black;
+    color: var(--black);
   }
 }

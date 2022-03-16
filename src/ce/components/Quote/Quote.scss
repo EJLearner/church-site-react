@@ -5,8 +5,8 @@
   padding-top: 3em;
   padding-bottom: 2em;
   text-align: center;
-  font-family: $cambria;
+  font-family: var(--cambria);
   font-style: italic;
-  color: $gray;
+  color: var(--gray);
   flex: 0 0 auto;
 }

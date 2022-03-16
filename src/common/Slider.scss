@@ -1,7 +1,5 @@
 @import '../variables';
 
-$button-background: rgb(41, 41, 41);
-
 #leftcontent.slider-chris {
   position: relative;
   width: 100%;
@@ -24,7 +22,7 @@ $button-background: rgb(41, 41, 41);
     font-size: 20px;
     @mixin slider-control-button() {
       position: absolute;
-      color: $button-background;
+      color: var(--gray41);
       background: transparent;
       border: none;
       z-index: 20;
@@ -63,28 +61,28 @@ $button-background: rgb(41, 41, 41);
         position: relative;
 
         .fa-circle {
-          color: $button-background;
+          color: var(--gray41);
           transition: color 2s;
         }
 
         .fa-circle-o {
-          color: $white;
+          color: var(--white);
           transition: color 2s;
         }
 
         &.current {
           .fa-circle {
-            color: $white;
+            color: var(--white);
           }
 
           .fa-circle-o {
-            color: $button-background;
+            color: var(--gray41);
           }
         }
 
         .fa-pause,
         .fa-play {
-          color: $white;
+          color: var(--white);
         }
 
         // stacked elements are in the wrong place without this

@@ -40,12 +40,12 @@ const GlobalStyle = createGlobalStyle`
     --green: green;
     --gray: gray;
 
-    --standard-background: $white;
-    --standard-text: $black;
-    --text-on-dark: $white;
+    --standard-background: var(--white);
+    --standard-text: var(--black);
+    --text-on-dark: var(--white);
 
     --ct-primary: #c00000;
-    --ct-text-on-primary: $text-on-dark;
+    --ct-text-on-primary: var(--text-on-dark);
     --ct-accent: #00bae2;
     --ct-second: #ff9b71;
     --ct-third: #d2b48c;

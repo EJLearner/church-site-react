@@ -4,7 +4,7 @@
   padding: 1em;
 
   h1 {
-    color: $green-50;
+    color: var(--green-50);
   }
 
   .who-checking {
@@ -16,7 +16,7 @@
   }
 
   .checkbox-pattern label {
-    color: $green-50;
+    color: var(--green-50);
   }
 
   .button-div {
@@ -30,12 +30,12 @@
     }
 
     .check-in-button {
-      background-color: $green-50;
+      background-color: var(--green-50);
       background-image: linear-gradient(lighten($green-50, 15), $green-50);
     }
 
     .disabled {
-      background-color: $gray217;
+      background-color: var(--gray217);
       background-image: none;
     }
   }

@@ -13,7 +13,7 @@
     }
 
     h3 {
-      color: $gray180;
+      color: var(--gray180);
       font-weight: normal;
       font-size: 15px;
       margin-top: 4px;
@@ -42,7 +42,7 @@
 
     .location {
       margin-top: 0.5em;
-      color: $gray83;
+      color: var(--gray83);
     }
 
     .long-description {

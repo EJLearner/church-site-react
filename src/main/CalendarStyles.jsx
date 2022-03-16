@@ -49,7 +49,7 @@ const CalendarStyles = styled.div`
     }
     button {
       // would rather use "initial" but that doesn't work for IE11
-      background-color: $standard-background;
+      background-color: var(--standard-background);
       border: none;
 
       &:hover {
@@ -74,11 +74,11 @@ const CalendarStyles = styled.div`
     }
 
     td.other-month {
-      color: $gray180;
+      color: var(--gray180);
     }
 
     td {
-      background-color: $peach;
+      background-color: var(--peach);
       height: 75px;
       width: 150px;
     }

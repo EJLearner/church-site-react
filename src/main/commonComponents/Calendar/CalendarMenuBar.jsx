@@ -11,7 +11,7 @@ const CalendarMenuBarStyles = styled.div`
     padding: 0;
     position: relative;
     align-items: center;
-    font-family: $calibri;
+    font-family: var(--calibri);
     font-size: 20px;
     justify-content: space-between;
     min-width: 800px;

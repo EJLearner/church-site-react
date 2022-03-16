@@ -2,7 +2,7 @@
 
 .ce-left-links {
   // display: inline-block;
-  font-family: $century-gothic;
+  font-family: var(--century-gothic);
   line-height: 200%;
   text-transform: uppercase;
   padding-right: 2em;
@@ -10,7 +10,7 @@
 
 .ce-left-links a,
 .ce-left-links a:visited {
-  color: $green-50;
+  color: var(--green-50);
 }
 
 .ce-left-links .current-page-link a,
