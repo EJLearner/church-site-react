@@ -41,7 +41,7 @@ input[type='radio'] {
 
   li.current-page-link a,
   li.current-page-link a:visited {
-    color: $orange;
+    color: var(--orange);
   }
 
   li a:hover {
@@ -86,7 +86,7 @@ a:hover {
     font-family: $calibri;
     font-size: 80%;
     text-transform: uppercase;
-    color: $green-20;
+    color: var(--green-20);
     font-weight: normal;
 
     span {

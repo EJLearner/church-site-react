@@ -8,7 +8,7 @@
 
   h1 {
     border-bottom: 1px solid $green-50;
-    color: $green-20;
+    color: var(--green-20);
     display: block;
     padding-bottom: 5px;
     font-family: $century-gothic;
@@ -47,7 +47,7 @@
   }
 
   h2 {
-    color: $green-20;
+    color: var(--green-20);
     font-family: $century-gothic;
     font-size: 18px;
     font-weight: normal;
@@ -127,13 +127,13 @@
   }
 
   .left-button.childrens-church {
-    border-color: $orange;
-    color: $orange;
+    border-color: var(--orange);
+    color: var(--orange);
   }
 
   .right-button.childrens-church {
-    background-color: $orange;
-    border-color: $orange;
+    background-color: var(--orange);
+    border-color: var(--orange);
     color: $white;
   }
 }

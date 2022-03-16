@@ -12,7 +12,7 @@
     font-family: $garamond;
     font-weight: normal;
     font-size: 48px;
-    color: $orange;
+    color: var(--orange);
     margin-bottom: 0px;
     margin-top: 16px;
   }
@@ -21,7 +21,7 @@
     font-weight: normal;
     font-family: $garamond;
     font-size: 24px;
-    color: $orange;
+    color: var(--orange);
     margin-top: 0px;
   }
 
@@ -52,7 +52,7 @@
   }
 
   .error-list i {
-    color: $orange;
+    color: var(--orange);
   }
 
   .success {
