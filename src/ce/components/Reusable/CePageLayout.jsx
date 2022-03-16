@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import LeftLinks from './LeftLinks/LeftLinks';
 import SubPageSwitch from './SubPageSwitch/SubPageSwitch';
 
-import '../../cePageStyles.scss';
+import '../../cePageStyles.css';
 
 class CePageLayout extends Component {
   render() {

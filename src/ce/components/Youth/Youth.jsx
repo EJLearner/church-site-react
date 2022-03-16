@@ -10,7 +10,7 @@ import SundaySchool from './SundaySchool';
 import Ushers from './Ushers';
 import VacationBibleSchool from './VacationBibleSchool';
 
-import '../../cePageStyles.scss';
+import '../../cePageStyles.css';
 
 class Youth extends Component {
   getLinkData() {

@@ -2,14 +2,14 @@ import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import {Route, Switch} from 'react-router-dom';
 
-import TheVision from './TheVision';
-import PowerPoint from './PowerPoint';
-import Participants2016 from './Participants2016';
-import Workgroups from './Workgroups';
-
 import CePageLayout from '../Reusable/CePageLayout';
 
-import '../../cePageStyles.scss';
+import Participants2016 from './Participants2016';
+import PowerPoint from './PowerPoint';
+import TheVision from './TheVision';
+import Workgroups from './Workgroups';
+
+import '../../cePageStyles.css';
 
 class Vision extends Component {
   generateLinkData() {
@@ -40,7 +40,7 @@ class Vision extends Component {
 
   renderRoutes(routeData) {
     const routes = [];
-    routeData.forEach(route => {
+    routeData.forEach((route) => {
       routes.push(
         <Route key={route.path} path={route.path} render={() => route.render} />
       );
