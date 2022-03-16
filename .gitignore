@@ -9,8 +9,6 @@
 # production
 /build
 
-#styling
-**/*.css
 
 # misc
 .DS_Store

@@ -1,0 +1,16 @@
+#titlebar {
+  background-color: var(--green-20);
+  color: var(--white);
+  display: flex;
+  font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+  padding: 0.5em 1em;
+  justify-content: space-between;
+  flex-shrink: 0; }
+
+#website-title {
+  font-size: 80%;
+  padding-left: 5em; }
+
+#titlebar a,
+#titlebar a:visited {
+  color: var(--white); }
