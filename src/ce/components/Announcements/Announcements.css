@@ -1,18 +1,25 @@
 .announcements-content {
-  font-size: 80%; }
-  .announcements-content a:hover {
-    text-decoration: none; }
-    .announcements-content a:hover h3 {
-      text-decoration: underline; }
-  .announcements-content h3 {
-    margin: 5px 0; }
+  font-size: 80%;
+}
+.announcements-content a:hover {
+  text-decoration: none;
+}
+.announcements-content a:hover h3 {
+  text-decoration: underline;
+}
+.announcements-content h3 {
+  margin: 5px 0;
+}
 
 div.date {
-  color: var(--orange); }
+  color: var(--orange);
+}
 
 div.event {
   margin-top: 5px;
-  color: var(--black); }
+  color: var(--black);
+}
 
 div.event > div {
-  line-height: 1.2em; }
+  line-height: 1.2em;
+}

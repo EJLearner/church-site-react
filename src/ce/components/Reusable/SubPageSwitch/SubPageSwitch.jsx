@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 import routePaths from '../../../../routePaths';
 import commonUtils from '../../../../utils/commonUtils';
 
-const SubPageSwitch = props => {
+const SubPageSwitch = (props) => {
   const {linkData} = props;
 
-  const makeRoutes = linkData => {
+  const makeRoutes = (linkData) => {
     const routes = [];
     linkData.forEach(({children, path, pathKey, render}) => {
       const computedPath = commonUtils.getComputedPath(path, pathKey);
@@ -21,7 +21,7 @@ const SubPageSwitch = props => {
         const oldPathNamesKey = `OLD_PATHS_${pathKey}`;
         // eslint-disable-next-line no-prototype-builtins
         if (routePaths.hasOwnProperty(oldPathNamesKey)) {
-          routePaths[oldPathNamesKey].forEach(oldPath => {
+          routePaths[oldPathNamesKey].forEach((oldPath) => {
             routes.push(
               <Redirect from={oldPath} key={oldPath} to={computedPath} />
             );

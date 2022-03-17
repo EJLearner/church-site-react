@@ -622,7 +622,7 @@ const MainAboutUs = () => {
                 <SideMenu
                   currentId={contentId}
                   menuData={bottomContentData}
-                  onClick={id => setContentId(id)}
+                  onClick={(id) => setContentId(id)}
                   title="About Us"
                 />
               </ContentLeftSide>

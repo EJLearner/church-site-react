@@ -1,8 +1,10 @@
 .text-box-pattern {
   display: inline-block;
-  margin: 0.5em 3em 0.5em 0; }
-  .text-box-pattern label {
-    display: block; }
+  margin: 0.5em 3em 0.5em 0;
+}
+.text-box-pattern label {
+  display: block;
+}
 
 input,
 textarea {
@@ -10,4 +12,5 @@ textarea {
   border-radius: 5px;
   box-shadow: 2px 2px 2px 0 #c2c2c2;
   font-family: var(--century-gothic);
-  padding: 6px; }
+  padding: 6px;
+}

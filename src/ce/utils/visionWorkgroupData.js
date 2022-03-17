@@ -91,7 +91,7 @@ const workGroupData = {
   },
 
   getWorkGroupNames: () => {
-    return workGroups.map(group => group.name);
+    return workGroups.map((group) => group.name);
   }
 };
 

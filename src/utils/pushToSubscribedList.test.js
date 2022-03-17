@@ -63,10 +63,7 @@ describe.skip('pushToSubscribedList', () => {
     beforeEach(() => {
       pushToSubscribedList(testEmail, testSource, testName);
 
-      setObject = firebase
-        .database()
-        .ref()
-        .child().set.mock.calls[0][0];
+      setObject = firebase.database().ref().child().set.mock.calls[0][0];
     });
 
     it('uses email from argument', () => {

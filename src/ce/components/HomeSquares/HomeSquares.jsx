@@ -12,7 +12,7 @@ import calendarPic from '../../../assets/ce/images/homepage/calendar.png';
 import kidsPic from '../../../assets/ce/images/homepage/kids.jpg';
 import leadershipPic from '../../../assets/ce/images/homepage/leadership.png';
 
-const HomeSquare = props => {
+const HomeSquare = (props) => {
   const {children, linkTo, scroll, title} = props;
 
   const scrollClass = scroll ? ' scroll' : '';
@@ -28,7 +28,7 @@ const HomeSquare = props => {
   );
 };
 
-const HomeSquares = props => {
+const HomeSquares = (props) => {
   return (
     <div className="home-page-bottom-content">
       <HomeSquare scroll title="Announcements">

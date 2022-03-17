@@ -7,7 +7,6 @@ import constants from '../../../utils/constants';
 
 import CcCheckin from './CcCheckin';
 
-
 describe('#render', () => {
   it('renders BaseCheckin', () => {
     const wrapper = shallow(<CcCheckin />);

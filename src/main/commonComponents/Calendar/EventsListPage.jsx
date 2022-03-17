@@ -138,13 +138,8 @@ class EventsListPage extends Component {
   }
 
   render() {
-    const {
-      highlightWeek,
-      onDateChange,
-      pageTitle,
-      selectedDay,
-      subTitle
-    } = this.props;
+    const {highlightWeek, onDateChange, pageTitle, selectedDay, subTitle} =
+      this.props;
 
     const renderedEvents = this.renderEvents();
     const renderEventsOrNoEvents = renderedEvents.length

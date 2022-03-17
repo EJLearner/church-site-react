@@ -130,9 +130,8 @@ const VotingInformationPage = () => {
         <VotingInfoStyles>
           <h1>
             <span className="vote">Vote.</span>
-            <span className="it">
-              It
-            </span> <span className="does">does</span> matter.
+            <span className="it">It</span> <span className="does">does</span>{' '}
+            matter.
           </h1>
           <h2>
             Read on for everything you need to know about mail-in and early in

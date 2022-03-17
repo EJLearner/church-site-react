@@ -15,8 +15,8 @@ import {CHILD_STATUS, PAGE_STATUS} from './BaseCheckinOutConstants';
 import './BaseCheckinOut.css';
 import {Link} from 'react-router-dom';
 
-const bindThese = function(functions, context) {
-  functions.forEach(func => {
+const bindThese = function (functions, context) {
+  functions.forEach((func) => {
     context[func] = context[func].bind(context);
   });
 };
@@ -53,7 +53,7 @@ class BaseCheckin extends Component {
       .database()
       .ref(this.props.registeredChildrenRefName);
 
-    registeredRef.on('value', snapshot => {
+    registeredRef.on('value', (snapshot) => {
       const registered = snapshot.val();
       this.setState({registered});
     });
@@ -63,20 +63,20 @@ class BaseCheckin extends Component {
       .database()
       .ref(this.props.registryAccessRefName);
 
-    regStaffRef.on('value', snapshot => {
+    regStaffRef.on('value', (snapshot) => {
       const regStaff = snapshot.val();
       this.setState({regStaff});
     });
 
     const todaysLogRef = this._getTodaysLogRef();
 
-    todaysLogRef.on('value', snapshot => {
+    todaysLogRef.on('value', (snapshot) => {
       const checkedinIds = _.map(snapshot.val(), this.props.registryIdName);
       this.setState({checkedinIds});
     });
 
     // keeps user logged in on a page refresh
-    auth.onAuthStateChanged(user => {
+    auth.onAuthStateChanged((user) => {
       if (user) {
         this.setState({user});
       }
@@ -113,7 +113,7 @@ class BaseCheckin extends Component {
       const children = this._getSelectedChildren();
       const todaysLogRef = this._getTodaysLogRef();
 
-      _.forEach(children, child => {
+      _.forEach(children, (child) => {
         const uploadChild = _.cloneDeep(child);
         uploadChild[`${this.props.logbookRefName}Id`] = utils.generatePushID();
         uploadChild.checkInTime = new Date().toISOString();
@@ -135,7 +135,7 @@ class BaseCheckin extends Component {
   _onSearch() {
     const childrenOfParent = {};
 
-    _.forEach(_.cloneDeep(this.state.registered), child => {
+    _.forEach(_.cloneDeep(this.state.registered), (child) => {
       if (_.includes(child.parentNames, this.state.parentName)) {
         childrenOfParent[child[this.props.registryIdName]] = child;
       }
@@ -148,7 +148,7 @@ class BaseCheckin extends Component {
   }
 
   _handleLoginClick() {
-    auth.signInWithPopup(provider).then(result => {
+    auth.signInWithPopup(provider).then((result) => {
       const {user} = result;
       this.setState({user});
     });
@@ -161,7 +161,7 @@ class BaseCheckin extends Component {
   _listChildren() {
     const {childrenOfParent, checkedinIds} = this.state;
 
-    const checkListItems = _.map(childrenOfParent, child => {
+    const checkListItems = _.map(childrenOfParent, (child) => {
       const {childDob, childName} = child;
       const registeredId = child[this.props.registryIdName];
       const checkedIn = _.includes(checkedinIds, registeredId);
@@ -198,7 +198,7 @@ class BaseCheckin extends Component {
   }
 
   _getSelectedChildren() {
-    return _.filter(this.state.childrenOfParent, child => child.checked);
+    return _.filter(this.state.childrenOfParent, (child) => child.checked);
   }
 
   _renderChildSelectDiv() {
@@ -231,7 +231,7 @@ class BaseCheckin extends Component {
 
     const childrenOfParentThatAreNotCheckedIn = _.filter(
       childrenOfParent,
-      child => !_.includes(checkedinIds, child[this.props.registryIdName])
+      (child) => !_.includes(checkedinIds, child[this.props.registryIdName])
     );
 
     if (!childrenOfParentThatAreNotCheckedIn.length) {

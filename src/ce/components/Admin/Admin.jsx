@@ -28,13 +28,13 @@ class Admin extends Component {
     // update adminUsers state based on firebase data status
     const adminUsersRef = firebase.database().ref('user_groups/admins');
 
-    adminUsersRef.on('value', snapshot => {
+    adminUsersRef.on('value', (snapshot) => {
       const adminUsers = snapshot.val();
       this.setState({adminUsers});
     });
 
     // keeps user logged in on a page refresh
-    auth.onAuthStateChanged(user => {
+    auth.onAuthStateChanged((user) => {
       if (user) {
         this.setState({user});
       }
@@ -42,7 +42,7 @@ class Admin extends Component {
   }
 
   login() {
-    auth.signInWithPopup(provider).then(result => {
+    auth.signInWithPopup(provider).then((result) => {
       const {user} = result;
       this.setState({user});
     });

@@ -70,13 +70,13 @@ class EventsListPage extends Component {
 
     const showDate = this.props.dates.length > 1;
 
-    _.each(this.props.dates, date => {
+    _.each(this.props.dates, (date) => {
       const eventsForDate = calendarDatesUtils.getEventsForDate(
         this.props.storedDates,
         date
       );
 
-      const eventsForDateWithDateAddedAsProp = eventsForDate.map(event => {
+      const eventsForDateWithDateAddedAsProp = eventsForDate.map((event) => {
         let eventWithDate;
         if (typeof event === 'object') {
           eventWithDate = _.cloneDeep(event);
@@ -121,13 +121,8 @@ class EventsListPage extends Component {
   }
 
   render() {
-    const {
-      highlightWeek,
-      onDateChange,
-      pageTitle,
-      selectedDay,
-      subTitle
-    } = this.props;
+    const {highlightWeek, onDateChange, pageTitle, selectedDay, subTitle} =
+      this.props;
 
     const renderedEvents = this.renderEvents();
     const renderEventsOrNoEvents = renderedEvents.length

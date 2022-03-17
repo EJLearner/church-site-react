@@ -3,16 +3,19 @@
   font-family: var(--century-gothic);
   justify-content: space-around;
   min-width: 800px;
-  padding-top: 5em; }
+  padding-top: 5em;
+}
 
 .home-square {
   display: inline-block;
   height: 200px;
   position: relative;
-  width: 300px; }
+  width: 300px;
+}
 
 .home-square.scroll {
-  overflow-y: auto; }
+  overflow-y: auto;
+}
 
 .home-square h2 {
   border-bottom: 1px solid var(--green-50);
@@ -21,13 +24,16 @@
   font-size: 100%;
   line-height: 0.01em;
   text-transform: uppercase;
-  width: 100%; }
+  width: 100%;
+}
 
 .home-square h2 span {
   background: white;
-  padding-right: 1em; }
+  padding-right: 1em;
+}
 
 .home-square img {
   width: 100%;
   height: auto;
-  max-height: 90%; }
+  max-height: 90%;
+}

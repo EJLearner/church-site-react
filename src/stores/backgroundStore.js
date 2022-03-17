@@ -22,7 +22,7 @@ let backgroundSource = DEFAULT_BACKGROUND_SOURCE;
 
 const backgroundStore = {
   dispatchAll() {
-    Object.values(callbacks).forEach(callback => {
+    Object.values(callbacks).forEach((callback) => {
       callback(backgroundSource);
     });
   },

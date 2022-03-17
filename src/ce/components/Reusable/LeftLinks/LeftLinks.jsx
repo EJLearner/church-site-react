@@ -6,7 +6,7 @@ import commonUtils from '../../../../utils/commonUtils';
 
 import './LeftLink.css';
 
-const LeftLinks = props => {
+const LeftLinks = (props) => {
   const renderLinks = (linkData, pathname) => {
     if (!linkData || !pathname) {
       return null;
@@ -16,7 +16,7 @@ const LeftLinks = props => {
       return commonUtils.getComputedPath(path, pathKey) === pathname;
     });
 
-    const listItems = linkData.map(link => {
+    const listItems = linkData.map((link) => {
       const {path, pathKey, text, isDefault} = link;
       const computedPath = commonUtils.getComputedPath(path, pathKey);
       const currentPage = pathname === computedPath || (isRoot && isDefault);

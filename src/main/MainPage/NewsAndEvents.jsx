@@ -214,8 +214,8 @@ const NewsAndEvents = () => {
   const [showNewsLink, setShowNewsLink] = useState(false);
 
   useEffect(() => {
-    const newsAndEventsContentHeight = document?.getElementById('news-items')
-      ?.offsetHeight;
+    const newsAndEventsContentHeight =
+      document?.getElementById('news-items')?.offsetHeight;
 
     if (newsAndEventsContentHeight > MAX_NEWS_DISPLAY_HEIGHT) {
       setShowNewsLink(true);

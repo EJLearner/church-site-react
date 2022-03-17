@@ -6,7 +6,8 @@
   justify-content: space-between;
   min-width: 800px;
   padding: 16px 16px;
-  flex: 0 0 auto; }
+  flex: 0 0 auto;
+}
 
 .menu-bar ul {
   align-content: center;
@@ -18,16 +19,20 @@
   padding: 3px 0;
   list-style-type: none;
   text-align: left;
-  width: 80%; }
+  width: 80%;
+}
 
 .menu-bar li {
   display: flex;
   margin-top: 0px;
   padding: 0 8px;
-  text-align: center; }
+  text-align: center;
+}
 
 .logo {
-  width: 10%; }
+  width: 10%;
+}
 
 .logo img {
-  width: 100%; }
+  width: 100%;
+}

@@ -42,7 +42,7 @@ class CalendarDay extends Component {
     return (
       <EventsListPage
         dates={[this.state.selectedDay]}
-        onDateChange={dayString => this.onDateChange(dayString)}
+        onDateChange={(dayString) => this.onDateChange(dayString)}
         pageTitle={pageTitle}
         selectedDay={this.state.selectedDay}
         storedDates={this.props.storedDates}

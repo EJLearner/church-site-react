@@ -488,7 +488,7 @@ export default function CoronavirusPage() {
                 <SideMenu
                   currentId={contentId}
                   menuData={contentData}
-                  onClick={id => setContentId(id)}
+                  onClick={(id) => setContentId(id)}
                   title="Coronavirus"
                 />
               </ContentLeftSide>

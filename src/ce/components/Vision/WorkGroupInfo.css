@@ -1,17 +1,21 @@
 h3 {
   color: var(--green-50);
   font-weight: normal;
-  margin-bottom: 0.2em; }
+  margin-bottom: 0.2em;
+}
 
 ul.outcomes-list {
   list-style: inside disc;
   margin: 0;
   margin-left: 1em;
-  padding: 0 0 0 40px; }
+  padding: 0 0 0 40px;
+}
 
 .goal {
   margin-top: 1em;
-  font-weight: bolder; }
+  font-weight: bolder;
+}
 
 span.type {
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}

@@ -10,7 +10,7 @@ const {SLENDER_ARROW_LEFT, SLENDER_ARROW_RIGHT} = constants;
 
 const StyledVisibleIcon = styled(PlainButton)`
   color: ${LOGICAL_COLORS.CT_TEXT_ON_SECONDARY};
-  visibility: ${props => (props.show ? null : 'hidden')};
+  visibility: ${(props) => (props.show ? null : 'hidden')};
 
   &:hover {
     color: ${LOGICAL_COLORS.CT_LIGHTENED_ACCENT};

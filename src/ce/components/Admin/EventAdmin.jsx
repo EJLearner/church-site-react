@@ -227,20 +227,14 @@ class EventAdmin extends Component {
         if (event) {
           const eventObject =
             typeof event === 'string' ? {title: event} : event;
-          const {
-            title,
-            timeStart,
-            timeEnd,
-            shortDescription,
-            longDescription
-          } = eventObject;
+          const {title, timeStart, timeEnd, shortDescription, longDescription} =
+            eventObject;
 
           const dateTitleKey = dateString + title + timeStart;
           const currentlyEditing = dateTitleKey === this.state.currentEdit;
           const htmlToReactParser = new HtmlToReactParser();
-          const longDescriptionRender = htmlToReactParser.parse(
-            longDescription
-          );
+          const longDescriptionRender =
+            htmlToReactParser.parse(longDescription);
 
           rows.push(
             <div className="event-item" key={dateTitleKey}>

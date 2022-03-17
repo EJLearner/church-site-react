@@ -2,91 +2,113 @@
   margin-left: 4em;
   font-family: var(--calibri);
   font-size: 18px;
-  color: var(--gray63); }
-  #ce-page h1 {
-    border-bottom: 1px solid var(--green-50);
-    color: var(--green-20);
-    display: block;
-    padding-bottom: 5px;
-    font-family: var(--century-gothic);
-    font-size: 110%;
-    font-weight: normal;
-    margin-bottom: 2em;
-    text-transform: uppercase;
-    width: 400px; }
-    #ce-page h1 .emphwelcomeline {
-      font-size: 130%;
-      color: var(--green-80); }
-  #ce-page .vision-quote {
-    font-weight: bold;
-    font-style: italic; }
-  #ce-page .ce-page-links-content {
-    display: flex;
-    align-content: stretch; }
-  #ce-page .ce-page-left-content {
-    flex-shrink: 0;
-    max-width: 30%;
-    min-width: 200px; }
-  #ce-page .ce-page-right-content {
-    display: inline-block;
-    max-width: 800px;
-    vertical-align: top; }
-  #ce-page h2 {
-    color: var(--green-20);
-    font-family: var(--century-gothic);
-    font-size: 18px;
-    font-weight: normal;
-    margin-bottom: 1em;
-    text-transform: uppercase; }
-    #ce-page h2.yeargin-name {
-      text-transform: none;
-      margin-bottom: 0; }
-  #ce-page .h2-sub {
-    color: var(--green-50);
-    font-family: var(--century-gothic);
-    font-size: 14px;
-    margin: 0;
-    padding: 0.2em;
-    text-transform: uppercase; }
-  #ce-page h3.list-desc {
-    color: var(--black);
-    font-size: 18px;
-    margin-bottom: 0; }
-  #ce-page ul {
-    margin-top: 6px; }
-  #ce-page h2.member-header {
-    margin-top: 3em; }
-  #ce-page .ce-list-half {
-    display: inline-block;
-    list-style-type: none;
-    margin-left: 0;
-    padding-left: 0;
-    vertical-align: top;
-    width: 315px; }
-    #ce-page .ce-list-half li .title {
-      font-size: 80%; }
-    #ce-page .ce-list-half li .title::before {
-      content: ', '; }
-  #ce-page .volunt-reg-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 2em 0 2em; }
-    #ce-page .volunt-reg-buttons button {
-      background-color: var(--white);
-      display: block;
-      height: 40px;
-      width: 200px; }
-  #ce-page .left-button.vbs {
-    border-color: var(--green-50);
-    color: var(--green-50); }
-  #ce-page .right-button.vbs {
-    background-color: var(--green-50);
-    border-color: var(--green-50);
-    color: var(--white); }
-  #ce-page .left-button.childrens-church {
-    border-color: var(--orange);
-    color: var(--orange); }
-  #ce-page .right-button.childrens-church {
-    background-color: var(--orange);
-    border-color: var(--orange);
-    color: var(--white); }
+  color: var(--gray63);
+}
+#ce-page h1 {
+  border-bottom: 1px solid var(--green-50);
+  color: var(--green-20);
+  display: block;
+  padding-bottom: 5px;
+  font-family: var(--century-gothic);
+  font-size: 110%;
+  font-weight: normal;
+  margin-bottom: 2em;
+  text-transform: uppercase;
+  width: 400px;
+}
+#ce-page h1 .emphwelcomeline {
+  font-size: 130%;
+  color: var(--green-80);
+}
+#ce-page .vision-quote {
+  font-weight: bold;
+  font-style: italic;
+}
+#ce-page .ce-page-links-content {
+  display: flex;
+  align-content: stretch;
+}
+#ce-page .ce-page-left-content {
+  flex-shrink: 0;
+  max-width: 30%;
+  min-width: 200px;
+}
+#ce-page .ce-page-right-content {
+  display: inline-block;
+  max-width: 800px;
+  vertical-align: top;
+}
+#ce-page h2 {
+  color: var(--green-20);
+  font-family: var(--century-gothic);
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+}
+#ce-page h2.yeargin-name {
+  text-transform: none;
+  margin-bottom: 0;
+}
+#ce-page .h2-sub {
+  color: var(--green-50);
+  font-family: var(--century-gothic);
+  font-size: 14px;
+  margin: 0;
+  padding: 0.2em;
+  text-transform: uppercase;
+}
+#ce-page h3.list-desc {
+  color: var(--black);
+  font-size: 18px;
+  margin-bottom: 0;
+}
+#ce-page ul {
+  margin-top: 6px;
+}
+#ce-page h2.member-header {
+  margin-top: 3em;
+}
+#ce-page .ce-list-half {
+  display: inline-block;
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+  vertical-align: top;
+  width: 315px;
+}
+#ce-page .ce-list-half li .title {
+  font-size: 80%;
+}
+#ce-page .ce-list-half li .title::before {
+  content: ', ';
+}
+#ce-page .volunt-reg-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 2em 0 2em;
+}
+#ce-page .volunt-reg-buttons button {
+  background-color: var(--white);
+  display: block;
+  height: 40px;
+  width: 200px;
+}
+#ce-page .left-button.vbs {
+  border-color: var(--green-50);
+  color: var(--green-50);
+}
+#ce-page .right-button.vbs {
+  background-color: var(--green-50);
+  border-color: var(--green-50);
+  color: var(--white);
+}
+#ce-page .left-button.childrens-church {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+#ce-page .right-button.childrens-church {
+  background-color: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+}

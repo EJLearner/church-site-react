@@ -252,7 +252,7 @@ export default function GedPage() {
                 <SideMenu
                   currentId={contentId}
                   menuData={allContentData}
-                  onClick={id => setContentId(id)}
+                  onClick={(id) => setContentId(id)}
                   title="Ged Program"
                 />
               </ContentLeftSide>

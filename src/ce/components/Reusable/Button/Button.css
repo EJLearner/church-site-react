@@ -6,10 +6,12 @@
   color: black;
   box-shadow: none;
   min-width: 80px;
-  min-height: 30px; }
+  min-height: 30px;
+}
 
 .rect-button {
   border: 1px solid;
   box-shadow: none;
   min-width: 80px;
-  min-height: 30px; }
+  min-height: 30px;
+}

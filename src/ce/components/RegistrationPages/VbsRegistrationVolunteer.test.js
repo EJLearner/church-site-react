@@ -6,7 +6,6 @@ import constants from '../../../utils/constants';
 
 import VbsRegistrationVolunteer from './VbsRegistrationVolunteer';
 
-
 jest.mock('../../../utils/commonUtils.js');
 
 describe('VbsRegistrationVolunteer', () => {

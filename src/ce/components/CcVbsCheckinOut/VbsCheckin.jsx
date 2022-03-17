@@ -8,9 +8,7 @@ import utils from '../../../utils/commonUtils';
 class VbsCheckin extends Component {
   render() {
     const year = utils.getVbsDbYear();
-    const registeredChildrenRefName = `${
-      constants.VBS_REGISTERED_CHILDREN_REF_NAME
-    }/${year}`;
+    const registeredChildrenRefName = `${constants.VBS_REGISTERED_CHILDREN_REF_NAME}/${year}`;
 
     return (
       <BaseCheckin

@@ -6,7 +6,6 @@ import constants from '../../../utils/constants';
 
 import CcRegistrationVolunteer from './CcRegistrationVolunteer';
 
-
 jest.mock('../../../utils/commonUtils.js');
 
 describe('CcRegistrationVolunteer', () => {

@@ -108,7 +108,7 @@ const Routes = () => {
         <Route path={routePaths.CE_CC_REG_VOLUNTEER}>
           {newRenderBareCePage(<CcRegistrationVolunteer />)}
         </Route>
-        {routePaths.OLD_PATHS_CE_IDEA_FORM.map(oldPath => {
+        {routePaths.OLD_PATHS_CE_IDEA_FORM.map((oldPath) => {
           return (
             <Redirect
               from={oldPath}

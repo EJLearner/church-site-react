@@ -2,11 +2,11 @@ const registrationUtils = {
   getPageErrors(state = {}, fieldInfo = []) {
     const errors = [];
 
-    fieldInfo.forEach(rule => {
+    fieldInfo.forEach((rule) => {
       const {fieldRules = [], fieldId, label} = rule;
       const value = state[fieldId];
 
-      fieldRules.forEach(checkFunc => {
+      fieldRules.forEach((checkFunc) => {
         const message = checkFunc(value, label, state);
 
         if (message) {
