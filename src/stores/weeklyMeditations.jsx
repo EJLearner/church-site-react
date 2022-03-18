@@ -2513,5 +2513,23 @@ export default {
         Myself: my own will shall become yours.”
       </p>
     )
+  },
+  '2022-03-20': {
+    subTitle: (
+      <>
+        From <i> Can You Drink the Cup? </i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “Action, just as silence and the word, can help us to claim and
+        celebrate our true self. But here again we need discipline, because the
+        world in which we live says, “Do this, do that, go here, go there, meet
+        him, meet her.” Busyness has become a sign of importance. Having much to
+        do, many places to go, and countless people to meet gives us status and
+        even fame. However, being busy can lead us away from our true vocation
+        and prevent us from drinking our cup.”
+      </p>
+    )
   }
 };
