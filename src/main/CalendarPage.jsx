@@ -67,10 +67,10 @@ class Calendar extends Component {
             <Route path={routePaths.MAIN_CALENDAR_UPCOMING}>
               <CalendarUpcoming />
             </Route>
-            <Redirect
+            <Route
               exact
-              from={routePaths.MAIN_CALENDAR}
-              to={routePaths.MAIN_CALENDAR_MONTH}
+              path={routePaths.MAIN_CALENDAR}
+              render={() => <Redirect to={routePaths.MAIN_CALENDAR_MONTH} />}
             />
           </Switch>
         </div>

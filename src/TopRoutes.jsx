@@ -76,7 +76,7 @@ function newRenderBareCePage(content) {
   );
 }
 
-const Routes = () => {
+const TopRoutes = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
@@ -110,10 +110,10 @@ const Routes = () => {
         </Route>
         {routePaths.OLD_PATHS_CE_IDEA_FORM.map((oldPath) => {
           return (
-            <Redirect
-              from={oldPath}
+            <Route
               key={oldPath}
-              to={routePaths.CE_IDEA_FORM}
+              path={oldPath}
+              render={() => <Redirect to={routePaths.CE_IDEA_FORM} />}
             />
           );
         })}
@@ -156,4 +156,4 @@ const Routes = () => {
   );
 };
 
-export default Routes;
+export default TopRoutes;

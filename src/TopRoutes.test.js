@@ -2,19 +2,19 @@ import {shallow} from 'enzyme';
 import React from 'react';
 import {MemoryRouter} from 'react-router-dom';
 
-import Routes from './Routes';
+import TopRoutes from './TopRoutes';
 import VbsCheckin from './ce/components/CcVbsCheckinOut/VbsCheckin';
 import routePaths from './routePaths';
 
-describe('Routes', () => {
+describe('TopRoutes', () => {
   it('loads correctly', () => {
-    expect(() => shallow(<Routes />)).not.toThrow();
+    expect(() => shallow(<TopRoutes />)).not.toThrow();
   });
 
   it('loads VbsCheckin correctly', () => {
     const wrapper = shallow(
       <MemoryRouter initialEntries={[routePaths.CE_VBS_CHECKIN]}>
-        <Routes />
+        <TopRoutes />
       </MemoryRouter>
     );
 

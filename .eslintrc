@@ -1,23 +1,23 @@
 {
-  "extends": ["react-app", "eslint:recommended", "plugin:react/recommended"],
-  "plugins": ["import"],
+  // "extends": ["react-app", "eslint:recommended", "plugin:react/recommended"],
+  // "plugins": ["import"],
   "rules": {
     "comma-dangle": ["error", "never"],
-    "import/order": [
-      "warn",
-      {
-        "alphabetize": {"order": "asc"},
-        "newlines-between": "always",
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index"
-        ]
-      }
-    ],
+    // "import/order": [
+    //   "warn",
+    //   {
+    //     "alphabetize": {"order": "asc"},
+    //     "newlines-between": "always",
+    //     "groups": [
+    //       "builtin",
+    //       "external",
+    //       "internal",
+    //       "parent",
+    //       "sibling",
+    //       "index"
+    //     ]
+    //   }
+    // ],
     "max-len": ["error", 120],
     "no-console": "error",
     "no-unused-expressions": "error",

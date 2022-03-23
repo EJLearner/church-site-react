@@ -14,7 +14,9 @@ const SubPageSwitch = (props) => {
       const computedPath = commonUtils.getComputedPath(path, pathKey);
 
       routes.push(
-        <Route key={computedPath} path={computedPath} render={() => render} />
+        <Route key={computedPath} path={computedPath}>
+          {() => render}
+        </Route>
       );
 
       if (pathKey) {
@@ -23,7 +25,11 @@ const SubPageSwitch = (props) => {
         if (routePaths.hasOwnProperty(oldPathNamesKey)) {
           routePaths[oldPathNamesKey].forEach((oldPath) => {
             routes.push(
-              <Redirect from={oldPath} key={oldPath} to={computedPath} />
+              <Route
+                key={oldPath}
+                path={oldPath}
+                render={() => <Redirect to={computedPath} />}
+              />
             );
           });
         }
@@ -37,7 +43,7 @@ const SubPageSwitch = (props) => {
     const defaultRoute = linkData.find(({isDefault}) => isDefault);
     if (defaultRoute) {
       routes.push(
-        <Route key="defaultRoute" render={() => defaultRoute.render} />
+        <Route key="defaultRoute">{() => defaultRoute.render}</Route>
       );
     }
 

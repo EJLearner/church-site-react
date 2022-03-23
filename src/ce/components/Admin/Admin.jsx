@@ -116,18 +116,15 @@ class Admin extends Component {
           Logged in as {user.displayName}{' '}
           <Button onClick={this.logout}>Log out</Button>
           <Switch>
-            <Route
-              path={routePaths.ADMIN_EVENTS}
-              render={() => <EventAdmin />}
-            />
-            <Route
-              path={routePaths.ADMIN_CC}
-              render={() => <CcVbsAdminBase stringPrefix="cc" />}
-            />
-            <Route
-              path={routePaths.ADMIN_VBS}
-              render={() => <CcVbsAdminBase stringPrefix="vbs" />}
-            />
+            <Route path={routePaths.ADMIN_EVENTS}>
+              <EventAdmin />
+            </Route>
+            <Route path={routePaths.ADMIN_CC}>
+              <CcVbsAdminBase stringPrefix="cc" />
+            </Route>
+            <Route path={routePaths.ADMIN_VBS}>
+              <CcVbsAdminBase stringPrefix="vbs" />
+            </Route>
             <Route
               component={SubscribedEmailsAdmin}
               path={routePaths.ADMIN_EMAIL_SUBSCRIBERS}

@@ -725,7 +725,14 @@ const bibleComFormattedVerses = {
   '2022-03-16': {verse: '2 Timothy 2.8-13'},
   '2022-03-17': {verse: 'Romans 6.5-11'},
   '2022-03-18': {verse: '1 Thessalonians 3.1-13'},
-  '2022-03-19': {verse: 'Luke 14.25-33'}
+  '2022-03-19': {verse: 'Luke 14.25-33'},
+  '2022-03-20': {verse: 'Psalm 95'},
+  '2022-03-21': {verse: 'Matthew 5.13-16'},
+  '2022-03-22': {verse: '2 Corinthians 4.16-18'},
+  '2022-03-23': {verse: '2 Corinthians 1.18-25'},
+  '2022-03-24': {verse: 'Matthew 15.10-20'},
+  '2022-03-25': {verse: 'Philippians 3.1-11'},
+  '2022-03-26': {verse: 'John 16.25-33'}
 };
 
 export {bibleComFormattedVerses};
