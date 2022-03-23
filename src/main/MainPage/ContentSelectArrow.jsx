@@ -1,10 +1,10 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import styled from 'styled-components';
 
+import constants from '../../utils/constants';
 import {LOGICAL_COLORS} from '../../utils/styleVariables';
 import PlainButton from '../commonComponents/PlainButton';
-import constants from '../../utils/constants';
 
 const {SLENDER_ARROW_LEFT, SLENDER_ARROW_RIGHT} = constants;
 

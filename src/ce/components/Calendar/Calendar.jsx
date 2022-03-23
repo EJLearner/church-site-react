@@ -1,19 +1,19 @@
-import React, {Component} from 'react';
 
 import moment from 'moment';
+import React, {Component} from 'react';
 
 import routePaths from '../../../routePaths';
-
-import CalendarDay from './DeprecatedCalendarDay';
-import CalendarWeek from './DeprecatedCalendarWeek';
-import CeCalendarMonth from './CeCalendarMonth';
-import CalendarYear from './DeprecatedCalendarYear';
-import CalendarUpcoming from './DeprecatedCalendarUpcoming';
 import Footer from '../Footer/Footer';
 import MenuBar from '../MenuBar/MenuBar';
 import Quote from '../Quote/Quote';
 import SubPageSwitch from '../Reusable/SubPageSwitch/SubPageSwitch';
 import TitleBar from '../TitleBar/TitleBar';
+
+import CeCalendarMonth from './CeCalendarMonth';
+import CalendarDay from './DeprecatedCalendarDay';
+import CalendarUpcoming from './DeprecatedCalendarUpcoming';
+import CalendarWeek from './DeprecatedCalendarWeek';
+import CalendarYear from './DeprecatedCalendarYear';
 
 import './Calendar.css';
 

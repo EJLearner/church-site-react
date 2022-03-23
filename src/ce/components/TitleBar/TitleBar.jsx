@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
 import routePaths from '../../../routePaths';
-
 import LoginControl from '../LoginControl/LoginControl';
 
 import './TitleBar.css';

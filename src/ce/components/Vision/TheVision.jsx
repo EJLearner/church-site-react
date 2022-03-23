@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 import workGroupData from '../../utils/visionWorkgroupData';
 
 class TheVision extends Component {

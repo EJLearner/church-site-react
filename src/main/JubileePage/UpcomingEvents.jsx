@@ -132,7 +132,7 @@ function eventsRenders(orderedEvents) {
   }, []);
 }
 
-function UpcomingEvents(props) {
+function UpcomingEvents() {
   const renderedEvents = eventsRenders(orderedEvents);
 
   return <EventsWrapper>{renderedEvents}</EventsWrapper>;

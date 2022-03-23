@@ -69,7 +69,7 @@ const AnnouncementsPage = () => {
   useEffect(() => {
     if (location.hash) {
       const scrollElement = document.querySelector(location.hash);
-      scrollElement && scrollElement.scrollIntoView({behavior: 'smooth'});
+      scrollElement?.scrollIntoView({behavior: 'smooth'});
     }
   }, [location]);
 

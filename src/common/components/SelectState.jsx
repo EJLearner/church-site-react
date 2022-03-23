@@ -68,7 +68,7 @@ const stateOptions = [
   {label: 'Wyoming', value: 'WY'}
 ];
 
-function SelectState({id, label, onChange, value}) {
+function SelectState({id, onChange, value}) {
   return (
     <Select
       id={id}
@@ -82,7 +82,6 @@ function SelectState({id, label, onChange, value}) {
 
 SelectState.propTypes = {
   id: PropTypes.string,
-  label: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   value: PropTypes.string
 };

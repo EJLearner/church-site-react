@@ -1,11 +1,11 @@
+import _ from 'lodash';
+import moment from 'moment';
+import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 import routePaths from '../../../routePaths';
 
-import moment from 'moment';
-import _ from 'lodash';
 
 import './Announcements.css';
 import withDatesSubscription from '../Hocs/withDatesSubscription';

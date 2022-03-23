@@ -1,31 +1,32 @@
-import firebase from '../../../firebase';
+import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import {Redirect} from 'react-router';
-import moment from 'moment';
 
-import Button from '../Reusable/Button/Button';
-import Checkbox from '../Reusable/Checklist/Checkbox';
-import Modal from '../Reusable/Modal/Modal';
 import Text from '../../../common/components/Text';
-
-import fieldValidators from './fieldValidators';
-import registrationUtils from './registrationUtils';
-
-import constants from '../../../utils/constants';
+import firebase from '../../../firebase';
 import routePaths from '../../../routePaths';
-import utils from '../../../utils/commonUtils';
-
 import {
   saveRegistrationData,
   getRegistrationData,
   resetRegistrationData
 } from '../../../stores/lastSubmittedRegistration';
+import utils from '../../../utils/commonUtils';
+import constants from '../../../utils/constants';
+import Button from '../Reusable/Button/Button';
+import Checkbox from '../Reusable/Checklist/Checkbox';
+import Modal from '../Reusable/Modal/Modal';
+
+import fieldValidators from './fieldValidators';
+import registrationUtils from './registrationUtils';
+
 
 import './Registration.css';
 import ErrorList from '../Common/ErrorList';
 import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
+
 import DisclaimerCheckbox from './DisclaimerCheckbox';
+
 import pushToSubscribedList from '../../../utils/pushToSubscribedList';
 
 const WIDTH_BASE = 15;

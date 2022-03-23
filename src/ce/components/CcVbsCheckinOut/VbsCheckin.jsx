@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
-import constants from '../../../utils/constants';
+
 import routePaths from '../../../routePaths';
+import utils from '../../../utils/commonUtils';
+import constants from '../../../utils/constants';
 
 import BaseCheckin from './BaseCheckin';
-import utils from '../../../utils/commonUtils';
+
 
 class VbsCheckin extends Component {
   render() {

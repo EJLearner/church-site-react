@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 import churchLogo from './chrisedtopbanner.png';
 
 class TopLogo extends Component {

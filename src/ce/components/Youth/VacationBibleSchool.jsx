@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Redirect} from 'react-router';
 
 import routePaths from '../../../routePaths';
-
 import ContactLine from '../Reusable/ContactLine';
 
 import VolunteerSect from './Shared/VolunteerSect';

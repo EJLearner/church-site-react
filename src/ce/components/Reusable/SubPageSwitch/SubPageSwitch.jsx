@@ -1,6 +1,6 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import {Route, Redirect, Switch} from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 import routePaths from '../../../../routePaths';
 import commonUtils from '../../../../utils/commonUtils';

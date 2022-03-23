@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 import retreatPicture from './retreat-picture.jpg';
 
 class Participants2016 extends Component {

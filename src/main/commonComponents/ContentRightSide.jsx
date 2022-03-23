@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import {LOGICAL_COLORS} from '../../utils/styleVariables';
 
 const ContentRightSide = styled.div`

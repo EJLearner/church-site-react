@@ -1,6 +1,7 @@
 import React from 'react';
-import CalendarMonth from '../../../main/commonComponents/Calendar/CalendarMonth';
 import styled from 'styled-components';
+
+import CalendarMonth from '../../../main/commonComponents/Calendar/CalendarMonth';
 
 const MONTH_DIV_ID = 'ce-calendar-month';
 

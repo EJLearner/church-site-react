@@ -4,7 +4,6 @@ import {Redirect} from 'react-router';
 import routePaths from '../../../routePaths';
 
 import BaseRegistrationLanding from './BaseRegistrationLanding.jsx';
-
 import leftPicture from './ccregpicture.png';
 
 class CcRegistrationLanding extends Component {

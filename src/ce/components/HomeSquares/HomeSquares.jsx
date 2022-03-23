@@ -1,9 +1,8 @@
-import {Link} from 'react-router-dom';
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+import {Link} from 'react-router-dom';
 
 import routePaths from '../../../routePaths';
-
 import Announcements from '../Announcements/Announcements.jsx';
 
 import './HomeSquares.css';
@@ -28,7 +27,7 @@ const HomeSquare = (props) => {
   );
 };
 
-const HomeSquares = (props) => {
+const HomeSquares = () => {
   return (
     <div className="home-page-bottom-content">
       <HomeSquare scroll title="Announcements">

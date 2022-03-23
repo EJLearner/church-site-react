@@ -1,6 +1,6 @@
-import {Link} from 'react-router-dom';
-import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 import './Slider.css';
 
@@ -39,7 +39,7 @@ class Slider extends Component {
     this.slideShow(this.state.slideShowIsOn);
   }
 
-  componentWillUpdate(nextProps, nextState) {
+  UNSAFE_componentWillUpdate(nextProps, nextState) {
     const slideShowTurnedOnOrOff =
       nextState.slideShowIsOn !== this.state.slideShowIsOn;
     if (slideShowTurnedOnOrOff || nextState.instantChange) {
@@ -62,7 +62,9 @@ class Slider extends Component {
   slideShow(isOn) {
     const timePerSlide = 8000;
     // always reset the slideShow
-    this.slideShowTimer && clearInterval(this.slideShowTimer);
+    if (this.slideShowTimer) {
+      clearInterval(this.slideShowTimer);
+    }
 
     if (isOn) {
       this.slideShowTimer = setInterval(() => {

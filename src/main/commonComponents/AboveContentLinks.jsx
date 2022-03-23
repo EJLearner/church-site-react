@@ -1,10 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import {Link} from 'react-router-dom';
+import styled from 'styled-components';
 
 import routePaths from '../../routePaths';
-
-import styled from 'styled-components';
 import {LOGICAL_COLORS} from '../../utils/styleVariables';
 
 const AboveContentLinksStyle = styled.div`

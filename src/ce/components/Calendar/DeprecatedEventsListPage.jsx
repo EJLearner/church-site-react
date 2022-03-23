@@ -1,13 +1,14 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-
-import moment from 'moment';
-import _ from 'lodash';
 import {Parser as HtmlToReactParser} from 'html-to-react';
+import _ from 'lodash';
+import moment from 'moment';
+import PropTypes from 'prop-types';
+import React, {Component} from 'react';
+
+
+import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
 
 import DeprecatedMiniCalendar from './DeprecatedMiniCalendar';
 
-import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
 
 import './EventsListPage.css';
 

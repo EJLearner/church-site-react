@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
-import firebase, {auth, provider} from '../../../firebase';
+import {Route, Switch} from 'react-router-dom';
 
+import firebase, {auth, provider} from '../../../firebase';
+import routePaths from '../../../routePaths';
+import MenuBar from '../MenuBar/MenuBar';
 import Button from '../Reusable/Button/Button';
+
 import CcVbsAdminBase from './CcVbsAdminBase';
 import EventAdmin from './EventAdmin';
 
-import MenuBar from '../MenuBar/MenuBar';
-import routePaths from '../../../routePaths';
-import {Route, Switch} from 'react-router-dom';
 
 import './Admin.css';
 import SubscribedEmailsAdmin from './SubscribedEmailsAdmin';

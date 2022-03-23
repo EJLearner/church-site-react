@@ -20,7 +20,7 @@ const StyleWrapper = styled.div`
   }
 `;
 
-function BackToTop(props) {
+function BackToTop() {
   return (
     <StyleWrapper>
       <div className="text-and-icon">

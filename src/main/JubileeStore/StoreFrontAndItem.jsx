@@ -18,7 +18,7 @@ const StoreContentStyle = styled.div`
   }
 `;
 
-function StoreFrontAndItem(props) {
+function StoreFrontAndItem() {
   const [state, dispatch] = useContext(Context);
   const {viewInfo} = state;
   const {view, viewItemId} = viewInfo;

@@ -63,7 +63,9 @@ const Text = (props) => {
   } = props;
 
   const onKeyPress = (event) => {
-    onEnter && event.key === 'Enter' && onEnter(event.target.value, id, event);
+    if (onEnter && event.key === 'Enter') {
+      onEnter(event.target.value, id, event);
+    }
   };
 
   const errorsId = `${id}-errors`;

@@ -4,6 +4,7 @@
     "node": true,
     "es6": true
   },
+
   "extends": ["eslint:recommended", "plugin:react/recommended"],
   "plugins": ["import"],
   "rules": {
@@ -67,7 +68,7 @@
   },
   "overrides": [
     {
-      "files": "*.test.js",
+      "files": ["*.test.js", "*.test.jsx"],
       "env": {
         "jest":true
       },
@@ -81,7 +82,9 @@
   "parser": "@babel/eslint-parser",
   "parserOptions": {
     "sourceType": "module",
-
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "settings": {
     "react": {

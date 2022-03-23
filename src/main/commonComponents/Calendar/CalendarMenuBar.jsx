@@ -1,8 +1,7 @@
+import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
-import PropTypes from 'prop-types';
-
 import styled from 'styled-components';
 const CalendarMenuBarStyles = styled.div`
   &#calendar-menu {

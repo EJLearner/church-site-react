@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import firebase, {auth, provider} from '../../../firebase';
-import moment from 'moment';
 import _ from 'lodash';
+import moment from 'moment';
+import PropTypes from 'prop-types';
+import React, {Component} from 'react';
 
+import Text from '../../../common/components/Text';
+import firebase, {auth, provider} from '../../../firebase';
+import utils from '../../../utils/commonUtils';
 import Button from '../Reusable/Button/Button';
 import Checklist from '../Reusable/Checklist/Checklist';
-import Text from '../../../common/components/Text';
 
-import utils from '../../../utils/commonUtils';
 
 import {CHILD_STATUS, PAGE_STATUS} from './BaseCheckinOutConstants';
 
@@ -84,7 +84,7 @@ class BaseCheckout extends Component {
   _onSelectAllClick() {
     const newChildrenOfParent = _.cloneDeep(this.state.childrenOfParent);
 
-    _.forEach(newChildrenOfParent, (child, key) => {
+    _.forEach(newChildrenOfParent, (child) => {
       child.checked = true;
     });
 
@@ -200,7 +200,7 @@ class BaseCheckout extends Component {
     const {childrenOfParent, parentName} = this.state;
     let checkInButtonClass = 'check-in-button';
     let disabled = false;
-    let atLeastOneChildSelected = this._getSelectedChildren().length;
+    const atLeastOneChildSelected = this._getSelectedChildren().length;
 
     if (!atLeastOneChildSelected) {
       checkInButtonClass += ' disabled';

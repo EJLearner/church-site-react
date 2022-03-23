@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 
-import BaseCcRegistrationChild from './BaseCcRegistrationChild';
-import constants from '../../../utils/constants';
 import routePaths from '../../../routePaths';
 import utils from '../../../utils/commonUtils';
+import constants from '../../../utils/constants';
+
+import BaseCcRegistrationChild from './BaseCcRegistrationChild';
 
 class CcRegistrationChild extends Component {
   renderHeaderContent() {
