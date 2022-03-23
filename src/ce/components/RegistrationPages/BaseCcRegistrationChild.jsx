@@ -13,21 +13,18 @@ import {
 } from '../../../stores/lastSubmittedRegistration';
 import utils from '../../../utils/commonUtils';
 import constants from '../../../utils/constants';
+import pushToSubscribedList from '../../../utils/pushToSubscribedList';
+import ErrorList from '../Common/ErrorList';
+import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
 import Button from '../Reusable/Button/Button';
 import Checkbox from '../Reusable/Checklist/Checkbox';
 import Modal from '../Reusable/Modal/Modal';
 
+import DisclaimerCheckbox from './DisclaimerCheckbox';
 import fieldValidators from './fieldValidators';
 import registrationUtils from './registrationUtils';
 
-
 import './Registration.css';
-import ErrorList from '../Common/ErrorList';
-import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
-
-import DisclaimerCheckbox from './DisclaimerCheckbox';
-
-import pushToSubscribedList from '../../../utils/pushToSubscribedList';
 
 const WIDTH_BASE = 15;
 const USE_TEST_DATA = false;

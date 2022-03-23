@@ -3,16 +3,13 @@ import _ from 'lodash';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
-
+import styled from 'styled-components';
 
 import calendarDatesUtils from '../../utils/calendarDatesUtils.js';
 
 import DeprecatedMiniCalendar from './DeprecatedMiniCalendar';
 
-
 import './EventsListPage.css';
-
-import styled from 'styled-components';
 const EventsListPageStyles = styled.div`
   .header-and-events {
     width: 600px;

@@ -1,7 +1,6 @@
 import moment from 'moment';
 import React, {Component} from 'react';
 import './polyfills';
-
 import './App.css';
 
 import {createGlobalStyle} from 'styled-components';

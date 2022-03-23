@@ -1,13 +1,12 @@
-
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 
-import EventsListPage from './DeprecatedEventsListPage';
-
-import './Calendar.css';
 import calendarDatesUtils from '../../utils/calendarDatesUtils';
 import withDatesSubscription from '../Hocs/withDatesSubscription';
+
+import EventsListPage from './DeprecatedEventsListPage';
+import './Calendar.css';
 
 class CalendarUpcoming extends Component {
   constructor(props) {

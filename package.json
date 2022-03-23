@@ -6,7 +6,7 @@
   "scripts": {
     "develop": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "lint": "eslint src --fix --ext .jsx,.js",
+    "lint": "eslint ./ --fix --ext .jsx,.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"
   },
@@ -73,6 +73,6 @@
     "not op_mini all"
   ],
   "lint-staged": {
-    "*.jsx?": "eslint --cache --fix --ext .jsx,.js"
+    "*.{js,jsx}": "eslint --cache --fix --ext .jsx,.js"
   }
 }

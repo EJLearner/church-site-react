@@ -2,14 +2,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import routePaths from '../../../routePaths';
-import Announcements from '../Announcements/Announcements.jsx';
-
-import './HomeSquares.css';
-
 import calendarPic from '../../../assets/ce/images/homepage/calendar.png';
 import kidsPic from '../../../assets/ce/images/homepage/kids.jpg';
 import leadershipPic from '../../../assets/ce/images/homepage/leadership.png';
+import routePaths from '../../../routePaths';
+import Announcements from '../Announcements/Announcements.jsx';
+import './HomeSquares.css';
 
 const HomeSquare = (props) => {
   const {children, linkTo, scroll, title} = props;
