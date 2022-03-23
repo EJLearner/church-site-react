@@ -5,7 +5,7 @@ import constants from '../../../utils/constants';
 const validDateFormats = ['M/D/YY', 'M/D/YYYY', 'M-D-YYYY', 'M-D-YY'];
 
 const fieldValidators = {
-  disclaimerIsChecked: (value, label) => {
+  disclaimerIsChecked: (value) => {
     if (value !== true) {
       return 'Please indicate that you agree to the terms.';
     }

@@ -46,7 +46,7 @@ const backgroundStore = {
     callbacks[id] = callback;
   },
 
-  unsubscribe(id, callback) {
+  unsubscribe(id) {
     delete callbacks[id];
   }
 };
