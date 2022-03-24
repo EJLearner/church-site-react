@@ -2531,5 +2531,23 @@ export default {
         and prevent us from drinking our cup.”
       </p>
     )
+  },
+  '2022-03-27': {
+    subTitle: (
+      <>
+        From <i> Yours Are the Hands of Christ </i> by James C. Howell
+      </>
+    ),
+    content: (
+      <p>
+        “Within the body of Christ we need to be intentional about the seeds we
+        sow, about how our behavior with friends should be preparing us for
+        service out in the world. We need each other to draw us out of our
+        self-centeredness. We need others to hold us accountable, to be like a
+        mirror to help us see our lives and our doing of our faith more clearly.
+        We need each other for mutual encouragement, to push further into
+        serving the world than we might if left alone.”
+      </p>
+    )
   }
 };
