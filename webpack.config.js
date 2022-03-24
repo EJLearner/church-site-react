@@ -6,11 +6,15 @@ module.exports = {
   // Where files should be sent once they are bundled
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'index.bundle.js'
+    filename: 'index.bundle.js',
+    // specifies that "/" is the base path for all assets
+    publicPath: '/'
   },
   // webpack 5 comes with devServer which loads in development mode
   devServer: {
-    port: 3000
+    port: 3000,
+    // redirects all 404s to the main page
+    historyApiFallback: true
   },
   // Rules of how webpack will take our files, complie & bundle them for the browser
   module: {
@@ -40,7 +44,7 @@ module.exports = {
     ]
   },
   resolve: {
-    // if import extneions is not supplied, webpack will try files with these extension
+    // if import extension is not supplied, webpack will try files with these extensions
     extensions: ['.js', '.jsx']
   },
   plugins: [
