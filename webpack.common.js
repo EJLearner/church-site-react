@@ -3,13 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  // Where files should be sent once they are bundled
-  output: {
-    path: path.join(__dirname, '/dist'),
-    filename: 'index.bundle.js',
-    // specifies that "/" is the base path for all assets
-    publicPath: '/'
-  },
+  devtool: 'eval-source-map',
   // webpack 5 comes with devServer which loads in development mode
   devServer: {
     port: 3000,
@@ -51,5 +45,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html'
     })
-  ]
+  ],
+  // Where files should be sent once they are bundled
+  output: {
+    path: path.join(__dirname, '/dist'),
+    filename: 'index.bundle.js',
+    // specifies that "/" is the base path for all assets
+    publicPath: '/'
+  }
 };
