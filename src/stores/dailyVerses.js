@@ -725,7 +725,14 @@ const bibleComFormattedVerses = {
   '2022-03-30': {verse: 'Galatians 5.8-20'},
   '2022-03-31': {verse: '1 Corinthians 11.17-22'},
   '2022-04-01': {verse: 'Mark 6.1-6'},
-  '2022-04-02': {verse: '3 John 1.2-12'}
+  '2022-04-02': {verse: '3 John 1.2-12'},
+  '2022-04-03': {verse: 'Psalm 130'},
+  '2022-04-04': {verse: 'John 1.1-5'},
+  '2022-04-05': {verse: 'Hebrews 11.1-13'},
+  '2022-04-06': {verse: '1 Peter 1.13-21'},
+  '2022-04-07': {verse: 'Hebrews 6.11-20'},
+  '2022-04-08': {verse: 'Galatians 5.2-6'},
+  '2022-04-09': {verse: 'Acts 23.6-11'}
 };
 
 export {bibleComFormattedVerses};
