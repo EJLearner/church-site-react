@@ -2549,5 +2549,27 @@ export default {
         serving the world than we might if left alone.”
       </p>
     )
+  },
+  '2022-04-03': {
+    subTitle: (
+      <>
+        From <i> Unknown </i>
+      </>
+    ),
+    content: (
+      <p>
+        “It has been said that Charles Wesley’s hymns always begin on earth and
+        end in heaven. So it is with John Wesley’s theology. He was firmly
+        convinced of the coming day of Christ, which is not yet, but toward
+        which humankind, with the whole creation, is moving. For Wesley, it was
+        necessary to stress God’s ultimate victory; but it was also important to
+        affirm the penultimate reality of God’s presence, now experienced as
+        life that is drawn to God in increasingly focused love. John Wesley had
+        a doctrine of final things, an eschatology, in which God’s kingdom is
+        being presently realized even as it points toward a consummating future.
+        The Christian lives with the lively hope that God, who has begun a good
+        thing, will fulfill it in the day of Jesus Christ.”
+      </p>
+    )
   }
 };
