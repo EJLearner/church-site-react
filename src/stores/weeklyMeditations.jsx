@@ -2571,5 +2571,31 @@ export default {
         thing, will fulfill it in the day of Jesus Christ.”
       </p>
     )
+  },
+  '2022-04-10': {
+    subTitle: (
+      <>
+        From <i> “Justice” in Way to Live </i> by Dorothy C. Bass and Don C.
+        Richter
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “You’ve heard the saying “Sticks and stones my break my bones but
+          words can never hurt me.” Well, that’s not true, is it? Words can
+          hurt… They make us feel small and exposed. They make us feel shame.
+        </p>
+        <p>
+          Revenge is bittersweet – after the sweetness wears off, the bitter
+          taste remains in your mouth. In place of revenge, civil rights leaders
+          taught nonviolent ways of confronting people who are putting you down.
+          Your first response to humiliating treatment needs to be claiming your
+          own dignity as a person created in the image of God. This awareness
+          sets you free to respond to injustice in creative rather than violent
+          ways.”
+        </p>
+      </>
+    )
   }
 };
