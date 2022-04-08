@@ -22,13 +22,10 @@ module.exports = {
           loader: 'babel-loader'
         }
       },
-      // allows the importing of pictures
+      // allows the importing of pictures and other files
       {
-        test: /\.(jpg|png|ppsx)$/,
-        exclude: /nodeModules/,
-        use: {
-          loader: 'url-loader'
-        }
+        test: /\.(png|svg|jpg|jpeg|gif|pptx|ppsx)$/,
+        type: 'asset/resource'
       },
       // css loader allows the import of css and style loader injects the css into the style tag
       {
@@ -46,11 +43,20 @@ module.exports = {
       template: './public/index.html'
     })
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   // Where files should be sent once they are bundled
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'index.bundle.js',
+    filename: '[name].js',
+    chunkFilename: '[id].[chunkhash].js',
     // specifies that "/" is the base path for all assets
-    publicPath: '/'
+    publicPath: '/',
+    // empties dist folder before build
+    clean: true,
+    assetModuleFilename: 'bundle-assets/[name][ext]'
   }
 };
