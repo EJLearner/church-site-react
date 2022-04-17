@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import {currentVideoData} from '../stores/messageVideos';
+import messageVideos from '../stores/messageVideos';
 import {
   convertTypedDateToIso,
   getLongDisplayDate
@@ -259,7 +259,7 @@ const WatchPage = () => {
     INITIAL_VIDEO_SHOW_COUNT
   );
   const [searchInfo, setSearchInfo] = useState(initialSearchInfo);
-  const [newestVideo, ...otherVideos] = currentVideoData;
+  const [newestVideo, ...otherVideos] = messageVideos;
   const [filteredVideos, setFilteredVideos] = useState(otherVideos);
 
   const displayedVideos = filteredVideos.slice(0, archiveVideoShowCount);
