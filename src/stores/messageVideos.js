@@ -5,11 +5,52 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
-    date: '2022-03-13T09:00:00',
+    date: '2022-04-17T09:00:00',
+    videoLink: 'https://www.youtube.com/embed/QqTZOcTvDK0',
+    title: 'Resurrection: God’s Ultimate Affirmation of Life!!!',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Mark 10:32-34',
+    scripture: 'II Corinthians 1:19-20'
+  },
+  {
+    date: '2022-04-15T09:00:00',
+    videoLink: 'https://www.youtube.com/embed/uBXYJHODlzw',
+    title: 'Good Friday Service: Seven Last Words from The Cross',
+    preacher: PREACHERS.G_YEARGIN
+  },
+  {
+    date: '2022-04-10T09:00:00',
+    videoLink: 'https://www.youtube.com/embed/_lcDMFY_sFM',
+    title: 'A Kingdom Not of This World',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 18:36'
+  },
+  {
+    date: '2022-04-03T09:00:00',
+    videoLink: 'https://www.youtube.com/embed/e1TKkMWSzek',
+    title: 'Let Us Also Go With Him',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 11:1-16'
+  },
+  {
+    date: '2022-03-27T09:00:00',
+    videoLink: 'https://www.youtube.com/embed/OvScMiUPbzM',
+    title: 'Unsticking the Life that is Stuck!!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 4:1-30'
+  },
+  {
+    date: '2022-03-20T09:00:00',
+    videoLink: 'https://www.youtube.com/embed/DWP5v6OyjRg',
+    title: 'The Unconditional Love of God',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Hosea 14:4-7'
+  },
+  {
+    date: '2022-03-13T09:00:00',
+    videoLink: 'https://www.youtube.com/embed/4vGGW_mDeFA',
     title: 'Satan’s Temporary Leave of Absence',
-    videoLink: 'https://www.youtube.com/embed/4vGGW_mDeFA'
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Mark 10:32-34'
   },
   {
     date: '2022-02-27T09:00:00',
