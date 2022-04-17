@@ -2569,5 +2569,92 @@ export default {
         and prevent us from drinking our cup.”
       </p>
     )
+  },
+  '2022-03-27': {
+    subTitle: (
+      <>
+        From <i> Yours Are the Hands of Christ </i> by James C. Howell
+      </>
+    ),
+    content: (
+      <p>
+        “Within the body of Christ we need to be intentional about the seeds we
+        sow, about how our behavior with friends should be preparing us for
+        service out in the world. We need each other to draw us out of our
+        self-centeredness. We need others to hold us accountable, to be like a
+        mirror to help us see our lives and our doing of our faith more clearly.
+        We need each other for mutual encouragement, to push further into
+        serving the world than we might if left alone.”
+      </p>
+    )
+  },
+  '2022-04-03': {
+    subTitle: (
+      <>
+        From <i> Unknown </i>
+      </>
+    ),
+    content: (
+      <p>
+        “It has been said that Charles Wesley’s hymns always begin on earth and
+        end in heaven. So it is with John Wesley’s theology. He was firmly
+        convinced of the coming day of Christ, which is not yet, but toward
+        which humankind, with the whole creation, is moving. For Wesley, it was
+        necessary to stress God’s ultimate victory; but it was also important to
+        affirm the penultimate reality of God’s presence, now experienced as
+        life that is drawn to God in increasingly focused love. John Wesley had
+        a doctrine of final things, an eschatology, in which God’s kingdom is
+        being presently realized even as it points toward a consummating future.
+        The Christian lives with the lively hope that God, who has begun a good
+        thing, will fulfill it in the day of Jesus Christ.”
+      </p>
+    )
+  },
+  '2022-04-10': {
+    subTitle: (
+      <>
+        From <i> “Justice” in Way to Live </i> by Dorothy C. Bass and Don C.
+        Richter
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “You’ve heard the saying “Sticks and stones my break my bones but
+          words can never hurt me.” Well, that’s not true, is it? Words can
+          hurt… They make us feel small and exposed. They make us feel shame.
+        </p>
+        <p>
+          Revenge is bittersweet – after the sweetness wears off, the bitter
+          taste remains in your mouth. In place of revenge, civil rights leaders
+          taught nonviolent ways of confronting people who are putting you down.
+          Your first response to humiliating treatment needs to be claiming your
+          own dignity as a person created in the image of God. This awareness
+          sets you free to respond to injustice in creative rather than violent
+          ways.”
+        </p>
+      </>
+    )
+  },
+  '2022-04-17': {
+    subTitle: (
+      <>
+        From <i> Abba’s Child </i> by Brennan Manning
+      </>
+    ),
+    content: (
+      <p>
+        “Everything that is comes alive in the risen Christ – who, as Chesterton
+        reminded, is standing behind us. Everything – great, small, important,
+        unimportant, distant and near – has its place, its meaning, and its
+        value. Through union with Him (as Augustine said, He is more intimate
+        with us than we are with ourselves), nothing is wasted, nothing is
+        missing. There is never a moment that does not carry eternal
+        significance – no action that is sterile, no love that lacks fruition,
+        and no prayer that is unheard. “We know that by turning everything to
+        their good God cooperates with all those who love [God]” (Rom. 8:28,
+        emphasis added).”
+      </p>
+    )
   }
 };
