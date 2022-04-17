@@ -25,7 +25,10 @@ module.exports = {
       // allows the importing of pictures and other files
       {
         test: /\.(png|svg|jpg|jpeg|gif|pptx|ppsx)$/,
-        type: 'asset/resource'
+        type: 'asset/resource',
+        generator: {
+          filename: 'build-output/media/[name]-[contenthash][ext]'
+        }
       },
       // css loader allows the import of css and style loader injects the css into the style tag
       {
@@ -40,7 +43,9 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html'
+      template: './public/index-template.html',
+      title: 'City Temple of Baltimore (Baptist)',
+      favicon: './src/assets/favicons/favicon.png'
     })
   ],
   optimization: {
@@ -51,12 +56,13 @@ module.exports = {
   // Where files should be sent once they are bundled
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: '[name].js',
-    chunkFilename: '[id].[chunkhash].js',
+    filename: 'build-output/js/[name].[contenthash].js',
+    chunkFilename: 'build-output/js/[id].[chunkhash].js',
     // specifies that "/" is the base path for all assets
+    // refresh from other pages doesn't work if this is not '/'
     publicPath: '/',
     // empties dist folder before build
     clean: true,
-    assetModuleFilename: 'bundle-assets/[name][ext]'
+    assetModuleFilename: 'build-output/js/[name][ext]'
   }
 };
