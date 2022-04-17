@@ -6,48 +6,48 @@ const {PREACHERS} = constants;
 const allVideoData = [
   {
     date: '2022-04-17T09:00:00',
-    videoLink: 'https://www.youtube.com/embed/QqTZOcTvDK0',
+    youtubeId: 'QqTZOcTvDK0',
     title: 'Resurrection: God’s Ultimate Affirmation of Life!!!',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'II Corinthians 1:19-20'
   },
   {
     date: '2022-04-15T09:00:00',
-    videoLink: 'https://www.youtube.com/embed/uBXYJHODlzw',
+    youtubeId: 'uBXYJHODlzw',
     title: 'Good Friday Service: Seven Last Words from The Cross',
-    preacher: PREACHERS.G_YEARGIN
+    preacher: PREACHERS.MINISTERS
   },
   {
     date: '2022-04-10T09:00:00',
-    videoLink: 'https://www.youtube.com/embed/_lcDMFY_sFM',
+    youtubeId: '_lcDMFY_sFM',
     title: 'A Kingdom Not of This World',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 18:36'
   },
   {
     date: '2022-04-03T09:00:00',
-    videoLink: 'https://www.youtube.com/embed/e1TKkMWSzek',
+    youtubeId: 'e1TKkMWSzek',
     title: 'Let Us Also Go With Him',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 11:1-16'
   },
   {
     date: '2022-03-27T09:00:00',
-    videoLink: 'https://www.youtube.com/embed/OvScMiUPbzM',
+    youtubeId: 'OvScMiUPbzM',
     title: 'Unsticking the Life that is Stuck!!',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 4:1-30'
   },
   {
     date: '2022-03-20T09:00:00',
-    videoLink: 'https://www.youtube.com/embed/DWP5v6OyjRg',
+    youtubeId: 'DWP5v6OyjRg',
     title: 'The Unconditional Love of God',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Hosea 14:4-7'
   },
   {
     date: '2022-03-13T09:00:00',
-    videoLink: 'https://www.youtube.com/embed/4vGGW_mDeFA',
+    youtubeId: '4vGGW_mDeFA',
     title: 'Satan’s Temporary Leave of Absence',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Mark 10:32-34'
@@ -57,441 +57,441 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Judges 3:15',
     title: 'Handicapped Heroes',
-    videoLink: 'https://www.youtube.com/embed/0DTca4kBiBU'
+    youtubeId: '0DTca4kBiBU'
   },
   {
     date: '2022-02-20T09:00:00',
     preacher: PREACHERS.D_NELSON,
     title: 'Who Am I',
-    videoLink: 'https://www.youtube.com/embed/e5mJQstvm4g'
+    youtubeId: 'e5mJQstvm4g'
   },
   {
     date: '2022-02-06T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 14:12-14',
     title: 'A Calling to Greater Things',
-    videoLink: 'https://www.youtube.com/embed/L9KeMe-HmbI'
+    youtubeId: 'L9KeMe-HmbI'
   },
   {
     date: '2022-01-30T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Isaiah 9:2',
     title: 'When the Darkness Is Not Dark!',
-    videoLink: 'https://www.youtube.com/embed/KRn-41pjS_U'
+    youtubeId: 'KRn-41pjS_U'
   },
   {
     date: '2022-01-23T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 12:20-28',
     title: 'Praying for God’s Glory!',
-    videoLink: 'https://www.youtube.com/embed/J_t-9y4m6io'
+    youtubeId: 'J_t-9y4m6io'
   },
   {
     date: '2022-01-16T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Mark 9:28-29',
     title: 'Why Some of Our Prayers Fail!',
-    videoLink: 'https://www.youtube.com/embed/hyDguKTxsUU'
+    youtubeId: 'hyDguKTxsUU'
   },
   {
     date: '2022-01-13T09:00:00',
     preacher: 'Dr. Irving',
     preacherLabel: 'Guest Speaker',
     title: 'A Conversation about Covid with Dr. Irving',
-    videoLink: 'https://www.youtube.com/embed/sdtucPfv3w4'
+    youtubeId: 'sdtucPfv3w4'
   },
   {
     date: '2022-01-09T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 5:6',
     title: 'From Dire Need to Delightful Fulfillment',
-    videoLink: 'https://www.youtube.com/embed/BCRK-XiQUnY'
+    youtubeId: 'BCRK-XiQUnY'
   },
   {
     date: '2022-01-02T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Philippians 4:10-13',
     title: 'The Key to Coping',
-    videoLink: 'https://www.youtube.com/embed/hICJ5H-A8f8'
+    youtubeId: 'hICJ5H-A8f8'
   },
   {
     date: '2021-12-19T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 3:16-17',
     title: 'Why Jesus Came!!',
-    videoLink: 'https://www.youtube.com/embed/Ti2ulDYG6Ig'
+    youtubeId: 'Ti2ulDYG6Ig'
   },
   {
     date: '2021-12-12T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 1:26-38',
     title: 'Mary’s Greatest Virtue: Reawakening the Sense of Awe!',
-    videoLink: 'https://www.youtube.com/embed/7uqAm2Xm2Z0'
+    youtubeId: '7uqAm2Xm2Z0'
   },
   {
     date: '2021-12-03T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 1:18-23',
     title: 'Immanuel!',
-    videoLink: 'https://www.youtube.com/embed/N4BPKTWTNOY'
+    youtubeId: 'N4BPKTWTNOY'
   },
   {
     date: '2021-11-21T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: '1 Peter 1:1-5',
     title: 'A Living Hope!!',
-    videoLink: 'https://www.youtube.com/embed/dSmlFN53Yto'
+    youtubeId: 'dSmlFN53Yto'
   },
   {
     date: '2021-11-14T09:00:00',
     preacher: 'Rev. Dr. Douglas Summers',
     scripture: 'John 19:38-42',
     title: 'Secret Servant',
-    videoLink: 'https://www.youtube.com/embed/edjKn9B34AE'
+    youtubeId: 'edjKn9B34AE'
   },
   {
     date: '2021-11-07T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Ephesians 3:14-21',
     title: 'Glorifying God Through The Church!!!',
-    videoLink: 'https://www.youtube.com/embed/MYArLACc10M'
+    youtubeId: 'MYArLACc10M'
   },
   {
     date: '2021-10-31T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 25:1-13',
     title: 'There Are Some Things In This Life That Cannot Be Shared!!',
-    videoLink: 'https://www.youtube.com/embed/D1ZswJljxNk'
+    youtubeId: 'D1ZswJljxNk'
   },
   {
     date: '2021-10-24T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Ephesians 4:11-13',
     title: 'Why We Are Here!!!',
-    videoLink: 'https://www.youtube.com/embed/fZHPEME3UAk'
+    youtubeId: 'fZHPEME3UAk'
   },
   {
     date: '2021-10-17T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 12:22-32',
     title: 'Fearlessness In The Face of Fear!!!',
-    videoLink: 'https://www.youtube.com/embed/vD3Y6O4GxsU'
+    youtubeId: 'vD3Y6O4GxsU'
   },
   {
     date: '2021-10-10T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 7:7-11',
     title: 'A Word About The God to Whom We Pray!!',
-    videoLink: 'https://www.youtube.com/embed/lSBrLEJC2TE'
+    youtubeId: 'lSBrLEJC2TE'
   },
   {
     date: '2021-10-03T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Hebrews 10:23-25',
     title: 'A Mature Approach  to Attending Worship!!!',
-    videoLink: 'https://www.youtube.com/embed/UUybG69sOEM'
+    youtubeId: 'UUybG69sOEM'
   },
   {
     date: '2021-09-26T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Philippians 3:12-15',
     title: 'In Passionate Pursuit',
-    videoLink: 'https://www.youtube.com/embed/eU601W57FDI'
+    youtubeId: 'eU601W57FDI'
   },
   {
     date: '2021-09-19T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Mark 8:34-35',
     title: 'Discipleship’s Prime Directive!',
-    videoLink: 'https://www.youtube.com/embed/uylPa-8jg9M'
+    youtubeId: 'uylPa-8jg9M'
   },
   {
     date: '2021-09-12T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 11:1-4',
     title: 'Lord, Teach Us to Pray!!',
-    videoLink: 'https://www.youtube.com/embed/_Ed4qcA54wg'
+    youtubeId: '_Ed4qcA54wg'
   },
   {
     date: '2021-09-05T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Ezekiel 36:22-24',
     title: 'Why God Grants Us Grace!!',
-    videoLink: 'https://www.youtube.com/embed/84PwFpbkiZE'
+    youtubeId: '84PwFpbkiZE'
   },
   {
     date: '2021-08-29T09:00:00',
     preacher: PREACHERS.M_HAMIEL,
     scripture: 'Matthew 28:16-20',
     title: 'Future Disciples are Watching You',
-    videoLink: 'https://www.youtube.com/embed/kPuO5T7KQk4'
+    youtubeId: 'kPuO5T7KQk4'
   },
   {
     date: '2021-08-22T09:00:00',
     preacher: PREACHERS.T_CURLEY,
     scripture: 'Isaiah 60:1-3; Ephesians 5:8',
     title: 'Turn the Light On',
-    videoLink: 'https://www.youtube.com/embed/wvbCNmW_Rmo'
+    youtubeId: 'wvbCNmW_Rmo'
   },
   {
     date: '2021-08-15T09:00:00',
     preacher: PREACHERS.D_NELSON,
     scripture: 'Matthew 6:14-15',
     title: 'Forgive Like You Want to be Forgiven',
-    videoLink: 'https://www.youtube.com/embed/RG3_GDqA608'
+    youtubeId: 'RG3_GDqA608'
   },
   {
     date: '2021-08-08T09:00:00',
     preacher: PREACHERS.D_HICKMAN,
     scripture: '1 Chronicles 16:11',
     title: 'Seeking and Worshipping God!',
-    videoLink: 'https://www.youtube.com/embed/aXBJA7oillA'
+    youtubeId: 'aXBJA7oillA'
   },
   {
     date: '2021-08-01T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Psalm 121',
     title: 'Being Kept!!',
-    videoLink: 'https://www.youtube.com/embed/ZeN8L9a11-Y'
+    youtubeId: 'ZeN8L9a11-Y'
   },
   {
     date: '2021-07-25T09:00:00',
     preacher: PREACHERS.T_CURLEY,
     scripture: 'James 4:4-10',
     title: 'Grace to the Willing Humble',
-    videoLink: 'https://www.youtube.com/embed/qcdXenQhzak'
+    youtubeId: 'qcdXenQhzak'
   },
   {
     date: '2021-07-18T09:00:00',
     preacher: PREACHERS.D_NELSON,
     scripture: 'Matthew 5:43-48',
     title: 'What Perfected Love Looks Like',
-    videoLink: 'https://www.youtube.com/embed/scRkf0P0mbI'
+    youtubeId: 'scRkf0P0mbI'
   },
   {
     date: '2021-07-11T09:00:00',
     preacher: PREACHERS.M_HAMIEL,
     scripture: 'Psalm 45:10',
     title: 'Be still and know God more',
-    videoLink: 'https://www.youtube.com/embed/4a5ZMGIHV54'
+    youtubeId: '4a5ZMGIHV54'
   },
   {
     date: '2021-07-04T09:00:00',
     preacher: PREACHERS.D_HICKMAN,
     scripture: 'Isaiah 9:1-4 and Matthew 14:13-23',
     title: 'Commune With The Light Within',
-    videoLink: 'https://www.youtube.com/embed/Qe7H7G9CDXI'
+    youtubeId: 'Qe7H7G9CDXI'
   },
   {
     date: '2021-06-27T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Exodus 14:1-14',
     title: 'It’s A Set-Up!!',
-    videoLink: 'https://www.youtube.com/embed/R-_brYkii9E'
+    youtubeId: 'R-_brYkii9E'
   },
   {
     date: '2021-06-20T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 1:24-25; 3:16-17',
     title: 'When Dads Don’t Disappear!!',
-    videoLink: 'https://www.youtube.com/embed/--cnkLzW42k'
+    youtubeId: '--cnkLzW42k'
   },
   {
     date: '2021-06-13T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 5:6',
     title: 'The Joy of Desperate Desire!!',
-    videoLink: 'https://www.youtube.com/embed/R5YUBBwDqc0'
+    youtubeId: 'R5YUBBwDqc0'
   },
   {
     date: '2021-06-06T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: '1 Peter 2:9-10',
     title: 'A Word About The Church!!',
-    videoLink: 'https://www.youtube.com/embed/voipvS-Nras'
+    youtubeId: 'voipvS-Nras'
   },
   {
     date: '2021-05-30T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 12:32',
     title: 'Fearlessness In the Face of Fear',
-    videoLink: 'https://www.youtube.com/embed/ejR-vA8IQA8'
+    youtubeId: 'ejR-vA8IQA8'
   },
   {
     date: '2021-05-23T09:00:00',
     preacher: PREACHERS.T_CURLEY,
     scripture: 'Mark 11:22-24',
     title: 'Uplifting Faith in Hard Times!',
-    videoLink: 'https://www.youtube.com/embed/36ZyZ9m7Bkg'
+    youtubeId: '36ZyZ9m7Bkg'
   },
   {
     date: '2021-05-16T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'The Most Important Thing We Need To Know!!!',
-    videoLink: 'https://www.youtube.com/embed/RsWoscyxDio'
+    youtubeId: 'RsWoscyxDio'
   },
   {
     date: '2021-05-09T09:00:00',
     preacher: PREACHERS.M_HAMIEL,
     title: 'The Assignment',
-    videoLink: 'https://www.youtube.com/embed/QQZJg-ewas8'
+    youtubeId: 'QQZJg-ewas8'
   },
   {
     date: '2021-05-02T09:00:00',
     preacher: PREACHERS.D_HICKMAN,
     title: 'Remember God’s Faithfulness When He Seems Silent!',
-    videoLink: 'https://www.youtube.com/embed/WK9qXOXs1jE'
+    youtubeId: 'WK9qXOXs1jE'
   },
   {
     date: '2021-04-25T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'Saved By Doubt',
-    videoLink: 'https://www.youtube.com/embed/vDXRInqZhi4'
+    youtubeId: 'vDXRInqZhi4'
   },
   {
     date: '2021-04-18T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'The Pentecost Prophecy!',
-    videoLink: 'https://www.youtube.com/embed/y3th4fXDPes'
+    youtubeId: 'y3th4fXDPes'
   },
   {
     date: '2021-04-11T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'A Word of Encouragement to the Church',
-    videoLink: 'https://www.youtube.com/embed/mEwD48vhw2k'
+    youtubeId: 'mEwD48vhw2k'
   },
   {
     date: '2021-04-04T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'The Resurrection',
-    videoLink: 'https://www.youtube.com/embed/jarFc9dbpMI'
+    youtubeId: 'jarFc9dbpMI'
   },
   {
     date: '2021-04-02T12:00:00',
     // TODO: handle this better, video page should say "Preachers" when this is used and search should work for it
     preacher: PREACHERS.MINISTERS,
     title: 'Seven Last Words - From the Cross',
-    videoLink: 'https://www.youtube.com/embed/IIRepOmhf_g'
+    youtubeId: 'IIRepOmhf_g'
   },
   {
     date: '2021-03-28T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'The Anointing of Jesus',
-    videoLink: 'https://www.youtube.com/embed/KyVzhcTXpgM'
+    youtubeId: 'KyVzhcTXpgM'
   },
   {
     date: '2021-03-21T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'Possessed By A Passion!!',
-    videoLink: 'https://www.youtube.com/embed/0ng_HXJIT9Q'
+    youtubeId: '0ng_HXJIT9Q'
   },
   {
     date: '2021-03-14T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'Forgive Us',
-    videoLink: 'https://www.youtube.com/embed/KdnPEQMtXwg'
+    youtubeId: 'KdnPEQMtXwg'
   },
   {
     date: '2021-03-07T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'The Rejection of Jesus',
-    videoLink: 'https://www.youtube.com/embed/FRoJDZ2hUDw'
+    youtubeId: 'FRoJDZ2hUDw'
   },
   {
     date: '2021-02-28T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'Let Us Go and Die with Him!!',
-    videoLink: 'https://www.youtube.com/embed/JPvPnAh6LmI'
+    youtubeId: 'JPvPnAh6LmI'
   },
   {
     date: '2021-02-21T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 14:1-6',
     title: 'Lessons From Our Ancestors',
-    videoLink: 'https://www.youtube.com/embed/i2spFTwJnB8'
+    youtubeId: 'i2spFTwJnB8'
   },
   {
     date: '2021-02-14T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Mark 12:28-34',
     title: 'The Greatest Commandment',
-    videoLink: 'https://www.youtube.com/embed/aqbQI38mYXo'
+    youtubeId: 'aqbQI38mYXo'
   },
   {
     date: '2021-02-07T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Deuteronomy 6:10​-12',
     title: 'Be Careful Not To Forget',
-    videoLink: 'https://www.youtube.com/embed/Hurc3xNZBT4'
+    youtubeId: 'Hurc3xNZBT4'
   },
   {
     date: '2021-01-31T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'I John 3:1-3',
     title: 'Getting The Who Right!',
-    videoLink: 'https://www.youtube.com/embed/QOQIOSqlNWE'
+    youtubeId: 'QOQIOSqlNWE'
   },
   {
     date: '2021-01-24T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Ephesians 3:14​-19',
     title: 'The Perfect Prayer For Spiritual Perfection',
-    videoLink: 'https://www.youtube.com/embed/u_a6RdGl0yA'
+    youtubeId: 'u_a6RdGl0yA'
   },
   {
     date: '2021-01-17T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Amos 5:18​-24',
     title: 'Remembering Our Drum Major For Justice',
-    videoLink: 'https://www.youtube.com/embed/yLsCm8gaTME'
+    youtubeId: 'yLsCm8gaTME'
   },
   {
     date: '2021-01-10T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Mark 9:14-27',
     title: 'Caught Between Belief And Unbelief',
-    videoLink: 'https://www.youtube.com/embed/dHjOF_DXj9I'
+    youtubeId: 'dHjOF_DXj9I'
   },
   {
     date: '2021-01-03T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Philippians 4:4-7',
     title: 'A Portrait For Handling The New Year!',
-    videoLink: 'https://www.youtube.com/embed/2BdjN0_Vl1A'
+    youtubeId: '2BdjN0_Vl1A'
   },
   {
     date: '2020-12-27T09:00:00',
     preacher: PREACHERS.L_FORD,
     scripture: 'Isaiah 43:16-21',
     title: 'Fresh Water for The New Thing!',
-    videoLink: 'https://www.youtube.com/embed/q9oBsM30OLs'
+    youtubeId: 'q9oBsM30OLs'
   },
   {
     date: '2020-12-25T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'A Christmas Meditation',
-    videoLink: 'https://www.youtube.com/embed/5UuBSeEK0Fk'
+    youtubeId: '5UuBSeEK0Fk'
   },
   {
     date: '2020-12-20T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 2:8-15',
     title: 'Glory to God in the Highest',
-    videoLink: 'https://www.youtube.com/embed/5LMjYM3jTGc'
+    youtubeId: '5LMjYM3jTGc'
   },
   {
     date: '2020-12-13T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 1:26-38',
     title: 'The Favor Of The Lord',
-    videoLink: 'https://www.youtube.com/embed/jVq3TsR8Vf4'
+    youtubeId: 'jVq3TsR8Vf4'
   },
   {
     date: '2020-12-06T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 10:10',
     title: 'Why We Need Christmas',
-    videoLink: 'https://www.youtube.com/embed/TKYTWWRzPY4'
+    youtubeId: 'TKYTWWRzPY4'
   },
   {
     date: '2020-11-29T09:00:00',
@@ -502,13 +502,13 @@ const allVideoData = [
       'is a matter of letting go and letting God.',
     preacher: PREACHERS.G_YEARGIN,
     title: 'Preparing The Way For The Glory of the Lord',
-    videoLink: 'https://www.youtube.com/embed/l6L6QomNGzY'
+    youtubeId: 'l6L6QomNGzY'
   },
   {
     date: '2020-11-26T10:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'Thanksgiving Reflection',
-    videoLink: 'https://www.youtube.com/embed/mfhFol-eJyM'
+    youtubeId: 'mfhFol-eJyM'
   },
   {
     date: '2020-11-22',
@@ -521,7 +521,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Romans 8:28',
     title: 'The Divine Grace of Recycling',
-    videoLink: 'https://www.youtube.com/embed/OxFZzjqWhbw'
+    youtubeId: 'OxFZzjqWhbw'
   },
   {
     date: '2020-11-15',
@@ -533,7 +533,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Psalm 100',
     title: 'An Invitation To Praise',
-    videoLink: 'https://www.youtube.com/embed/Du1f-JmR8wE'
+    youtubeId: 'Du1f-JmR8wE'
   },
   {
     date: '2020-11-08',
@@ -544,7 +544,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Isaiah 40: 27-31',
     title: 'Waiting On The Lord!!',
-    videoLink: 'https://www.youtube.com/embed/SEjRichM4uo'
+    youtubeId: 'SEjRichM4uo'
   },
   {
     date: '2020-11-01',
@@ -555,7 +555,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Proverbs  3:5-6',
     title: 'It’s A Matter of Trust',
-    videoLink: 'https://www.youtube.com/embed/dh8nvLZhrug'
+    youtubeId: 'dh8nvLZhrug'
   },
   {
     date: '2020-10-25',
@@ -566,7 +566,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 5:6',
     title: 'From Dire Need To Delightful Fulfillment!',
-    videoLink: 'https://www.youtube.com/embed/sNBj4u-sVPk'
+    youtubeId: 'sNBj4u-sVPk'
   },
   {
     date: '2020-10-18',
@@ -577,7 +577,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 12:22-23; 29-32',
     title: 'God’s Greatest Delight',
-    videoLink: 'https://www.youtube.com/embed/Vq00x6UyVJo'
+    youtubeId: 'Vq00x6UyVJo'
   },
   {
     date: '2020-10-11',
@@ -589,7 +589,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 11:1-4',
     title: 'Lord Teach Us To Pray!',
-    videoLink: 'https://www.youtube.com/embed/LVmzLU2d-OE'
+    youtubeId: 'LVmzLU2d-OE'
   },
   {
     date: '2020-10-04',
@@ -601,13 +601,13 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 16:29-33',
     title: 'An Incredible Affirmation',
-    videoLink: 'https://www.youtube.com/embed/YCxLUylQCZo'
+    youtubeId: 'YCxLUylQCZo'
   },
   {
     date: '2020-10-03',
     preacher: PREACHERS.G_YEARGIN,
     title: 'A Prayer For Our Nation',
-    videoLink: 'https://www.youtube.com/embed/z7kWNgr4z5c'
+    youtubeId: 'z7kWNgr4z5c'
   },
   {
     date: '2020-09-27',
@@ -619,7 +619,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Genesis 28:10-22',
     title: 'Meeting God In Unexpected Places!!',
-    videoLink: 'https://www.youtube.com/embed/tvavUdqnyxw'
+    youtubeId: 'tvavUdqnyxw'
   },
   {
     date: '2020-09-20',
@@ -630,7 +630,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 6:7-8; Luke 11:1',
     title: 'Why Prayer Is Essential',
-    videoLink: 'https://www.youtube.com/embed/nr53AhF0-qg'
+    youtubeId: 'nr53AhF0-qg'
   },
   {
     date: '2020-09-13',
@@ -641,7 +641,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 12:20-28',
     title: 'The Master’s Defining Moment',
-    videoLink: 'https://www.youtube.com/embed/F5MDLBccokw'
+    youtubeId: 'F5MDLBccokw'
   },
   {
     date: '2020-09-06',
@@ -653,7 +653,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Ephesians 6:10-13',
     title: 'Don’t Get It Twisted',
-    videoLink: 'https://www.youtube.com/embed/-_CiQ9Vz6UU'
+    youtubeId: '-_CiQ9Vz6UU'
   },
   {
     date: '2020-08-30',
@@ -661,7 +661,7 @@ const allVideoData = [
     preacher: PREACHERS.M_HAMIEL,
     scripture: 'Job 1:6-8',
     title: 'Will You Make Your Daddy Proud?',
-    videoLink: 'https://www.youtube.com/embed/VIqIHw4w20o'
+    youtubeId: 'VIqIHw4w20o'
   },
   {
     date: '2020-08-23',
@@ -669,7 +669,7 @@ const allVideoData = [
     preacher: PREACHERS.D_HICKMAN,
     scripture: 'Amos 5: 1-7',
     title: 'Injustice and Bitterness Rots The Soul',
-    videoLink: 'https://www.youtube.com/embed/qCaD6d7zmtk'
+    youtubeId: 'qCaD6d7zmtk'
   },
   {
     date: '2020-08-16',
@@ -677,7 +677,7 @@ const allVideoData = [
     preacher: PREACHERS.D_HICKMAN,
     scripture: 'Exodus 14: 13-14',
     title: 'God Will Fight Our Battles',
-    videoLink: 'https://www.youtube.com/embed/JO_mKPqa4sg'
+    youtubeId: 'JO_mKPqa4sg'
   },
   {
     date: '2020-08-09',
@@ -685,7 +685,7 @@ const allVideoData = [
     preacher: PREACHERS.T_CURLEY,
     scripture: 'Genesis 6:5-8 and Rev. 13: 5-8',
     title: 'Everybody’s Going Through Something',
-    videoLink: 'https://www.youtube.com/embed/5I1Pe8hyV8Q'
+    youtubeId: '5I1Pe8hyV8Q'
   },
   {
     date: '2020-08-02',
@@ -696,7 +696,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Genesis 28:10-17',
     title: 'A Glimpse of Glory',
-    videoLink: 'https://www.youtube.com/embed/G-IWmeMJf3s'
+    youtubeId: 'G-IWmeMJf3s'
   },
   {
     date: '2020-07-26',
@@ -706,7 +706,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Genesis 28:10-17',
     title: 'When You Least Expect It, Expect It',
-    videoLink: 'https://www.youtube.com/embed/fDaeW4mmVIE'
+    youtubeId: 'fDaeW4mmVIE'
   },
   {
     date: '2020-07-19',
@@ -716,7 +716,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 11:30-35',
     title: 'A Peek Into The Heart Of God',
-    videoLink: 'https://www.youtube.com/embed/pdZxkWcG1Ho'
+    youtubeId: 'pdZxkWcG1Ho'
   },
   {
     date: '2020-07-12',
@@ -726,7 +726,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 16:25-33',
     title: 'Overcoming The World',
-    videoLink: 'https://www.youtube.com/embed/LpT1uHrFf7U'
+    youtubeId: 'LpT1uHrFf7U'
   },
   {
     date: '2020-06-28',
@@ -738,7 +738,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 25:14-30',
     title: 'Use It Or Lose It',
-    videoLink: 'https://www.youtube.com/embed/fwFj22DGuw4'
+    youtubeId: 'fwFj22DGuw4'
   },
   {
     date: '2020-06-21',
@@ -749,7 +749,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Psalm 23',
     title: 'Father’s Day - “A Reflection On The 23rd Psalm”',
-    videoLink: 'https://www.youtube.com/embed/LPeZCzH7ca0'
+    youtubeId: 'LPeZCzH7ca0'
   },
   {
     date: '2020-06-14',
@@ -761,7 +761,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'II Kings 4:8-37',
     title: 'Is It Well With the Children?',
-    videoLink: 'https://www.youtube.com/embed/NxJywh2f_DM'
+    youtubeId: 'NxJywh2f_DM'
   },
   {
     date: '2020-06-07',
@@ -772,7 +772,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Psalm 100',
     title: 'The Protest of Praise',
-    videoLink: 'https://www.youtube.com/embed/9pPt5yafh0I'
+    youtubeId: '9pPt5yafh0I'
   },
   {
     date: '2020-05-30',
@@ -782,7 +782,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Acts 2: 1-13',
     title: 'Pentecost',
-    videoLink: 'https://www.youtube.com/embed/hHIaxONs6v4'
+    youtubeId: 'hHIaxONs6v4'
   },
   {
     date: '2020-05-24',
@@ -793,7 +793,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 14: 15-21',
     title: 'The Promise of The Holy Spirit',
-    videoLink: 'https://www.youtube.com/embed/toTpl05RCXY'
+    youtubeId: 'toTpl05RCXY'
   },
   {
     date: '2020-05-17',
@@ -803,7 +803,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Philippians 4:15-20',
     title: 'Supplying Our Every Need',
-    videoLink: 'https://www.youtube.com/embed/3Q1VfZfuf-w'
+    youtubeId: '3Q1VfZfuf-w'
   },
   {
     date: '2020-05-10',
@@ -814,7 +814,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'II Kings: 4: 1-7',
     title: 'The Importance of A Mother’s Oil',
-    videoLink: 'https://www.youtube.com/embed/GDDqCBlu7_k'
+    youtubeId: 'GDDqCBlu7_k'
   },
   {
     date: '2020-05-03',
@@ -824,7 +824,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Mark 11: 12-14; 20-25',
     title: 'Engaging The Power of Prayer',
-    videoLink: 'https://www.youtube.com/embed/lHLcCaL33A8'
+    youtubeId: 'lHLcCaL33A8'
   },
   {
     date: '2020-04-26',
@@ -834,7 +834,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: '1st John 3: 1-2',
     title: 'Remembering Who We Are',
-    videoLink: 'https://www.youtube.com/embed/FflhfJyEce4'
+    youtubeId: 'FflhfJyEce4'
   },
   {
     date: '2020-04-19',
@@ -844,7 +844,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Mark 6:45-51',
     title: 'Spoken Beyond Fear',
-    videoLink: 'https://www.youtube.com/embed/XQLNReiATwo'
+    youtubeId: 'XQLNReiATwo'
   },
   {
     date: '2020-04-12',
@@ -855,7 +855,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Mark 16:1-8',
     title: 'Finishing The Unfinished Gospel',
-    videoLink: 'https://www.youtube.com/embed/-qk8yNI1XIs'
+    youtubeId: '-qk8yNI1XIs'
   },
   {
     date: '2020-04-09',
@@ -865,7 +865,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 27:31-34',
     title: 'But I Have Prayed For You',
-    videoLink: 'https://www.youtube.com/embed/oYi8THK6f44'
+    youtubeId: 'oYi8THK6f44'
   },
   {
     date: '2020-04-05',
@@ -875,7 +875,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 19:28-40',
     title: 'The Triumphant Entry of Jesus Into Jerusalem',
-    videoLink: 'https://www.youtube.com/embed/aO-U_Zh9of4'
+    youtubeId: 'aO-U_Zh9of4'
   },
   {
     date: '2020-03-29',
@@ -885,7 +885,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Psalm 27:1; 13-14',
     title: 'Alleviating Our Anxious Fears',
-    videoLink: 'https://www.youtube.com/embed/-bsGGeVUInM'
+    youtubeId: '-bsGGeVUInM'
   },
   {
     date: '2020-03-22',
@@ -895,7 +895,7 @@ const allVideoData = [
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 16:29-33',
     title: 'An Indestructible Hope',
-    videoLink: 'https://www.youtube.com/embed/3sgm_bRfXuw'
+    youtubeId: '3sgm_bRfXuw'
   }
 ];
 
