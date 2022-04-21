@@ -746,7 +746,14 @@ const bibleComFormattedVerses = {
   '2022-04-20': {verse: 'Luke 24.1-12'},
   '2022-04-21': {verse: 'Acts 17.16-21'},
   '2022-04-22': {verse: 'Luke 20.27-40'},
-  '2022-04-23': {verse: 'Philippians 3.7-11'}
+  '2022-04-23': {verse: 'Philippians 3.7-11'},
+  '2022-04-24': {verse: 'Psalm 16'},
+  '2022-04-25': {verse: 'Luke 24.13-27'},
+  '2022-04-26': {verse: 'Luke 24.28-35'},
+  '2022-04-27': {verse: 'John 21.1-14'},
+  '2022-04-28': {verse: 'Matthew 28.16-20'},
+  '2022-04-29': {verse: 'Acts 2.22-36'},
+  '2022-04-30': {verse: 'Genesis 32.22-32'}
 };
 
 export {bibleComFormattedVerses};
