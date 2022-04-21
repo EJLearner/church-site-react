@@ -2618,5 +2618,24 @@ export default {
         emphasis added).”
       </p>
     )
+  },
+  '2022-04-24': {
+    subTitle: (
+      <>
+        From <i> Everything Belongs </i> by Richard Rohr
+      </>
+    ),
+    content: (
+      <p>
+        “All spiritual disciplines are to help you trust this personal
+        experience of yourself, which is, not surprisingly, also an experience
+        of God. People are usually amazed that the two experiences coincide:
+        when we know God, we seem to know and accept our own humanity; when we
+        meet ourselves at profound levels of recognition, we also meet God. We
+        don’t have any real access to who we are except through God, and we
+        don’t have any real access to God except through forgiving and rejoicing
+        in our own humanity..”
+      </p>
+    )
   }
 };
