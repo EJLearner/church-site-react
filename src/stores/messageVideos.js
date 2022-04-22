@@ -1,5 +1,5 @@
 import constants from '../utils/constants';
-import {isPast, parseISO} from '../utils/dateTimeUtils';
+import {getNumberOfDaysAgo, isPast, parseISO} from '../utils/dateTimeUtils';
 
 const {PREACHERS} = constants;
 
@@ -139,7 +139,6 @@ const messageVideos = [
     date: '2021-11-21T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: '1 Peter 1:1-5',
-    isAvailable: false,
     title: 'A Living Hope!!',
     youtubeId: 'dSmlFN53Yto'
   },
@@ -147,7 +146,6 @@ const messageVideos = [
     date: '2021-11-14T09:00:00',
     preacher: 'Rev. Dr. Douglas Summers',
     scripture: 'John 19:38-42',
-    isAvailable: false,
     title: 'Secret Servant',
     youtubeId: 'edjKn9B34AE'
   },
@@ -155,7 +153,6 @@ const messageVideos = [
     date: '2021-11-07T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Ephesians 3:14-21',
-    isAvailable: false,
     title: 'Glorifying God Through The Church!!!',
     youtubeId: 'MYArLACc10M'
   },
@@ -163,7 +160,6 @@ const messageVideos = [
     date: '2021-10-31T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 25:1-13',
-    isAvailable: false,
     title: 'There Are Some Things In This Life That Cannot Be Shared!!',
     youtubeId: 'D1ZswJljxNk'
   },
@@ -171,7 +167,6 @@ const messageVideos = [
     date: '2021-10-24T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Ephesians 4:11-13',
-    isAvailable: false,
     title: 'Why We Are Here!!!',
     youtubeId: 'fZHPEME3UAk'
   },
@@ -179,7 +174,6 @@ const messageVideos = [
     date: '2021-10-17T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 12:22-32',
-    isAvailable: false,
     title: 'Fearlessness In The Face of Fear!!!',
     youtubeId: 'vD3Y6O4GxsU'
   },
@@ -187,7 +181,6 @@ const messageVideos = [
     date: '2021-10-10T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 7:7-11',
-    isAvailable: false,
     title: 'A Word About The God to Whom We Pray!!',
     youtubeId: 'lSBrLEJC2TE'
   },
@@ -195,7 +188,6 @@ const messageVideos = [
     date: '2021-10-03T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Hebrews 10:23-25',
-    isAvailable: false,
     title: 'A Mature Approach  to Attending Worship!!!',
     youtubeId: 'UUybG69sOEM'
   },
@@ -203,7 +195,6 @@ const messageVideos = [
     date: '2021-09-26T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Philippians 3:12-15',
-    isAvailable: false,
     title: 'In Passionate Pursuit',
     youtubeId: 'eU601W57FDI'
   },
@@ -211,7 +202,6 @@ const messageVideos = [
     date: '2021-09-19T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Mark 8:34-35',
-    isAvailable: false,
     title: 'Discipleship’s Prime Directive!',
     youtubeId: 'uylPa-8jg9M'
   },
@@ -219,7 +209,6 @@ const messageVideos = [
     date: '2021-09-12T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 11:1-4',
-    isAvailable: false,
     title: 'Lord, Teach Us to Pray!!',
     youtubeId: '_Ed4qcA54wg'
   },
@@ -227,7 +216,6 @@ const messageVideos = [
     date: '2021-09-05T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Ezekiel 36:22-24',
-    isAvailable: false,
     title: 'Why God Grants Us Grace!!',
     youtubeId: '84PwFpbkiZE'
   },
@@ -235,7 +223,6 @@ const messageVideos = [
     date: '2021-08-29T09:00:00',
     preacher: PREACHERS.M_HAMIEL,
     scripture: 'Matthew 28:16-20',
-    isAvailable: false,
     title: 'Future Disciples are Watching You',
     youtubeId: 'kPuO5T7KQk4'
   },
@@ -243,7 +230,6 @@ const messageVideos = [
     date: '2021-08-22T09:00:00',
     preacher: PREACHERS.T_CURLEY,
     scripture: 'Isaiah 60:1-3; Ephesians 5:8',
-    isAvailable: false,
     title: 'Turn the Light On',
     youtubeId: 'wvbCNmW_Rmo'
   },
@@ -251,7 +237,6 @@ const messageVideos = [
     date: '2021-08-15T09:00:00',
     preacher: PREACHERS.D_NELSON,
     scripture: 'Matthew 6:14-15',
-    isAvailable: false,
     title: 'Forgive Like You Want to be Forgiven',
     youtubeId: 'RG3_GDqA608'
   },
@@ -259,7 +244,6 @@ const messageVideos = [
     date: '2021-08-08T09:00:00',
     preacher: PREACHERS.D_HICKMAN,
     scripture: '1 Chronicles 16:11',
-    isAvailable: false,
     title: 'Seeking and Worshipping God!',
     youtubeId: 'aXBJA7oillA'
   },
@@ -267,7 +251,6 @@ const messageVideos = [
     date: '2021-08-01T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Psalm 121',
-    isAvailable: false,
     title: 'Being Kept!!',
     youtubeId: 'ZeN8L9a11-Y'
   },
@@ -275,7 +258,6 @@ const messageVideos = [
     date: '2021-07-25T09:00:00',
     preacher: PREACHERS.T_CURLEY,
     scripture: 'James 4:4-10',
-    isAvailable: false,
     title: 'Grace to the Willing Humble',
     youtubeId: 'qcdXenQhzak'
   },
@@ -283,7 +265,6 @@ const messageVideos = [
     date: '2021-07-18T09:00:00',
     preacher: PREACHERS.D_NELSON,
     scripture: 'Matthew 5:43-48',
-    isAvailable: false,
     title: 'What Perfected Love Looks Like',
     youtubeId: 'scRkf0P0mbI'
   },
@@ -291,7 +272,6 @@ const messageVideos = [
     date: '2021-07-11T09:00:00',
     preacher: PREACHERS.M_HAMIEL,
     scripture: 'Psalm 45:10',
-    isAvailable: false,
     title: 'Be still and know God more',
     youtubeId: '4a5ZMGIHV54'
   },
@@ -299,7 +279,6 @@ const messageVideos = [
     date: '2021-07-04T09:00:00',
     preacher: PREACHERS.D_HICKMAN,
     scripture: 'Isaiah 9:1-4 and Matthew 14:13-23',
-    isAvailable: false,
     title: 'Commune With The Light Within',
     youtubeId: 'Qe7H7G9CDXI'
   },
@@ -307,7 +286,6 @@ const messageVideos = [
     date: '2021-06-27T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Exodus 14:1-14',
-    isAvailable: false,
     title: 'It’s A Set-Up!!',
     youtubeId: 'R-_brYkii9E'
   },
@@ -315,7 +293,6 @@ const messageVideos = [
     date: '2021-06-20T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 1:24-25; 3:16-17',
-    isAvailable: false,
     title: 'When Dads Don’t Disappear!!',
     youtubeId: '--cnkLzW42k'
   },
@@ -323,7 +300,7 @@ const messageVideos = [
     date: '2021-06-13T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 5:6',
-    isAvailable: true,
+    expires: false,
     title: 'The Joy of Desperate Desire!!',
     youtubeId: 'R5YUBBwDqc0'
   },
@@ -331,7 +308,6 @@ const messageVideos = [
     date: '2021-06-06T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: '1 Peter 2:9-10',
-    isAvailable: false,
     title: 'A Word About The Church!!',
     youtubeId: 'voipvS-Nras'
   },
@@ -339,7 +315,6 @@ const messageVideos = [
     date: '2021-05-30T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 12:32',
-    isAvailable: false,
     title: 'Fearlessness In the Face of Fear',
     youtubeId: 'ejR-vA8IQA8'
   },
@@ -347,7 +322,6 @@ const messageVideos = [
     date: '2021-05-23T09:00:00',
     preacher: PREACHERS.T_CURLEY,
     scripture: 'Mark 11:22-24',
-    isAvailable: false,
     title: 'Uplifting Faith in Hard Times!',
     youtubeId: '36ZyZ9m7Bkg'
   },
@@ -355,99 +329,85 @@ const messageVideos = [
     date: '2021-05-16T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'The Most Important Thing We Need To Know!!!',
-    youtubeId: 'RsWoscyxDio',
-    isAvailable: false
+    youtubeId: 'RsWoscyxDio'
   },
   {
     date: '2021-05-09T09:00:00',
     preacher: PREACHERS.M_HAMIEL,
     title: 'The Assignment',
-    youtubeId: 'QQZJg-ewas8',
-    isAvailable: false
+    youtubeId: 'QQZJg-ewas8'
   },
   {
     date: '2021-05-02T09:00:00',
     preacher: PREACHERS.D_HICKMAN,
     title: 'Remember God’s Faithfulness When He Seems Silent!',
-    youtubeId: 'WK9qXOXs1jE',
-    isAvailable: false
+    youtubeId: 'WK9qXOXs1jE'
   },
   {
     date: '2021-04-25T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'Saved By Doubt',
-    youtubeId: 'vDXRInqZhi4',
-    isAvailable: false
+    youtubeId: 'vDXRInqZhi4'
   },
   {
     date: '2021-04-18T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'The Pentecost Prophecy!',
-    youtubeId: 'y3th4fXDPes',
-    isAvailable: false
+    youtubeId: 'y3th4fXDPes'
   },
   {
     date: '2021-04-11T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'A Word of Encouragement to the Church',
-    youtubeId: 'mEwD48vhw2k',
-    isAvailable: false
+    youtubeId: 'mEwD48vhw2k'
   },
   {
     date: '2021-04-04T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'The Resurrection',
-    youtubeId: 'jarFc9dbpMI',
-    isAvailable: false
+    youtubeId: 'jarFc9dbpMI'
   },
   {
     date: '2021-04-02T12:00:00',
     // TODO: handle this better, video page should say "Preachers" when this is used and search should work for it
     preacher: PREACHERS.MINISTERS,
     title: 'Seven Last Words - From the Cross',
-    youtubeId: 'IIRepOmhf_g',
-    isAvailable: false
+    youtubeId: 'IIRepOmhf_g'
   },
   {
     date: '2021-03-28T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'The Anointing of Jesus',
-    youtubeId: 'KyVzhcTXpgM',
-    isAvailable: false
+    youtubeId: 'KyVzhcTXpgM'
   },
   {
     date: '2021-03-21T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'Possessed By A Passion!!',
-    youtubeId: '0ng_HXJIT9Q',
-    isAvailable: false
+    youtubeId: '0ng_HXJIT9Q'
   },
   {
     date: '2021-03-14T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'Forgive Us',
-    youtubeId: 'KdnPEQMtXwg',
-    isAvailable: false
+    youtubeId: 'KdnPEQMtXwg'
   },
   {
     date: '2021-03-07T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'The Rejection of Jesus',
-    youtubeId: 'FRoJDZ2hUDw',
-    isAvailable: false
+    youtubeId: 'FRoJDZ2hUDw'
   },
   {
     date: '2021-02-28T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'Let Us Go and Die with Him!!',
-    youtubeId: 'JPvPnAh6LmI',
-    isAvailable: false
+    youtubeId: 'JPvPnAh6LmI'
   },
   {
     date: '2021-02-21T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 14:1-6',
-    isAvailable: false,
     title: 'Lessons From Our Ancestors',
     youtubeId: 'i2spFTwJnB8'
   },
@@ -455,7 +415,6 @@ const messageVideos = [
     date: '2021-02-14T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Mark 12:28-34',
-    isAvailable: false,
     title: 'The Greatest Commandment',
     youtubeId: 'aqbQI38mYXo'
   },
@@ -463,7 +422,6 @@ const messageVideos = [
     date: '2021-02-07T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Deuteronomy 6:10​-12',
-    isAvailable: false,
     title: 'Be Careful Not To Forget',
     youtubeId: 'Hurc3xNZBT4'
   },
@@ -471,7 +429,6 @@ const messageVideos = [
     date: '2021-01-31T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'I John 3:1-3',
-    isAvailable: false,
     title: 'Getting The Who Right!',
     youtubeId: 'QOQIOSqlNWE'
   },
@@ -479,7 +436,6 @@ const messageVideos = [
     date: '2021-01-24T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Ephesians 3:14​-19',
-    isAvailable: false,
     title: 'The Perfect Prayer For Spiritual Perfection',
     youtubeId: 'u_a6RdGl0yA'
   },
@@ -487,7 +443,6 @@ const messageVideos = [
     date: '2021-01-17T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Amos 5:18​-24',
-    isAvailable: false,
     title: 'Remembering Our Drum Major For Justice',
     youtubeId: 'yLsCm8gaTME'
   },
@@ -495,7 +450,6 @@ const messageVideos = [
     date: '2021-01-10T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Mark 9:14-27',
-    isAvailable: false,
     title: 'Caught Between Belief And Unbelief',
     youtubeId: 'dHjOF_DXj9I'
   },
@@ -503,7 +457,6 @@ const messageVideos = [
     date: '2021-01-03T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Philippians 4:4-7',
-    isAvailable: false,
     title: 'A Portrait For Handling The New Year!',
     youtubeId: '2BdjN0_Vl1A'
   },
@@ -511,7 +464,6 @@ const messageVideos = [
     date: '2020-12-27T09:00:00',
     preacher: PREACHERS.L_FORD,
     scripture: 'Isaiah 43:16-21',
-    isAvailable: false,
     title: 'Fresh Water for The New Thing!',
     youtubeId: 'q9oBsM30OLs'
   },
@@ -519,14 +471,12 @@ const messageVideos = [
     date: '2020-12-25T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'A Christmas Meditation',
-    youtubeId: '5UuBSeEK0Fk',
-    isAvailable: false
+    youtubeId: '5UuBSeEK0Fk'
   },
   {
     date: '2020-12-20T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 2:8-15',
-    isAvailable: false,
     title: 'Glory to God in the Highest',
     youtubeId: '5LMjYM3jTGc'
   },
@@ -534,7 +484,6 @@ const messageVideos = [
     date: '2020-12-13T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 1:26-38',
-    isAvailable: false,
     title: 'The Favor Of The Lord',
     youtubeId: 'jVq3TsR8Vf4'
   },
@@ -542,7 +491,6 @@ const messageVideos = [
     date: '2020-12-06T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 10:10',
-    isAvailable: false,
     title: 'Why We Need Christmas',
     youtubeId: 'TKYTWWRzPY4'
   },
@@ -555,15 +503,13 @@ const messageVideos = [
       'is a matter of letting go and letting God.',
     preacher: PREACHERS.G_YEARGIN,
     title: 'Preparing The Way For The Glory of the Lord',
-    youtubeId: 'l6L6QomNGzY',
-    isAvailable: false
+    youtubeId: 'l6L6QomNGzY'
   },
   {
     date: '2020-11-26T10:00:00',
     preacher: PREACHERS.G_YEARGIN,
     title: 'Thanksgiving Reflection',
-    youtubeId: 'mfhFol-eJyM',
-    isAvailable: false
+    youtubeId: 'mfhFol-eJyM'
   },
   {
     date: '2020-11-22',
@@ -575,7 +521,6 @@ const messageVideos = [
       'Grace of Recycling!!',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Romans 8:28',
-    isAvailable: false,
     title: 'The Divine Grace of Recycling',
     youtubeId: 'OxFZzjqWhbw'
   },
@@ -588,7 +533,6 @@ const messageVideos = [
       'the president elect. Therefore, I extend an invitation to you to join with me in “Praising the Lord!”',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Psalm 100',
-    isAvailable: false,
     title: 'An Invitation To Praise',
     youtubeId: 'Du1f-JmR8wE'
   },
@@ -600,7 +544,6 @@ const messageVideos = [
       'will happen by waiting on the Lord!',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Isaiah 40: 27-31',
-    isAvailable: false,
     title: 'Waiting On The Lord!!',
     youtubeId: 'SEjRichM4uo'
   },
@@ -612,7 +555,6 @@ const messageVideos = [
       'remedy that brings an end to our anxious fears. The remedy is “A matter of trusting in the Lord!”',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Proverbs  3:5-6',
-    isAvailable: false,
     title: 'It’s A Matter of Trust',
     youtubeId: 'dh8nvLZhrug'
   },
@@ -624,7 +566,6 @@ const messageVideos = [
       'there is within all of us a hunger and thirst that only God can provide.',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 5:6',
-    isAvailable: false,
     title: 'From Dire Need To Delightful Fulfillment!',
     youtubeId: 'sNBj4u-sVPk'
   },
@@ -636,7 +577,6 @@ const messageVideos = [
       'all of us is “Seek the Kingdom of God above all else and He will give you everything you need.',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 12:22-23; 29-32',
-    isAvailable: false,
     title: 'God’s Greatest Delight',
     youtubeId: 'Vq00x6UyVJo'
   },
@@ -649,7 +589,6 @@ const messageVideos = [
       ' is grounded and founded in the make-up  and nature of our relationship with God!',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 11:1-4',
-    isAvailable: false,
     title: 'Lord Teach Us To Pray!',
     youtubeId: 'LVmzLU2d-OE'
   },
@@ -662,7 +601,6 @@ const messageVideos = [
       'incredible affirmation by declaring, “But take heart, because I have overcome the world!”',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 16:29-33',
-    isAvailable: false,
     title: 'An Incredible Affirmation',
     youtubeId: 'YCxLUylQCZo'
   },
@@ -670,8 +608,7 @@ const messageVideos = [
     date: '2020-10-03',
     preacher: PREACHERS.G_YEARGIN,
     title: 'A Prayer For Our Nation',
-    youtubeId: 'z7kWNgr4z5c',
-    isAvailable: false
+    youtubeId: 'z7kWNgr4z5c'
   },
   {
     date: '2020-09-27',
@@ -682,7 +619,6 @@ const messageVideos = [
       'unexpected places!!',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Genesis 28:10-22',
-    isAvailable: false,
     title: 'Meeting God In Unexpected Places!!',
     youtubeId: 'tvavUdqnyxw'
   },
@@ -694,7 +630,6 @@ const messageVideos = [
       'whom we can turn to for He knows all of our needs. That makes prayer even more essential.',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 6:7-8; Luke 11:1',
-    isAvailable: false,
     title: 'Why Prayer Is Essential',
     youtubeId: 'nr53AhF0-qg'
   },
@@ -706,7 +641,6 @@ const messageVideos = [
       'of eternal life.',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 12:20-28',
-    isAvailable: false,
     title: 'The Master’s Defining Moment',
     youtubeId: 'F5MDLBccokw'
   },
@@ -719,7 +653,6 @@ const messageVideos = [
       'that we make.',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Ephesians 6:10-13',
-    isAvailable: false,
     title: 'Don’t Get It Twisted',
     youtubeId: '-_CiQ9Vz6UU'
   },
@@ -728,7 +661,6 @@ const messageVideos = [
     description: 'Job 1:6-8',
     preacher: PREACHERS.M_HAMIEL,
     scripture: 'Job 1:6-8',
-    isAvailable: false,
     title: 'Will You Make Your Daddy Proud?',
     youtubeId: 'VIqIHw4w20o'
   },
@@ -737,7 +669,6 @@ const messageVideos = [
     description: 'Amos 5: 1-7',
     preacher: PREACHERS.D_HICKMAN,
     scripture: 'Amos 5: 1-7',
-    isAvailable: false,
     title: 'Injustice and Bitterness Rots The Soul',
     youtubeId: 'qCaD6d7zmtk'
   },
@@ -746,7 +677,6 @@ const messageVideos = [
     description: 'Exodus 14: 13-14',
     preacher: PREACHERS.D_HICKMAN,
     scripture: 'Exodus 14: 13-14',
-    isAvailable: false,
     title: 'God Will Fight Our Battles',
     youtubeId: 'JO_mKPqa4sg'
   },
@@ -755,7 +685,6 @@ const messageVideos = [
     description: 'Genesis 6:5-8 and Rev. 13: 5-8',
     preacher: PREACHERS.T_CURLEY,
     scripture: 'Genesis 6:5-8 and Rev. 13: 5-8',
-    isAvailable: false,
     title: 'Everybody’s Going Through Something',
     youtubeId: '5I1Pe8hyV8Q'
   },
@@ -767,7 +696,6 @@ const messageVideos = [
       'encourages us to do so!',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Genesis 28:10-17',
-    isAvailable: false,
     title: 'A Glimpse of Glory',
     youtubeId: 'G-IWmeMJf3s'
   },
@@ -778,7 +706,6 @@ const messageVideos = [
       'when we least expect it, know that God is with us!',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Genesis 28:10-17',
-    isAvailable: false,
     title: 'When You Least Expect It, Expect It',
     youtubeId: 'fDaeW4mmVIE'
   },
@@ -789,7 +716,6 @@ const messageVideos = [
       'are tears of pain and suffering. The good news is, we never cry alone because God through Jesus weeps with us!',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 11:30-35',
-    isAvailable: false,
     title: 'A Peek Into The Heart Of God',
     youtubeId: 'pdZxkWcG1Ho'
   },
@@ -800,7 +726,6 @@ const messageVideos = [
       'News is that Jesus has overcome the world which gives us reason to rejoice!',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 16:25-33',
-    isAvailable: false,
     title: 'Overcoming The World',
     youtubeId: 'LpT1uHrFf7U'
   },
@@ -813,7 +738,6 @@ const messageVideos = [
       'as a result the world also suffers a great loss.',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 25:14-30',
-    isAvailable: false,
     title: 'Use It Or Lose It',
     youtubeId: 'fwFj22DGuw4'
   },
@@ -825,7 +749,6 @@ const messageVideos = [
       'importance of a father’s role.',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Psalm 23',
-    isAvailable: false,
     title: 'Father’s Day - “A Reflection On The 23rd Psalm”',
     youtubeId: 'LPeZCzH7ca0'
   },
@@ -838,7 +761,6 @@ const messageVideos = [
       'leave it.” (Proverbs 22:6)',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'II Kings 4:8-37',
-    isAvailable: false,
     title: 'Is It Well With the Children?',
     youtubeId: 'NxJywh2f_DM'
   },
@@ -850,7 +772,6 @@ const messageVideos = [
       'doing we become concerned about justice, freedom and equality for all.',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Psalm 100',
-    isAvailable: false,
     title: 'The Protest of Praise',
     youtubeId: '9pPt5yafh0I'
   },
@@ -861,7 +782,6 @@ const messageVideos = [
       'He promised them that God would send them another advocate. That advocate is the “Holy Spirit.”',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Acts 2: 1-13',
-    isAvailable: false,
     title: 'Pentecost',
     youtubeId: 'hHIaxONs6v4'
   },
@@ -873,7 +793,6 @@ const messageVideos = [
       'empowered by “The Holy Spirit.”',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 14: 15-21',
-    isAvailable: false,
     title: 'The Promise of The Holy Spirit',
     youtubeId: 'toTpl05RCXY'
   },
@@ -884,7 +803,6 @@ const messageVideos = [
       'to supply all our needs according to His riches in glory.',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Philippians 4:15-20',
-    isAvailable: false,
     title: 'Supplying Our Every Need',
     youtubeId: '3Q1VfZfuf-w'
   },
@@ -896,7 +814,6 @@ const messageVideos = [
       'live out their lives.',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'II Kings: 4: 1-7',
-    isAvailable: false,
     title: 'The Importance of A Mother’s Oil',
     youtubeId: 'GDDqCBlu7_k'
   },
@@ -907,7 +824,6 @@ const messageVideos = [
       ' prayer. This message teaches how to engage the power of prayer.',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Mark 11: 12-14; 20-25',
-    isAvailable: false,
     title: 'Engaging The Power of Prayer',
     youtubeId: 'lHLcCaL33A8'
   },
@@ -918,7 +834,6 @@ const messageVideos = [
       'which causes us to forget who we are. When this happens, God calls us to “be still and remember who we are!”',
     preacher: PREACHERS.G_YEARGIN,
     scripture: '1st John 3: 1-2',
-    isAvailable: false,
     title: 'Remembering Who We Are',
     youtubeId: 'FflhfJyEce4'
   },
@@ -929,7 +844,6 @@ const messageVideos = [
       'living. However there is One who speaks to us and can move us from fear to faith. Mark 6:45-51',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Mark 6:45-51',
-    isAvailable: false,
     title: 'Spoken Beyond Fear',
     youtubeId: 'XQLNReiATwo'
   },
@@ -941,7 +855,6 @@ const messageVideos = [
       'tells the rest of the story!',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Mark 16:1-8',
-    isAvailable: false,
     title: 'Finishing The Unfinished Gospel',
     youtubeId: '-qk8yNI1XIs'
   },
@@ -952,7 +865,6 @@ const messageVideos = [
       'when we fail, Christ has prayed for us.',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 27:31-34',
-    isAvailable: false,
     title: 'But I Have Prayed For You',
     youtubeId: 'oYi8THK6f44'
   },
@@ -963,7 +875,6 @@ const messageVideos = [
       'truth He is THE KING OF GLORY!',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Luke 19:28-40',
-    isAvailable: false,
     title: 'The Triumphant Entry of Jesus Into Jerusalem',
     youtubeId: 'aO-U_Zh9of4'
   },
@@ -974,7 +885,6 @@ const messageVideos = [
       'on the Lord.',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Psalm 27:1; 13-14',
-    isAvailable: false,
     title: 'Alleviating Our Anxious Fears',
     youtubeId: '-bsGGeVUInM'
   },
@@ -985,13 +895,15 @@ const messageVideos = [
       'hope. It is indestructible because it is grounded and founded in our God.',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 16:29-33',
-    isAvailable: false,
     title: 'An Indestructible Hope',
     youtubeId: '3sgm_bRfXuw'
   }
 ]
-  .filter(({date, isAvailable = true}) => {
-    return isAvailable && isPast(parseISO(date));
+  .filter(({date, expires = true}) => {
+    // was told that videos up to 6 months ago would be available but they aren't
+    // so I'm doing 5 months
+    const withinFiveMonths = getNumberOfDaysAgo(date) < 150;
+    return isPast(parseISO(date)) && (withinFiveMonths || !expires);
   })
   .sort((a, b) => a.date < b.date);
 
