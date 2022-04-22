@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import ContactLine from '../Reusable/ContactLine';
 
 import yearginImage from '../../../assets/ce/images/yearginbio.jpg';
+import ContactLine from '../Reusable/ContactLine';
+
 
 class Pastor extends Component {
   render() {

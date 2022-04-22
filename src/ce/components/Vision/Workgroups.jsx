@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import WorkGroupInfo from './WorkGroupInfo';
+
 import workGroupData from '../../utils/visionWorkgroupData';
+
+import WorkGroupInfo from './WorkGroupInfo';
 
 class Workgroups extends Component {
   _renderWorkGroupInfos() {

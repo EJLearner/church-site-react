@@ -1,11 +1,10 @@
-import React, {Component} from 'react';
+import _ from 'lodash';
+import moment from 'moment';
 import PropTypes from 'prop-types';
+import React, {Component} from 'react';
 import {Redirect} from 'react-router';
 
 import routePaths from '../../../routePaths';
-
-import moment from 'moment';
-import _ from 'lodash';
 
 import DeprecatedMiniCalendar from './DeprecatedMiniCalendar';
 
@@ -21,7 +20,7 @@ class CalendarYear extends Component {
     this._renderMonths = this._renderMonths.bind(this);
   }
 
-  _goToDay(dayString, hasEvents) {
+  _goToDay(dayString) {
     this.setState({redirectDate: dayString});
   }
 

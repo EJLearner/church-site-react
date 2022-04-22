@@ -5,7 +5,7 @@ import constants from '../../../utils/constants';
 const validDateFormats = ['M/D/YY', 'M/D/YYYY', 'M-D-YYYY', 'M-D-YY'];
 
 const fieldValidators = {
-  disclaimerIsChecked: (value, label) => {
+  disclaimerIsChecked: (value) => {
     if (value !== true) {
       return 'Please indicate that you agree to the terms.';
     }
@@ -45,14 +45,14 @@ const fieldValidators = {
   isValidEmail: (value, label) => {
     const valid = value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i);
     if (value && !valid) {
-      return `${label} must be a valid email address`;
+      return `${label} must be a valid email address.`;
     }
   },
 
   isAtLeastTwoCharacters: (value, label) => {
     const valid = value && value.length > 1;
     if (value && !valid) {
-      return `${label} is not valid`;
+      return `${label} is not valid.`;
     }
   },
 

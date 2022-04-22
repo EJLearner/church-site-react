@@ -1,11 +1,11 @@
 import moment from 'moment';
 import React, {Component} from 'react';
 import './polyfills';
-
-import Routes from './Routes';
 import './App.css';
 
 import {createGlobalStyle} from 'styled-components';
+
+import TopRoutes from './TopRoutes.jsx';
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -61,7 +61,7 @@ class App extends Component {
     return (
       <>
         <GlobalStyle />
-        <Routes />
+        <TopRoutes />
       </>
     );
   }

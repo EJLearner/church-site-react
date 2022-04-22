@@ -31,7 +31,7 @@ function LoadingMessage() {
 }
 
 function renderPassages(passages) {
-  return passages.map(({content, reference}, index) => {
+  return passages.map(({content, reference}) => {
     return <div dangerouslySetInnerHTML={{__html: content}} key={reference} />;
   });
 }

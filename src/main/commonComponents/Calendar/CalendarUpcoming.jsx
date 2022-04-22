@@ -1,19 +1,20 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-
 import moment from 'moment';
+import PropTypes from 'prop-types';
+import React, {Component} from 'react';
+
+
+import withDatesSubscription from '../../../ce/components/Hocs/withDatesSubscription';
+import calendarDatesUtils from '../../../ce/utils/calendarDatesUtils';
 
 import EventsListPage from './EventsListPage';
-import calendarDatesUtils from '../../../ce/utils/calendarDatesUtils';
-import withDatesSubscription from '../../../ce/components/Hocs/withDatesSubscription';
 
 function getDates(maxEvents, selectedDay, storedDates) {
-  let dates = [];
+  const dates = [];
 
   let eventCount = 0;
   // just to avoid runtime errors if events don't exist
   let loopCount = 0;
-  let selectedDayMoment = moment(selectedDay);
+  const selectedDayMoment = moment(selectedDay);
   while (eventCount < maxEvents && loopCount < 365) {
     const dateString = selectedDayMoment.format('YYYY-MM-DD');
     const daysEvents = calendarDatesUtils.getEventsForDate(

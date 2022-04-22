@@ -1,6 +1,6 @@
+import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
-import PropTypes from 'prop-types';
 
 import LeftLinks from './LeftLinks/LeftLinks';
 import SubPageSwitch from './SubPageSwitch/SubPageSwitch';

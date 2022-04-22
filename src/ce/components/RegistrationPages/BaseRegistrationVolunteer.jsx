@@ -1,27 +1,26 @@
-import firebase from '../../../firebase';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import {Redirect} from 'react-router';
 
-import Button from '../Reusable/Button/Button';
-import Modal from '../Reusable/Modal/Modal';
 import Text from '../../../common/components/Text';
-
-import fieldValidators from './fieldValidators';
-import registrationUtils from './registrationUtils';
-
+import firebase from '../../../firebase';
 import routePaths from '../../../routePaths';
 import utils from '../../../utils/commonUtils';
 import constants from '../../../utils/constants';
 
 import './Registration.css';
-import Checklist from '../Reusable/Checklist/Checklist';
+import pushToSubscribedList from '../../../utils/pushToSubscribedList';
 import ErrorList from '../Common/ErrorList';
 import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
-import DisclaimerCheckbox from './DisclaimerCheckbox';
-import pushToSubscribedList from '../../../utils/pushToSubscribedList';
+import Button from '../Reusable/Button/Button';
 import Checkbox from '../Reusable/Checklist/Checkbox';
+import Checklist from '../Reusable/Checklist/Checklist';
+import Modal from '../Reusable/Modal/Modal';
+
+import DisclaimerCheckbox from './DisclaimerCheckbox';
+import fieldValidators from './fieldValidators';
+import registrationUtils from './registrationUtils';
 
 const USE_TEST_DATA = false;
 

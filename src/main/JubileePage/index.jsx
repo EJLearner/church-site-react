@@ -146,10 +146,9 @@ let bottomContentData = [
   }
 ];
 
-!showStore &&
-  (bottomContentData = bottomContentData.filter(
-    ({title}) => title !== 'Store'
-  ));
+if (!showStore) {
+  bottomContentData = bottomContentData.filter(({title}) => title !== 'Store');
+}
 
 const topBoxContent = (
   <div>

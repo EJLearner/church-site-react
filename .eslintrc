@@ -1,5 +1,11 @@
 {
-  "extends": ["react-app", "eslint:recommended", "plugin:react/recommended"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
   "plugins": ["import"],
   "rules": {
     "comma-dangle": ["error", "never"],
@@ -62,12 +68,27 @@
   },
   "overrides": [
     {
-      "files": "*.test.js",
+      "files": ["*.test.js", "*.test.jsx"],
+      "env": {
+        "jest":true
+      },
       "rules": {
         "no-unused-expressions": "off",
         "react/jsx-props-no-spreading": "off",
         "react/jsx-filename-extension": "off"
       }
     }
-  ]
+  ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version" : "detect"
+    }
+  }
 }

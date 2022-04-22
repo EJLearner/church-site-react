@@ -1,16 +1,15 @@
 import React, {Component} from 'react';
-import firebase, {auth, provider} from '../../../firebase';
-
-import Button from '../Reusable/Button/Button';
-import CcVbsAdminBase from './CcVbsAdminBase';
-import EventAdmin from './EventAdmin';
-
-import MenuBar from '../MenuBar/MenuBar';
-import routePaths from '../../../routePaths';
 import {Route, Switch} from 'react-router-dom';
 
-import './Admin.css';
+import firebase, {auth, provider} from '../../../firebase';
+import routePaths from '../../../routePaths';
+import MenuBar from '../MenuBar/MenuBar';
+import Button from '../Reusable/Button/Button';
+
+import CcVbsAdminBase from './CcVbsAdminBase';
+import EventAdmin from './EventAdmin';
 import SubscribedEmailsAdmin from './SubscribedEmailsAdmin';
+import './Admin.css';
 
 class Admin extends Component {
   constructor(props) {
@@ -116,18 +115,15 @@ class Admin extends Component {
           Logged in as {user.displayName}{' '}
           <Button onClick={this.logout}>Log out</Button>
           <Switch>
-            <Route
-              path={routePaths.ADMIN_EVENTS}
-              render={() => <EventAdmin />}
-            />
-            <Route
-              path={routePaths.ADMIN_CC}
-              render={() => <CcVbsAdminBase stringPrefix="cc" />}
-            />
-            <Route
-              path={routePaths.ADMIN_VBS}
-              render={() => <CcVbsAdminBase stringPrefix="vbs" />}
-            />
+            <Route path={routePaths.ADMIN_EVENTS}>
+              <EventAdmin />
+            </Route>
+            <Route path={routePaths.ADMIN_CC}>
+              <CcVbsAdminBase stringPrefix="cc" />
+            </Route>
+            <Route path={routePaths.ADMIN_VBS}>
+              <CcVbsAdminBase stringPrefix="vbs" />
+            </Route>
             <Route
               component={SubscribedEmailsAdmin}
               path={routePaths.ADMIN_EMAIL_SUBSCRIBERS}

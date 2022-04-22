@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 
+import routePaths from '../../../routePaths';
 import CePageLayout from '../Reusable/CePageLayout';
 
-import routePaths from '../../../routePaths';
 
 import ChristianEdStaff from './ChristianEdStaff';
-import Pastor from './Pastor';
 import MinisterialStaff from './MinisterialStaff';
+import Pastor from './Pastor';
 
 import '../../cePageStyles.css';
 

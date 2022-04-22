@@ -1,16 +1,15 @@
+import {post} from 'jquery';
 import React, {Component} from 'react';
 import {Redirect} from 'react-router';
 
-import routePaths from '../../../routePaths';
 
-import Button from '../Reusable/Button/Button';
 import Text from '../../../common/components/Text';
-
-import fieldValidators from '../RegistrationPages/fieldValidators';
-import registrationUtils from '../RegistrationPages/registrationUtils';
-import {post} from 'jquery';
+import routePaths from '../../../routePaths';
 import ErrorList from '../Common/ErrorList';
 import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
+import fieldValidators from '../RegistrationPages/fieldValidators';
+import registrationUtils from '../RegistrationPages/registrationUtils';
+import Button from '../Reusable/Button/Button';
 
 class IdeaForm extends Component {
   constructor() {

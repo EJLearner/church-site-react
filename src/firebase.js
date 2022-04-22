@@ -1,9 +1,9 @@
-import firebase from 'firebase';
+// This import loads the firebase namespace.
+import firebase from 'firebase/compat/app';
 
-// TODO: Switch to smaller format once I figure out how to do jest mocking this way
-// import firebase from 'firebase/app';
-// import 'firebase/database';
-// import 'firebase/auth';
+// These imports load individual services into the firebase namespace.
+import 'firebase/compat/auth';
+import 'firebase/compat/database';
 
 const config = {
   apiKey: 'AIzaSyAzTR9pqe-BTlPl_NrZLN6YqqyNxoLvtos',

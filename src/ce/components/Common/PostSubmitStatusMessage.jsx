@@ -34,7 +34,7 @@ const defaultInputErrorMessage = (
 
 class PostSubmitStatusMessage extends React.Component {
   componentDidMount() {
-    this.errorBox && this.errorBox.focus();
+    this.errorBox?.focus();
   }
 
   render() {

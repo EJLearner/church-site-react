@@ -1,13 +1,12 @@
-import React, {Component} from 'react';
+import _ from 'lodash';
+import moment from 'moment';
 import PropTypes from 'prop-types';
+import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 
-import _ from 'lodash';
-
-import moment from 'moment';
+import withDatesSubscription from '../Hocs/withDatesSubscription';
 
 import EventsListPage from './DeprecatedEventsListPage';
-import withDatesSubscription from '../Hocs/withDatesSubscription';
 
 class CalendarDay extends Component {
   constructor(props) {
@@ -20,7 +19,7 @@ class CalendarDay extends Component {
     this._onDateChange = this._onDateChange.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({selectedDay: nextProps.selectedDay});
   }
 

@@ -120,7 +120,9 @@ class CcVbsAdminBase extends Component {
   makeString(keysAndLabels, volunteerObject) {
     return keysAndLabels
       .reduce((strings, [key, label]) => {
-        volunteerObject[key] && strings.push(label);
+        if (volunteerObject[key]) {
+          strings.push(label);
+        }
         return strings;
       }, [])
       .join(', ');

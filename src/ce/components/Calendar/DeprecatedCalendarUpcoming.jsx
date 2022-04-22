@@ -1,13 +1,12 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-
 import moment from 'moment';
+import PropTypes from 'prop-types';
+import React, {Component} from 'react';
 
-import EventsListPage from './DeprecatedEventsListPage';
-
-import './Calendar.css';
 import calendarDatesUtils from '../../utils/calendarDatesUtils';
 import withDatesSubscription from '../Hocs/withDatesSubscription';
+
+import EventsListPage from './DeprecatedEventsListPage';
+import './Calendar.css';
 
 class CalendarUpcoming extends Component {
   constructor(props) {
@@ -23,12 +22,12 @@ class CalendarUpcoming extends Component {
   }
 
   getDates(maxEvents) {
-    let dates = [];
+    const dates = [];
 
     let eventCount = 0;
     // just to avoid runtime errors if events don't exist
     let loopCount = 0;
-    let currentDayMoment = moment(this.state.selectedDay);
+    const currentDayMoment = moment(this.state.selectedDay);
     while (eventCount < maxEvents && loopCount < 365) {
       const dateString = currentDayMoment.format('YYYY-MM-DD');
       const daysEvents = calendarDatesUtils.getEventsForDate(

@@ -1,11 +1,12 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-
-import moment from 'moment';
 import _ from 'lodash';
+import moment from 'moment';
+import PropTypes from 'prop-types';
+import React, {Component} from 'react';
+
+
+import withDatesSubscription from '../Hocs/withDatesSubscription';
 
 import EventsListPage from './DeprecatedEventsListPage';
-import withDatesSubscription from '../Hocs/withDatesSubscription';
 
 import './Calendar.css';
 

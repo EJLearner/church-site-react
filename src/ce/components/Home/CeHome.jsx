@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 
-import slidePictureData from '../../utils/slidePictureData';
-
 import Slider from '../../../common/Slider';
+import slidePictureData from '../../utils/slidePictureData';
 import HomeSquares from '../HomeSquares/HomeSquares';
 
 class Home extends Component {

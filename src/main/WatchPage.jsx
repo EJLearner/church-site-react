@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import {currentVideoData} from '../stores/messageVideos';
+import messageVideos from '../stores/messageVideos';
 import {
   convertTypedDateToIso,
   getLongDisplayDate
@@ -42,11 +42,6 @@ const StyleWrapper = styled.div`
   }
 
   .preacher-and-scripture {
-    display: flex;
-
-    label: {
-    }
-
     .value {
       color: ${LOGICAL_COLORS.CT_PRIMARY};
     }
@@ -148,6 +143,18 @@ function renderLabelValue(label, value) {
   );
 }
 
+function videoFrame(youtubeId, title) {
+  return (
+    <iframe
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      frameBorder="0"
+      src={`https://www.youtube.com/embed/${youtubeId}`}
+      title={title}
+    />
+  );
+}
+
 function renderArchiveVideos(otherVideos) {
   return (
     <div className="archive-videos">
@@ -159,19 +166,12 @@ function renderArchiveVideos(otherVideos) {
           preacherLabel = 'Preacher',
           scripture,
           title,
-          videoLink
+          youtubeId
         } = videoData;
 
         return (
           <div className="archive-video-container" key={title}>
-            <iframe
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              frameBorder="0"
-              src={videoLink}
-              title={title}
-            />
-
+            {videoFrame(youtubeId, title)}
             <div className="video-info">
               <h3>{title}</h3>
               {renderLabelValue(preacherLabel, preacher)}
@@ -195,7 +195,7 @@ function renderNewestVideo(videoData) {
     preacherLabel = 'Preacher',
     scripture,
     title,
-    videoLink
+    youtubeId
   } = videoData;
 
   return (
@@ -207,15 +207,7 @@ function renderNewestVideo(videoData) {
       </div>
       <div className="date">{getLongDisplayDate(date)}</div>
 
-      <div className="main-video-div">
-        <iframe
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          frameBorder="0"
-          src={videoLink}
-          title={title}
-        />
-      </div>
+      <div className="main-video-div">{videoFrame(youtubeId, title)}</div>
     </div>
   );
 }
@@ -267,7 +259,7 @@ const WatchPage = () => {
     INITIAL_VIDEO_SHOW_COUNT
   );
   const [searchInfo, setSearchInfo] = useState(initialSearchInfo);
-  const [newestVideo, ...otherVideos] = currentVideoData;
+  const [newestVideo, ...otherVideos] = messageVideos;
   const [filteredVideos, setFilteredVideos] = useState(otherVideos);
 
   const displayedVideos = filteredVideos.slice(0, archiveVideoShowCount);

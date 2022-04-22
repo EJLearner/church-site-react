@@ -1,18 +1,20 @@
+
+
+import PropTypes from 'prop-types';
 import React, {useState} from 'react';
 
 import MainMenubar from '../MainMenubar';
 
-import PropTypes from 'prop-types';
-import TopInfoBox from './TopInfoBox';
-import SideMenu from './SideMenu';
 import AboveContentLinks from './AboveContentLinks';
-import TopInfoBoxWrapper from './TopInfoBoxWrapper';
-import ContentAndSubCompassWrapper from './ContentAndSubCompassWrapper';
 import ContentAndSides from './ContentAndSides';
+import ContentAndSubCompassWrapper from './ContentAndSubCompassWrapper';
 import ContentLeftSide from './ContentLeftSide';
-import ContentWrapper from './ContentWrapper';
 import ContentRightSide from './ContentRightSide';
+import ContentWrapper from './ContentWrapper';
+import SideMenu from './SideMenu';
 import StandardPageWrapper from './StandardPageWrapper';
+import TopInfoBox from './TopInfoBox';
+import TopInfoBoxWrapper from './TopInfoBoxWrapper';
 
 const GeneralPageTemplate = (props) => {
   const {

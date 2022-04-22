@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import BaseCheckout from './BaseCheckout';
+
 import constants from '../../../utils/constants';
+
+import BaseCheckout from './BaseCheckout';
 
 class CcCheckout extends Component {
   render() {

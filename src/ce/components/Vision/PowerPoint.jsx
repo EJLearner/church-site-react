@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import powerPointImage from './powerpointpicture.png';
+
 import powerPointFile from './RetreatPowerPoint.ppsx';
+import powerPointImage from './powerpointpicture.png';
 
 class PowerPoint extends Component {
   render() {

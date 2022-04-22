@@ -14,7 +14,7 @@ export default {
     }, 0);
   },
 
-  getShippingCost: (cart) => {
+  getShippingCost: () => {
     // just a stub for now until we really come up with a shipping cost algorithm
     return 0;
   },
