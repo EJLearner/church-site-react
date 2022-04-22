@@ -15,7 +15,7 @@ const TextareaStyle = styled.div`
     border: 1px solid gray;
     border-radius: 5px;
     box-shadow: 2px 2px 2px 0 #c2c2c2;
-    font-family: $century-gothic;
+    font-family: var(--century-gothic);
     padding: 6px;
   }
 
@@ -35,7 +35,7 @@ function handleChange(event, onChange, id, characterLimit) {
   }
 }
 
-const Textarea = props => {
+const Textarea = (props) => {
   const {
     characterLimit,
     columns,
@@ -71,7 +71,7 @@ const Textarea = props => {
       cols={columns}
       id={id}
       name={name}
-      onChange={event => handleChange(event, onChange, id, characterLimit)}
+      onChange={(event) => handleChange(event, onChange, id, characterLimit)}
       placeholder={placeholder}
       rows={rows}
       value={value}

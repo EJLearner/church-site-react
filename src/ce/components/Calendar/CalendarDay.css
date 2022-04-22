@@ -1,0 +1,16 @@
+.day-event {
+  margin-bottom: 2em;
+}
+.day-event .title {
+  color: #73af55;
+}
+.day-event .time {
+  font-weight: bolder;
+  margin-top: 0.5em;
+}
+.day-event .location {
+  margin-top: 0.5em;
+}
+.day-event .blurb {
+  margin-top: 0.5em;
+}

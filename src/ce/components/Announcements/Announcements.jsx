@@ -30,7 +30,7 @@ class Announcements extends Component {
       return 0;
     });
 
-    const renderedEvents = _.map(sortedEvents, event => {
+    const renderedEvents = _.map(sortedEvents, (event) => {
       let timeStart;
       if (event.timeStart) {
         if (event.followsWorship) {
@@ -86,9 +86,9 @@ class Announcements extends Component {
   }
 
   renderedAnnouncements() {
-    return this.getFormattedAnnouncements().map(dayData => {
+    return this.getFormattedAnnouncements().map((dayData) => {
       const {dateString, displayedDate} = dayData;
-      const renderedEvents = dayData.events.map(event => {
+      const renderedEvents = dayData.events.map((event) => {
         const {timeEnd, timeStart, title, shortDescription} = event;
         const timeEndString = timeStart && timeEnd ? ` - ${timeEnd}` : '';
 

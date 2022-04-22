@@ -155,7 +155,7 @@ class BaseCcRegistrationChild extends Component {
 
     const fieldStates = {};
 
-    Object.values(FIELDS_INFO).forEach(fieldData => {
+    Object.values(FIELDS_INFO).forEach((fieldData) => {
       const {fieldId} = fieldData;
       let value = registrationData[fieldId] || '';
 
@@ -212,7 +212,7 @@ class BaseCcRegistrationChild extends Component {
         saveRegistrationData(child, this.props.routePath);
         this.setState({redirect: true});
       })
-      .catch(responseError => {
+      .catch((responseError) => {
         this.setState({postStatus: 'failure', responseError});
       });
 

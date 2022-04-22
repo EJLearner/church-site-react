@@ -9,8 +9,7 @@ import {
   isAfter
 } from '../utils/dateTimeUtils';
 
-
-const sortEventsByStartTime = events => {
+const sortEventsByStartTime = (events) => {
   return events.sort((a, b) => {
     const timeStartA = a.timeStart || '';
     const timeStartB = b.timeStart || '';
@@ -36,11 +35,11 @@ function useFirebaseEvents(options = {}) {
     // FBH add a listener to the dates object, update on value change
     // listener gets the dates object using snapshot.val();
     // then pushes the udpated date object into the state
-    datesRef.on('value', snapshot => {
+    datesRef.on('value', (snapshot) => {
       const retrievedDates = snapshot.val();
       const newState = {};
 
-      Object.keys(retrievedDates).forEach(date => {
+      Object.keys(retrievedDates).forEach((date) => {
         const jsDate = parseISO(date);
         const startOfJsDate = startOfDay(jsDate);
         const isInFuture = isAfter(startOfJsDate, endOfYesterday());
@@ -49,7 +48,9 @@ function useFirebaseEvents(options = {}) {
           const eventInfo = retrievedDates[date];
           // make an array of events
           if (eventInfo.events) {
-            const events = Object.values(eventInfo.events).map(event => event);
+            const events = Object.values(eventInfo.events).map(
+              (event) => event
+            );
             newState[date] = {events};
           }
         }
@@ -66,7 +67,7 @@ function useFirebaseEvents(options = {}) {
           events[dateString].events
         );
 
-        sortedDateEvents.forEach(event => {
+        sortedDateEvents.forEach((event) => {
           const eventWithDate = {
             ...event,
             dateString

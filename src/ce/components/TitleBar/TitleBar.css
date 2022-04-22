@@ -1,8 +1,6 @@
-@import '../../../_variables.scss';
-
 #titlebar {
-  background-color: $green-20;
-  color: $white;
+  background-color: var(--green-20);
+  color: var(--white);
   display: flex;
   font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
   padding: 0.5em 1em;
@@ -17,5 +15,5 @@
 
 #titlebar a,
 #titlebar a:visited {
-  color: $white;
+  color: var(--white);
 }

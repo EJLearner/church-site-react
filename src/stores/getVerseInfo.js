@@ -12,7 +12,7 @@ const getVerseInfo = (query, cb) => {
     const key = '7cda29fcf90a3041dda97ad48c68824b';
     const ASV_ID = '06125adad2d5898a-01';
 
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
       if (xhr.readyState === xhr.DONE) {
         const responseAsObject = JSON.parse(xhr.responseText);
         memo[query] = responseAsObject.data.passages;

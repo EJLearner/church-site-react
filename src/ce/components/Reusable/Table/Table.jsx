@@ -19,7 +19,7 @@ class Table extends Component {
   };
 
   _renderRowCells(row) {
-    return this.props.columns.map(column => {
+    return this.props.columns.map((column) => {
       return <td key={row.id + column.name}>{row[column.name]}</td>;
     });
   }
@@ -28,7 +28,7 @@ class Table extends Component {
     const {rows} = this.props;
 
     return rows.length ? (
-      rows.map(row => {
+      rows.map((row) => {
         return <tr key={row.id}>{this._renderRowCells(row)}</tr>;
       })
     ) : (
@@ -41,7 +41,7 @@ class Table extends Component {
   }
 
   _renderHeaderCells() {
-    return this.props.columns.map(column => {
+    return this.props.columns.map((column) => {
       return <th key={column.name}>{column.label}</th>;
     });
   }

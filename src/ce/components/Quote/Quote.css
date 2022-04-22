@@ -1,0 +1,13 @@
+#bottomquote {
+  width: 80%;
+  min-width: 800px;
+  max-width: 1000px;
+  margin: auto;
+  padding-top: 3em;
+  padding-bottom: 2em;
+  text-align: center;
+  font-family: var(--cambria);
+  font-style: italic;
+  color: var(--gray);
+  flex: 0 0 auto;
+}

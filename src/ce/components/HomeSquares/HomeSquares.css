@@ -1,8 +1,6 @@
-@import '../../../_variables.scss';
-
 .home-page-bottom-content {
   display: flex;
-  font-family: $century-gothic;
+  font-family: var(--century-gothic);
   justify-content: space-around;
   min-width: 800px;
   padding-top: 5em;
@@ -20,8 +18,8 @@
 }
 
 .home-square h2 {
-  border-bottom: 1px solid $green-50;
-  color: $green-50;
+  border-bottom: 1px solid var(--green-50);
+  color: var(--green-50);
   display: inline-block;
   font-size: 100%;
   line-height: 0.01em;

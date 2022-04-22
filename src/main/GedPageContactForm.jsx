@@ -28,7 +28,7 @@ export default function GedPageContactForm() {
     post(
       '/contactUsGed.php',
       data,
-      responseError => {
+      (responseError) => {
         if (responseError.success) {
           setShowThanksMessage(true);
         } else {
@@ -36,7 +36,7 @@ export default function GedPageContactForm() {
         }
       },
       'json'
-    ).fail(responseError => {
+    ).fail((responseError) => {
       setPostStatus('failure');
       setResponseError(responseError);
     });
@@ -60,7 +60,7 @@ export default function GedPageContactForm() {
       <Textbox
         id="name"
         label="Name"
-        onChange={value => setName(value)}
+        onChange={(value) => setName(value)}
         size={40}
         value={name}
       />
@@ -68,7 +68,7 @@ export default function GedPageContactForm() {
       <Textbox
         id="email"
         label="Email Address"
-        onChange={value => setEmail(value)}
+        onChange={(value) => setEmail(value)}
         size={40}
         value={email}
       />
@@ -79,7 +79,7 @@ export default function GedPageContactForm() {
         errorMessage={error}
         id="message"
         label="Message"
-        onChange={value => setMessage(value)}
+        onChange={(value) => setMessage(value)}
         required
         value={message}
       />

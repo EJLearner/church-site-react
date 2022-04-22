@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ErrorList = props => {
+const ErrorList = (props) => {
   const errorList = props.errors.map((error, index) => {
     return <li key={index}>{error.message}</li>;
   });

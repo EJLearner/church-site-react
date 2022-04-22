@@ -1,9 +1,7 @@
-@import '../../../_variables.scss';
-
 .menu-bar {
   align-items: center;
   display: flex;
-  font-family: $calibri;
+  font-family: var(--calibri);
   font-size: 20px;
   justify-content: space-between;
   min-width: 800px;

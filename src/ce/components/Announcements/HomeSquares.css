@@ -1,0 +1,35 @@
+.home-page-bottom-content {
+  padding-top: 5em;
+  display: flex;
+  min-width: 800px;
+  justify-content: space-around;
+  /* justify-content: space-evenly; */
+}
+
+.home-page-bottom-content h2 {
+  color: #92d050;
+  display: inline-block;
+  font-size: 80%;
+  text-transform: uppercase;
+  width: 100%;
+  border-bottom: 1px solid #92d050;
+  line-height: 0.01em;
+  /* margin: 5px 0 20px; */
+}
+
+.home-page-bottom-content h2 span {
+  background: white;
+  padding-right: 1em;
+}
+
+.home-page-bottom-content > div {
+  border: 1px dashed gray;
+  display: inline-block;
+  height: 200px;
+  position: relative;
+  width: 200px;
+}
+
+.announcement-header {
+  color: orange;
+}

@@ -2364,6 +2364,44 @@ export default {
       </p>
     )
   },
+  '2022-01-16': {
+    subTitle: (
+      <>
+        From <i>The Fire of Love </i> by Richard Rolle
+      </>
+    ),
+    content: (
+      <p>
+        “Since the human soul is capable of receiving God alone, nothing less
+        than God can fill it; which explains why lovers of earthly things are
+        never satisfied. The peace known by lovers of Christ comes from their
+        heart being fixed, in longing and in thought, in the love of God; it is
+        a peace that sings and loves and burns and contemplates.”
+      </p>
+    )
+  },
+  '2022-01-23': {
+    subTitle: (
+      <>
+        From <i>Power Through Constructive Thinking </i> by Emmet Fox
+      </>
+    ),
+    content: (
+      <p>
+        “Sooner or later you will have to put God first in your life, that is to
+        say, your own true spiritual development must become the only thing that
+        really matters. It need not, perhaps had better not, be the only thing
+        in your life, but it must be the first thing. When this happens you will
+        find that you have gotten rid of a great deal of the unnecessary junk
+        that most people carry about; mental junk, of course, although physical
+        junk is very apt to follow upon this. You will find that you will do a
+        great deal less running about after things that do not matter and only
+        waste your time and energy, when once you have put God first. Your life
+        will become simpler and quieter, but in the true sense, richer and
+        infinitely more worth while.”
+      </p>
+    )
+  },
   '2022-01-30': {
     subTitle: (
       <>

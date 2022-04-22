@@ -190,7 +190,7 @@ const ContactPage = () => {
 
   const setSendInfo = (value, prop) => {
     setPostStatus(null);
-    setSendInfoRaw(sendInfo => ({...sendInfo, [prop]: value}));
+    setSendInfoRaw((sendInfo) => ({...sendInfo, [prop]: value}));
     setShowThanksMessage(false);
   };
 
@@ -204,7 +204,7 @@ const ContactPage = () => {
     post(
       '/contactUsSend.php',
       data,
-      responseError => {
+      (responseError) => {
         if (responseError.success) {
           setShowThanksMessage(true);
         } else {
@@ -212,7 +212,7 @@ const ContactPage = () => {
         }
       },
       'json'
-    ).fail(responseError => {
+    ).fail((responseError) => {
       setPostStatus('failure');
       setResponseError(responseError);
     });
@@ -267,7 +267,7 @@ const ContactPage = () => {
               <Textbox
                 id="name"
                 label="Name"
-                onChange={value => setSendInfo(value, 'name')}
+                onChange={(value) => setSendInfo(value, 'name')}
                 size={40}
                 value={name}
               />
@@ -275,7 +275,7 @@ const ContactPage = () => {
               <Textbox
                 id="address"
                 label="Email Address"
-                onChange={value => setSendInfo(value, 'emailAddress')}
+                onChange={(value) => setSendInfo(value, 'emailAddress')}
                 size={40}
                 value={emailAddress}
               />
@@ -286,7 +286,7 @@ const ContactPage = () => {
                 errorMessage={showError ? 'You must enter a message.' : null}
                 id="message"
                 label="Message"
-                onChange={value => setSendInfo(value, 'message')}
+                onChange={(value) => setSendInfo(value, 'message')}
                 required
                 rows={10}
                 value={message}
@@ -323,7 +323,7 @@ const ContactPage = () => {
                   id="from-address"
                   label="From"
                   name="saddr"
-                  onChange={value => setFromAddress(value)}
+                  onChange={(value) => setFromAddress(value)}
                   size={30}
                   value={fromAddress}
                 />

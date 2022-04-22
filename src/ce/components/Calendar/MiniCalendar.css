@@ -1,0 +1,66 @@
+.mini-calendar {
+  width: 400px;
+}
+.mini-calendar .controls-and-month-name {
+  color: var(--green-20);
+  display: flex;
+  font-size: 24px;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+.mini-calendar .controls-and-month-name.no-controls {
+  justify-content: center;
+  margin-bottom: 0.3em;
+}
+.mini-calendar .controls-and-month-name i {
+  color: var(--black);
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 0 5px;
+}
+.mini-calendar table {
+  border-collapse: collapse;
+  box-sizing: border-box;
+  margin: auto;
+  table-layout: fixed;
+  width: 100%;
+}
+.mini-calendar table th,
+.mini-calendar table td {
+  font-weight: normal;
+  height: 40px;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+.mini-calendar table th.other-month,
+.mini-calendar table td.other-month {
+  color: var(--gray180);
+}
+.mini-calendar table th.has-events,
+.mini-calendar table td.has-events {
+  background-color: var(--yellow);
+}
+.mini-calendar table th.clickable,
+.mini-calendar table td.clickable {
+  cursor: pointer;
+}
+.mini-calendar table th.selected-day div,
+.mini-calendar table td.selected-day div {
+  background-color: var(--black);
+  border-radius: 20px / 20px;
+  color: var(--white);
+}
+.mini-calendar table th.selected-week div,
+.mini-calendar table td.selected-week div {
+  background-color: var(--black);
+  color: var(--white);
+}
+.mini-calendar table td.selected-week:first-child div {
+  border-radius: 20px 0 0 20px;
+  color: var(--white);
+}
+.mini-calendar table td.selected-week:last-child div {
+  border-radius: 0 20px 20px 0;
+  color: var(--white);
+}

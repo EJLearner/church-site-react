@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const DisclaimerCheckbox = ({checked, id: inputId, onChange}) => {
   const labelId = `${inputId}-label`;
 
-  const _onChange = event => {
+  const _onChange = (event) => {
     onChange(event.target.checked, inputId, event);
   };
 

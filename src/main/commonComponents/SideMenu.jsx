@@ -23,14 +23,8 @@ const subMenu = (subLinks) => {
 };
 
 const renderMenuItem = (menuItemData) => {
-  const {
-    id,
-    isSelected,
-    onClick,
-    subLinks,
-    renderMenuItemTitle,
-    title
-  } = menuItemData;
+  const {id, isSelected, onClick, subLinks, renderMenuItemTitle, title} =
+    menuItemData;
 
   return (
     <React.Fragment key={id}>

@@ -26,7 +26,7 @@ class CalendarYear extends Component {
   }
 
   _getMiniCalendarMonths() {
-    return _.range(0, 12).map(monthsAdded => {
+    return _.range(0, 12).map((monthsAdded) => {
       return moment(this.props.firstMonth)
         .add(monthsAdded, 'months')
         .format('YYYY-MM-DD');
@@ -34,7 +34,7 @@ class CalendarYear extends Component {
   }
 
   _renderMonths() {
-    return this._getMiniCalendarMonths().map(monthDate => {
+    return this._getMiniCalendarMonths().map((monthDate) => {
       let selectedDay = monthDate;
       let highlightSelectedDay = false;
 

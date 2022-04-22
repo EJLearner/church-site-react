@@ -13,7 +13,7 @@ const StyledPurchaseHereLink = styled.p`
   }
 `;
 
-const PurchaseHereLink = to => {
+const PurchaseHereLink = (to) => {
   // TODO: make not null when store pages are donationTypeOptions
   const storeIsDone = false;
   if (!storeIsDone) {

@@ -6,8 +6,6 @@ import Routes from './Routes';
 import VbsCheckin from './ce/components/CcVbsCheckinOut/VbsCheckin';
 import routePaths from './routePaths';
 
-
-
 describe('Routes', () => {
   it('loads correctly', () => {
     expect(() => shallow(<Routes />)).not.toThrow();

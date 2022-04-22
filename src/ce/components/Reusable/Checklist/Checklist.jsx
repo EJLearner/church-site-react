@@ -5,7 +5,7 @@ import Checkbox from './Checkbox';
 
 import './Checklist.css';
 
-const Checklist = props => {
+const Checklist = (props) => {
   const labelId = `${props.id}-label`;
 
   const renderedCheckboxes = props.checklistItems.map((checkbox, index) => {

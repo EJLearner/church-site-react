@@ -5,11 +5,66 @@ const {PREACHERS} = constants;
 
 const allVideoData = [
   {
+    date: '2022-03-13T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Mark 10:32-34',
+    title: 'Satan’s Temporary Leave of Absence',
+    videoLink: 'https://www.youtube.com/embed/4vGGW_mDeFA'
+  },
+  {
+    date: '2022-02-27T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Judges 3:15',
+    title: 'Handicapped Heroes',
+    videoLink: 'https://www.youtube.com/embed/0DTca4kBiBU'
+  },
+  {
+    date: '2022-02-20T09:00:00',
+    preacher: PREACHERS.D_NELSON,
+    title: 'Who Am I',
+    videoLink: 'https://www.youtube.com/embed/e5mJQstvm4g'
+  },
+  {
+    date: '2022-02-06T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 14:12-14',
+    title: 'A Calling to Greater Things',
+    videoLink: 'https://www.youtube.com/embed/L9KeMe-HmbI'
+  },
+  {
+    date: '2022-01-30T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Isaiah 9:2',
+    title: 'When the Darkness Is Not Dark!',
+    videoLink: 'https://www.youtube.com/embed/KRn-41pjS_U'
+  },
+  {
+    date: '2022-01-23T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 12:20-28',
+    title: 'Praying for God’s Glory!',
+    videoLink: 'https://www.youtube.com/embed/J_t-9y4m6io'
+  },
+  {
+    date: '2022-01-16T09:00:00',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Mark 9:28-29',
+    title: 'Why Some of Our Prayers Fail!',
+    videoLink: 'https://www.youtube.com/embed/hyDguKTxsUU'
+  },
+  {
+    date: '2022-01-13T09:00:00',
+    preacher: 'Dr. Irving',
+    preacherLabel: 'Guest Speaker',
+    title: 'A Conversation about Covid with Dr. Irving',
+    videoLink: 'https://www.youtube.com/embed/sdtucPfv3w4'
+  },
+  {
     date: '2022-01-09T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 5:6',
     title: 'From Dire Need to Delightful Fulfillment',
-    videoLink: 'https://www.youtube.com/embed/BCRK-XiQUnY '
+    videoLink: 'https://www.youtube.com/embed/BCRK-XiQUnY'
   },
   {
     date: '2022-01-02T09:00:00',

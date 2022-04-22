@@ -1,0 +1,45 @@
+.events-list-page .header-and-events {
+  display: inline-block;
+}
+.events-list-page .header-and-events h2 {
+  font-weight: normal;
+}
+.events-list-page .header-and-events h2:not(:last-child) {
+  margin-bottom: 4px;
+}
+.events-list-page .header-and-events h3 {
+  color: var(--gray180);
+  font-weight: normal;
+  font-size: 15px;
+  margin-top: 4px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.events-list-page .day-event {
+  margin-bottom: 2em;
+  padding: 0 1em;
+}
+.events-list-page .day-event .title {
+  color: var(--green-20);
+}
+.events-list-page .day-event .time-start {
+  font-weight: bolder;
+  margin-top: 0.5em;
+}
+.events-list-page .day-event .time-end {
+  font-weight: bolder;
+  font-size: 80%;
+}
+.events-list-page .day-event .location {
+  margin-top: 0.5em;
+  color: var(--gray83);
+}
+.events-list-page .day-event .long-description {
+  margin-top: 0.5em;
+}
+
+.events-list-page .mini-calendar-wrapper {
+  display: inline-block;
+  margin: 2em;
+}

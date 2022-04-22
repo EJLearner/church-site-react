@@ -1,4 +1,3 @@
-
 import {shallow} from 'enzyme';
 import React from 'react';
 
@@ -22,23 +21,15 @@ describe('VbsRegistrationStudent', () => {
     it('does not ask for child date of birth', () => {
       const wrapper = shallow(<VbsRegistrationStudent {...props} />);
 
-      expect(
-        wrapper
-          .find('Text')
-          .find({id: 'childDob'})
-          .exists()
-      ).toBe(false);
+      expect(wrapper.find('Text').find({id: 'childDob'}).exists()).toBe(false);
     });
 
     it('does not ask for parent name', () => {
       const wrapper = shallow(<VbsRegistrationStudent {...props} />);
 
-      expect(
-        wrapper
-          .find('Text')
-          .find({id: 'parentName'})
-          .exists()
-      ).toBe(false);
+      expect(wrapper.find('Text').find({id: 'parentName'}).exists()).toBe(
+        false
+      );
     });
 
     it('does not have parent/guardian information header', () => {
@@ -56,23 +47,13 @@ describe('VbsRegistrationStudent', () => {
     it('asks for child date of birth', () => {
       const wrapper = shallow(<VbsRegistrationStudent {...props} />);
 
-      expect(
-        wrapper
-          .find('Text')
-          .find({id: 'childDob'})
-          .exists()
-      ).toBe(true);
+      expect(wrapper.find('Text').find({id: 'childDob'}).exists()).toBe(true);
     });
 
     it('asks for parent name', () => {
       const wrapper = shallow(<VbsRegistrationStudent {...props} />);
 
-      expect(
-        wrapper
-          .find('Text')
-          .find({id: 'parentName'})
-          .exists()
-      ).toBe(true);
+      expect(wrapper.find('Text').find({id: 'parentName'}).exists()).toBe(true);
     });
 
     it('has parent/guardian information header', () => {

@@ -1,4 +1,4 @@
-const requestAnimationFrame = (global.requestAnimationFrame = cb => {
+const requestAnimationFrame = (global.requestAnimationFrame = (cb) => {
   setTimeout(cb, 0);
 });
 

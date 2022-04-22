@@ -202,7 +202,7 @@ class Slider extends Component {
         <img
           alt={altTag}
           onLoad={this.savePictureHeight}
-          ref={node => {
+          ref={(node) => {
             if (!this.slideShowImage) {
               this.slideShowImage = node;
             }
@@ -233,7 +233,7 @@ class Slider extends Component {
       <div
         className="slider-chris"
         id="leftcontent"
-        ref={node => (this.sliderDiv = node)}
+        ref={(node) => (this.sliderDiv = node)}
       >
         {this.props.pictures.length > 1 && this.renderSlideShowButtons()}
         {this.renderSlideShowPictures()}

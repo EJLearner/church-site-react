@@ -36,10 +36,8 @@ class CalendarWeek extends Component {
   _getDates() {
     const firstDay = moment(this.state.selectedDay).startOf('week');
 
-    const dates = _.range(0, 7).map(daysAdded => {
-      return moment(firstDay)
-        .add(daysAdded, 'days')
-        .format('YYYY-MM-DD');
+    const dates = _.range(0, 7).map((daysAdded) => {
+      return moment(firstDay).add(daysAdded, 'days').format('YYYY-MM-DD');
     });
 
     return dates;

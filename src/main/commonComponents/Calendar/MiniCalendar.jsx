@@ -53,7 +53,7 @@ const MiniCalendarStyle = styled.div`
       vertical-align: middle;
 
       &.has-events {
-        background-color: $yellow;
+        background-color: var(--yellow);
       }
 
       &.clickable {
@@ -62,11 +62,11 @@ const MiniCalendarStyle = styled.div`
 
       &.selected-day div {
         border-radius: 20px / 20px;
-        color: $white;
+        color: var(--white);
       }
 
       &.selected-week div {
-        color: $white;
+        color: var(--white);
       }
     }
 

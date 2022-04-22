@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import './Checkbox.css';
 
-const Checkbox = props => {
-  const _onChange = event => {
+const Checkbox = (props) => {
+  const _onChange = (event) => {
     props.onChange(event.target.checked, props.id, event);
   };
 
@@ -19,7 +19,7 @@ const Checkbox = props => {
     props.inline && 'inline',
     props.className
   ]
-    .filter(name => name)
+    .filter((name) => name)
     .join(' ');
 
   return (

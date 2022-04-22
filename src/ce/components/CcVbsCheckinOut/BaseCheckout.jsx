@@ -14,8 +14,8 @@ import {CHILD_STATUS, PAGE_STATUS} from './BaseCheckinOutConstants';
 
 import './BaseCheckinOut.css';
 
-const bindThese = function(functions, context) {
-  functions.forEach(func => {
+const bindThese = function (functions, context) {
+  functions.forEach((func) => {
     context[func] = context[func].bind(context);
   });
 };
@@ -53,20 +53,20 @@ class BaseCheckout extends Component {
       .database()
       .ref(this.props.registryAccessRefName);
 
-    regStaffRef.on('value', snapshot => {
+    regStaffRef.on('value', (snapshot) => {
       const regStaff = snapshot.val();
       this.setState({regStaff});
     });
 
     const todaysLogRef = this._getTodaysLogRef();
 
-    todaysLogRef.on('value', snapshot => {
+    todaysLogRef.on('value', (snapshot) => {
       const todaysLogbook = snapshot.val();
       this.setState({todaysLogbook});
     });
 
     // keeps user logged in on a page refresh
-    auth.onAuthStateChanged(user => {
+    auth.onAuthStateChanged((user) => {
       if (user) {
         this.setState({user});
       }
@@ -130,7 +130,7 @@ class BaseCheckout extends Component {
     const {parentName} = this.state;
     const childrenOfParent = {};
 
-    _.forEach(this.state.todaysLogbook, child => {
+    _.forEach(this.state.todaysLogbook, (child) => {
       if (_.includes(child.parentNames, parentName)) {
         childrenOfParent[child[this.props.registryIdName]] = child;
       }
@@ -143,7 +143,7 @@ class BaseCheckout extends Component {
   }
 
   _handleLoginClick() {
-    auth.signInWithPopup(provider).then(result => {
+    auth.signInWithPopup(provider).then((result) => {
       const {user} = result;
       this.setState({user});
     });
@@ -156,7 +156,7 @@ class BaseCheckout extends Component {
   _listChildren() {
     const {childrenOfParent} = this.state;
 
-    const checkListItems = _.map(childrenOfParent, child => {
+    const checkListItems = _.map(childrenOfParent, (child) => {
       const {childDob, childName} = child;
       const registeredId = child[this.props.registryIdName];
       const checkedIn = child.status === CHILD_STATUS.CHECKED_IN;
@@ -193,7 +193,7 @@ class BaseCheckout extends Component {
   }
 
   _getSelectedChildren() {
-    return _.filter(this.state.childrenOfParent, child => child.checked);
+    return _.filter(this.state.childrenOfParent, (child) => child.checked);
   }
 
   _renderChildSelectDiv() {
@@ -226,7 +226,7 @@ class BaseCheckout extends Component {
 
     const checkedInChildrenOfParent = _.filter(
       childrenOfParent,
-      child => child.status === CHILD_STATUS.CHECKED_IN
+      (child) => child.status === CHILD_STATUS.CHECKED_IN
     );
 
     if (!checkedInChildrenOfParent.length) {

@@ -65,7 +65,7 @@ class IdeaForm extends Component {
     post(
       '/ceIdeaFormProcess.php',
       data,
-      responseError => {
+      (responseError) => {
         if (responseError.success) {
           this._postSubmitSuccess();
         } else {
@@ -75,7 +75,7 @@ class IdeaForm extends Component {
         }
       },
       'json'
-    ).fail(responseError => {
+    ).fail((responseError) => {
       this.setState({
         postStatus: 'failure',
         responseError
@@ -141,7 +141,7 @@ class IdeaForm extends Component {
             <input
               id="institute"
               name="idea"
-              onChange={event => this._onChangeRadio(event)}
+              onChange={(event) => this._onChangeRadio(event)}
               required
               type="radio"
               value="institute"
@@ -154,7 +154,7 @@ class IdeaForm extends Component {
             <input
               id="class"
               name="idea"
-              onChange={event => this._onChangeRadio(event)}
+              onChange={(event) => this._onChangeRadio(event)}
               required
               type="radio"
               value="class"
@@ -167,7 +167,7 @@ class IdeaForm extends Component {
             <input
               id="retreat"
               name="idea"
-              onChange={event => this._onChangeRadio(event)}
+              onChange={(event) => this._onChangeRadio(event)}
               required
               type="radio"
               value="retreat"
@@ -180,7 +180,7 @@ class IdeaForm extends Component {
             <input
               id="workshop"
               name="idea"
-              onChange={event => this._onChangeRadio(event)}
+              onChange={(event) => this._onChangeRadio(event)}
               required
               type="radio"
               value="workshop"
@@ -193,7 +193,7 @@ class IdeaForm extends Component {
             <input
               id="other"
               name="idea"
-              onChange={event => this._onChangeRadio(event)}
+              onChange={(event) => this._onChangeRadio(event)}
               required
               type="radio"
               value="other"
@@ -253,13 +253,8 @@ class IdeaForm extends Component {
   }
 
   render() {
-    const {
-      errors,
-      postStatus,
-      redirect,
-      showThanksMessage,
-      responseError
-    } = this.state;
+    const {errors, postStatus, redirect, showThanksMessage, responseError} =
+      this.state;
 
     if (redirect) {
       return <Redirect push to={routePaths.CE_HOME} />;

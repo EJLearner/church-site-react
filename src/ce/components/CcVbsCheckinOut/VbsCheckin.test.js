@@ -7,7 +7,6 @@ import constants from '../../../utils/constants';
 
 import VbsCheckin from './VbsCheckin';
 
-
 describe('#render', () => {
   it('renders BaseCheckin', () => {
     const wrapper = shallow(<VbsCheckin />);

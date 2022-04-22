@@ -154,11 +154,12 @@ function renderArchiveVideos(otherVideos) {
       {otherVideos.map((videoData) => {
         const {
           date,
-          title,
-          videoLink,
-          scripture,
           description,
-          preacher
+          preacher,
+          preacherLabel = 'Preacher',
+          scripture,
+          title,
+          videoLink
         } = videoData;
 
         return (
@@ -173,7 +174,7 @@ function renderArchiveVideos(otherVideos) {
 
             <div className="video-info">
               <h3>{title}</h3>
-              {renderLabelValue('Preacher', preacher)}
+              {renderLabelValue(preacherLabel, preacher)}
               {scripture && renderLabelValue('Scripture', scripture)}
               <br />
               {getLongDisplayDate(date)}
@@ -188,24 +189,21 @@ function renderArchiveVideos(otherVideos) {
 }
 
 function renderNewestVideo(videoData) {
-  const {date, preacher, scripture, title, videoLink} = videoData;
+  const {
+    date,
+    preacher,
+    preacherLabel = 'Preacher',
+    scripture,
+    title,
+    videoLink
+  } = videoData;
 
   return (
     <div>
       <h2>{title}</h2>
       <div className="preacher-and-scripture">
-        {preacher && (
-          <div>
-            <span className="label">Preacher:</span>{' '}
-            <span className="value">{preacher}</span>
-          </div>
-        )}
-        {scripture && (
-          <div>
-            <span className="label">Scripture:</span>{' '}
-            <span className="value">{scripture}</span>
-          </div>
-        )}
+        {preacher && <div>{renderLabelValue(preacherLabel, preacher)}</div>}
+        {scripture && <div>{renderLabelValue('Scripture', scripture)}</div>}
       </div>
       <div className="date">{getLongDisplayDate(date)}</div>
 

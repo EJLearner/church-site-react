@@ -245,7 +245,7 @@ class BaseRegistrationVolunteer extends Component {
 
     const fieldStates = {};
 
-    Object.values(FIELDS_INFO).forEach(fieldData => {
+    Object.values(FIELDS_INFO).forEach((fieldData) => {
       const {fieldId} = fieldData;
       let value = '';
 
@@ -305,7 +305,7 @@ class BaseRegistrationVolunteer extends Component {
       .then(() => {
         this._postSubmitSuccess();
       })
-      .catch(responseError => {
+      .catch((responseError) => {
         this.setState({postStatus: 'failure', responseError});
       });
   }
