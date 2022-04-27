@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2022-04-26T09:00:00',
+    youtubeId: '1TK_vszH5d8',
+    title: 'Stop Doubting & Only Believe!',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'John 20:24-29'
+  },
+  {
     date: '2022-04-17T09:00:00',
     youtubeId: 'QqTZOcTvDK0',
     title: 'Resurrection: God’s Ultimate Affirmation of Life!!!',
