@@ -7,6 +7,8 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   // webpack 5 comes with devServer which loads in development mode
   devServer: {
+    // open default browser after server is started
+    open: true,
     port: 3000,
     // redirects all 404s to the main page
     historyApiFallback: true
