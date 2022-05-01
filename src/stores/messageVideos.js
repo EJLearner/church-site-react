@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2022-05-01T09:00:00',
+    youtubeId: 'xEkPwmmo4Ec',
+    title: 'Voluntary Vulnerability',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Philippians 2:5-8'
+  },
+  {
     date: '2022-04-26T09:00:00',
     youtubeId: '1TK_vszH5d8',
     title: 'Stop Doubting & Only Believe!',
