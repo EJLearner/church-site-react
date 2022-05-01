@@ -2675,5 +2675,32 @@ export default {
         in our own humanity..”
       </p>
     )
+  },
+  '2022-05-01': {
+    subTitle: (
+      <>
+        From <i> Everyday Simplicity </i> by Robert J. Wicks
+      </>
+    ),
+    content: (
+      <p>
+        <p>
+          “Real spirituality dawns when our life with God becomes as real as the
+          problems and joys we experience each day. Until then we live in two
+          different worlds – one, a seemingly real, practical and demanding
+          world; the other, a wistful, so-called “spiritual” world. In our daily
+          activities, we may see ourselves enmeshed in the world, perhaps
+          burdened. However, in our prayer we walk in the mystery of God, we
+          dwell in peace, and we wish we could simply remain there.
+        </p>
+        <p>
+          This separation cannot remain if all our life is to be filled with
+          real meaning, peace, and awe, no matter how violent or stormy our days
+          may become. When we are truly prayerful we join both worlds. As we
+          become naturally aware of God throughout the day, we journey in both
+          worlds simultaneously. That is truly the spiritual life.”
+        </p>
+      </p>
+    )
   }
 };
