@@ -774,7 +774,14 @@ const bibleComFormattedVerses = {
   '2022-05-04': {verse: 'Genesis 15.1-6'},
   '2022-05-05': {verse: 'Matthew 10.26-31'},
   '2022-05-06': {verse: 'Luke 5.1-11'},
-  '2022-05-07': {verse: 'Philippians 1.12-14'}
+  '2022-05-07': {verse: 'Philippians 1.12-14'},
+  '2022-05-08': {verse: 'Psalm 23'},
+  '2022-05-09': {verse: 'John 21.15-17'},
+  '2022-05-10': {verse: 'Deuteronomy 6.1-9'},
+  '2022-05-11': {verse: 'John 11.28-37'},
+  '2022-05-12': {verse: 'John 15.9-11'},
+  '2022-05-13': {verse: 'Colossians 3.12-14'},
+  '2022-05-14': {verse: 'Galatians 5.22-26'}
 };
 
 export {bibleComFormattedVerses};
