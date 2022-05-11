@@ -781,7 +781,14 @@ const bibleComFormattedVerses = {
   '2022-05-11': {verse: 'John 11.28-37'},
   '2022-05-12': {verse: 'John 15.9-11'},
   '2022-05-13': {verse: 'Colossians 3.12-14'},
-  '2022-05-14': {verse: 'Galatians 5.22-26'}
+  '2022-05-14': {verse: 'Galatians 5.22-26'},
+  '2022-05-15': {verse: 'Psalm 23'},
+  '2022-05-16': {verse: 'John 21.15-17'},
+  '2022-05-17': {verse: 'Deuteronomy 6.1-9'},
+  '2022-05-18': {verse: 'John 11.28-37'},
+  '2022-05-19': {verse: 'John 15.9-11'},
+  '2022-05-20': {verse: 'Colossians 3.12-14'},
+  '2022-05-21': {verse: 'Galatians 5.22-26'}
 };
 
 export {bibleComFormattedVerses};
