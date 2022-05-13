@@ -2721,18 +2721,18 @@ export default {
   '2022-05-15': {
     subTitle: (
       <>
-        From <i> The Way of Forgiveness </i> by Marjorie J. Thompson
+        From <i> Taking Flight </i> by Anthony de Mello
       </>
     ),
     content: (
       <p>
-        “We may see that to live as Jesus did is to experience what it means to
-        be beloved sons and daughters of God. The more we know our belovedness,
-        the more freely we may live by the measure of Jesus’ own example in the
-        power of loving humility and transforming mercy. Here lie the spiritual
-        roots of forgiveness and reconciliation. But the possibility of
-        forgiveness and reconciliation can be as difficult to embrace as the
-        notion of our belovedness.”
+        “Nothing surpasses the holiness of those who have learned perfect
+        acceptance of everything that is. In the game of cards called life on
+        plays the hand one is dealt to the best of one’s ability. Those who
+        insist on playing, not the hand they were given, but the one they insist
+        they should have been dealt – these are life’s failures. We are not
+        asked if we will play. That is not an option. Play we must. The option
+        is how.”
       </p>
     )
   }
