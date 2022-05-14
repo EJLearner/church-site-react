@@ -2702,5 +2702,20 @@ export default {
         </p>
       </p>
     )
+  },
+  '2022-05-08': {
+    subTitle: (
+      <>
+        From <i> My Life for the Poor </i> by Mother Teresa
+      </>
+    ),
+    content: (
+      <p>
+        “Giving need not be confined to money or material gifts, but I would
+        like more people to give their hands to serve and their hearts to love –
+        to recognize the poor in their own homes, towns and countries, and to
+        reach out to them in love and compassion.”
+      </p>
+    )
   }
 };
