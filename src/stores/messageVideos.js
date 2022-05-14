@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2022-05-08T09:00:00',
+    youtubeId: '6UYQQ8QjDp8',
+    title: 'A Mother of Great Faith',
+    preacher: PREACHERS.P_YEARGIN,
+    scripture: 'Exodus 2:1-10'
+  },
+  {
     date: '2022-05-01T09:00:00',
     youtubeId: 'xEkPwmmo4Ec',
     title: 'Voluntary Vulnerability',

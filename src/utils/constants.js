@@ -39,6 +39,7 @@ const constants = {
     L_FORD: 'Minister Lori Ford',
     M_HAMIEL: 'Rev. Michelle Hamiel',
     MINISTERS: 'City Temple Ministers', // use when multiple ministers are in video
+    P_YEARGIN: 'Minister Patricia Ann Yeargin',
     T_CURLEY: 'Rev. Tyra Curley'
   },
 
