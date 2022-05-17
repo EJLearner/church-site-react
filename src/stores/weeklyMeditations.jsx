@@ -2717,5 +2717,23 @@ export default {
         reach out to them in love and compassion.”
       </p>
     )
+  },
+  '2022-05-15': {
+    subTitle: (
+      <>
+        From <i> Taking Flight </i> by Anthony de Mello
+      </>
+    ),
+    content: (
+      <p>
+        “Nothing surpasses the holiness of those who have learned perfect
+        acceptance of everything that is. In the game of cards called life on
+        plays the hand one is dealt to the best of one’s ability. Those who
+        insist on playing, not the hand they were given, but the one they insist
+        they should have been dealt – these are life’s failures. We are not
+        asked if we will play. That is not an option. Play we must. The option
+        is how.”
+      </p>
+    )
   }
 };
