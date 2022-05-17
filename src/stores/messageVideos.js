@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2022-05-15T09:00:00',
+    youtubeId: 'VLQRPGcc-C8',
+    title: 'The Plea for Conscious Weakness!',
+    preacher: PREACHERS.P_YEARGIN,
+    scripture: 'Matthew 6:13'
+  },
+  {
     date: '2022-05-08T09:00:00',
     youtubeId: '6UYQQ8QjDp8',
     title: 'A Mother of Great Faith',
