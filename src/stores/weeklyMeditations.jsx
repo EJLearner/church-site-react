@@ -2735,5 +2735,24 @@ export default {
         is how.”
       </p>
     )
+  },
+  '2022-05-22': {
+    subTitle: (
+      <>
+        From <i> Everything Belongs </i> by Richard Rohr
+      </>
+    ),
+    content: (
+      <p>
+        “One of Jesus’ favorite visual aids is a child. Every time the disciples
+        get into head games, he puts a child in front of them. He says the only
+        people who can recognize and be ready for what he’s talking about are
+        the ones who come with the mind and heart of a child. It’s the same
+        reality as the beginner’s mind. The older we get, the more we’ve been
+        betrayed and hurt and disappointed, the more barriers we put up to
+        beginner’s mind. It’s so hard to go back, to be vulnerable, to say to
+        your soul, “I don’t know anything.”
+      </p>
+    )
   }
 };
