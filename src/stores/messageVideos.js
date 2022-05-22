@@ -5,10 +5,17 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2022-05-22T09:00:00',
+    youtubeId: 'zT0RVg6EZYc',
+    title: 'The Truth About Belief and Faith',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 17:14-21'
+  },
+  {
     date: '2022-05-15T09:00:00',
     youtubeId: 'VLQRPGcc-C8',
     title: 'The Plea for Conscious Weakness!',
-    preacher: PREACHERS.P_YEARGIN,
+    preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 6:13'
   },
   {
