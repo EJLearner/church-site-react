@@ -2754,5 +2754,27 @@ export default {
         your soul, “I don’t know anything.”
       </p>
     )
+  },
+  '2022-05-29': {
+    subTitle: (
+      <>
+        From <i> Contact with God </i> by Anthony de Mello
+      </>
+    ),
+    content: (
+      <p>
+        “Here, then, is another reason why apostles withdraw to make a retreat:
+        they need to be charged with the Holy Spirit. The Holy Spirit is given
+        to those who watch and pray and wait patiently, those who have the
+        courage to get away from everything and come to grips with themselves
+        and with God in solitude and silence. No wonder every one of the great
+        prophets, indeed Jesus himself, retired to the desert for prolonged
+        periods of silence, praying, fasting, wrestling with the forces of evil.
+        The desert is the furnace where the apostle and the prophet are forged.
+        The desert, not the marketplace. The marketplace is where apostles
+        function. The desert is where they are formed and seasoned and receive
+        their commission and their message for the world, “their” gospel.”
+      </p>
+    )
   }
 };
