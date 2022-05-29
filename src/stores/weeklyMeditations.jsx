@@ -2735,5 +2735,46 @@ export default {
         is how.”
       </p>
     )
+  },
+  '2022-05-22': {
+    subTitle: (
+      <>
+        From <i> Everything Belongs </i> by Richard Rohr
+      </>
+    ),
+    content: (
+      <p>
+        “One of Jesus’ favorite visual aids is a child. Every time the disciples
+        get into head games, he puts a child in front of them. He says the only
+        people who can recognize and be ready for what he’s talking about are
+        the ones who come with the mind and heart of a child. It’s the same
+        reality as the beginner’s mind. The older we get, the more we’ve been
+        betrayed and hurt and disappointed, the more barriers we put up to
+        beginner’s mind. It’s so hard to go back, to be vulnerable, to say to
+        your soul, “I don’t know anything.”
+      </p>
+    )
+  },
+  '2022-05-29': {
+    subTitle: (
+      <>
+        From <i> Contact with God </i> by Anthony de Mello
+      </>
+    ),
+    content: (
+      <p>
+        “Here, then, is another reason why apostles withdraw to make a retreat:
+        they need to be charged with the Holy Spirit. The Holy Spirit is given
+        to those who watch and pray and wait patiently, those who have the
+        courage to get away from everything and come to grips with themselves
+        and with God in solitude and silence. No wonder every one of the great
+        prophets, indeed Jesus himself, retired to the desert for prolonged
+        periods of silence, praying, fasting, wrestling with the forces of evil.
+        The desert is the furnace where the apostle and the prophet are forged.
+        The desert, not the marketplace. The marketplace is where apostles
+        function. The desert is where they are formed and seasoned and receive
+        their commission and their message for the world, “their” gospel.”
+      </p>
+    )
   }
 };

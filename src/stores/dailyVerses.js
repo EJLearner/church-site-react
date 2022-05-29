@@ -788,7 +788,21 @@ const bibleComFormattedVerses = {
   '2022-05-18': {verse: 'Acts 9.10-19'},
   '2022-05-19': {verse: '2 Corinthians 11.16-32'},
   '2022-05-20': {verse: 'Acts 16.6-10'},
-  '2022-05-21': {verse: 'Acts 16.16-34'}
+  '2022-05-21': {verse: 'Acts 16.16-34'},
+  '2022-05-22': {verse: 'Psalm  66.8-20'},
+  '2022-05-23': {verse: 'Matthew 28.18-20'},
+  '2022-05-24': {verse: 'Psalm 32.1-11'},
+  '2022-05-25': {verse: 'Luke 10.1-12'},
+  '2022-05-26': {verse: 'Acts 9.1-9'},
+  '2022-05-27': {verse: 'Acts 10.1-16'},
+  '2022-05-28': {verse: 'Acts 10.17-33'},
+  '2022-05-29': {verse: 'Psalm 68.1-10'},
+  '2022-05-30': {verse: 'Acts 1.1-5'},
+  '2022-05-31': {verse: 'Psalm 25.1-10'},
+  '2022-06-01': {verse: 'John 16.12-15'},
+  '2022-06-02': {verse: '2 Timothy 3.10-17'},
+  '2022-06-03': {verse: 'Luke 8.40-42'},
+  '2022-06-04': {verse: 'Psalm 40.1-8'}
 };
 
 export {bibleComFormattedVerses};
