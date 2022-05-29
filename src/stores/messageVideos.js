@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2022-05-29T09:00:00',
+    youtubeId: 'bWn-yV8lG3A',
+    title: 'Gideon’s Flaw and God’s Faithfulness!!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Judges 6:33-40'
+  },
+  {
     date: '2022-05-22T09:00:00',
     youtubeId: 'zT0RVg6EZYc',
     title: 'The Truth About Belief and Faith',
