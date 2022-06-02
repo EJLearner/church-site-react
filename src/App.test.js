@@ -3,6 +3,7 @@ import moment from 'moment';
 import React from 'react';
 
 import App from './App';
+import TopRoutes from './TopRoutes';
 
 it('sets updateLocal function for moment', () => {
   moment.updateLocale = jest.fn();
@@ -20,5 +21,5 @@ it('sets updateLocal function for moment', () => {
 
 it('should render Routes', () => {
   const wrapper = shallow(<App />);
-  expect(wrapper.find('Routes').exists()).toBe(true);
+  expect(wrapper.find(TopRoutes).exists()).toBe(true);
 });
