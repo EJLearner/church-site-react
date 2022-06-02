@@ -77,7 +77,7 @@ describe('getVerseInfo', () => {
     mockXHR.onreadystatechange();
 
     expect(cb).toHaveBeenCalledTimes(1);
-    expect(cb.mock.calls[0][0]).toEqual(testResponseObject.data.passages[0]);
+    expect(cb.mock.calls[0][0]).toEqual(testResponseObject.data.passages);
   });
 
   it('does not call callback with parsed object if readyState is not done', () => {

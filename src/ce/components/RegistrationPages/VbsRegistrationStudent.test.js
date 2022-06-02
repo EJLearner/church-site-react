@@ -1,6 +1,8 @@
 import {shallow} from 'enzyme';
 import React from 'react';
 
+import Textbox from '../../../common/components/Textbox';
+
 import VbsRegistrationStudent, {STUDENT_TYPES} from './VbsRegistrationStudent';
 jest.mock('../../../utils/commonUtils.js');
 
@@ -47,13 +49,15 @@ describe('VbsRegistrationStudent', () => {
     it('asks for child date of birth', () => {
       const wrapper = shallow(<VbsRegistrationStudent {...props} />);
 
-      expect(wrapper.find('Text').find({id: 'childDob'}).exists()).toBe(true);
+      expect(wrapper.find(Textbox).find({id: 'childDob'}).exists()).toBe(true);
     });
 
     it('asks for parent name', () => {
       const wrapper = shallow(<VbsRegistrationStudent {...props} />);
 
-      expect(wrapper.find('Text').find({id: 'parentName'}).exists()).toBe(true);
+      expect(wrapper.find(Textbox).find({id: 'parentName'}).exists()).toBe(
+        true
+      );
     });
 
     it('has parent/guardian information header', () => {
