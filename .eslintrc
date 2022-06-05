@@ -10,7 +10,7 @@
   "rules": {
     "comma-dangle": ["error", "never"],
     "import/order": [
-      "warn",
+      "error",
       {
         "alphabetize": {"order": "asc"},
         "newlines-between": "always",
