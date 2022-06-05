@@ -116,13 +116,13 @@ const FIELDS_INFO = {
 class BaseCcRegistrationChild extends Component {
   constructor(props) {
     super(props);
-    this.state = this._getState();
+    this.state = this.getState();
 
-    this._onChangeInput = this._onChangeInput.bind(this);
-    this._renderFormFields = this._renderFormFields.bind(this);
-    this._onSubmitClick = this._onSubmitClick.bind(this);
-    this._pushToFirebase = this._pushToFirebase.bind(this);
-    this._toggleModal = this._toggleModal.bind(this);
+    this.onChangeInput = this.onChangeInput.bind(this);
+    this.renderFormFields = this.renderFormFields.bind(this);
+    this.onSubmitClick = this.onSubmitClick.bind(this);
+    this.pushToFirebase = this.pushToFirebase.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -132,7 +132,7 @@ class BaseCcRegistrationChild extends Component {
     }
   }
 
-  _getState() {
+  getState() {
     const registrationData = getRegistrationData(true) || {};
     resetRegistrationData();
 
@@ -177,11 +177,11 @@ class BaseCcRegistrationChild extends Component {
     };
   }
 
-  _onChangeInput(value, id) {
+  onChangeInput(value, id) {
     this.setState({[id]: value, postStatus: undefined});
   }
 
-  _pushToFirebase() {
+  pushToFirebase() {
     const {childIdPropName, refName} = this.props;
     const {childDob, parentName, subscribe, parentEmail} = this.state;
 
@@ -219,7 +219,7 @@ class BaseCcRegistrationChild extends Component {
     }
   }
 
-  _onSubmitClick() {
+  onSubmitClick() {
     const errors = registrationUtils.getPageErrors(
       this.state,
       Object.values(FIELDS_INFO)
@@ -232,17 +232,17 @@ class BaseCcRegistrationChild extends Component {
     });
   }
 
-  _toggleModal() {
+  toggleModal() {
     this.setState({showModal: !this.state.showModal});
   }
 
-  _renderFormFields() {
+  renderFormFields() {
     return (
       <div id="form-fields">
         <Text
           id="childName"
           label="Child’s Name"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           required
           size={2 * WIDTH_BASE}
           value={this.state.childName}
@@ -250,7 +250,7 @@ class BaseCcRegistrationChild extends Component {
         <Text
           id="childDob"
           label="Child’s Date of Birth"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           placeholder="mm/dd/yyyy"
           required
           size={1 * WIDTH_BASE}
@@ -260,7 +260,7 @@ class BaseCcRegistrationChild extends Component {
         <Text
           id="parentEmail"
           label="Email Address"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           size={2 * WIDTH_BASE}
           value={this.state.parentEmail}
         />
@@ -268,7 +268,7 @@ class BaseCcRegistrationChild extends Component {
         <Text
           id="parentName"
           label="Parent Name"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           required
           size={2 * WIDTH_BASE}
           value={this.state.parentName}
@@ -276,7 +276,7 @@ class BaseCcRegistrationChild extends Component {
         <Text
           id="parentPhone"
           label="Best Phone Number to Reach You"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           required
           size={1 * WIDTH_BASE}
           value={this.state.parentPhone}
@@ -285,7 +285,7 @@ class BaseCcRegistrationChild extends Component {
         <Text
           id="address1"
           label="Address Line 1"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           required
           size={4 * WIDTH_BASE}
           value={this.state.address1}
@@ -294,7 +294,7 @@ class BaseCcRegistrationChild extends Component {
         <Text
           id="address2"
           label="Address Line 2"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           size={4 * WIDTH_BASE}
           value={this.state.address2}
         />
@@ -302,7 +302,7 @@ class BaseCcRegistrationChild extends Component {
         <Text
           id="city"
           label="City"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           required
           size={1.5 * WIDTH_BASE}
           value={this.state.city}
@@ -310,7 +310,7 @@ class BaseCcRegistrationChild extends Component {
         <Text
           id="state"
           label="State"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           required
           size={1.5 * WIDTH_BASE}
           value={this.state.state}
@@ -319,7 +319,7 @@ class BaseCcRegistrationChild extends Component {
         <Text
           id="zip"
           label="ZIP Code"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           required
           size={Math.floor(0.8 * WIDTH_BASE)}
           value={this.state.zip}
@@ -329,7 +329,7 @@ class BaseCcRegistrationChild extends Component {
           className="registration-checkbox"
           id="subscribe"
           label="Send emails about exciting events going on in the Temple!"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           value="subscribe"
         />
         <br />
@@ -337,7 +337,7 @@ class BaseCcRegistrationChild extends Component {
           columns={4 * WIDTH_BASE}
           id="knownAllergies"
           label="List any known food allergies. Mark N/A if none."
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           required
           size={200}
           textArea
@@ -347,15 +347,15 @@ class BaseCcRegistrationChild extends Component {
         <DisclaimerCheckbox
           checked={this.state.agreementChecked}
           id="agreementChecked"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
         />
 
-        <Button onClick={this._onSubmitClick}>Submit</Button>
+        <Button onClick={this.onSubmitClick}>Submit</Button>
       </div>
     );
   }
 
-  _renderSummaryModal() {
+  renderSummaryModal() {
     const fieldSummaryItems = Object.values(FIELDS_INFO).reduce(
       (items, field) => {
         const {fieldId, label} = field;
@@ -383,11 +383,11 @@ class BaseCcRegistrationChild extends Component {
     );
 
     return (
-      <Modal className="registration-modal" onCloseClick={this._toggleModal}>
+      <Modal className="registration-modal" onCloseClick={this.toggleModal}>
         <h2>Please take a moment to confirm your data</h2>
         <ul>{fieldSummaryItems}</ul>
-        <Button onClick={this._pushToFirebase}>Confirm</Button>
-        <Button onClick={this._toggleModal}>Edit</Button>
+        <Button onClick={this.pushToFirebase}>Confirm</Button>
+        <Button onClick={this.toggleModal}>Edit</Button>
       </Modal>
     );
   }
@@ -409,9 +409,9 @@ class BaseCcRegistrationChild extends Component {
       );
     }
 
-    const formFields = this._renderFormFields();
+    const formFields = this.renderFormFields();
     const modal =
-      showModal && postStatus !== 'failure' && this._renderSummaryModal();
+      showModal && postStatus !== 'failure' && this.renderSummaryModal();
     const hasErrors = Boolean(errors.length);
 
     return (

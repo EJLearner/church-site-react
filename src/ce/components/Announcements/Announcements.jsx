@@ -5,10 +5,8 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
 import routePaths from '../../../routePaths';
-
-
-import './Announcements.css';
 import withDatesSubscription from '../Hocs/withDatesSubscription';
+import './Announcements.css';
 
 class Announcements extends Component {
   getFormattedDaysEvents(dayEvents) {
