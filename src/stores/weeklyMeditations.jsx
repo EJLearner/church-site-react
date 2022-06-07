@@ -2776,5 +2776,28 @@ export default {
         their commission and their message for the world, “their” gospel.”
       </p>
     )
+  },
+  '2022-06-05': {
+    subTitle: (
+      <>
+        From <i> The Light of Christ </i> by Evelyn Underhill
+      </>
+    ),
+    content: (
+      <p>
+        “We can never forecast the path God’s energy or rescue will take. It is
+        never any use saying to God, “I am getting desperate! Please answer my
+        prayer by the next mail and please send a blank check.” God will answer
+        but not necessarily like that; more probably God will transform and use
+        the unlikely looking material already in hand – the loaves and the tiny
+        fishes – looking up to Heaven and blessing it and making it do after
+        all. A priest was once asked if many miracles happened at Lourdes. He
+        said, “Yes many; but the greatest are not miracles of healing but the
+        spiritual miracles, the transformation of those who pray desperately for
+        cure of this or that and come back, not physically cured, but filled
+        with peace and joy, surrendered to the Will of God, conformed to the
+        Cross.”
+      </p>
+    )
   }
 };
