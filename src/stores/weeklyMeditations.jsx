@@ -2799,5 +2799,29 @@ export default {
         Cross.”
       </p>
     )
+  },
+  '2022-06-12': {
+    subTitle: (
+      <>
+        From <i> Life Together </i> by Dietrich Bonhoeffer
+      </>
+    ),
+    content: (
+      <p>
+        “In the Christian community thankfulness is just what it is anywhere
+        else in the Christian life. Only he who gives thanks for little things
+        receives the big things. We prevent God from giving us the great
+        spiritual gifts He has in store for us, because we do not give thanks
+        for daily gifts. We think we dare not be satisfied with the small
+        measure of spiritual knowledge, experience, and love that has been given
+        to us, and that we must constantly be looking forward eagerly for the
+        highest good. Then we deplore the fact that we lack the deep certainty,
+        the strong faith, and the rich experience that God has given to others,
+        and we consider this lament to be pious. We pray for the big things and
+        forget to give thanks for the ordinary, small (and yet really not small)
+        gifts. How can God entrust great things to one who will not thankfully
+        receive from Him the little things?”
+      </p>
+    )
   }
 };
