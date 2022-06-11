@@ -809,7 +809,14 @@ const bibleComFormattedVerses = {
   '2022-06-08': {verse: '2 Corinthians 12.1-10'},
   '2022-06-09': {verse: 'Luke 24.44-49'},
   '2022-06-10': {verse: 'Ephesians 3.20-21'},
-  '2022-06-11': {verse: '1 Corinthians 12.1-11'}
+  '2022-06-11': {verse: '1 Corinthians 12.1-11'},
+  '2022-06-12': {verse: 'Psalm 8'},
+  '2022-06-13': {verse: 'John 17.11-24'},
+  '2022-06-14': {verse: 'Matthew 18.15-20'},
+  '2022-06-15': {verse: 'John 10.22-30'},
+  '2022-06-16': {verse: 'Romans 12.3-5'},
+  '2022-06-17': {verse: 'Ephesians 2.11-21'},
+  '2022-06-18': {verse: 'Galatians 3.23-29'}
 };
 
 export {bibleComFormattedVerses};
