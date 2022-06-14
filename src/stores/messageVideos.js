@@ -12,6 +12,13 @@ const messageVideos = [
     scripture: '1 Timothy 4:14 (KJV/NIV)'
   },
   {
+    date: '2022-06-05T09:00:00',
+    youtubeId: '1s95G6D6Nbk',
+    title: 'A Word About Pentecost',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Acts 2:1-4'
+  },
+  {
     date: '2022-05-29T09:00:00',
     youtubeId: 'bWn-yV8lG3A',
     title: 'Gideon’s Flaw and God’s Faithfulness!!',
