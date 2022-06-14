@@ -5,11 +5,11 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
-    date: '2022-06-05T09:00:00',
-    youtubeId: '1s95G6D6Nbk',
-    title: 'A Word About Pentecost',
-    preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Acts 2:1-4'
+    date: '2022-06-12T09:00:00',
+    youtubeId: 'IxW7by_c4Tc',
+    title: 'Father Endow Us Again',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: '1 Timothy 4:14 (KJV/NIV)'
   },
   {
     date: '2022-05-29T09:00:00',
