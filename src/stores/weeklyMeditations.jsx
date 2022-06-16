@@ -2823,5 +2823,25 @@ export default {
         receive from Him the little things?”
       </p>
     )
+  },
+  '2022-06-19': {
+    subTitle: (
+      <>
+        From <i> Reflections for Ragamuffins </i> by Brennan Manning
+      </>
+    ),
+    content: (
+      <p>
+        “Every time the Gospels mention that Jesus was moved with the deepest
+        emotions or felt sorry for people, it led to his doing something –
+        physical or inner healing, deliverance or exorcism, feeding the hungry
+        crowds or praying for others. The Good Samaritan was commended precisely
+        because he acted. The priest and Levite, paragons of Jewish virtue,
+        flunked the test because they didn’t do anything. “Which of these three,
+        in your opinion, was neighbor to the man who fell in with the robbers?”
+        The answer came, “The one who treated him with compassion.” Jesus said
+        to them, “Then go and do the same.”
+      </p>
+    )
   }
 };
