@@ -5,7 +5,7 @@ const bibleComFormattedVerses = {
   '2020-03-31': {verse: '1 Corinthians 15.1-28'},
   '2020-04-01': {
     verse: 'Romans 1.1-7, Romans 1.16-17',
-    referenceText: 'Romans 1:1-7, 16-17'
+    referenceText: 'Romans 1.1-7, 16-17'
   },
   '2020-04-02': {verse: 'Isaiah 25.1-9'},
   '2020-04-03': {verse: 'Colossians 3.1-17'},
@@ -299,7 +299,7 @@ const bibleComFormattedVerses = {
   '2021-01-13': {verse: 'John 5.19-24'},
   '2021-01-14': {
     verse: 'Luke 10.1; 10.3; 10.17-24',
-    referenceText: 'Luke 10:1, 3, 17-24'
+    referenceText: 'Luke 10.1, 3, 17-24'
   },
   '2021-01-15': {verse: 'Hebrews 1.1-12'},
   '2021-01-16': {verse: '1 John 4'},
@@ -308,7 +308,7 @@ const bibleComFormattedVerses = {
   '2021-01-19': {verse: 'Matthew 4.17-22'},
   '2021-01-20': {
     verse: 'Luke 9.23-27; 9.57-62',
-    referenceText: 'Luke 9:23-27, 57-62'
+    referenceText: 'Luke 9.23-27, 57-62'
   },
   '2021-01-21': {verse: 'Matthew 10.34-42'},
   '2021-01-22': {verse: 'Matthew 11.25-30'},
@@ -802,7 +802,35 @@ const bibleComFormattedVerses = {
   '2022-06-01': {verse: 'John 16.12-15'},
   '2022-06-02': {verse: '2 Timothy 3.10-17'},
   '2022-06-03': {verse: 'Luke 8.40-42'},
-  '2022-06-04': {verse: 'Psalm 40.1-8'}
+  '2022-06-04': {verse: 'Psalm 40.1-8'},
+  '2022-06-05': {verse: 'Psalm 104.24-34'},
+  '2022-06-06': {verse: 'Acts 2.1-4'},
+  '2022-06-07': {verse: 'John 14.25-31'},
+  '2022-06-08': {verse: '2 Corinthians 12.1-10'},
+  '2022-06-09': {verse: 'Luke 24.44-49'},
+  '2022-06-10': {verse: 'Ephesians 3.20-21'},
+  '2022-06-11': {verse: '1 Corinthians 12.1-11'},
+  '2022-06-12': {verse: 'Psalm 8'},
+  '2022-06-13': {verse: 'John 17.11-24'},
+  '2022-06-14': {verse: 'Matthew 18.15-20'},
+  '2022-06-15': {verse: 'John 10.22-30'},
+  '2022-06-16': {verse: 'Romans 12.3-5'},
+  '2022-06-17': {verse: 'Ephesians 2.11-21'},
+  '2022-06-18': {verse: 'Galatians 3.23-29'},
+  '2022-06-19': {verse: 'Psalm 46'},
+  '2022-06-20': {verse: 'Acts 2.14-21'},
+  '2022-06-21': {verse: 'Acts 4.1-12'},
+  '2022-06-22': {verse: 'Acts 4.13-22'},
+  '2022-06-23': {verse: 'Acts 4.23-31'},
+  '2022-06-24': {verse: 'Acts 4.32-37'},
+  '2022-06-25': {verse: '1 Thessalonians 1.1-10'},
+  '2022-06-26': {verse: 'Psalm 13'},
+  '2022-06-27': {verse: 'Acts 11.19-26'},
+  '2022-06-28': {verse: 'Acts 4.1-12'},
+  '2022-06-29': {verse: 'Luke 11.14-23'},
+  '2022-06-30': {verse: 'Acts 5.17-21'},
+  '2022-07-01': {verse: '1 Peter 4.12-19'},
+  '2022-07-02': {verse: 'Acts 8.1-3'}
 };
 
 export {bibleComFormattedVerses};

@@ -5,6 +5,27 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2022-06-26T09:00:00',
+    youtubeId: 'pWkJ7HtVcqM',
+    title: 'Soar On Eagle’s Wings',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'Isaiah 40:31'
+  },
+  {
+    date: '2022-06-19T09:00:00',
+    youtubeId: 'CnnUEJpSAc0',
+    title: 'When Dad’s Don’t Disappear',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 1:24-25; 3:16-17 (NLT)'
+  },
+  {
+    date: '2022-06-12T09:00:00',
+    youtubeId: 'IxW7by_c4Tc',
+    title: 'Father Endow Us Again',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: '1 Timothy 4:14 (KJV/NIV)'
+  },
+  {
     date: '2022-06-05T09:00:00',
     youtubeId: '1s95G6D6Nbk',
     title: 'A Word About Pentecost',

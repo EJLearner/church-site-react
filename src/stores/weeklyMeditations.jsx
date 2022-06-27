@@ -2776,5 +2776,93 @@ export default {
         their commission and their message for the world, “their” gospel.”
       </p>
     )
+  },
+  '2022-06-05': {
+    subTitle: (
+      <>
+        From <i> The Light of Christ </i> by Evelyn Underhill
+      </>
+    ),
+    content: (
+      <p>
+        “We can never forecast the path God’s energy or rescue will take. It is
+        never any use saying to God, “I am getting desperate! Please answer my
+        prayer by the next mail and please send a blank check.” God will answer
+        but not necessarily like that; more probably God will transform and use
+        the unlikely looking material already in hand – the loaves and the tiny
+        fishes – looking up to Heaven and blessing it and making it do after
+        all. A priest was once asked if many miracles happened at Lourdes. He
+        said, “Yes many; but the greatest are not miracles of healing but the
+        spiritual miracles, the transformation of those who pray desperately for
+        cure of this or that and come back, not physically cured, but filled
+        with peace and joy, surrendered to the Will of God, conformed to the
+        Cross.”
+      </p>
+    )
+  },
+  '2022-06-12': {
+    subTitle: (
+      <>
+        From <i> Life Together </i> by Dietrich Bonhoeffer
+      </>
+    ),
+    content: (
+      <p>
+        “In the Christian community thankfulness is just what it is anywhere
+        else in the Christian life. Only he who gives thanks for little things
+        receives the big things. We prevent God from giving us the great
+        spiritual gifts He has in store for us, because we do not give thanks
+        for daily gifts. We think we dare not be satisfied with the small
+        measure of spiritual knowledge, experience, and love that has been given
+        to us, and that we must constantly be looking forward eagerly for the
+        highest good. Then we deplore the fact that we lack the deep certainty,
+        the strong faith, and the rich experience that God has given to others,
+        and we consider this lament to be pious. We pray for the big things and
+        forget to give thanks for the ordinary, small (and yet really not small)
+        gifts. How can God entrust great things to one who will not thankfully
+        receive from Him the little things?”
+      </p>
+    )
+  },
+  '2022-06-19': {
+    subTitle: (
+      <>
+        From <i> Reflections for Ragamuffins </i> by Brennan Manning
+      </>
+    ),
+    content: (
+      <p>
+        “Every time the Gospels mention that Jesus was moved with the deepest
+        emotions or felt sorry for people, it led to his doing something –
+        physical or inner healing, deliverance or exorcism, feeding the hungry
+        crowds or praying for others. The Good Samaritan was commended precisely
+        because he acted. The priest and Levite, paragons of Jewish virtue,
+        flunked the test because they didn’t do anything. “Which of these three,
+        in your opinion, was neighbor to the man who fell in with the robbers?”
+        The answer came, “The one who treated him with compassion.” Jesus said
+        to them, “Then go and do the same.”
+      </p>
+    )
+  },
+  '2022-06-26': {
+    subTitle: (
+      <>
+        From <i>A Wesleyan Spiritual Reader</i> by Rueben P. Job
+      </>
+    ),
+    content: (
+      <p>
+        “The good news is that the scriptures, tradition, the experience of the
+        saints, and our own experience tell us that it is possible to face the
+        unknown and even to face opposition without fear and without defeat. To
+        expect a life without struggle is unrealistic. But it is realistic to
+        expect God’s help in living an authentic and joyful life as a Christian.
+        To daily declare our love for God and neighbor, to give ourselves as
+        fully as we can to God, and to ask for God’s help in living an authentic
+        life of faith is to be prepared to meet any and all opposition. Once we
+        have given all of life to God, we have nothing to lose. We have
+        everything because God has us.”
+      </p>
+    )
   }
 };
