@@ -2843,5 +2843,26 @@ export default {
         to them, “Then go and do the same.”
       </p>
     )
+  },
+  '2022-06-26': {
+    subTitle: (
+      <>
+        From <i>A Wesleyan Spiritual Reader</i> by Rueben P. Job
+      </>
+    ),
+    content: (
+      <p>
+        “The good news is that the scriptures, tradition, the experience of the
+        saints, and our own experience tell us that it is possible to face the
+        unknown and even to face opposition without fear and without defeat. To
+        expect a life without struggle is unrealistic. But it is realistic to
+        expect God’s help in living an authentic and joyful life as a Christian.
+        To daily declare our love for God and neighbor, to give ourselves as
+        fully as we can to God, and to ask for God’s help in living an authentic
+        life of faith is to be prepared to meet any and all opposition. Once we
+        have given all of life to God, we have nothing to lose. We have
+        everything because God has us.”
+      </p>
+    )
   }
 };
