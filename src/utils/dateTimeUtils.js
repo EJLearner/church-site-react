@@ -1,4 +1,3 @@
-import {startOfWeek} from 'date-fns';
 import differenceInCalendarDays from 'date-fns/differenceInCalendarDays';
 import endOfYesterday from 'date-fns/endOfYesterday';
 import format from 'date-fns/format';
@@ -13,6 +12,7 @@ import parseISO from 'date-fns/parseISO';
 import startOfDay from 'date-fns/startOfDay';
 import startOfToday from 'date-fns/startOfToday';
 import startOfTomorrow from 'date-fns/startOfTomorrow';
+import startOfWeek from 'date-fns/startOfWeek';
 
 import constants from './constants';
 
@@ -34,6 +34,10 @@ const convertValidTypedDateToIso = (date) => {
 const getDaysUntilDate = (date) =>
   differenceInCalendarDays(parseISO(date), new Date());
 
+const getNumberOfDaysAgo = (date) => {
+  return differenceInCalendarDays(new Date(), parseISO(date));
+};
+
 const isoTimeHasPassed = (time) => {
   const dateObj = parseISO(time);
   return isPast(dateObj);
@@ -45,6 +49,7 @@ export {
   endOfYesterday,
   format,
   getDaysUntilDate,
+  getNumberOfDaysAgo,
   getStartOfWeek,
   getLongDisplayDate,
   getShortDisplayDate,

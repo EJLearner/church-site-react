@@ -1,11 +1,10 @@
 import moment from 'moment';
 import React, {Component} from 'react';
-import './polyfills';
-import './App.css';
-
 import {createGlobalStyle} from 'styled-components';
 
 import TopRoutes from './TopRoutes.jsx';
+import './polyfills';
+import './App.css';
 
 const GlobalStyle = createGlobalStyle`
   :root {

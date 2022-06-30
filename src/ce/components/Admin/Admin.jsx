@@ -53,23 +53,6 @@ class Admin extends Component {
     });
   }
 
-  eventAdminPage() {
-    const addingEvent = this.state.currentEdit === 'new';
-    const onAddItemClick = () => {
-      this.setState({currentEdit: 'new'});
-    };
-
-    return (
-      <div>
-        <div>
-          <Button onClick={onAddItemClick}>Add Item</Button>
-        </div>
-        {addingEvent && this._renderEditInput(true)}
-        <div>{this._renderItems()}</div>
-      </div>
-    );
-  }
-
   generateLinks() {
     const {
       adminUsers,

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const firebase = jest.genMockFromModule('firebase');
 
 const set = jest.fn(() => {
@@ -12,7 +13,7 @@ const set = jest.fn(() => {
 });
 
 const refObject = {
-  child: jest.fn(function() {
+  child: jest.fn(function () {
     return {
       set: set
     };
@@ -22,7 +23,7 @@ const refObject = {
   update: jest.fn()
 };
 
-const refStub = jest.fn(function() {
+const refStub = jest.fn(function () {
   return refObject;
 });
 
@@ -30,7 +31,7 @@ const dbObject = {
   ref: refStub
 };
 
-const getDatabase = function() {
+const getDatabase = function () {
   return dbObject;
 };
 

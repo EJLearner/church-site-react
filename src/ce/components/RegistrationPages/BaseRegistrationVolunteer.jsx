@@ -8,8 +8,6 @@ import firebase from '../../../firebase';
 import routePaths from '../../../routePaths';
 import utils from '../../../utils/commonUtils';
 import constants from '../../../utils/constants';
-
-import './Registration.css';
 import pushToSubscribedList from '../../../utils/pushToSubscribedList';
 import ErrorList from '../Common/ErrorList';
 import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
@@ -21,6 +19,7 @@ import Modal from '../Reusable/Modal/Modal';
 import DisclaimerCheckbox from './DisclaimerCheckbox';
 import fieldValidators from './fieldValidators';
 import registrationUtils from './registrationUtils';
+import './Registration.css';
 
 const USE_TEST_DATA = false;
 
@@ -194,13 +193,13 @@ const FIELDS_INFO = {
 class BaseRegistrationVolunteer extends Component {
   constructor(props) {
     super(props);
-    this.state = this._getState();
+    this.state = this.getState();
 
-    this._onChangeInput = this._onChangeInput.bind(this);
-    this._renderFormFields = this._renderFormFields.bind(this);
-    this._validateAndSubmit = this._validateAndSubmit.bind(this);
-    this._pushToFirebase = this._pushToFirebase.bind(this);
-    this._toggleModal = this._toggleModal.bind(this);
+    this.onChangeInput = this.onChangeInput.bind(this);
+    this.renderFormFields = this.renderFormFields.bind(this);
+    this.validateAndSubmit = this.validateAndSubmit.bind(this);
+    this.pushToFirebase = this.pushToFirebase.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -210,7 +209,7 @@ class BaseRegistrationVolunteer extends Component {
     }
   }
 
-  _getState() {
+  getState() {
     const testData = {
       email: 'lskdjf@sdklfjsd.com',
       name: 'test name',
@@ -269,11 +268,11 @@ class BaseRegistrationVolunteer extends Component {
     };
   }
 
-  _onChangeInput(value, id) {
+  onChangeInput(value, id) {
     this.setState({[id]: value, postStatus: undefined});
   }
 
-  _pushToFirebase() {
+  pushToFirebase() {
     const {refName, volunteerIdPropName} = this.props;
     const {subscribe, email, name} = this.state;
 
@@ -302,14 +301,14 @@ class BaseRegistrationVolunteer extends Component {
     firebaseRef
       .push(volunteer)
       .then(() => {
-        this._postSubmitSuccess();
+        this.postSubmitSuccess();
       })
       .catch((responseError) => {
         this.setState({postStatus: 'failure', responseError});
       });
   }
 
-  _validateAndSubmit() {
+  validateAndSubmit() {
     const errors = registrationUtils.getPageErrors(
       this.state,
       Object.values(FIELDS_INFO)
@@ -322,15 +321,15 @@ class BaseRegistrationVolunteer extends Component {
     });
   }
 
-  _postSubmitSuccess() {
+  postSubmitSuccess() {
     this.setState({redirect: true});
   }
 
-  _toggleModal() {
+  toggleModal() {
     this.setState({showModal: !this.state.showModal});
   }
 
-  _renderFormFields() {
+  renderFormFields() {
     const widthBase = 15;
 
     return (
@@ -338,7 +337,7 @@ class BaseRegistrationVolunteer extends Component {
         <Text
           id="email"
           label="Email Address"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           size={2 * widthBase}
           value={this.state.email}
         />
@@ -347,7 +346,7 @@ class BaseRegistrationVolunteer extends Component {
         <Text
           id="name"
           label="Name"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           required
           size={2 * widthBase}
           value={this.state.name}
@@ -355,7 +354,7 @@ class BaseRegistrationVolunteer extends Component {
         <Text
           id="dob"
           label="Date of Birth"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           placeholder="mm/dd/yyyy"
           size={1 * widthBase}
           value={this.state.dob}
@@ -363,7 +362,7 @@ class BaseRegistrationVolunteer extends Component {
         <Text
           id="address1"
           label="Address Line 1"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           required
           size={4 * widthBase}
           value={this.state.address1}
@@ -373,7 +372,7 @@ class BaseRegistrationVolunteer extends Component {
         <Text
           id="address2"
           label="Address Line 2"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           size={4 * widthBase}
           value={this.state.address2}
         />
@@ -382,7 +381,7 @@ class BaseRegistrationVolunteer extends Component {
         <Text
           id="city"
           label="City"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           required
           size={1.5 * widthBase}
           value={this.state.city}
@@ -390,7 +389,7 @@ class BaseRegistrationVolunteer extends Component {
         <Text
           id="state"
           label="State"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           required
           size={1.5 * widthBase}
           value={this.state.state}
@@ -398,7 +397,7 @@ class BaseRegistrationVolunteer extends Component {
         <Text
           id="zip"
           label="ZIP Code"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           required
           size={Math.floor(0.8 * widthBase)}
           value={this.state.zip}
@@ -408,14 +407,14 @@ class BaseRegistrationVolunteer extends Component {
         <Text
           id="mobilePhone"
           label="Mobile Phone"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           size={1 * widthBase}
           value={this.state.mobilePhone}
         />
         <Text
           id="homePhone"
           label="Home Phone"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
           size={1 * widthBase}
           value={this.state.homePhone}
         />
@@ -451,7 +450,7 @@ class BaseRegistrationVolunteer extends Component {
           ]}
           id="role"
           label="I am interested in volunteering in the role of:"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
         />
         <br />
 
@@ -459,7 +458,7 @@ class BaseRegistrationVolunteer extends Component {
           <Text
             id="otherText"
             label="Other Role"
-            onChange={this._onChangeInput}
+            onChange={this.onChangeInput}
             size={1 * widthBase}
             value={this.state.otherText}
           />
@@ -484,7 +483,7 @@ class BaseRegistrationVolunteer extends Component {
           ]}
           id="past-volunteer-area"
           label="Select areas that you have volunteered for at City Temple in the past"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
         />
         <Checklist
           checklistItems={[
@@ -516,7 +515,7 @@ class BaseRegistrationVolunteer extends Component {
           ]}
           id="past-volunteer-role"
           label="Your role:"
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
         />
         <br />
 
@@ -553,7 +552,7 @@ class BaseRegistrationVolunteer extends Component {
               horizontal
               id="available-day"
               label="Availability:"
-              onChange={this._onChangeInput}
+              onChange={this.onChangeInput}
             />
 
             <br />
@@ -565,22 +564,22 @@ class BaseRegistrationVolunteer extends Component {
             className="registration-checkbox"
             id="subscribe"
             label="Send emails about exciting events going on in the Temple!"
-            onChange={this._onChangeInput}
+            onChange={this.onChangeInput}
             value="subscribe"
           />
         )}
         <DisclaimerCheckbox
           checked={this.state[FIELDS_INFO.agreementChecked.fieldId]}
           id={FIELDS_INFO.agreementChecked.fieldId}
-          onChange={this._onChangeInput}
+          onChange={this.onChangeInput}
         />
 
-        <Button onClick={this._validateAndSubmit}>Submit</Button>
+        <Button onClick={this.validateAndSubmit}>Submit</Button>
       </div>
     );
   }
 
-  _makeSubGroup(id, fieldIds, header) {
+  makeSubGroup(id, fieldIds, header) {
     const items = fieldIds.reduce((items, fieldId) => {
       if (this.state[fieldId]) {
         items.push(
@@ -613,7 +612,7 @@ class BaseRegistrationVolunteer extends Component {
     );
   }
 
-  _renderSummaryModal() {
+  renderSummaryModal() {
     let fieldSummaryItems = Object.values(FIELDS_INFO).reduce(
       (items, field) => {
         const {fieldId, label} = field;
@@ -653,18 +652,18 @@ class BaseRegistrationVolunteer extends Component {
     };
 
     fieldSummaryItems = fieldSummaryItems.concat(
-      this._makeSubGroup('roles', groupFields.roles, 'Roles volunteering for:'),
-      this._makeSubGroup(
+      this.makeSubGroup('roles', groupFields.roles, 'Roles volunteering for:'),
+      this.makeSubGroup(
         'pastGroups',
         groupFields.pastGroups,
         'Areas volunteered for in the past:'
       ),
-      this._makeSubGroup(
+      this.makeSubGroup(
         'pastRoles',
         groupFields.pastRoles,
         'Roles volunteered for in the past:'
       ),
-      this._makeSubGroup(
+      this.makeSubGroup(
         'available-days',
         groupFields.availability,
         'Available Days'
@@ -672,11 +671,11 @@ class BaseRegistrationVolunteer extends Component {
     );
 
     return (
-      <Modal className="registration-modal" onCloseClick={this._toggleModal}>
+      <Modal className="registration-modal" onCloseClick={this.toggleModal}>
         <h2>Please take a moment to confirm your data</h2>
         <ul>{fieldSummaryItems}</ul>
-        <Button onClick={this._pushToFirebase}>Confirm</Button>
-        <Button onClick={this._toggleModal}>Edit</Button>
+        <Button onClick={this.pushToFirebase}>Confirm</Button>
+        <Button onClick={this.toggleModal}>Edit</Button>
       </Modal>
     );
   }
@@ -700,9 +699,9 @@ class BaseRegistrationVolunteer extends Component {
 
     const hasErrors = Boolean(errors.length);
 
-    const formFields = this._renderFormFields();
+    const formFields = this.renderFormFields();
     const modal =
-      showModal && postStatus !== 'failure' && this._renderSummaryModal();
+      showModal && postStatus !== 'failure' && this.renderSummaryModal();
 
     return (
       <div className={this.props.className}>
