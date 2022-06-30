@@ -2864,5 +2864,24 @@ export default {
         everything because God has us.”
       </p>
     )
+  },
+  '2022-07-03': {
+    subTitle: (
+      <>
+        From <i>Neglected Voices</i> by John Indermark
+      </>
+    ),
+    content: (
+      <p>
+        “Biblical spirituality inspires acts of courage born of commitment to
+        God. Such courage does not call persons to do the impossible but
+        faithfully and selflessly to do what they can when they could have
+        chosen otherwise. Lent recalls the courage of Jesus who “set his face to
+        go to Jerusalem” (Luke 9:51), in spite of understanding what awaited him
+        there. Jesus’ example invokes courage today as you and I translate words
+        of commitment to God into freely chosen actions that place others above
+        self – and God above all, for trust of God opens the door to courage.”
+      </p>
+    )
   }
 };
