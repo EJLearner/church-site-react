@@ -830,7 +830,14 @@ const bibleComFormattedVerses = {
   '2022-06-29': {verse: 'Luke 11.14-23'},
   '2022-06-30': {verse: 'Acts 5.17-21'},
   '2022-07-01': {verse: '1 Peter 4.12-19'},
-  '2022-07-02': {verse: 'Acts 8.1-3'}
+  '2022-07-02': {verse: 'Acts 8.1-3'},
+  '2022-07-03': {verse: 'Psalm 45.10-17'},
+  '2022-07-04': {verse: 'Acts 4.23-31'},
+  '2022-07-05': {verse: 'Romans 15.1-6'},
+  '2022-07-06': {verse: 'Acts 15.14-21'},
+  '2022-07-07': {verse: 'Philippians 1.1-11'},
+  '2022-07-08': {verse: 'Acts 4.12-16'},
+  '2022-07-09': {verse: 'Ephesians 6.18-20'}
 };
 
 export {bibleComFormattedVerses};
