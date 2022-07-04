@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2022-07-03T09:00:00',
+    youtubeId: 'XSDdTzYISMA',
+    title: 'The Broken Heart of God Revealed!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Luke 23:44-48'
+  },
+  {
     date: '2022-06-26T09:00:00',
     youtubeId: 'pWkJ7HtVcqM',
     title: 'Soar On Eagle’s Wings',
