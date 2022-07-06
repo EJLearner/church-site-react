@@ -837,7 +837,14 @@ const bibleComFormattedVerses = {
   '2022-07-06': {verse: 'Acts 15.14-21'},
   '2022-07-07': {verse: 'Philippians 1.1-11'},
   '2022-07-08': {verse: 'Acts 4.12-16'},
-  '2022-07-09': {verse: 'Ephesians 6.18-20'}
+  '2022-07-09': {verse: 'Ephesians 6.18-20'},
+  '2022-07-10': {verse: 'Psalm 119.105-112'},
+  '2022-07-11': {verse: 'Acts 4.32-37'},
+  '2022-07-12': {verse: 'Acts 9.32-35'},
+  '2022-07-13': {verse: 'Acts 13.48-52'},
+  '2022-07-14': {verse: '2 Corinthians 1.3-11'},
+  '2022-07-15': {verse: '2 Corinthians 8.1-15'},
+  '2022-07-16': {verse: '2 Thessalonians 3.1-5'}
 };
 
 export {bibleComFormattedVerses};
