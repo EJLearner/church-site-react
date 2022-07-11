@@ -2883,5 +2883,24 @@ export default {
         self – and God above all, for trust of God opens the door to courage.”
       </p>
     )
+  },
+  '2022-07-10': {
+    subTitle: (
+      <>
+        From <i>Soul Feast</i> by Marjorie J. Thompson
+      </>
+    ),
+    content: (
+      <p>
+        “It takes practice to learn not to censor our prayer. But trying to keep
+        secrets from God is like the three-year-old who covers her eyes and
+        declares, “You can’t see me.” God sees into our hearts more clearly than
+        we do. Indeed, God is the one who prompts us to look at what we have
+        swept under the rug of our repressions and rationalizations. The Spirit
+        awakens us to what lies hidden within – sometimes gently, sometimes with
+        a jolt, but always so God can work with our conscious consent to free us
+        for growth.”
+      </p>
+    )
   }
 };
