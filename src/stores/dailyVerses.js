@@ -844,7 +844,14 @@ const bibleComFormattedVerses = {
   '2022-07-13': {verse: 'Acts 13.48-52'},
   '2022-07-14': {verse: '2 Corinthians 1.3-11'},
   '2022-07-15': {verse: '2 Corinthians 8.1-15'},
-  '2022-07-16': {verse: '2 Thessalonians 3.1-5'}
+  '2022-07-16': {verse: '2 Thessalonians 3.1-5'},
+  '2022-07-17': {verse: 'Psalm 139.1-12'},
+  '2022-07-18': {verse: 'Acts 4.32-37'},
+  '2022-07-19': {verse: 'Romans 15.1-5'},
+  '2022-07-20': {verse: 'Philippians 1.27-30'},
+  '2022-07-21': {verse: 'Mark 16.19-20'},
+  '2022-07-22': {verse: '1 Peter 3.8-12'},
+  '2022-07-23': {verse: '1 Peter 3.13-22'}
 };
 
 export {bibleComFormattedVerses};
