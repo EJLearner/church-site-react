@@ -5,11 +5,11 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
-    date: '2022-07-10T09:00:00',
-    youtubeId: 'oY9hUzY7lc0',
-    title: 'The Unconditional Love of the Father',
-    preacher: PREACHERS.D_NELSON,
-    scripture: 'Luke 15:11-32 KJV'
+    date: '2022-07-17T09:00:00',
+    youtubeId: 'de8bdXToNMg',
+    title: 'An Absolute Assurance!!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Philippians 4:18-20 NLT'
   },
   {
     date: '2022-07-03T09:00:00',
