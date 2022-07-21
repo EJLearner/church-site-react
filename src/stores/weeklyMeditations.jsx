@@ -2920,5 +2920,30 @@ export default {
         <i>(Col. 3:23-24)</i>
       </p>
     )
+  },
+  '2022-07-24': {
+    subTitle: (
+      <>
+        From <i>Bread for the Journey</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        <p>
+          “When Jesus took the bread, blessed it, broke it and gave it to his
+          disciples, he summarized in these gestures his own life. Jesus is
+          chosen from all eternity, blessed at his baptism in the Jordan River,
+          broken on the cross and given as bread to the world. Being chosen,
+          blessed, broken and given is the sacred journey of the Son of God,
+          Jesus the Christ.
+        </p>
+        <p>
+          When we take bread, bless it, break it and give it with the words,
+          “This is the Body of Christ,” we express our commitment to make our
+          lives conform to the life of Christ. We too want to live as people
+          chosen, blessed, and broken and thus become food for the world.”
+        </p>
+      </p>
+    )
   }
 };
