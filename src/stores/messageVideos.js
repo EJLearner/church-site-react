@@ -5,7 +5,7 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
-    date: '2022-07-25T09:00:00',
+    date: '2022-07-24T09:00:00',
     youtubeId: 'lyMIrWJxmAM',
     title: 'The Labor Crisis of the Kingdom',
     preacher: PREACHERS.G_YEARGIN,
@@ -19,11 +19,11 @@ const messageVideos = [
     scripture: 'Philippians 4:18-20 NLT'
   },
   {
-    date: '2022-07-03T09:00:00',
-    youtubeId: 'XSDdTzYISMA',
-    title: 'The Broken Heart of God Revealed!',
-    preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Luke 23:44-48'
+    date: '2022-07-10T09:00:00',
+    youtubeId: 'oY9hUzY7lc0',
+    title: 'The Unconditional Love of the Father',
+    preacher: PREACHERS.D_NELSON,
+    scripture: 'Luke 15:11-32'
   },
   {
     date: '2022-06-26T09:00:00',
