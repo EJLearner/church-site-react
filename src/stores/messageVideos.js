@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2022-07-25T09:00:00',
+    youtubeId: 'lyMIrWJxmAM',
+    title: 'The Labor Crisis of the Kingdom',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 9:35-38 NLT'
+  },
+  {
     date: '2022-07-17T09:00:00',
     youtubeId: 'de8bdXToNMg',
     title: 'An Absolute Assurance!!',
