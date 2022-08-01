@@ -2945,5 +2945,23 @@ export default {
         </p>
       </p>
     )
+  },
+  '2022-07-31': {
+    subTitle: (
+      <>
+        From <i>Toward God </i> by Michael Casey
+      </>
+    ),
+    content: (
+      <p>
+        “To pray well I must first find out where I am. Self-knowledge is never
+        procured cheaply. To pray well I need to face up to realities about
+        myself that I would prefer to ignore: my anxieties, fears, private
+        griefs, failures, lovelessness, my utter lack of resources. To accept
+        the truth about what I am, as also the truth about other human beings,
+        demands courage. If I do not pray well, it is usually because I lack
+        that kind of courage.”
+      </p>
+    )
   }
 };
