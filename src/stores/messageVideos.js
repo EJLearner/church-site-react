@@ -5,7 +5,7 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
-    date: '2022-07-24T09:00:00',
+    date: '2022-07-31T09:00:00',
     youtubeId: 'lyMIrWJxmAM',
     title: 'The Labor Crisis of the Kingdom',
     preacher: PREACHERS.G_YEARGIN,
