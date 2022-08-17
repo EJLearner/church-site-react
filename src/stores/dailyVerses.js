@@ -865,7 +865,14 @@ const bibleComFormattedVerses = {
   '2022-08-03': {verse: 'John 17.1-11'},
   '2022-08-04': {verse: 'Matthew 6.1-15'},
   '2022-08-05': {verse: 'Psalm 118.1-9'},
-  '2022-08-06': {verse: 'Matthew 7.7-11'}
+  '2022-08-06': {verse: 'Matthew 7.7-11'},
+  '2022-08-14': {verse: 'Psalm 133'},
+  '2022-08-15': {verse: 'John 5.1-18'},
+  '2022-08-16': {verse: 'Matthew 9.2-8'},
+  '2022-08-17': {verse: 'Matthew 9.18-26'},
+  '2022-08-18': {verse: 'Matthew 9.27-31'},
+  '2022-08-19': {verse: 'Luke 17.11-19'},
+  '2022-08-20': {verse: 'Psalm 32'}
 };
 
 export {bibleComFormattedVerses};
