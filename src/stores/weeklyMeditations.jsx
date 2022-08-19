@@ -2985,5 +2985,23 @@ export default {
         itself by projecting evil elsewhere.”
       </p>
     )
+  },
+  '2022-08-21': {
+    subTitle: (
+      <>
+        From <i>Vision and Character </i> by Craig R. Dykstra
+      </>
+    ),
+    content: (
+      <p>
+        “Repentance…requires two things: humility and trust. Repentance requires
+        the humility involved in the confession that I am a sinner, one whose
+        life is not whole and who lacks the power both to find either the
+        direction to wholeness or the resources for wholeness on my on.
+        Repentance requires trust in a power that can and will ultimately
+        sustain and establish me if I let go of myself into that power’s hands.
+        Without both trust and humility, repentance is impossible.”
+      </p>
+    )
   }
 };
