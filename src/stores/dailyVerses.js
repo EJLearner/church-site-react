@@ -865,7 +865,21 @@ const bibleComFormattedVerses = {
   '2022-08-03': {verse: 'John 17.1-11'},
   '2022-08-04': {verse: 'Matthew 6.1-15'},
   '2022-08-05': {verse: 'Psalm 118.1-9'},
-  '2022-08-06': {verse: 'Matthew 7.7-11'}
+  '2022-08-06': {verse: 'Matthew 7.7-11'},
+  '2022-08-14': {verse: 'Psalm 133'},
+  '2022-08-15': {verse: 'John 5.1-18'},
+  '2022-08-16': {verse: 'Matthew 9.2-8'},
+  '2022-08-17': {verse: 'Matthew 9.18-26'},
+  '2022-08-18': {verse: 'Matthew 9.27-31'},
+  '2022-08-19': {verse: 'Luke 17.11-19'},
+  '2022-08-20': {verse: 'Psalm 32'},
+  '2022-08-21': {verse: 'Psalm 124'},
+  '2022-08-22': {verse: 'Mark 1.14-15'},
+  '2022-08-23': {verse: 'Luke 5.27-32'},
+  '2022-08-24': {verse: 'Luke 24.44-49'},
+  '2022-08-25': {verse: 'Acts 2.37-42'},
+  '2022-08-26': {verse: 'Romans 2.1-11'},
+  '2022-08-27': {verse: '2 Peter 3.8-13'}
 };
 
 export {bibleComFormattedVerses};

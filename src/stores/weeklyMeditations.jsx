@@ -2963,5 +2963,45 @@ export default {
         that kind of courage.”
       </p>
     )
+  },
+  '2022-08-14': {
+    subTitle: (
+      <>
+        From <i>Everything Belongs </i> by Richard Rohr
+      </>
+    ),
+    content: (
+      <p>
+        “We have to train ourselves to recognize how we’re giving an “affective
+        charge” to an offense, how we are getting energy from mulling over
+        someone else’s mistakes. We can build a case with no effort at all. We
+        wrap and embellish and by the time our twenty minutes of “prayer” are
+        over, we have a complete case. The verdict is in: the other person is
+        guilty. And wrong besides. And because the other is wrong, we are right.
+        “Scapegoating” is when we displace the issue and project it over there
+        instead of owning it here, too. Only the contemplative mind can
+        recognize its own complicity and participation in this great mystery of
+        evil. The contemplative mind holds the tension and refuses to ease
+        itself by projecting evil elsewhere.”
+      </p>
+    )
+  },
+  '2022-08-21': {
+    subTitle: (
+      <>
+        From <i>Vision and Character </i> by Craig R. Dykstra
+      </>
+    ),
+    content: (
+      <p>
+        “Repentance…requires two things: humility and trust. Repentance requires
+        the humility involved in the confession that I am a sinner, one whose
+        life is not whole and who lacks the power both to find either the
+        direction to wholeness or the resources for wholeness on my on.
+        Repentance requires trust in a power that can and will ultimately
+        sustain and establish me if I let go of myself into that power’s hands.
+        Without both trust and humility, repentance is impossible.”
+      </p>
+    )
   }
 };
