@@ -3003,5 +3003,27 @@ export default {
         Without both trust and humility, repentance is impossible.”
       </p>
     )
+  },
+  '2022-08-28': {
+    subTitle: (
+      <>
+        From <i>“Participating in the New Creation” </i> by Mary Conrow Coelho
+        in The Weavings Reader
+      </>
+    ),
+    content: (
+      <p>
+        “Thomas Merton insists that there is no union with God without
+        transformation. Paradoxically, the person who has struggled with
+        personal transformation and become psychologically stronger is the
+        person who can be empty and receptive before God. It is the prepared
+        personality that is less resistant to God’s love. This vulnerability is
+        an act of strength, since we no longer need to hold tightly to a false
+        self that protects us from our inner pain and fears. We are free at
+        last. We can surrender to God, who is everywhere and always present, and
+        can actively respond as the occasion requires. We have the ease to rest
+        in God in whom we have been found.”
+      </p>
+    )
   }
 };
