@@ -43,7 +43,7 @@ const testUserInfo = {
 };
 
 const donationTypeOptions = [
-  {label: 'Audo/Visual Ministry', value: 'audovisual'},
+  {label: 'Audio/Visual Ministry', value: 'audovisual'},
   {label: 'Tithes', value: 'tithes'},
   {label: 'General Offering', value: 'general'},
   {label: 'Benevolence', value: 'benevolence'},
