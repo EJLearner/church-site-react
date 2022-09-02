@@ -43,6 +43,7 @@ const testUserInfo = {
 };
 
 const donationTypeOptions = [
+  {label: 'Audo/Visual Ministry', value: 'audovisual'},
   {label: 'Tithes', value: 'tithes'},
   {label: 'General Offering', value: 'general'},
   {label: 'Benevolence', value: 'benevolence'},
@@ -52,8 +53,7 @@ const donationTypeOptions = [
   {label: 'Sunday School', value: 'sunday-school'},
   {label: 'Donation', value: 'donation'},
   {label: 'William Bryant Scholarship Fund', value: 'scholarship'},
-  {label: 'Youth Ministry', value: 'youth'},
-  {label: 'Sowing Seeds', value: 'seeds'}
+  {label: 'Youth Ministry', value: 'youth'}
 ];
 
 const initialDonationTypeInfo = donationTypeOptions.map((option, index) => {
