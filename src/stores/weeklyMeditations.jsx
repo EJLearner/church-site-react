@@ -3025,5 +3025,20 @@ export default {
         in God in whom we have been found.”
       </p>
     )
+  },
+  '2022-09-04': {
+    subTitle: (
+      <>
+        From <i>Creation in Christ </i> by George Macdonald
+      </>
+    ),
+    content: (
+      <p>
+        “It may sound paradoxical, but no man is condemned for anything he has
+        done; he is condemned for continuing to do wrong. He is condemned for
+        not coming out of the darkness, for not coming to the light, the living
+        God, who sent the light, His Son, into the world to guide him home.”
+      </p>
+    )
   }
 };

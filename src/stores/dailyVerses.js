@@ -886,7 +886,14 @@ const bibleComFormattedVerses = {
   '2022-08-31': {verse: 'Isaiah 12.1-6'},
   '2022-09-01': {verse: 'John 7.37-39'},
   '2022-09-02': {verse: 'Revelation 7.13-17'},
-  '2022-09-03': {verse: 'Isaiah 42.1-9'}
+  '2022-09-03': {verse: 'Isaiah 42.1-9'},
+  '2022-09-04': {verse: 'Psalm 149'},
+  '2022-09-05': {verse: 'Romans 8.1-11'},
+  '2022-09-06': {verse: 'John 8.1-11'},
+  '2022-09-07': {verse: '1 John 3.18-24'},
+  '2022-09-08': {verse: 'Psalm 34.11-22'},
+  '2022-09-09': {verse: 'Romans 8.31-39'},
+  '2022-09-10': {verse: 'James 2.8-13'}
 };
 
 export {bibleComFormattedVerses};
