@@ -7,7 +7,7 @@ const messageVideos = [
   {
     date: '2022-09-04T09:00:00',
     youtubeId: 'j0L5ISIvE_g',
-    title: 'Is Anything Too Hard For God',
+    title: 'Is Anything Too Hard For God?',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Genesis 18:14'
   },
