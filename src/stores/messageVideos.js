@@ -5,11 +5,11 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
-    date: '2022-08-28T09:00:00',
-    youtubeId: 'd5T8AAPoFK4',
-    title: 'Gratefulness After the Storm',
-    preacher: PREACHERS.D_NELSON,
-    scripture: undefined
+    date: '2022-09-04T09:00:00',
+    youtubeId: 'j0L5ISIvE_g',
+    title: 'Is Anything Too Hard For God',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Genesis 18:14'
   },
   {
     date: '2022-07-17T09:00:00',
