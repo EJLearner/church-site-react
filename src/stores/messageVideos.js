@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2022-09-11T09:00:00',
+    youtubeId: '7I8trozVG1A',
+    title: 'Knowing the God who Knows Us',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'Psalm 139'
+  },
+  {
     date: '2022-09-04T09:00:00',
     youtubeId: 'j0L5ISIvE_g',
     title: 'Is Anything Too Hard For God?',
