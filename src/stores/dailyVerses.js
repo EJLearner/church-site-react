@@ -897,7 +897,7 @@ const bibleComFormattedVerses = {
   '2022-09-18': {verse: 'Psalm 105.1-6'},
   '2022-09-19': {verse: 'Mark 6.30-44'},
   '2022-09-20': {verse: 'Matthew 9.35-38'},
-  '2022-09-21': {verse: 'Isaiah 61.8-11'},
+  '2022-09-21': {verse: 'Isaiah 61.4-7'},
   '2022-09-22': {verse: 'Isaiah 61.8-11'},
   '2022-09-23': {verse: 'Luke 7.11-17'},
   '2022-09-24': {verse: 'Matthew 14.13-21'}
