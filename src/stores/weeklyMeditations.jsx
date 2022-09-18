@@ -3040,5 +3040,24 @@ export default {
         God, who sent the light, His Son, into the world to guide him home.”
       </p>
     )
+  },
+  '2022-09-18': {
+    subTitle: (
+      <>
+        From <i>The Light of Christ </i> by Evelyn Underhill
+      </>
+    ),
+    content: (
+      <p>
+        “To go where healing love is needed, and give it in a way in which it
+        can be received, often means acting in the teeth of our own interests ad
+        preferences, even religious interests and preferences. Christ risked his
+        reputation for holiness by healing on the Sabbath; he touched the
+        unclean and dined with the wrong people; he accepted the love and
+        companionship of a sinner [the most wonderful of all remedies for the
+        wounds of sin]. He loved with God’s love and so went straight to the
+        point: What can I do to restore my fellow creature and how?”
+      </p>
+    )
   }
 };
