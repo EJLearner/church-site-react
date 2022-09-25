@@ -5,6 +5,34 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2022-09-11T09:00:00',
+    youtubeId: '7I8trozVG1A',
+    title: 'Knowing the God who Knows Us',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'Psalm 139'
+  },
+  {
+    date: '2022-09-04T09:00:00',
+    youtubeId: 'j0L5ISIvE_g',
+    title: 'Is Anything Too Hard For God?',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Genesis 18:14'
+  },
+  {
+    date: '2022-07-17T09:00:00',
+    youtubeId: 'de8bdXToNMg',
+    title: 'An Absolute Assurance!!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Philippians 4:18-20 NLT'
+  },
+  {
+    date: '2022-07-10T09:00:00',
+    youtubeId: 'oY9hUzY7lc0',
+    title: 'The Unconditional Love of the Father',
+    preacher: PREACHERS.D_NELSON,
+    scripture: 'Luke 15:11-32'
+  },
+  {
     date: '2022-06-26T09:00:00',
     youtubeId: 'pWkJ7HtVcqM',
     title: 'Soar On Eagle’s Wings',
