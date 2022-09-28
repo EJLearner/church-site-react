@@ -23,7 +23,14 @@ const bibleComFormattedVerses = {
     verse: 'Philippians 1.12-14, 27-30',
     referenceText: 'Philippians 1:12-14, 27-30'
   },
-  '2022-10-01': {verse: 'Matthew 14.22-33'}
+  '2022-10-01': {verse: 'Matthew 14.22-33'},
+  '2022-10-02': {verse: 'Psalm 19'},
+  '2022-10-03': {verse: 'Luke 24.28-35'},
+  '2022-10-04': {verse: '1 Thessalonians 1.2-10'},
+  '2022-10-05': {verse: 'Acts 1.6-11'},
+  '2022-10-06': {verse: 'Mark 16.1-8'},
+  '2022-10-07': {verse: 'Psalm 105.1-6'},
+  '2022-10-08': {verse: 'Psalm 90'}
 };
 
 export {bibleComFormattedVerses};
