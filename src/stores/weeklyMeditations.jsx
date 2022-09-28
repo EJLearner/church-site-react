@@ -163,5 +163,23 @@ export default {
         </p>
       </>
     )
+  },
+  '2022-10-02': {
+    subTitle: (
+      <>
+        From <i>The Fruits of the Spirit</i> by Evelyn Underhill
+      </>
+    ),
+    content: (
+      <p>
+        “There is always a night shift and sooner or later we are put on it. The
+        praise does not cease with the fading of the light, but goes on through
+        the spiritual night as well as the spiritual day. And if you are picked
+        for the night shift – well, praise the Lord. Lift up your hands in the
+        dark sanctuary of your soul when you are tempted to wonder what is the
+        good of it all, and praise the Lord! And the Lord, maker of heaven and
+        earth, will bless you from Zion.”
+      </p>
+    )
   }
 };
