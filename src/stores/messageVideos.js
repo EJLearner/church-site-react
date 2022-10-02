@@ -5,11 +5,11 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
-    date: '2022-09-25T09:00:00',
-    youtubeId: 'kXDenx-x7dM',
-    title: 'The Most Important Thing We Need to Know!!!',
+    date: '2022-10-02T09:00:00',
+    youtubeId: 'Pk5WZbUKxwk',
+    title: 'What to Do Afterwards...',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: '1 John 4: 4-10'
+    scripture: 'Mark 5: 18-20 (NLT)'
   },
   {
     date: '2022-09-11T09:00:00',
