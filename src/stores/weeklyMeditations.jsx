@@ -181,5 +181,31 @@ export default {
         earth, will bless you from Zion.”
       </p>
     )
+  },
+  '2022-10-09': {
+    subTitle: (
+      <>
+        From <i>Keeping the Sabbath</i> Dorothy C. Bass in Practicing Our Faith
+      </>
+    ),
+    content: (
+      <p>
+        “How often people today cry out in exasperation of despair, “I just
+        don’t have enough time!” There is so much to do: earn a living, fulfill
+        a vocation, nurture relationships, care for dependents, exercise, clean
+        the house. Moreover, we hope to maintain sanity while doing all this,
+        and to keep growing as faithful and loving people at the same time. We
+        are finite, and the demands seem too great, the time too short… Puritan
+        Sabbath keepers agreed that “good Sabbaths make good Christians.” They
+        meant that regular, disciplined attention to the spiritual life was
+        foundation of faithfulness. Another dimension of the saying opens up if
+        we imagine a worshiping community helping one another step off the
+        treadmill of work-and-spend and into the circle of glad gratitude for
+        the gifts of God. Taken this way, good Sabbaths make good Christians by
+        regularly reminding us of God’s creative, liberating, and redeeming
+        presence, not only in words but also through a practice we do together
+        in response to that presence.”
+      </p>
+    )
   }
 };
