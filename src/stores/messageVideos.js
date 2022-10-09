@@ -5,11 +5,11 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
-    date: '2022-10-02T09:00:00',
-    youtubeId: 'Pk5WZbUKxwk',
-    title: 'What to Do Afterwards...',
+    date: '2022-10-09T09:00:00',
+    youtubeId: 'nHshC_jSjb0',
+    title: 'A Living Hope',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Mark 5: 18-20 (NLT)'
+    scripture: '1 Peter 1:1-5 (NLT)'
   },
   {
     date: '2022-09-11T09:00:00',
