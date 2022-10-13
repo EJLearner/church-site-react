@@ -207,5 +207,27 @@ export default {
         in response to that presence.”
       </p>
     )
+  },
+  '2022-10-16': {
+    subTitle: <>From Rueben P. Job</>,
+    content: (
+      <p>
+        “Jesus asked two of John’s disciples (John 1:38) what they were looking
+        for and invited them to come and see where and how he lived. The desire
+        to know and be near to God has been placed within as an invitation to a
+        lifelong quest for companionship with the divine. And yet, from personal
+        experience we know that sometimes we look in all the wrong places. These
+        disciples of Jesus were invited to continue their search where Jesus was
+        and not where he was not. Our directions are certainly as plain as
+        theirs are. What are you looking for today and where will your search be
+        successful? The quest for God is always successful when carried out
+        where God is to be found. Where shall we begin the search? The deep
+        inner rooms of our own soul, sacred scriptures, the book of history,
+        current events, the lives of the saints, the poor and oppressed seeking
+        our compassion, and the creation itself offer places where God has been
+        most readily found in the past. Today pay attention to what has your
+        undivided attention and follow the clues to a closer walk with God.”
+      </p>
+    )
   }
 };
