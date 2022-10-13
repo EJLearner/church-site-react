@@ -37,7 +37,14 @@ const bibleComFormattedVerses = {
   '2022-10-12': {verse: '2 Corinthians 11.16-33'},
   '2022-10-13': {verse: 'John 6.25-34'},
   '2022-10-14': {verse: 'Philippians 4.15-20'},
-  '2022-10-15': {verse: 'Matthew 6.25-34'}
+  '2022-10-15': {verse: 'Matthew 6.25-34'},
+  '2022-10-16': {verse: 'Psalm 99'},
+  '2022-10-17': {verse: 'John 12.20-26'},
+  '2022-10-18': {verse: 'Acts 1.6-11'},
+  '2022-10-19': {verse: 'Isaiah 51.1-8'},
+  '2022-10-20': {verse: 'John 1.35-42'},
+  '2022-10-21': {verse: 'Hebrews 11.8-12'},
+  '2022-10-22': {verse: '1 John 3.1-3'}
 };
 
 export {bibleComFormattedVerses};
