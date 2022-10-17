@@ -5,11 +5,11 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
-    date: '2022-10-09T09:00:00',
-    youtubeId: 'nHshC_jSjb0',
-    title: 'A Living Hope',
+    date: '2022-10-16T09:00:00',
+    youtubeId: 'GwIIGE8-lMM',
+    title: 'A Parting Epitaph To The Kingdom of God',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: '1 Peter 1:1-5 (NLT)'
+    scripture: 'Luke 22:47-52 (NLT)'
   },
   {
     date: '2022-09-11T09:00:00',
