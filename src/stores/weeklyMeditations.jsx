@@ -229,5 +229,37 @@ export default {
         undivided attention and follow the clues to a closer walk with God.”
       </p>
     )
+  },
+  '2022-10-23': {
+    subTitle: (
+      <>
+        From <i>The Cup of Our Life</i> by Joyce Rupp
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “God is, above all else, a being of immense beauty. It is this beauty
+          that continues to draw u and enfold u in eternal goodness. This
+          mysterious Beloved is forever wooing us, longing for us to be totally
+          immersed in love of the purest kind. As I look at my life, I count as
+          my greatest blessing he gift of God’s own essence. Being able to know
+          this wondrous God of beauty, being embraced and welcomed home time and
+          again, all of this is truly powerful.
+        </p>
+        <p>
+          I see this immense goodness of God reflected in every variety of
+          people and in all facets of the universe hat sing out the goodness of
+          the Creator,. Each one mirrors he essence of God’s beauty. Each one is
+          a vessel filled with manifestations of the Creator. I know this
+          beauty, also within myself, in the silent encounters deep within my
+          own being. Every once in awhile, each of us senses, for a moment, this
+          rare blessing of the touch of God. Brief as it is, it is, it is enough
+          to remind us that there is an underlying harmony beneath all the
+          chaos. There is an eternal beauty giving a loving texture to all of
+          life.”
+        </p>
+      </>
+    )
   }
 };

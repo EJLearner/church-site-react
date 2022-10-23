@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2022-10-23T09:00:00',
+    youtubeId: 'fLLM1YA4xBQ',
+    title: 'Alleviating Our Anxious Fears',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Psalm 27:1, 13-14'
+  },
+  {
     date: '2022-10-16T09:00:00',
     youtubeId: 'GwIIGE8-lMM',
     title: 'A Parting Epitaph To The Kingdom of God',
