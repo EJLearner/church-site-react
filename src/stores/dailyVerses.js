@@ -51,7 +51,14 @@ const bibleComFormattedVerses = {
   '2022-10-26': {verse: 'Proverbs 8:3-36'},
   '2022-10-27': {verse: 'Romans 6:12-14'},
   '2022-10-28': {verse: 'John 3:31-36'},
-  '2022-10-29': {verse: 'John 6:35-40'}
+  '2022-10-29': {verse: 'John 6:35-40'},
+  '2022-10-30': {verse: 'Psalm 107.1-7,33-37'},
+  '2022-10-31': {verse: 'John 20.24-28'},
+  '2022-11-01': {verse: 'John 10.22-30'},
+  '2022-11-02': {verse: 'John 10.31-42'},
+  '2022-11-03': {verse: 'Mark 11.20-25'},
+  '2022-11-04': {verse: 'Mark 14.22-23'},
+  '2022-11-05': {verse: 'John 1.10-13'}
 };
 
 export {bibleComFormattedVerses};
