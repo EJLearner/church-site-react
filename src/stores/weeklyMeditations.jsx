@@ -261,5 +261,29 @@ export default {
         </p>
       </>
     )
+  },
+  '2022-10-30': {
+    subTitle: (
+      <>
+        From <i>Mere Christianity</i> by C. S. Lewis
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “Faith is such a necessary virtue: unless you teach your moods “where
+          they get off,” you can never be either a sound Christian or even a
+          sound atheist, but just a creature dithering to and fro, with its
+          beliefs really dependent on the weather and the state of its
+          digestion. Consequently one must train the habit of Faith.
+        </p>
+        <p>
+          The first step is to recognize the fact that your moods change. The
+          next is to make sure that, if you have once accepted Christianity,
+          then some of its main doctrines shall be deliberately held before your
+          mind for some time every day.”
+        </p>
+      </>
+    )
   }
 };
