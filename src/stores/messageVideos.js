@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2022-10-30T09:00:00',
+    youtubeId: 'kiNYsYDQwsE',
+    title: 'Worship Service October 30th, 2022',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 6:13'
+  },
+  {
     date: '2022-10-23T09:00:00',
     youtubeId: 'fLLM1YA4xBQ',
     title: 'Alleviating Our Anxious Fears',
