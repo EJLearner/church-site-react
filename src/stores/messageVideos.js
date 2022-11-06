@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2022-11-06T09:00:00',
+    youtubeId: 'oHvV9FWB44c',
+    title: 'Reaffirming The Church!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 16:13-20'
+  },
+  {
     date: '2022-10-30T09:00:00',
     youtubeId: 'kiNYsYDQwsE',
     title: 'Worship Service October 30th, 2022',
