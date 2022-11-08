@@ -285,5 +285,28 @@ export default {
         </p>
       </>
     )
+  },
+  '2022-11-06': {
+    subTitle: (
+      <>
+        From <i>The Imitation of Christ</i> by Thomas a` Kempis
+      </>
+    ),
+    content: (
+      <p>
+        “You are the object of all good, the apex of life, the depth of wisdom.
+        Your servants’ greatest consolation is to hope in you above all things.
+        I turn my eyes to you. In you, my God, Father of mercies, I place my
+        trust. Bless my soul and make it holy with your heavenly blessing; let
+        it become your holy dwelling, the place of your eternal glory. Let
+        nothing by found in your temple that may offend the eyes of your
+        majesty. According to the greatness of your goodness and your many
+        mercies, look down on me and hear the prayer of your poor servant,
+        exiled far off in the land of the shadow of death. Protect and keep the
+        soul of your servant, traveling amid the many dangers of life. By your
+        grace, direct him along the path of peace until he is back home in the
+        land of everlasting brightness. Amen.”
+      </p>
+    )
   }
 };
