@@ -308,5 +308,25 @@ export default {
         land of everlasting brightness. Amen.”
       </p>
     )
+  },
+  '2022-11-13': {
+    subTitle: (
+      <>
+        From <i>Prayer: Finding the Heart’s True Home</i> Richard J. Foster
+      </>
+    ),
+    content: (
+      <p>
+        “Two millennia ago at an early morning breakfast by the Sea of Tiberias,
+        Jesus had only one question for Peter: “Simon son of John, do you love
+        me?” (John 21). Jesus did not ask him about his effectiveness, or his
+        skill, or anything but his love. Three times Jesus asked, “Simon, do you
+        love me?” Peter struggled for an adequate response to that probing
+        query. Finally, he blurted out, “Lord, you know everything; you know
+        that I love you.” Assured of his heart, Jesus gave Peter work to do:
+        “Feed my lambs.” The same question is asked of us. The same work is
+        given to us.”
+      </p>
+    )
   }
 };
