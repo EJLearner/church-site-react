@@ -1,24 +1,23 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import Button from '../ce/components/Reusable/Button/Button';
-import Select from '../common/components/Select';
-import SelectState from '../common/components/SelectState';
-import Textbox from '../common/components/Textbox';
 import routePaths from '../routePaths';
 import {FONT_FAMILIES, COLORS} from '../utils/styleVariables';
 
-import MainMenubar from './MainMenubar';
 import AboveContentLinks from './commonComponents/AboveContentLinks';
+import Button from './commonComponents/Button/Button';
 import ContentAndSides from './commonComponents/ContentAndSides';
 import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
 import ContentLeftSide from './commonComponents/ContentLeftSide';
 import ContentRightSide from './commonComponents/ContentRightSide';
 import ContentWrapper from './commonComponents/ContentWrapper';
-import PlainButton from './commonComponents/PlainButton';
+import Select from './commonComponents/Select';
+import SelectState from './commonComponents/SelectState';
 import StandardPageWrapper from './commonComponents/StandardPageWrapper';
+import Textbox from './commonComponents/Textbox';
 import TopInfoBox from './commonComponents/TopInfoBox';
 import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
+import PlainButton from './commonComponents/inputs/PlainButton';
 
 const AddAnotherTypeWrapper = styled.div`
   color: ${COLORS.GRAY180};
@@ -274,7 +273,6 @@ const GivingPage = () => {
 
   return (
     <StandardPageWrapper>
-      <MainMenubar />
       <TopInfoBoxWrapper>
         <TopInfoBox>{topInfoBoxContent}</TopInfoBox>
       </TopInfoBoxWrapper>

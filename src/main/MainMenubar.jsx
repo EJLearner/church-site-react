@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
@@ -7,6 +8,21 @@ import logo from '../assets/main/images/logo-ct-circle-white-cropped.png';
 import {LOGICAL_COLORS, WIDTHS, FONT_FAMILIES} from '../utils/styleVariables';
 
 import getAnnouncementsContentArray from './MainPage/AnnouncementsContent/getAnnouncementsContentArray';
+
+const hasAnnouncements = getAnnouncementsContentArray().length;
+
+const mainMenuItems = [
+  {text: 'Home', path: routePaths.MAIN_HOME},
+  {text: 'About Us', path: routePaths.MAIN_ABOUT_US},
+  {text: 'Giving', path: routePaths.MAIN_GIVING},
+  {text: 'Watch', path: routePaths.MAIN_WATCH},
+  {text: 'Church Calendar', path: routePaths.MAIN_CALENDAR},
+  {text: 'Contact', path: routePaths.MAIN_CONTACT},
+  hasAnnouncements && {
+    text: 'Announcements',
+    path: routePaths.MAIN_ANNOUNCEMENTS
+  }
+].filter(Boolean);
 
 const StyledHeader = styled.header`
   font-family: ${FONT_FAMILIES.CENTURY_GOTHIC};
@@ -58,25 +74,7 @@ const StyledMainMenuBar = styled.nav`
   }
 `;
 
-const MainMenubar = () => {
-  const hasAnnouncements = getAnnouncementsContentArray().length;
-
-  const menuItems = [
-    {text: 'Home', path: routePaths.MAIN_HOME},
-    {text: 'About Us', path: routePaths.MAIN_ABOUT_US},
-    {text: 'Ministries', path: routePaths.MAIN_MINISTRIES},
-    {text: 'Giving', path: routePaths.MAIN_GIVING},
-    {text: 'Watch', path: routePaths.MAIN_WATCH},
-    {text: 'Church Calendar', path: routePaths.MAIN_CALENDAR},
-    // TODO:add when members only section exists
-    // {text: 'Members Only', path: routePaths.MAIN_MEMBERS_ONLY},
-    {text: 'Contact', path: routePaths.MAIN_CONTACT},
-    hasAnnouncements && {
-      text: 'Announcements',
-      path: routePaths.MAIN_ANNOUNCEMENTS
-    }
-  ].filter(Boolean);
-
+const MainMenubar = ({menuItems = mainMenuItems}) => {
   const renderedMenuItems = menuItems.map(({hash = '', text, path}) => {
     return (
       <div className="main-menu-item" key={text}>
@@ -100,6 +98,10 @@ const MainMenubar = () => {
       </StyledMainMenuBar>
     </StyledHeader>
   );
+};
+
+MainMenubar.propTypes = {
+  menuItems: PropTypes.array
 };
 
 export default MainMenubar;

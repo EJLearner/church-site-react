@@ -6,7 +6,6 @@ import useNews from '../stores/useNews';
 import constants from '../utils/constants';
 import {format, parseISO} from '../utils/dateTimeUtils';
 
-import MainMenubar from './MainMenubar';
 import AboveContentLinks from './commonComponents/AboveContentLinks';
 import ContentAndSides from './commonComponents/ContentAndSides';
 import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
@@ -96,7 +95,6 @@ const NewsPage = () => {
   return (
     <StyleWrapper>
       <StandardPageWrapper>
-        <MainMenubar />
         <TopInfoBoxWrapper>
           <TopInfoBox>{topBoxContent}</TopInfoBox>
         </TopInfoBoxWrapper>

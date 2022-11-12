@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import styled from 'styled-components';
 
-import withDatesSubscription from '../../../ce/components/Hocs/withDatesSubscription';
-import calendarDatesUtils from '../../../ce/utils/calendarDatesUtils';
 import commonUtils from '../../../utils/commonUtils';
 import {LOGICAL_COLORS} from '../../../utils/styleVariables';
+
+import calendarDatesUtils from './calendarDatesUtils';
+import withDatesSubscription from './withDatesSubscription';
 
 const CONTROLS = {
   PREV: 'PREV',

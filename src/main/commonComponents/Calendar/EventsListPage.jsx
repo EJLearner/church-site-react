@@ -4,9 +4,8 @@ import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import styled from 'styled-components';
 
-import calendarDatesUtils from '../../../ce/utils/calendarDatesUtils';
-
 import MiniCalendar from './MiniCalendar';
+import calendarDatesUtils from './calendarDatesUtils';
 
 const EventsListPageStyles = styled.div`
   display: flex;

@@ -5,7 +5,6 @@ import {Redirect, Route, Switch} from 'react-router-dom';
 import routePaths from '../routePaths';
 
 import CalendarStyles from './CalendarStyles';
-import MainMenubar from './MainMenubar';
 import CalendarDay from './commonComponents/Calendar/CalendarDay';
 import CalendarMenuBar from './commonComponents/Calendar/CalendarMenuBar';
 import CalendarMonth from './commonComponents/Calendar/CalendarMonth';
@@ -47,7 +46,6 @@ class Calendar extends Component {
 
     return (
       <CalendarStyles id="top-react-div">
-        <MainMenubar />
         <div className="calendar-page">
           <h1>Events at City Temple</h1>
           <CalendarMenuBar id="calendar-menu" links={linkData} />

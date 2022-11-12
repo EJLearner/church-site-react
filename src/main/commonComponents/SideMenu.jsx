@@ -8,7 +8,7 @@ import {
   FONT_FAMILIES
 } from '../../utils/styleVariables';
 
-import PlainButton from './PlainButton';
+import PlainButton from './inputs/PlainButton';
 
 const subMenu = (subLinks) => {
   return (

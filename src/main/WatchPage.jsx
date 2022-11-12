@@ -8,11 +8,10 @@ import {
 } from '../utils/dateTimeUtils';
 import {LOGICAL_COLORS, COLORS} from '../utils/styleVariables';
 
-import MainMenubar from './MainMenubar';
 import WatchPageFilter from './WatchPageFilter';
 import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
-import PlainButton from './commonComponents/PlainButton';
 import StandardPageWrapper from './commonComponents/StandardPageWrapper';
+import PlainButton from './commonComponents/inputs/PlainButton';
 
 const INITIAL_VIDEO_SHOW_COUNT = 10;
 const PAGE_TEXT_COLOR = COLORS.GRAY95;
@@ -24,7 +23,7 @@ const FIELD_IDS = Object.freeze({
   scriptureSearchId: 'scripture-search'
 });
 
-export const initialSearchInfo = {
+const initialSearchInfo = {
   [FIELD_IDS.titleSearchId]: '',
   [FIELD_IDS.preacherSearchId]: '',
   [FIELD_IDS.dateSearchId]: '',
@@ -267,7 +266,6 @@ const WatchPage = () => {
 
   return (
     <StandardPageWrapper>
-      <MainMenubar />
       <ContentAndSubCompassWrapper>
         <StyleWrapper>
           {renderNewestVideo(newestVideo)}

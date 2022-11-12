@@ -2,11 +2,9 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 
-
-import withDatesSubscription from '../../../ce/components/Hocs/withDatesSubscription';
-import calendarDatesUtils from '../../../ce/utils/calendarDatesUtils';
-
 import EventsListPage from './EventsListPage';
+import calendarDatesUtils from './calendarDatesUtils';
+import withDatesSubscription from './withDatesSubscription';
 
 function getDates(maxEvents, selectedDay, storedDates) {
   const dates = [];

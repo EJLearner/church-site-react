@@ -2,8 +2,6 @@ import {format, add} from 'date-fns';
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import BackToTop from '../common/components/BackToTop';
-import Verse from '../common/components/Verse';
 import routePaths from '../routePaths';
 import {bibleComFormattedVerses} from '../stores/dailyVerses';
 import weeklyMeditations from '../stores/weeklyMeditations';
@@ -11,8 +9,8 @@ import constants from '../utils/constants';
 import {getStartOfWeek} from '../utils/dateTimeUtils';
 import {FONT_FAMILIES} from '../utils/styleVariables';
 
-import MainMenubar from './MainMenubar';
 import AboveContentLinks from './commonComponents/AboveContentLinks';
+import BackToTop from './commonComponents/BackToTop';
 import ContentAndSides from './commonComponents/ContentAndSides';
 import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
 import ContentLeftSide from './commonComponents/ContentLeftSide';
@@ -22,6 +20,7 @@ import SideMenu from './commonComponents/SideMenu';
 import StandardPageWrapper from './commonComponents/StandardPageWrapper';
 import TopInfoBox from './commonComponents/TopInfoBox';
 import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
+import Verse from './commonComponents/Verse';
 
 const StyleWrapper = styled.div`
   h2 {
@@ -146,7 +145,6 @@ export default function MeditationsPage() {
   return (
     <StyleWrapper>
       <StandardPageWrapper>
-        <MainMenubar />
         <TopInfoBoxWrapper>
           <TopInfoBox>
             <h1>Scriptures &amp; Meditation</h1>

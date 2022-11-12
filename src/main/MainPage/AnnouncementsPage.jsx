@@ -4,25 +4,10 @@ import {useLocation} from 'react-router';
 import styled from 'styled-components';
 
 import {LOGICAL_COLORS} from '../../utils/styleVariables';
-import MainMenubar from '../MainMenubar';
 import ContentAndSubCompassWrapper from '../commonComponents/ContentAndSubCompassWrapper';
 import StandardPageWrapper from '../commonComponents/StandardPageWrapper';
 
 import getAnnouncementsContentArray from './AnnouncementsContent/getAnnouncementsContentArray';
-
-const FIELD_IDS = Object.freeze({
-  titleSearchId: 'title-search',
-  preacherSearchId: 'preacher-search',
-  dateSearchId: 'date-search',
-  scriptureSearchId: 'scripture-search'
-});
-
-export const initialSearchInfo = {
-  [FIELD_IDS.titleSearchId]: '',
-  [FIELD_IDS.preacherSearchId]: '',
-  [FIELD_IDS.dateSearchId]: '',
-  [FIELD_IDS.scriptureSearchId]: ''
-};
 
 const StyleWrapper = styled.div`
   padding: 1em 0;
@@ -86,7 +71,6 @@ const AnnouncementsPage = () => {
 
   return (
     <StandardPageWrapper>
-      <MainMenubar />
       <ContentAndSubCompassWrapper>
         <StyleWrapper>{renderedContent}</StyleWrapper>
       </ContentAndSubCompassWrapper>

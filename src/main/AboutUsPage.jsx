@@ -8,7 +8,6 @@ import organPicture from '../assets/main/images/organ-close.jpg';
 import revPaynePicture from '../assets/main/images/rev-payne.jpg';
 import routePaths from '../routePaths';
 
-import MainMenubar from './MainMenubar';
 import AboveContentLinks from './commonComponents/AboveContentLinks';
 import ContentAndSides from './commonComponents/ContentAndSides';
 import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
@@ -607,7 +606,6 @@ const MainAboutUs = () => {
   return (
     <StyleWrapper>
       <StandardPageWrapper>
-        <MainMenubar />
         <TopInfoBoxWrapper>
           <TopInfoBox>{topBoxContent}</TopInfoBox>
 

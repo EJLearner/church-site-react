@@ -5,11 +5,12 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
-import withDatesSubscription from '../../../ce/components/Hocs/withDatesSubscription';
-import calendarDatesUtils from '../../../ce/utils/calendarDatesUtils';
-import Select from '../../../common/components/Select';
 import routePaths from '../../../routePaths';
 import commonUtils from '../../../utils/commonUtils';
+import Select from '../Select';
+
+import calendarDatesUtils from './calendarDatesUtils';
+import withDatesSubscription from './withDatesSubscription';
 
 const MonthCalendarStyle = styled.div`
   background-color: white;

@@ -2,11 +2,11 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 
-import withDatesSubscription from '../../../ce/components/Hocs/withDatesSubscription';
 import commonUtils from '../../../utils/commonUtils';
 import constants from '../../../utils/constants';
 
 import EventsListPage from './EventsListPage';
+import withDatesSubscription from './withDatesSubscription';
 
 const {INTERNAL_DATE_FORMAT} = constants;
 

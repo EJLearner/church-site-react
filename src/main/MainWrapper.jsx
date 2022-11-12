@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import styled from 'styled-components';
 
-import NotFound from '../ce/components/NotFound/NotFound';
 import routePaths from '../routePaths';
 import GlobalStoreWrapper from '../stores/GlobalStoreWrapper';
 import backgroundStore from '../stores/backgroundStore';
@@ -11,24 +10,18 @@ import {SIZES} from '../utils/styleVariables';
 import AboutUsPage from './AboutUsPage';
 import Calendar from './CalendarPage';
 import ContactPage from './ContactPage';
-import CoronavirusPage from './CoronavirusPage';
-import CultureAndFineArtsPage from './CultureAndFineArtsPage';
-import GedPage from './GedPage';
 import GivingPage from './GivingPage';
-import JubileePage from './JubileePage';
+import MainMenubar from './MainMenubar';
 import MainContent from './MainPage';
 import AnnouncementsPage from './MainPage/AnnouncementsPage';
 import MeditationsPage from './MeditationsPage';
-import MembersOnly from './MembersOnly';
-import MinistriesPage from './MinistriesPage';
 import NewsPage from './NewsPage';
-import ScholarshipPage from './ScholarshipPage';
-import VotingInformationPage from './VotingInformationPage';
+import RemovedPage from './RemovedPage';
 import WatchPage from './WatchPage';
-import GlobalCartLink from './commonComponents/GlobalCartLink';
 import MainFooter from './commonComponents/MainFooter';
+import NotFound from './commonComponents/NotFound';
 
-const StyledWrapperDiv = styled.div`
+const StyledMainWrapperDiv = styled.div`
   background-attachment: fixed;
   background-image: url(${(props) => props.backgroundSource});
   background-repeat: no-repeat;
@@ -61,7 +54,8 @@ function MainWrapper() {
 
   return (
     <GlobalStoreWrapper>
-      <StyledWrapperDiv backgroundSource={backgroundSource}>
+      <StyledMainWrapperDiv backgroundSource={backgroundSource}>
+        <MainMenubar />
         <Switch>
           <Route path={routePaths.MAIN_ABOUT_US}>
             <AboutUsPage />
@@ -73,22 +67,22 @@ function MainWrapper() {
             <ContactPage />
           </Route>
           <Route path={routePaths.MAIN_CORONAVIRUS}>
-            <CoronavirusPage />
+            <RemovedPage />
           </Route>
           <Route path={routePaths.MAIN_ANNOUNCEMENTS}>
             <AnnouncementsPage />
           </Route>
           <Route path={routePaths.MAIN_CULTURE_AND_ARTS}>
-            <CultureAndFineArtsPage />
+            <RemovedPage />
           </Route>
           <Route path={routePaths.MAIN_GED}>
-            <GedPage />
+            <RemovedPage />
           </Route>
           <Route path={routePaths.MAIN_GIVING}>
             <GivingPage />
           </Route>
           <Route path={routePaths.MAIN_JUBILEE}>
-            <JubileePage />
+            <RemovedPage />
           </Route>
           <Route exact path={routePaths.MAIN_HOME}>
             <MainContent />
@@ -96,20 +90,17 @@ function MainWrapper() {
           <Route path={routePaths.MAIN_MEDITATIONS}>
             <MeditationsPage />
           </Route>
-          <Route path={routePaths.MAIN_MEMBERS_ONLY}>
-            <MembersOnly />
-          </Route>
           <Route path={routePaths.MAIN_MINISTRIES}>
-            <MinistriesPage />
+            <RemovedPage />
           </Route>
           <Route path={routePaths.MAIN_NEWS}>
             <NewsPage />
           </Route>
           <Route path={routePaths.MAIN_SCHOLARSHIP}>
-            <ScholarshipPage />
+            <RemovedPage />
           </Route>
           <Route path={routePaths.MAIN_VOTING_INFORMATION}>
-            <VotingInformationPage />
+            <RemovedPage />
           </Route>
           <Route path={routePaths.MAIN_WATCH}>
             <WatchPage />
@@ -119,8 +110,7 @@ function MainWrapper() {
           </Route>
         </Switch>
         <MainFooter />
-        <GlobalCartLink />
-      </StyledWrapperDiv>
+      </StyledMainWrapperDiv>
     </GlobalStoreWrapper>
   );
 }

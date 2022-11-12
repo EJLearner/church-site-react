@@ -2,12 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-import Button, {
-  BUTTON_COLORS,
-  SHAPES
-} from '../ce/components/Reusable/Button/Button';
-import Textbox from '../common/components/Textbox';
 import {LOGICAL_COLORS} from '../utils/styleVariables';
+
+import Button, {BUTTON_COLORS, SHAPES} from './commonComponents/Button/Button';
+import Textbox from './commonComponents/Textbox';
 
 const Filter = styled.div`
   padding-left: 2em;

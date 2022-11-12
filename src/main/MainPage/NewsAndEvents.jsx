@@ -11,7 +11,7 @@ import {
   COLORS,
   LOGICAL_COLORS
 } from '../../utils/styleVariables';
-import PlainButton from '../commonComponents/PlainButton';
+import PlainButton from '../commonComponents/inputs/PlainButton';
 
 const NEWS_AND_EVENTS_BOX_HEIGHT = '300';
 const MAX_NEWS_DISPLAY_HEIGHT = NEWS_AND_EVENTS_BOX_HEIGHT - 40;

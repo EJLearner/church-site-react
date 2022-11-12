@@ -1,15 +1,14 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-import Anchor from '../../common/components/Anchor';
+import routePaths from '../../routePaths';
 import constants from '../../utils/constants';
 import {LOGICAL_COLORS, WIDTHS, COLORS} from '../../utils/styleVariables';
-import MainMenubar from '../MainMenubar';
+import Anchor from '../commonComponents/Anchor';
 import MainTopInfoBox from '../commonComponents/MainTopInfoBox';
 
-import ContentSelectBoxes from './ContentSelectBoxes';
+import WorshipExperience from './BoxContent/WorshipExperience';
 import NewsAndEvents from './NewsAndEvents';
-import {contentSelectInfo} from './mainPageData';
 
 const StyledPage = styled.div`
   .main-text-and-news {
@@ -73,41 +72,26 @@ const StyledPage = styled.div`
 `;
 
 function MainContent() {
-  const [contentIndex, setContentIndex] = useState(0);
-
-  const {
-    learnMoreText = 'Learn More',
-    linkPath,
-    Component,
-    externalLink
-  } = contentSelectInfo[contentIndex];
+  const learnMoreText = 'Watch Sermon';
+  const linkPath = routePaths.MAIN_WATCH;
 
   return (
     <StyledPage>
-      <MainMenubar />
       <div className="main-text-and-news">
         <div className="top-box-wrapper">
           <MainTopInfoBox>
             <div className="content-component-wrapper">
-              <Component />
+              <WorshipExperience />
             </div>
             <div className="arrow-and-learn-more">
               <div className="arrow-box">{constants.SLENDER_ARROW_RIGHT}</div>
               <div className="learn-more-box">
-                <Anchor external={Boolean(externalLink)} path={linkPath}>
-                  {learnMoreText}
-                </Anchor>
+                <Anchor path={linkPath}>{learnMoreText}</Anchor>
               </div>
             </div>
           </MainTopInfoBox>
         </div>
         <NewsAndEvents />
-      </div>
-      <div className="content-select-box-wrapper">
-        <ContentSelectBoxes
-          contentIndex={contentIndex}
-          onContentSelect={(index) => setContentIndex(index)}
-        />
       </div>
     </StyledPage>
   );

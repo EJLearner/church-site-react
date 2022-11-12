@@ -1,9 +1,5 @@
-
-
 import PropTypes from 'prop-types';
 import React, {useState} from 'react';
-
-import MainMenubar from '../MainMenubar';
 
 import AboveContentLinks from './AboveContentLinks';
 import ContentAndSides from './ContentAndSides';
@@ -44,7 +40,6 @@ const GeneralPageTemplate = (props) => {
   );
   return (
     <StandardPageWrapper>
-      <MainMenubar />
       <TopInfoBoxWrapper>
         <TopInfoBox>{topBoxContent}</TopInfoBox>
       </TopInfoBoxWrapper>

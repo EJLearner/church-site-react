@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 
-import withDatesSubscription from '../../../ce/components/Hocs/withDatesSubscription';
-
 import EventsListPage from './EventsListPage';
+import withDatesSubscription from './withDatesSubscription';
 
 class CalendarDay extends Component {
   constructor(props) {
@@ -28,6 +27,7 @@ class CalendarDay extends Component {
 
   render() {
     const currentDayMoment = moment();
+
     const selectedDayMoment = moment(this.state.selectedDay, 'YYYY-MM-DD');
 
     const currentDaySelected = selectedDayMoment.isSame(

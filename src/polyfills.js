@@ -1,5 +1,6 @@
 /* eslint-disable no-extend-native */
 
+// eslint-disable-next-line import/no-unused-modules
 const lodashValues = require('lodash/values');
 
 // https://tc39.github.io/ecma262/#sec-array.prototype.find

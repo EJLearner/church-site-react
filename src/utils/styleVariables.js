@@ -5,6 +5,7 @@ const FONT_FAMILIES = {
   CALIBRI: "Calibri, 'Segoe UI', Candara, Segoe, Optima, Arial, sans-serif",
   CAMBRIA: "cambria, georgia, 'bookman old style', 'times new roman', serif",
   CENTURY_GOTHIC: "'Century Gothic', CenturyGothic, AppleGothic, sans-serif",
+  CODE: "'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace",
   GARAMOND:
     "'Adobe Garamond Pro', Garamond, Baskerville, 'Baskerville Old Face'," +
     "'Hoefler Text', 'Times New Roman', serif",

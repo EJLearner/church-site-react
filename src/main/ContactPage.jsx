@@ -2,21 +2,20 @@ import {post} from 'jquery';
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
-import PostSubmitStatusMessage from '../ce/components/Common/PostSubmitStatusMessage';
-import Button, {STYLES} from '../ce/components/Reusable/Button/Button';
-import Textarea from '../common/components/Textarea';
-import Textbox from '../common/components/Textbox';
 import backgroundStore from '../stores/backgroundStore';
 import {COLORS, LOGICAL_COLORS, FONT_FAMILIES} from '../utils/styleVariables';
 
-import MainMenubar from './MainMenubar';
 import AboveContentLinks from './commonComponents/AboveContentLinks';
+import Button, {STYLES} from './commonComponents/Button/Button';
 import ContentAndSides from './commonComponents/ContentAndSides';
 import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
 import ContentLeftSide from './commonComponents/ContentLeftSide';
 import ContentRightSide from './commonComponents/ContentRightSide';
 import ContentWrapper from './commonComponents/ContentWrapper';
+import PostSubmitStatusMessage from './commonComponents/PostSubmitStatusMessage';
 import StandardPageWrapper from './commonComponents/StandardPageWrapper';
+import Textarea from './commonComponents/Textarea';
+import Textbox from './commonComponents/Textbox';
 import TopInfoBox from './commonComponents/TopInfoBox';
 import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
 
@@ -129,15 +128,7 @@ function renderLeftSideInfo() {
           <h3>Holy Communion &amp; Baptism</h3>First Sunday of each month
         </li>
         <li>
-          <h3>Youth Church</h3>(second Sundays)
-          <br />
-          9am
-        </li>
-        <li>
-          <h3>Sunday School</h3>11: 30 am
-        </li>
-        <li>
-          <h3>Prayer Meeting</h3>Saturday before first Sunday
+          <h3>Prayer Service</h3>Saturday before first Sunday
         </li>
         <li>
           <h3>Bible Study</h3>Tuesday, 12 pm &amp; 7 pm
@@ -233,7 +224,6 @@ const ContactPage = () => {
   return (
     <ContactPageStyles>
       <StandardPageWrapper>
-        <MainMenubar />
         <TopInfoBoxWrapper>
           <TopInfoBox>
             <h1>Contact Us</h1>
