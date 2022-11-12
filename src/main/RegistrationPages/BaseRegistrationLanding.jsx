@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-import {FONT_FAMILIES, LOGICAL_COLORS} from '../../../utils/styleVariables';
+import {FONT_FAMILIES, LOGICAL_COLORS} from '../../utils/styleVariables';
 
 const RegistrationLandingStyle = styled.div`
   display: flex;
