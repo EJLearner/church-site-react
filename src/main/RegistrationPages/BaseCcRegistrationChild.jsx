@@ -3,21 +3,21 @@ import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import {Redirect} from 'react-router';
 
-import firebase from '../../../firebase';
-import routePaths from '../../../routePaths';
+import firebase from '../../firebase';
+import routePaths from '../../routePaths';
 import {
   saveRegistrationData,
   getRegistrationData,
   resetRegistrationData
-} from '../../../stores/lastSubmittedRegistration';
-import utils from '../../../utils/commonUtils';
-import constants from '../../../utils/constants';
-import pushToSubscribedList from '../../../utils/pushToSubscribedList';
-import ErrorList from '../Common/ErrorList';
-import PostSubmitStatusMessage from '../Common/PostSubmitStatusMessage';
-import Button from '../Reusable/Button/Button';
-import Checkbox from '../Reusable/Checklist/Checkbox';
-import Modal from '../Reusable/Modal/Modal';
+} from '../../stores/lastSubmittedRegistration';
+import utils from '../../utils/commonUtils';
+import constants from '../../utils/constants';
+import pushToSubscribedList from '../../utils/pushToSubscribedList';
+import Button from '../commonComponents/Button/Button';
+import Checkbox from '../commonComponents/Checklist/Checkbox';
+import ErrorList from '../commonComponents/ErrorList';
+import Modal from '../commonComponents/Modal/Modal';
+import PostSubmitStatusMessage from '../commonComponents/PostSubmitStatusMessage';
 import Textbox from '../commonComponents/Textbox';
 
 import DisclaimerCheckbox from './DisclaimerCheckbox';

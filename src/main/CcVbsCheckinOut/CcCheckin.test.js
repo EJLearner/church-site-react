@@ -1,9 +1,9 @@
 import {shallow} from 'enzyme';
 import React from 'react';
 
-import routePaths from '../../../routePaths';
-import utils from '../../../utils/commonUtils';
-import constants from '../../../utils/constants';
+import routePaths from '../../routePaths';
+import commonUtils from '../../utils/commonUtils';
+import constants from '../../utils/constants';
 
 import CcCheckin from './CcCheckin';
 
@@ -15,7 +15,7 @@ describe('#render', () => {
 
   it('BaseCheckin has correct properties', () => {
     const testYear = '2000';
-    utils.getCcDbYear = jest.fn(() => testYear);
+    commonUtils.getCcDbYear = jest.fn(() => testYear);
 
     const wrapper = shallow(<CcCheckin />);
     const baseCheckin = wrapper.find('BaseCheckin');

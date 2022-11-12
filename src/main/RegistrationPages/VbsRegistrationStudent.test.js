@@ -1,10 +1,10 @@
 import {shallow} from 'enzyme';
 import React from 'react';
 
-import Textbox from '../../../common/components/Textbox';
+import Textbox from '../commonComponents/Textbox';
 
 import VbsRegistrationStudent, {STUDENT_TYPES} from './VbsRegistrationStudent';
-jest.mock('../../../utils/commonUtils.js');
+jest.mock('../../utils/commonUtils.js');
 
 describe('VbsRegistrationStudent', () => {
   let props;

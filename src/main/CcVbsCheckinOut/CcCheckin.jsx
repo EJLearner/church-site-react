@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 
-import routePaths from '../../../routePaths';
-import utils from '../../../utils/commonUtils';
-import constants from '../../../utils/constants';
+import routePaths from '../../routePaths';
+import commonUtils from '../../utils/commonUtils';
+import constants from '../../utils/constants';
 
 import BaseCheckin from './BaseCheckin';
 
-
 class CcCheckin extends Component {
   render() {
-    const ccYear = utils.getCcDbYear();
+    const ccYear = commonUtils.getCcDbYear();
 
     return (
       <BaseCheckin

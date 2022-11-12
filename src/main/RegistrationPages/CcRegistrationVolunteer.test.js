@@ -1,12 +1,12 @@
 import {shallow} from 'enzyme';
 import React from 'react';
 
-import utils from '../../../utils/commonUtils';
-import constants from '../../../utils/constants';
+import utils from '../../utils/commonUtils';
+import constants from '../../utils/constants';
 
 import CcRegistrationVolunteer from './CcRegistrationVolunteer';
 
-jest.mock('../../../utils/commonUtils.js');
+jest.mock('../../utils/commonUtils.js');
 
 describe('CcRegistrationVolunteer', () => {
   it('render BaseRegistrationVolunteer', () => {

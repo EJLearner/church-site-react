@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
-import routePaths from '../../../routePaths';
-import utils from '../../../utils/commonUtils';
-import constants from '../../../utils/constants';
+import routePaths from '../../routePaths';
+import utils from '../../utils/commonUtils';
+import constants from '../../utils/constants';
 
 import BaseCcRegistrationChild from './BaseCcRegistrationChild';
 

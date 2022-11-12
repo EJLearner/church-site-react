@@ -1,9 +1,9 @@
 import {shallow} from 'enzyme';
 import React from 'react';
 
-import routePaths from '../../../routePaths';
-import utils from '../../../utils/commonUtils';
-import constants from '../../../utils/constants';
+import routePaths from '../../routePaths';
+import commonUtils from '../../utils/commonUtils';
+import constants from '../../utils/constants';
 
 import VbsCheckin from './VbsCheckin';
 
@@ -15,7 +15,7 @@ describe('#render', () => {
 
   it('BaseCheckin has correct properties', () => {
     const testYear = '2000';
-    utils.getVbsDbYear = jest.fn(() => testYear);
+    commonUtils.getVbsDbYear = jest.fn(() => testYear);
 
     const wrapper = shallow(<VbsCheckin />);
     const baseCheckin = wrapper.find('BaseCheckin');

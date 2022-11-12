@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 
-import routePaths from '../../../routePaths';
-import utils from '../../../utils/commonUtils';
-import constants from '../../../utils/constants';
+import routePaths from '../../routePaths';
+import commonUtils from '../../utils/commonUtils';
+import constants from '../../utils/constants';
 
 import BaseCheckin from './BaseCheckin';
 
-
 class VbsCheckin extends Component {
   render() {
-    const year = utils.getVbsDbYear();
+    const year = commonUtils.getVbsDbYear();
     const registeredChildrenRefName = `${constants.VBS_REGISTERED_CHILDREN_REF_NAME}/${year}`;
 
     return (

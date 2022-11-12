@@ -1,8 +1,8 @@
 import {shallow} from 'enzyme';
 import React from 'react';
 
-import routePaths from '../../../routePaths';
-import ErrorList from '../Common/ErrorList';
+import routePaths from '../../routePaths';
+import ErrorList from '../commonComponents/ErrorList';
 
 import BaseCcRegistrationChild from './BaseCcRegistrationChild';
 

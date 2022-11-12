@@ -6,8 +6,8 @@ import {Link} from 'react-router-dom';
 
 import firebase, {auth, provider} from '../../firebase';
 import utils from '../../utils/commonUtils';
-import Checklist from '../Reusable/Checklist/Checklist';
 import Button from '../commonComponents/Button/Button';
+import Checklist from '../commonComponents/Checklist/Checklist';
 import Textbox from '../commonComponents/Textbox';
 
 import {CHILD_STATUS, PAGE_STATUS} from './BaseCheckinOutConstants';

@@ -1,13 +1,13 @@
 import {shallow} from 'enzyme';
 import React from 'react';
 
-import routePaths from '../../../routePaths';
-import utils from '../../../utils/commonUtils';
-import constants from '../../../utils/constants';
+import routePaths from '../../routePaths';
+import utils from '../../utils/commonUtils';
+import constants from '../../utils/constants';
 
 import CcRegistrationChild from './CcRegistrationChild';
 
-jest.mock('../../../utils/commonUtils.js');
+jest.mock('../../utils/commonUtils.js');
 
 describe('CcRegistrationChild', () => {
   it('render BaseCcRegistrationChild', () => {
