@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2022-11-13T09:00:00',
+    youtubeId: 'Irp2fNK3RS4',
+    title: 'Everything Lives Wherever The River Flows!!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Ezekiel 47:1-12 (NLT)'
+  },
+  {
     date: '2022-11-06T09:00:00',
     youtubeId: 'oHvV9FWB44c',
     title: 'Reaffirming The Church!',

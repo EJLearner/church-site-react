@@ -12,21 +12,10 @@ import {LOGICAL_COLORS, WIDTHS, SIZES} from '../../utils/styleVariables';
 const SCRIPTURES_ID = 'scriptures';
 
 const footerData = [
-  // TODO: add when william bryant scholarship application exists
-  // {
-  //   actionWord: 'Apply',
-  //   path: routePaths.MAIN_SCHOLARSHIP,
-  //   subject: 'Dr. William Bryant Scholarship'
-  // },
   {
     actionWord: 'Visit',
     path: routePaths.MAIN_CONTACT,
     subject: 'Service Info'
-  },
-  {
-    actionWord: 'Connect',
-    path: routePaths.MAIN_MINISTRIES,
-    subject: 'Ministries'
   },
   {
     actionWord: 'Giving',
@@ -39,12 +28,6 @@ const footerData = [
     path: routePaths.MAIN_MEDITATIONS,
     subject: 'Meditations'
   }
-  // TODO: add when follow us exists
-  // {
-  //   actionWord: 'Follow Us',
-  //   path: routePaths.MAIN_CONTACT,
-  //   subject: 'Social Media'
-  // }
 ];
 
 const showScriptures = () => {
