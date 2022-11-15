@@ -14,7 +14,7 @@ const backgroundSources = {
   SHOFARBLOWERS: shofarBlowers
 };
 
-const DEFAULT_BACKGROUND_SOURCE = backgroundSources.CHURCH;
+const DEFAULT_BACKGROUND_SOURCE = backgroundSources.CHOIR;
 
 const callbacks = {};
 

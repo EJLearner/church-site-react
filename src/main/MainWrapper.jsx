@@ -5,36 +5,32 @@ import styled from 'styled-components';
 import routePaths from '../routePaths';
 import GlobalStoreWrapper from '../stores/GlobalStoreWrapper';
 import backgroundStore from '../stores/backgroundStore';
-import {SIZES} from '../utils/styleVariables';
 
 import AboutUsPage from './AboutUsPage';
 import Calendar from './CalendarPage';
+import ComingSoonPage from './ComingSoonPage';
 import ContactPage from './ContactPage';
 import GivingPage from './GivingPage';
 import MainMenubar from './MainMenubar';
-import MainContent from './MainPage';
+import MainPage from './MainPage';
+import getAnnouncementsContentArray from './MainPage/AnnouncementsContent/getAnnouncementsContentArray';
 import AnnouncementsPage from './MainPage/AnnouncementsPage';
 import MeditationsPage from './MeditationsPage';
 import NewsPage from './NewsPage';
 import RemovedPage from './RemovedPage';
 import WatchPage from './WatchPage';
-import MainFooter from './commonComponents/MainFooter';
 import NotFound from './commonComponents/NotFound';
 
+// TODO: probably need a photoshopped picture for this instead of this mask
 const StyledMainWrapperDiv = styled.div`
   background-attachment: fixed;
-  background-image: url(${(props) => props.backgroundSource});
+  background: black;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(${(props) => props.backgroundSource});
+
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: ${SIZES.FOOTER_HEIGHT};
   min-height: 100%;
-
-  .shopping-cart-link {
-    position: fixed;
-
-    bottom: 100px;
-    right: 80px;
-  }
 `;
 
 const PAGE_ID = 'main-wrapper';
@@ -52,10 +48,24 @@ function MainWrapper() {
     return () => backgroundStore.unsubscribe(PAGE_ID);
   });
 
+  const mainMenuItems = [
+    {text: 'Home', path: routePaths.MAIN_HOME},
+    {text: 'About Us', path: routePaths.MAIN_ABOUT_US},
+    {text: 'Meditations', path: routePaths.MAIN_MEDITATIONS},
+    {text: 'Giving', path: routePaths.MAIN_GIVING},
+    {text: 'Bible Study', path: routePaths.BIBLE_STUDY},
+    {text: 'Calendar', path: routePaths.MAIN_CALENDAR},
+    {text: 'Contact', path: routePaths.MAIN_CONTACT},
+    getAnnouncementsContentArray().length && {
+      text: 'Announcements',
+      path: routePaths.MAIN_ANNOUNCEMENTS
+    }
+  ].filter(Boolean);
+
   return (
     <GlobalStoreWrapper>
       <StyledMainWrapperDiv backgroundSource={backgroundSource}>
-        <MainMenubar />
+        <MainMenubar menuItems={mainMenuItems} />
         <Switch>
           <Route path={routePaths.MAIN_ABOUT_US}>
             <AboutUsPage />
@@ -72,6 +82,10 @@ function MainWrapper() {
           <Route path={routePaths.MAIN_ANNOUNCEMENTS}>
             <AnnouncementsPage />
           </Route>
+          <Route path={routePaths.BIBLE_STUDY}>
+            {/* TODO: replace with real page */}
+            <ComingSoonPage />
+          </Route>
           <Route path={routePaths.MAIN_CULTURE_AND_ARTS}>
             <RemovedPage />
           </Route>
@@ -85,7 +99,7 @@ function MainWrapper() {
             <RemovedPage />
           </Route>
           <Route exact path={routePaths.MAIN_HOME}>
-            <MainContent />
+            <MainPage />
           </Route>
           <Route path={routePaths.MAIN_MEDITATIONS}>
             <MeditationsPage />
@@ -109,7 +123,6 @@ function MainWrapper() {
             <NotFound />
           </Route>
         </Switch>
-        <MainFooter />
       </StyledMainWrapperDiv>
     </GlobalStoreWrapper>
   );

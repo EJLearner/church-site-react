@@ -48,6 +48,12 @@ const GlobalStyle = createGlobalStyle`
     --ct-accent: #00bae2;
     --ct-second: #ff9b71;
     --ct-third: #d2b48c;
+
+    h1,h2,h3,h4,h5, h6 {
+      font-family: var(--cambria);
+    }
+
+    --gutter-space: 64px;
   }
 `;
 

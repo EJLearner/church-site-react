@@ -20,13 +20,8 @@ function RemovedPage() {
       <StandardPageWrapper>
         <TopInfoBoxWrapper>
           <TopInfoBox>
-            {/* TODO: put a redirect on this page */}
-            <h1>This page no longer exists</h1>
-            <p>
-              Sorry, this page can no longer be reached. You will be redirected
-              to the main page. Please use the link below if the redirect is not
-              successful.
-            </p>
+            <h1>This page is coming soon</h1>
+            <p>Sorry, this page is not finished. It will be available soon.</p>
           </TopInfoBox>
         </TopInfoBoxWrapper>
       </StandardPageWrapper>

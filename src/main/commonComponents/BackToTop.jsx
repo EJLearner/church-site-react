@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import PlainButton from '../../main/commonComponents/inputs/PlainButton';
 import {LOGICAL_COLORS} from '../../utils/styleVariables';
+
+import PlainButton from './PlainButton';
 const StyleWrapper = styled.div`
   display: flex;
   justify-content: right;

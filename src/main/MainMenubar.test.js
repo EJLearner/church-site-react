@@ -5,6 +5,6 @@ import MainMenubar from './MainMenubar';
 
 describe('MainHome', () => {
   it('renders', () => {
-    expect(shallow(<MainMenubar />).exists()).toBe(true);
+    expect(shallow(<MainMenubar menuItems={[]} />).exists()).toBe(true);
   });
 });

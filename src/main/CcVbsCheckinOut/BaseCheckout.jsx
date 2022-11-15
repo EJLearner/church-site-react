@@ -109,7 +109,7 @@ class BaseCheckout extends Component {
       _.forEach(todaysLogbook, (loggedChild, key) => {
         if (_.includes(selectedChildrenLogbookIds, loggedChild[idKey])) {
           const childRef = todaysLogRef.child(key);
-          // TODO: check for return from update
+          // IMPROVEMENTS: check for return from update
 
           childRef.update({
             checkOutTime: new Date().toISOString(),

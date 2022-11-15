@@ -10,8 +10,8 @@ import {LOGICAL_COLORS, COLORS} from '../utils/styleVariables';
 
 import WatchPageFilter from './WatchPageFilter';
 import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
+import PlainButton from './commonComponents/PlainButton';
 import StandardPageWrapper from './commonComponents/StandardPageWrapper';
-import PlainButton from './commonComponents/inputs/PlainButton';
 
 const INITIAL_VIDEO_SHOW_COUNT = 10;
 const PAGE_TEXT_COLOR = COLORS.GRAY95;
