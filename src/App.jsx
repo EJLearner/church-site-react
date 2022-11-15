@@ -43,8 +43,8 @@ const GlobalStyle = createGlobalStyle`
     --standard-text: var(--black);
     --text-on-dark: var(--white);
 
-    --ct-primary: #c00000;
-    --ct-text-on-primary: var(--text-on-dark);
+    --ct-primary: rgb(255,192,0);
+    --ct-text-on-primary: var(--standard-text);
     --ct-accent: #00bae2;
     --ct-second: #ff9b71;
     --ct-third: #d2b48c;

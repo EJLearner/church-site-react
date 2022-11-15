@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const Anchor = ({external, path, children}) => {
+const Anchor = ({external, path, children, className}) => {
   if (external) {
     return (
       <a href={path} rel="noopener noreferrer" target="_blank">
@@ -11,11 +11,16 @@ const Anchor = ({external, path, children}) => {
     );
   }
 
-  return <Link to={path}>{children}</Link>;
+  return (
+    <Link className={className} to={path}>
+      {children}
+    </Link>
+  );
 };
 
 Anchor.propTypes = {
   children: PropTypes.node,
+  className: PropTypes.string,
   external: PropTypes.bool,
   path: PropTypes.string
 };
