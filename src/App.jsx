@@ -49,11 +49,13 @@ const GlobalStyle = createGlobalStyle`
     --ct-second: #ff9b71;
     --ct-third: #d2b48c;
 
+    --gutter-space: 64px;
+
     h1,h2,h3,h4,h5, h6 {
       font-family: var(--cambria);
     }
 
-    --gutter-space: 64px;
+    color: var(--text-on-dark)
   }
 `;
 

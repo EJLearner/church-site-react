@@ -4,12 +4,11 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledHeader = styled.header`
-  margin: 0 var(--gutter-space);
   padding-top: 1px; // collapsing margin fix, otherwise, there's white space at the top
 `;
 
 const StyledMainMenuBar = styled.nav`
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.1);
   border-top: 1px solid var(--white);
   border-bottom: 1px solid var(--white);
   display: flex;

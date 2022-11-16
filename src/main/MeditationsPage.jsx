@@ -18,8 +18,6 @@ import ContentRightSide from './commonComponents/ContentRightSide';
 import ContentWrapper from './commonComponents/ContentWrapper';
 import SideMenu from './commonComponents/SideMenu';
 import StandardPageWrapper from './commonComponents/StandardPageWrapper';
-import TopInfoBox from './commonComponents/TopInfoBox';
-import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
 import Verse from './commonComponents/Verse';
 
 const StyleWrapper = styled.div`
@@ -145,38 +143,34 @@ export default function MeditationsPage() {
   return (
     <StyleWrapper>
       <StandardPageWrapper>
-        <TopInfoBoxWrapper>
-          <TopInfoBox>
-            <h1>Scriptures &amp; Meditation</h1>
-            <p>
-              As with any relationship, in order to cultivate and nurture a
-              relationship with God, we must spend time. We spend time with God
-              when we read His word and meditate on it while listening for the
-              still, quiet voice. Join us in participating in our daily
-              devotional and weekly meditations as we continue to strengthen our
-              relationship with God through our savior Jesus Christ.
-            </p>
-          </TopInfoBox>
-          <ContentAndSubCompassWrapper>
-            <AboveContentLinks
-              pagePath={routePaths.MAIN_MEDITATIONS}
-              pageTitle="Meditation and Scriptures"
-              subPageTitle={title}
-            />
-            <ContentAndSides>
-              <ContentLeftSide>
-                <SideMenu
-                  currentId={contentId}
-                  menuData={allContentData}
-                  onClick={(id) => setContentId(id)}
-                  title="Meditation and Scriptures"
-                />
-              </ContentLeftSide>
-              <ContentWrapper>{content}</ContentWrapper>
-              <ContentRightSide />
-            </ContentAndSides>
-          </ContentAndSubCompassWrapper>
-        </TopInfoBoxWrapper>
+        <h1>Scriptures &amp; Meditation</h1>
+        <p>
+          As with any relationship, in order to cultivate and nurture a
+          relationship with God, we must spend time. We spend time with God when
+          we read His word and meditate on it while listening for the still,
+          quiet voice. Join us in participating in our daily devotional and
+          weekly meditations as we continue to strengthen our relationship with
+          God through our savior Jesus Christ.
+        </p>
+        <ContentAndSubCompassWrapper>
+          <AboveContentLinks
+            pagePath={routePaths.MAIN_MEDITATIONS}
+            pageTitle="Meditation and Scriptures"
+            subPageTitle={title}
+          />
+          <ContentAndSides>
+            <ContentLeftSide>
+              <SideMenu
+                currentId={contentId}
+                menuData={allContentData}
+                onClick={(id) => setContentId(id)}
+                title="Meditation and Scriptures"
+              />
+            </ContentLeftSide>
+            <ContentWrapper>{content}</ContentWrapper>
+            <ContentRightSide />
+          </ContentAndSides>
+        </ContentAndSubCompassWrapper>
       </StandardPageWrapper>
     </StyleWrapper>
   );

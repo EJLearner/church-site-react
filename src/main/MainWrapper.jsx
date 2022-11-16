@@ -31,6 +31,7 @@ const StyledMainWrapperDiv = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100%;
+  padding: 0 64px;
 `;
 
 const PAGE_ID = 'main-wrapper';

@@ -16,8 +16,6 @@ import PostSubmitStatusMessage from './commonComponents/PostSubmitStatusMessage'
 import StandardPageWrapper from './commonComponents/StandardPageWrapper';
 import Textarea from './commonComponents/Textarea';
 import Textbox from './commonComponents/Textbox';
-import TopInfoBox from './commonComponents/TopInfoBox';
-import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
 
 const ContactPageStyles = styled.div`
   .content-and-sides {
@@ -224,30 +222,24 @@ const ContactPage = () => {
   return (
     <ContactPageStyles>
       <StandardPageWrapper>
-        <TopInfoBoxWrapper>
-          <TopInfoBox>
-            <h1>Contact Us</h1>
-            <p>
-              Here at City Temple, we follow an Order of Worship. While our
-              intent is to remain consistent with this Order of Worship, the
-              experience can change in the blink of an eye based on a testimony,
-              a musical selection, a prayer, or whatever moves the “spirit”
-              within us.
-            </p>
-            <p>
-              Our Worship Service officially begins at 9:00 am on Sunday morning
-              and is a combination of pastoral ministry, musical
-              ministry—including dance—and congregational ministry. The sermon
-              is usually the focal point, surrounded by music, prayer, and a
-              moment of fellowship.
-            </p>
-            <p>
-              In general, we anticipate prelude, prayer, offering, sermon,
-              invitation to Christian Discipleship and benediction during each
-              worship service. All are welcome.
-            </p>
-          </TopInfoBox>
-        </TopInfoBoxWrapper>
+        <h1>Contact Us</h1>
+        <p>
+          Here at City Temple, we follow an Order of Worship. While our intent
+          is to remain consistent with this Order of Worship, the experience can
+          change in the blink of an eye based on a testimony, a musical
+          selection, a prayer, or whatever moves the “spirit” within us.
+        </p>
+        <p>
+          Our Worship Service officially begins at 9:00 am on Sunday morning and
+          is a combination of pastoral ministry, musical ministry—including
+          dance—and congregational ministry. The sermon is usually the focal
+          point, surrounded by music, prayer, and a moment of fellowship.
+        </p>
+        <p>
+          In general, we anticipate prelude, prayer, offering, sermon,
+          invitation to Christian Discipleship and benediction during each
+          worship service. All are welcome.
+        </p>
         <ContentAndSubCompassWrapper>
           <AboveContentLinks pageTitle="Worship Experience" />
           <ContentAndSides>

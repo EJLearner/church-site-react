@@ -25,17 +25,22 @@ const StyledHomePage = styled.div`
   }
 
   a.service-link {
-    border-radius: 4px;
-    font-size: 22px;
-    text-transform: uppercase;
     background-color: var(--ct-primary);
+    border-radius: 4px;
     color: var(--ct-text-on-primary);
+    display: flex;
+    font-size: 16px;
+    justify-content: space-between;
     padding: 8px;
     text-decoration: none;
+    text-transform: uppercase;
+    width: 350px;
+  }
 
-    display: flex;
-    justify-content: space-between;
-    width: 400px;
+  a.service-link:hover {
+    span:not(.arrow) {
+      text-decoration: underline;
+    }
   }
 
   a.service-link:visited {

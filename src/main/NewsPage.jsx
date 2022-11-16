@@ -14,8 +14,6 @@ import ContentRightSide from './commonComponents/ContentRightSide';
 import ContentWrapper from './commonComponents/ContentWrapper';
 import SideMenu from './commonComponents/SideMenu';
 import StandardPageWrapper from './commonComponents/StandardPageWrapper';
-import TopInfoBox from './commonComponents/TopInfoBox';
-import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
 
 const SPACE_BETWEEN_HEADERS = '35px';
 
@@ -77,28 +75,12 @@ function getNewsItems(news) {
   return <div>{newsItems}</div>;
 }
 
-const topBoxContent = (
-  <div>
-    <div>
-      <h1>News</h1>
-    </div>
-    <p>
-      Stay informed! Read below for news updates and information regarding the
-      life of the church.
-    </p>
-  </div>
-);
-
 const NewsPage = () => {
   const news = useNews();
 
   return (
     <StyleWrapper>
       <StandardPageWrapper>
-        <TopInfoBoxWrapper>
-          <TopInfoBox>{topBoxContent}</TopInfoBox>
-        </TopInfoBoxWrapper>
-
         <ContentAndSubCompassWrapper>
           <AboveContentLinks pagePath={routePaths.MAIN_NEWS} pageTitle="News" />
           <ContentAndSides>

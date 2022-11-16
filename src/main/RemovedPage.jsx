@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import {FONT_FAMILIES} from '../utils/styleVariables';
 
 import StandardPageWrapper from './commonComponents/StandardPageWrapper';
-import TopInfoBox from './commonComponents/TopInfoBox';
-import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
+
+// TODO add redirect to this page
 
 const StyleWrapper = styled.div`
   h3 {
@@ -18,17 +18,12 @@ function RemovedPage() {
   return (
     <StyleWrapper>
       <StandardPageWrapper>
-        <TopInfoBoxWrapper>
-          <TopInfoBox>
-            {/* TODO: put a redirect on this page */}
-            <h1>This page no longer exists</h1>
-            <p>
-              Sorry, this page can no longer be reached. You will be redirected
-              to the main page. Please use the link below if the redirect is not
-              successful.
-            </p>
-          </TopInfoBox>
-        </TopInfoBoxWrapper>
+        <h1>This page no longer exists</h1>
+        <p>
+          Sorry, this page can no longer be reached. You will be redirected to
+          the main page. Please use the link below if the redirect is not
+          successful.
+        </p>
       </StandardPageWrapper>
     </StyleWrapper>
   );

@@ -67,7 +67,7 @@ class BaseCheckin extends Component {
       this.setState({regStaff});
     });
 
-    const todaysLogRef = this._getTodaysLogRef();
+    const todaysLogRef = this.getTodaysLogRef();
 
     todaysLogRef.on('value', (snapshot) => {
       const checkedinIds = _.map(snapshot.val(), this.props.registryIdName);
@@ -82,7 +82,7 @@ class BaseCheckin extends Component {
     });
   }
 
-  _onChecklistChange(value, id) {
+  onChecklistChange(value, id) {
     const {childrenOfParent} = this.state;
     const newChildrenOfParent = _.cloneDeep(childrenOfParent);
     const child = newChildrenOfParent[id];
@@ -90,7 +90,7 @@ class BaseCheckin extends Component {
     this.setState({childrenOfParent: newChildrenOfParent});
   }
 
-  _onSelectAllClick() {
+  onSelectAllClick() {
     const newChildrenOfParent = _.cloneDeep(this.state.childrenOfParent);
 
     _.forEach(newChildrenOfParent, (child) => {
@@ -100,17 +100,17 @@ class BaseCheckin extends Component {
     this.setState({childrenOfParent: newChildrenOfParent});
   }
 
-  _getTodaysLogRef() {
+  getTodaysLogRef() {
     const today = moment().format('YYYY-MM-DD');
     return firebase.database().ref(`${this.props.logbookRefName}/${today}`);
   }
 
-  _onCheckInClick(disabled) {
+  onCheckInClick(disabled) {
     if (disabled) {
       window.alert('You must select at least one child');
     } else {
-      const children = this._getSelectedChildren();
-      const todaysLogRef = this._getTodaysLogRef();
+      const children = this.getSelectedChildren();
+      const todaysLogRef = this.getTodaysLogRef();
 
       _.forEach(children, (child) => {
         const uploadChild = _.cloneDeep(child);
@@ -127,11 +127,11 @@ class BaseCheckin extends Component {
     }
   }
 
-  _onChange(value, id) {
+  onChange(value, id) {
     this.setState({[id]: value});
   }
 
-  _onSearch() {
+  onSearch() {
     const childrenOfParent = {};
 
     _.forEach(_.cloneDeep(this.state.registered), (child) => {
@@ -146,18 +146,18 @@ class BaseCheckin extends Component {
     });
   }
 
-  _handleLoginClick() {
+  handleLoginClick() {
     auth.signInWithPopup(provider).then((result) => {
       const {user} = result;
       this.setState({user});
     });
   }
 
-  _startSearchAgain() {
+  startSearchAgain() {
     this.setState({parentName: '', status: PAGE_STATUS.ENTERING_PARENT_NAME});
   }
 
-  _listChildren() {
+  listChildren() {
     const {childrenOfParent, checkedinIds} = this.state;
 
     const checkListItems = _.map(childrenOfParent, (child) => {
@@ -189,22 +189,22 @@ class BaseCheckin extends Component {
           checklistItems={checkListItems}
           id="children-checklist"
           label="Select Child"
-          onChange={this._onChecklistChange}
+          onChange={this.onChecklistChange}
           required
         />
       </div>
     );
   }
 
-  _getSelectedChildren() {
+  getSelectedChildren() {
     return _.filter(this.state.childrenOfParent, (child) => child.checked);
   }
 
-  _renderChildSelectDiv() {
+  renderChildSelectDiv() {
     const {childrenOfParent, parentName, checkedinIds} = this.state;
     let checkInButtonClass = 'check-in-button';
     let disabled = false;
-    const atLeastOneChildSelected = this._getSelectedChildren().length;
+    const atLeastOneChildSelected = this.getSelectedChildren().length;
 
     if (!atLeastOneChildSelected) {
       checkInButtonClass += ' disabled';
@@ -219,7 +219,7 @@ class BaseCheckin extends Component {
           <div className="button-div">
             <Button
               className="select-all-button"
-              onClick={this._startSearchAgain}
+              onClick={this.startSearchAgain}
             >
               Try Again
             </Button>
@@ -237,11 +237,11 @@ class BaseCheckin extends Component {
       return (
         <div>
           <p>All of the children for this name are checked in already</p>
-          {this._listChildren()}
+          {this.listChildren()}
           <div className="button-div">
             <Button
               className="select-all-button"
-              onClick={this._startSearchAgain}
+              onClick={this.startSearchAgain}
             >
               Go Back To Search
             </Button>
@@ -258,19 +258,16 @@ class BaseCheckin extends Component {
           <span className="select-all-text">Select All</span> to select every
           one listed below
         </div>
-        {this._listChildren()}
+        {this.listChildren()}
         <div className="button-div">
-          <Button
-            className="select-all-button"
-            onClick={this._onSelectAllClick}
-          >
+          <Button className="select-all-button" onClick={this.onSelectAllClick}>
             Select All
           </Button>
         </div>
         <div className="button-div">
           <Button
             className={checkInButtonClass}
-            onClick={_.partial(this._onCheckInClick, disabled)}
+            onClick={_.partial(this.onCheckInClick, disabled)}
           >
             Check In
           </Button>
@@ -279,15 +276,15 @@ class BaseCheckin extends Component {
     );
   }
 
-  _renderNameInput() {
+  renderNameInput() {
     return (
       <div>
         <Text
           id="parentName"
           instructions="If you are registered, please enter parent/guardian’s name below to check children in"
           label="Parent/Guardian Name"
-          onChange={this._onChange}
-          onEnter={this._onSearch}
+          onChange={this.onChange}
+          onEnter={this.onSearch}
           placeholder="First Last"
           value={this.state.parentName}
         />
@@ -301,14 +298,14 @@ class BaseCheckin extends Component {
     );
   }
 
-  _renderWhileLoggedIn() {
+  renderWhileLoggedIn() {
     const {status} = this.state;
 
     return (
       <div>
         <h1>Welcome Back to {this.props.welcomeName}</h1>
-        {status === PAGE_STATUS.ENTERING_PARENT_NAME && this._renderNameInput()}
-        {status === PAGE_STATUS.SELECT_CHILDREN && this._renderChildSelectDiv()}
+        {status === PAGE_STATUS.ENTERING_PARENT_NAME && this.renderNameInput()}
+        {status === PAGE_STATUS.SELECT_CHILDREN && this.renderChildSelectDiv()}
         <div className="logged-in-name">
           Logged in under {this.state.user.displayName}{' '}
           <Button
@@ -325,7 +322,7 @@ class BaseCheckin extends Component {
     );
   }
 
-  _renderLoginScreen(loggedIn) {
+  renderLoginScreen(loggedIn) {
     return (
       <div>
         {loggedIn ? (
@@ -340,41 +337,39 @@ class BaseCheckin extends Component {
           </div>
         )}
         <div className="admin-page">
-          <Button onClick={this._handleLoginClick}>Log in</Button>
+          <Button onClick={this.handleLoginClick}>Log in</Button>
         </div>
       </div>
     );
   }
 
-  _renderAfterLoginScreen() {
+  renderAfterLoginScreen() {
     return (
       <div>
         <h1>Thanks for checking your child in!</h1>
-        <Button onClick={this._startSearchAgain}>Check Another Child In</Button>
+        <Button onClick={this.startSearchAgain}>Check Another Child In</Button>
       </div>
     );
   }
 
-  _renderProperScreen() {
+  renderProperScreen() {
     const {regStaff, user, status} = this.state;
 
     const memberOfBaseCheckinGroup = user && regStaff[user.uid];
 
     if (status === PAGE_STATUS.CHILDREN_CHECKED_IN) {
-      return this._renderAfterLoginScreen();
+      return this.renderAfterLoginScreen();
     }
 
     if (user && memberOfBaseCheckinGroup) {
-      return this._renderWhileLoggedIn(user);
+      return this.renderWhileLoggedIn(user);
     }
 
-    return this._renderLoginScreen();
+    return this.renderLoginScreen();
   }
 
   render() {
-    return (
-      <div className="check-in-out-page">{this._renderProperScreen()}</div>
-    );
+    return <div className="check-in-out-page">{this.renderProperScreen()}</div>;
   }
 }
 

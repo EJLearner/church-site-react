@@ -16,8 +16,6 @@ import Select from './commonComponents/Select';
 import SelectState from './commonComponents/SelectState';
 import StandardPageWrapper from './commonComponents/StandardPageWrapper';
 import Textbox from './commonComponents/Textbox';
-import TopInfoBox from './commonComponents/TopInfoBox';
-import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
 
 const AddAnotherTypeWrapper = styled.div`
   color: ${COLORS.GRAY180};
@@ -214,28 +212,6 @@ const GivingPage = () => {
 
   const boxNum = userInfo.box;
 
-  const topInfoBoxContent = (
-    <>
-      <h1>Giving</h1>
-      <p>
-        <i>
-          “You can’t beat God’s giving, no matter how you try. For just as sure
-          as you are living and the Lord is in heaven on high; the more you
-          give, the more He gives to you. But keep on giving because it’s really
-          true, that you can’t beat God’s giving, no matter how you try.”
-        </i>
-      </p>
-      <p>
-        We thank you for remaining faithful in your giving. You can place your
-        offering by completing the form below, by mailing your offering to The
-        City Temple of Baltimore (Baptist), 317 Dolphin Street, Baltimore, MD
-        21217, or by using cash tag $citytemple317 through CashApp. For City
-        Temple church members, if you choose the CashApp option, please remember
-        to include your envelope number in the memo line.
-      </p>
-    </>
-  );
-
   const givingPageContent = (
     <>
       <h2>Giving</h2>
@@ -273,9 +249,6 @@ const GivingPage = () => {
 
   return (
     <StandardPageWrapper>
-      <TopInfoBoxWrapper>
-        <TopInfoBox>{topInfoBoxContent}</TopInfoBox>
-      </TopInfoBoxWrapper>
       <ContentAndSubCompassWrapper>
         <AboveContentLinks
           pagePath={routePaths.MAIN_GIVING}

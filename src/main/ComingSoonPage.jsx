@@ -4,8 +4,6 @@ import styled from 'styled-components';
 import {FONT_FAMILIES} from '../utils/styleVariables';
 
 import StandardPageWrapper from './commonComponents/StandardPageWrapper';
-import TopInfoBox from './commonComponents/TopInfoBox';
-import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
 
 const StyleWrapper = styled.div`
   h3 {
@@ -14,16 +12,14 @@ const StyleWrapper = styled.div`
   }
 `;
 
+// TODO need redirect here
+
 function RemovedPage() {
   return (
     <StyleWrapper>
       <StandardPageWrapper>
-        <TopInfoBoxWrapper>
-          <TopInfoBox>
-            <h1>This page is coming soon</h1>
-            <p>Sorry, this page is not finished. It will be available soon.</p>
-          </TopInfoBox>
-        </TopInfoBoxWrapper>
+        <h1>This page is coming soon</h1>
+        <p>Sorry, this page is not finished. It will be available soon.</p>
       </StandardPageWrapper>
     </StyleWrapper>
   );
