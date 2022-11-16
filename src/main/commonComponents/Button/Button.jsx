@@ -126,7 +126,5 @@ Button.propTypes = {
   value: PropTypes.string
 };
 
-export {SHAPES as STYLES};
-
 export {SHAPES, BUTTON_COLORS};
 export default Button;

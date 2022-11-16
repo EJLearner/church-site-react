@@ -8,13 +8,8 @@ import './App.css';
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --arial: arial, helvetica, sans-serif;
-    --brush-script: 'Brush Script MT', cursive;
-    --calibri: Calibri, 'Segoe UI', Candara, Segoe, Optima, Arial, sans-serif;
-    --cambria: cambria, georgia, 'bookman old style', 'times new roman', serif;
-    --century-gothic: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-    --garamond: 'Adobe Garamond Pro', Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text',
-    'Times New Roman', serif;
+    --sans-serif: Calibri, 'Segoe UI', Candara, Segoe, Optima, Arial, sans-serif;
+    --serif: cambria, georgia, 'bookman old style', 'times new roman', serif;
 
     --green-20: rgb(146, 208, 80);
     --green-50: rgb(115, 175, 85);
@@ -52,7 +47,7 @@ const GlobalStyle = createGlobalStyle`
     --gutter-space: 64px;
 
     h1,h2,h3,h4,h5, h6 {
-      font-family: var(--cambria);
+      font-family: var(--serif);
     }
 
     color: var(--text-on-dark)

@@ -1,13 +1,11 @@
 .registration-page {
   box-shadow: 6px 6px 6px 0 #c2c2c2;
   border: 1px solid gray;
-  font-family: var(--century-gothic);
   margin: 1em auto;
   padding: 0.2em 1em 2em 1em;
   width: 600px;
 }
 .registration-page h1 {
-  font-family: var(--garamond);
   font-weight: normal;
   font-size: 48px;
   color: var(--orange);
@@ -16,7 +14,6 @@
 }
 .registration-page h2 {
   font-weight: normal;
-  font-family: var(--garamond);
   font-size: 24px;
   color: var(--orange);
   margin-top: 0px;
@@ -52,7 +49,6 @@
 }
 .registration-page label {
   color: var(--gray95);
-  font-family: var(--century-gothic);
   font-weight: bold;
   font-size: 12px;
   margin-bottom: 5px;
@@ -75,7 +71,4 @@
 }
 .registration-page .registration-modal button {
   margin-right: 1em;
-}
-.registration-page .registration-disclaimer {
-  font-family: var(--calibri);
 }

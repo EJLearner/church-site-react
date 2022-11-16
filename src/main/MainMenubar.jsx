@@ -12,7 +12,7 @@ const StyledMainMenuBar = styled.nav`
   border-top: 1px solid var(--white);
   border-bottom: 1px solid var(--white);
   display: flex;
-  font-family: var(--cambria);
+  font-family: var(--serif);
   font-size: 20px;
   justify-content: center;
   margin-top: 32px;

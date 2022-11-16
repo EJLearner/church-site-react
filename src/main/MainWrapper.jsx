@@ -7,8 +7,8 @@ import GlobalStoreWrapper from '../stores/GlobalStoreWrapper';
 import backgroundStore from '../stores/backgroundStore';
 
 import AboutUsPage from './AboutUsPage';
+import BibleStudyPage from './BibleStudyPage';
 import Calendar from './CalendarPage';
-import ComingSoonPage from './ComingSoonPage';
 import ContactPage from './ContactPage';
 import GivingPage from './GivingPage';
 import MainMenubar from './MainMenubar';
@@ -84,8 +84,7 @@ function MainWrapper() {
             <AnnouncementsPage />
           </Route>
           <Route path={routePaths.BIBLE_STUDY}>
-            {/* TODO: replace with real page */}
-            <ComingSoonPage />
+            <BibleStudyPage />
           </Route>
           <Route path={routePaths.MAIN_CULTURE_AND_ARTS}>
             <RemovedPage />

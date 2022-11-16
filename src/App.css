@@ -1,6 +1,6 @@
 html {
   height: 100%;
-  font-family: var(--calibri);
+  font-family: var(--sans-serif);
 }
 
 body {
@@ -68,7 +68,7 @@ a:hover {
   min-width: 800px;
   max-width: 1000px;
   margin: auto;
-  font-family: var(--calibri);
+  font-family: var(--sans-serif);
   color: var(--gray63);
 }
 #leftcontent h1 {
@@ -78,7 +78,7 @@ a:hover {
   margin-left: 1em;
   margin-bottom: 2em;
   border-bottom: 1px solid var(--green-50);
-  font-family: var(--calibri);
+  font-family: var(--sans-serif);
   font-size: 80%;
   text-transform: uppercase;
   color: var(--green-20);

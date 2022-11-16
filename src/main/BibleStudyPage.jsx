@@ -4,38 +4,16 @@ import styled from 'styled-components';
 const StyledBibleStudyPage = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: 32px;
+  text-align: center;
 
-  h2 {
-    text-align: center;
+  h3 {
+    font-family: var(--sans-serif);
+    margin: 32px 0 8px 0;
   }
 
-  h2:nth-child(1) {
-    margin-top: 0;
-  }
-
-  .pastor-info-and-picture {
-    align-self: center;
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-  }
-
-  .pastor-info {
-    margin-right: 64px;
-  }
-
-  img {
-    box-shadow: 3px 3px 5px 0 var(--white);
-    height: 280px;
-    transform: rotate(5deg) translateY(15px);
-    transform-origin: top left;
-  }
-
-  .history {
-    margin-top: 32px;
-    align-self: center;
-    width: 60%;
+  p {
+    margin: 0 8px;
   }
 `;
 
