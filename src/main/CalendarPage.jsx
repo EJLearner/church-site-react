@@ -12,6 +12,8 @@ import CalendarUpcoming from './commonComponents/Calendar/CalendarUpcoming';
 import CalendarWeek from './commonComponents/Calendar/CalendarWeek';
 import CalendarYear from './commonComponents/Calendar/CalendarYear';
 
+// TODO BR -
+
 class Calendar extends Component {
   constructor(props) {
     super(props);
@@ -45,7 +47,7 @@ class Calendar extends Component {
     ];
 
     return (
-      <CalendarStyles id="top-react-div">
+      <CalendarStyles>
         <div className="calendar-page">
           <h1>Events at City Temple</h1>
           <CalendarMenuBar id="calendar-menu" links={linkData} />
