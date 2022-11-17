@@ -35,17 +35,13 @@ const StyledHomePage = styled.div`
     padding: 8px;
     text-decoration: none;
     text-transform: uppercase;
+    transition: transform 0.1s;
     width: 350px;
   }
 
   a.service-link:hover {
-    span:not(.arrow) {
-      text-decoration: underline;
-    }
-
-    span.arrow {
-      text-decoration: none;
-    }
+    text-decoration: none;
+    transform: scale(1.02);
   }
 
   a.service-link:visited {

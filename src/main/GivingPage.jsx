@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import Button from './commonComponents/Button/Button';
 import PlainButton from './commonComponents/PlainButton';
 import Select from './commonComponents/Select';
 import SelectState from './commonComponents/SelectState';
@@ -27,7 +26,19 @@ const StyledGivingPage = styled.div`
   }
 
   .add-another {
-    margin-top: 15px;
+    min-height: 40px;
+  }
+
+  .donate-button {
+    background-color: var(--accent-background);
+    border-radius: 4px;
+    color: var(--accent-content);
+    text-align: center;
+    font-size: 16px;
+    margin: 32px 0;
+    padding: 8px;
+    text-transform: uppercase;
+    width: 250px;
   }
 `;
 
@@ -257,9 +268,14 @@ const GivingPage = () => {
           </div>
         </div>
         <div>
-          <Button name="submit" type="submit" value="Continue">
+          <PlainButton
+            className="donate-button"
+            name="submit"
+            type="submit"
+            value="Continue"
+          >
             Donate Now
-          </Button>
+          </PlainButton>
         </div>
       </form>
     </StyledGivingPage>
