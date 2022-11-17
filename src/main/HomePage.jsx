@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import routePaths from '../../routePaths';
-import Anchor from '../commonComponents/Anchor';
+import routePaths from '../routePaths';
+
+import Anchor from './commonComponents/Anchor';
 
 const StyledHomePage = styled.div`
   margin: 0 230px;
@@ -25,9 +26,9 @@ const StyledHomePage = styled.div`
   }
 
   a.service-link {
-    background-color: var(--ct-primary);
+    background-color: var(--accent-background);
     border-radius: 4px;
-    color: var(--ct-text-on-primary);
+    color: var(--accent-content);
     display: flex;
     font-size: 16px;
     justify-content: space-between;
@@ -41,10 +42,14 @@ const StyledHomePage = styled.div`
     span:not(.arrow) {
       text-decoration: underline;
     }
+
+    span.arrow {
+      text-decoration: none;
+    }
   }
 
   a.service-link:visited {
-    color: var(--ct-text-on-primary);
+    color: var(--accent-content);
 
     font-weight: bold;
   }

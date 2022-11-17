@@ -2,14 +2,12 @@ import {format, add} from 'date-fns';
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import routePaths from '../routePaths';
 import {bibleComFormattedVerses} from '../stores/dailyVerses';
 import weeklyMeditations from '../stores/weeklyMeditations';
 import constants from '../utils/constants';
 import {getStartOfWeek} from '../utils/dateTimeUtils';
 import {FONT_FAMILIES} from '../utils/styleVariables';
 
-import AboveContentLinks from './commonComponents/AboveContentLinks';
 import BackToTop from './commonComponents/BackToTop';
 import ContentAndSides from './commonComponents/ContentAndSides';
 import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
@@ -137,7 +135,7 @@ const allContentData = [
 
 export default function MeditationsPage() {
   const [contentId, setContentId] = useState(IDS.MEDITATION);
-  const {getContent, title} = allContentData.find(({id}) => id === contentId);
+  const {getContent} = allContentData.find(({id}) => id === contentId);
   const content = getContent() || noContentMessage;
 
   return (
@@ -153,11 +151,6 @@ export default function MeditationsPage() {
           God through our savior Jesus Christ.
         </p>
         <ContentAndSubCompassWrapper>
-          <AboveContentLinks
-            pagePath={routePaths.MAIN_MEDITATIONS}
-            pageTitle="Meditation and Scriptures"
-            subPageTitle={title}
-          />
           <ContentAndSides>
             <ContentLeftSide>
               <SideMenu

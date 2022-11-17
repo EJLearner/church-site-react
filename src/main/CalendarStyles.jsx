@@ -5,6 +5,8 @@ import {WIDTHS} from '../utils/styleVariables';
 import contentWrapperH2Mixin from './commonComponents/contentWrapperH2Mixin';
 
 const CalendarStyles = styled.div`
+  color: var(--black);
+
   .calendar-page {
     background-color: white;
     padding: 1em;

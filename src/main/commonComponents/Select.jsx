@@ -6,14 +6,7 @@ import InputLabel from './InputLabel';
 
 const SelectStyle = styled.div`
   display: inline-block;
-  margin-right: 2em;
-
-  select {
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px 0 #c2c2c2;
-    font-size: 14px;
-    padding: 0.2em;
-  }
+  margin: 1em 16px 0.5em 0;
 `;
 
 function renderedOptions(options) {
@@ -31,7 +24,11 @@ function renderedOptions(options) {
 const Select = ({onChange, id, labelSameLine, options, value, label}) => {
   return (
     <SelectStyle className="select-outer-div">
-      {label && <InputLabel inline={labelSameLine}>{label}</InputLabel>}
+      {label && (
+        <InputLabel htmlFor={id} inline={labelSameLine}>
+          {label}
+        </InputLabel>
+      )}
       <select
         id={id}
         name={id}

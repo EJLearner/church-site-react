@@ -11,12 +11,9 @@ import BibleStudyPage from './BibleStudyPage';
 import Calendar from './CalendarPage';
 import ContactPage from './ContactPage';
 import GivingPage from './GivingPage';
+import HomePage from './HomePage';
 import MainMenubar from './MainMenubar';
-import MainPage from './MainPage';
-import getAnnouncementsContentArray from './MainPage/AnnouncementsContent/getAnnouncementsContentArray';
-import AnnouncementsPage from './MainPage/AnnouncementsPage';
 import MeditationsPage from './MeditationsPage';
-import NewsPage from './NewsPage';
 import RemovedPage from './RemovedPage';
 import WatchPage from './WatchPage';
 import NotFound from './commonComponents/NotFound';
@@ -56,11 +53,7 @@ function MainWrapper() {
     {text: 'Giving', path: routePaths.MAIN_GIVING},
     {text: 'Bible Study', path: routePaths.BIBLE_STUDY},
     {text: 'Calendar', path: routePaths.MAIN_CALENDAR},
-    {text: 'Contact', path: routePaths.MAIN_CONTACT},
-    getAnnouncementsContentArray().length && {
-      text: 'Announcements',
-      path: routePaths.MAIN_ANNOUNCEMENTS
-    }
+    {text: 'Contact', path: routePaths.MAIN_CONTACT}
   ].filter(Boolean);
 
   return (
@@ -81,7 +74,7 @@ function MainWrapper() {
             <RemovedPage />
           </Route>
           <Route path={routePaths.MAIN_ANNOUNCEMENTS}>
-            <AnnouncementsPage />
+            <RemovedPage />
           </Route>
           <Route path={routePaths.BIBLE_STUDY}>
             <BibleStudyPage />
@@ -99,7 +92,7 @@ function MainWrapper() {
             <RemovedPage />
           </Route>
           <Route exact path={routePaths.MAIN_HOME}>
-            <MainPage />
+            <HomePage />
           </Route>
           <Route path={routePaths.MAIN_MEDITATIONS}>
             <MeditationsPage />
@@ -108,7 +101,7 @@ function MainWrapper() {
             <RemovedPage />
           </Route>
           <Route path={routePaths.MAIN_NEWS}>
-            <NewsPage />
+            <RemovedPage />
           </Route>
           <Route path={routePaths.MAIN_SCHOLARSHIP}>
             <RemovedPage />

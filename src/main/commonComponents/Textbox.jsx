@@ -2,20 +2,19 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-import {FONT_FAMILIES} from '../../utils/styleVariables';
-
 import InputLabel from './InputLabel';
 
 const TextboxStyle = styled.div`
   display: inline-block;
-  margin: 1em 3em 0.5em 0;
+  margin: 1em 16px 0.5em 0;
 
-  input {
-    border: 1px solid gray;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px 0 #c2c2c2;
-    font-family: ${FONT_FAMILIES.CENTURY_GOTHIC};
-    padding: 6px;
+  .text-box-pattern {
+    display: inline-block;
+    margin: 0.5em 0;
+  }
+
+  .text-box-pattern label {
+    display: block;
   }
 `;
 

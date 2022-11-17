@@ -1,29 +1,35 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import routePaths from '../routePaths';
-import {FONT_FAMILIES, COLORS} from '../utils/styleVariables';
-
-import AboveContentLinks from './commonComponents/AboveContentLinks';
 import Button from './commonComponents/Button/Button';
-import ContentAndSides from './commonComponents/ContentAndSides';
-import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
-import ContentLeftSide from './commonComponents/ContentLeftSide';
-import ContentRightSide from './commonComponents/ContentRightSide';
-import ContentWrapper from './commonComponents/ContentWrapper';
 import PlainButton from './commonComponents/PlainButton';
 import Select from './commonComponents/Select';
 import SelectState from './commonComponents/SelectState';
-import StandardPageWrapper from './commonComponents/StandardPageWrapper';
 import Textbox from './commonComponents/Textbox';
 
-const AddAnotherTypeWrapper = styled.div`
-  color: ${COLORS.GRAY180};
-  font-family: ${FONT_FAMILIES.CENTURY_GOTHIC};
-  margin-top: 15px;
-`;
+// TODO - BM - go over layout with April, mock doesn't fit
 
-const givingType = 'tithing';
+const StyledGivingPage = styled.div`
+  h1 {
+    font-weight: normal;
+    margin: 32px 230px 16px 230px;
+    text-align: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-fields {
+    display: flex;
+  }
+
+  .add-another {
+    margin-top: 15px;
+  }
+`;
 
 const USE_TEST_DATA = false;
 
@@ -96,7 +102,9 @@ const GivingPage = () => {
     });
   };
 
-  const renderStateSelect = (id) => {
+  const renderStateSelect = (id, options = {}) => {
+    const {hasLineBreak = true} = options;
+
     return (
       <>
         <SelectState
@@ -104,13 +112,14 @@ const GivingPage = () => {
           onChange={(value) => setUserInfoProp(value, id)}
           value={userInfo[id] ?? ''}
         />
-        <br />
+
+        {hasLineBreak && <br />}
       </>
     );
   };
 
   const renderTextbox = (id, label, options = {}) => {
-    const {type, required} = options;
+    const {hasLineBreak = true, type, required, size = 40} = options;
 
     return (
       <>
@@ -119,11 +128,12 @@ const GivingPage = () => {
           label={label}
           onChange={(value) => setUserInfoProp(value, id)}
           required={required}
-          size={40}
+          size={size}
           type={type}
           value={userInfo[id] ?? ''}
         />
-        <br />
+
+        {hasLineBreak && <br />}
       </>
     );
   };
@@ -197,14 +207,12 @@ const GivingPage = () => {
         {renderPaymentboxes(amounts)}
 
         {Boolean(firstUnusedType) && (
-          <AddAnotherTypeWrapper>
-            <PlainButton
-              className="add-another"
-              onClick={(event) => addPaymentOption(firstUnusedType, event)}
-            >
-              + Add another donation type
-            </PlainButton>
-          </AddAnotherTypeWrapper>
+          <PlainButton
+            className="add-another"
+            onClick={(event) => addPaymentOption(firstUnusedType, event)}
+          >
+            + Add another donation type
+          </PlainButton>
         )}
       </>
     );
@@ -212,57 +220,49 @@ const GivingPage = () => {
 
   const boxNum = userInfo.box;
 
-  const givingPageContent = (
-    <>
-      <h2>Giving</h2>
+  return (
+    <StyledGivingPage>
+      <h1>
+        Thank you for your commitment to City Temple and for your contribution.
+        To make a donation, please submit the form below.
+      </h1>
       <form
         action="https://www.paypal.com/cgi-bin/webscr"
         method="post"
         name="validform"
       >
-        {renderTextbox('first_name', 'First Name')}
-        {renderTextbox('last_name', 'Last Name')}
-        {renderTextbox('address1', 'Street Address')}
-        {renderTextbox('address2', 'Street Address cont.')}
-        {renderTextbox('city', 'City')}
-        {renderStateSelect('state')}
-        {renderTextbox('zip', 'Zipcode')}
-        {renderTextbox('night_phone_a', 'Phone')}
-        {renderTextbox('email', 'Email', {required: true, type: 'email'})}
-        {renderTextbox('box', 'Box #')}
-        {boxNum && renderHiddenTextbox('custom', `Box: ${boxNum}`)}
-        {renderHiddenTextbox('business', 'giving@thecitytemple.org')}
-        {renderHiddenTextbox('return', 'https://www.thecitytemple.org')}
-        {renderHiddenTextbox('cancel_return', 'https://www.thecitytemple.org')}
-        {renderHiddenTextbox('no_shipping', '1')}
+        <div className="input-fields">
+          <div className="left-side">
+            {renderTextbox('first_name', 'First Name')}
+            {renderTextbox('last_name', 'Last Name')}
+            {renderTextbox('address1', 'Street Address')}
+            {renderTextbox('address2', 'Street Address cont.')}
+            {renderTextbox('city', 'City', {hasLineBreak: false, size: 13})}
+            {renderStateSelect('state', {hasLineBreak: false})}
+            {renderTextbox('zip', 'Zipcode', {size: 11})}
+            {renderTextbox('email', 'Email', {required: true, type: 'email'})}
+          </div>
+          <div className="right-side">
+            {renderTextbox('box', 'Box #')}
+            {boxNum && renderHiddenTextbox('custom', `Box: ${boxNum}`)}
+            {renderHiddenTextbox('business', 'giving@thecitytemple.org')}
+            {renderHiddenTextbox('return', 'https://www.thecitytemple.org')}
+            {renderHiddenTextbox(
+              'cancel_return',
+              'https://www.thecitytemple.org'
+            )}
+            {renderHiddenTextbox('no_shipping', '1')}
 
-        {givingType === 'tithing' && renderTithingFields()}
+            {renderTithingFields()}
+          </div>
+        </div>
         <div>
-          <br />
           <Button name="submit" type="submit" value="Continue">
-            Continue
+            Donate Now
           </Button>
         </div>
       </form>
-    </>
-  );
-
-  return (
-    <StandardPageWrapper>
-      <ContentAndSubCompassWrapper>
-        <AboveContentLinks
-          pagePath={routePaths.MAIN_GIVING}
-          pageTitle="Giving"
-        />
-        <ContentAndSides>
-          <ContentLeftSide>
-            <div />
-          </ContentLeftSide>
-          <ContentWrapper>{givingPageContent}</ContentWrapper>
-          <ContentRightSide />
-        </ContentAndSides>
-      </ContentAndSubCompassWrapper>
-    </StandardPageWrapper>
+    </StyledGivingPage>
   );
 };
 

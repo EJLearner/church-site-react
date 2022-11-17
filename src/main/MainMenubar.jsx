@@ -8,9 +8,8 @@ const StyledHeader = styled.header`
 `;
 
 const StyledMainMenuBar = styled.nav`
-  background-color: rgba(0, 0, 0, 0.1);
-  border-top: 1px solid var(--white);
-  border-bottom: 1px solid var(--white);
+  border-top: 1px solid var(--standard-border);
+  border-bottom: 1px solid var(--standard-border);
   display: flex;
   font-family: var(--serif);
   font-size: 20px;
@@ -21,15 +20,6 @@ const StyledMainMenuBar = styled.nav`
   & > div {
     margin: 0 16px;
     padding: 16px 8px;
-  }
-
-  a {
-    text-decoration: none;
-    color: var(--text-on-dark);
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 `;
 
