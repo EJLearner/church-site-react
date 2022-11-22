@@ -21,16 +21,16 @@ const GlobalStyle = createGlobalStyle`
 
     --standard-background: var(--background);
     --standard-text: var(--content);
-    --text-on-dark-background: var(--black);
+    --text-on-light-background: var(--black);
     --accent-background: rgb(255,192,0);
-    --accent-content: var(--dark);
+    --accent-content: var(--text-on-light-background);
 
     // absolute colors shouldn't be used past this point
     --standard-border: var(--content);
     --top-content-background: var(--white);
-    --top-content-text: var(--text-on-dark-background);
+    --top-content-text: var(--text-on-light-background);
     --second-content-background: var(--gossamer-veil);
-    --second-content-text: var(--text-on-dark-background);
+    --second-content-text: var(--text-on-light-background);
     --alternate-background-text: var(--charcoal-grey);
     --gutter-space: 64px;
 
