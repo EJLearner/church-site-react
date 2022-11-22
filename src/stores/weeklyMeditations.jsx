@@ -328,5 +328,20 @@ export default {
         given to us.”
       </p>
     )
+  },
+  '2022-11-20': {
+    subTitle: (
+      <>
+        From <i>Assurance</i> George Herbert
+      </>
+    ),
+    content: (
+      <p>
+        “Wherefore if thou canst fail, Then can thy truth and I: but while rocks
+        stand, And rivers stir, thou canst not shrink or quail: Yea, when both
+        rocks and all things shall disband, Then shalt thou be my rock and
+        tower, And make their ruin praise thy power.”
+      </p>
+    )
   }
 };
