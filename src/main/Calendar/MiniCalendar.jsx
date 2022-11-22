@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import styled from 'styled-components';
 
-import commonUtils from '../../../utils/commonUtils';
-import {LOGICAL_COLORS} from '../../../utils/styleVariables';
+import commonUtils from '../../utils/commonUtils';
+import {LOGICAL_COLORS} from '../../utils/styleVariables';
 
 import calendarDatesUtils from './calendarDatesUtils';
 import withDatesSubscription from './withDatesSubscription';

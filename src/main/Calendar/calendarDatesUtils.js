@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
-import firebase from '../../../firebase';
-import constants from '../../../utils/constants';
+import firebase from '../../firebase';
+import constants from '../../utils/constants';
 
 let datesStore = {};
 const callbacks = {};

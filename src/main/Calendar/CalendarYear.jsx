@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import {Redirect} from 'react-router';
 
-import routePaths from '../../../routePaths';
-import commonUtils from '../../../utils/commonUtils';
+import routePaths from '../../routePaths';
+import commonUtils from '../../utils/commonUtils';
 
 import MiniCalendar from './MiniCalendar';
 

@@ -2,8 +2,6 @@ import styled from 'styled-components';
 
 import {WIDTHS} from '../utils/styleVariables';
 
-import contentWrapperH2Mixin from './commonComponents/contentWrapperH2Mixin';
-
 const CalendarStyles = styled.div`
   color: var(--black);
 
@@ -14,7 +12,6 @@ const CalendarStyles = styled.div`
       ${WIDTHS.SIDE_CONTENT_PADDING};
 
     h1 {
-      ${contentWrapperH2Mixin}
       text-transform: uppercase;
     }
   }

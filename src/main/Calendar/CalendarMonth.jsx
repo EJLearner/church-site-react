@@ -5,9 +5,9 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
-import routePaths from '../../../routePaths';
-import commonUtils from '../../../utils/commonUtils';
-import Select from '../Select';
+import routePaths from '../../routePaths';
+import commonUtils from '../../utils/commonUtils';
+import Select from '../commonComponents/Select';
 
 import calendarDatesUtils from './calendarDatesUtils';
 import withDatesSubscription from './withDatesSubscription';

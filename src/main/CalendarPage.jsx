@@ -4,13 +4,13 @@ import {Redirect, Route, Switch} from 'react-router-dom';
 
 import routePaths from '../routePaths';
 
+import CalendarDay from './Calendar/CalendarDay';
+import CalendarMenuBar from './Calendar/CalendarMenuBar';
+import CalendarMonth from './Calendar/CalendarMonth';
+import CalendarUpcoming from './Calendar/CalendarUpcoming';
+import CalendarWeek from './Calendar/CalendarWeek';
+import CalendarYear from './Calendar/CalendarYear';
 import CalendarStyles from './CalendarStyles';
-import CalendarDay from './commonComponents/Calendar/CalendarDay';
-import CalendarMenuBar from './commonComponents/Calendar/CalendarMenuBar';
-import CalendarMonth from './commonComponents/Calendar/CalendarMonth';
-import CalendarUpcoming from './commonComponents/Calendar/CalendarUpcoming';
-import CalendarWeek from './commonComponents/Calendar/CalendarWeek';
-import CalendarYear from './commonComponents/Calendar/CalendarYear';
 
 // TODO BR -
 
