@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2022-11-20T09:00:00',
+    youtubeId: 'EM4wCQHVwLQ',
+    title: '"It’s All Over You! - Pastoral Apprecation Service',
+    preacher: 'Rev. Carl Hamiel',
+    scripture: '1 Timothy 4:13-15'
+  },
+  {
     date: '2022-11-13T09:00:00',
     youtubeId: 'Irp2fNK3RS4',
     title: 'Everything Lives Wherever The River Flows!!',
