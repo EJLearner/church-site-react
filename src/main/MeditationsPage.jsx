@@ -9,6 +9,11 @@ import {getStartOfWeek} from '../utils/dateTimeUtils';
 
 import Verse from './commonComponents/Verse';
 
+// TODO br: when content is empty, need to maintain space between scriptures and meditation
+// area
+
+// TODO finish up this page when content exist
+
 const StyledMeditationsPage = styled.div`
   display: flex;
   justify-content: center;
@@ -41,7 +46,7 @@ function getVersesContent() {
     return (
       <>
         <h2>Content unavailable</h2>
-        <p>Sorry, no content is available this week.</p>
+        <p>Sorry, no verses is available this week.</p>
       </>
     );
   }

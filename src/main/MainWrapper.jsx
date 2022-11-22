@@ -19,17 +19,7 @@ import WatchPage from './WatchPage';
 import NotFound from './commonComponents/NotFound';
 
 // TODO: probably need a photoshopped picture for this instead of this mask
-const StyledMainWrapperDiv = styled.div`
-  background-attachment: fixed;
-  background: black;
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url(${(props) => props.backgroundSource});
-
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 100%;
-  padding: 0 64px;
-`;
+const StyledMainWrapperDiv = styled.div``;
 
 const PAGE_ID = 'main-wrapper';
 

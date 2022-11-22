@@ -105,6 +105,8 @@ class MenuBar extends Component {
       );
     });
 
+    renderedLinks.push();
+
     return (
       <CalendarMenuBarStyles className="menu-bar" id={this.props.id}>
         <ul>{renderedLinks}</ul>

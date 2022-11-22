@@ -14,7 +14,7 @@ const StyledMainMenuBar = styled.nav`
   font-family: var(--serif);
   font-size: 20px;
   justify-content: center;
-  margin-top: 32px;
+  margin: 32px var(--gutter-space) 0 var(--gutter-space);
   text-transform: uppercase;
 
   & > div {

@@ -13,15 +13,25 @@ const GlobalStyle = createGlobalStyle`
 
     --black: black;
     --white: white;
+    --gossamer-veil: rgb(240, 238, 235);
+    --charcoal-grey: rgb(38, 38, 38);
 
-    --standard-background: var(--black);
-    --standard-text: var(--white);
-    --standard-border: var(--white);
+    --background: var(--black);
+    --content: var(--white);
+
+    --standard-background: var(--background);
+    --standard-text: var(--content);
+    --text-on-dark-background: var(--black);
     --accent-background: rgb(255,192,0);
-    --accent-content: var(--black);
+    --accent-content: var(--dark);
 
     // absolute colors shouldn't be used past this point
-
+    --standard-border: var(--content);
+    --top-content-background: var(--white);
+    --top-content-text: var(--text-on-dark-background);
+    --second-content-background: var(--gossamer-veil);
+    --second-content-text: var(--text-on-dark-background);
+    --alternate-background-text: var(--charcoal-grey);
     --gutter-space: 64px;
 
     body {
