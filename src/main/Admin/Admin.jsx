@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 import firebase, {auth, provider} from '../../firebase';
 import routePaths from '../../routePaths';
-import backgroundStore from '../../stores/backgroundStore';
 import {FONT_FAMILIES, LOGICAL_COLORS, SIZES} from '../../utils/styleVariables';
 import MainMenubar from '../MainMenubar';
 import Button from '../commonComponents/Button/Button';
@@ -52,15 +51,9 @@ const StyledAdminPage = styled.div`
   }
 `;
 
-const PAGE_ID = 'admin-page';
 class Admin extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      backgroundSource: backgroundStore.getBackgroundSource(),
-      user: null
-    };
 
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
@@ -81,14 +74,6 @@ class Admin extends Component {
         this.setState({user});
       }
     });
-
-    backgroundStore.subscribe(PAGE_ID, (backgroundSource) =>
-      this.setState({backgroundSource})
-    );
-  }
-
-  componentWillUnmount() {
-    backgroundStore.unsubscribe(PAGE_ID);
   }
 
   login() {

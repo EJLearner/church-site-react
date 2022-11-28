@@ -6,9 +6,10 @@ import Select from './commonComponents/Select';
 import SelectState from './commonComponents/SelectState';
 import Textbox from './commonComponents/Textbox';
 
-// TODO - BM - go over layout with April, mock doesn't fit
-
 const StyledGivingPage = styled.div`
+  background-color: var(--top-content-background);
+  color: var(--top-content-text);
+
   h1 {
     font-weight: normal;
     margin: 32px 230px 16px 230px;

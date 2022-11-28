@@ -1,18 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import choir from '../assets/main/images/choir.jpg';
 import routePaths from '../routePaths';
 
 import Anchor from './commonComponents/Anchor';
 
 const StyledHomePage = styled.div`
-  background-attachment: fixed;
-  background: black;
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url(${(props) => props.backgroundSource});
+  // background-attachment: fixed;
+  // background: black;
+  // background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+  //   url(${choir});
 
-  background-repeat: no-repeat;
-  background-size: cover;
+  // background-repeat: no-repeat;
+  // background-size: cover;
 
   display: flex;
   align-items: center;

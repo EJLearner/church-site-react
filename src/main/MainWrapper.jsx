@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
-import {Route, Switch} from 'react-router-dom';
+import React from 'react';
+import {Route, Switch, useLocation} from 'react-router-dom';
 import styled from 'styled-components';
 
+import choir from '../assets/main/images/choir.jpg';
 import routePaths from '../routePaths';
 import GlobalStoreWrapper from '../stores/GlobalStoreWrapper';
-import backgroundStore from '../stores/backgroundStore';
 
 import AboutUsPage from './AboutUsPage';
 import BibleStudyPage from './BibleStudyPage';
@@ -19,22 +19,22 @@ import WatchPage from './WatchPage';
 import NotFound from './commonComponents/NotFound';
 
 // TODO: probably need a photoshopped picture for this instead of this mask
-const StyledMainWrapperDiv = styled.div``;
+const StyledMainWrapperDiv = styled.div`
+  background: black;
+  ${(props) =>
+    props.isHome &&
+    `
+    background-attachment: fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${choir});
+    background-size: cover;
+    background-repeat: no-repeat;
+  `}
 
-const PAGE_ID = 'main-wrapper';
+  min-height: 100%;
+`;
 
 function MainWrapper() {
-  const [backgroundSource, setBackgroundSource] = useState(
-    backgroundStore.getBackgroundSource()
-  );
-
-  useEffect(() => {
-    backgroundStore.subscribe(PAGE_ID, (newBackgroundSource) => {
-      setBackgroundSource(newBackgroundSource);
-    });
-
-    return () => backgroundStore.unsubscribe(PAGE_ID);
-  });
+  const isHome = useLocation()?.pathname === '/';
 
   const mainMenuItems = [
     {text: 'Home', path: routePaths.MAIN_HOME},
@@ -48,7 +48,7 @@ function MainWrapper() {
 
   return (
     <GlobalStoreWrapper>
-      <StyledMainWrapperDiv backgroundSource={backgroundSource}>
+      <StyledMainWrapperDiv isHome={isHome}>
         <MainMenubar menuItems={mainMenuItems} />
         <Switch>
           <Route path={routePaths.MAIN_ABOUT_US}>

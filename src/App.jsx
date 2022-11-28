@@ -6,6 +6,8 @@ import TopRoutes from './TopRoutes.jsx';
 import './polyfills';
 import './App.css';
 
+// TODO maybe figure out a way
+
 const GlobalStyle = createGlobalStyle`
   :root {
     --sans-serif: Calibri, 'Segoe UI', Candara, Segoe, Optima, Arial, sans-serif;
@@ -25,7 +27,6 @@ const GlobalStyle = createGlobalStyle`
     --accent-background: rgb(255,192,0);
     --accent-content: var(--text-on-light-background);
 
-    // absolute colors shouldn't be used past this point
     --standard-border: var(--content);
     --top-content-background: var(--white);
     --top-content-text: var(--text-on-light-background);
