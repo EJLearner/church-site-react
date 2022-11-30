@@ -8,7 +8,7 @@ const messageVideos = [
     date: '2022-11-27T09:00:00',
     youtubeId: 'WDljIsS-mb0',
     title: 'What We Need to Know When Believing Is Not Enough!',
-    preacher: 'PREACHERS.G_YEARGIN',
+    preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 16:16-33 NLT'
   },
   {
