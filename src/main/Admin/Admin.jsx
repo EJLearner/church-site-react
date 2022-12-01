@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import firebase, {auth, provider} from '../../firebase';
 import routePaths from '../../routePaths';
 import {FONT_FAMILIES, LOGICAL_COLORS, SIZES} from '../../utils/styleVariables';
-import MainMenubar from '../MainMenubar';
+import Menubar from '../Menubar';
 import Button from '../commonComponents/Button/Button';
 
 import CcVbsAdminBase from './CcVbsAdminBase';
@@ -159,7 +159,7 @@ class Admin extends Component {
   render() {
     return (
       <StyledAdminPage backgroundSource={this.state.backgroundSource}>
-        <MainMenubar menuItems={this.generateLinks()} />
+        <Menubar menuItems={this.generateLinks()} />
         <div className="admin-content">{this.renderContent()}</div>
       </StyledAdminPage>
     );

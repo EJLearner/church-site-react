@@ -1,16 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import yearginPicture from '../assets/main/images/grady-yeargin.jpg';
+import choir from '../assets/main/images/choir.jpg';
+
+import MainMenubar from './commonComponents/MainMenubar';
 
 const StyledAboutUspage = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  margin-top: 32px;
+  p:last-of-type {
+    margin-bottom: 0;
+  }
 
-  h2 {
-    text-align: center;
+  .menu-and-pastor {
+    background-attachment: fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+      // need the right picture
+      url(${choir});
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   h2:nth-child(1) {
@@ -18,26 +24,13 @@ const StyledAboutUspage = styled.div`
   }
 
   .pastor-info-and-picture {
-    align-items: center;
-    align-self: center;
-    background-color: var(--top-content-background);
-    color: var(--top-content-text);
-    display: flex;
-    justify-content: center;
-    padding-top: 32px;
+    min-height: 100%;
+    padding: 32px 0 64px 0;
     width: 100%;
   }
 
-  img {
-    box-shadow: 3px 3px 5px 0 rgb(20, 20, 20);
-    display: block;
-    height: 280px;
-    transform: rotate(5deg) translateY(-35px);
-    transform-origin: top left;
-  }
-
   .pastor-info {
-    margin-right: 64px;
+    margin-left: var(--gutter-space);
     width: 500px;
   }
 
@@ -45,66 +38,78 @@ const StyledAboutUspage = styled.div`
     background-color: var(--second-content-background);
     color: var(--alternate-background-text);
     display: flex;
-    flex-direction: column;
-    width: 100%;
+    padding: 128px var(--gutter-space) 32px var(--gutter-space);
   }
 
   .history {
     h2 {
-      font-weight: normal;
+      font-family: var(--sans-serif);
+      font-size: 48px;
+      margin-bottom: 32px;
     }
 
-    margin-top: 32px;
-    align-self: center;
-    width: 60%;
+    width: 50%;
+  }
+
+  img {
+    display: block;
+    height: 300px;
+    margin-top: 80px;
+  }
+
+  figcaption {
+    font-size: 12px;
   }
 `;
 
 const AboutUsPage = () => {
   return (
     <StyledAboutUspage>
-      <div className="pastor-info-and-picture">
-        <div className="pastor-info">
-          <h2>About the Pastor</h2>
-          <p>
-            After serving Mount Prospect for nine years, Dr. Yeargin was called
-            to pastor the City Temple of Baltimore (Baptist) on September 10,
-            1985. He began his pastorate in January 1986. Dr. Yeargin has
-            brought a new dimension of spiritual nourishment and growth to City
-            Temple through worship, study, and action. Under his direction
-            several new ministries have been established in City Temple that
-            include: the Shelter Ministry, the Dance Ministry, the New Members
-            Counselors Ministry, the Christian Education Ministry, the Courtesy
-            Guild, the Tape Ministry as well as the re-establishment of the
-            Cultural and Fine Arts Ministry and the Building Ministry.
-          </p>
-          <p>
-            Dr. Yeargin has been socially involved in the life of the community
-            through his participation in Baltimoreans United in Leadership
-            Development (B.U.I.L.D.) as well as serving for two years as a
-            clergy co-chairperson, the Interdenominational Ministerial Alliance,
-            the Institute for Christian and Jewish Studies, The United
-            Missionary Baptist Convention of Maryland, and was the previous
-            co-chairperson of the Baltimore affiliate of the National Black
-            Leadership Commission on AIDS.
-          </p>
-          <p>
-            Dr. Yeargin is married to Patricia Ann Yeargin and they share two
-            daughters, Adia Joy and Candace. He also continues to maintain his
-            sense of fatherhood to his beloved daughter, Kimberly Rei, who is
-            deceased.
-          </p>
+      <div className="menu-and-pastor">
+        <MainMenubar />
+        <div className="pastor-info-and-picture">
+          <div className="pastor-info">
+            <h2>About the Pastor</h2>
+            <p>
+              After serving Mount Prospect for nine years, Dr. Yeargin was
+              called to pastor the City Temple of Baltimore (Baptist) on
+              September 10, 1985. He began his pastorate in January 1986. Dr.
+              Yeargin has brought a new dimension of spiritual nourishment and
+              growth to City Temple through worship, study, and action. Under
+              his direction several new ministries have been established in City
+              Temple that include: the Shelter Ministry, the Dance Ministry, the
+              New Members Counselors Ministry, the Christian Education Ministry,
+              the Courtesy Guild, the Tape Ministry as well as the
+              re-establishment of the Cultural and Fine Arts Ministry and the
+              Building Ministry.
+            </p>
+            <p>
+              Dr. Yeargin has been socially involved in the life of the
+              community through his participation in Baltimoreans United in
+              Leadership Development (B.U.I.L.D.) as well as serving for two
+              years as a clergy co-chairperson, the Interdenominational
+              Ministerial Alliance, the Institute for Christian and Jewish
+              Studies, The United Missionary Baptist Convention of Maryland, and
+              was the previous co-chairperson of the Baltimore affiliate of the
+              National Black Leadership Commission on AIDS.
+            </p>
+            <p>
+              Dr. Yeargin is married to Patricia Ann Yeargin and they share two
+              daughters, Adia Joy and Candace. He also continues to maintain his
+              sense of fatherhood to his beloved daughter, Kimberly Rei, who is
+              deceased.
+            </p>
+          </div>
         </div>
-        <img src={yearginPicture} />
       </div>
       <div className="history-wrapper">
         <div className="history">
-          <h2>It all began when…</h2>
+          <h2>Faith. Prayer. Power.</h2>
           <p>
-            the church was built in 1868 - 1871. It is the only structure in
-            Baltimore designed by Thomas U. Walter, architect of the Dome and
-            the House and Senate wings of the United States Capitol, and a
-            founder of the American Institute of Architects.
+            It all began when the church was built in 1868 - 1871. It is the
+            only structure in Baltimore designed by Thomas U. Walter, architect
+            of the Dome and the House and Senate wings of the United States
+            Capitol, and a founder of the American Institute of Architects.
           </p>
           <p>
             Declared one of the 13 landmark buildings in Baltimore City, the
@@ -146,6 +151,13 @@ const AboutUsPage = () => {
             members in this ministry were urged to enroll in Sunday School.
           </p>
         </div>
+        <figure>
+          {/* TODO need the right picture */}
+          <img src={choir} />
+          <figcaption>
+            The City Temple of Baltimore (Baptist) circa 2020
+          </figcaption>
+        </figure>
       </div>
     </StyledAboutUspage>
   );

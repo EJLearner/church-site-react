@@ -5,31 +5,33 @@ import choir from '../assets/main/images/choir.jpg';
 import routePaths from '../routePaths';
 
 import Anchor from './commonComponents/Anchor';
+import MainMenubar from './commonComponents/MainMenubar';
 
 const StyledHomePage = styled.div`
-  // background-attachment: fixed;
-  // background: black;
-  // background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-  //   url(${choir});
-
-  // background-repeat: no-repeat;
-  // background-size: cover;
-
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  background-attachment: fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(${choir});
+  background-size: cover;
+  background-repeat: no-repeat;
   min-height: 100%;
 
-  padding: 0 64px;
+  .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100%;
 
-  margin: 0 230px;
-  text-align: center;
-  font-size: 28px;
-  color: var(--text-on-dark);
+    padding: 0 64px;
+
+    margin: 0 230px;
+    text-align: center;
+    font-size: 28px;
+    color: var(--text-on-dark);
+  }
 
   h1 {
     font-size: 48px;
-    margin-top: 32px;
+    margin-top: 0;
   }
 
   .worship-time {
@@ -65,19 +67,22 @@ const StyledHomePage = styled.div`
 function HomePage() {
   return (
     <StyledHomePage>
-      <h1>
-        Welcome to the
-        <br />
-        City Temple of Baltimore (Baptist)
-      </h1>
-      <p className="worship-time">Worship and Live Stream Sunday at 9 am</p>
-      <p>
-        We shall become a spiritually mature Christian fellowship in order to
-        provide an effective witness for Christ in this world!
-      </p>
-      <Anchor className="service-link" path={routePaths.MAIN_WATCH}>
-        Watch Our Latest Service
-      </Anchor>
+      <MainMenubar />
+      <div className="content">
+        <h1>
+          Welcome to the
+          <br />
+          City Temple of Baltimore (Baptist)
+        </h1>
+        <p className="worship-time">Worship and Live Stream Sunday at 9 am</p>
+        <p>
+          We shall become a spiritually mature Christian fellowship in order to
+          provide an effective witness for Christ in this world!
+        </p>
+        <Anchor className="service-link" path={routePaths.MAIN_WATCH}>
+          Watch Our Latest Service
+        </Anchor>
+      </div>
     </StyledHomePage>
   );
 }

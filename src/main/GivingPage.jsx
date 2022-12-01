@@ -1,14 +1,17 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
+import MainMenubar from './commonComponents/MainMenubar';
 import PlainButton from './commonComponents/PlainButton';
 import Select from './commonComponents/Select';
 import SelectState from './commonComponents/SelectState';
 import Textbox from './commonComponents/Textbox';
 
 const StyledGivingPage = styled.div`
-  background-color: var(--top-content-background);
-  color: var(--top-content-text);
+  .content {
+    background-color: var(--top-content-background);
+    color: var(--top-content-text);
+  }
 
   h1 {
     font-weight: normal;
@@ -234,51 +237,53 @@ const GivingPage = () => {
 
   return (
     <StyledGivingPage>
+      <MainMenubar />
       <h1>
         Thank you for your commitment to City Temple and for your contribution.
         To make a donation, please submit the form below.
       </h1>
-      <form
-        action="https://www.paypal.com/cgi-bin/webscr"
-        method="post"
-        name="validform"
-      >
-        <div className="input-fields">
-          <div className="left-side">
-            {renderTextbox('first_name', 'First Name')}
-            {renderTextbox('last_name', 'Last Name')}
-            {renderTextbox('address1', 'Street Address')}
-            {renderTextbox('address2', 'Street Address cont.')}
-            {renderTextbox('city', 'City', {hasLineBreak: false, size: 13})}
-            {renderStateSelect('state', {hasLineBreak: false})}
-            {renderTextbox('zip', 'Zipcode', {size: 11})}
-            {renderTextbox('email', 'Email', {required: true, type: 'email'})}
+      <div className="content">
+        <form
+          action="https://www.paypal.com/cgi-bin/webscr"
+          method="post"
+          name="validform"
+        >
+          <div className="input-fields">
+            <div className="left-side">
+              {renderTextbox('first_name', 'First Name')}
+              {renderTextbox('last_name', 'Last Name')}
+              {renderTextbox('address1', 'Street Address')}
+              {renderTextbox('address2', 'Street Address cont.')}
+              {renderTextbox('city', 'City', {hasLineBreak: false, size: 13})}
+              {renderStateSelect('state', {hasLineBreak: false})}
+              {renderTextbox('zip', 'Zipcode', {size: 11})}
+              {renderTextbox('email', 'Email', {required: true, type: 'email'})}
+            </div>
+            <div className="right-side">
+              {renderTextbox('box', 'Box #')}
+              {boxNum && renderHiddenTextbox('custom', `Box: ${boxNum}`)}
+              {renderHiddenTextbox('business', 'giving@thecitytemple.org')}
+              {renderHiddenTextbox('return', 'https://www.thecitytemple.org')}
+              {renderHiddenTextbox(
+                'cancel_return',
+                'https://www.thecitytemple.org'
+              )}
+              {renderHiddenTextbox('no_shipping', '1')}
+              {renderTithingFields()}
+            </div>
           </div>
-          <div className="right-side">
-            {renderTextbox('box', 'Box #')}
-            {boxNum && renderHiddenTextbox('custom', `Box: ${boxNum}`)}
-            {renderHiddenTextbox('business', 'giving@thecitytemple.org')}
-            {renderHiddenTextbox('return', 'https://www.thecitytemple.org')}
-            {renderHiddenTextbox(
-              'cancel_return',
-              'https://www.thecitytemple.org'
-            )}
-            {renderHiddenTextbox('no_shipping', '1')}
-
-            {renderTithingFields()}
+          <div>
+            <PlainButton
+              className="donate-button"
+              name="submit"
+              type="submit"
+              value="Continue"
+            >
+              Donate Now
+            </PlainButton>
           </div>
-        </div>
-        <div>
-          <PlainButton
-            className="donate-button"
-            name="submit"
-            type="submit"
-            value="Continue"
-          >
-            Donate Now
-          </PlainButton>
-        </div>
-      </form>
+        </form>
+      </div>
     </StyledGivingPage>
   );
 };

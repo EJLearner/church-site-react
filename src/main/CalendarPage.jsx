@@ -11,8 +11,7 @@ import CalendarUpcoming from './Calendar/CalendarUpcoming';
 import CalendarWeek from './Calendar/CalendarWeek';
 import CalendarYear from './Calendar/CalendarYear';
 import CalendarStyles from './CalendarStyles';
-
-// TODO BR -
+import MainMenubar from './commonComponents/MainMenubar';
 
 class Calendar extends Component {
   constructor(props) {
@@ -48,6 +47,7 @@ class Calendar extends Component {
 
     return (
       <CalendarStyles>
+        <MainMenubar />
         <div className="calendar-page">
           <h1>Events at City Temple</h1>
           <CalendarMenuBar id="calendar-menu" links={linkData} />

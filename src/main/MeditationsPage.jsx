@@ -7,6 +7,7 @@ import weeklyMeditations from '../stores/weeklyMeditations';
 import constants from '../utils/constants';
 import {getStartOfWeek} from '../utils/dateTimeUtils';
 
+import MainMenubar from './commonComponents/MainMenubar';
 import Verse from './commonComponents/Verse';
 
 // TODO br: when content is empty, need to maintain space between scriptures and meditation
@@ -15,8 +16,10 @@ import Verse from './commonComponents/Verse';
 // TODO finish up this page when content exist
 
 const StyledMeditationsPage = styled.div`
-  display: flex;
-  justify-content: center;
+  .content {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 const getCurrentWeekDates = () => {
@@ -76,19 +79,21 @@ export default function MeditationsPage() {
 
   return (
     <StyledMeditationsPage>
-      <div className="daily-scriptures">
-        <h1>Daily Scripture Readings</h1>
-        {getVersesContent()}
-      </div>
-
-      <div className="weekly-meditation">
-        <h1>Weekly Meditation</h1>
-        {meditationContent && (
-          <>
-            <h3>{meditationSubtitle}</h3>
-            {meditationContent}
-          </>
-        )}
+      <MainMenubar />
+      <div className="content">
+        <div className="daily-scriptures">
+          <h1>Daily Scripture Readings</h1>
+          {getVersesContent()}
+        </div>
+        <div className="weekly-meditation">
+          <h1>Weekly Meditation</h1>
+          {meditationContent && (
+            <>
+              <h3>{meditationSubtitle}</h3>
+              {meditationContent}
+            </>
+          )}
+        </div>
       </div>
     </StyledMeditationsPage>
   );

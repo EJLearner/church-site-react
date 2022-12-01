@@ -1,10 +1,10 @@
 import {shallow} from 'enzyme';
 import React from 'react';
 
-import MainMenubar from './MainMenubar';
+import Menubar from './Menubar';
 
 describe('MainHome', () => {
   it('renders', () => {
-    expect(shallow(<MainMenubar menuItems={[]} />).exists()).toBe(true);
+    expect(shallow(<Menubar menuItems={[]} />).exists()).toBe(true);
   });
 });

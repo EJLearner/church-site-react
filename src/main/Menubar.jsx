@@ -14,7 +14,7 @@ const StyledMainMenuBar = styled.nav`
   font-family: var(--serif);
   font-size: 20px;
   justify-content: center;
-  margin: 32px var(--gutter-space) 0 var(--gutter-space);
+  margin: 32px var(--gutter-space) 32px var(--gutter-space);
   text-transform: uppercase;
 
   & > div {
@@ -23,7 +23,7 @@ const StyledMainMenuBar = styled.nav`
   }
 `;
 
-const MainMenubar = ({menuItems}) => {
+const Menubar = ({menuItems}) => {
   const renderedMenuItems = menuItems.map(({hash = '', text, path}) => {
     return (
       <div className="main-menu-item" key={text}>
@@ -41,8 +41,8 @@ const MainMenubar = ({menuItems}) => {
   );
 };
 
-MainMenubar.propTypes = {
+Menubar.propTypes = {
   menuItems: PropTypes.array.isRequired
 };
 
-export default MainMenubar;
+export default Menubar;

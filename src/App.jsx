@@ -6,15 +6,13 @@ import TopRoutes from './TopRoutes.jsx';
 import './polyfills';
 import './App.css';
 
-// TODO maybe figure out a way
-
 const GlobalStyle = createGlobalStyle`
   :root {
     --sans-serif: Calibri, 'Segoe UI', Candara, Segoe, Optima, Arial, sans-serif;
     --serif: cambria, georgia, 'bookman old style', 'times new roman', serif;
 
-    --black: black;
-    --white: white;
+    --black: rgb(5, 5, 5);
+    --white: rgb(240, 240, 240);
     --gossamer-veil: rgb(240, 238, 235);
     --charcoal-grey: rgb(38, 38, 38);
 
@@ -22,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     --content: var(--white);
 
     --standard-background: var(--background);
-    --standard-text: var(--content);
+    --text-on-dark-background: var(--content);
     --text-on-light-background: var(--black);
     --accent-background: rgb(255,192,0);
     --accent-content: var(--text-on-light-background);
@@ -35,6 +33,8 @@ const GlobalStyle = createGlobalStyle`
     --alternate-background-text: var(--charcoal-grey);
     --gutter-space: 64px;
 
+    line-height: 1.5;
+
     body {
       background-color: var(--standard-background);
       height: 100%;
@@ -43,12 +43,12 @@ const GlobalStyle = createGlobalStyle`
     }
 
     #root {
-      color: var(--standard-text);
+      color: var(--text-on-dark-background);
       height: 100%;
     }
 
     a {
-      color: var(--standard-text);
+      color: var(--text-on-dark-background);
       text-decoration: none;
     }
 
