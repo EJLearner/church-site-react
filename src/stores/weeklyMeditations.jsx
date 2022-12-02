@@ -343,5 +343,38 @@ export default {
         tower, And make their ruin praise thy power.”
       </p>
     )
+  },
+  '2022-11-27': {
+    subTitle: (
+      <>
+        From <i>Assurance</i> George Herbert
+      </>
+    ),
+    content: (
+      <p>
+        “Wherefore if thou canst fail, Then can thy truth and I: but while rocks
+        stand, And rivers stir, thou canst not shrink or quail: Yea, when both
+        rocks and all things shall disband, Then shalt thou be my rock and
+        tower, And make their ruin praise thy power.”
+      </p>
+    )
+  },
+  '2022-12-04': {
+    subTitle: (
+      <>
+        From <i>The Unsettling Season</i> Donald J. Shelby
+      </>
+    ),
+    content: (
+      <p>
+        “Lord, the calendar calls for Christmas. We have traveled this way
+        before. During this Advent season we would see what we have never seen
+        before, accept what we have refused to think, and hear what we need to
+        understand. Be with us in our goings that we may meet you in your
+        coming. Astonish us until we sing “Glory!” and then enable us to live it
+        out with love and peace. In that name of your Incarnate Word, even Jesus
+        Christ.” Amen.
+      </p>
+    )
   }
 };
