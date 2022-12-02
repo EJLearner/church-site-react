@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
+import choir from '../assets/images/choir.jpg';
+
 import MainMenubar from './commonComponents/MainMenubar';
 import PlainButton from './commonComponents/PlainButton';
 import Select from './commonComponents/Select';
@@ -237,7 +239,7 @@ const GivingPage = () => {
 
   return (
     <StyledGivingPage>
-      <MainMenubar />
+      <MainMenubar imageSource={choir} />
       <h1>
         Thank you for your commitment to City Temple and for your contribution.
         To make a donation, please submit the form below.

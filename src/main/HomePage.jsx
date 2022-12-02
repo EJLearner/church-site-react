@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import choir from '../assets/main/images/choir.jpg';
+import choir from '../assets/images/choir.jpg';
 import routePaths from '../routePaths';
 
 import Anchor from './commonComponents/Anchor';
@@ -9,11 +9,13 @@ import MainMenubar from './commonComponents/MainMenubar';
 
 const StyledHomePage = styled.div`
   background-attachment: fixed;
+  background: var(--black);
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(${choir});
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100%;
+  padding-bottom: 64px;
 
   .content {
     display: flex;

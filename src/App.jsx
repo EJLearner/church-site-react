@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
   :root {
     --sans-serif: Calibri, 'Segoe UI', Candara, Segoe, Optima, Arial, sans-serif;
     --serif: cambria, georgia, 'bookman old style', 'times new roman', serif;
+    --quire: "Quire Sans", Helvetica, arial, sans-serif;
 
     --black: rgb(5, 5, 5);
     --white: rgb(240, 240, 240);
@@ -69,7 +70,6 @@ const GlobalStyle = createGlobalStyle`
       font-size: 20px;
       padding: 6px;
     }
-
   }
 `;
 

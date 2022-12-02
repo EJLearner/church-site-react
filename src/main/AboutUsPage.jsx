@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import choir from '../assets/main/images/choir.jpg';
+import churchExterior from '../assets/images/church-exterior.jpg';
+import yearginPulpitMartins from '../assets/images/yeargin-pulpit-martins.jpg';
 
 import MainMenubar from './commonComponents/MainMenubar';
 
@@ -12,9 +13,13 @@ const StyledAboutUspage = styled.div`
 
   .menu-and-pastor {
     background-attachment: fixed;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-      // need the right picture
-      url(${choir});
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 1),
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(${yearginPulpitMartins});
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -43,22 +48,30 @@ const StyledAboutUspage = styled.div`
 
   .history {
     h2 {
-      font-family: var(--sans-serif);
+      text-transform: uppercase;
+      font-family: var(--quire);
       font-size: 48px;
       margin-bottom: 32px;
     }
 
     width: 50%;
+    padding-right: 16px;
+  }
+
+  figure {
+    width: 50%;
   }
 
   img {
     display: block;
-    height: 300px;
+    height: auto;
+    width: 100%;
     margin-top: 80px;
   }
 
   figcaption {
     font-size: 12px;
+    margin-top: 6px;
   }
 `;
 
@@ -152,8 +165,7 @@ const AboutUsPage = () => {
           </p>
         </div>
         <figure>
-          {/* TODO need the right picture */}
-          <img src={choir} />
+          <img src={churchExterior} />
           <figcaption>
             The City Temple of Baltimore (Baptist) circa 2020
           </figcaption>

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import routePaths from '../../routePaths';
@@ -13,8 +14,14 @@ const mainMenuItems = [
   {text: 'Contact', path: routePaths.MAIN_CONTACT}
 ];
 
-function MainMenubar() {
-  return <Menubar menuItems={mainMenuItems} />;
+function MainMenubar(props) {
+  const {imageSource} = props;
+
+  return <Menubar imageSource={imageSource} menuItems={mainMenuItems} />;
 }
+
+MainMenubar.propTypes = {
+  imageSource: PropTypes.string
+};
 
 export default MainMenubar;
