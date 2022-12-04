@@ -11,7 +11,7 @@ const StyleWrapper = styled.div`
   }
 
   .reference {
-    font-style: italic;
+    color: var(--charcoal-grey);
     font-weight: bold;
   }
 `;

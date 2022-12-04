@@ -2,6 +2,7 @@ import {format, add} from 'date-fns';
 import React from 'react';
 import styled from 'styled-components';
 
+import choir from '../assets/images/choir.jpg';
 import {bibleComFormattedVerses} from '../stores/dailyVerses';
 import weeklyMeditations from '../stores/weeklyMeditations';
 import constants from '../utils/constants';
@@ -13,12 +14,44 @@ import Verse from './commonComponents/Verse';
 // TODO br: when content is empty, need to maintain space between scriptures and meditation
 // area
 
-// TODO finish up this page when content exist
-
 const StyledMeditationsPage = styled.div`
   .content {
+    background-color: var(--gossamer-veil);
+    color: var(--text-on-light-background);
     display: flex;
-    justify-content: center;
+    font-size: 14px;
+    justify-content: space-between;
+    padding: 0 var(--gutter-space) var(--page-bottom-padding)
+      var(--gutter-space);
+
+    .daily-scriptures {
+      flex: 0 1 40%;
+
+      p {
+        margin: 4px 0;
+      }
+    }
+
+    .weekly-meditation {
+      flex: 0 2 50%;
+    }
+
+    h1 {
+      border: 2px solid var(--charcoal-grey);
+      border-left: none;
+      border-right: none;
+      font-weight: normal;
+      margin-bottom: 14px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      text-transform: uppercase;
+      margin: 16px 0 2px 0;
+      font-weight: normal;
+      font-family: var(--sans-serif);
+    }
   }
 `;
 
@@ -49,7 +82,7 @@ function getVersesContent() {
     return (
       <>
         <h2>Content unavailable</h2>
-        <p>Sorry, no verses is available this week.</p>
+        <p>Sorry, no verses are available this week.</p>
       </>
     );
   }
@@ -73,13 +106,31 @@ function getVersesContent() {
   return <div>{verses}</div>;
 }
 
-export default function MeditationsPage() {
-  const {subTitle: meditationSubtitle, content: meditationContent} =
+function renderMeditationContent() {
+  const {subTitle: subTitle, content: content} =
     weeklyMeditations[currentWeekDates[0].date] || {};
 
+  if (content) {
+    return (
+      <>
+        <h3>{subTitle}</h3>
+        {content}
+      </>
+    );
+  }
+
+  return (
+    <>
+      <h2>Content unavailable</h2>
+      Sorry, no weekly meditation is available.
+    </>
+  );
+}
+
+export default function MeditationsPage() {
   return (
     <StyledMeditationsPage>
-      <MainMenubar />
+      <MainMenubar imageSource={choir} />
       <div className="content">
         <div className="daily-scriptures">
           <h1>Daily Scripture Readings</h1>
@@ -87,12 +138,7 @@ export default function MeditationsPage() {
         </div>
         <div className="weekly-meditation">
           <h1>Weekly Meditation</h1>
-          {meditationContent && (
-            <>
-              <h3>{meditationSubtitle}</h3>
-              {meditationContent}
-            </>
-          )}
+          {renderMeditationContent()}
         </div>
       </div>
     </StyledMeditationsPage>

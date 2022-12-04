@@ -15,7 +15,7 @@ const StyledHomePage = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100%;
-  padding-bottom: 64px;
+  padding-bottom: var(--page-bottom-padding);
 
   .content {
     display: flex;
@@ -23,9 +23,7 @@ const StyledHomePage = styled.div`
     flex-direction: column;
     min-height: 100%;
 
-    padding: 0 64px;
-
-    margin: 0 230px;
+    margin: 0 300px;
     text-align: center;
     font-size: 28px;
     color: var(--text-on-dark);

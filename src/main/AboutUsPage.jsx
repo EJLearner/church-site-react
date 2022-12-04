@@ -43,7 +43,8 @@ const StyledAboutUspage = styled.div`
     background-color: var(--second-content-background);
     color: var(--alternate-background-text);
     display: flex;
-    padding: 128px var(--gutter-space) 32px var(--gutter-space);
+    padding: 128px var(--gutter-space) var(--page-bottom-padding)
+      var(--gutter-space);
   }
 
   .history {

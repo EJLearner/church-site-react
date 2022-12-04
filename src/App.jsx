@@ -33,6 +33,7 @@ const GlobalStyle = createGlobalStyle`
     --second-content-text: var(--text-on-light-background);
     --alternate-background-text: var(--charcoal-grey);
     --gutter-space: 64px;
+    --page-bottom-padding: 64px;
 
     line-height: 1.5;
 

@@ -1,19 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import choir from '../assets/images/choir.jpg';
+
 import MainMenubar from './commonComponents/MainMenubar';
 
 const StyledBibleStudyPage = styled.div`
+  background-color: var(--gossamer-veil);
+  min-height: 100%;
+
   .content {
+    color: var(--text-on-light-background);
     display: flex;
     flex-direction: column;
-    margin-top: 32px;
+    padding: 0 var(--gutter-space) var(--page-bottom-padding)
+      var(--gutter-space);
     text-align: center;
   }
 
   h3 {
     font-family: var(--sans-serif);
-    margin: 32px 0 8px 0;
+    margin: 0px 0 8px 0;
   }
 
   p {
@@ -24,7 +31,7 @@ const StyledBibleStudyPage = styled.div`
 const BibleStudyPage = () => {
   return (
     <StyledBibleStudyPage>
-      <MainMenubar />
+      <MainMenubar imageSource={choir} />
       <div className="content">
         <h2>Growing deeper through God’s word</h2>
         <h3>Bible Study</h3>
@@ -35,5 +42,4 @@ const BibleStudyPage = () => {
     </StyledBibleStudyPage>
   );
 };
-
 export default BibleStudyPage;

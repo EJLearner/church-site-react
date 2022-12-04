@@ -13,11 +13,13 @@ const StyledGivingPage = styled.div`
   .content {
     background-color: var(--top-content-background);
     color: var(--top-content-text);
+    padding-top: 32px;
+    padding-bottom: var(--page-bottom-padding);
   }
 
   h1 {
     font-weight: normal;
-    margin: 32px 230px 16px 230px;
+    margin: 0 320px 16px;
     text-align: center;
   }
 
@@ -29,6 +31,11 @@ const StyledGivingPage = styled.div`
 
   .input-fields {
     display: flex;
+    margin-bottom: 32px;
+
+    select {
+      background-color: white;
+    }
   }
 
   .add-another {
@@ -41,7 +48,6 @@ const StyledGivingPage = styled.div`
     color: var(--accent-content);
     text-align: center;
     font-size: 16px;
-    margin: 32px 0;
     padding: 8px;
     text-transform: uppercase;
     width: 250px;
@@ -240,11 +246,11 @@ const GivingPage = () => {
   return (
     <StyledGivingPage>
       <MainMenubar imageSource={choir} />
-      <h1>
-        Thank you for your commitment to City Temple and for your contribution.
-        To make a donation, please submit the form below.
-      </h1>
       <div className="content">
+        <h1>
+          Thank you for your commitment to City Temple and for your
+          contribution. To make a donation, please submit the form below.
+        </h1>
         <form
           action="https://www.paypal.com/cgi-bin/webscr"
           method="post"
