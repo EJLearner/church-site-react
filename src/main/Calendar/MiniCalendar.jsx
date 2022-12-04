@@ -4,10 +4,10 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 
 import commonUtils from '../../utils/commonUtils';
-import {LOGICAL_COLORS} from '../../utils/styleVariables';
 
+import MonthTableBody from './MonthTableBody';
+import MonthTableHeader, {formats as headerFormats} from './MonthTableHeader';
 import calendarDatesUtils from './calendarDatesUtils';
-import withDatesSubscription from './withDatesSubscription';
 
 const CONTROLS = {
   PREV: 'PREV',
@@ -20,21 +20,36 @@ const MiniCalendarStyle = styled.div`
   width: 420px;
 
   .controls-and-month-name {
-    color: ${LOGICAL_COLORS.CT_PRIMARY};
     display: flex;
     font-size: 24px;
     justify-content: space-between;
     margin-bottom: 1em;
 
+    button {
+      background-color: inherit;
+      border: none;
+      padding: 0 20px;
+      min-height: 40px;
+
+      i {
+        padding: 3px;
+        font-size: 20px;
+        border: 1px solid;
+        border-radius: 10px;
+        border-color: rgba(0, 0, 0, 0);
+      }
+
+      &:hover {
+        i {
+          border-color: initial;
+        }
+        cursor: pointer;
+      }
+    }
+
     &.no-controls {
       justify-content: center;
       margin-bottom: 0.3em;
-    }
-
-    i {
-      border: 1px solid gray;
-      border-radius: 10px;
-      padding: 0 5px;
     }
   }
 
@@ -53,21 +68,22 @@ const MiniCalendarStyle = styled.div`
       text-align: center;
       vertical-align: middle;
 
-      &.has-events {
-        background-color: var(--yellow);
-      }
-
       &.clickable {
         cursor: pointer;
       }
 
       &.selected-day div {
         border-radius: 20px / 20px;
-        color: var(--white);
+        background-color: var(--accent-background);
       }
 
       &.selected-week div {
-        color: var(--white);
+        background-color: var(--accent-background);
+      }
+
+      &.has-events div {
+        border-radius: 20px / 20px;
+        background-color: var(--accent-background-2);
       }
     }
 
@@ -82,6 +98,26 @@ const MiniCalendarStyle = styled.div`
 `;
 
 class MiniCalendar extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      allDates: calendarDatesUtils.getAllDates()
+    };
+  }
+
+  componentDidMount() {
+    calendarDatesUtils.listen('mini-calendar', () => {
+      this.setState({
+        allDates: calendarDatesUtils.getAllDates()
+      });
+    });
+  }
+
+  componentWillUnmount() {
+    calendarDatesUtils.unlisten('mini-calendar');
+  }
+
   addMonth(monthsToAdd) {
     if (this.props.onDateChange) {
       const newDate = moment(this.props.selectedDay)
@@ -105,20 +141,6 @@ class MiniCalendar extends Component {
     }
   }
 
-  renderTableHeader() {
-    const headerCells = commonUtils.range(0, 6).map((dayOfWeekIndex) => {
-      const stringDayOfWeek = moment().weekday(dayOfWeekIndex).format('dd');
-
-      return <th key={stringDayOfWeek}>{stringDayOfWeek}</th>;
-    });
-
-    return (
-      <thead>
-        <tr>{headerCells}</tr>
-      </thead>
-    );
-  }
-
   renderTableBodyRow(weekNumber, year) {
     const {
       allDatesClickable,
@@ -128,17 +150,16 @@ class MiniCalendar extends Component {
     } = this.props;
 
     const renderedDays = commonUtils.range(0, 6).map((dayOfWeekIndex) => {
-      const dayMoment = moment(selectedDay)
-        .year(year)
-        .startOf('year')
-        .week(weekNumber)
-        .startOf('week')
-        .add(dayOfWeekIndex, 'days');
+      const dayMoment = calendarDatesUtils.getMomentForYearWeekWeekday(
+        year,
+        weekNumber,
+        dayOfWeekIndex
+      );
 
       const dayString = dayMoment.format('YYYY-MM-DD');
 
       const daysEventsCount = calendarDatesUtils.getEventsForDate(
-        this.props.storedDates,
+        this.state.allDates,
         dayString
       ).length;
 
@@ -182,50 +203,29 @@ class MiniCalendar extends Component {
     return <tr key={weekNumber}>{renderedDays}</tr>;
   }
 
-  renderTableBody() {
-    const todayMoment = moment(this.props.selectedDay);
-    const firstWeekOfMonth = todayMoment.startOf('month').week();
-    const lastWeekOfMonth = todayMoment.endOf('month').week();
-    const includesNextYear = lastWeekOfMonth === 1;
-
-    let lastWeekOfMonthInSameYear = lastWeekOfMonth;
-    if (includesNextYear) {
-      lastWeekOfMonthInSameYear = todayMoment
-        .endOf('month')
-        .subtract(1, 'weeks')
-        .week();
-    }
-
-    const weekNumbers = commonUtils.range(
-      firstWeekOfMonth,
-      lastWeekOfMonthInSameYear + 1
-    );
-
-    const year = todayMoment.year();
-
-    const renderedWeeks = weekNumbers.map((week) => {
-      return this.renderTableBodyRow(week, year);
-    });
-
-    if (includesNextYear) {
-      renderedWeeks.push(this.renderTableBodyRow(1, year + 1));
-    }
-
-    return <tbody>{renderedWeeks}</tbody>;
-  }
-
   renderControls(control) {
     if (!this.props.yearDisplayMode) {
-      const isPrev = control === CONTROLS.PREV;
-      const direction = isPrev ? 'left' : 'right';
-      const addition = isPrev ? -1 : 1;
+      let direction;
+      let addition;
+      let previousOrNext;
+
+      if (control === CONTROLS.PREV) {
+        direction = 'left';
+        addition = -1;
+        previousOrNext = 'previous';
+      } else {
+        direction = 'right';
+        addition = 1;
+        previousOrNext = 'next';
+      }
 
       return (
-        <i
-          className={`fa fa-angle-double-${direction}`}
+        <button
           onClick={() => this.addMonth(addition)}
-          tabIndex="0"
-        />
+          title={`Change to ${previousOrNext} month.`}
+        >
+          <i className={`fa fa-angle-double-${direction}`} />
+        </button>
       );
     }
   }
@@ -245,8 +245,13 @@ class MiniCalendar extends Component {
           {this.renderControls(CONTROLS.NEXT)}
         </div>
         <table>
-          {this.renderTableHeader()}
-          {this.renderTableBody()}
+          <MonthTableHeader format={headerFormats.twoChars} />
+          <MonthTableBody
+            renderRow={(weekNumber, year) =>
+              this.renderTableBodyRow(weekNumber, year)
+            }
+            todayMoment={moment(this.props.selectedDay)}
+          />
         </table>
       </MiniCalendarStyle>
     );
@@ -260,7 +265,6 @@ MiniCalendar.propTypes = {
   onDateChange: PropTypes.func,
   onDateClick: PropTypes.func,
   selectedDay: PropTypes.string,
-  storedDates: PropTypes.object,
   yearDisplayMode: PropTypes.bool
 };
 
@@ -271,4 +275,4 @@ MiniCalendar.defaultProps = {
   yearDisplayMode: false
 };
 
-export default withDatesSubscription(MiniCalendar);
+export default MiniCalendar;

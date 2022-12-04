@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import moment from 'moment';
 
 import firebase from '../../firebase';
 import constants from '../../utils/constants';
@@ -37,7 +38,18 @@ const loadDates = () => {
 loadDates();
 
 const calendarDatesUtils = {
-  getAllDates: () => datesStore,
+  getMomentForYearWeekWeekday(year, weekNumber, dayOfWeekIndex) {
+    const dayMoment = moment()
+      .year(year)
+      .startOf('year')
+      .week(weekNumber)
+      .startOf('week')
+      .add(dayOfWeekIndex, 'day');
+
+    return dayMoment;
+  },
+
+  getAllDates: () => ({...datesStore}),
 
   getEventsForDate: (allDates, dateString) => {
     const dateObject = allDates[dateString];

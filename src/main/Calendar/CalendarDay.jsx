@@ -16,8 +16,10 @@ class CalendarDay extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.selectedDay !== this.props.selectedDay) {
-      this.setState({selectedDay: this.props.selectedDay});
+    const currentSelectedDay = this.props.selectedDay;
+
+    if (prevProps.selectedDay !== currentSelectedDay) {
+      this.setState({selectedDay: currentSelectedDay});
     }
   }
 
@@ -42,6 +44,7 @@ class CalendarDay extends Component {
     return (
       <EventsListPage
         dates={[this.state.selectedDay]}
+        emptyMessage="No events listed for this date"
         onDateChange={(dayString) => this.onDateChange(dayString)}
         pageTitle={pageTitle}
         selectedDay={this.state.selectedDay}

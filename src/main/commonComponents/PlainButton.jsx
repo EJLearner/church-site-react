@@ -10,10 +10,9 @@ const PlainButton = styled.button`
   font-weight: inherit;
   padding: 0;
   text-align: left;
-  transition: transform 0.1s;
 
   &:hover {
-    transform: scale(1.02);
+    text-decoration: underline;
   }
 `;
 

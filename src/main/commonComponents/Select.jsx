@@ -7,6 +7,10 @@ import InputLabel from './InputLabel';
 const SelectStyle = styled.div`
   display: inline-block;
   margin: 1em 16px 0.5em 0;
+
+  select {
+    background-color: white;
+  }
 `;
 
 function renderedOptions(options) {
@@ -21,9 +25,19 @@ function renderedOptions(options) {
   });
 }
 
-const Select = ({onChange, id, labelSameLine, options, value, label}) => {
+const Select = ({
+  className,
+  onChange,
+  id,
+  labelSameLine,
+  options,
+  value,
+  label
+}) => {
   return (
-    <SelectStyle className="select-outer-div">
+    <SelectStyle
+      className={['select-outer-div', className].filter(Boolean).join(' ')}
+    >
       {label && (
         <InputLabel htmlFor={id} inline={labelSameLine}>
           {label}
@@ -42,6 +56,7 @@ const Select = ({onChange, id, labelSameLine, options, value, label}) => {
 };
 
 Select.propTypes = {
+  className: PropTypes.string,
   id: PropTypes.string,
   label: PropTypes.string,
   labelSameLine: PropTypes.bool,

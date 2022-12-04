@@ -16,17 +16,21 @@ const GlobalStyle = createGlobalStyle`
     --white: rgb(240, 240, 240);
     --gossamer-veil: rgb(240, 238, 235);
     --charcoal-grey: rgb(38, 38, 38);
+    --maroon: rgb(142, 19, 27);
 
     --background: var(--black);
     --content: var(--white);
 
     --standard-background: var(--background);
+    --light-background: var(--white);
     --text-on-dark-background: var(--content);
     --text-on-light-background: var(--black);
     --accent-background: rgb(255,192,0);
+    --accent-background-2: var(--maroon);
     --accent-content: var(--text-on-light-background);
 
     --standard-border: var(--content);
+    --border-on-light: var(--black);
     --top-content-background: var(--white);
     --top-content-text: var(--text-on-light-background);
     --second-content-background: var(--gossamer-veil);

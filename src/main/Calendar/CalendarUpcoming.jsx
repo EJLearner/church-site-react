@@ -47,9 +47,11 @@ class CalendarUpcoming extends Component {
     return (
       <EventsListPage
         dates={getDates(10, selectedDay, storedDates)}
+        emptyMessage="No events listed past this date"
         onDateChange={(dayString) => this.setState({selectedDay: dayString})}
         pageTitle="Upcoming Events"
         selectedDay={selectedDay}
+        showDates
         storedDates={storedDates}
       />
     );

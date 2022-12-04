@@ -20,6 +20,7 @@ const CalendarMenuBarStyles = styled.div`
       display: inline-block;
       justify-content: flex-start;
       min-width: initial;
+      margin-bottom: 0;
       padding: 0;
       width: initial;
       list-style-type: none;
@@ -42,6 +43,10 @@ const CalendarMenuBarStyles = styled.div`
       text-decoration: none;
     }
 
+    li a:hover {
+      text-decoration: underline;
+    }
+
     li.current-page-link {
       border: 1px solid gray;
       border-bottom: none;
@@ -61,8 +66,7 @@ const CalendarMenuBarStyles = styled.div`
       bottom: 0;
       border-bottom: 1px solid gray;
       display: inline-block;
-      position: absolute;
-      width: 20%;
+      width: 5%;
     }
   }
 `;
@@ -109,8 +113,9 @@ class MenuBar extends Component {
 
     return (
       <CalendarMenuBarStyles className="menu-bar" id={this.props.id}>
+        <div className="empty-space">&nbsp;</div>
         <ul>{renderedLinks}</ul>
-        <div className="empty-space" />
+        <div className="empty-space">&nbsp;</div>
       </CalendarMenuBarStyles>
     );
   }

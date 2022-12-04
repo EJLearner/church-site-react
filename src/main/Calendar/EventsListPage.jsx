@@ -19,6 +19,7 @@ const EventsListPageStyles = styled.div`
     border-radius: 20px;
     padding: 1em;
     min-width: 400px;
+    margin-right: 2em;
   }
 
   .mini-calendar-wrapper {
@@ -29,6 +30,8 @@ const EventsListPageStyles = styled.div`
     .title {
       color: black;
     }
+
+    margin-bottom: 2em;
   }
 `;
 
@@ -80,70 +83,77 @@ class EventsListPage extends Component {
   }
 
   renderEvents() {
-    const {dates, storedDates} = this.props;
+    const {dates, showDates, storedDates} = this.props;
 
-    const dateEvents = [];
+    const showDate = showDates || dates.length > 1;
 
-    const showDate = dates.length > 1;
+    return dates
+      .reduce((allEvents, date) => {
+        const eventsForDate = calendarDatesUtils.getEventsForDate(
+          storedDates,
+          date
+        );
 
-    dates.forEach((date) => {
-      const eventsForDate = calendarDatesUtils.getEventsForDate(
-        storedDates,
-        date
-      );
+        const eventsForDateWithDateAddedAsProp = eventsForDate.map((event) => {
+          let eventWithDate;
+          if (typeof event === 'object') {
+            eventWithDate = {...event};
+          } else {
+            eventWithDate = {
+              title: event
+            };
+          }
 
-      const eventsForDateWithDateAddedAsProp = eventsForDate.map((event) => {
-        let eventWithDate;
+          eventWithDate.date = date;
+          return eventWithDate;
+        });
+
+        allEvents.push(...eventsForDateWithDateAddedAsProp);
+
+        return allEvents;
+      }, [])
+      .map((event, index) => {
         if (typeof event === 'object') {
-          eventWithDate = {...event};
-        } else {
-          eventWithDate = {
-            title: event
-          };
+          const {date, longDescription} = event;
+          const timeDivs = this.renderTimeDivs(event, showDate, date);
+
+          const htmlToReactParser = new HtmlToReactParser();
+          const longDescriptionRender =
+            htmlToReactParser.parse(longDescription);
+
+          return (
+            <div className="day-event" key={index}>
+              <div className="title">{event.title}</div>
+              {timeDivs.start}
+              {timeDivs.end}
+              <div className="location">{event.location}</div>
+              <div className="long-description">{longDescriptionRender}</div>
+            </div>
+          );
         }
-
-        eventWithDate.date = date;
-        return eventWithDate;
-      });
-
-      dateEvents.push(...eventsForDateWithDateAddedAsProp);
-    });
-
-    return dateEvents.map((event, index) => {
-      if (typeof event === 'object') {
-        const {date, longDescription} = event;
-        const timeDivs = this.renderTimeDivs(event, showDate, date);
-
-        const htmlToReactParser = new HtmlToReactParser();
-        const longDescriptionRender = htmlToReactParser.parse(longDescription);
 
         return (
           <div className="day-event" key={index}>
-            <div className="title">{event.title}</div>
-            {timeDivs.start}
-            {timeDivs.end}
-            <div className="location">{event.location}</div>
-            <div className="long-description">{longDescriptionRender}</div>
+            <div className="title">{event}</div>
           </div>
         );
-      }
-
-      return (
-        <div className="day-event" key={index}>
-          <div className="title">{event}</div>
-        </div>
-      );
-    });
+      });
   }
 
   render() {
-    const {highlightWeek, onDateChange, pageTitle, selectedDay, subTitle} =
-      this.props;
+    const {
+      emptyMessage,
+      highlightWeek,
+      onDateChange,
+      pageTitle,
+      selectedDay,
+      subTitle
+    } = this.props;
 
     const renderedEvents = this.renderEvents();
     const renderEventsOrNoEvents = renderedEvents.length
       ? renderedEvents
-      : 'No Events Listed';
+      : emptyMessage;
 
     return (
       <EventsListPageStyles className="events-list-page">
@@ -168,12 +178,20 @@ class EventsListPage extends Component {
 
 EventsListPage.propTypes = {
   dates: PropTypes.array.isRequired,
+  emptyMessage: PropTypes.string,
   highlightWeek: PropTypes.bool,
   onDateChange: PropTypes.func.isRequired,
   pageTitle: PropTypes.string.isRequired,
   selectedDay: PropTypes.string.isRequired,
+  // always show dates for event list even when there is just one event
+  // useful for upcoming events when events for other dates are displayed
+  showDates: PropTypes.bool,
   storedDates: PropTypes.object,
   subTitle: PropTypes.string
+};
+
+EventsListPage.defaultProps = {
+  emptyMessage: 'No Events Listed'
 };
 
 export default EventsListPage;

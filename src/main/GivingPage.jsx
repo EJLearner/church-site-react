@@ -10,8 +10,10 @@ import SelectState from './commonComponents/SelectState';
 import Textbox from './commonComponents/Textbox';
 
 const StyledGivingPage = styled.div`
+  background-color: var(--top-content-background);
+  min-height: 100%;
+
   .content {
-    background-color: var(--top-content-background);
     color: var(--top-content-text);
     padding-top: 32px;
     padding-bottom: var(--page-bottom-padding);

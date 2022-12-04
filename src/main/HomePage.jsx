@@ -48,17 +48,10 @@ const StyledHomePage = styled.div`
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-    transition: transform 0.1s;
-  }
-
-  a.service-link:hover {
-    text-decoration: none;
-    transform: scale(1.02);
   }
 
   a.service-link:visited {
     color: var(--accent-content);
-
     font-weight: bold;
   }
 `;

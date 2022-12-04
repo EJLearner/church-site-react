@@ -9,6 +9,8 @@ import routePaths from '../../routePaths';
 import commonUtils from '../../utils/commonUtils';
 import Select from '../commonComponents/Select';
 
+import MonthTableBody from './MonthTableBody';
+import MonthTableHeader, {formats as headerFormats} from './MonthTableHeader';
 import calendarDatesUtils from './calendarDatesUtils';
 import withDatesSubscription from './withDatesSubscription';
 
@@ -16,9 +18,93 @@ const MonthCalendarStyle = styled.div`
   background-color: white;
   border-radius: 20px;
   max-width: 1200px;
+  padding: 16px;
 
   .controls-and-title {
     background-color: white;
+  }
+
+  .controls-and-title {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    .drop-downs {
+      width: 300px;
+    }
+
+    .month-select-lists {
+      select {
+        border-radius: 4px;
+      }
+    }
+
+    .month-arrows {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    .month-arrows h2 {
+      font-weight: normal;
+      margin: 0.8em 1em;
+      width: 150px;
+      text-align: center;
+    }
+
+    .empty-space {
+      width: 300px;
+    }
+    button {
+      // would rather use "initial" but that doesn't work for IE11
+      background-color: initial;
+      border: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .month-calendar-table {
+    border-collapse: collapse;
+    box-sizing: border-box;
+    width: 100%;
+
+    th,
+    td {
+      border: 1px solid rgb(200, 200, 200);
+      padding: 5px;
+    }
+
+    th {
+      font-weight: normal;
+    }
+
+    td.other-month {
+      color: var(--calendar-other-month-content);
+    }
+
+    td {
+      height: 75px;
+      width: 150px;
+    }
+
+    td > div {
+      width: 100%;
+      height: 100%;
+      padding: 5px;
+    }
+
+    td > div .date-area {
+      padding-bottom: 8px;
+    }
+
+    td > div .events-area {
+      font-size: 11px;
+      height: 38px;
+      overflow-y: auto;
+    }
   }
 
   .event-link {
@@ -62,20 +148,6 @@ class CalendarMonth extends Component {
     this.setState({selectedMoment});
   }
 
-  renderTableHeader() {
-    const headerCells = commonUtils.range(0, 7).map((dayOfWeekIndex) => {
-      const stringDayOfWeek = moment().weekday(dayOfWeekIndex).format('dddd');
-
-      return <th key={stringDayOfWeek}>{stringDayOfWeek}</th>;
-    });
-
-    return (
-      <thead>
-        <tr>{headerCells}</tr>
-      </thead>
-    );
-  }
-
   renderDaysEvents(dateString) {
     const daysEventsData = calendarDatesUtils.getEventsForDate(
       this.props.storedDates,
@@ -104,14 +176,12 @@ class CalendarMonth extends Component {
   }
 
   renderTableBodyRow(weekNumber, year) {
-    const renderedDays = commonUtils.range(0, 7).map((dayOfWeekIndex) => {
-      const dayMoment = this.state.selectedMoment
-        .clone()
-        .year(year)
-        .startOf('year')
-        .week(weekNumber)
-        .startOf('week')
-        .add(dayOfWeekIndex, 'day');
+    const renderedDays = commonUtils.range(0, 6).map((dayOfWeekIndex) => {
+      const dayMoment = calendarDatesUtils.getMomentForYearWeekWeekday(
+        year,
+        weekNumber,
+        dayOfWeekIndex
+      );
 
       const dayEvents = this.renderDaysEvents(dayMoment.format('YYYY-MM-DD'));
 
@@ -141,37 +211,6 @@ class CalendarMonth extends Component {
     return <tr key={weekNumber}>{renderedDays}</tr>;
   }
 
-  renderTableBody() {
-    const todayMoment = this.state.selectedMoment;
-    const firstWeekOfMonth = todayMoment.startOf('month').week();
-    const lastWeekOfMonth = todayMoment.endOf('month').week();
-    const includesNextYear = lastWeekOfMonth === 1;
-
-    let lastWeekOfMonthInSameYear = lastWeekOfMonth;
-    if (includesNextYear) {
-      lastWeekOfMonthInSameYear = todayMoment
-        .endOf('month')
-        .subtract(1, 'weeks')
-        .week();
-    }
-
-    const weekNumbers = commonUtils.range(
-      firstWeekOfMonth,
-      lastWeekOfMonthInSameYear + 1
-    );
-
-    const year = todayMoment.year();
-    const renderedWeeks = weekNumbers.map((week) =>
-      this.renderTableBodyRow(week, year)
-    );
-
-    if (includesNextYear) {
-      renderedWeeks.push(this.renderTableBodyRow(1, year + 1));
-    }
-
-    return <tbody>{renderedWeeks}</tbody>;
-  }
-
   renderYearDropDown() {
     // make these props
     const currentYear = moment().year();
@@ -187,6 +226,7 @@ class CalendarMonth extends Component {
 
     return (
       <Select
+        className="month-select-lists"
         onChange={this.onChangeYear}
         options={options}
         value={this.state.selectedMoment.format('YYYY')}
@@ -197,7 +237,7 @@ class CalendarMonth extends Component {
   renderMonthDropDown() {
     const selectedMonth = this.state.selectedMoment.format('MMM').toLowerCase();
 
-    const options = commonUtils.range(0, 12).map((monthNum) => {
+    const options = commonUtils.range(0, 11).map((monthNum) => {
       const momentMonth = moment().month(monthNum);
       return {
         label: momentMonth.format('MMMM'),
@@ -207,6 +247,7 @@ class CalendarMonth extends Component {
 
     return (
       <Select
+        className="month-select-lists"
         onChange={this.onChangeMonth}
         options={options}
         value={selectedMonth}
@@ -234,8 +275,13 @@ class CalendarMonth extends Component {
           <div className="empty-space" />
         </div>
         <table className="month-calendar-table">
-          {this.renderTableHeader()}
-          {this.renderTableBody()}
+          <MonthTableHeader format={headerFormats.twoChars} />
+          <MonthTableBody
+            renderRow={(weekNumber, year) =>
+              this.renderTableBodyRow(weekNumber, year)
+            }
+            todayMoment={this.state.selectedMoment}
+          />
         </table>
       </MonthCalendarStyle>
     );
@@ -248,7 +294,7 @@ CalendarMonth.propTypes = {
   storedDates: PropTypes.object
 };
 
-CalendarMonth.propTypes = {
+CalendarMonth.defaultPropTypes = {
   id: 'calendar-month-div',
   isCe: false
 };

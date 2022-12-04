@@ -2,14 +2,35 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 import {Redirect} from 'react-router';
+import styled from 'styled-components';
 
 import routePaths from '../../routePaths';
 import commonUtils from '../../utils/commonUtils';
 
 import MiniCalendar from './MiniCalendar';
 
+const StyledCalendarYear = styled.div`
+  margin: auto;
+
+  h2 {
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .year-calendar-months-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .yearly-calendar-month-wrapper {
+    margin: 1em;
+  }
+`;
+
 function getMiniCalendarMonths(firstMonth) {
-  return commonUtils.range(0, 12).map((monthsAdded) => {
+  return commonUtils.range(0, 11).map((monthsAdded) => {
     return moment(firstMonth).add(monthsAdded, 'months').format('YYYY-MM-DD');
   });
 }
@@ -65,12 +86,12 @@ class CalendarYear extends Component {
     }
 
     return (
-      <div className="year-calendar-content">
-        <h2>Events This Year</h2>
+      <StyledCalendarYear>
+        <h2>Long Term Events Calendar</h2>
         <div className="year-calendar-months-display">
           {this.renderMonths()}
         </div>
-      </div>
+      </StyledCalendarYear>
     );
   }
 }
