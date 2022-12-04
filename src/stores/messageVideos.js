@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2022-12-04T09:00:00',
+    youtubeId: 'BmiBgvB5Snk',
+    title: 'Divine Illumination!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 1:1-9 NLT'
+  },
+  {
     date: '2022-11-27T09:00:00',
     youtubeId: 'WDljIsS-mb0',
     title: 'What We Need to Know When Believing Is Not Enough!',
