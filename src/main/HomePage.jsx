@@ -8,7 +8,6 @@ import Anchor from './commonComponents/Anchor';
 import MainMenubar from './commonComponents/MainMenubar';
 
 const StyledHomePage = styled.div`
-  background-attachment: fixed;
   background: var(--black);
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(${choir});

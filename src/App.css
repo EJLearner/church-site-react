@@ -1,4 +1,6 @@
 html {
   height: 100%;
   font-family: var(--sans-serif);
+  /* how do I get this without the black line? */
+  /* scrollbar-gutter: stable; */
 }

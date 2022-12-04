@@ -15,8 +15,9 @@ import Verse from './commonComponents/Verse';
 // area
 
 const StyledMeditationsPage = styled.div`
+  background-color: var(--gossamer-veil);
+  min-height: 100%;
   .content {
-    background-color: var(--gossamer-veil);
     color: var(--text-on-light-background);
     display: flex;
     font-size: 14px;

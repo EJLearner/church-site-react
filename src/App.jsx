@@ -41,7 +41,8 @@ const GlobalStyle = createGlobalStyle`
       background-color: var(--standard-background);
       height: 100%;
       padding: 0px;
-      margin: 0px;
+      margin: 0;
+
     }
 
     #root {
