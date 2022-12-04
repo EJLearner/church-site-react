@@ -79,7 +79,21 @@ const bibleComFormattedVerses = {
   '2022-11-23': {verse: 'Romans 14.10-12'},
   '2022-11-24': {verse: 'Hebrews 9.23-28'},
   '2022-11-25': {verse: 'John 12.20-26'},
-  '2022-11-26': {verse: '2 Thessalonians 1.5-12'}
+  '2022-11-26': {verse: '2 Thessalonians 1.5-12'},
+  '2022-11-27': {verse: 'Psalm 100'},
+  '2022-11-28': {verse: 'Zechariah 14.1-11'},
+  '2022-11-29': {verse: 'Acts 3.17-26'},
+  '2022-11-30': {verse: 'Romans 14.10-12'},
+  '2022-12-01': {verse: 'Hebrews 9.23-28'},
+  '2022-12-02': {verse: 'John 12.20-26'},
+  '2022-12-03': {verse: '2 Thessalonians 1.5-12'},
+  '2022-12-04': {verse: 'Psalm 72.1-8'},
+  '2022-12-05': {verse: 'Luke 1.5-25'},
+  '2022-12-06': {verse: 'Luke 1.57-80'},
+  '2022-12-07': {verse: 'Matthew 3.1-12'},
+  '2022-12-08': {verse: 'Isaiah 62.1-12'},
+  '2022-12-09': {verse: 'Luke 12.35-48'},
+  '2022-12-10': {verse: 'Isaiah 51.1-8'}
 };
 
 export {bibleComFormattedVerses};
