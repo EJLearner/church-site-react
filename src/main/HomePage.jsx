@@ -8,6 +8,9 @@ import Anchor from './commonComponents/Anchor';
 import MainMenubar from './commonComponents/MainMenubar';
 
 const StyledHomePage = styled.div`
+  // TODO: need to figoure out how to not have a scrollbar when on a high resolution but still have
+  // some space below the button when on a lower resolution
+
   background: var(--black);
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(${choir});
