@@ -8,16 +8,12 @@ import Anchor from './commonComponents/Anchor';
 import MainMenubar from './commonComponents/MainMenubar';
 
 const StyledHomePage = styled.div`
-  // TODO: need to figoure out how to not have a scrollbar when on a high resolution but still have
-  // some space below the button when on a lower resolution
-
   background: var(--black);
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(${choir});
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100%;
-  padding-bottom: var(--page-bottom-padding);
 
   .content {
     display: flex;
@@ -32,12 +28,18 @@ const StyledHomePage = styled.div`
   }
 
   h1 {
-    font-size: 48px;
+    font-size: 46px;
     margin-top: 0;
   }
 
   .worship-time {
     font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .anchor-wrapper {
+    padding-bottom: 64px;
   }
 
   a.service-link {
@@ -46,8 +48,9 @@ const StyledHomePage = styled.div`
     color: var(--accent-content);
     display: block;
     font-size: 16px;
+    letter-spacing: 2px;
     margin-top: 21px;
-    padding: 16px;
+    padding: 8px 32px;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
@@ -74,9 +77,11 @@ function HomePage() {
           We shall become a spiritually mature Christian fellowship in order to
           provide an effective witness for Christ in this world!
         </p>
-        <Anchor className="service-link" path={routePaths.MAIN_WATCH}>
-          Watch Our Latest Service
-        </Anchor>
+        <div className="anchor-wrapper">
+          <Anchor className="service-link" path={routePaths.MAIN_WATCH}>
+            Watch Our Latest Service
+          </Anchor>
+        </div>
       </div>
     </StyledHomePage>
   );

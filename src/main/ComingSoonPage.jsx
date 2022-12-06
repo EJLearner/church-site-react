@@ -12,8 +12,6 @@ const StyleWrapper = styled.div`
   }
 `;
 
-// TODO need redirect here
-
 function RemovedPage() {
   return (
     <StyleWrapper>

@@ -30,7 +30,9 @@ const CalendarPageStyles = styled.div`
     flex-direction: column;
     padding: 1em;
     padding: 0 var(--gutter-space);
+
     h1 {
+      font-weight: normal;
       margin-top: 0;
       text-transform: uppercase;
     }

@@ -5,7 +5,7 @@ import choir from '../assets/images/choir.jpg';
 
 import MainMenubar from './commonComponents/MainMenubar';
 
-const ContactPage = styled.div`
+const StyledContactPage = styled.div`
   background: var(--black);
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(${choir});
@@ -28,7 +28,7 @@ const ContactPage = styled.div`
 
 const BibleStudyPage = () => {
   return (
-    <ContactPage>
+    <StyledContactPage>
       <MainMenubar />
       <div className="content">
         <h2>Want to know more?</h2>
@@ -45,7 +45,7 @@ const BibleStudyPage = () => {
           <br />
         </p>
       </div>
-    </ContactPage>
+    </StyledContactPage>
   );
 };
 

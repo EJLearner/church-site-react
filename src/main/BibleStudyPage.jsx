@@ -20,7 +20,11 @@ const StyledBibleStudyPage = styled.div`
 
   h3 {
     font-family: var(--sans-serif);
-    margin: 0px 0 8px 0;
+    margin: 16px 0 8px 0;
+  }
+
+  h3:last-of-type {
+    margin-top: 32px;
   }
 
   p {

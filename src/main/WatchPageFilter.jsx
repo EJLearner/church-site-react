@@ -2,17 +2,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-import {LOGICAL_COLORS} from '../utils/styleVariables';
-
 import Button, {BUTTON_COLORS, SHAPES} from './commonComponents/Button/Button';
 import Textbox from './commonComponents/Textbox';
 
-const Filter = styled.div`
+const StyledWatchPageFilter = styled.div`
   padding-left: 2em;
   margin-bottom: 4em;
 
   h3 {
-    color: ${(props) => props.textColor || LOGICAL_COLORS.STANDARD_TEXT};
     font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
@@ -33,8 +30,7 @@ function WatchPageFilter({
   searchInfo,
   setSearchInfo,
   onFilterClick,
-  onResetClick,
-  textColor
+  onResetClick
 }) {
   const updateTextbox = (newValue, id) => {
     setSearchInfo({
@@ -49,7 +45,7 @@ function WatchPageFilter({
   };
 
   return (
-    <Filter textColor={textColor}>
+    <StyledWatchPageFilter>
       <h3>Filter:</h3>
       <div className="textboxes">
         <div>
@@ -96,7 +92,7 @@ function WatchPageFilter({
           Clear
         </Button>
       </div>
-    </Filter>
+    </StyledWatchPageFilter>
   );
 }
 
@@ -110,8 +106,7 @@ WatchPageFilter.propTypes = {
   onFilterClick: PropTypes.func.isRequired,
   onResetClick: PropTypes.func.isRequired,
   searchInfo: PropTypes.object.isRequired,
-  setSearchInfo: PropTypes.func.isRequired,
-  textColor: PropTypes.string
+  setSearchInfo: PropTypes.func.isRequired
 };
 
 export default WatchPageFilter;

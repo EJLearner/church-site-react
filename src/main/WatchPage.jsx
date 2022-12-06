@@ -1,20 +1,18 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
+import choir from '../assets/images/choir.jpg';
 import messageVideos from '../stores/messageVideos';
 import {
   convertTypedDateToIso,
   getLongDisplayDate
 } from '../utils/dateTimeUtils';
-import {LOGICAL_COLORS, COLORS} from '../utils/styleVariables';
 
 import WatchPageFilter from './WatchPageFilter';
-import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
+import MainMenubar from './commonComponents/MainMenubar';
 import PlainButton from './commonComponents/PlainButton';
-import StandardPageWrapper from './commonComponents/StandardPageWrapper';
 
 const INITIAL_VIDEO_SHOW_COUNT = 10;
-const PAGE_TEXT_COLOR = COLORS.GRAY95;
 
 const FIELD_IDS = Object.freeze({
   titleSearchId: 'title-search',
@@ -30,19 +28,25 @@ const initialSearchInfo = {
   [FIELD_IDS.scriptureSearchId]: ''
 };
 
-const StyleWrapper = styled.div`
-  padding: 1em 0;
-  color: ${PAGE_TEXT_COLOR};
-  font-weight: bold;
-  font-size: 14px;
+const StyledWatchPage = styled.div`
+  background-color: var(--gossamer-veil);
+  color: var(--text-on-light-background);
+  min-height: 100%;
+
+  .content {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 var(--gutter-space) var(--page-bottom-padding)
+      var(--gutter-space);
+  }
 
   h2 {
-    color: ${LOGICAL_COLORS.CT_PRIMARY};
+    color: var(--watch-page-text-accent);
   }
 
   .preacher-and-scripture {
     .value {
-      color: ${LOGICAL_COLORS.CT_PRIMARY};
+      color: var(--watch-page-text-accent);
     }
 
     div {
@@ -56,7 +60,6 @@ const StyleWrapper = styled.div`
 
   .date {
     font-weight: bold;
-    color: ${PAGE_TEXT_COLOR};
     line-height: 200%;
   }
 
@@ -91,7 +94,7 @@ const StyleWrapper = styled.div`
         display: inline-block;
 
         .value {
-          color: ${LOGICAL_COLORS.CT_PRIMARY};
+          color: var(--watch-page-text-accent);
         }
 
         & + .label-value {
@@ -112,7 +115,7 @@ const StyleWrapper = styled.div`
         font-weight: bold;
         margin-top: 0;
         margin-bottom: 0.5em;
-        color: ${LOGICAL_COLORS.CT_PRIMARY};
+        color: var(--watch-page-text-accent);
       }
     }
   }
@@ -128,7 +131,7 @@ const StyleWrapper = styled.div`
     }
 
     i {
-      color: ${LOGICAL_COLORS.CT_PRIMARY};
+      color: var(--watch-page-text-accent);
     }
   }
 `;
@@ -265,29 +268,27 @@ const WatchPage = () => {
   const renderShowMoreContent = filteredVideos.length >= archiveVideoShowCount;
 
   return (
-    <StandardPageWrapper>
-      <ContentAndSubCompassWrapper>
-        <StyleWrapper>
-          {renderNewestVideo(newestVideo)}
-          <WatchPageFilter
-            ids={FIELD_IDS}
-            onFilterClick={() =>
-              setFilteredVideos(filterVideos(otherVideos, searchInfo))
-            }
-            onResetClick={() => {
-              setSearchInfo(initialSearchInfo);
-              setFilteredVideos(filterVideos(otherVideos, initialSearchInfo));
-            }}
-            searchInfo={searchInfo}
-            setSearchInfo={setSearchInfo}
-            textColor={PAGE_TEXT_COLOR}
-          />
-          {renderArchiveVideos(displayedVideos)}
-          {renderShowMoreContent &&
-            renderShowMore(setArchiveVideoShowCount, archiveVideoShowCount)}
-        </StyleWrapper>
-      </ContentAndSubCompassWrapper>
-    </StandardPageWrapper>
+    <StyledWatchPage>
+      <MainMenubar imageSource={choir} />
+      <div className="content">
+        {renderNewestVideo(newestVideo)}
+        <WatchPageFilter
+          ids={FIELD_IDS}
+          onFilterClick={() =>
+            setFilteredVideos(filterVideos(otherVideos, searchInfo))
+          }
+          onResetClick={() => {
+            setSearchInfo(initialSearchInfo);
+            setFilteredVideos(filterVideos(otherVideos, initialSearchInfo));
+          }}
+          searchInfo={searchInfo}
+          setSearchInfo={setSearchInfo}
+        />
+        {renderArchiveVideos(displayedVideos)}
+        {renderShowMoreContent &&
+          renderShowMore(setArchiveVideoShowCount, archiveVideoShowCount)}
+      </div>
+    </StyledWatchPage>
   );
 };
 

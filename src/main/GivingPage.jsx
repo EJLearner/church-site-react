@@ -21,6 +21,7 @@ const StyledGivingPage = styled.div`
 
   h1 {
     font-weight: normal;
+    line-height: 120%;
     margin: 0 320px 16px;
     text-align: center;
   }
@@ -33,6 +34,7 @@ const StyledGivingPage = styled.div`
 
   .input-fields {
     display: flex;
+
     margin-bottom: 32px;
 
     select {
@@ -48,6 +50,7 @@ const StyledGivingPage = styled.div`
     background-color: var(--accent-background);
     border-radius: 4px;
     color: var(--accent-content);
+    letter-spacing: 2px;
     text-align: center;
     font-size: 16px;
     padding: 8px;

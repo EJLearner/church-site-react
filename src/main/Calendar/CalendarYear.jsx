@@ -87,7 +87,7 @@ class CalendarYear extends Component {
 
     return (
       <StyledCalendarYear>
-        <h2>Long Term Events Calendar</h2>
+        <h2>Yearly Events Calendar</h2>
         <div className="year-calendar-months-display">
           {this.renderMonths()}
         </div>

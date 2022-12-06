@@ -11,9 +11,6 @@ import {getStartOfWeek} from '../utils/dateTimeUtils';
 import MainMenubar from './commonComponents/MainMenubar';
 import Verse from './commonComponents/Verse';
 
-// TODO br: when content is empty, need to maintain space between scriptures and meditation
-// area
-
 const StyledMeditationsPage = styled.div`
   background-color: var(--gossamer-veil);
   min-height: 100%;

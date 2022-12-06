@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
     --gossamer-veil: rgb(240, 238, 235);
     --charcoal-grey: rgb(38, 38, 38);
     --maroon: rgb(142, 19, 27);
+    --light-blue: rgb(51, 204, 204);
 
     --background: var(--black);
     --content: var(--white);
@@ -24,13 +25,13 @@ const GlobalStyle = createGlobalStyle`
     --standard-background: var(--background);
     --light-background: var(--white);
     --text-on-dark-background: var(--content);
-    --text-on-light-background: var(--black);
+    --text-on-light-background: var(--charcoal-grey);
     --accent-background: rgb(255,192,0);
-    --accent-background-2: var(--maroon);
+    --accent-background-2: var(--light-blue);
     --accent-content: var(--text-on-light-background);
 
     --standard-border: var(--content);
-    --border-on-light: var(--black);
+    --border-on-light: var(--charcoal-grey);
     --top-content-background: var(--white);
     --top-content-text: var(--text-on-light-background);
     --second-content-background: var(--gossamer-veil);
@@ -38,6 +39,8 @@ const GlobalStyle = createGlobalStyle`
     --alternate-background-text: var(--charcoal-grey);
     --gutter-space: 64px;
     --page-bottom-padding: 64px;
+
+    --watch-page-text-accent: var(--maroon);
 
     line-height: 1.5;
 
@@ -68,12 +71,9 @@ const GlobalStyle = createGlobalStyle`
     }
 
     input, select {
-      border: 1px solid var(--black);
+      border: 1px solid var(--charcoal-grey);
       border-radius: 0;
       font-size: 14px;
-      padding: 0.2em;
-
-      font-size: 20px;
       padding: 6px;
     }
   }

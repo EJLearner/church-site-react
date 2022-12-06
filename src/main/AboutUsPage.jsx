@@ -51,7 +51,7 @@ const StyledAboutUspage = styled.div`
     h2 {
       text-transform: uppercase;
       font-family: var(--quire);
-      font-size: 48px;
+      font-size: 46px;
       margin-bottom: 32px;
     }
 

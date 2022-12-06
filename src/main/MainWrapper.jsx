@@ -16,7 +16,6 @@ import RemovedPage from './RemovedPage';
 import WatchPage from './WatchPage';
 import NotFound from './commonComponents/NotFound';
 
-// TODO: probably need a photoshopped picture for this instead of this mask
 const StyledMainWrapperDiv = styled.div`
   background: black;
   height: 100%;
