@@ -17,7 +17,7 @@ const StyledAboutUspage = styled.div`
         to right,
         rgba(0, 0, 0, 1),
         rgba(0, 0, 0, 0.7),
-        rgba(0, 0, 0, 0.5)
+        rgba(0, 0, 0, 0)
       ),
       url(${yearginPulpitMartins});
     background-size: cover;

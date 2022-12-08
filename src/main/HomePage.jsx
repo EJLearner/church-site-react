@@ -14,6 +14,15 @@ const StyledHomePage = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 2;
+  }
 
   .content {
     display: flex;
@@ -66,21 +75,24 @@ function HomePage() {
   return (
     <StyledHomePage>
       <MainMenubar />
-      <div className="content">
-        <h1>
-          Welcome to the
-          <br />
-          City Temple of Baltimore (Baptist)
-        </h1>
-        <p className="worship-time">Worship and Live Stream Sunday at 9 am</p>
-        <p>
-          We shall become a spiritually mature Christian fellowship in order to
-          provide an effective witness for Christ in this world!
-        </p>
-        <div className="anchor-wrapper">
-          <Anchor className="service-link" path={routePaths.MAIN_WATCH}>
-            Watch Our Latest Service
-          </Anchor>
+
+      <div className="content-wrapper">
+        <div className="content">
+          <h1>
+            Welcome to the
+            <br />
+            City Temple of Baltimore (Baptist)
+          </h1>
+          <p className="worship-time">Worship and Live Stream Sunday at 9 am</p>
+          <p>
+            We shall become a spiritually mature Christian fellowship in order
+            to provide an effective witness for Christ in this world!
+          </p>
+          <div className="anchor-wrapper">
+            <Anchor className="service-link" path={routePaths.MAIN_WATCH}>
+              Watch Our Latest Service
+            </Anchor>
+          </div>
         </div>
       </div>
     </StyledHomePage>
