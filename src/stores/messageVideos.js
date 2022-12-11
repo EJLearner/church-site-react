@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2022-12-11T09:00:00',
+    youtubeId: 'ksKqO07MIOs',
+    title: '“Preparing the Way for The Glory of the Lord”',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: null
+  },
+  {
     date: '2022-12-04T09:00:00',
     youtubeId: 'BmiBgvB5Snk',
     title: 'Divine Illumination!',

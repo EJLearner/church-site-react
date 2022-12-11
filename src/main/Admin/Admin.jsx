@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import styled from 'styled-components';
 
+import choir from '../../assets/images/choir.jpg';
 import firebase, {auth, provider} from '../../firebase';
 import routePaths from '../../routePaths';
-import {FONT_FAMILIES, LOGICAL_COLORS, SIZES} from '../../utils/styleVariables';
 import Menubar from '../Menubar';
 import Button from '../commonComponents/Button/Button';
 
@@ -13,11 +13,9 @@ import EventAdmin from './EventAdmin';
 import SubscribedEmailsAdmin from './SubscribedEmailsAdmin';
 
 const StyledAdminPage = styled.div`
-  background-attachment: fixed;
-  background-image: url(${(props) => props.backgroundSource});
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding-bottom: ${SIZES.FOOTER_HEIGHT};
+  background-color: var(--light-background);
+  color: var(--text-on-light-background);
+  padding-bottom: var(--page-bottom-padding);
   min-height: 100%;
 
   .login-info-and-button {
@@ -37,15 +35,13 @@ const StyledAdminPage = styled.div`
   }
 
   .admin-content {
-    background-color: ${LOGICAL_COLORS.STANDARD_BACKGROUND};
     padding: 1em;
     margin: 0 64px;
   }
 
   .event-item {
-    background-color: ${LOGICAL_COLORS.STANDARD_BACKGROUND};
     border: 1px solid black;
-    font-family: ${FONT_FAMILIES.CODE};
+    font-family: var(--code);
     margin-top: 1em;
     padding: 0.5em;
   }
@@ -57,6 +53,11 @@ class Admin extends Component {
 
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
+
+    this.state = {
+      user: null,
+      adminUser: null
+    };
   }
 
   componentDidMount() {
@@ -158,8 +159,8 @@ class Admin extends Component {
 
   render() {
     return (
-      <StyledAdminPage backgroundSource={this.state.backgroundSource}>
-        <Menubar menuItems={this.generateLinks()} />
+      <StyledAdminPage>
+        <Menubar imageSource={choir} menuItems={this.generateLinks()} />
         <div className="admin-content">{this.renderContent()}</div>
       </StyledAdminPage>
     );

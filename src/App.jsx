@@ -8,6 +8,7 @@ import './App.css';
 
 const GlobalStyle = createGlobalStyle`
   :root {
+    --code: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
     --sans-serif: Calibri, 'Segoe UI', Candara, Segoe, Optima, Arial, sans-serif;
     --serif: cambria, georgia, 'bookman old style', 'times new roman', serif;
     --quire: "Quire Sans", Helvetica, arial, sans-serif;
