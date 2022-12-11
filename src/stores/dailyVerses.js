@@ -93,7 +93,14 @@ const bibleComFormattedVerses = {
   '2022-12-07': {verse: 'Matthew 3.1-12'},
   '2022-12-08': {verse: 'Isaiah 62.1-12'},
   '2022-12-09': {verse: 'Luke 12.35-48'},
-  '2022-12-10': {verse: 'Isaiah 51.1-8'}
+  '2022-12-10': {verse: 'Isaiah 51.1-8'},
+  '2022-12-11': {verse: 'Psalm 146.5-10'},
+  '2022-12-12': {verse: 'Mark 13.1-13'},
+  '2022-12-13': {verse: 'Luke 21.25-36'},
+  '2022-12-14': {verse: 'Revelation 1.1-8'},
+  '2022-12-15': {verse: 'John 1.14-18'},
+  '2022-12-16': {verse: 'Ezekiel 34.11-16'},
+  '2022-12-17': {verse: 'Acts 1.1-11'}
 };
 
 export {bibleComFormattedVerses};

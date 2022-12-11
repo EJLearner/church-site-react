@@ -376,5 +376,28 @@ export default {
         Christ.” Amen.
       </p>
     )
+  },
+  '2022-12-11': {
+    subTitle: (
+      <>
+        From <i>Letters From The Desert</i> Carlo Carretto
+      </>
+    ),
+    content: (
+      <p>
+        “Our Father, give us the faith to believe that it is possible for us to
+        live victoriously even in the midst of dangerous opportunity that we
+        call crisis. Help us see that there is something better than patient
+        endurance or keeping a stiff upper lip, and that whistling in the dark
+        is not really bravery. Bless us with the greatness of humility, that we
+        may feel no shame in expressing our need of a living God. Forgive the
+        pride that causes us to strut about like knights in shining armour when
+        we know full well that we are but beggars in tattered rags. Plant a seed
+        of faith in us today and nurture it that it may grow. Then, trusting in
+        thee may we have the faith that goes singing in the rain, knowing that
+        all things work together for good to them that love Thee. Through Jesus
+        Christ, our Lord. Amen.”
+      </p>
+    )
   }
 };
