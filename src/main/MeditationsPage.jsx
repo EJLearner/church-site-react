@@ -80,7 +80,7 @@ function getVersesContent() {
     return (
       <>
         <h2>Content unavailable</h2>
-        <p>Sorry, no verses are available this week.</p>
+        <p>Sorry, no verses are available at this time.</p>
       </>
     );
   }
@@ -120,7 +120,7 @@ function renderMeditationContent() {
   return (
     <>
       <h2>Content unavailable</h2>
-      Sorry, no weekly meditation is available.
+      Sorry, no weekly meditation is available at this time.
     </>
   );
 }

@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2022-12-18T09:00:00',
+    youtubeId: 'Ia4uA_wwtiA',
+    title: 'Sacrificial Love',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'John 3:16 & Ephesians 5:1-2'
+  },
+  {
     date: '2022-12-11T09:00:00',
     youtubeId: 'ksKqO07MIOs',
     title: '“Preparing the Way for The Glory of the Lord”',
