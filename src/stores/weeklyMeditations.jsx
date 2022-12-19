@@ -399,5 +399,24 @@ export default {
         Christ, our Lord. Amen.”
       </p>
     )
+  },
+  '2022-12-18': {
+    subTitle: (
+      <>
+        From <i>The Way of the Heart</i> Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “Silence is the way to make solitude a reality. The Desert Faithers
+        praise silence as the safest way to God. “I have often repented of
+        having spoken,” Arsenius said, “But never of having remained silent.”
+        One day Archbishop Theophilus came to the desert to visit Abba Pambo.
+        But Abba Pambo did not speak to him. When the brethren finally said to
+        Pambo, “Father, say something to the archbishop, so that he may be
+        edified,” he replied: “If he is not edified by my silence, he will not
+        be edified by my speech.”
+      </p>
+    )
   }
 };
