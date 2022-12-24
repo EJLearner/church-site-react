@@ -418,5 +418,33 @@ export default {
         be edified by my speech.”
       </p>
     )
+  },
+  '2022-12-25': {
+    subTitle: (
+      <>
+        From <i>Words to Love By</i> Mother Teresa
+      </>
+    ),
+    content: (
+      <p>
+        “Dear Jesus, <br />
+        Help us to spread your fragrance everywhere we go. <br />
+        Flood our souls with your spirit and life. <br />
+        Penetrate and possess our whole being so utterly that our lives may only
+        be a radiance of yours. <br />
+        Shine through us and be so in us <br />
+        that every soul we come in contact with <br />
+        may feel your presence in our soul. <br />
+        Let them look up and see no longer us <br />
+        but only Jesus. <br />
+        Stay with us and then we shall begin to shine as you shine, <br />
+        So to shine as to be light to others <br />
+        The light, O Jesus, will be all from you. <br />
+        None of it will be ours. <br />
+        It will be you shining on others through us. <br />
+        Let us thus praise you in the way you love best <br />
+        By shining on those around us…Amen.”
+      </p>
+    )
   }
 };
