@@ -17,6 +17,7 @@ const FEATURE_FLAGS = {
 };
 
 const constants = {
+  NBSP: '\u00a0',
   ...dateConstants,
 
   CC_LOGBOOK_REF_NAME: 'ccLogbook',

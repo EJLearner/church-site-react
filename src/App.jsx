@@ -8,46 +8,75 @@ import './App.css';
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --arial: arial, helvetica, sans-serif;
-    --brush-script: 'Brush Script MT', cursive;
-    --calibri: Calibri, 'Segoe UI', Candara, Segoe, Optima, Arial, sans-serif;
-    --cambria: cambria, georgia, 'bookman old style', 'times new roman', serif;
-    --century-gothic: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-    --garamond: 'Adobe Garamond Pro', Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text',
-    'Times New Roman', serif;
+    --code: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+    --sans-serif: Calibri, 'Segoe UI', Candara, Segoe, Optima, Arial, sans-serif;
+    --serif: cambria, georgia, 'bookman old style', 'times new roman', serif;
+    --quire: "Quire Sans", Helvetica, arial, sans-serif;
 
-    --green-20: rgb(146, 208, 80);
-    --green-50: rgb(115, 175, 85);
-    --green-80: rgb(102, 158, 74);
-    --orange: orange;
-    --peach: rgb(255, 230, 149);
-    --gray41: rgb(41, 41, 41);
-    --gray63: rgb(63, 63, 63);
-    --gray77: rgb(77, 77, 77);
-    --gray83: rgb(83, 83, 83);
-    --gray95: #5f5f5f;
-    --gray180: rgb(180, 180, 180);
-    --gray217: rgb(217, 217, 217);
-    --light-blue: #5b9bd5;
-    --lighter-blue: rgb(190, 215, 239);
-    --blue-50: rgb(157, 195, 230);
-    --black: black;
-    --white: white;
-    --red: red;
-    --yellow: yellow;
-    --maroon: maroon;
-    --green: green;
-    --gray: gray;
+    --black: rgb(5, 5, 5);
+    --white: rgb(240, 240, 240);
+    --gossamer-veil: rgb(240, 238, 235);
+    --charcoal-grey: rgb(38, 38, 38);
+    --maroon: rgb(142, 19, 27);
+    --light-blue: rgb(51, 204, 204);
 
-    --standard-background: var(--white);
-    --standard-text: var(--black);
-    --text-on-dark: var(--white);
+    --background: var(--black);
+    --content: var(--white);
 
-    --ct-primary: #c00000;
-    --ct-text-on-primary: var(--text-on-dark);
-    --ct-accent: #00bae2;
-    --ct-second: #ff9b71;
-    --ct-third: #d2b48c;
+    --standard-background: var(--background);
+    --light-background: var(--white);
+    --text-on-dark-background: var(--content);
+    --text-on-light-background: var(--charcoal-grey);
+    --accent-background: rgb(255,192,0);
+    --accent-background-2: var(--light-blue);
+    --accent-content: var(--text-on-light-background);
+
+    --standard-border: var(--content);
+    --border-on-light: var(--charcoal-grey);
+    --top-content-background: var(--white);
+    --top-content-text: var(--text-on-light-background);
+    --second-content-background: var(--gossamer-veil);
+    --second-content-text: var(--text-on-light-background);
+    --alternate-background-text: var(--charcoal-grey);
+    --gutter-space: 64px;
+    --page-bottom-padding: 64px;
+
+    --watch-page-text-accent: var(--maroon);
+
+    line-height: 1.5;
+
+    body {
+      background-color: var(--standard-background);
+      height: 100%;
+      padding: 0px;
+      margin: 0;
+
+    }
+
+    #root {
+      color: var(--text-on-dark-background);
+      height: 100%;
+    }
+
+    a {
+      color: var(--text-on-dark-background);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    h1,h2,h3,h4,h5, h6 {
+      font-family: var(--serif);
+    }
+
+    input, select {
+      border: 1px solid var(--charcoal-grey);
+      border-radius: 0;
+      font-size: 14px;
+      padding: 6px;
+    }
   }
 `;
 

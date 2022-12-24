@@ -1,11 +1,3 @@
-const oneWeekInSeconds = 60 * 60 * 24 * 7;
-
-function setCookie(key, value, expireSeconds = oneWeekInSeconds) {
-  document.cookie = `${key}=${encodeURIComponent(
-    value
-  )};max-age=${expireSeconds}`;
-}
-
 function getCookie(key) {
   const cookies = document.cookie.split('; ');
 
@@ -15,8 +7,4 @@ function getCookie(key) {
   return cookieValue && decodeURIComponent(cookieValue);
 }
 
-function resetCookie(key) {
-  setCookie(key, '', 0);
-}
-
-export {getCookie, resetCookie, setCookie};
+export {getCookie};

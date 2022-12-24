@@ -5,6 +5,62 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2022-12-18T09:00:00',
+    youtubeId: 'Ia4uA_wwtiA',
+    title: 'Sacrificial Love',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'John 3:16 & Ephesians 5:1-2'
+  },
+  {
+    date: '2022-12-11T09:00:00',
+    youtubeId: 'ksKqO07MIOs',
+    title: '“Preparing the Way for The Glory of the Lord”',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: null
+  },
+  {
+    date: '2022-12-04T09:00:00',
+    youtubeId: 'BmiBgvB5Snk',
+    title: 'Divine Illumination!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 1:1-9 NLT'
+  },
+  {
+    date: '2022-11-27T09:00:00',
+    youtubeId: 'WDljIsS-mb0',
+    title: 'What We Need to Know When Believing Is Not Enough!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 16:16-33 NLT'
+  },
+  {
+    date: '2022-11-20T09:00:00',
+    youtubeId: 'EM4wCQHVwLQ',
+    title: '"It’s All Over You! - Pastoral Apprecation Service',
+    preacher: 'Rev. Carl Hamiel',
+    scripture: '1 Timothy 4:13-15'
+  },
+  {
+    date: '2022-11-13T09:00:00',
+    youtubeId: 'Irp2fNK3RS4',
+    title: 'Everything Lives Wherever The River Flows!!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Ezekiel 47:1-12 (NLT)'
+  },
+  {
+    date: '2022-11-06T09:00:00',
+    youtubeId: 'oHvV9FWB44c',
+    title: 'Reaffirming The Church!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 16:13-20'
+  },
+  {
+    date: '2022-10-30T09:00:00',
+    youtubeId: 'kiNYsYDQwsE',
+    title: 'Worship Service October 30th, 2022',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 6:13'
+  },
+  {
     date: '2022-10-23T09:00:00',
     youtubeId: 'fLLM1YA4xBQ',
     title: 'Alleviating Our Anxious Fears',
@@ -481,7 +537,8 @@ const messageVideos = [
   },
   {
     date: '2021-04-02T12:00:00',
-    // TODO: handle this better, video page should say "Preachers" when this is used and search should work for it
+    // IMPROVEMENTS: handle this better, video page should say "Preachers"
+    // when this is used and search should work for it
     preacher: PREACHERS.MINISTERS,
     title: 'Seven Last Words - From the Cross',
     youtubeId: 'IIRepOmhf_g'

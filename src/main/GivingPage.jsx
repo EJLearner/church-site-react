@@ -1,32 +1,63 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import Button from '../ce/components/Reusable/Button/Button';
-import Select from '../common/components/Select';
-import SelectState from '../common/components/SelectState';
-import Textbox from '../common/components/Textbox';
-import routePaths from '../routePaths';
-import {FONT_FAMILIES, COLORS} from '../utils/styleVariables';
+import choir from '../assets/images/choir.jpg';
 
-import MainMenubar from './MainMenubar';
-import AboveContentLinks from './commonComponents/AboveContentLinks';
-import ContentAndSides from './commonComponents/ContentAndSides';
-import ContentAndSubCompassWrapper from './commonComponents/ContentAndSubCompassWrapper';
-import ContentLeftSide from './commonComponents/ContentLeftSide';
-import ContentRightSide from './commonComponents/ContentRightSide';
-import ContentWrapper from './commonComponents/ContentWrapper';
+import MainMenubar from './commonComponents/MainMenubar';
 import PlainButton from './commonComponents/PlainButton';
-import StandardPageWrapper from './commonComponents/StandardPageWrapper';
-import TopInfoBox from './commonComponents/TopInfoBox';
-import TopInfoBoxWrapper from './commonComponents/TopInfoBoxWrapper';
+import Select from './commonComponents/Select';
+import SelectState from './commonComponents/SelectState';
+import Textbox from './commonComponents/Textbox';
 
-const AddAnotherTypeWrapper = styled.div`
-  color: ${COLORS.GRAY180};
-  font-family: ${FONT_FAMILIES.CENTURY_GOTHIC};
-  margin-top: 15px;
+const StyledGivingPage = styled.div`
+  background-color: var(--top-content-background);
+  min-height: 100%;
+
+  .content {
+    color: var(--top-content-text);
+    padding-top: 32px;
+    padding-bottom: var(--page-bottom-padding);
+  }
+
+  h1 {
+    font-weight: normal;
+    line-height: 120%;
+    margin: 0 320px 16px;
+    text-align: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-fields {
+    display: flex;
+
+    margin-bottom: 32px;
+
+    select {
+      background-color: white;
+    }
+  }
+
+  .add-another {
+    min-height: 40px;
+  }
+
+  .donate-button {
+    background-color: var(--accent-background);
+    border-radius: 4px;
+    color: var(--accent-content);
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 16px;
+    padding: 8px;
+    text-transform: uppercase;
+    width: 250px;
+  }
 `;
-
-const givingType = 'tithing';
 
 const USE_TEST_DATA = false;
 
@@ -99,7 +130,9 @@ const GivingPage = () => {
     });
   };
 
-  const renderStateSelect = (id) => {
+  const renderStateSelect = (id, options = {}) => {
+    const {hasLineBreak = true} = options;
+
     return (
       <>
         <SelectState
@@ -107,13 +140,14 @@ const GivingPage = () => {
           onChange={(value) => setUserInfoProp(value, id)}
           value={userInfo[id] ?? ''}
         />
-        <br />
+
+        {hasLineBreak && <br />}
       </>
     );
   };
 
   const renderTextbox = (id, label, options = {}) => {
-    const {type, required} = options;
+    const {hasLineBreak = true, type, required, size = 40} = options;
 
     return (
       <>
@@ -122,11 +156,12 @@ const GivingPage = () => {
           label={label}
           onChange={(value) => setUserInfoProp(value, id)}
           required={required}
-          size={40}
+          size={size}
           type={type}
           value={userInfo[id] ?? ''}
         />
-        <br />
+
+        {hasLineBreak && <br />}
       </>
     );
   };
@@ -200,14 +235,12 @@ const GivingPage = () => {
         {renderPaymentboxes(amounts)}
 
         {Boolean(firstUnusedType) && (
-          <AddAnotherTypeWrapper>
-            <PlainButton
-              className="add-another"
-              onClick={(event) => addPaymentOption(firstUnusedType, event)}
-            >
-              + Add another donation type
-            </PlainButton>
-          </AddAnotherTypeWrapper>
+          <PlainButton
+            className="add-another"
+            onClick={(event) => addPaymentOption(firstUnusedType, event)}
+          >
+            + Add another donation type
+          </PlainButton>
         )}
       </>
     );
@@ -215,83 +248,56 @@ const GivingPage = () => {
 
   const boxNum = userInfo.box;
 
-  const topInfoBoxContent = (
-    <>
-      <h1>Giving</h1>
-      <p>
-        <i>
-          “You can’t beat God’s giving, no matter how you try. For just as sure
-          as you are living and the Lord is in heaven on high; the more you
-          give, the more He gives to you. But keep on giving because it’s really
-          true, that you can’t beat God’s giving, no matter how you try.”
-        </i>
-      </p>
-      <p>
-        We thank you for remaining faithful in your giving. You can place your
-        offering by completing the form below, by mailing your offering to The
-        City Temple of Baltimore (Baptist), 317 Dolphin Street, Baltimore, MD
-        21217, or by using cash tag $citytemple317 through CashApp. For City
-        Temple church members, if you choose the CashApp option, please remember
-        to include your envelope number in the memo line.
-      </p>
-    </>
-  );
-
-  const givingPageContent = (
-    <>
-      <h2>Giving</h2>
-      <form
-        action="https://www.paypal.com/cgi-bin/webscr"
-        method="post"
-        name="validform"
-      >
-        {renderTextbox('first_name', 'First Name')}
-        {renderTextbox('last_name', 'Last Name')}
-        {renderTextbox('address1', 'Street Address')}
-        {renderTextbox('address2', 'Street Address cont.')}
-        {renderTextbox('city', 'City')}
-        {renderStateSelect('state')}
-        {renderTextbox('zip', 'Zipcode')}
-        {renderTextbox('night_phone_a', 'Phone')}
-        {renderTextbox('email', 'Email', {required: true, type: 'email'})}
-        {renderTextbox('box', 'Box #')}
-        {boxNum && renderHiddenTextbox('custom', `Box: ${boxNum}`)}
-        {renderHiddenTextbox('business', 'giving@thecitytemple.org')}
-        {renderHiddenTextbox('return', 'https://www.thecitytemple.org')}
-        {renderHiddenTextbox('cancel_return', 'https://www.thecitytemple.org')}
-        {renderHiddenTextbox('no_shipping', '1')}
-
-        {givingType === 'tithing' && renderTithingFields()}
-        <div>
-          <br />
-          <Button name="submit" type="submit" value="Continue">
-            Continue
-          </Button>
-        </div>
-      </form>
-    </>
-  );
-
   return (
-    <StandardPageWrapper>
-      <MainMenubar />
-      <TopInfoBoxWrapper>
-        <TopInfoBox>{topInfoBoxContent}</TopInfoBox>
-      </TopInfoBoxWrapper>
-      <ContentAndSubCompassWrapper>
-        <AboveContentLinks
-          pagePath={routePaths.MAIN_GIVING}
-          pageTitle="Giving"
-        />
-        <ContentAndSides>
-          <ContentLeftSide>
-            <div />
-          </ContentLeftSide>
-          <ContentWrapper>{givingPageContent}</ContentWrapper>
-          <ContentRightSide />
-        </ContentAndSides>
-      </ContentAndSubCompassWrapper>
-    </StandardPageWrapper>
+    <StyledGivingPage>
+      <MainMenubar imageSource={choir} />
+      <div className="content">
+        <h1>
+          Thank you for your commitment to City Temple and for your
+          contribution. To make a donation, please submit the form below.
+        </h1>
+        <form
+          action="https://www.paypal.com/cgi-bin/webscr"
+          method="post"
+          name="validform"
+        >
+          <div className="input-fields">
+            <div className="left-side">
+              {renderTextbox('first_name', 'First Name')}
+              {renderTextbox('last_name', 'Last Name')}
+              {renderTextbox('address1', 'Street Address')}
+              {renderTextbox('address2', 'Street Address cont.')}
+              {renderTextbox('city', 'City', {hasLineBreak: false, size: 13})}
+              {renderStateSelect('state', {hasLineBreak: false})}
+              {renderTextbox('zip', 'Zipcode', {size: 11})}
+              {renderTextbox('email', 'Email', {required: true, type: 'email'})}
+            </div>
+            <div className="right-side">
+              {renderTextbox('box', 'Box #')}
+              {boxNum && renderHiddenTextbox('custom', `Box: ${boxNum}`)}
+              {renderHiddenTextbox('business', 'giving@thecitytemple.org')}
+              {renderHiddenTextbox('return', 'https://www.thecitytemple.org')}
+              {renderHiddenTextbox(
+                'cancel_return',
+                'https://www.thecitytemple.org'
+              )}
+              {renderHiddenTextbox('no_shipping', '1')}
+              {renderTithingFields()}
+            </div>
+          </div>
+          <div>
+            <PlainButton
+              className="donate-button"
+              name="submit"
+              type="submit"
+              value="Continue"
+            >
+              Donate Now
+            </PlainButton>
+          </div>
+        </form>
+      </div>
+    </StyledGivingPage>
   );
 };
 

@@ -1,17 +1,43 @@
 import moment from 'moment';
 import React, {Component} from 'react';
 import {Redirect, Route, Switch} from 'react-router-dom';
+import styled from 'styled-components';
 
+import choir from '../assets/images/choir.jpg';
 import routePaths from '../routePaths';
 
-import CalendarStyles from './CalendarStyles';
-import MainMenubar from './MainMenubar';
-import CalendarDay from './commonComponents/Calendar/CalendarDay';
-import CalendarMenuBar from './commonComponents/Calendar/CalendarMenuBar';
-import CalendarMonth from './commonComponents/Calendar/CalendarMonth';
-import CalendarUpcoming from './commonComponents/Calendar/CalendarUpcoming';
-import CalendarWeek from './commonComponents/Calendar/CalendarWeek';
-import CalendarYear from './commonComponents/Calendar/CalendarYear';
+import CalendarDay from './Calendar/CalendarDay';
+import CalendarMenuBar from './Calendar/CalendarMenuBar';
+import CalendarMonth from './Calendar/CalendarMonth';
+import CalendarUpcoming from './Calendar/CalendarUpcoming';
+import CalendarWeek from './Calendar/CalendarWeek';
+import CalendarYear from './Calendar/CalendarYear';
+import MainMenubar from './commonComponents/MainMenubar';
+
+const CalendarPageStyles = styled.div`
+  --calendar-other-month-content: rgb(200, 200, 200);
+  --calendar-selected-area: var(--accented-background);
+  --calendar-has-events: var(--accent-background-2);
+
+  background-color: var(--light-background);
+  color: var(--black);
+  min-height: 100%;
+  padding-bottom: var(--page-bottom-padding);
+
+  .calendar-page-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    padding: 0 var(--gutter-space);
+
+    h1 {
+      font-weight: normal;
+      margin-top: 0;
+      text-transform: uppercase;
+    }
+  }
+`;
 
 class Calendar extends Component {
   constructor(props) {
@@ -23,32 +49,17 @@ class Calendar extends Component {
 
   render() {
     const linkData = [
-      {
-        path: routePaths.MAIN_CALENDAR_DAY,
-        text: 'Day View'
-      },
-      {
-        path: routePaths.MAIN_CALENDAR_WEEK,
-        text: 'Week View'
-      },
-      {
-        path: routePaths.MAIN_CALENDAR_MONTH,
-        text: 'Month View'
-      },
-      {
-        path: routePaths.MAIN_CALENDAR_YEAR,
-        text: 'Year View'
-      },
-      {
-        path: routePaths.MAIN_CALENDAR_UPCOMING,
-        text: 'Upcoming'
-      }
+      {path: routePaths.MAIN_CALENDAR_DAY, text: 'Day View'},
+      {path: routePaths.MAIN_CALENDAR_WEEK, text: 'Week View'},
+      {path: routePaths.MAIN_CALENDAR_MONTH, text: 'Month View'},
+      {path: routePaths.MAIN_CALENDAR_YEAR, text: 'Year View'},
+      {path: routePaths.MAIN_CALENDAR_UPCOMING, text: 'Upcoming'}
     ];
 
     return (
-      <CalendarStyles id="top-react-div">
-        <MainMenubar />
-        <div className="calendar-page">
+      <CalendarPageStyles>
+        <MainMenubar imageSource={choir} />
+        <div className="calendar-page-content">
           <h1>Events at City Temple</h1>
           <CalendarMenuBar id="calendar-menu" links={linkData} />
           <Switch>
@@ -74,7 +85,7 @@ class Calendar extends Component {
             />
           </Switch>
         </div>
-      </CalendarStyles>
+      </CalendarPageStyles>
     );
   }
 }

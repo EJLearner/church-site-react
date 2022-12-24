@@ -1,10 +1,12 @@
-import {shallow} from 'enzyme';
+import {render} from '@testing-library/react';
+import '@testing-library/jest-dom';
 import React from 'react';
+import {BrowserRouter} from 'react-router-dom';
 
 import MainWrapper from './MainWrapper';
 
 describe('MainWrapper', () => {
   it('renders', () => {
-    expect(shallow(<MainWrapper />).exists()).toBe(true);
+    render(<MainWrapper />, {wrapper: BrowserRouter});
   });
 });

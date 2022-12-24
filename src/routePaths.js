@@ -24,6 +24,8 @@ const MAIN_HOME_PATH = '/';
 const MAIN_ROOT_PATHS = {
   MAIN_HOME: MAIN_HOME_PATH,
 
+  BIBLE_STUDY: `${MAIN_HOME_PATH}bible-study/`,
+
   MAIN_ABOUT_US: `${MAIN_HOME_PATH}about-us/`,
   MAIN_CALENDAR: `${MAIN_HOME_PATH}calendar/`,
   MAIN_CONTACT: `${MAIN_HOME_PATH}contact/`,

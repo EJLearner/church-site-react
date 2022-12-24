@@ -5,6 +5,7 @@ const FONT_FAMILIES = {
   CALIBRI: "Calibri, 'Segoe UI', Candara, Segoe, Optima, Arial, sans-serif",
   CAMBRIA: "cambria, georgia, 'bookman old style', 'times new roman', serif",
   CENTURY_GOTHIC: "'Century Gothic', CenturyGothic, AppleGothic, sans-serif",
+  CODE: "'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace",
   GARAMOND:
     "'Adobe Garamond Pro', Garamond, Baskerville, 'Baskerville Old Face'," +
     "'Hoefler Text', 'Times New Roman', serif",
@@ -23,7 +24,7 @@ const COLORS = {
   GRAY77: 'rgb(77, 77, 77)',
   GRAY83: 'rgb(83, 83, 83)',
   GRAY95: '#5f5f5f',
-  // TODO: make this the logical disabled color
+  // IMPROVEMENTS: make this the logical disabled color
   GRAY180: 'rgb(180, 180, 180)',
   GRAY217: 'rgb(217, 217, 217)',
   LIGHTER_BLUE: 'rgb(190,215,239)',
@@ -43,7 +44,7 @@ const COLORS = {
 
 const LOGICAL_COLORS = {
   GENERAL_PAGE_BORDER_COLOR: COLORS.GRAY217,
-  // TODO: change to whiteish but have to visit all pages to see how it looks
+  // IMPROVEMENTS: change to whiteish but have to visit all pages to see how it looks
   STANDARD_BACKGROUND: COLORS.WHITE,
   STANDARD_TEXT: COLORS.BLACKISH,
   CT_PRIMARY: '#8E131B',
@@ -68,8 +69,7 @@ const WIDTHS = {
 };
 
 const SIZES = {
-  ...WIDTHS,
-  FOOTER_HEIGHT: '81px'
+  ...WIDTHS
 };
 
 export {FONT_FAMILIES, COLORS, LOGICAL_COLORS, SIZES, WIDTHS};

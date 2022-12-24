@@ -4,12 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'eval-source-map',
-  // webpack 5 comes with devServer which loads in development mode
-  devServer: {
-    port: 3000,
-    // redirects all 404s to the main page
-    historyApiFallback: true
-  },
   // Rules of how webpack will take our files, complie & bundle them for the browser
   module: {
     rules: [

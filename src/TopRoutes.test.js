@@ -3,7 +3,7 @@ import React from 'react';
 import {MemoryRouter} from 'react-router-dom';
 
 import TopRoutes from './TopRoutes';
-import VbsCheckin from './ce/components/CcVbsCheckinOut/VbsCheckin';
+import VbsCheckin from './main/CcVbsCheckinOut/VbsCheckin';
 import routePaths from './routePaths';
 
 describe('TopRoutes', () => {

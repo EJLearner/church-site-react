@@ -3,7 +3,7 @@ import firebase from '../firebase';
 import constants from './constants';
 import pushToSubscribedList from './pushToSubscribedList';
 
-// TODO: Get these tests working again
+// IMPROVEMENTS: Get these tests working again
 describe.skip('pushToSubscribedList', () => {
   let testEmail;
   let testSource;

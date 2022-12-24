@@ -12,7 +12,7 @@ const PlainButton = styled.button`
   text-align: left;
 
   &:hover {
-    opacity: 0.95;
+    text-decoration: underline;
   }
 `;
 
