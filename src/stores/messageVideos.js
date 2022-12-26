@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2022-12-25T09:00:00',
+    youtubeId: '_Aprx2PkB4c',
+    title: 'And The Word Became Flesh!!!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 1:14 (NLT)'
+  },
+  {
     date: '2022-12-18T09:00:00',
     youtubeId: 'Ia4uA_wwtiA',
     title: 'Sacrificial Love',
