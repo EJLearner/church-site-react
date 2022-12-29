@@ -114,7 +114,14 @@ const bibleComFormattedVerses = {
   '2022-12-28': {verse: '2 Corinthians 5.16-21'},
   '2022-12-29': {verse: 'John 3.1-8'},
   '2022-12-30': {verse: 'Ephesians 1.3-14'},
-  '2022-12-31': {verse: 'Colossians 1.15-23'}
+  '2022-12-31': {verse: 'Colossians 1.15-23'},
+  '2022-01-01': {verse: 'Colossians 1.15-23'},
+  '2022-01-02': {verse: 'Colossians 1.15-23'},
+  '2022-01-03': {verse: 'Colossians 1.15-23'},
+  '2022-01-04': {verse: 'Colossians 1.15-23'},
+  '2022-01-05': {verse: 'Colossians 1.15-23'},
+  '2022-01-06': {verse: 'Colossians 1.15-23'},
+  '2022-01-07': {verse: 'Colossians 1.15-23'}
 };
 
 export {bibleComFormattedVerses};

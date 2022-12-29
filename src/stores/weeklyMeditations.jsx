@@ -447,7 +447,7 @@ export default {
       </p>
     )
   },
-  '2022-01-01': {
+  '2023-01-01': {
     subTitle: (
       <>
         From <i>A Tree Full of Angels</i> Macrina Wiederkehr
