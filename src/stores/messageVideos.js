@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2023-01-01T09:00:00',
+    youtubeId: '2IVBH5CYzx4',
+    title: 'The Fundamental Truth About God!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Psalm 116'
+  },
+  {
     date: '2022-12-25T09:00:00',
     youtubeId: '_Aprx2PkB4c',
     title: 'And The Word Became Flesh!!!',
