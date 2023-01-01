@@ -446,5 +446,31 @@ export default {
         By shining on those around us…Amen.”
       </p>
     )
+  },
+  '2023-01-01': {
+    subTitle: (
+      <>
+        From <i>A Tree Full of Angels</i> Macrina Wiederkehr
+      </>
+    ),
+    content: (
+      <p>
+        “Every time I say no to the birthing and dying that is set before me at
+        the table of daily life, I seem to hear the echo of Jesus’ words to the
+        woman at the well, “If you but knew the gift of God…” Whether God weeps
+        at the beauty and potential of our lives at birth or the lost potential
+        of graced moments along the way, I hear that voice urging us to claim
+        our splendor and our glory. “If you but knew the gift of God…” <br />
+        The gift of God is the Divine Indwelling. It comes quietly into your
+        frailty at baptism. You become a tabernacle for the Source of Life. When
+        you come to understand this old yet often forgotten truth, you will know
+        what is meant by the words heaven on earth. This is it! You are
+        beginning to live heaven on earth in the Divine Indwelling. You, frail
+        earth-creature, having given your frailty over to God, have created a
+        place of splendor within the depth of your being, a holy and eternal
+        space where you meet God face to face. Cherish this truth. It is costly
+        grace.”
+      </p>
+    )
   }
 };
