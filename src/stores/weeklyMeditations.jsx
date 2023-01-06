@@ -472,5 +472,20 @@ export default {
         grace.”
       </p>
     )
+  },
+  '2023-01-08': {
+    subTitle: (
+      <>
+        From <i>Praying Our Goodbyes</i> Joyce Rupp
+      </>
+    ),
+    content: (
+      <p>
+        “God’s love is such a powerful companion for us that no matter how
+        searing or how intense the hurt of a loss is we know that our spirit
+        need not be destroyed by it; we know that God will help us to recover
+        our hope, our courage and our direction in life.”
+      </p>
+    )
   }
 };
