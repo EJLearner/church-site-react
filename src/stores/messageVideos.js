@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2023-01-08T09:00:00',
+    youtubeId: 'pM97KmTg5mI',
+    title: 'Dealing With Desperation',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Mark 5:21-24; 35-43'
+  },
+  {
     date: '2023-01-01T09:00:00',
     youtubeId: '2IVBH5CYzx4',
     title: 'The Fundamental Truth About God!',
