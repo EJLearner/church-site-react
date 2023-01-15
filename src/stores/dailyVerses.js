@@ -128,7 +128,14 @@ const bibleComFormattedVerses = {
   '2023-01-11': {verse: 'Matthew 19.16-30'},
   '2023-01-12': {verse: 'Matthew 6.25-34'},
   '2023-01-13': {verse: '1 Corinthians 3.10-17'},
-  '2023-01-14': {verse: '2 Timothy 1.1-14'}
+  '2023-01-14': {verse: '2 Timothy 1.1-14'},
+  '2023-01-15': {verse: 'Psalm 63:1-8'},
+  '2023-01-16': {verse: 'John 1:35-51'},
+  '2023-01-17': {verse: 'Matthew 9:9-13'},
+  '2023-01-18': {verse: 'Luke 9:23-27'},
+  '2023-01-19': {verse: 'Matthew 10:34-42'},
+  '2023-01-20': {verse: 'John 10:22-30'},
+  '2023-01-21': {verse: 'Matthew 11:25-30'}
 };
 
 export {bibleComFormattedVerses};

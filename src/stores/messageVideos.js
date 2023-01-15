@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2023-01-15T09:00:00',
+    youtubeId: 'hiRAdthcNmg',
+    title: 'Handicapped Heroes!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Judges 3:15 (NLT)'
+  },
+  {
     date: '2023-01-08T09:00:00',
     youtubeId: 'pM97KmTg5mI',
     title: 'Dealing With Desperation',
