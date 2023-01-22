@@ -133,5 +133,30 @@ export default {
         </p>
       </>
     )
+  },
+  '2023-01-22': {
+    subTitle: (
+      <>
+        From <i>Invitation to Holiness</i> James C. Fenhagen
+      </>
+    ),
+    content: (
+      <p>
+        <b>Every Christian has a vocation.</b> We are called to share in the
+        ministry of Jesus Christ <b>in</b> and <b>through</b> the world. In the
+        Sacrament of Baptism this call is incarnated, giving both a clear{' '}
+        <b>identity</b> in the world and a sense of purpose about what our lives
+        are ultimately for. Sharing in the ministry of Jesus Christ involves
+        living in the world as an expression of the holiness we see in him – a
+        holiness expressed through his compassion, his concern for justice
+        (righteousness), and through his healing and reconciling presence in the
+        world. The relationship he offers t us – when entered into with
+        seriousness – results in those qualities we see in him being expressed
+        through us, sometimes even despite ourselves. We cannot, therefore,
+        limit this expression to ourselves. We cannot, therefore, limit this
+        expression to a particular profession or a particular role or a
+        particular job.
+      </p>
+    )
   }
 };
