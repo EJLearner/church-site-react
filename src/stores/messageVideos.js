@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2023-01-22T09:00:00',
+    youtubeId: 'RanqbjPkdlI',
+    title: 'When the Human Condition Meets Unconditional Love',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Mark 1:40-45 (NLT)'
+  },
+  {
     date: '2023-01-15T09:00:00',
     youtubeId: 'hiRAdthcNmg',
     title: 'Handicapped Heroes!',
