@@ -158,5 +158,22 @@ export default {
         particular job.
       </p>
     )
+  },
+  '2023-01-29': {
+    subTitle: (
+      <>
+        From <i>Cistercian Life</i> Thomas Merton
+      </>
+    ),
+    content: (
+      <p>
+        “One of the most important features of the liturgical renewal is
+        insistence on listening to the Word of God…and then participating in a
+        corporate reply. For this listening to be effective, a certain interior
+        silence is required. This in turn implies the ability to let go of one’s
+        congested, habitual thoughts and preoccupations so that one can freely
+        open the heart to the message of the sacred text.”
+      </p>
+    )
   }
 };
