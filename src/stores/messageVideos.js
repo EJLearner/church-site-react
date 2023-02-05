@@ -5,12 +5,20 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2023-02-05T09:00:00',
+    youtubeId: '8jpUXI4sP4E',
+    title: 'Lessons From Our Foreparents:When Our Backs Are Against The Wall!!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 14:1-6 (NLT)'
+  },
+  {
     date: '2023-01-29T09:00:00',
     youtubeId: '-REZwyMx8Uc',
     title: 'Walking On Water..Really!!',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 14:22-32 (NLT)'
-  },  {
+  },
+  {
     date: '2023-01-22T09:00:00',
     youtubeId: 'RanqbjPkdlI',
     title: 'When the Human Condition Meets Unconditional Love',
