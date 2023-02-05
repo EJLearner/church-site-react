@@ -175,5 +175,29 @@ export default {
         open the heart to the message of the sacred text.”
       </p>
     )
+  },
+  '2023-02-05': {
+    subTitle: (
+      <>
+        From <i>Mutual Ministry</i> James C. Fenhagen
+      </>
+    ),
+    content: (
+      <p>
+        “Values are more than the ideals or moral absolutes to which we aspire.
+        A value is an inner construct blending together religious beliefs,
+        ethical principles, societal norms and life experiences in a way that
+        empowers us to act. Everything we do, be it the decisions we make or the
+        actions we take during the course of a day, is based on some consciously
+        or unconsciously held value. Values are freely held and important enough
+        to cause us to want to act on their behalf. One of the things that makes
+        me unique is the particular value structure that empowers my life. There
+        are elements of this structure that I might hold in common with others,
+        but the particular combination is mine. This means, of course, that
+        Christians can agree on certain ethical principles and yet live their
+        lives differently. It is our values that create and sustain our
+        life-style.”
+      </p>
+    )
   }
 };
