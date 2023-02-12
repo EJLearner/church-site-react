@@ -5,9 +5,17 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2023-02-12T09:00:00',
+    youtubeId: '826_6jrj730',
+    title: 'If We Don’t Tell Them, How Will They Know!!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Deuteronomy 6:1-9 (NLT)'
+  },
+  {
     date: '2023-02-05T09:00:00',
     youtubeId: '8jpUXI4sP4E',
-    title: 'Lessons From Our Foreparents:When Our Backs Are Against The Wall!!',
+    title:
+      'Lessons From Our Foreparents: When Our Backs Are Against The Wall!!',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'John 14:1-6 (NLT)'
   },

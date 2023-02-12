@@ -199,5 +199,28 @@ export default {
         life-style.”
       </p>
     )
+  },
+  '2023-02-12': {
+    subTitle: (
+      <>
+        From <i>The Unsettling Season</i> Donald J. Shelby
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “Lord, the calendar calls for Christmas. We have traveled this way
+          before. During this Advent season we would see what we have never seen
+          before, accept what we have refused to think, and hear what we need to
+          understand. Be with us in our goings that we may meet you in your
+          coming.”
+        </p>
+        <p>
+          “Astonish us until we sing ‘Glory!’ and then enable us to live it out
+          with love and peace. ‘In that name of your Incarnate Word, even Jesus
+          Christ.’ Amen.”
+        </p>
+      </>
+    )
   }
 };
