@@ -163,7 +163,14 @@ const bibleComFormattedVerses = {
   '2023-02-15': {verse: 'Matthew 3:1-12'},
   '2023-02-16': {verse: 'Isaiah 62:1-12'},
   '2023-02-17': {verse: 'Luke 12:35-48'},
-  '2023-02-18': {verse: 'Isaiah 51:1-8'}
+  '2023-02-18': {verse: 'Isaiah 51:1-8'},
+  '2023-02-19': {verse: 'Psalm 41'},
+  '2023-02-20': {verse: '1 Peter 2.1-10'},
+  '2023-02-21': {verse: 'Jeremiah 3.1-14'},
+  '2023-02-22': {verse: 'Luke 1.47-56'},
+  '2023-02-23': {verse: 'Isaiah 63.7-14'},
+  '2023-02-24': {verse: 'James 2.1-13'},
+  '2023-02-25': {verse: 'Luke 6.27-36'}
 };
 
 export {bibleComFormattedVerses};
