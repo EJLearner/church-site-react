@@ -222,5 +222,21 @@ export default {
         </p>
       </>
     )
+  },
+  '2023-02-19': {
+    subTitle: (
+      <>
+        From <i>Untitled</i> Martin Luther
+      </>
+    ),
+    content: (
+      <p>
+        “None can believe how powerful prayer is, and what it is able to effect,
+        but those who have learned it by experience. It is a great matter when
+        in extreme need to take hold on prayer. I know, whenever I have prayed
+        earnestly, that I have been amply heard, and have obtained more than I
+        prayer for. God indeed sometimes delayed, but at last [God] came.”
+      </p>
+    )
   }
 };
