@@ -238,5 +238,34 @@ export default {
         prayer for. God indeed sometimes delayed, but at last [God] came.”
       </p>
     )
+  },
+  '2023-02-26': {
+    subTitle: (
+      <>
+        From <i>Mutual Ministry</i> James C. Fenhagen
+      </>
+    ),
+    content: (
+      <p>
+        “Prayer is the language of Christian community,” writes Henri Nouwen.
+        “In prayer the nature of the community becomes visible because in prayer
+        we direct ourselves to the one who forms the community. We do not pray
+        to each other, but together we pray to God, who calls us and makes us a
+        new people.” It is in the act of worship that we experience the gift of
+        community at its deepest level. In the eucharistic offering of bread and
+        wine, our brokenness and separation are offered in symbolic union with
+        the broken body of Christ, and then given back transformed and made
+        whole as a sign of that new community brought into being by his
+        resurrection. If we are to understand what it means to be
+        community-builders, we must do so from this perspective. Ministry is
+        given to us by God. It remains authentic only as it is empowered at its
+        source, supported and guided by the community of faith, and then shared
+        with others. “Make me an instrument of your peace,” prayed St. Francis.
+        “Where there is hatred, let me sow love; where there is injury, pardon;
+        where there is discord, union.” This is what it means to exercise a
+        community-building ministry, to be in the fullest sense, an ambassador
+        of reconciliation.”
+      </p>
+    )
   }
 };
