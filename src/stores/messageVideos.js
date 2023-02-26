@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2023-02-26T09:00:00',
+    youtubeId: 'xOtZf6HJ2DY',
+    title: 'The Favor of God',
+    preacher: 'Pastor Donald Wright, Jr',
+    scripture: 'Psalm 94'
+  },
+  {
     date: '2023-02-19T09:00:00',
     youtubeId: 'aQfN1WLesng',
     title: 'A Word About Oneness!',
@@ -78,7 +85,7 @@ const messageVideos = [
   {
     date: '2022-12-11T09:00:00',
     youtubeId: 'ksKqO07MIOs',
-    title: '“Preparing the Way for The Glory of the Lord”',
+    title: 'Preparing the Way for The Glory of the Lord',
     preacher: PREACHERS.G_YEARGIN,
     scripture: null
   },
@@ -99,7 +106,7 @@ const messageVideos = [
   {
     date: '2022-11-20T09:00:00',
     youtubeId: 'EM4wCQHVwLQ',
-    title: '"It’s All Over You! - Pastoral Apprecation Service',
+    title: 'It’s All Over You! - Pastoral Apprecation Service',
     preacher: 'Rev. Carl Hamiel',
     scripture: '1 Timothy 4:13-15'
   },
