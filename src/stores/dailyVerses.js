@@ -170,7 +170,14 @@ const bibleComFormattedVerses = {
   '2023-02-22': {verse: 'Luke 1.47-56'},
   '2023-02-23': {verse: 'Isaiah 63.7-14'},
   '2023-02-24': {verse: 'James 2.1-13'},
-  '2023-02-25': {verse: 'Luke 6.27-36'}
+  '2023-02-25': {verse: 'Luke 6.27-36'},
+  '2023-02-26': {verse: 'Psalm 119.33-40'},
+  '2023-02-27': {verse: 'Hosea 14.1-9'},
+  '2023-02-28': {verse: 'Micah 6.1-8'},
+  '2023-03-01': {verse: 'Matthew 12.22-37'},
+  '2023-03-02': {verse: 'Luke 19.11-27'},
+  '2023-03-03': {verse: 'Hebrews 13.1-16'},
+  '2023-03-04': {verse: 'Ephesians 2.1-10'}
 };
 
 export {bibleComFormattedVerses};
