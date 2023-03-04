@@ -267,5 +267,23 @@ export default {
         of reconciliation.”
       </p>
     )
+  },
+  '2023-03-05': {
+    subTitle: (
+      <>
+        From <i>Letters from the Desert</i> Carlo Carretto
+      </>
+    ),
+    content: (
+      <p>
+        “The will of God. That’s what rules the world and moves the stars, what
+        converts the nations, what starts all life and brings triumph out of
+        death. The will of God raised up Abraham, our father in faith; it called
+        Moses, inspired David, prepared Mary, sustained Joseph, made Christ
+        incarnate and demanded his sacrifice; this it was that founded the
+        Church. And it is God’s will still to continue the work of redemption
+        until the end of time.”
+      </p>
+    )
   }
 };
