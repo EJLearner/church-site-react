@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2023-03-05T09:00:00',
+    youtubeId: 'ssSRCFBVgCU',
+    title: 'A Different Kind of Kingdom',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 18:28-37'
+  },
+  {
     date: '2023-02-26T09:00:00',
     youtubeId: 'xOtZf6HJ2DY',
     title: 'The Favor of God',
