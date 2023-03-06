@@ -74,8 +74,9 @@ const testUserInfo = {
 };
 
 const donationTypeOptions = [
-  {label: 'Audio/Visual Ministry', value: 'audovisual'},
   {label: 'Tithes', value: 'tithes'},
+  {label: 'Capital Campaign', value: 'capital-campaign'},
+  {label: 'Audio/Visual Ministry', value: 'audovisual'},
   {label: 'General Offering', value: 'general'},
   {label: 'Benevolence', value: 'benevolence'},
   {label: 'Building Fund', value: 'building'},
