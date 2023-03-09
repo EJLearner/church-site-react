@@ -285,5 +285,21 @@ export default {
         until the end of time.”
       </p>
     )
+  },
+  '2023-03-12': {
+    subTitle: (
+      <>
+        From <i>Classics of Western Spirituality</i> John Wesley
+      </>
+    ),
+    content: (
+      <p>
+        “Get these three Principles fixed in your hearts: the Things eternal are
+        much more considerable than Things temporal; that Things not seen are as
+        certain as the Things that are seen; that upon your present choice
+        depends your eternal lot. Choose Christ and his ways, and you are
+        blessed forever; refuse, and you are undone forever.”
+      </p>
+    )
   }
 };
