@@ -184,7 +184,14 @@ const bibleComFormattedVerses = {
   '2023-03-08': {verse: 'Hebrews 1.1-4'},
   '2023-03-09': {verse: 'Jeremiah 32.16-27'},
   '2023-03-10': {verse: 'Luke 9.1-6'},
-  '2023-03-11': {verse: 'Luke 24.36-53'}
+  '2023-03-11': {verse: 'Luke 24.36-53'},
+  '2023-03-12': {verse: 'Psalm 33.18-22'},
+  '2023-03-13': {verse: '1 Kings 8.22-30'},
+  '2023-03-14': {verse: 'Nehemiah 9.6-25'},
+  '2023-03-15': {verse: 'Romans 4.16-25'},
+  '2023-03-16': {verse: 'James 1.1-15'},
+  '2023-03-17': {verse: '2 Corinthians 1.12-22'},
+  '2023-03-18': {verse: '2 Peter 3.5-13'}
 };
 
 export {bibleComFormattedVerses};
