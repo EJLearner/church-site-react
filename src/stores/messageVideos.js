@@ -5,11 +5,17 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2023-03-19T09:00:00',
+    youtubeId: 'n1jT10nKzF4',
+    title: 'A Peek Into The Heart of God',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 11: 33-35 (NLT)'
+  },
+  {
     date: '2023-03-12T09:00:00',
     youtubeId: 'RVXNkj91vSw',
     title: 'Going Up to Jerusalem',
-    preacher: PREACHERS.G_YEARGIN,
-    scripture: 'John 18:28-37'
+    preacher: PREACHERS.G_YEARGIN
   },
   {
     date: '2023-03-05T09:00:00',
