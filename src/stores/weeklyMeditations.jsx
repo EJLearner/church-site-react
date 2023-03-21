@@ -301,5 +301,34 @@ export default {
         blessed forever; refuse, and you are undone forever.”
       </p>
     )
+  },
+  '2023-03-19': {
+    subTitle: (
+      <>
+        From <i>With Open Hands</i> Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “Conversion to God, therefore, means a simultaneous conversion to the
+          other persons who live with you on this earth. The farmer, the worker,
+          the student, the prisoner, the sick, the black [person], the white
+          [person], the weak, the strong, the oppressed and the oppressor, the
+          patient and the one who heals, the tortured and the torturer, the boss
+          and the flunky, not only are they people like you, but they are also
+          called to make themselves heard and to give God a chance to be the God
+          of all.
+        </p>
+        <p>
+          {' '}
+          Thus compassion removes all pretensions, just as it removes false
+          modesty. It invites you to understand everything, to see yourself in
+          the light of God and to joyfully tell everyone you meet that there is
+          no reason to fear; the land is free to be cultivated and to yield a
+          rich harvest.”
+        </p>
+      </>
+    )
   }
 };
