@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2023-03-26T09:00:00',
+    youtubeId: 'lKFnpkGe4wk',
+    title: 'The Necessity of This Death',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 12:20-29'
+  },
+  {
     date: '2023-03-19T09:00:00',
     youtubeId: 'n1jT10nKzF4',
     title: 'A Peek Into The Heart of God',
