@@ -330,5 +330,23 @@ export default {
         </p>
       </>
     )
+  },
+  '2023-03-26': {
+    subTitle: (
+      <>
+        From <i>With Open Hands</i> Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “When you pray, you open yourself to the influence of the Power which
+        has revealed itself as Love. The Power gives you freedom and
+        independence. Once touched by this Power, you are no longer swayed back
+        and forth by the countless opinions, ideas and feelings which flow
+        through you. You have found a center for your life that gives you a
+        creative distance so that everything you see, hear and feel can be
+        tested against the source.”
+      </p>
+    )
   }
 };
