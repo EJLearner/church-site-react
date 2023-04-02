@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2023-04-02T09:00:00',
+    youtubeId: 'sQkT7tew9II',
+    title: 'Jesus’ Parting Act of Healing',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 21:12-17'
+  },
+  {
     date: '2023-03-26T09:00:00',
     youtubeId: 'lKFnpkGe4wk',
     title: 'The Necessity of This Death',
