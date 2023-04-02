@@ -348,5 +348,23 @@ export default {
         tested against the source.”
       </p>
     )
+  },
+  '2023-04-02': {
+    subTitle: (
+      <>
+        From <i>Growing Strong at Broken Places</i> Paula Ripple
+      </>
+    ),
+    content: (
+      <p>
+        “Reverence is a gentle virtue; it is also strong. Reverence is a tender
+        virtue; it is also tough. Reverence is a patient virtue; it is also
+        persistent. Reverence bears no ill will toward others; it is able to
+        bear the ill will of others when necessary. Reverence is a virtue that
+        prepares us well to belong to one another; it reaches out to those who
+        have given messages of not wishing to belong. When we approach others
+        with gentle reverence, we bring gifts and share theirs with us.”
+      </p>
+    )
   }
 };
