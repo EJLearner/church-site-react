@@ -366,5 +366,36 @@ export default {
         with gentle reverence, we bring gifts and share theirs with us.”
       </p>
     )
+  },
+  '2023-04-09': {
+    subTitle: (
+      <>
+        From <i>A Diary of Private Prayer</i> John Baillie
+      </>
+    ),
+    content: (
+      <p>
+        “Grant that the remembrance of the blessed Life that once was lived out
+        on this common earth under these ordinary skies may remain with me in
+        all the tasks and duties of this day. Let me remember – <br />
+        His eagerness, not to be ministered unto, but to minister;
+        <br /> His sympathy with suffering of every kind:
+        <br /> His meekness of bearing, so that, when reviled, He reviled not
+        again:
+        <br /> His steadiness of purpose in keeping to His appointed task:
+        <br /> His simplicity:
+        <br /> His self-discipline:
+        <br /> His serenity of spirit:
+        <br /> His complete reliance upon thee, His Father in Heaven.
+        <br /> And in each of these ways give me grace to follow in His
+        footsteps.
+        <br /> Almighty God, Father of our Lord Jesus Christ, I commit all my
+        ways unto Thee. I make over my soul to Thy keeping. I pledge my life to
+        Thy service. May this day be for me a day of obedience and of charity, a
+        day of happiness and of peace.
+        <br /> May all my walk and conversation be such as becometh the gospel
+        of Christ. Amen.”
+      </p>
+    )
   }
 };
