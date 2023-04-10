@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2023-04-09T09:00:00',
+    youtubeId: 'LcPpjljkKXM',
+    title: 'The Resurrection',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Luke 24:1-12 (NLT)'
+  },
+  {
     date: '2023-04-02T09:00:00',
     youtubeId: 'sQkT7tew9II',
     title: 'Jesus’ Parting Act of Healing',
