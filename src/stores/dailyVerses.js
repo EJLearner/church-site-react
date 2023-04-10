@@ -212,7 +212,14 @@ const bibleComFormattedVerses = {
   '2023-04-05': {verse: '1 Corinthians 1.3-11'},
   '2023-04-06': {verse: 'Isaiah 53.1-6'},
   '2023-04-07': {verse: 'Isaiah 53.7-9'},
-  '2023-04-08': {verse: 'Isaiah 53.10-12'}
+  '2023-04-08': {verse: 'Isaiah 53.10-12'},
+  '2023-04-09': {verse: 'Psalm 118.14-24'},
+  '2023-04-10': {verse: 'Act 3.11-16'},
+  '2023-04-11': {verse: 'Acts 4.1-12'},
+  '2023-04-12': {verse: 'Acts 2.22-36'},
+  '2023-04-13': {verse: 'Acts 3.11-16'},
+  '2023-04-14': {verse: 'Ephesians 1.15-23'},
+  '2023-04-15': {verse: '2 Corinthians 4.7-18'}
 };
 
 export {bibleComFormattedVerses};
