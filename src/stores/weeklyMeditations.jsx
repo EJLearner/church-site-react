@@ -397,5 +397,28 @@ export default {
         of Christ. Amen.”
       </p>
     )
+  },
+  '2023-04-16': {
+    subTitle: (
+      <>
+        From <i>Unknown</i> John Wesley
+      </>
+    ),
+    content: (
+      <p>
+        “We must act as if each is fully persuaded in his [or her] own mind.
+        Hold you fast that which you believe is most acceptable to God, and I
+        will do the same. I believe the episcopal form of church government to
+        be scriptural and apostolical. If you think the Presbyterian or
+        Independent is better, think so still and act accordingly. I believe
+        infants ought to be baptized, and that this may be done either by
+        dipping or sprinkling. If you are otherwise persuaded, be so still, and
+        follow your own persuasion. It appears to me that forms of prayer are of
+        excellent use, particularly in the great congregation. If you judge
+        extemporary prayer to be of more use, act suitable to your own
+        judgment…If thou love God and all [humanity], I ask no more. “Give me
+        thine hand.”
+      </p>
+    )
   }
 };
