@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2023-04-16T09:00:00',
+    youtubeId: 'mXN8zLGgMV4',
+    title: 'Seeing God Through You',
+    preacher: PREACHERS.M_HAMIEL,
+    scripture: 'Ruth 1:8-9, 16-18'
+  },
+  {
     date: '2023-04-09T09:00:00',
     youtubeId: 'LcPpjljkKXM',
     title: 'The Resurrection',
