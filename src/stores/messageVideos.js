@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2023-04-23T09:00:00',
+    youtubeId: 'fv7yEe2Ihtg',
+    title: 'Divine Devotion Disrupted By Human Distress!!!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 6:16-21 (NLT)'
+  },
+  {
     date: '2023-04-16T09:00:00',
     youtubeId: 'mXN8zLGgMV4',
     title: 'Seeing God Through You',
