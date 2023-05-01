@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2023-04-30T09:00:00',
+    youtubeId: '2-nM8hq5yN8',
+    title: 'Confident About Our Completion!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Philippians 1:3-6 (NLT)'
+  },
+  {
     date: '2023-04-23T09:00:00',
     youtubeId: 'fv7yEe2Ihtg',
     title: 'Divine Devotion Disrupted By Human Distress!!!',
