@@ -438,5 +438,20 @@ export default {
         conquered; now, I was always conqueror.”
       </p>
     )
+  },
+  '2023-05-07': {
+    subTitle: (
+      <>
+        From <i>My Life for the Poor</i> Mother Teresa
+      </>
+    ),
+    content: (
+      <p>
+        “Giving needs not be confined to money or material gifts, but I would
+        like more people to give their hands to serve and their hearts to love –
+        to recognize the poor in their own homes, towns and countries, and to
+        reach out to them in love and compassion.”
+      </p>
+    )
   }
 };
