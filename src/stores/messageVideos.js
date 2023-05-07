@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const messageVideos = [
   {
+    date: '2023-05-07T09:00:00',
+    youtubeId: 'JizHSNmItOU',
+    title: 'A Perfect Portrait of Prayer',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'John 4:46-54 (NLT)'
+  },
+  {
     date: '2023-04-30T09:00:00',
     youtubeId: '2-nM8hq5yN8',
     title: 'Confident About Our Completion!',
