@@ -3,7 +3,14 @@ import {getNumberOfDaysAgo, isPast, parseISO} from '../utils/dateTimeUtils';
 
 const {PREACHERS} = constants;
 
-const messageVideos = [
+const sermonVideos = [
+  {
+    date: '2023-05-12T09:00:00',
+    youtubeId: '4BjZ8CNNWsw',
+    title: 'The Influence of Godly Mothers',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: '2 Timothy 1: 1-5 and 3: 14-17'
+  },
   {
     date: '2023-05-07T09:00:00',
     youtubeId: 'JizHSNmItOU',
@@ -1216,4 +1223,4 @@ const messageVideos = [
   })
   .sort((a, b) => a.date < b.date);
 
-export default messageVideos;
+export default sermonVideos;

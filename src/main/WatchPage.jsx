@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 
 import choir from '../assets/images/choir.jpg';
-import messageVideos from '../stores/messageVideos';
+import sermonVideos from '../stores/sermonVideos';
 import {
   convertTypedDateToIso,
   getLongDisplayDate
@@ -261,7 +261,7 @@ const WatchPage = () => {
     INITIAL_VIDEO_SHOW_COUNT
   );
   const [searchInfo, setSearchInfo] = useState(initialSearchInfo);
-  const [newestVideo, ...otherVideos] = messageVideos;
+  const [newestVideo, ...otherVideos] = sermonVideos;
   const [filteredVideos, setFilteredVideos] = useState(otherVideos);
 
   const displayedVideos = filteredVideos.slice(0, archiveVideoShowCount);
