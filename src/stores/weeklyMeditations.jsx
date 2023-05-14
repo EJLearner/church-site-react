@@ -453,5 +453,22 @@ export default {
         reach out to them in love and compassion.”
       </p>
     )
+  },
+  '2023-05-14': {
+    subTitle: (
+      <>
+        From <i>Seeking the Face of God</i> Gary Thomas
+      </>
+    ),
+    content: (
+      <p>
+        “Those who have gone before us have left a clear witness: We may seek
+        God or we may seek ease, but we cannot seek both. The road we travel is
+        anything but easy. It is true that God loves us and has a wonderful plan
+        for our lives, but it is equally true that the plan is often fraught
+        with tension and uncertainty, and with emotional, spiritual and physical
+        pain.”
+      </p>
+    )
   }
 };

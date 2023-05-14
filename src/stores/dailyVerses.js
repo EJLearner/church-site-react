@@ -240,7 +240,14 @@ const bibleComFormattedVerses = {
   '2023-05-10': {verse: 'John 11.28-37'},
   '2023-05-11': {verse: 'John 15.9-11'},
   '2023-05-12': {verse: 'Colossians 3.12-14'},
-  '2023-05-13': {verse: 'Galatians 5.22-26'}
+  '2023-05-13': {verse: 'Galatians 5.22-26'},
+  '2023-05-14': {verse: 'Psalm 31.1-5'},
+  '2023-05-15': {verse: 'John 21.18-19'},
+  '2023-05-16': {verse: 'Acts 9.1-9'},
+  '2023-05-17': {verse: 'Acts 9.10-19'},
+  '2023-05-18': {verse: '2 Corinthians 11.16-32'},
+  '2023-05-19': {verse: 'Acts 16.6-10'},
+  '2023-05-20': {verse: 'Acts 16.16-34'}
 };
 
 export {bibleComFormattedVerses};
