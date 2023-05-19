@@ -253,7 +253,7 @@ const bibleComFormattedVerses = {
   '2023-05-23': {verse: 'Isaiah 45.1-8'},
   '2023-05-24': {verse: 'Genesis 9.8-17'},
   '2023-05-25': {verse: 'Romans 5.1-11'},
-  '2023-05-26': {verse: 'Job 2.18-27'},
+  '2023-05-26': {verse: 'Joel 2.18-27'},
   '2023-05-27': {verse: '1 Peter 2.1-10'}
 };
 
