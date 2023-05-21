@@ -5,7 +5,14 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
-    date: '2023-05-12T09:00:00',
+    date: '2023-05-21T09:00:00',
+    youtubeId: '50k3f1FvHpA',
+    title: 'An Appeal To Be Who We Are',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Romans 12:1-2 (NLT)'
+  },
+  {
+    date: '2023-05-14T09:00:00',
     youtubeId: '4BjZ8CNNWsw',
     title: 'The Influence of Godly Mothers',
     preacher: PREACHERS.D_HICKMAN,
