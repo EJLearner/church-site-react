@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-05-28T09:00:00',
+    youtubeId: '5H2wJpwWszc',
+    title: 'A Word About Pentecost',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Acts 2:1-4 (NLT)'
+  },
+  {
     date: '2023-05-21T09:00:00',
     youtubeId: '50k3f1FvHpA',
     title: 'An Appeal To Be Who We Are',
