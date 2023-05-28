@@ -254,7 +254,14 @@ const bibleComFormattedVerses = {
   '2023-05-24': {verse: 'Genesis 9.8-17'},
   '2023-05-25': {verse: 'Romans 5.1-11'},
   '2023-05-26': {verse: 'Joel 2.18-27'},
-  '2023-05-27': {verse: '1 Peter 2.1-10'}
+  '2023-05-27': {verse: '1 Peter 2.1-10'},
+  '2023-05-28': {verse: 'Psalm 104.24-34'},
+  '2023-05-29': {verse: 'Acts 2.43-47'},
+  '2023-05-30': {verse: 'Acts 3.1-10'},
+  '2023-05-31': {verse: 'Acts 4.32-37'},
+  '2023-06-01': {verse: 'Zechariah 4.1-10'},
+  '2023-06-02': {verse: 'Ephesians 4.17-5.2'},
+  '2023-06-03': {verse: 'Romans 8.1-17'}
 };
 
 export {bibleComFormattedVerses};

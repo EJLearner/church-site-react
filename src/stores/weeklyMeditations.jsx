@@ -494,5 +494,36 @@ export default {
         us walking in the Invisible.”
       </p>
     )
+  },
+  '2023-05-28': {
+    subTitle: (
+      <>
+        From <i>The Art of Prayer</i>
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “Cast aside everything that might extinguish this small flame which is
+          beginning to burn within you, and surround yourself with everything
+          which can feed and fan it into a strong fire. Isolate yourself, pray,
+          think over for yourself what you should do. The order of life, of
+          occupation and work, which you forced yourself to adopt when you were
+          seeking for grace, is also the most helpful in prolonging within you
+          the action of grace which has now begun. What you need most in your
+          present position is solitude, prayer, and meditation. Your solitude
+          must become more collected, your prayer deeper, and your meditation
+          more forceful.
+        </p>
+        <p>
+          “How did our ascetics, fathers, and teachers warm the spirit of prayer
+          inwardly and establish themselves firmly in prayer? Their great object
+          was to make the heart burn unceasingly towards the Lord alone. God
+          claims the heart because within it lies the source of life. Where the
+          heart is, there is consciousness, attention, mind; there is the whole
+          soul.”
+        </p>
+      </>
+    )
   }
 };
