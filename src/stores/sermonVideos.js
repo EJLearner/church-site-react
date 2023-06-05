@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-06-04T09:00:00',
+    youtubeId: '4sFFwNBrq1E',
+    title: 'An Invitation to Perpetual Praise!!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Psalm 34:1-8 (NLT)'
+  },
+  {
     date: '2023-05-28T09:00:00',
     youtubeId: '5H2wJpwWszc',
     title: 'A Word About Pentecost',
