@@ -548,5 +548,39 @@ export default {
         freedom; true freedom is to will what God does.”
       </p>
     )
+  },
+  '2023-06-11': {
+    subTitle: (
+      <>
+        From <i>Freedom of Simplicity</i> Richard J. Foster
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “Pastors also need to take courage and share boldly and tenderly.
+          People need the truth. It does them no good to remain ignorant. They
+          need the freedom that comes through the grace of simplicity. And if we
+          are to bring the whole counsel of God, we must give attention to these
+          issues that enslave people so savagely. Martin Luther is reported to
+          have said, “If you preach the Gospel in all aspects with the exception
+          of the issues which deal specifically with your time you are not
+          preaching the Gospel at all.”{' '}
+        </p>
+        <p>
+          “Given the contemporary milieu, several dimensions of simplicity seem
+          to me to need careful attention in the teaching ministry of the
+          Church. We must boldly teach the essential connection between the
+          inner and outer aspects of simplicity. We can no longer allow people
+          to engage in pious exercises that are divorced from the hard social
+          realities of life. Nor can we tolerate a radical social witness that
+          is devoid of inward spiritual vitality. Our preaching and teaching
+          needs to hold these elements in unity. If our teaching is centered in
+          the biblical text, we will find literally hundreds of examples - from
+          Abraham to St. John, from the wisdom literature to the apocalyptic
+          writings.”
+        </p>
+      </>
+    )
   }
 };
