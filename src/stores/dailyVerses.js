@@ -275,7 +275,14 @@ const bibleComFormattedVerses = {
   '2023-06-14': {verse: 'Ephesians 2.1-10'},
   '2023-06-15': {verse: 'Romans 6.1-14'},
   '2023-06-16': {verse: 'Luke 7.36-50'},
-  '2023-06-17': {verse: 'John 4.7-42'}
+  '2023-06-17': {verse: 'John 4.7-42'},
+  '2023-06-18': {verse: 'Psalm 46'},
+  '2023-06-19': {verse: 'Luke 18.18-30'},
+  '2023-06-20': {verse: 'Galatians 5.16-24'},
+  '2023-06-21': {verse: 'Philippians 2.12-18'},
+  '2023-06-22': {verse: '1 Timothy 4.6-16'},
+  '2023-06-23': {verse: '2 Timothy 2.1-13'},
+  '2023-06-24': {verse: '1 John 4'}
 };
 
 export {bibleComFormattedVerses};
