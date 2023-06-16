@@ -582,5 +582,18 @@ export default {
         </p>
       </>
     )
+  },
+  '2023-06-18': {
+    subTitle: (
+      <>
+        From <i>Unknown</i> Dom Augustin Guillerand
+      </>
+    ),
+    content: (
+      <p>
+        “God will know how to draw glory even from our faults. Not to be
+        downcast after committing a fault is one of the marks of true sanctity.”
+      </p>
+    )
   }
 };
