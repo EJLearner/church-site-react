@@ -5,9 +5,16 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-06-18T09:00:00',
+    youtubeId: 'CwmqgBDwTDQ',
+    title: 'A Father’s Compassion',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Psalm 103:13-14 (NLT)'
+  },
+  {
     date: '2023-06-11T09:00:00',
     youtubeId: '-eqqGEMHsj0',
-    title: 'An Invitation to Perpetual Praise!!',
+    title: 'Use It or Lose It',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 25: 14-30 (NLT)'
   },
