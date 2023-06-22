@@ -282,7 +282,14 @@ const bibleComFormattedVerses = {
   '2023-06-21': {verse: 'Philippians 2.12-18'},
   '2023-06-22': {verse: '1 Timothy 4.6-16'},
   '2023-06-23': {verse: '2 Timothy 2.1-13'},
-  '2023-06-24': {verse: '1 John 4'}
+  '2023-06-24': {verse: '1 John 4'},
+  '2023-06-25': {verse: 'Psalm 48'},
+  '2023-06-26': {verse: '1 Corinthians 2.1-13'},
+  '2023-06-27': {verse: 'Psalm 28'},
+  '2023-06-28': {verse: 'Isaiah 40.12-31'},
+  '2023-06-29': {verse: 'Philippians 4.10-20'},
+  '2023-06-30': {verse: '2 Corinthians 9.6-15'},
+  '2023-07-01': {verse: 'Ephesians 3.14-21'}
 };
 
 export {bibleComFormattedVerses};
