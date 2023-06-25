@@ -595,5 +595,21 @@ export default {
         downcast after committing a fault is one of the marks of true sanctity.”
       </p>
     )
+  },
+  '2023-06-25': {
+    subTitle: (
+      <>
+        From <i>Meditations of a Hermit</i> Charles de Foucauld
+      </>
+    ),
+    content: (
+      <p>
+        “You give your help, not in proportion to our merit, but to our needs.
+        You came for the sick and not for the healthy. How true I feel this is.
+        I feel your love as you hold me to your Sacred Heart, my Beloved Jesus,
+        my God, my Master, but I feel, too, the need I have of your tenderness,
+        and of your caress because of my infinite weakness.”
+      </p>
+    )
   }
 };
