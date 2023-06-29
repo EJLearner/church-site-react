@@ -611,5 +611,26 @@ export default {
         and of your caress because of my infinite weakness.”
       </p>
     )
+  },
+  '2023-07-02': {
+    subTitle: (
+      <>
+        From <i>The Cloud of Unknowing</i>
+      </>
+    ),
+    content: (
+      <p>
+        “It is not what you are nor what you have been that God sees with his
+        all-merciful eyes, but what you desire to be. St. Gregory declares that
+        “all holy desires heighten in intensity with the delay of fulfillment,
+        and desire which fades with delay was never holy desire at all.” For if
+        you experience less and less joy when you discover anew the sudden
+        presence of great desires you had formerly pursued, your first desire
+        was not holy desire. Possibly you felt a natural tendency toward the
+        good but this should not be confused with holy desire. St. Augustine
+        explains what I mean by holy desire when he says that “The entire life
+        of a good Christian is nothing less than holy desire.”
+      </p>
+    )
   }
 };
