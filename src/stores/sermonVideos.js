@@ -5,11 +5,11 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
-    date: '2023-06-25T09:00:00',
-    youtubeId: 'QdsFMaOcx1Q',
-    title: 'Molded with Inherited Power!',
-    preacher: PREACHERS.L_FORD,
-    scripture: '2 Corinthians 4:7-12'
+    date: '2023-07-02T09:00:00',
+    youtubeId: 'WINEsHUtuWk',
+    title: 'Meeting God in Unexpected Places!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Genesis 28:10-22 (NLT)'
   },
   {
     date: '2023-06-18T09:00:00',
