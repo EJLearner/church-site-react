@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-07-09T09:00:00',
+    youtubeId: 'lrytWg48Wwk',
+    title: 'A Parting Epitaph To The Kingdom!!',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'St. Luke 39; 39-52 (NLT)'
+  },
+  {
     date: '2023-07-02T09:00:00',
     youtubeId: 'WINEsHUtuWk',
     title: 'Meeting God in Unexpected Places!',
