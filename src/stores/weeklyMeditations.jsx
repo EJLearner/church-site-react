@@ -632,5 +632,29 @@ export default {
         of a good Christian is nothing less than holy desire.”
       </p>
     )
+  },
+  '2023-07-09': {
+    subTitle: (
+      <>
+        From <i>I, Francis</i> Carlo Carretto
+      </>
+    ),
+    content: (
+      <p>
+        “And so when we had a decision to make, we would open the gospel at
+        random, after having said a little prayer, and then we did whatever was
+        written, without adding anything. <br />
+        This manner of action gave us a boundless liberty, and nurtured
+        simplicity of heart with some solid food. <br />
+        Another important element taking shape in the community we were forming
+        was the primacy of faith instead of structures. <br />
+        We felt ourselves to be a community in search of God, not a seminary for
+        the priesthood. <br />
+        What made us one was Christ, and the imitation of him gave meaning to
+        the manner of living of each one of us. <br />
+        There was the whole expression around us of the life of a simple
+        Christian.”
+      </p>
+    )
   }
 };
