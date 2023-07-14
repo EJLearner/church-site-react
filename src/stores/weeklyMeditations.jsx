@@ -656,5 +656,49 @@ export default {
         Christian.”
       </p>
     )
+  },
+  '2023-07-16': {
+    subTitle: (
+      <>
+        From <i>Thomas Merton: Contemplative Critic</i> Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “It is impressive to see how prayer opens one’s eyes to nature. Prayer
+        makes men contemplative and attentive. In place of manipulating, the man
+        who prays stands receptive before the world. He no longer grabs but
+        caresses, he no longer bites, but kisses, he no longer examines but
+        admires. To this man, as for Merton, nature can show itself completely
+        renewed. Instead of an obstacle, it becomes a way; instead of an
+        invulnerable shield, it becomes a veil which gives a preview of unknown
+        horizons.”
+      </p>
+    )
+  },
+  '2023-07-23': {
+    subTitle: (
+      <>
+        From <i>The God Who Comes</i> Carlo Carretto
+      </>
+    ),
+    content: (
+      <p>
+        God comes like the sun in the morning – when it is time. <br />
+        We must assume an attitude of waiting, accepting the fact that we re
+        creatures and not creator. <br />
+        We must do this because it is not our right to do anything else; the
+        initiative is God’s, not ours. We are able to initiate nothing; we are
+        able only to accept. <br />
+        If God does not call, no calling takes place. If God does not come,
+        there is no history! History is the coming of God to us, and the way in
+        which we reply. <br />
+        Only God created the heavens and the earth; only God can create history.
+        We carry it out through our response, but the inspiration, the design,
+        and the strength to carry it out come from him. <br />
+        In short, he is what creates, and we creatures are in an act of
+        becoming.
+      </p>
+    )
   }
 };
