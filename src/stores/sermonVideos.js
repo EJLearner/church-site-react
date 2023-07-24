@@ -5,6 +5,20 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-07-23T09:00:00',
+    youtubeId: 'CyDBEUG3zeU',
+    title: 'Dealing with Our Anxious Fears',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Psalm 27:1; 13-14 (KJV)'
+  },
+  {
+    date: '2023-07-16T09:00:00',
+    youtubeId: 'fFw0gYa_Um4',
+    title: 'Why Prayer Is Essential',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: 'Matthew 6:7-8; Luke 11:1-2 (NLT)'
+  },
+  {
     date: '2023-07-09T09:00:00',
     youtubeId: 'lrytWg48Wwk',
     title: 'A Parting Epitaph To The Kingdom!!',
