@@ -700,5 +700,24 @@ export default {
         becoming.
       </p>
     )
+  },
+  '2023-07-30': {
+    subTitle: (
+      <>
+        From <i>In the Christian Spirit</i> Louis Evely
+      </>
+    ),
+    content: (
+      <p>
+        “Bad religion has always favored escape, passivity, irresponsibility. By
+        dint of fixing one’s eyes on heaven above, one does not see what takes
+        place on earth here below. The upward-looking must come to an
+        understanding with the forward-looking. We believe that our God (up
+        above) calls us to go forward. Our faith in an absolute does not
+        immobilize us in contemplation, but invites us to discover him according
+        to our means of creating a world inspired by his love: a world where
+        justice dwells and where people love one another.”
+      </p>
+    )
   }
 };
