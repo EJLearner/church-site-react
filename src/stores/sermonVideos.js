@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-07-30T09:00:00',
+    youtubeId: '9bftHTZ7BVo',
+    title: 'The Lord is Our Keeper',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'Psalm 121:1-8 (ESV)'
+  },
+  {
     date: '2023-07-23T09:00:00',
     youtubeId: 'CyDBEUG3zeU',
     title: 'Dealing with Our Anxious Fears',
