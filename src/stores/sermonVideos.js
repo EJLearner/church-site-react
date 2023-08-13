@@ -5,6 +5,20 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-08-13T09:00:00',
+    youtubeId: 'hXtHEUlWJxg',
+    title: 'The Blessing of Tribulation',
+    preacher: PREACHERS.D_NELSON,
+    scripture: 'John 16:30-33'
+  },
+  {
+    date: '2023-08-06T09:00:00',
+    youtubeId: 'c_vkOBFTYnI',
+    title: 'An Affirmation of Living Hope',
+    preacher: PREACHERS.G_YEARGIN,
+    scripture: '1 Peter 1:3-5 (NLT)'
+  },
+  {
     date: '2023-07-30T09:00:00',
     youtubeId: '9bftHTZ7BVo',
     title: 'The Lord is Our Keeper',
