@@ -719,5 +719,21 @@ export default {
         justice dwells and where people love one another.”
       </p>
     )
+  },
+  '2023-08-06': {
+    subTitle: (
+      <>
+        From <i>A Gift For God</i> Mother Teresa
+      </>
+    ),
+    content: (
+      <p>
+        “Suffering is increasing in the world today. People are hungry for
+        something more beautiful, for something greater than people round about
+        can give. There is a great hunger for God in the world today. Everywhere
+        there is much suffering, but there is also great hunger for God and love
+        for each other.”
+      </p>
+    )
   }
 };
