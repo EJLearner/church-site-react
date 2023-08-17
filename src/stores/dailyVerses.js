@@ -331,7 +331,21 @@ const bibleComFormattedVerses = {
   '2023-08-09': {verse: 'Romans 8.31-39'},
   '2023-08-10': {verse: '2 Corinthians 5.16-21'},
   '2023-08-11': {verse: 'Colossians 1.1-14'},
-  '2023-08-12': {verse: 'Revelation 19.1-10'}
+  '2023-08-12': {verse: 'Revelation 19.1-10'},
+  '2023-08-13': {verse: 'Psalm 106.4-12'},
+  '2023-08-14': {verse: '2 Samuel 7.18-29'},
+  '2023-08-15': {verse: 'Romans 4'},
+  '2023-08-16': {verse: 'James 1.1-12'},
+  '2023-08-17': {verse: '2 Peter 1.1-11'},
+  '2023-08-18': {verse: 'Acts 12.1-11'},
+  '2023-08-19': {verse: 'John 17.1-19'},
+  '2023-08-20': {verse: 'Psalm 78.1-3,10-20'},
+  '2023-08-21': {verse: '1 Chronicles 29.10-22'},
+  '2023-08-22': {verse: 'Luke 10.1-12'},
+  '2023-08-23': {verse: 'Luke 22.14-30'},
+  '2023-08-24': {verse: 'Hebrews 12.18-25'},
+  '2023-08-25': {verse: 'Matthew 4.18-25'},
+  '2023-08-26': {verse: 'Revelation 11.15-19'}
 };
 
 export {bibleComFormattedVerses};
