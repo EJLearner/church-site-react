@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-08-20T09:00:00',
+    youtubeId: 'kikY5l58oR8',
+    title: 'A Powerful Shield of Protection',
+    preacher: PREACHERS.T_CURLEY,
+    scripture: ' Psalm 91:1-4'
+  },
+  {
     date: '2023-08-13T09:00:00',
     youtubeId: 'hXtHEUlWJxg',
     title: 'The Blessing of Tribulation',
