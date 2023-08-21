@@ -735,5 +735,45 @@ export default {
         for each other.”
       </p>
     )
+  },
+  '2023-08-13': {
+    subTitle: (
+      <>
+        From <i>Something Beautiful For God</i> Malcolm Muggeridge
+      </>
+    ),
+    content: (
+      <p>
+        “Make us worthy, Lord, to serve our fellow men throughout the world who
+        live and die in poverty and hunger. Give them, through our hands, this
+        day their daily bread, and by our understanding love give Peace and joy.
+        Lord, make me a channel of thy peace, that where there is hatred I may
+        bring love; that where there is wrong, I may bring harmony; that where
+        there is error, I may bring truth; that where there is doubt, I may
+        bring faith; that where there is despair, I may bring hope; that where
+        there are shadows, I may bring light; that where there is sadness, I may
+        bring joy. Lord, grant that I may seek rather to comfort than to be
+        comforted; to understand than to be understood; to love than to be
+        loved; for it is by forgetting self that one finds; it is by dying that
+        one awakens to eternal life.” Amen.
+      </p>
+    )
+  },
+  '2023-08-20': {
+    subTitle: (
+      <>
+        From <i>The Meaning of Prayer</i> Harry Emerson Fosdick
+      </>
+    ),
+    content: (
+      <p>
+        “Now if God has left some things contingent on man’s <b>thinking</b> and
+        <b>working</b> why may he not have left some things contingent on man’s
+        praying? The testimony of the great souls is a clear affirmative to
+        this: some things never without thinking; some things never without
+        working, some things never without praying?{' '}
+        <b>Prayer is one of the three forms of man’s cooperation with God.</b>”
+      </p>
+    )
   }
 };
