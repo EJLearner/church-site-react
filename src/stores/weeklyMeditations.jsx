@@ -775,5 +775,25 @@ export default {
         <b>Prayer is one of the three forms of man’s cooperation with God.</b>”
       </p>
     )
+  },
+  '2023-08-27': {
+    subTitle: (
+      <>
+        From <i>Meditations of a Hermit</i> Charles de Foucauld
+      </>
+    ),
+    content: (
+      <p>
+        “The hour in our life in which we are best employed is the hour in which
+        we best love Jesus. A soul does good to others not in the measure of its
+        knowledge or intelligence but in that of its holiness. For me, all men
+        should be enveloped, in God’s sight, in the same love and the same
+        indifference. I must no more trouble about health or life than a tree
+        troubles about a failing leaf. I must remember only Jesus, think only of
+        Jesus, estimating as a gain any loss at the price of which I have more
+        room in myself for thought and knowledge of Jesus, beside whom
+        everything else is nothing. I must reserve all my strength for Jesus.”
+      </p>
+    )
   }
 };
