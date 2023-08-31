@@ -5,11 +5,18 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-08-28T09:00:00',
+    youtubeId: 'veG9E4_uhqU',
+    title: 'It’s Too Much to Bear and Trust the Process',
+    preacher: PREACHERS.M_HAMIEL,
+    scripture: '1 Corinthians 10:13'
+  },
+  {
     date: '2023-08-20T09:00:00',
     youtubeId: 'kikY5l58oR8',
     title: 'A Powerful Shield of Protection',
     preacher: PREACHERS.T_CURLEY,
-    scripture: ' Psalm 91:1-4'
+    scripture: 'Psalm 91:1-4'
   },
   {
     date: '2023-08-13T09:00:00',
