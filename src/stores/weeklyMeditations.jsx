@@ -795,5 +795,20 @@ export default {
         everything else is nothing. I must reserve all my strength for Jesus.”
       </p>
     )
+  },
+  '2023-09-03': {
+    subTitle: (
+      <>
+        From <i>I Will Lift Up Mine Eyes</i> Glenn Clark
+      </>
+    ),
+    content: (
+      <p>
+        “Our Father, we take our loved ones and all those who need us deeply
+        into our hearts and there we give them completely to thee. May thy
+        peace, the peace which passeth all understanding, rest with them,
+        bringing thy perfect fulfillment to all their needs. Amen.”
+      </p>
+    )
   }
 };
