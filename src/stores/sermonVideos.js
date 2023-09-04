@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-09-03T09:00:00',
+    youtubeId: 'L9XUIMRJLVg',
+    title: 'Our Power Is Through His Blood',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'Ephesians 1:7'
+  },
+  {
     date: '2023-08-28T09:00:00',
     youtubeId: 'veG9E4_uhqU',
     title: 'It’s Too Much to Bear and Trust the Process',
