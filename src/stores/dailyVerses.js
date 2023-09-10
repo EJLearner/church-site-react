@@ -359,7 +359,14 @@ const bibleComFormattedVerses = {
   '2023-09-06': {verse: 'Matthew 6.1-24'},
   '2023-09-07': {verse: 'Matthew 6.25-34'},
   '2023-09-08': {verse: 'Matthew 5.1-11'},
-  '2023-09-09': {verse: 'Matthew 5.13-20'}
+  '2023-09-09': {verse: 'Matthew 5.13-20'},
+  '2023-09-10': {verse: 'Psalm 115.1-11'},
+  '2023-09-11': {verse: 'Acts 10.34-43'},
+  '2023-09-12': {verse: '1 John 2.1-17'},
+  '2023-09-13': {verse: '2 Corinthians 2.2-3'},
+  '2023-09-14': {verse: 'Luke 6.27-36'},
+  '2023-09-15': {verse: 'Luke 6.37-42'},
+  '2023-09-16': {verse: 'Luke 17.1-6'}
 };
 
 export {bibleComFormattedVerses};
