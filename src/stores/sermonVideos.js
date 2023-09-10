@@ -5,6 +5,12 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-09-10T09:00:00',
+    youtubeId: 'T8KfYwSlekY',
+    title: 'Sermon',
+    preacher: PREACHERS.L_FORD
+  },
+  {
     date: '2023-09-03T09:00:00',
     youtubeId: 'L9XUIMRJLVg',
     title: 'Our Power Is Through His Blood',
