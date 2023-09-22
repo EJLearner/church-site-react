@@ -850,5 +850,23 @@ export default {
         society and who wants to change the world in spirit and truth.”
       </p>
     )
+  },
+  '2023-09-24': {
+    subTitle: (
+      <>
+        From <i>The Spiritual Life</i> Evelyn Underhill
+      </>
+    ),
+    content: (
+      <p>
+        “We are always praying, when we are doing our duty and turning it into
+        work for God.” He added that among the things which we should regard as
+        spiritual in this sense are our household or professional work, the
+        social duties of our station, friendly visits, kind actions and small
+        courtesies, and also necessary recreation of body and of mind; so long
+        as we link all these by intention with God and the great movement of his
+        Will.”
+      </p>
+    )
   }
 };
