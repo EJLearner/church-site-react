@@ -828,5 +828,45 @@ export default {
         Word, for Jesus Christ’s sake. Amen.”
       </p>
     )
+  },
+  '2023-09-17': {
+    subTitle: (
+      <>
+        From <i>Thomas Merton: Contemplative Critic</i> Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “Here we have come back to the compassion that must be formed in one’s
+        heart, a compassion that comes out of a deep experience of solidarity,
+        in which one recognizes that the evil, sin and violence which one sees
+        in the world and in the other, are deeply rooted in one’s own heart.
+        Only when you want to confess this and want to rely on the merciful God
+        who can bring good out of evil are you in a position to receive
+        forgiveness and also to give it to other men and women who threaten you
+        with violence. Precisely because Merton had discovered this nonviolent
+        compassion in his solitude could he in a real sense be a monk, that is
+        to say, one who unmasks through his criticism the illusions of a violent
+        society and who wants to change the world in spirit and truth.”
+      </p>
+    )
+  },
+  '2023-09-24': {
+    subTitle: (
+      <>
+        From <i>The Spiritual Life</i> Evelyn Underhill
+      </>
+    ),
+    content: (
+      <p>
+        “We are always praying, when we are doing our duty and turning it into
+        work for God.” He added that among the things which we should regard as
+        spiritual in this sense are our household or professional work, the
+        social duties of our station, friendly visits, kind actions and small
+        courtesies, and also necessary recreation of body and of mind; so long
+        as we link all these by intention with God and the great movement of his
+        Will.”
+      </p>
+    )
   }
 };
