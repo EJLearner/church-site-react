@@ -5,10 +5,24 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-09-24T09:00:00',
+    youtubeId: 'lfzo45F0Eqo',
+    title: 'The Joy of Tribulation',
+    preacher: PREACHERS.D_NELSON,
+    scripture: 'Hebrews 12:1-2 (KJV)'
+  },
+  {
+    date: '2023-09-17T09:00:00',
+    youtubeId: 't508wTOe4fk',
+    title: 'When Love Calls, You Better Answer',
+    preacher: PREACHERS.M_HAMIEL
+  },
+  {
     date: '2023-09-10T09:00:00',
     youtubeId: 'T8KfYwSlekY',
-    title: 'Sermon',
-    preacher: PREACHERS.L_FORD
+    title: 'Reposition for Your Revival',
+    preacher: PREACHERS.L_FORD,
+    scripture: 'Luke 19:1-10 (NSRV)'
   },
   {
     date: '2023-09-03T09:00:00',
