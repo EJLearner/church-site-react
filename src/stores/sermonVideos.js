@@ -8,7 +8,7 @@ const sermonVideos = [
     date: '2023-10-01',
     youtubeId: '1HkP65VXiHQ',
     title: 'Praise & Worship Activate Deliverance',
-    preacher: PREACHERS.D_NELSON,
+    preacher: PREACHERS.D_HICKMAN,
     scripture: ' Psalm 50:23'
   },
   {
