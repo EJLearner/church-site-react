@@ -35,7 +35,7 @@ const constants = {
 
   PREACHERS: {
     D_NELSON: 'Rev. Donnell Nelson',
-    D_HICKMAN: 'Rev. Debra Hickman',
+    D_HICKMAN: 'Rev. Debra Hickman-Arnette',
     G_YEARGIN: 'Rev. Dr. Grady A Yeargin, Jr.',
     L_FORD: 'Minister Lori Ford',
     M_HAMIEL: 'Rev. Michelle Hamiel',

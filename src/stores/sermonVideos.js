@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-10-01',
+    youtubeId: '1HkP65VXiHQ',
+    title: 'Praise & Worship Activate Deliverance',
+    preacher: PREACHERS.D_NELSON,
+    scripture: ' Psalm 50:23'
+  },
+  {
     date: '2023-09-24T09:00:00',
     youtubeId: 'lfzo45F0Eqo',
     title: 'The Joy of Tribulation',
