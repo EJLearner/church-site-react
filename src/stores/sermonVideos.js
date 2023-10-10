@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-10-08',
+    youtubeId: 'p_n7LtB9CAk',
+    title: 'Don’t Take the Bait!',
+    preacher: PREACHERS.D_NELSON,
+    scripture: 'Matthew 27:38-4'
+  },
+  {
     date: '2023-10-01',
     youtubeId: '1HkP65VXiHQ',
     title: 'Praise & Worship Activate Deliverance',
@@ -754,7 +761,6 @@ const sermonVideos = [
     date: '2021-06-13T09:00:00',
     preacher: PREACHERS.G_YEARGIN,
     scripture: 'Matthew 5:6',
-    expires: false,
     title: 'The Joy of Desperate Desire!!',
     youtubeId: 'R5YUBBwDqc0'
   },
