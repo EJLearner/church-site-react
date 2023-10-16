@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-10-15',
+    youtubeId: 't4qxWrUeOyI',
+    title: 'A Heart Of Thankfulness',
+    preacher: PREACHERS.T_CURLEY,
+    scripture: 'Psalm 50:23'
+  },
+  {
     date: '2023-10-08',
     youtubeId: 'p_n7LtB9CAk',
     title: 'Don’t Take the Bait!',
