@@ -398,7 +398,7 @@ const bibleComFormattedVerses = {
   '2023-10-22': {verse: 'Psalm 146'},
   '2023-10-23': {verse: 'Matthew 10.1-15'},
   '2023-10-24': {verse: 'Matthew 10.16-23'},
-  '2023-10-25': {verse: 'Matthew 101.24-42'},
+  '2023-10-25': {verse: 'Matthew 10.24-42'},
   '2023-10-26': {verse: '2 Corinthians 11.7-12.10'},
   '2023-10-27': {verse: '2 Corinthians 4.1-6'},
   '2023-10-28': {verse: '2 Timothy 2.14-26'}

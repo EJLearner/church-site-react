@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-10-22',
+    youtubeId: 'wVjGCEoUxw0',
+    title: 'Our Duty is to Center Love!!!',
+    preacher: PREACHERS.M_HAMIEL,
+    scripture: 'Matthew 22:36-40'
+  },
+  {
     date: '2023-10-15',
     youtubeId: 't4qxWrUeOyI',
     title: 'A Heart Of Thankfulness',
