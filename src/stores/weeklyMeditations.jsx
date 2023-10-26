@@ -940,5 +940,27 @@ export default {
         it.”
       </p>
     )
+  },
+  '2023-10-29': {
+    subTitle: (
+      <>
+        From <i>Living Prayer </i> Anthony Bloom
+      </>
+    ),
+    content: (
+      <p>
+        “Basically humility is the attitude of one who stands constantly under
+        the judgement of God. It is the attitude of one who is like the soil.
+        Humility comes from the Latin word humus, fertile ground. The fertile
+        ground is there, unnoticed, taken for granted, always there to be
+        trodden upon. It is silent, inconspicuous, dark and yet it is always
+        ready to receive any seed, ready to give it substance and life. The more
+        lowly, the more fruitful, because it becomes really fertile when it
+        accepts all the refuse of the earth. It is so low that nothing can soil
+        it, abase it, humiliate it; it has accepted the last place and cannot go
+        any lower. In that position nothing can shatter the soul’s serenity, its
+        peace and joy.”
+      </p>
+    )
   }
 };
