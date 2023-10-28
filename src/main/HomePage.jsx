@@ -33,7 +33,7 @@ const StyledHomePage = styled.div`
     margin: 0 300px;
     text-align: center;
     font-size: 28px;
-    color: var(--text-on-dark);
+    color: var(--text-on-dark-background);
   }
 
   h1 {
