@@ -401,7 +401,14 @@ const bibleComFormattedVerses = {
   '2023-10-25': {verse: 'Matthew 10.24-42'},
   '2023-10-26': {verse: '2 Corinthians 11.7-12.10'},
   '2023-10-27': {verse: '2 Corinthians 4.1-6'},
-  '2023-10-28': {verse: '2 Timothy 2.14-26'}
+  '2023-10-28': {verse: '2 Timothy 2.14-26'},
+  '2023-10-29': {verse: 'Psalm 128'},
+  '2023-10-30': {verse: 'Isaiah 57.4-21'},
+  '2023-10-31': {verse: 'Zephaniah 3'},
+  '2023-11-01': {verse: '2 Chronicles 7.11-22'},
+  '2023-11-02': {verse: 'Romans 13.1-10'},
+  '2023-11-03': {verse: '1 Peter 3.8-12'},
+  '2023-11-04': {verse: 'Philippians 2.1-18'}
 };
 
 export {bibleComFormattedVerses};
