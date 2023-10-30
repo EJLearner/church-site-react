@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-10-29',
+    youtubeId: '9n4O1mnENdE',
+    title: 'Faith, Fasting, and Prayers Move Mountains',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'Matthew 17:20-21'
+  },
+  {
     date: '2023-10-22',
     youtubeId: 'wVjGCEoUxw0',
     title: 'Our Duty is to Center Love!!!',
