@@ -408,7 +408,14 @@ const bibleComFormattedVerses = {
   '2023-11-01': {verse: '2 Chronicles 7.11-22'},
   '2023-11-02': {verse: 'Romans 13.1-10'},
   '2023-11-03': {verse: '1 Peter 3.8-12'},
-  '2023-11-04': {verse: 'Philippians 2.1-18'}
+  '2023-11-04': {verse: 'Philippians 2.1-18'},
+  '2023-11-05': {verse: 'Psalm 119.33-48'},
+  '2023-11-06': {verse: 'Ezekiel 36.22-32'},
+  '2023-11-07': {verse: 'Ephesians 5.1-20'},
+  '2023-11-08': {verse: 'John 9'},
+  '2023-11-09': {verse: 'Luke 19.1-10'},
+  '2023-11-10': {verse: 'Acts 26.2-29'},
+  '2023-11-11': {verse: 'Colossians 3.1-17'}
 };
 
 export {bibleComFormattedVerses};

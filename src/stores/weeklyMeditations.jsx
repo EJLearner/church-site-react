@@ -962,5 +962,20 @@ export default {
         peace and joy.”
       </p>
     )
+  },
+  '2023-11-05': {
+    subTitle: (
+      <>
+        From <i>Life Essential </i> George MacDonald
+      </>
+    ),
+    content: (
+      <p>
+        “The words of the Lord are the seed sown by the sower. Into our hearts
+        they must fall that they may grow. Meditation and prayer must water
+        them, and obedience keep them in the sunlight. Thus will they bear fruit
+        for the Lord’s gathering.”
+      </p>
+    )
   }
 };
