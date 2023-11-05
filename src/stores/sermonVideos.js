@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-11-05',
+    youtubeId: '2qV9E9zlyA0',
+    title: 'Encouragement in the Storm',
+    preacher: PREACHERS.D_NELSON,
+    scripture: 'Matthew 8:23-27'
+  },
+  {
     date: '2023-10-29',
     youtubeId: '9n4O1mnENdE',
     title: 'Faith, Fasting, and Prayers Move Mountains',
