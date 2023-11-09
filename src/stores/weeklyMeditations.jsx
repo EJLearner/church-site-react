@@ -977,5 +977,23 @@ export default {
         for the Lord’s gathering.”
       </p>
     )
+  },
+  '2023-11-12': {
+    subTitle: (
+      <>
+        From <i>Making All Things New </i> Henri Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “Without solitude it is virtually impossible to live a spiritual life.
+        Solitude begins with a time and place for God, and him alone. If we
+        really believe not only that God exists but also that he is actively
+        present in our lives – healing, teaching, and guiding – we need to set
+        aside a time and space to give him our undivided attention. Jesus says,
+        “Go to your private room and, when you have shut your door, pray to your
+        Father who is in that secret place (Matthew 6:6).”
+      </p>
+    )
   }
 };
