@@ -2,12 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-import yearginFuneralImgSrc from '../../assets/images/yeargin-funeral.jpg';
 import routePaths from '../../routePaths';
-import {isoTimeHasPassed} from '../../utils/dateTimeUtils';
 import Menubar from '../Menubar';
-
-import Anchor from './Anchor';
 
 const mainMenuItems = [
   {text: 'Home', path: routePaths.MAIN_HOME},
@@ -19,6 +15,7 @@ const mainMenuItems = [
   {text: 'Contact', path: routePaths.MAIN_CONTACT}
 ];
 
+// eslint-disable-next-line no-unused-vars -- may want this later
 const StyledAnnouncementBar = styled.div`
   padding: 0.1em;
   background-color: var(--accent-background);
@@ -36,30 +33,7 @@ const StyledAnnouncementBar = styled.div`
 function MainMenubar(props) {
   const {imageSource} = props;
 
-  const showYearginFuneralInfo = !isoTimeHasPassed('2023-11-12T16:00:00-05:00');
-
-  return (
-    <>
-      {showYearginFuneralInfo && (
-        <StyledAnnouncementBar>
-          <Anchor
-            className="funeral-popout-link"
-            onClick={() => {
-              window.open(
-                yearginFuneralImgSrc,
-                'name',
-                'height=500,width=500,toolbar=no,directories=no,status=no,menubar=no, scrollbars=no,resizable=no'
-              );
-            }}
-            path={yearginFuneralImgSrc}
-          >
-            Rev Dr. Grady A. Yeargin, Jr. Funeral Information
-          </Anchor>
-        </StyledAnnouncementBar>
-      )}
-      <Menubar imageSource={imageSource} menuItems={mainMenuItems} />
-    </>
-  );
+  return <Menubar imageSource={imageSource} menuItems={mainMenuItems} />;
 }
 
 MainMenubar.propTypes = {
