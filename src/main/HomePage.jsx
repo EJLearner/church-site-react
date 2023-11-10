@@ -81,7 +81,8 @@ const ImageWrapperLink = styled.a`
 const StyledImage = styled.img`
   align-self: center;
   display: block;
-  height: calc(90vh - 120px);
+  max-height: calc(90vh - 120px);
+  max-width: 100vw;
   margin: 0px 0 50px 0;
 `;
 
