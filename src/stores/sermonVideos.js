@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-11-12',
+    youtubeId: 'UPmk83aBIds',
+    title: 'Stay Connected!',
+    preacher: 'Rev. Carmi Washington Flood',
+    scripture: 'John 15:1-5'
+  },
+  {
     date: '2023-11-05',
     youtubeId: '2qV9E9zlyA0',
     title: 'Encouragement in the Storm',
