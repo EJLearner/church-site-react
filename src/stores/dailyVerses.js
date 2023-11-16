@@ -422,7 +422,14 @@ const bibleComFormattedVerses = {
   '2023-11-15': {verse: 'John 9'},
   '2023-11-16': {verse: 'Luke 19.1-10'},
   '2023-11-17': {verse: 'Acts 26.2-29'},
-  '2023-11-18': {verse: 'Colossians 3.1-17'}
+  '2023-11-18': {verse: 'Colossians 3.1-17'},
+  '2023-11-19': {verse: 'Psalm 76'},
+  '2023-11-20': {verse: 'Matthew 25.1-13'},
+  '2023-11-21': {verse: 'Colossians 4.2-18'},
+  '2023-11-22': {verse: '1 Thessalonians 5'},
+  '2023-11-23': {verse: '2 Thessalonians 2'},
+  '2023-11-24': {verse: '2 Thessalonians 3'},
+  '2023-11-25': {verse: 'John 4.31-38'}
 };
 
 export {bibleComFormattedVerses};

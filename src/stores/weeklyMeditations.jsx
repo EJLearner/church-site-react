@@ -995,5 +995,29 @@ export default {
         Father who is in that secret place (Matthew 6:6).”
       </p>
     )
+  },
+  '2023-11-19': {
+    subTitle: (
+      <>
+        From <i>Tensions </i> H. A. Williams
+      </>
+    ),
+    content: (
+      <p>
+        “All prayer is thus activity, just as all generous activity (mixed
+        motive and all) is a form of prayer. Prayer and action are one. To pray
+        is a form of the verb to do, while to do is a form of the verb to pray.
+        But the identity of prayer and action can be received by us and
+        apprehended only in so far as we also receive and apprehend the tension
+        between the two. Although from the ultimate point of view our being on
+        our knees and, say, our getting a job for a man out of work are both
+        parts of one and the same action, this fact can be recognized only if we
+        also recognize that being on our knees is very different from taking
+        steps to get a man a job. Unless this difference is clearly perceived
+        and admitted, so that we spend time both on our knees and getting the
+        job, our getting the job becomes activism, activity aimed to reassure
+        and benefit myself under the disguise of another.”
+      </p>
+    )
   }
 };
