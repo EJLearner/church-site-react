@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-11-19',
+    youtubeId: 'm4k-gwKVAMA',
+    title: 'Help for the Chosen',
+    preacher: PREACHERS.L_FORD,
+    scripture: 'Isaiah 41:8-13 (NRSV)'
+  },
+  {
     date: '2023-11-12',
     youtubeId: 'UPmk83aBIds',
     title: 'Stay Connected!',
