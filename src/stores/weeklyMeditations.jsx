@@ -1023,6 +1023,27 @@ export default {
   '2023-11-26': {
     subTitle: (
       <>
+        From <i>Prayer </i> O. Hallesby
+      </>
+    ),
+    content: (
+      <p>
+        “Here the purpose and meaning of prayer dawned upon me for the first
+        time. Here I was privileged to see more clearly than ever before the
+        purpose of prayer: to glorify the name of God. The scales fell from my
+        eyes. I saw in a new light the misuse of prayer and the difficulties
+        connected with prayer as well as the place of our own efforts in prayer.
+        Prayer life has its own laws, as all the rest of life has. The
+        fundamental law in prayer is this: Prayer is given and ordained for the
+        purpose of glorifying God. Prayer is the appointed way of giving Jesus
+        an opportunity to exercise his supernatural powers of salvation. And in
+        so doing he desires to make use of us.”
+      </p>
+    )
+  },
+  '2023-12-03': {
+    subTitle: (
+      <>
         From <i>The God Who Comes </i> Carlo Carretto
       </>
     ),
