@@ -1019,5 +1019,51 @@ export default {
         and benefit myself under the disguise of another.”
       </p>
     )
+  },
+  '2023-11-26': {
+    subTitle: (
+      <>
+        From <i>Prayer </i> O. Hallesby
+      </>
+    ),
+    content: (
+      <p>
+        “Here the purpose and meaning of prayer dawned upon me for the first
+        time. Here I was privileged to see more clearly than ever before the
+        purpose of prayer: to glorify the name of God. The scales fell from my
+        eyes. I saw in a new light the misuse of prayer and the difficulties
+        connected with prayer as well as the place of our own efforts in prayer.
+        Prayer life has its own laws, as all the rest of life has. The
+        fundamental law in prayer is this: Prayer is given and ordained for the
+        purpose of glorifying God. Prayer is the appointed way of giving Jesus
+        an opportunity to exercise his supernatural powers of salvation. And in
+        so doing he desires to make use of us.”
+      </p>
+    )
+  },
+  '2023-12-03': {
+    subTitle: (
+      <>
+        From <i>The God Who Comes </i> Carlo Carretto
+      </>
+    ),
+    content: (
+      <p>
+        “Personal prayer is the meeting place between the Eternal One and me;
+        the Blessed Sacrament is the visible sign of my covenant with him. That
+        is why I believe in personal prayer, and why every day I wait to meet
+        him in the Eucharist. To pray means to wait for the God who comes. Every
+        prayer-filled day sees a meeting with the God who comes; every night
+        which we faithfully put at his disposal is full of his presence. And his
+        coming and his presence are not only the result of our waiting or a
+        prize for our efforts: They are his decision, based on his love freely
+        poured out. His coming is bound to his promise, not to our works or
+        virtue. We have not earned the meeting with God because we have served
+        him faithfully in our brethren, or because we have heaped up such a pile
+        of virtue as to shine before Heaven. God is thrust onward by his love,
+        not attracted by our beauty. He comes even in moments when we have done
+        everything wrong, when we have done nothing…when we have sinned.”
+      </p>
+    )
   }
 };
