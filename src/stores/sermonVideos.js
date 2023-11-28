@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-11-26',
+    youtubeId: 'ieHk_FG4Axg',
+    title: 'Two is Greater Than One!',
+    preacher: 'Rev. Dr. Carl Hamiel',
+    scripture: 'Mark 6:6-7'
+  },
+  {
     date: '2023-11-19',
     youtubeId: 'm4k-gwKVAMA',
     title: 'Help for the Chosen',
