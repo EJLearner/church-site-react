@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-12-05',
+    youtubeId: '2zjNrgEkX74',
+    title: 'Waiting In Hope!!!!',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'Psalm130:5 and Isaiah 40:31'
+  },
+  {
     date: '2023-11-26',
     youtubeId: 'ieHk_FG4Axg',
     title: 'Two is Greater Than One!',
