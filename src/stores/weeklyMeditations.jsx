@@ -1065,5 +1065,23 @@ export default {
         everything wrong, when we have done nothing…when we have sinned.”
       </p>
     )
+  },
+  '2023-12-10': {
+    subTitle: (
+      <>
+        From <i>A Diary of Private Prayer </i> John Baillie
+      </>
+    ),
+    content: (
+      <p>
+        “O Holy Spirit of God, visit now this soul of mine, and tarry within it
+        until eventide. Inspire all my thoughts. Pervade all my imaginations.
+        Suggest all my decisions. Lodge in my will’s most inward citadel and
+        order all my doings. Be with me in my silence and in may speech, in my
+        haste and in my leisure, in company and in solitude, in the freshness of
+        the morning and in the weariness of the evening; and give me grace at
+        all times to rejoice in thy mysterious companionship.”
+      </p>
+    )
   }
 };
