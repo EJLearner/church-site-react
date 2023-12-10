@@ -5,7 +5,14 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
-    date: '2023-12-05',
+    date: '2023-12-10',
+    youtubeId: 'GkD-xD2SU3A',
+    title: 'Words of Comfort, The Lord Has Spoken',
+    preacher: PREACHERS.T_CURLEY,
+    scripture: 'Isaiah 40:1-5 (NIV)'
+  },
+  {
+    date: '2023-12-03',
     youtubeId: '2zjNrgEkX74',
     title: 'Waiting In Hope!!!!',
     preacher: PREACHERS.D_HICKMAN,
