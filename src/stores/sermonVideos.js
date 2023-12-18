@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-12-17',
+    youtubeId: 'Pew-6DgC-kU',
+    title: 'Will You Serve Your Purpose?!!!',
+    preacher: PREACHERS.D_NELSON,
+    scripture: 'Luke 2:10-11 & Matthew 26:36-46 (KJV)'
+  },
+  {
     date: '2023-12-10',
     youtubeId: 'GkD-xD2SU3A',
     title: 'Words of Comfort, The Lord Has Spoken',
