@@ -1083,5 +1083,21 @@ export default {
         all times to rejoice in thy mysterious companionship.”
       </p>
     )
+  },
+  '2023-12-17': {
+    subTitle: (
+      <>
+        From <i>Meditations of a Hermit </i> Charles de Foucauld
+      </>
+    ),
+    content: (
+      <p>
+        “Our repose is to rejoice in the infinite happiness of God and, on a
+        lower scale, in our own crosses and to desire still more of them, for in
+        them we have the privilege of imitating him and proving our love, and
+        there is nothing dearer to the heart that loves. We shall never lack
+        either this happiness, nor God nor the Cross.”
+      </p>
+    )
   }
 };
