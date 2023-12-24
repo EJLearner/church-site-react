@@ -5,6 +5,12 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-12-24',
+    youtubeId: 'B6YeXDbtTD4',
+    title: 'Heaven Comes To Earth',
+    preacher: PREACHERS.D_HICKMAN
+  },
+  {
     date: '2023-12-17',
     youtubeId: 'Pew-6DgC-kU',
     title: 'Will You Serve Your Purpose?!!!',
