@@ -1099,5 +1099,24 @@ export default {
         either this happiness, nor God nor the Cross.”
       </p>
     )
+  },
+  '2023-12-24': {
+    subTitle: (
+      <>
+        From <i>Creation in Christ </i> George MacDonald
+      </>
+    ),
+    content: (
+      <p>
+        “The fire of God, which is his essential being, his love, his creative
+        power, is a fire unlike its earthly symbol in this, that it is only at a
+        distance it burns – that the farther from him it burns the worse, and
+        that when we turn and begin to approach him, the burning begins to
+        change to comfort, which comfort will grow to such bliss that the heart
+        at length cries out with a gladness no other gladness can reach, “Whom
+        have I in heaven but thee? And there is nothing upon earth that I desire
+        besides thee!”
+      </p>
+    )
   }
 };

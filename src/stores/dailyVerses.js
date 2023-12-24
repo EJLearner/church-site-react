@@ -457,7 +457,14 @@ const bibleComFormattedVerses = {
   '2023-12-20': {verse: 'Revelation 1.1-8'},
   '2023-12-21': {verse: 'Ezekiel 34.1-10'},
   '2023-12-22': {verse: 'Luke 12.35-48'},
-  '2023-12-23': {verse: 'Acts 1.11'}
+  '2023-12-23': {verse: 'Acts 1.11'},
+  '2023-12-24': {verse: 'Psalm 24'},
+  '2023-12-25': {verse: 'Isaiah 7.10-17'},
+  '2023-12-26': {verse: 'Matthew 1.18-25'},
+  '2023-12-27': {verse: 'Isaiah 40.1-11,28-31'},
+  '2023-12-28': {verse: 'Ezekiel 34.11-16'},
+  '2023-12-29': {verse: 'Isaiah 9.1-7'},
+  '2023-12-30': {verse: 'Philippians 4.4-9'}
 };
 
 export {bibleComFormattedVerses};
