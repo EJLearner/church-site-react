@@ -5,6 +5,12 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2023-12-31',
+    youtubeId: '0v_zh_Qj12I',
+    title: 'The Unthinkable is on the Way',
+    preacher: PREACHERS.M_HAMIEL
+  },
+  {
     date: '2023-12-24',
     youtubeId: 'B6YeXDbtTD4',
     title: 'Heaven Comes To Earth',
