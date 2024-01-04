@@ -1142,5 +1142,28 @@ export default {
         condition a personal love.”
       </p>
     )
+  },
+  '2024-01-07': {
+    subTitle: (
+      <>
+        From <i>Unknown </i>
+      </>
+    ),
+    content: (
+      <p>
+        “How terribly, then, have the theologians misrepresented God! Nearly all
+        of them represent him as a great King on a grand throne, thinking how
+        grand he is, and making it the business of his being and the end of his
+        universe to keep up his glory, wielding the bolts of a Jupiter against
+        them that take his name in vain. They would not allow this, but follow
+        out what they say, and it comes much to this. Brothers, have you found
+        our king? There he is, kissing little children and saying they are like
+        God. There he is at table with the head of a fisherman lying on his
+        bosom, and somewhat heavy at heart that even he, the beloved disciple,
+        cannot yet understand him well. The simplest peasant who loves his
+        children and his sheep were – no, not a truer, for the other is false,
+        but – a true type of our God beside that monstrosity of a monarch!”
+      </p>
+    )
   }
 };
