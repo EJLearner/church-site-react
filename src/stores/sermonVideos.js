@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-01-07',
+    youtubeId: 'XFKf2HYDWGs',
+    title: 'A New Year of New Things & A New Direction',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'Joshua 3:1-9 and Isaiah 43:18-19 (NIV)'
+  },
+  {
     date: '2023-12-31',
     youtubeId: '0v_zh_Qj12I',
     title: 'The Unthinkable is on the Way',
