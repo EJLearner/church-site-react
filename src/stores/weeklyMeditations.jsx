@@ -1165,5 +1165,20 @@ export default {
         but – a true type of our God beside that monstrosity of a monarch!”
       </p>
     )
+  },
+  '2024-01-14': {
+    subTitle: (
+      <>
+        From <i>Reaching Out</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “The movement from illusion to prayer is hard to make since it leads us
+        from false certainties to true uncertainties, from an easy support
+        system to a risky surrender, and from the many “safe” gods to the God
+        whose love has no limits.”
+      </p>
+    )
   }
 };
