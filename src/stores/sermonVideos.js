@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-01-14',
+    youtubeId: '663oOFNF10A',
+    title: 'Walking in Truth!!!',
+    preacher: PREACHERS.T_CURLEY,
+    scripture: '3 John 1:1-4 3:1-9 and Psalm 62:5 (NIV)'
+  },
+  {
     date: '2024-01-07',
     youtubeId: 'XFKf2HYDWGs',
     title: 'A New Year of New Things & A New Direction',
