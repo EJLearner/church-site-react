@@ -1180,5 +1180,25 @@ export default {
         whose love has no limits.”
       </p>
     )
+  },
+  '2024-01-21': {
+    subTitle: (
+      <>
+        From <i>I, Francis</i> by Carlo Carretto
+      </>
+    ),
+    content: (
+      <p>
+        “It was not God’s forgetfulness of us, but his true, raw way of digging
+        out of the depths of us free love and naked faith. It was not chaos,
+        clutching at men and women’s throats to make them cry out and curse the
+        day they were born, but the motherly lap that would give them birth,
+        bear them to the Kingdom. From that moment I had no more doubts: Poverty
+        was the dwelling place of the divine, the highest school of true love,
+        the mighty pull of mercy, the encounter with God made easy, the surest
+        way to cross this earth. I espoused my Lady Poverty in desire, and from
+        that moment all fear died within me. Or rather, true freedom began.”
+      </p>
+    )
   }
 };
