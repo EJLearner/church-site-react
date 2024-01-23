@@ -5,6 +5,10 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-01-21',
+    videoMissingMessage: 'No video this date due to weather'
+  },
+  {
     date: '2024-01-14',
     youtubeId: '663oOFNF10A',
     title: 'Walking in Truth!!!',
@@ -1456,12 +1460,22 @@ const sermonVideos = [
     youtubeId: '3sgm_bRfXuw'
   }
 ]
-  .filter(({date, expires = true}) => {
+  .reduce((videosToShow, videoData) => {
+    const {
+      date,
+      expires = true,
+      videoMissingMessage = 'No video for this date'
+    } = videoData;
+
     // was told that videos up to 6 months ago would be available but they aren't
     // so I'm doing 5 months
     const withinFiveMonths = getNumberOfDaysAgo(date) < 150;
-    return isPast(parseISO(date)) && (withinFiveMonths || !expires);
-  })
+    if (isPast(parseISO(date)) && (withinFiveMonths || !expires)) {
+      videosToShow.push({...videoData, videoMissingMessage});
+    }
+
+    return videosToShow;
+  }, [])
   .sort((a, b) => a.date < b.date);
 
 export default sermonVideos;

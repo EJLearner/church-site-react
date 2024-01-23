@@ -197,7 +197,8 @@ function renderNewestVideo(videoData) {
     preacherLabel = 'Preacher',
     scripture,
     title,
-    youtubeId
+    youtubeId,
+    videoMissingMessage
   } = videoData;
 
   return (
@@ -208,8 +209,11 @@ function renderNewestVideo(videoData) {
         {scripture && <div>{renderLabelValue('Scripture', scripture)}</div>}
       </div>
       <div className="date">{getLongDisplayDate(date)}</div>
-
-      <div className="main-video-div">{videoFrame(youtubeId, title)}</div>
+      {youtubeId ? (
+        <div className="main-video-div">{videoFrame(youtubeId, title)}</div>
+      ) : (
+        videoMissingMessage
+      )}
     </div>
   );
 }
@@ -261,7 +265,10 @@ const WatchPage = () => {
     INITIAL_VIDEO_SHOW_COUNT
   );
   const [searchInfo, setSearchInfo] = useState(initialSearchInfo);
-  const [newestVideo, ...otherVideos] = sermonVideos;
+  const [newestVideo, ...notNewestVideos] = sermonVideos;
+  // videos without youtube id are just placeholders for days where video doesn't exist
+  const otherVideos = notNewestVideos.filter(({youtubeId}) => youtubeId);
+
   const [filteredVideos, setFilteredVideos] = useState(otherVideos);
 
   const displayedVideos = filteredVideos.slice(0, archiveVideoShowCount);
