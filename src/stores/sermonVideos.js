@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-01-28',
+    youtubeId: 'PjBgHdESMqk',
+    title: 'The Unpopular Choice!!!',
+    preacher: PREACHERS.D_NELSON,
+    scripture: 'Luke 10:38-42 (King James Version)'
+  },
+  {
     date: '2024-01-21',
     videoMissingMessage: 'No video this date due to weather'
   },
