@@ -1219,5 +1219,33 @@ export default {
         we must be awake; we must trust in his hidden action within us.”
       </p>
     )
+  },
+  '2024-02-04': {
+    subTitle: (
+      <>
+        From <i>The Wounded Healer</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “On the one hand, no minister can keep his own experience of life hidden
+        from those he wants to help. Nor should he want to keep it hidden. While
+        a doctor can still be a good doctor even when his private life is
+        severely disrupted, no minister can offer service without a constant and
+        vital acknowledgment of his own experiences. On the other hand, it would
+        be very easy to misuse the concept of the wounded healer by defending a
+        form of spiritual exhibitionism. A minister who talks in the pulpit
+        about his own personal problems is of no help to his congregation, for
+        no suffering human being is helped by someone who tells him that he has
+        the same problems. Remarks such as, “Don’t worry because I suffer from
+        the same depression, confusion and anxiety as you do,” help no one. This
+        spiritual exhibitionism adds little faith to little faith and creates
+        narrowmindedness instead of new perspectives. Open wounds stink and do
+        no heal. Making one’s own wounds a source of healing, therefore, does
+        not call for a sharing of superficial personal pains but for a constant
+        willingness to see one’s own pain and suffering as rising from the depth
+        of the human condition which all men share.”
+      </p>
+    )
   }
 };
