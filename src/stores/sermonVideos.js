@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-02-04',
+    youtubeId: 'vWsoNopo0nE',
+    title: 'God of Justice and Our Black History',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'Micah 6:1-8 Amos 5:24'
+  },
+  {
     date: '2024-01-28',
     youtubeId: 'PjBgHdESMqk',
     title: 'The Unpopular Choice!!!',
