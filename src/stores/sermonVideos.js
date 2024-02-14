@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-02-11',
+    youtubeId: 'YFi5vBYxu6g',
+    title: 'Steeped In God!',
+    preacher: PREACHERS.M_HAMIEL,
+    scripture: 'Matthew 6:33 (NLT)'
+  },
+  {
     date: '2024-02-04',
     youtubeId: 'vWsoNopo0nE',
     title: 'God of Justice and Our Black History',
