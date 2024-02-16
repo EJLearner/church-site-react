@@ -1264,5 +1264,27 @@ export default {
         spread more and more as well as aspire more and more.”
       </p>
     )
+  },
+  '2024-02-18': {
+    subTitle: (
+      <>
+        From <i>The Prophetic Imagination</i> by Walter Brueggemann
+      </>
+    ),
+    content: (
+      <p>
+        “The cross is the ultimate metaphor of prophetic criticism because it
+        means the end of the old consciousness that brings death on everyone.
+        The crucifixion articulates God’s odd freedom, his strange justice, and
+        his peculiar power. It is this freedom [read religion of God’s freedom],
+        justice [read economics of sharing], and power [read politics of
+        justice] which break the power of the old age and bring it to death.
+        Without the cross, prophetic imagination will likely be as strident and
+        as destructive as that which it criticizes. The cross is the assurance
+        that effective prophetic criticism is done not by an outsider but always
+        by one who must embrace the grief, enter into the death, and know the
+        pain of the criticized one.”
+      </p>
+    )
   }
 };
