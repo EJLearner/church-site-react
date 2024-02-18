@@ -5,6 +5,13 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-02-18',
+    youtubeId: 'LfdEvcKFK1Y',
+    title: 'Its Time For A Revival!!!',
+    preacher: PREACHERS.T_CURLEY,
+    scripture: '2 Chronicles 7:14 {NIV}'
+  },
+  {
     date: '2024-02-11',
     youtubeId: 'YFi5vBYxu6g',
     title: 'Steeped In God!',
