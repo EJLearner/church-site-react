@@ -1286,5 +1286,31 @@ export default {
         pain of the criticized one.”
       </p>
     )
+  },
+  '2024-02-25': {
+    subTitle: (
+      <>
+        From <i>The Prophetic Imagination</i> by Walter Brueggemann
+      </>
+    ),
+    content: (
+      <p>
+        “Such a way of discerning the sovereign power of his gracious compassion
+        leads directly to the resurrection of Jesus. The resurrection of Jesus
+        is the ultimate energizing for the new future. The wrenching of Friday
+        had left only the despair of Saturday (Luke 24:21) and there was no
+        reason to expect Sunday after that Friday. There is not any way to
+        explain the resurrection out of the previously existing reality. The
+        resurrection can only be received and affirmed and celebrated as the new
+        action of God whose province it is to create new futures for people and
+        to let them be amazed in the midst of despair… The resurrection of Jesus
+        is not to be understood in good liberal fashion as a spiritual
+        development in the church. Nor should it be too quickly handled as an
+        oddity in the history of God or as an isolated act of God’s power.
+        Rather, it is the ultimate act of prophetic energizing in which a new
+        history is initiated. It is a new history open to all but peculiarly
+        received by the marginal victims of old order.”
+      </p>
+    )
   }
 };
