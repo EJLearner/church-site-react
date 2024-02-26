@@ -5,6 +5,12 @@ const {PREACHERS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-02-25',
+    youtubeId: 'H1UTDFsDmJg',
+    title: 'Embracing God’s Vision, Voice and Victory',
+    preacher: PREACHERS.D_HICKMAN
+  },
+  {
     date: '2024-02-18',
     youtubeId: 'LfdEvcKFK1Y',
     title: 'Its Time For A Revival!!!',
