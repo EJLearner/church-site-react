@@ -1312,5 +1312,31 @@ export default {
         received by the marginal victims of old order.”
       </p>
     )
+  },
+  '2024-03-03': {
+    subTitle: (
+      <>
+        From <i>The Living Reminder</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “From all I have said about the minister as a sustaining reminder, it
+        becomes clear that a certain unavailability is essential for the
+        spiritual life of the minister. I am not trying to build a religious
+        argument for a game of golf, a trip to a conference, a cruise to the
+        Caribbean, or a sabbatical. These arguments have been made and they all
+        strike me as quite unconvincing in the midst of our suffering world. No,
+        I would like to make a plea for prayer as the creative way of being
+        unavailable. How would it sound when the question, “Can I speak to the
+        minister?” is not answered by “I am sorry, he has someone in his office”
+        but by “I am sorry, he is praying.” When someone says, “The minister is
+        unavailable because this is his day of solitude, this is his day in the
+        hermitage, this is his desert day,” could that not be a consoling
+        ministry? What it says is that the minister is unavailable to me, not
+        because he is more available to others, but because he is with God, and
+        God alone – the God who is our God.”
+      </p>
+    )
   }
 };
