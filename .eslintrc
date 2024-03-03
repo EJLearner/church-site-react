@@ -8,9 +8,11 @@
   "extends": ["eslint:recommended", "plugin:react/recommended"],
   "plugins": ["import"],
   "rules": {
-    "comma-dangle": ["error", "never"],
     "import/first": "error",
-    "import/no-unused-modules": ["warn", {"unusedExports": true, "missingExports": true}],
+    "import/no-unused-modules": [
+      "warn",
+      {"unusedExports": true, "missingExports": true}
+    ],
     "import/order": [
       "error",
       {
@@ -28,7 +30,7 @@
     ],
     "max-len": ["error", 120],
     "no-console": "error",
-    "no-warning-comments":"warn",
+    "no-warning-comments": "warn",
     "no-unused-expressions": "error",
     "no-restricted-syntax": [
       "error",
@@ -73,13 +75,16 @@
     {
       "files": ["*.test.js", "*.test.jsx"],
       "env": {
-        "jest":true
+        "jest": true
       },
       "rules": {
         "no-unused-expressions": "off",
         "react/jsx-props-no-spreading": "off",
         "react/jsx-filename-extension": "off",
-        "import/no-unused-modules": ["error", {"unusedExports": true, "missingExports": false}],
+        "import/no-unused-modules": [
+          "error",
+          {"unusedExports": true, "missingExports": false}
+        ]
       }
     }
   ],
@@ -92,7 +97,7 @@
   },
   "settings": {
     "react": {
-      "version" : "detect"
+      "version": "detect"
     }
   }
 }

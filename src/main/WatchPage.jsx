@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import choir from '../assets/images/choir.jpg';
 import sermonVideos from '../stores/sermonVideos';
+import constants from '../utils/constants';
 import {
   convertTypedDateToIso,
   getLongDisplayDate
@@ -145,6 +146,17 @@ function renderLabelValue(label, value) {
   );
 }
 
+function renderScriptureLabelValue(label, scripture, version) {
+  let scriptureText = scripture;
+  if (version) {
+    scriptureText += ` (${
+      constants.BIBLE_VERSIONS_INFO[version]?.short ?? version
+    })`;
+  }
+
+  return renderLabelValue(label, scriptureText);
+}
+
 function videoFrame(youtubeId, title) {
   return (
     <iframe
@@ -167,6 +179,7 @@ function renderArchiveVideos(otherVideos) {
           preacher,
           preacherLabel = 'Preacher',
           scripture,
+          version,
           title,
           youtubeId
         } = videoData;
@@ -177,7 +190,8 @@ function renderArchiveVideos(otherVideos) {
             <div className="video-info">
               <h3>{title}</h3>
               {renderLabelValue(preacherLabel, preacher)}
-              {scripture && renderLabelValue('Scripture', scripture)}
+              {scripture &&
+                renderScriptureLabelValue('Scripture', scripture, version)}
               <br />
               {getLongDisplayDate(date)}
               <br />
@@ -198,7 +212,8 @@ function renderNewestVideo(videoData) {
     scripture,
     title,
     youtubeId,
-    videoMissingMessage
+    videoMissingMessage,
+    version
   } = videoData;
 
   return (
@@ -206,7 +221,11 @@ function renderNewestVideo(videoData) {
       <h2>{title}</h2>
       <div className="preacher-and-scripture">
         {preacher && <div>{renderLabelValue(preacherLabel, preacher)}</div>}
-        {scripture && <div>{renderLabelValue('Scripture', scripture)}</div>}
+        {scripture && (
+          <div>
+            {renderScriptureLabelValue('Scripture', scripture, version)}
+          </div>
+        )}
       </div>
       <div className="date">{getLongDisplayDate(date)}</div>
       {youtubeId ? (

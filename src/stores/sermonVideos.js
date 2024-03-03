@@ -1,9 +1,17 @@
 import constants from '../utils/constants';
 import {getNumberOfDaysAgo, isPast, parseISO} from '../utils/dateTimeUtils';
 
-const {PREACHERS} = constants;
+const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
+  {
+    date: '2024-03-03',
+    youtubeId: 'qjZnCKnuUxU',
+    title: 'Want to Be Made Whole?!!!',
+    preacher: PREACHERS.D_NELSON,
+    scripture: '2 Chronicles 7:14',
+    version: BIBLE_VERSIONS.NIV
+  },
   {
     date: '2024-02-25',
     youtubeId: 'H1UTDFsDmJg',
@@ -15,14 +23,16 @@ const sermonVideos = [
     youtubeId: 'LfdEvcKFK1Y',
     title: 'Its Time For A Revival!!!',
     preacher: PREACHERS.T_CURLEY,
-    scripture: '2 Chronicles 7:14 {NIV}'
+    scripture: '2 Chronicles 7:14',
+    version: BIBLE_VERSIONS.NIV
   },
   {
     date: '2024-02-11',
     youtubeId: 'YFi5vBYxu6g',
     title: 'Steeped In God!',
     preacher: PREACHERS.M_HAMIEL,
-    scripture: 'Matthew 6:33 (NLT)'
+    scripture: 'Matthew 6:33',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2024-02-04',
@@ -36,7 +46,8 @@ const sermonVideos = [
     youtubeId: 'PjBgHdESMqk',
     title: 'The Unpopular Choice!!!',
     preacher: PREACHERS.D_NELSON,
-    scripture: 'Luke 10:38-42 (King James Version)'
+    scripture: 'Luke 10:38-42',
+    version: BIBLE_VERSIONS.KJV
   },
   {
     date: '2024-01-21',
@@ -47,14 +58,16 @@ const sermonVideos = [
     youtubeId: '663oOFNF10A',
     title: 'Walking in Truth!!!',
     preacher: PREACHERS.T_CURLEY,
-    scripture: '3 John 1:1-4 3:1-9 and Psalm 62:5 (NIV)'
+    scripture: '3 John 1:1-4 3:1-9 and Psalm 62:5',
+    version: BIBLE_VERSIONS.NIV
   },
   {
     date: '2024-01-07',
     youtubeId: 'XFKf2HYDWGs',
     title: 'A New Year of New Things & A New Direction',
     preacher: PREACHERS.D_HICKMAN,
-    scripture: 'Joshua 3:1-9 and Isaiah 43:18-19 (NIV)'
+    scripture: 'Joshua 3:1-9 and Isaiah 43:18-19',
+    version: BIBLE_VERSIONS.NIV
   },
   {
     date: '2023-12-31',
@@ -73,14 +86,16 @@ const sermonVideos = [
     youtubeId: 'Pew-6DgC-kU',
     title: 'Will You Serve Your Purpose?!!!',
     preacher: PREACHERS.D_NELSON,
-    scripture: 'Luke 2:10-11 & Matthew 26:36-46 (KJV)'
+    scripture: 'Luke 2:10-11 & Matthew 26:36-46',
+    version: BIBLE_VERSIONS.KJV
   },
   {
     date: '2023-12-10',
     youtubeId: 'GkD-xD2SU3A',
     title: 'Words of Comfort, The Lord Has Spoken',
     preacher: PREACHERS.T_CURLEY,
-    scripture: 'Isaiah 40:1-5 (NIV)'
+    scripture: 'Isaiah 40:1-5',
+    version: BIBLE_VERSIONS.NIV
   },
   {
     date: '2023-12-03',
@@ -101,7 +116,8 @@ const sermonVideos = [
     youtubeId: 'm4k-gwKVAMA',
     title: 'Help for the Chosen',
     preacher: PREACHERS.L_FORD,
-    scripture: 'Isaiah 41:8-13 (NRSV)'
+    scripture: 'Isaiah 41:8-13',
+    version: BIBLE_VERSIONS.NRSV
   },
   {
     date: '2023-11-12',
@@ -157,7 +173,8 @@ const sermonVideos = [
     youtubeId: 'lfzo45F0Eqo',
     title: 'The Joy of Tribulation',
     preacher: PREACHERS.D_NELSON,
-    scripture: 'Hebrews 12:1-2 (KJV)'
+    scripture: 'Hebrews 12:1-2',
+    version: BIBLE_VERSIONS.KJV
   },
   {
     date: '2023-09-17T09:00:00',
@@ -170,7 +187,8 @@ const sermonVideos = [
     youtubeId: 'T8KfYwSlekY',
     title: 'Reposition for Your Revival',
     preacher: PREACHERS.L_FORD,
-    scripture: 'Luke 19:1-10 (NSRV)'
+    scripture: 'Luke 19:1-10',
+    version: BIBLE_VERSIONS.NRSV
   },
   {
     date: '2023-09-03T09:00:00',
@@ -205,42 +223,48 @@ const sermonVideos = [
     youtubeId: 'c_vkOBFTYnI',
     title: 'An Affirmation of Living Hope',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: '1 Peter 1:3-5 (NLT)'
+    scripture: '1 Peter 1:3-5',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2023-07-30T09:00:00',
     youtubeId: '9bftHTZ7BVo',
     title: 'The Lord is Our Keeper',
     preacher: PREACHERS.D_HICKMAN,
-    scripture: 'Psalm 121:1-8 (ESV)'
+    scripture: 'Psalm 121:1-8',
+    version: BIBLE_VERSIONS.ESV
   },
   {
     date: '2023-07-23T09:00:00',
     youtubeId: 'CyDBEUG3zeU',
     title: 'Dealing with Our Anxious Fears',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Psalm 27:1; 13-14 (KJV)'
+    scripture: 'Psalm 27:1; 13-14',
+    version: BIBLE_VERSIONS.KJV
   },
   {
     date: '2023-07-16T09:00:00',
     youtubeId: 'fFw0gYa_Um4',
     title: 'Why Prayer Is Essential',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Matthew 6:7-8; Luke 11:1-2 (NLT)'
+    scripture: 'Matthew 6:7-8; Luke 11:1-2',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2023-07-09T09:00:00',
     youtubeId: 'lrytWg48Wwk',
     title: 'A Parting Epitaph To The Kingdom!!',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'St. Luke 39; 39-52 (NLT)'
+    scripture: 'St. Luke 39; 39-52',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2023-07-02T09:00:00',
     youtubeId: 'WINEsHUtuWk',
     title: 'Meeting God in Unexpected Places!',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Genesis 28:10-22 (NLT)'
+    scripture: 'Genesis 28:10-22',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2023-06-25T09:00:00',
@@ -254,35 +278,40 @@ const sermonVideos = [
     youtubeId: 'CwmqgBDwTDQ',
     title: 'A Father’s Compassion',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Psalm 103:13-14 (NLT)'
+    scripture: 'Psalm 103:13-14',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2023-06-11T09:00:00',
     youtubeId: '-eqqGEMHsj0',
     title: 'Use It or Lose It',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Matthew 25: 14-30 (NLT)'
+    scripture: 'Matthew 25: 14-30',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2023-06-04T09:00:00',
     youtubeId: '4sFFwNBrq1E',
     title: 'An Invitation to Perpetual Praise!!',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Psalm 34:1-8 (NLT)'
+    scripture: 'Psalm 34:1-8',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2023-05-28T09:00:00',
     youtubeId: '5H2wJpwWszc',
     title: 'A Word About Pentecost',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Acts 2:1-4 (NLT)'
+    scripture: 'Acts 2:1-4',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2023-05-21T09:00:00',
     youtubeId: '50k3f1FvHpA',
     title: 'An Appeal To Be Who We Are',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Romans 12:1-2 (NLT)'
+    scripture: 'Romans 12:1-2',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2023-05-14T09:00:00',
@@ -296,21 +325,24 @@ const sermonVideos = [
     youtubeId: 'JizHSNmItOU',
     title: 'A Perfect Portrait of Prayer',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'John 4:46-54 (NLT)'
+    scripture: 'John 4:46-54',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2023-04-30T09:00:00',
     youtubeId: '2-nM8hq5yN8',
     title: 'Confident About Our Completion!',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Philippians 1:3-6 (NLT)'
+    scripture: 'Philippians 1:3-6',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2023-04-23T09:00:00',
     youtubeId: 'fv7yEe2Ihtg',
     title: 'Divine Devotion Disrupted By Human Distress!!!',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'John 6:16-21 (NLT)'
+    scripture: 'John 6:16-21',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2023-04-16T09:00:00',
@@ -324,7 +356,8 @@ const sermonVideos = [
     youtubeId: 'LcPpjljkKXM',
     title: 'The Resurrection',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Luke 24:1-12 (NLT)'
+    scripture: 'Luke 24:1-12',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2023-04-02T09:00:00',
@@ -345,7 +378,8 @@ const sermonVideos = [
     youtubeId: 'n1jT10nKzF4',
     title: 'A Peek Into The Heart of God',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'John 11: 33-35 (NLT)'
+    scripture: 'John 11: 33-35',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2023-03-12T09:00:00',
@@ -372,14 +406,16 @@ const sermonVideos = [
     youtubeId: 'aQfN1WLesng',
     title: 'A Word About Oneness!',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Ephesians 4:1-6 (NLT)'
+    scripture: 'Ephesians 4:1-6',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2023-02-12T09:00:00',
     youtubeId: '826_6jrj730',
     title: 'If We Don’t Tell Them, How Will They Know!!',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Deuteronomy 6:1-9 (NLT)'
+    scripture: 'Deuteronomy 6:1-9',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2023-02-05T09:00:00',
@@ -387,28 +423,32 @@ const sermonVideos = [
     title:
       'Lessons From Our Foreparents: When Our Backs Are Against The Wall!!',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'John 14:1-6 (NLT)'
+    scripture: 'John 14:1-6',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2023-01-29T09:00:00',
     youtubeId: '-REZwyMx8Uc',
     title: 'Walking On Water..Really!!',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Matthew 14:22-32 (NLT)'
+    scripture: 'Matthew 14:22-32',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2023-01-22T09:00:00',
     youtubeId: 'RanqbjPkdlI',
     title: 'When the Human Condition Meets Unconditional Love',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Mark 1:40-45 (NLT)'
+    scripture: 'Mark 1:40-45',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2023-01-15T09:00:00',
     youtubeId: 'hiRAdthcNmg',
     title: 'Handicapped Heroes!',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Judges 3:15 (NLT)'
+    scripture: 'Judges 3:15',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2023-01-08T09:00:00',
@@ -429,7 +469,8 @@ const sermonVideos = [
     youtubeId: '_Aprx2PkB4c',
     title: 'And The Word Became Flesh!!!',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'John 1:14 (NLT)'
+    scripture: 'John 1:14',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2022-12-18T09:00:00',
@@ -471,7 +512,8 @@ const sermonVideos = [
     youtubeId: 'Irp2fNK3RS4',
     title: 'Everything Lives Wherever The River Flows!!',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Ezekiel 47:1-12 (NLT)'
+    scripture: 'Ezekiel 47:1-12',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2022-11-06T09:00:00',
@@ -499,7 +541,8 @@ const sermonVideos = [
     youtubeId: 'GwIIGE8-lMM',
     title: 'A Parting Epitaph To The Kingdom of God',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Luke 22:47-52 (NLT)'
+    scripture: 'Luke 22:47-52',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2022-09-11T09:00:00',
@@ -541,14 +584,16 @@ const sermonVideos = [
     youtubeId: 'CnnUEJpSAc0',
     title: 'When Dad’s Don’t Disappear',
     preacher: PREACHERS.G_YEARGIN,
-    scripture: 'Matthew 1:24-25; 3:16-17 (NLT)'
+    scripture: 'Matthew 1:24-25; 3:16-17',
+    version: BIBLE_VERSIONS.NLT
   },
   {
     date: '2022-06-12T09:00:00',
     youtubeId: 'IxW7by_c4Tc',
     title: 'Father Endow Us Again',
     preacher: PREACHERS.D_HICKMAN,
-    scripture: '1 Timothy 4:14 (KJV/NIV)'
+    scripture: '1 Timothy 4:14',
+    version: BIBLE_VERSIONS.KJV
   },
   {
     date: '2022-06-05T09:00:00',

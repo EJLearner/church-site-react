@@ -44,6 +44,21 @@ const constants = {
     T_CURLEY: 'Rev. Tyra Curley'
   },
 
+  BIBLE_VERSIONS: {
+    KJV: 'KJV',
+    NIV: 'NIV',
+    NRSV: 'NRSV',
+    NLT: 'NLT'
+  },
+
+  BIBLE_VERSIONS_INFO: {
+    ESV: {long: 'English Standard Version', short: 'ESV'},
+    KJV: {long: 'King James Version', short: 'KJV'},
+    NIV: {long: 'New International Version', short: 'NIV'},
+    NRSV: {long: 'New Revised Standard Version', short: 'NRSV'},
+    NLT: {long: 'New Living Translation', short: 'NLT'}
+  },
+
   SLENDER_ARROW_LEFT: '‹',
   SLENDER_ARROW_RIGHT: '›',
 
