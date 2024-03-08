@@ -534,7 +534,14 @@ const bibleComFormattedVerses = {
   '2024-03-06': {verse: 'John 7.37-44'},
   '2024-03-07': {verse: 'John 6.22-40'},
   '2024-03-08': {verse: 'Romans 8.18-25'},
-  '2024-03-09': {verse: 'Psalm 84'}
+  '2024-03-09': {verse: 'Psalm 84'},
+  '2024-03-10': {verse: 'Psalm 23'},
+  '2024-03-11': {verse: 'Deuteronomy 30.15-20'},
+  '2024-03-12': {verse: 'Joshua 24.14-28'},
+  '2024-03-13': {verse: 'Hebrews 2.1-18'},
+  '2024-03-14': {verse: 'Philemon 1.8-21'},
+  '2024-03-15': {verse: 'Colossians 3.1-17'},
+  '2024-03-16': {verse: 'Romans 12'}
 };
 
 export {bibleComFormattedVerses};
