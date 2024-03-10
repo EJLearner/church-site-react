@@ -5,6 +5,14 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-03-10',
+    youtubeId: 'kKJQ0VnF3T8',
+    title: 'The Light is Within You',
+    preacher: PREACHERS.T_CURLEY,
+    scripture: 'John 3:16-21',
+    version: BIBLE_VERSIONS.KJV
+  },
+  {
     date: '2024-03-03',
     youtubeId: 'qjZnCKnuUxU',
     title: 'Want to Be Made Whole?!!!',
