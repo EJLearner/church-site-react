@@ -1364,5 +1364,29 @@ export default {
         Each of us at each moment is progressing to the one state or the other.”
       </p>
     )
+  },
+  '2024-03-17': {
+    subTitle: (
+      <>
+        From <i>Waiting for God</i> by Simone Weil
+      </>
+    ),
+    content: (
+      <p>
+        “That we may have to strive after goodness with an effort of our will is
+        one of the lies invented by the mediocre part of ourselves in its fear
+        of being destroyed. Such an effort does not threaten it in any way, it
+        does not even disturb its comfort – not even when it entails a great
+        deal of fatigue and suffering. For the mediocre part of ourselves is not
+        afraid of fatigue and suffering; it is afraid of being killed. There are
+        people who try to raise their souls like a man continually taking
+        standing jumps in the hopes that, if he jumps higher every day, a time
+        may come when he will no longer fall back but will go right up to the
+        sky. Thus occupied he cannot look at the sky. We cannot take a single
+        step toward heaven. It is not in our power to travel in a vertical
+        direction. If, however, we look heavenward for a long time, God comes
+        and takes us up. He raises us easily.”
+      </p>
+    )
   }
 };
