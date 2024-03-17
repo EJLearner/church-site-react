@@ -84,5 +84,9 @@
   ],
   "lint-staged": {
     "*.{js,jsx}": "eslint --cache --fix --ext .jsx,.js"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "bracketSpacing": false
   }
 }

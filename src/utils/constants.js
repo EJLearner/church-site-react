@@ -48,7 +48,8 @@ const constants = {
     KJV: 'KJV',
     NIV: 'NIV',
     NRSV: 'NRSV',
-    NLT: 'NLT'
+    NLT: 'NLT',
+    NRSVUE: 'NRSVUE'
   },
 
   BIBLE_VERSIONS_INFO: {
@@ -56,6 +57,10 @@ const constants = {
     KJV: {long: 'King James Version', short: 'KJV'},
     NIV: {long: 'New International Version', short: 'NIV'},
     NRSV: {long: 'New Revised Standard Version', short: 'NRSV'},
+    NRSVUE: {
+      long: 'New Revised Standard Version UPDATED EDITION',
+      short: 'NRSVUE'
+    },
     NLT: {long: 'New Living Translation', short: 'NLT'}
   },
 
