@@ -1,9 +1,8 @@
 import moment from 'moment';
-import React, {Component} from 'react';
+import {Component} from 'react';
 import {createGlobalStyle} from 'styled-components';
 
 import TopRoutes from './TopRoutes.jsx';
-import './polyfills';
 import './App.css';
 
 const GlobalStyle = createGlobalStyle`
@@ -83,7 +82,7 @@ const GlobalStyle = createGlobalStyle`
 class App extends Component {
   render() {
     moment.updateLocale('en', {
-      meridiem: (hour) => (hour < 12 ? 'am' : 'pm')
+      meridiem: (hour) => (hour < 12 ? 'am' : 'pm'),
     });
 
     return (
