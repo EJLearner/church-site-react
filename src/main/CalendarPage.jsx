@@ -1,5 +1,5 @@
 import moment from 'moment';
-import React, {Component} from 'react';
+import { Component } from 'react';
 import {Redirect, Route, Switch} from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -43,7 +43,7 @@ class Calendar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentMonth: moment()
+      currentMonth: moment(),
     };
   }
 
@@ -53,7 +53,7 @@ class Calendar extends Component {
       {path: routePaths.MAIN_CALENDAR_WEEK, text: 'Week View'},
       {path: routePaths.MAIN_CALENDAR_MONTH, text: 'Month View'},
       {path: routePaths.MAIN_CALENDAR_YEAR, text: 'Year View'},
-      {path: routePaths.MAIN_CALENDAR_UPCOMING, text: 'Upcoming'}
+      {path: routePaths.MAIN_CALENDAR_UPCOMING, text: 'Upcoming'},
     ];
 
     return (

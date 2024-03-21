@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 import choir from '../assets/images/choir.jpg';

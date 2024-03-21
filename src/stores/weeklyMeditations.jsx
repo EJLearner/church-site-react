@@ -1,4 +1,3 @@
-import React from 'react';
 export default {
   '2022-12-11': {
     subTitle: (
@@ -21,7 +20,7 @@ export default {
         all things work together for good to them that love Thee. Through Jesus
         Christ, our Lord. Amen.”
       </p>
-    )
+    ),
   },
   '2022-12-18': {
     subTitle: (
@@ -40,7 +39,7 @@ export default {
         edified,” he replied: “If he is not edified by my silence, he will not
         be edified by my speech.”
       </p>
-    )
+    ),
   },
   '2022-12-25': {
     subTitle: (
@@ -68,7 +67,7 @@ export default {
         Let us thus praise you in the way you love best <br />
         By shining on those around us…Amen.”
       </p>
-    )
+    ),
   },
   '2023-01-01': {
     subTitle: (
@@ -94,7 +93,7 @@ export default {
         space where you meet God face to face. Cherish this truth. It is costly
         grace.”
       </p>
-    )
+    ),
   },
   '2023-01-08': {
     subTitle: (
@@ -109,7 +108,7 @@ export default {
         need not be destroyed by it; we know that God will help us to recover
         our hope, our courage and our direction in life.”
       </p>
-    )
+    ),
   },
   '2023-01-15': {
     subTitle: (
@@ -132,7 +131,7 @@ export default {
           “counts”; and died in total anonymity.
         </p>
       </>
-    )
+    ),
   },
   '2023-01-22': {
     subTitle: (
@@ -157,7 +156,7 @@ export default {
         expression to a particular profession or a particular role or a
         particular job.
       </p>
-    )
+    ),
   },
   '2023-01-29': {
     subTitle: (
@@ -174,7 +173,7 @@ export default {
         congested, habitual thoughts and preoccupations so that one can freely
         open the heart to the message of the sacred text.”
       </p>
-    )
+    ),
   },
   '2023-02-05': {
     subTitle: (
@@ -198,7 +197,7 @@ export default {
         lives differently. It is our values that create and sustain our
         life-style.”
       </p>
-    )
+    ),
   },
   '2023-02-12': {
     subTitle: (
@@ -221,7 +220,7 @@ export default {
           Christ.’ Amen.”
         </p>
       </>
-    )
+    ),
   },
   '2023-02-19': {
     subTitle: (
@@ -237,7 +236,7 @@ export default {
         earnestly, that I have been amply heard, and have obtained more than I
         prayed for. God indeed sometimes delayed, but at last [God] came.”
       </p>
-    )
+    ),
   },
   '2023-02-26': {
     subTitle: (
@@ -266,7 +265,7 @@ export default {
         community-building ministry, to be in the fullest sense, an ambassador
         of reconciliation.”
       </p>
-    )
+    ),
   },
   '2023-03-05': {
     subTitle: (
@@ -284,7 +283,7 @@ export default {
         Church. And it is God’s will still to continue the work of redemption
         until the end of time.”
       </p>
-    )
+    ),
   },
   '2023-03-12': {
     subTitle: (
@@ -300,7 +299,7 @@ export default {
         depends your eternal lot. Choose Christ and his ways, and you are
         blessed forever; refuse, and you are undone forever.”
       </p>
-    )
+    ),
   },
   '2023-03-19': {
     subTitle: (
@@ -329,7 +328,7 @@ export default {
           rich harvest.”
         </p>
       </>
-    )
+    ),
   },
   '2023-03-26': {
     subTitle: (
@@ -347,7 +346,7 @@ export default {
         creative distance so that everything you see, hear and feel can be
         tested against the source.”
       </p>
-    )
+    ),
   },
   '2023-04-02': {
     subTitle: (
@@ -365,7 +364,7 @@ export default {
         have given messages of not wishing to belong. When we approach others
         with gentle reverence, we bring gifts and share theirs with us.”
       </p>
-    )
+    ),
   },
   '2023-04-09': {
     subTitle: (
@@ -396,7 +395,7 @@ export default {
         <br /> May all my walk and conversation be such as becometh the gospel
         of Christ. Amen.”
       </p>
-    )
+    ),
   },
   '2023-04-16': {
     subTitle: (
@@ -419,7 +418,7 @@ export default {
         judgment…If thou love God and all [humanity], I ask no more. “Give me
         thine hand.”
       </p>
-    )
+    ),
   },
   '2023-04-23': {
     subTitle: (
@@ -437,7 +436,7 @@ export default {
         law, as well as under grace. But then I was sometimes, if not often,
         conquered; now, I was always conqueror.”
       </p>
-    )
+    ),
   },
   '2023-05-07': {
     subTitle: (
@@ -452,7 +451,7 @@ export default {
         to recognize the poor in their own homes, towns and countries, and to
         reach out to them in love and compassion.”
       </p>
-    )
+    ),
   },
   '2023-05-14': {
     subTitle: (
@@ -469,7 +468,7 @@ export default {
         with tension and uncertainty, and with emotional, spiritual and physical
         pain.”
       </p>
-    )
+    ),
   },
   '2023-05-21': {
     subTitle: (
@@ -493,7 +492,7 @@ export default {
         from heaven. This bread from heaven is God himself. He becomes food to
         us walking in the Invisible.”
       </p>
-    )
+    ),
   },
   '2023-05-28': {
     subTitle: (
@@ -524,7 +523,7 @@ export default {
           soul.”
         </p>
       </>
-    )
+    ),
   },
   '2023-06-04': {
     subTitle: (
@@ -547,7 +546,7 @@ export default {
         as his child. To be able to do what one wants is only the appearance of
         freedom; true freedom is to will what God does.”
       </p>
-    )
+    ),
   },
   '2023-06-11': {
     subTitle: (
@@ -581,7 +580,7 @@ export default {
           writings.”
         </p>
       </>
-    )
+    ),
   },
   '2023-06-18': {
     subTitle: (
@@ -594,7 +593,7 @@ export default {
         “God will know how to draw glory even from our faults. Not to be
         downcast after committing a fault is one of the marks of true sanctity.”
       </p>
-    )
+    ),
   },
   '2023-06-25': {
     subTitle: (
@@ -610,7 +609,7 @@ export default {
         my God, my Master, but I feel, too, the need I have of your tenderness,
         and of your caress because of my infinite weakness.”
       </p>
-    )
+    ),
   },
   '2023-07-02': {
     subTitle: (
@@ -631,7 +630,7 @@ export default {
         explains what I mean by holy desire when he says that “The entire life
         of a good Christian is nothing less than holy desire.”
       </p>
-    )
+    ),
   },
   '2023-07-09': {
     subTitle: (
@@ -655,7 +654,7 @@ export default {
         There was the whole expression around us of the life of a simple
         Christian.”
       </p>
-    )
+    ),
   },
   '2023-07-16': {
     subTitle: (
@@ -674,7 +673,7 @@ export default {
         invulnerable shield, it becomes a veil which gives a preview of unknown
         horizons.”
       </p>
-    )
+    ),
   },
   '2023-07-23': {
     subTitle: (
@@ -699,7 +698,7 @@ export default {
         In short, he is what creates, and we creatures are in an act of
         becoming.
       </p>
-    )
+    ),
   },
   '2023-07-30': {
     subTitle: (
@@ -718,7 +717,7 @@ export default {
         to our means of creating a world inspired by his love: a world where
         justice dwells and where people love one another.”
       </p>
-    )
+    ),
   },
   '2023-08-06': {
     subTitle: (
@@ -734,7 +733,7 @@ export default {
         there is much suffering, but there is also great hunger for God and love
         for each other.”
       </p>
-    )
+    ),
   },
   '2023-08-13': {
     subTitle: (
@@ -757,7 +756,7 @@ export default {
         loved; for it is by forgetting self that one finds; it is by dying that
         one awakens to eternal life.” Amen.
       </p>
-    )
+    ),
   },
   '2023-08-20': {
     subTitle: (
@@ -774,7 +773,7 @@ export default {
         working, some things never without praying?{' '}
         <b>Prayer is one of the three forms of man’s cooperation with God.</b>”
       </p>
-    )
+    ),
   },
   '2023-08-27': {
     subTitle: (
@@ -794,7 +793,7 @@ export default {
         room in myself for thought and knowledge of Jesus, beside whom
         everything else is nothing. I must reserve all my strength for Jesus.”
       </p>
-    )
+    ),
   },
   '2023-09-03': {
     subTitle: (
@@ -809,7 +808,7 @@ export default {
         peace, the peace which passeth all understanding, rest with them,
         bringing thy perfect fulfillment to all their needs. Amen.”
       </p>
-    )
+    ),
   },
   '2023-09-10': {
     subTitle: (
@@ -827,7 +826,7 @@ export default {
         and enable me, by the Holy Spirit, to amend my life acording to thy Holy
         Word, for Jesus Christ’s sake. Amen.”
       </p>
-    )
+    ),
   },
   '2023-09-17': {
     subTitle: (
@@ -849,7 +848,7 @@ export default {
         to say, one who unmasks through his criticism the illusions of a violent
         society and who wants to change the world in spirit and truth.”
       </p>
-    )
+    ),
   },
   '2023-09-24': {
     subTitle: (
@@ -867,7 +866,7 @@ export default {
         as we link all these by intention with God and the great movement of his
         Will.”
       </p>
-    )
+    ),
   },
   '2023-10-01': {
     subTitle: (
@@ -887,7 +886,7 @@ export default {
         then to thee would have been given the praise and the glory. When I
         neglect to pray, mine is the loss. Forgive me, Lord. Amen.”
       </p>
-    )
+    ),
   },
   '2023-10-15': {
     subTitle: (
@@ -915,7 +914,7 @@ export default {
         ourselves. We build our charitable institutions but we do not build
         ourselves into other’s lives.”
       </p>
-    )
+    ),
   },
   '2023-10-22': {
     subTitle: (
@@ -939,7 +938,7 @@ export default {
         built on such a convenient plan: there are few soundproof partitions in
         it.”
       </p>
-    )
+    ),
   },
   '2023-10-29': {
     subTitle: (
@@ -961,7 +960,7 @@ export default {
         any lower. In that position nothing can shatter the soul’s serenity, its
         peace and joy.”
       </p>
-    )
+    ),
   },
   '2023-11-05': {
     subTitle: (
@@ -976,7 +975,7 @@ export default {
         them, and obedience keep them in the sunlight. Thus will they bear fruit
         for the Lord’s gathering.”
       </p>
-    )
+    ),
   },
   '2023-11-12': {
     subTitle: (
@@ -994,7 +993,7 @@ export default {
         “Go to your private room and, when you have shut your door, pray to your
         Father who is in that secret place (Matthew 6:6).”
       </p>
-    )
+    ),
   },
   '2023-11-19': {
     subTitle: (
@@ -1018,7 +1017,7 @@ export default {
         job, our getting the job becomes activism, activity aimed to reassure
         and benefit myself under the disguise of another.”
       </p>
-    )
+    ),
   },
   '2023-11-26': {
     subTitle: (
@@ -1039,7 +1038,7 @@ export default {
         an opportunity to exercise his supernatural powers of salvation. And in
         so doing he desires to make use of us.”
       </p>
-    )
+    ),
   },
   '2023-12-03': {
     subTitle: (
@@ -1064,7 +1063,7 @@ export default {
         not attracted by our beauty. He comes even in moments when we have done
         everything wrong, when we have done nothing…when we have sinned.”
       </p>
-    )
+    ),
   },
   '2023-12-10': {
     subTitle: (
@@ -1082,7 +1081,7 @@ export default {
         the morning and in the weariness of the evening; and give me grace at
         all times to rejoice in thy mysterious companionship.”
       </p>
-    )
+    ),
   },
   '2023-12-17': {
     subTitle: (
@@ -1098,7 +1097,7 @@ export default {
         there is nothing dearer to the heart that loves. We shall never lack
         either this happiness, nor God nor the Cross.”
       </p>
-    )
+    ),
   },
   '2023-12-24': {
     subTitle: (
@@ -1117,7 +1116,7 @@ export default {
         have I in heaven but thee? And there is nothing upon earth that I desire
         besides thee!”
       </p>
-    )
+    ),
   },
   '2023-12-31': {
     subTitle: (
@@ -1141,7 +1140,7 @@ export default {
         matter and of things. We have to bring to them in their inert, anonymous
         condition a personal love.”
       </p>
-    )
+    ),
   },
   '2024-01-07': {
     subTitle: (
@@ -1164,7 +1163,7 @@ export default {
         children and his sheep were – no, not a truer, for the other is false,
         but – a true type of our God beside that monstrosity of a monarch!”
       </p>
-    )
+    ),
   },
   '2024-01-14': {
     subTitle: (
@@ -1179,7 +1178,7 @@ export default {
         system to a risky surrender, and from the many “safe” gods to the God
         whose love has no limits.”
       </p>
-    )
+    ),
   },
   '2024-01-21': {
     subTitle: (
@@ -1199,7 +1198,7 @@ export default {
         way to cross this earth. I espoused my Lady Poverty in desire, and from
         that moment all fear died within me. Or rather, true freedom began.”
       </p>
-    )
+    ),
   },
   '2024-01-28': {
     subTitle: (
@@ -1218,7 +1217,7 @@ export default {
         birth of the true self takes place in God’s time. We must wait for God,
         we must be awake; we must trust in his hidden action within us.”
       </p>
-    )
+    ),
   },
   '2024-02-04': {
     subTitle: (
@@ -1246,7 +1245,7 @@ export default {
         willingness to see one’s own pain and suffering as rising from the depth
         of the human condition which all men share.”
       </p>
-    )
+    ),
   },
   '2024-02-11': {
     subTitle: (
@@ -1263,7 +1262,7 @@ export default {
         the job. The real spiritual life must be horizontal as well as vertical;
         spread more and more as well as aspire more and more.”
       </p>
-    )
+    ),
   },
   '2024-02-18': {
     subTitle: (
@@ -1285,7 +1284,7 @@ export default {
         by one who must embrace the grief, enter into the death, and know the
         pain of the criticized one.”
       </p>
-    )
+    ),
   },
   '2024-02-25': {
     subTitle: (
@@ -1311,7 +1310,7 @@ export default {
         history is initiated. It is a new history open to all but peculiarly
         received by the marginal victims of old order.”
       </p>
-    )
+    ),
   },
   '2024-03-03': {
     subTitle: (
@@ -1337,7 +1336,7 @@ export default {
         because he is more available to others, but because he is with God, and
         God alone – the God who is our God.”
       </p>
-    )
+    ),
   },
   '2024-03-10': {
     subTitle: (
@@ -1363,7 +1362,7 @@ export default {
         means madness, horror, idiocy, rage, impotence, and eternal loneliness.
         Each of us at each moment is progressing to the one state or the other.”
       </p>
-    )
+    ),
   },
   '2024-03-17': {
     subTitle: (
@@ -1387,6 +1386,6 @@ export default {
         direction. If, however, we look heavenward for a long time, God comes
         and takes us up. He raises us easily.”
       </p>
-    )
-  }
+    ),
+  },
 };

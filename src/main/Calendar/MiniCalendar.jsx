@@ -1,6 +1,6 @@
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
+import { Component } from 'react';
 import styled from 'styled-components';
 
 import commonUtils from '../../utils/commonUtils';
@@ -11,7 +11,7 @@ import calendarDatesUtils from './calendarDatesUtils';
 
 const CONTROLS = {
   PREV: 'PREV',
-  NEXT: 'NEXT'
+  NEXT: 'NEXT',
 };
 const MiniCalendarStyle = styled.div`
   border-radius: 20px;
@@ -102,14 +102,14 @@ class MiniCalendar extends Component {
     super(props);
 
     this.state = {
-      allDates: calendarDatesUtils.getAllDates()
+      allDates: calendarDatesUtils.getAllDates(),
     };
   }
 
   componentDidMount() {
     calendarDatesUtils.listen('mini-calendar', () => {
       this.setState({
-        allDates: calendarDatesUtils.getAllDates()
+        allDates: calendarDatesUtils.getAllDates(),
       });
     });
   }
@@ -146,21 +146,21 @@ class MiniCalendar extends Component {
       allDatesClickable,
       highlightSelectedDay,
       highlightWeek,
-      selectedDay
+      selectedDay,
     } = this.props;
 
     const renderedDays = commonUtils.range(0, 6).map((dayOfWeekIndex) => {
       const dayMoment = calendarDatesUtils.getMomentForYearWeekWeekday(
         year,
         weekNumber,
-        dayOfWeekIndex
+        dayOfWeekIndex,
       );
 
       const dayString = dayMoment.format('YYYY-MM-DD');
 
       const daysEventsCount = calendarDatesUtils.getEventsForDate(
         this.state.allDates,
-        dayString
+        dayString,
       ).length;
 
       const isOtherMonth = !dayMoment.isSame(selectedDay, 'month');
@@ -176,7 +176,7 @@ class MiniCalendar extends Component {
           !highlightWeek &&
           isSelectedDay &&
           'selected-day',
-        highlightWeek && isSelectedWeek && 'selected-week'
+        highlightWeek && isSelectedWeek && 'selected-week',
       ]
         .filter((text) => text)
         .join(' ');
@@ -265,14 +265,14 @@ MiniCalendar.propTypes = {
   onDateChange: PropTypes.func,
   onDateClick: PropTypes.func,
   selectedDay: PropTypes.string,
-  yearDisplayMode: PropTypes.bool
+  yearDisplayMode: PropTypes.bool,
 };
 
 MiniCalendar.defaultProps = {
   allDatesClickable: true,
   highlightWeek: false,
   highlightSelectedDay: true,
-  yearDisplayMode: false
+  yearDisplayMode: false,
 };
 
 export default MiniCalendar;

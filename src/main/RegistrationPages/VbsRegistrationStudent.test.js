@@ -1,5 +1,4 @@
 import {shallow} from 'enzyme';
-import React from 'react';
 
 import Textbox from '../commonComponents/Textbox';
 
@@ -11,7 +10,7 @@ describe('VbsRegistrationStudent', () => {
 
   beforeEach(() => {
     props = {
-      studentType: STUDENT_TYPES.ADULT
+      studentType: STUDENT_TYPES.ADULT,
     };
   });
 
@@ -30,7 +29,7 @@ describe('VbsRegistrationStudent', () => {
       const wrapper = shallow(<VbsRegistrationStudent {...props} />);
 
       expect(wrapper.find('Text').find({id: 'parentName'}).exists()).toBe(
-        false
+        false,
       );
     });
 
@@ -56,7 +55,7 @@ describe('VbsRegistrationStudent', () => {
       const wrapper = shallow(<VbsRegistrationStudent {...props} />);
 
       expect(wrapper.find(Textbox).find({id: 'parentName'}).exists()).toBe(
-        true
+        true,
       );
     });
 

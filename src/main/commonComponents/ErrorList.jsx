@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 
 const ErrorList = (props) => {
   const errorList = props.errors.map((error, index) => {
@@ -16,7 +15,7 @@ const ErrorList = (props) => {
 };
 
 ErrorList.propTypes = {
-  errors: PropTypes.array.isRequired
+  errors: PropTypes.array.isRequired,
 };
 
 export default ErrorList;

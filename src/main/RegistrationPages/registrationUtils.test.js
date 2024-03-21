@@ -8,7 +8,7 @@ describe('registrationUtils', () => {
       testState = {
         email: 'test@blah.com',
         homePhone: '410-123-1234',
-        mobilePhone: '443-123-1235'
+        mobilePhone: '443-123-1235',
       };
     });
 
@@ -18,7 +18,7 @@ describe('registrationUtils', () => {
       delete testState.mobilePhone;
 
       expect(
-        registrationUtils.requireQuickContact(undefined, undefined, testState)
+        registrationUtils.requireQuickContact(undefined, undefined, testState),
       ).toBeDefined();
     });
 
@@ -27,7 +27,7 @@ describe('registrationUtils', () => {
       delete testState.mobilePhone;
 
       expect(
-        registrationUtils.requireQuickContact(undefined, undefined, testState)
+        registrationUtils.requireQuickContact(undefined, undefined, testState),
       ).not.toBeDefined();
     });
 
@@ -36,7 +36,7 @@ describe('registrationUtils', () => {
       delete testState.mobilePhone;
 
       expect(
-        registrationUtils.requireQuickContact(undefined, undefined, testState)
+        registrationUtils.requireQuickContact(undefined, undefined, testState),
       ).not.toBeDefined();
     });
 
@@ -45,7 +45,7 @@ describe('registrationUtils', () => {
       delete testState.homePhone;
 
       expect(
-        registrationUtils.requireQuickContact(undefined, undefined, testState)
+        registrationUtils.requireQuickContact(undefined, undefined, testState),
       ).not.toBeDefined();
     });
   });

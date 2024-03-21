@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 import styled from 'styled-components';
 
 import Button, {BUTTON_COLORS, SHAPES} from './commonComponents/Button/Button';
@@ -30,18 +29,18 @@ function WatchPageFilter({
   searchInfo,
   setSearchInfo,
   onFilterClick,
-  onResetClick
+  onResetClick,
 }) {
   const updateTextbox = (newValue, id) => {
     setSearchInfo({
       ...searchInfo,
-      [id]: newValue
+      [id]: newValue,
     });
   };
 
   const buttonOptions = {
     buttonShape: SHAPES.RECT,
-    color: BUTTON_COLORS.GRAY
+    color: BUTTON_COLORS.GRAY,
   };
 
   return (
@@ -101,12 +100,12 @@ WatchPageFilter.propTypes = {
     titleSearchId: PropTypes.string.isRequired,
     preacherSearchId: PropTypes.string.isRequired,
     dateSearchId: PropTypes.string.isRequired,
-    scriptureSearchId: PropTypes.string.isRequired
+    scriptureSearchId: PropTypes.string.isRequired,
   }).isRequired,
   onFilterClick: PropTypes.func.isRequired,
   onResetClick: PropTypes.func.isRequired,
   searchInfo: PropTypes.object.isRequired,
-  setSearchInfo: PropTypes.func.isRequired
+  setSearchInfo: PropTypes.func.isRequired,
 };
 
 export default WatchPageFilter;

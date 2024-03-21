@@ -25,7 +25,7 @@ describe.skip('pushToSubscribedList', () => {
     pushToSubscribedList(testEmail, testSource, testName);
 
     expect(firebase.database().ref).toBeCalledWith(
-      constants.SUBSCRIBED_EMAILS_REF_NAME
+      constants.SUBSCRIBED_EMAILS_REF_NAME,
     );
   });
 
@@ -40,7 +40,7 @@ describe.skip('pushToSubscribedList', () => {
       pushToSubscribedList('test@mail.somewhere.com', testSource, testName);
 
       expect(firebase.database().ref().child).toBeCalledWith(
-        'test@mail,somewhere,com'
+        'test@mail,somewhere,com',
       );
     });
 
@@ -48,11 +48,11 @@ describe.skip('pushToSubscribedList', () => {
       pushToSubscribedList(
         'a.person-here@mail.somewhere.com',
         testSource,
-        testName
+        testName,
       );
 
       expect(firebase.database().ref().child).toBeCalledWith(
-        'a,person-here@mail,somewhere,com'
+        'a,person-here@mail,somewhere,com',
       );
     });
   });
@@ -73,7 +73,7 @@ describe.skip('pushToSubscribedList', () => {
     it('uses current time', () => {
       // dddd-dd-ddTdd:dd:dd.dddZ
       expect(setObject.subscribeTime).toMatch(
-        /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/
+        /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/,
       );
     });
 

@@ -1,5 +1,4 @@
 import {shallow} from 'enzyme';
-import React from 'react';
 
 import routePaths from '../../routePaths';
 import commonUtils from '../../utils/commonUtils';
@@ -21,23 +20,23 @@ describe('#render', () => {
     const baseCheckin = wrapper.find('BaseCheckin');
 
     expect(baseCheckin.props().logbookRefName).toBe(
-      constants.VBS_LOGBOOK_REF_NAME
+      constants.VBS_LOGBOOK_REF_NAME,
     );
 
     expect(baseCheckin.props().registerLink).toBe(
-      routePaths.CE_VBS_REG_LANDING
+      routePaths.CE_VBS_REG_LANDING,
     );
 
     expect(baseCheckin.props().registeredChildrenRefName).toBe(
-      `${constants.VBS_REGISTERED_CHILDREN_REF_NAME}/${testYear}`
+      `${constants.VBS_REGISTERED_CHILDREN_REF_NAME}/${testYear}`,
     );
 
     expect(baseCheckin.props().registryAccessRefName).toBe(
-      constants.VBS_REGISTRY_ACCESS_REF_NAME
+      constants.VBS_REGISTRY_ACCESS_REF_NAME,
     );
 
     expect(baseCheckin.props().registryIdName).toBe(
-      constants.VBS_REGISTERED_CHILD_ID_PROP
+      constants.VBS_REGISTERED_CHILD_ID_PROP,
     );
 
     expect(baseCheckin.props().welcomeName).toBe('Vacation Bible School');

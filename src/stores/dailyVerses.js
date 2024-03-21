@@ -1,7 +1,7 @@
 const bibleComFormattedVerses = {
   '2021-01-20': {
     verse: 'Luke 9.23-27; 9.57-62',
-    referenceText: 'Luke 9.23-27, 57-62'
+    referenceText: 'Luke 9.23-27, 57-62',
   },
   '2022-09-07': {verse: '1 John 3.18-24'},
   '2022-09-08': {verse: 'Psalm 34.11-22'},
@@ -21,7 +21,7 @@ const bibleComFormattedVerses = {
   '2022-09-29': {verse: 'Acts 27.13-26'},
   '2022-09-30': {
     verse: 'Philippians 1.12-14, 27-30',
-    referenceText: 'Philippians 1:12-14, 27-30'
+    referenceText: 'Philippians 1:12-14, 27-30',
   },
   '2022-10-01': {verse: 'Matthew 14.22-33'},
   '2022-10-02': {verse: 'Psalm 19'},
@@ -548,7 +548,7 @@ const bibleComFormattedVerses = {
   '2024-03-20': {verse: 'Romans 1.1-7, 16-17'},
   '2024-03-21': {verse: 'Isaiah 25.1-9'},
   '2024-03-22': {verse: 'Colossians 3.1-17'},
-  '2024-03-23': {verse: 'Romans 8.31-39'}
+  '2024-03-23': {verse: 'Romans 8.31-39'},
 };
 
 export {bibleComFormattedVerses};

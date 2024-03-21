@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
+import { Component } from 'react';
 
 import './Modal.css';
 
@@ -50,7 +50,7 @@ Modal.propTypes = {
   children: PropTypes.node,
   // will be used on the div surrounding the content box
   className: PropTypes.string,
-  onCloseClick: PropTypes.func.isRequired
+  onCloseClick: PropTypes.func.isRequired,
 };
 
 export default Modal;

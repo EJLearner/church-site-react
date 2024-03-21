@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import { Component } from 'react';
 
 import routePaths from '../../routePaths';
 import utils from '../../utils/commonUtils';

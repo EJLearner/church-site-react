@@ -1,5 +1,4 @@
 import {shallow} from 'enzyme';
-import React from 'react';
 
 import routePaths from '../../routePaths';
 import commonUtils from '../../utils/commonUtils';
@@ -21,21 +20,21 @@ describe('#render', () => {
     const baseCheckin = wrapper.find('BaseCheckin');
 
     expect(baseCheckin.props().logbookRefName).toBe(
-      constants.CC_LOGBOOK_REF_NAME
+      constants.CC_LOGBOOK_REF_NAME,
     );
 
     expect(baseCheckin.props().registerLink).toBe(routePaths.CE_CC_REG_CHILD);
 
     expect(baseCheckin.props().registeredChildrenRefName).toBe(
-      `${constants.CC_REGISTERED_CHILDREN_REF_NAME}/${testYear}`
+      `${constants.CC_REGISTERED_CHILDREN_REF_NAME}/${testYear}`,
     );
 
     expect(baseCheckin.props().registryAccessRefName).toBe(
-      constants.CC_REGISTRY_ACCESS_REF_NAME
+      constants.CC_REGISTRY_ACCESS_REF_NAME,
     );
 
     expect(baseCheckin.props().registryIdName).toBe(
-      constants.CC_REGISTERED_CHILD_ID_PROP
+      constants.CC_REGISTERED_CHILD_ID_PROP,
     );
 
     expect(baseCheckin.props().welcomeName).toBe('Children’s Church');

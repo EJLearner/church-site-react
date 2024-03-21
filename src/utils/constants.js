@@ -1,5 +1,5 @@
 const COOKIE_KEYS = {
-  CART_DATA: 'cart-data'
+  CART_DATA: 'cart-data',
 };
 
 const dateConstants = {
@@ -9,11 +9,11 @@ const dateConstants = {
   DISPLAY_TIME_FORMAT: 'M/D/YY h:mm a',
   INTERNAL_DATE_FORMAT: 'YYYY-MM-DD',
   INTERNAL_TIMESTAMP_FORMAT: 'YYYY-MM-DDTHH:mm:ss.SSSZ',
-  VALID_INPUT_DATE_FORMATS: ['M/D/YY', 'M/D/YYYY', 'M-D-YYYY', 'M-D-YY']
+  VALID_INPUT_DATE_FORMATS: ['M/D/YY', 'M/D/YYYY', 'M-D-YYYY', 'M-D-YY'],
 };
 
 const FEATURE_FLAGS = {
-  ANNIVERSARY_STORE: 'ANNIVERSARY_STORE'
+  ANNIVERSARY_STORE: 'ANNIVERSARY_STORE',
 };
 
 const constants = {
@@ -41,7 +41,7 @@ const constants = {
     M_HAMIEL: 'Rev. Michelle Hamiel',
     MINISTERS: 'City Temple Ministers', // use when multiple ministers are in video
     P_YEARGIN: 'Minister Patricia Ann Yeargin',
-    T_CURLEY: 'Rev. Tyra Curley'
+    T_CURLEY: 'Rev. Tyra Curley',
   },
 
   BIBLE_VERSIONS: {
@@ -49,7 +49,7 @@ const constants = {
     NIV: 'NIV',
     NRSV: 'NRSV',
     NLT: 'NLT',
-    NRSVUE: 'NRSVUE'
+    NRSVUE: 'NRSVUE',
   },
 
   BIBLE_VERSIONS_INFO: {
@@ -59,9 +59,9 @@ const constants = {
     NRSV: {long: 'New Revised Standard Version', short: 'NRSV'},
     NRSVUE: {
       long: 'New Revised Standard Version UPDATED EDITION',
-      short: 'NRSVUE'
+      short: 'NRSVUE',
     },
-    NLT: {long: 'New Living Translation', short: 'NLT'}
+    NLT: {long: 'New Living Translation', short: 'NLT'},
   },
 
   SLENDER_ARROW_LEFT: '‹',
@@ -75,7 +75,7 @@ const constants = {
   VIEWS: {
     CART: 'cart',
     QUANTITY_SELECT: 'quantitySelect',
-    STORE_FRONT: 'storeFront'
+    STORE_FRONT: 'storeFront',
   },
 
   VBS_LOGBOOK_REF_NAME: 'vbsLogbook',
@@ -85,7 +85,7 @@ const constants = {
   VBS_REGISTERED_STUDENT_REF_NAME: 'vbsRegisteredStudents',
   VBS_REGISTERED_VOLUNTEER_ID_PROP: 'vbsRegisteredVolunteersId',
   VBS_REGISTERED_VOLUNTEER_REF_NAME: 'vbsRegisteredVolunteers',
-  VBS_REGISTRY_ACCESS_REF_NAME: 'user_groups/vbsRegAccess'
+  VBS_REGISTRY_ACCESS_REF_NAME: 'user_groups/vbsRegAccess',
 };
 
 export default constants;

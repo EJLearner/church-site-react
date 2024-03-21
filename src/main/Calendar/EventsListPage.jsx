@@ -1,7 +1,7 @@
 import {Parser as HtmlToReactParser} from 'html-to-react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
+import { Component } from 'react';
 import styled from 'styled-components';
 
 import MiniCalendar from './MiniCalendar';
@@ -78,7 +78,7 @@ class EventsListPage extends Component {
 
     return {
       start,
-      end
+      end,
     };
   }
 
@@ -91,7 +91,7 @@ class EventsListPage extends Component {
       .reduce((allEvents, date) => {
         const eventsForDate = calendarDatesUtils.getEventsForDate(
           storedDates,
-          date
+          date,
         );
 
         const eventsForDateWithDateAddedAsProp = eventsForDate.map((event) => {
@@ -100,7 +100,7 @@ class EventsListPage extends Component {
             eventWithDate = {...event};
           } else {
             eventWithDate = {
-              title: event
+              title: event,
             };
           }
 
@@ -147,7 +147,7 @@ class EventsListPage extends Component {
       onDateChange,
       pageTitle,
       selectedDay,
-      subTitle
+      subTitle,
     } = this.props;
 
     const renderedEvents = this.renderEvents();
@@ -187,11 +187,11 @@ EventsListPage.propTypes = {
   // useful for upcoming events when events for other dates are displayed
   showDates: PropTypes.bool,
   storedDates: PropTypes.object,
-  subTitle: PropTypes.string
+  subTitle: PropTypes.string,
 };
 
 EventsListPage.defaultProps = {
-  emptyMessage: 'No Events Listed'
+  emptyMessage: 'No Events Listed',
 };
 
 export default EventsListPage;

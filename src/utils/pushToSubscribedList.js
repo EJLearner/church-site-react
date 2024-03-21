@@ -16,7 +16,7 @@ const pushToSubscribedList = function (email, subscribeSource, name) {
       email,
       name,
       subscribeTime: new Date().toISOString(),
-      subscribeSource
+      subscribeSource,
     })
     .catch(() => {
       // email likely exists already

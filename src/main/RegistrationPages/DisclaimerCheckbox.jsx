@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 
 const DisclaimerCheckbox = ({checked, id: inputId, onChange}) => {
   const labelId = `${inputId}-label`;
@@ -62,5 +61,5 @@ export default DisclaimerCheckbox;
 DisclaimerCheckbox.propTypes = {
   checked: PropTypes.bool.isRequired,
   id: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
 };

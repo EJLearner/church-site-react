@@ -1,6 +1,6 @@
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
+import { Component } from 'react';
 
 import EventsListPage from './EventsListPage';
 import calendarDatesUtils from './calendarDatesUtils';
@@ -17,7 +17,7 @@ function getDates(maxEvents, selectedDay, storedDates) {
     const dateString = selectedDayMoment.format('YYYY-MM-DD');
     const daysEvents = calendarDatesUtils.getEventsForDate(
       storedDates,
-      dateString
+      dateString,
     );
 
     const daysEventsCount = daysEvents.length;
@@ -59,7 +59,7 @@ class CalendarUpcoming extends Component {
 }
 
 CalendarUpcoming.propTypes = {
-  storedDates: PropTypes.object
+  storedDates: PropTypes.object,
 };
 
 export default withDatesSubscription(CalendarUpcoming);

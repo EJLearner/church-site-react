@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {
   LOGICAL_COLORS,
   COLORS,
-  FONT_FAMILIES
+  FONT_FAMILIES,
 } from '../../utils/styleVariables';
 
 import contentWrapperH2Mixin from './contentWrapperH2Mixin';

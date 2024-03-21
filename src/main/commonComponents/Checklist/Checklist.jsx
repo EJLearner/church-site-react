@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 
 import Checkbox from './Checkbox';
 
@@ -39,7 +38,7 @@ const Checklist = (props) => {
 
 Checklist.defaultProps = {
   horizontal: false,
-  required: false
+  required: false,
 };
 
 Checklist.propTypes = {
@@ -47,14 +46,14 @@ Checklist.propTypes = {
     PropTypes.shape({
       checked: PropTypes.bool.isRequired,
       label: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired
-    })
+      value: PropTypes.string.isRequired,
+    }),
   ).isRequired,
   horizontal: PropTypes.bool,
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  required: PropTypes.bool
+  required: PropTypes.bool,
 };
 
 export default Checklist;

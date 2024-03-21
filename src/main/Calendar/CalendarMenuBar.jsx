@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
+import { Component } from 'react';
 import {Link} from 'react-router-dom';
 import {withRouter} from 'react-router-dom';
 import styled from 'styled-components';
@@ -77,14 +77,14 @@ class MenuBar extends Component {
     links: PropTypes.arrayOf(
       PropTypes.shape({
         path: PropTypes.string.isRequired,
-        text: PropTypes.string.isRequired
-      })
+        text: PropTypes.string.isRequired,
+      }),
     ),
-    location: PropTypes.object
+    location: PropTypes.object,
   };
 
   static defaultProps = {
-    showLogo: true
+    showLogo: true,
   };
 
   render() {

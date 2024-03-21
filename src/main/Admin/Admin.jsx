@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import { Component } from 'react';
 import {Route, Switch} from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -56,7 +56,7 @@ class Admin extends Component {
 
     this.state = {
       user: null,
-      adminUser: null
+      adminUser: null,
     };
   }
 
@@ -96,7 +96,7 @@ class Admin extends Component {
       ccRegAccess,
       emailSubscribersAccess,
       vbsRegAccess,
-      user
+      user,
     } = this.state;
 
     const uid = user?.uid;
@@ -107,16 +107,16 @@ class Admin extends Component {
       isAdmin && {path: routePaths.ADMIN_EVENTS, text: 'Events'},
       (isAdmin || ccRegAccess?.[uid]) && {
         path: routePaths.ADMIN_CC,
-        text: 'Children’s Church'
+        text: 'Children’s Church',
       },
       (isAdmin || vbsRegAccess?.[uid]) && {
         path: routePaths.ADMIN_VBS,
-        text: 'VBS'
+        text: 'VBS',
       },
       (isAdmin || emailSubscribersAccess?.[uid]) && {
         path: routePaths.ADMIN_EMAIL_SUBSCRIBERS,
-        text: 'Email Subscribers List'
-      }
+        text: 'Email Subscribers List',
+      },
     ].filter(Boolean);
   }
 

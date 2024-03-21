@@ -61,5 +61,5 @@ export {
   parseISO,
   startOfDay,
   startOfToday,
-  startOfTomorrow
+  startOfTomorrow,
 };

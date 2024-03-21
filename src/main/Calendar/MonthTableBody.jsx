@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 
 import commonUtils from '../../utils/commonUtils';
 
@@ -18,7 +17,7 @@ function MonthTableBody({todayMoment, renderRow}) {
 
   const weekNumbers = commonUtils.range(
     firstWeekOfMonth,
-    lastWeekOfMonthInSameYear
+    lastWeekOfMonthInSameYear,
   );
 
   const year = todayMoment.year();
@@ -33,7 +32,7 @@ function MonthTableBody({todayMoment, renderRow}) {
 
 MonthTableBody.propTypes = {
   renderRow: PropTypes.func,
-  todayMoment: PropTypes.object
+  todayMoment: PropTypes.object,
 };
 
 export default MonthTableBody;

@@ -1,6 +1,6 @@
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
+import { Component } from 'react';
 import {withRouter} from 'react-router-dom';
 
 import EventsListPage from './EventsListPage';
@@ -34,7 +34,7 @@ class CalendarDay extends Component {
 
     const currentDaySelected = selectedDayMoment.isSame(
       currentDayMoment,
-      'day'
+      'day',
     );
 
     const pageTitle = currentDaySelected
@@ -57,11 +57,11 @@ class CalendarDay extends Component {
 CalendarDay.propTypes = {
   location: PropTypes.object.isRequired,
   selectedDay: PropTypes.string,
-  storedDates: PropTypes.object
+  storedDates: PropTypes.object,
 };
 
 CalendarDay.defaultProps = {
-  selectedDay: moment().format('YYYY-MM-DD')
+  selectedDay: moment().format('YYYY-MM-DD'),
 };
 
 export default withRouter(withDatesSubscription(CalendarDay));

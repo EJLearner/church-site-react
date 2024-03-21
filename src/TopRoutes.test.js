@@ -1,5 +1,4 @@
 import {shallow} from 'enzyme';
-import React from 'react';
 import {MemoryRouter} from 'react-router-dom';
 
 import TopRoutes from './TopRoutes';
@@ -15,7 +14,7 @@ describe('TopRoutes', () => {
     const wrapper = shallow(
       <MemoryRouter initialEntries={[routePaths.CE_VBS_CHECKIN]}>
         <TopRoutes />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
     expect(wrapper.find(VbsCheckin).exists()).toBeTrue;

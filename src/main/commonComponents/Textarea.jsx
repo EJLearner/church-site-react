@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 import styled from 'styled-components';
 
 import {COLORS} from '../../utils/styleVariables';
@@ -47,7 +46,7 @@ const Textarea = (props) => {
     placeholder,
     required,
     rows,
-    value
+    value,
   } = props;
 
   const errorsId = `${id}-errors`;
@@ -59,7 +58,7 @@ const Textarea = (props) => {
     errorMessage && errorsId,
     labelId,
     instructions && instructionsId,
-    characterLimit && characterCountId
+    characterLimit && characterCountId,
   ]
     .filter(Boolean)
     .join(' ');
@@ -102,7 +101,7 @@ const Textarea = (props) => {
 };
 
 Textarea.defaultProps = {
-  rows: 5
+  rows: 5,
 };
 
 Textarea.propTypes = {
@@ -117,7 +116,7 @@ Textarea.propTypes = {
   placeholder: PropTypes.string,
   required: PropTypes.bool,
   rows: PropTypes.number,
-  value: PropTypes.string.isRequired
+  value: PropTypes.string.isRequired,
 };
 
 export default Textarea;

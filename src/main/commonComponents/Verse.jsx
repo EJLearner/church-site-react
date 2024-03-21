@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import getVerseInfo from '../../stores/getVerseInfo';
@@ -19,7 +19,7 @@ const StyleWrapper = styled.div`
 const LOAD_STATES = {
   loading: 'loading',
   complete: 'complete',
-  error: 'error'
+  error: 'error',
 };
 
 function LoadingMessage() {
@@ -72,7 +72,7 @@ Verse.propTypes = {
   className: PropTypes.string,
   passage: PropTypes.string.isRequired,
   /** String used to display which verses are used if provided */
-  referenceText: PropTypes.string
+  referenceText: PropTypes.string,
 };
 
 export default Verse;

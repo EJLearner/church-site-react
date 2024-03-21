@@ -1,4 +1,4 @@
-import React from 'react';
+import { Component } from 'react';
 
 import firebase from '../../firebase';
 import commonUtils from '../../utils/commonUtils';
@@ -9,7 +9,7 @@ const getColumns = () => {
     {name: 'name', label: 'Name'},
     {name: 'email', label: 'Email Address'},
     {name: 'subscribeSource', label: 'Subscribe Source'},
-    {name: 'formattedSubscribeTime', label: 'Subscribe Time'}
+    {name: 'formattedSubscribeTime', label: 'Subscribe Time'},
   ];
 };
 
@@ -21,17 +21,17 @@ const getRows = (subscribedEmails) => {
         name,
         email,
         subscribeSource,
-        formattedSubscribeTime: commonUtils.formatTime(subscribeTime)
+        formattedSubscribeTime: commonUtils.formatTime(subscribeTime),
       };
-    }
+    },
   );
 };
 
-class SubscribedEmailsAdmin extends React.Component {
+class SubscribedEmailsAdmin extends Component {
   constructor() {
     super();
     this.state = {
-      subscribedEmails: {}
+      subscribedEmails: {},
     };
   }
 
@@ -46,7 +46,7 @@ class SubscribedEmailsAdmin extends React.Component {
       const subscribedEmails = snapshot.val() || {};
 
       this.setState({
-        subscribedEmails
+        subscribedEmails,
       });
     });
   }

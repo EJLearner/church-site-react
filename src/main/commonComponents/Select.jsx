@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 import styled from 'styled-components';
 
 import InputLabel from './InputLabel';
@@ -32,7 +31,7 @@ const Select = ({
   labelSameLine,
   options,
   value,
-  label
+  label,
 }) => {
   return (
     <SelectStyle
@@ -64,10 +63,10 @@ Select.propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired
-    })
+      value: PropTypes.string.isRequired,
+    }),
   ).isRequired,
-  value: PropTypes.string.isRequired
+  value: PropTypes.string.isRequired,
 };
 
 export default Select;

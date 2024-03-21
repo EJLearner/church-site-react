@@ -1,6 +1,6 @@
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
+import { Component } from 'react';
 import {Redirect} from 'react-router';
 
 import firebase from '../../firebase';
@@ -28,20 +28,20 @@ const FIELDS_INFO = {
   email: {
     fieldId: 'email',
     label: 'Email Address',
-    fieldRules: [fieldValidators.isValidEmail]
+    fieldRules: [fieldValidators.isValidEmail],
   },
   name: {
     fieldId: 'name',
     label: 'Name',
     fieldRules: [
       fieldValidators.isNotEmpty,
-      fieldValidators.isAtLeastTwoCharacters
-    ]
+      fieldValidators.isAtLeastTwoCharacters,
+    ],
   },
   dob: {
     fieldId: 'dob',
     label: 'Date of Birth',
-    fieldRules: [fieldValidators.isDate]
+    fieldRules: [fieldValidators.isDate],
   },
 
   address1: {
@@ -49,8 +49,8 @@ const FIELDS_INFO = {
     label: 'Address Line 1',
     fieldRules: [
       fieldValidators.isNotEmpty,
-      fieldValidators.isAtLeastTwoCharacters
-    ]
+      fieldValidators.isAtLeastTwoCharacters,
+    ],
   },
   address2: {fieldId: 'address2', label: 'Address Line 2'},
   city: {
@@ -59,8 +59,8 @@ const FIELDS_INFO = {
     fieldRules: [
       fieldValidators.isAllLetters,
       fieldValidators.isNotEmpty,
-      fieldValidators.isAtLeastTwoCharacters
-    ]
+      fieldValidators.isAtLeastTwoCharacters,
+    ],
   },
   state: {
     fieldId: 'state',
@@ -68,127 +68,127 @@ const FIELDS_INFO = {
     fieldRules: [
       fieldValidators.isAllLetters,
       fieldValidators.isNotEmpty,
-      fieldValidators.isAtLeastTwoCharacters
-    ]
+      fieldValidators.isAtLeastTwoCharacters,
+    ],
   },
   zip: {
     fieldId: 'zip',
     label: 'ZIP Code',
-    fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isValidZip]
+    fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isValidZip],
   },
   mobilePhone: {
     fieldId: 'mobilePhone',
     label: 'Mobile Phone',
-    fieldRules: [fieldValidators.isPhoneNumber]
+    fieldRules: [fieldValidators.isPhoneNumber],
   },
   homePhone: {
     fieldId: 'homePhone',
     label: 'Home Phone',
     fieldRules: [
       fieldValidators.isPhoneNumber,
-      registrationUtils.requireQuickContact
-    ]
+      registrationUtils.requireQuickContact,
+    ],
   },
   teacher: {
     default: false,
     fieldId: 'teacher',
-    label: 'Teacher'
+    label: 'Teacher',
   },
   admin: {
     default: false,
     fieldId: 'admin',
-    label: 'Administrative Staff'
+    label: 'Administrative Staff',
   },
   assistantMentor: {
     default: false,
     fieldId: 'assistantMentor',
-    label: 'Class Assistant/Hallway Monitor'
+    label: 'Class Assistant/Hallway Monitor',
   },
   kitchen: {
     default: false,
     fieldId: 'kitchen',
-    label: 'Kitchen Staff'
+    label: 'Kitchen Staff',
   },
   otherText: {
     fieldId: 'otherText',
-    label: 'Other Role'
+    label: 'Other Role',
   },
   sundaySchool: {
     default: false,
     fieldId: 'sundaySchool',
-    label: 'Sunday School'
+    label: 'Sunday School',
   },
   bibleSchool: {
     default: false,
     fieldId: 'bibleSchool',
-    label: 'Vacation Bible School'
+    label: 'Vacation Bible School',
   },
   youthMinistry: {
     default: false,
     fieldId: 'youthMinistry',
-    label: 'Youth Ministory'
+    label: 'Youth Ministory',
   },
   pastTeacher: {
     default: false,
     fieldId: 'pastTeacher',
-    label: 'Teacher'
+    label: 'Teacher',
   },
   pastAdmin: {
     default: false,
     fieldId: 'pastAdmin',
-    label: 'Administrative Staff'
+    label: 'Administrative Staff',
   },
   pastTransition: {
     default: false,
     fieldId: 'pastTransition',
-    label: 'Transition Team'
+    label: 'Transition Team',
   },
   pastKitchen: {
     default: false,
     fieldId: 'pastKitchen',
-    label: 'Kitchen Staff'
+    label: 'Kitchen Staff',
   },
   pastChaperone: {
     default: false,
     fieldId: 'pastChaperone',
-    label: 'Chaperon'
+    label: 'Chaperon',
   },
   monday: {
     default: false,
     fieldId: 'monday',
-    label: 'Monday'
+    label: 'Monday',
   },
   tuesday: {
     default: false,
     fieldId: 'tuesday',
-    label: 'Tuesday'
+    label: 'Tuesday',
   },
   wednesday: {
     default: false,
     fieldId: 'wednesday',
-    label: 'Wednesday'
+    label: 'Wednesday',
   },
   thursday: {
     default: false,
     fieldId: 'thursday',
-    label: 'Thursday'
+    label: 'Thursday',
   },
   friday: {
     default: false,
     fieldId: 'friday',
-    label: 'Friday'
+    label: 'Friday',
   },
   subscribe: {
     fieldId: 'subscribe',
     default: false,
-    label: 'Subscribe'
+    label: 'Subscribe',
   },
   agreementChecked: {
     fieldId: 'agreementChecked',
     label: 'Terms Agreement Checkbox',
     fieldRules: [fieldValidators.disclaimerIsChecked],
-    showInConfirmation: false
-  }
+    showInConfirmation: false,
+  },
 };
 
 class BaseRegistrationVolunteer extends Component {
@@ -239,7 +239,7 @@ class BaseRegistrationVolunteer extends Component {
       tuesday: true,
       wednesday: true,
       thursday: true,
-      friday: true
+      friday: true,
     };
 
     const fieldStates = {};
@@ -265,7 +265,7 @@ class BaseRegistrationVolunteer extends Component {
       redirect: false,
       showModal: false,
       showOther: false,
-      [FIELDS_INFO.agreementChecked.fieldId]: false
+      [FIELDS_INFO.agreementChecked.fieldId]: false,
     };
   }
 
@@ -279,7 +279,7 @@ class BaseRegistrationVolunteer extends Component {
 
     const volunteer = {
       [volunteerIdPropName]: utils.generatePushID(),
-      timeChanged: new Date().toISOString()
+      timeChanged: new Date().toISOString(),
     };
 
     Object.values(FIELDS_INFO).forEach(({fieldId}) => {
@@ -288,7 +288,7 @@ class BaseRegistrationVolunteer extends Component {
 
     const standardDob = moment(
       this.state.dob,
-      constants.VALID_INPUT_DATE_FORMATS
+      constants.VALID_INPUT_DATE_FORMATS,
     ).format(constants.INTERNAL_DATE_FORMAT);
 
     volunteer.dob = standardDob;
@@ -312,13 +312,13 @@ class BaseRegistrationVolunteer extends Component {
   validateAndSubmit() {
     const errors = registrationUtils.getPageErrors(
       this.state,
-      Object.values(FIELDS_INFO)
+      Object.values(FIELDS_INFO),
     );
 
     this.setState({
       postStatus: undefined,
       showModal: !errors.length,
-      errors
+      errors,
     });
   }
 
@@ -426,28 +426,28 @@ class BaseRegistrationVolunteer extends Component {
             {
               label: 'Teacher',
               value: 'teacher',
-              checked: this.state.teacher
+              checked: this.state.teacher,
             },
             {
               label: 'Administrative Staff',
               value: 'admin',
-              checked: this.state.admin
+              checked: this.state.admin,
             },
             {
               label: 'Class Assistant/Hallway Monitor',
               value: 'assistantMentor',
-              checked: this.state.assistantMentor
+              checked: this.state.assistantMentor,
             },
             {
               label: 'Kitchen Staff',
               value: 'kitchen',
-              checked: this.state.kitchen
+              checked: this.state.kitchen,
             },
             {
               label: 'Other',
               value: 'showOther',
-              checked: this.state.showOther
-            }
+              checked: this.state.showOther,
+            },
           ]}
           id="role"
           label="I am interested in volunteering in the role of:"
@@ -469,18 +469,18 @@ class BaseRegistrationVolunteer extends Component {
             {
               label: 'Sunday School',
               value: 'sundaySchool',
-              checked: this.state.sundaySchool
+              checked: this.state.sundaySchool,
             },
             {
               label: 'Vacation Bible School',
               value: 'bibleSchool',
-              checked: this.state.bibleSchool
+              checked: this.state.bibleSchool,
             },
             {
               label: 'Youth Ministory',
               value: 'youthMinistry',
-              checked: this.state.youthMinistry
-            }
+              checked: this.state.youthMinistry,
+            },
           ]}
           id="past-volunteer-area"
           label="Select areas that you have volunteered for at City Temple in the past"
@@ -491,28 +491,28 @@ class BaseRegistrationVolunteer extends Component {
             {
               label: 'Teacher',
               value: 'pastTeacher',
-              checked: this.state.pastTeacher
+              checked: this.state.pastTeacher,
             },
             {
               label: 'Administrative Staff',
               value: 'pastAdmin',
-              checked: this.state.pastAdmin
+              checked: this.state.pastAdmin,
             },
             {
               label: 'Transition Team',
               value: 'pastTransition',
-              checked: this.state.pastTransition
+              checked: this.state.pastTransition,
             },
             {
               label: 'Kitchen Staff',
               value: 'pastKitchen',
-              checked: this.state.pastKitchen
+              checked: this.state.pastKitchen,
             },
             {
               label: 'Chaperon',
               value: 'pastChaperone',
-              checked: this.state.pastChaperone
-            }
+              checked: this.state.pastChaperone,
+            },
           ]}
           id="past-volunteer-role"
           label="Your role:"
@@ -527,28 +527,28 @@ class BaseRegistrationVolunteer extends Component {
                 {
                   label: 'M',
                   value: 'monday',
-                  checked: this.state.monday
+                  checked: this.state.monday,
                 },
                 {
                   label: 'T',
                   value: 'tuesday',
-                  checked: this.state.tuesday
+                  checked: this.state.tuesday,
                 },
                 {
                   label: 'W',
                   value: 'wednesday',
-                  checked: this.state.wednesday
+                  checked: this.state.wednesday,
                 },
                 {
                   label: 'Th',
                   value: 'thursday',
-                  checked: this.state.thursday
+                  checked: this.state.thursday,
                 },
                 {
                   label: 'F',
                   value: 'friday',
-                  checked: this.state.friday
-                }
+                  checked: this.state.friday,
+                },
               ]}
               horizontal
               id="available-day"
@@ -586,7 +586,7 @@ class BaseRegistrationVolunteer extends Component {
         items.push(
           <li key={fieldId}>
             <span>{FIELDS_INFO[fieldId].label}</span>
-          </li>
+          </li>,
         );
       }
       return items;
@@ -598,7 +598,7 @@ class BaseRegistrationVolunteer extends Component {
       items.push(
         <li key={fieldId}>
           <span>{this.state[fieldId]}</span>
-        </li>
+        </li>,
       );
     }
 
@@ -630,13 +630,13 @@ class BaseRegistrationVolunteer extends Component {
           items.push(
             <li key={fieldId}>
               <span className="bold">{label}</span>: {value}
-            </li>
+            </li>,
           );
         }
 
         return items;
       },
-      []
+      [],
     );
 
     const groupFields = {
@@ -647,9 +647,9 @@ class BaseRegistrationVolunteer extends Component {
         'pastAdmin',
         'pastTransition',
         'pastKitchen',
-        'pastChaperone'
+        'pastChaperone',
       ],
-      availability: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday']
+      availability: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'],
     };
 
     fieldSummaryItems = fieldSummaryItems.concat(
@@ -657,18 +657,18 @@ class BaseRegistrationVolunteer extends Component {
       this.makeSubGroup(
         'pastGroups',
         groupFields.pastGroups,
-        'Areas volunteered for in the past:'
+        'Areas volunteered for in the past:',
       ),
       this.makeSubGroup(
         'pastRoles',
         groupFields.pastRoles,
-        'Roles volunteered for in the past:'
+        'Roles volunteered for in the past:',
       ),
       this.makeSubGroup(
         'available-days',
         groupFields.availability,
-        'Available Days'
-      )
+        'Available Days',
+      ),
     );
 
     return (
@@ -692,7 +692,7 @@ class BaseRegistrationVolunteer extends Component {
           push
           to={{
             pathname: routePaths.CE_THANK_YOU,
-            state
+            state,
           }}
         />
       );
@@ -723,7 +723,7 @@ class BaseRegistrationVolunteer extends Component {
 }
 
 BaseRegistrationVolunteer.defaultProps = {
-  askAvailability: false
+  askAvailability: false,
 };
 
 BaseRegistrationVolunteer.propTypes = {
@@ -731,7 +731,7 @@ BaseRegistrationVolunteer.propTypes = {
   className: PropTypes.string,
   headerContent: PropTypes.node,
   refName: PropTypes.string.isRequired,
-  volunteerIdPropName: PropTypes.string.isRequired
+  volunteerIdPropName: PropTypes.string.isRequired,
 };
 
 export default BaseRegistrationVolunteer;

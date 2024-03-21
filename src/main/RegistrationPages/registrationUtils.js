@@ -12,7 +12,7 @@ const registrationUtils = {
         if (message) {
           errors.push({
             fieldId,
-            message
+            message,
           });
         }
       });
@@ -26,7 +26,7 @@ const registrationUtils = {
     if (!(email || homePhone || mobilePhone)) {
       return 'Email, home phone or mobile phone must be provided';
     }
-  }
+  },
 };
 
 export default registrationUtils;

@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -45,7 +44,7 @@ const Menubar = ({imageSource, menuItems}) => {
 
 Menubar.propTypes = {
   imageSource: PropTypes.string,
-  menuItems: PropTypes.array.isRequired
+  menuItems: PropTypes.array.isRequired,
 };
 
 export default Menubar;

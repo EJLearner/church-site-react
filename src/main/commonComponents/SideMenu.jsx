@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import { Fragment } from 'react';
 import styled from 'styled-components';
 
 import {
   COLORS,
   LOGICAL_COLORS,
-  FONT_FAMILIES
+  FONT_FAMILIES,
 } from '../../utils/styleVariables';
 
 import PlainButton from './PlainButton';
@@ -27,7 +27,7 @@ const renderMenuItem = (menuItemData) => {
     menuItemData;
 
   return (
-    <React.Fragment key={id}>
+    <Fragment key={id}>
       {renderMenuItemTitle && (
         // don't show title if there is only one - helpful when we have a
         // single menu item with a within page anchors
@@ -39,7 +39,7 @@ const renderMenuItem = (menuItemData) => {
         </li>
       )}
       {subLinks && isSelected && subMenu(subLinks)}
-    </React.Fragment>
+    </Fragment>
   );
 };
 
@@ -90,8 +90,8 @@ const SideMenu = ({currentId, onClick, menuData, title}) => {
             ...menuItemInfo,
             onClick: onClick,
             isSelected: menuItemInfo.id === currentId,
-            renderMenuItemTitle: Boolean(menuData.length > 1)
-          })
+            renderMenuItemTitle: Boolean(menuData.length > 1),
+          }),
         )}
       </ul>
     </LeftSide>
@@ -107,14 +107,14 @@ SideMenu.propTypes = {
       subLinks: PropTypes.arrayOf(
         PropTypes.shape({
           elementId: PropTypes.string.isRequired,
-          title: PropTypes.string.isRequired
-        })
+          title: PropTypes.string.isRequired,
+        }),
       ),
-      title: PropTypes.string.isRequired
-    })
+      title: PropTypes.string.isRequired,
+    }),
   ).isRequired,
   onClick: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };
 
 export default SideMenu;

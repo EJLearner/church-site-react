@@ -1,5 +1,4 @@
 import {shallow} from 'enzyme';
-import React from 'react';
 
 import BaseRegistrationVolunteer from './BaseRegistrationVolunteer';
 
@@ -8,7 +7,7 @@ describe('BaseRegistrationVolunteer', () => {
   beforeEach(() => {
     props = {
       refName: 'test-refname',
-      volunteerIdPropName: 'volunteer'
+      volunteerIdPropName: 'volunteer',
     };
   });
 

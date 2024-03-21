@@ -1,6 +1,6 @@
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
+import { Component } from 'react';
 
 import commonUtils from '../../utils/commonUtils';
 import constants from '../../utils/constants';
@@ -52,7 +52,7 @@ class CalendarWeek extends Component {
 }
 
 CalendarWeek.propTypes = {
-  storedDates: PropTypes.object
+  storedDates: PropTypes.object,
 };
 
 export default withDatesSubscription(CalendarWeek);

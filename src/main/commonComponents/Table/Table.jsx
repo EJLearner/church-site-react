@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
+import { Component } from 'react';
 import styled from 'styled-components';
 
 const StyledTable = styled.table`
@@ -13,14 +13,14 @@ class Table extends Component {
     columns: PropTypes.arrayOf(
       PropTypes.shape({
         label: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired
-      })
+        name: PropTypes.string.isRequired,
+      }),
     ).isRequired,
     rows: PropTypes.arrayOf(
       PropTypes.shape({
-        id: PropTypes.string.isRequired
-      })
-    ).isRequired
+        id: PropTypes.string.isRequired,
+      }),
+    ).isRequired,
   };
 
   renderRowCells(row) {

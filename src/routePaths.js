@@ -5,7 +5,7 @@ const handler = {
     } else {
       throw new Error(`${name} is not a valid path constant`);
     }
-  }
+  },
 };
 
 const ADMIN_PATH = '/admin/';
@@ -16,7 +16,7 @@ const ADMIN_PATHS = {
   ADMIN_CC: `${ADMIN_PATH}cc/`,
   ADMIN_EMAIL_SUBSCRIBERS: `${ADMIN_PATH}email-subscribers/`,
   ADMIN_EVENTS: `${ADMIN_PATH}events/`,
-  ADMIN_VBS: `${ADMIN_PATH}vbs/`
+  ADMIN_VBS: `${ADMIN_PATH}vbs/`,
 };
 
 const MAIN_HOME_PATH = '/';
@@ -44,7 +44,7 @@ const MAIN_ROOT_PATHS = {
   MAIN_VOTING_INFORMATION: `${MAIN_HOME_PATH}voting/`,
   MAIN_WATCH: `${MAIN_HOME_PATH}watch/`,
   MAIN_WELCOME: `${MAIN_HOME_PATH}welcome/`,
-  MAIN_ANNOUNCEMENTS: `${MAIN_HOME_PATH}announcements/`
+  MAIN_ANNOUNCEMENTS: `${MAIN_HOME_PATH}announcements/`,
 };
 
 const {MAIN_CALENDAR} = MAIN_ROOT_PATHS;
@@ -53,13 +53,13 @@ const MAIN_CALENDAR_SUB_PATHS = {
   MAIN_CALENDAR_MONTH: `${MAIN_CALENDAR}month/`,
   MAIN_CALENDAR_UPCOMING: `${MAIN_CALENDAR}upcoming/`,
   MAIN_CALENDAR_WEEK: `${MAIN_CALENDAR}week/`,
-  MAIN_CALENDAR_YEAR: `${MAIN_CALENDAR}year/`
+  MAIN_CALENDAR_YEAR: `${MAIN_CALENDAR}year/`,
 };
 const {MAIN_JUBILEE} = MAIN_ROOT_PATHS;
 const MAIN_JUBILEE_SUB_PATHS = {
   MAIN_JUBILEE_STORE: `${MAIN_JUBILEE}store`,
   MAIN_JUBILEE_50TH_ANNIVERSARY: `${MAIN_JUBILEE}50th-anniversary`,
-  MAIN_JUBILEE_EVENT_CALENDAR: `${MAIN_JUBILEE}event-calendar`
+  MAIN_JUBILEE_EVENT_CALENDAR: `${MAIN_JUBILEE}event-calendar`,
 };
 
 const CE_ROOT_PATHS = {
@@ -85,7 +85,7 @@ const CE_ROOT_PATHS = {
   CE_WHO: '/ce/who/',
   CE_WHY: '/ce/why/',
   CE_YOUTH: '/ce/youth/',
-  OLD_PATHS_CE_IDEA_FORM: ['/ce/ideaform/']
+  OLD_PATHS_CE_IDEA_FORM: ['/ce/ideaform/'],
 };
 
 const {CE_CALENDAR} = CE_ROOT_PATHS;
@@ -94,7 +94,7 @@ const CE_CALENDAR_PATHS = {
   CE_CALENDAR_MONTH: `${CE_CALENDAR}month/`,
   CE_CALENDAR_UPCOMING: `${CE_CALENDAR}upcoming/`,
   CE_CALENDAR_WEEK: `${CE_CALENDAR}week/`,
-  CE_CALENDAR_YEAR: `${CE_CALENDAR}year/`
+  CE_CALENDAR_YEAR: `${CE_CALENDAR}year/`,
 };
 
 const {CE_VISION} = CE_ROOT_PATHS;
@@ -104,7 +104,7 @@ const CE_VISION_PATHS = {
   CE_VISION_THE_VISION: `${CE_VISION}the-vision/`,
   CE_VISION_WORKGROUPS: `${CE_VISION}workgroups/`,
   OLD_PATHS_CE_VISION_PARTICIPANTS_2016: [`${CE_VISION}participants2016/`],
-  OLD_PATHS_CE_VISION_THE_VISION: [`${CE_VISION}thevision/`]
+  OLD_PATHS_CE_VISION_THE_VISION: [`${CE_VISION}thevision/`],
 };
 
 const {CE_YOUTH} = CE_ROOT_PATHS;
@@ -117,14 +117,14 @@ const CE_YOUTH_PATHS = {
   CE_YOUTH_VACATION_BIBLE_SCHOOL: `${CE_YOUTH}vbs/`,
   OLD_PATHS_CE_YOUTH_CHILDRENS_CHURCH: [`${CE_YOUTH}childrenschurch/`],
   OLD_PATHS_CE_YOUTH_GODS_GIFTS: [`${CE_YOUTH}godsgifts/`],
-  OLD_PATHS_CE_YOUTH_SUNDAY_SCHOOL: [`${CE_YOUTH}sundayschool/`]
+  OLD_PATHS_CE_YOUTH_SUNDAY_SCHOOL: [`${CE_YOUTH}sundayschool/`],
 };
 
 const {CE_WHO} = CE_ROOT_PATHS;
 const CE_WHO_PATHS = {
   CE_WHO_CHRISTIAN_ED_STAFF: `${CE_WHO}christian-ed-staff/`,
   CE_WHO_CTBC: `${CE_WHO}ctbc/`,
-  CE_WHO_PASTOR: `${CE_WHO}pastor/`
+  CE_WHO_PASTOR: `${CE_WHO}pastor/`,
 };
 
 const ALL_PATHS = {
@@ -136,7 +136,7 @@ const ALL_PATHS = {
   ...CE_CALENDAR_PATHS,
   ...CE_VISION_PATHS,
   ...CE_WHO_PATHS,
-  ...CE_YOUTH_PATHS
+  ...CE_YOUTH_PATHS,
 };
 
 const routePaths =

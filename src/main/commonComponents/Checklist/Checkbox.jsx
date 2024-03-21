@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 
 import './Checkbox.css';
 
@@ -13,7 +12,7 @@ const Checkbox = (props) => {
   const computedClassName = [
     'checkbox-pattern',
     props.inline && 'inline',
-    props.className
+    props.className,
   ]
     .filter((name) => name)
     .join(' ');
@@ -38,7 +37,7 @@ const Checkbox = (props) => {
 };
 
 Checkbox.defaultProps = {
-  inline: false
+  inline: false,
 };
 
 Checkbox.propTypes = {
@@ -49,7 +48,7 @@ Checkbox.propTypes = {
   inline: PropTypes.bool,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  value: PropTypes.string
+  value: PropTypes.string,
 };
 
 export default Checkbox;

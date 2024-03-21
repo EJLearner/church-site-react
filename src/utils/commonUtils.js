@@ -9,7 +9,7 @@ const {
   INTERNAL_TIMESTAMP_FORMAT,
   DISPLAY_DATE_FORMAT,
   DISPLAY_TIME_FORMAT,
-  SORT_DIRECTION_ASCENDING
+  SORT_DIRECTION_ASCENDING,
 } = constants;
 
 // Modeled after base64 web-safe chars, but ordered by ASCII.
@@ -79,7 +79,7 @@ const commonUtils = {
     }
 
     return moment(timeStamp, INTERNAL_TIMESTAMP_FORMAT, true).format(
-      DISPLAY_TIME_FORMAT
+      DISPLAY_TIME_FORMAT,
     );
   },
 
@@ -166,7 +166,7 @@ const commonUtils = {
     }
 
     throw new Error(
-      `Can not get valid route from path ${path} and pathKey ${pathKey}`
+      `Can not get valid route from path ${path} and pathKey ${pathKey}`,
     );
   },
 
@@ -205,7 +205,7 @@ const commonUtils = {
 
       return valueA < valueB ? -1 * reverseMultiplier : 1 * reverseMultiplier;
     });
-  }
+  },
 };
 
 export default commonUtils;

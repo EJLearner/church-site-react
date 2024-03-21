@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 import choir from '../assets/images/choir.jpg';
@@ -6,7 +6,7 @@ import sermonVideos from '../stores/sermonVideos';
 import constants from '../utils/constants';
 import {
   convertTypedDateToIso,
-  getLongDisplayDate
+  getLongDisplayDate,
 } from '../utils/dateTimeUtils';
 
 import WatchPageFilter from './WatchPageFilter';
@@ -19,14 +19,14 @@ const FIELD_IDS = Object.freeze({
   titleSearchId: 'title-search',
   preacherSearchId: 'preacher-search',
   dateSearchId: 'date-search',
-  scriptureSearchId: 'scripture-search'
+  scriptureSearchId: 'scripture-search',
 });
 
 const initialSearchInfo = {
   [FIELD_IDS.titleSearchId]: '',
   [FIELD_IDS.preacherSearchId]: '',
   [FIELD_IDS.dateSearchId]: '',
-  [FIELD_IDS.scriptureSearchId]: ''
+  [FIELD_IDS.scriptureSearchId]: '',
 };
 
 const StyledWatchPage = styled.div`
@@ -181,7 +181,7 @@ function renderArchiveVideos(otherVideos) {
           scripture,
           version,
           title,
-          youtubeId
+          youtubeId,
         } = videoData;
 
         return (
@@ -213,7 +213,7 @@ function renderNewestVideo(videoData) {
     title,
     youtubeId,
     videoMissingMessage,
-    version
+    version,
   } = videoData;
 
   return (
@@ -261,19 +261,19 @@ function filterVideos(otherVideos, searchInfo) {
     return (
       caseInsensitiveIncludes(
         videoInfo.preacher,
-        searchInfo[FIELD_IDS.preacherSearchId]
+        searchInfo[FIELD_IDS.preacherSearchId],
       ) &&
       caseInsensitiveIncludes(
         videoInfo.title,
-        searchInfo[FIELD_IDS.titleSearchId]
+        searchInfo[FIELD_IDS.titleSearchId],
       ) &&
       caseInsensitiveIncludes(
         videoInfo.date,
-        convertTypedDateToIso(searchInfo[FIELD_IDS.dateSearchId])
+        convertTypedDateToIso(searchInfo[FIELD_IDS.dateSearchId]),
       ) &&
       caseInsensitiveIncludes(
         videoInfo.scripture,
-        searchInfo[FIELD_IDS.scriptureSearchId]
+        searchInfo[FIELD_IDS.scriptureSearchId],
       )
     );
   });
@@ -281,7 +281,7 @@ function filterVideos(otherVideos, searchInfo) {
 
 const WatchPage = () => {
   const [archiveVideoShowCount, setArchiveVideoShowCount] = useState(
-    INITIAL_VIDEO_SHOW_COUNT
+    INITIAL_VIDEO_SHOW_COUNT,
   );
   const [searchInfo, setSearchInfo] = useState(initialSearchInfo);
   const [newestVideo, ...notNewestVideos] = sermonVideos;

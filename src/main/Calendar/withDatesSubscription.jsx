@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import { Component } from 'react';
 
 import calendarDatesUtils from './calendarDatesUtils.js';
 
@@ -8,14 +8,14 @@ function withDatesSubscription(WrappedComponent) {
       super(props);
 
       this.state = {
-        allDates: calendarDatesUtils.getAllDates()
+        allDates: calendarDatesUtils.getAllDates(),
       };
     }
 
     componentDidMount() {
       calendarDatesUtils.listen('announcements', () => {
         this.setState({
-          allDates: calendarDatesUtils.getAllDates()
+          allDates: calendarDatesUtils.getAllDates(),
         });
       });
     }

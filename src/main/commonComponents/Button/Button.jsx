@@ -1,18 +1,18 @@
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
+import { Component } from 'react';
 import styled from 'styled-components';
 
 import {COLORS, LOGICAL_COLORS} from '../../../utils/styleVariables';
 
 const SHAPES = {
   OVAL: 'OVAL',
-  RECT: 'RECT'
+  RECT: 'RECT',
 };
 
 const BUTTON_COLORS = {
   BLACK: 'BLACK',
   GRAY: 'GRAY',
-  ORANGE: 'ORANGE'
+  ORANGE: 'ORANGE',
 };
 
 const StyledButton = styled.button`
@@ -80,7 +80,7 @@ class Button extends Component {
       buttonShape,
       name,
       value,
-      type
+      type,
     } = this.props;
 
     const colorStyle = getColorStyle(color);
@@ -89,7 +89,7 @@ class Button extends Component {
       buttonShape === SHAPES.RECT ? 'rect-button' : 'oval-button',
       colorStyle,
       className,
-      disable && 'disabled'
+      disable && 'disabled',
     ]
       .filter(Boolean)
       .join(' ');
@@ -111,7 +111,7 @@ class Button extends Component {
 Button.defaultProps = {
   buttonShape: SHAPES.OVAL,
   color: BUTTON_COLORS.ORANGE,
-  disable: false
+  disable: false,
 };
 
 Button.propTypes = {
@@ -123,7 +123,7 @@ Button.propTypes = {
   name: PropTypes.string,
   onClick: PropTypes.func,
   type: PropTypes.string,
-  value: PropTypes.string
+  value: PropTypes.string,
 };
 
 export {SHAPES, BUTTON_COLORS};

@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
+import { Component } from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -116,7 +116,7 @@ class CalendarMonth extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedMoment: moment()
+      selectedMoment: moment(),
     };
 
     this.monthBack = this.monthBack.bind(this);
@@ -133,7 +133,7 @@ class CalendarMonth extends Component {
   monthBack() {
     const selectedMoment = moment(this.state.selectedMoment).subtract(
       1,
-      'month'
+      'month',
     );
     this.setState({selectedMoment});
   }
@@ -151,7 +151,7 @@ class CalendarMonth extends Component {
   renderDaysEvents(dateString) {
     const daysEventsData = calendarDatesUtils.getEventsForDate(
       this.props.storedDates,
-      dateString
+      dateString,
     );
 
     return _.map(daysEventsData, (event, index, allEvents) => {
@@ -180,14 +180,14 @@ class CalendarMonth extends Component {
       const dayMoment = calendarDatesUtils.getMomentForYearWeekWeekday(
         year,
         weekNumber,
-        dayOfWeekIndex
+        dayOfWeekIndex,
       );
 
       const dayEvents = this.renderDaysEvents(dayMoment.format('YYYY-MM-DD'));
 
       const isOtherMonth = !dayMoment.isSame(
         this.state.selectedMoment,
-        'month'
+        'month',
       );
 
       const tdClassName = ['date-cell', isOtherMonth && 'other-month']
@@ -220,7 +220,7 @@ class CalendarMonth extends Component {
         const stringYear = String(year);
         return {
           label: stringYear,
-          value: stringYear
+          value: stringYear,
         };
       });
 
@@ -241,7 +241,7 @@ class CalendarMonth extends Component {
       const momentMonth = moment().month(monthNum);
       return {
         label: momentMonth.format('MMMM'),
-        value: momentMonth.format('MMM').toLowerCase()
+        value: momentMonth.format('MMM').toLowerCase(),
       };
     });
 
@@ -291,12 +291,12 @@ class CalendarMonth extends Component {
 CalendarMonth.propTypes = {
   id: PropTypes.string,
   isCe: PropTypes.bool,
-  storedDates: PropTypes.object
+  storedDates: PropTypes.object,
 };
 
 CalendarMonth.defaultPropTypes = {
   id: 'calendar-month-div',
-  isCe: false
+  isCe: false,
 };
 
 export default withDatesSubscription(CalendarMonth);

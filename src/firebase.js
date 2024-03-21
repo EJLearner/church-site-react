@@ -11,7 +11,7 @@ const config = {
   databaseURL: 'https://ct-data-773e4.firebaseio.com',
   projectId: 'ct-data-773e4',
   storageBucket: '',
-  messagingSenderId: '127519582002'
+  messagingSenderId: '127519582002',
 };
 
 firebase.initializeApp(config);

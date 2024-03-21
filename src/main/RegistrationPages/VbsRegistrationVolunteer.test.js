@@ -1,5 +1,4 @@
 import {shallow} from 'enzyme';
-import React from 'react';
 
 import utils from '../../utils/commonUtils';
 import constants from '../../utils/constants';
@@ -17,7 +16,7 @@ describe('VbsRegistrationVolunteer', () => {
 
   it('BaseRegistrationVolunteer has correct props', () => {
     VbsRegistrationVolunteer.prototype.renderHeaderContent = jest.fn(
-      () => 'Header Content'
+      () => 'Header Content',
     );
 
     const testYear = '2000';
@@ -31,15 +30,15 @@ describe('VbsRegistrationVolunteer', () => {
     expect(baseRegistrationChild.props().className).toBe('registration-page');
 
     expect(baseRegistrationChild.props().volunteerIdPropName).toBe(
-      constants.VBS_REGISTERED_VOLUNTEER_ID_PROP
+      constants.VBS_REGISTERED_VOLUNTEER_ID_PROP,
     );
 
     expect(baseRegistrationChild.props().headerContent).toBe(
-      wrapper.instance().renderHeaderContent()
+      wrapper.instance().renderHeaderContent(),
     );
 
     expect(baseRegistrationChild.props().refName).toBe(
-      `${constants.VBS_REGISTERED_VOLUNTEER_REF_NAME}/${testYear}`
+      `${constants.VBS_REGISTERED_VOLUNTEER_REF_NAME}/${testYear}`,
     );
   });
 });

@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 
 import Select from './Select';
 
@@ -65,7 +64,7 @@ const stateOptions = [
   'WA',
   'WV',
   'WI',
-  'WY'
+  'WY',
 ];
 
 function SelectState({id, onChange, value}) {
@@ -83,11 +82,11 @@ function SelectState({id, onChange, value}) {
 SelectState.propTypes = {
   id: PropTypes.string,
   onChange: PropTypes.func.isRequired,
-  value: PropTypes.string
+  value: PropTypes.string,
 };
 
 SelectState.defaultProps = {
-  label: 'State'
+  label: 'State',
 };
 
 export default SelectState;

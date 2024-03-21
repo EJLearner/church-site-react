@@ -21,7 +21,7 @@ const fieldValidators = {
     const valid = moment(
       value,
       constants.VALID_INPUT_DATE_FORMATS,
-      true
+      true,
     ).isValid();
     if (value && !valid) {
       return `${label} is not in format mm/dd/yyyy`;
@@ -62,7 +62,7 @@ const fieldValidators = {
     if (value && !valid) {
       return `${label} is not a valid phone number`;
     }
-  }
+  },
 };
 
 fieldValidators.validDateFormats = validDateFormats;

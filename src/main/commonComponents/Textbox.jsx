@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 import styled from 'styled-components';
 
 import InputLabel from './InputLabel';
@@ -31,7 +30,7 @@ const Textbox = (props) => {
     required,
     size,
     type,
-    value
+    value,
   } = props;
 
   const onKeyPress = (event) => {
@@ -47,7 +46,7 @@ const Textbox = (props) => {
   const labelledBy = [
     errors && errorsId,
     labelId,
-    instructions && instructionsId
+    instructions && instructionsId,
   ]
     .filter(Boolean)
     .join(' ');
@@ -86,7 +85,7 @@ Textbox.propTypes = {
   required: PropTypes.bool,
   size: PropTypes.number,
   type: PropTypes.string,
-  value: PropTypes.string.isRequired
+  value: PropTypes.string.isRequired,
 };
 
 export default Textbox;

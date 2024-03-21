@@ -1,5 +1,4 @@
 import {shallow} from 'enzyme';
-import React from 'react';
 
 import routePaths from '../../routePaths';
 import ErrorList from '../commonComponents/ErrorList';
@@ -21,7 +20,7 @@ describe('BaseCcRegistrationChild', () => {
       className: 'test-class',
       headerContent: <h1 id="header-content">test-header</h1>,
       refName: 'test-ref-name',
-      routePath: '/test/path'
+      routePath: '/test/path',
     };
   });
 
@@ -55,8 +54,8 @@ describe('BaseCcRegistrationChild', () => {
 
     expect(
       wrapper.containsMatchingElement(
-        <ErrorList errors={wrapper.state().errors} />
-      )
+        <ErrorList errors={wrapper.state().errors} />,
+      ),
     ).toBe(true);
   });
 
@@ -66,8 +65,8 @@ describe('BaseCcRegistrationChild', () => {
 
     expect(
       wrapper.containsMatchingElement(
-        <ErrorList errors={wrapper.state().errors} />
-      )
+        <ErrorList errors={wrapper.state().errors} />,
+      ),
     ).not.toBe(true);
   });
 

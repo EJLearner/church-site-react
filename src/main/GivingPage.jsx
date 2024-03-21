@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 import choir from '../assets/images/choir.jpg';
@@ -70,7 +70,7 @@ const testUserInfo = {
   last_name: 'Last',
   night_phone_a: '4109440396',
   state: 'MD',
-  zip: '21216'
+  zip: '21216',
 };
 
 const donationTypeOptions = [
@@ -85,7 +85,7 @@ const donationTypeOptions = [
   {label: 'Sunday School', value: 'sunday-school'},
   {label: 'Donation', value: 'donation'},
   {label: 'William Bryant Scholarship Fund', value: 'scholarship'},
-  {label: 'Youth Ministry', value: 'youth'}
+  {label: 'Youth Ministry', value: 'youth'},
 ];
 
 const initialDonationTypeInfo = donationTypeOptions.map((option, index) => {
@@ -194,7 +194,7 @@ const GivingPage = () => {
 
         const dropListOptions = getCurrentSelectOptions(
           paymentItem.type,
-          amounts
+          amounts,
         );
 
         return (
@@ -225,7 +225,7 @@ const GivingPage = () => {
 
   const usedTypes = amounts.map((amount) => amount.type).filter(Boolean);
   const firstUnusedType = donationTypeOptions.find(
-    (option) => !usedTypes.includes(option.value)
+    (option) => !usedTypes.includes(option.value),
   )?.value;
 
   const renderTithingFields = () => {
@@ -280,7 +280,7 @@ const GivingPage = () => {
               {renderHiddenTextbox('return', 'https://www.thecitytemple.org')}
               {renderHiddenTextbox(
                 'cancel_return',
-                'https://www.thecitytemple.org'
+                'https://www.thecitytemple.org',
               )}
               {renderHiddenTextbox('no_shipping', '1')}
               {renderTithingFields()}

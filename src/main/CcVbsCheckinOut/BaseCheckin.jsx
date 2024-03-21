@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
+import { Component } from 'react';
 import {Link} from 'react-router-dom';
 
 import firebase, {auth, provider} from '../../firebase';
@@ -23,7 +23,7 @@ class BaseCheckin extends Component {
       regStaff: {},
       parentName: '',
       status: PAGE_STATUS.ENTERING_PARENT_NAME,
-      user: null
+      user: null,
     };
 
     this.handleLoginClick = this.handleLoginClick.bind(this);
@@ -131,7 +131,7 @@ class BaseCheckin extends Component {
 
     this.setState({
       status: PAGE_STATUS.SELECT_CHILDREN,
-      childrenOfParent
+      childrenOfParent,
     });
   }
 
@@ -168,7 +168,7 @@ class BaseCheckin extends Component {
         checked,
         disabled,
         label,
-        value: registeredId
+        value: registeredId,
       };
     });
 
@@ -219,7 +219,7 @@ class BaseCheckin extends Component {
 
     const childrenOfParentThatAreNotCheckedIn = _.filter(
       childrenOfParent,
-      (child) => !_.includes(checkedinIds, child[this.props.registryIdName])
+      (child) => !_.includes(checkedinIds, child[this.props.registryIdName]),
     );
 
     if (!childrenOfParentThatAreNotCheckedIn.length) {
@@ -368,7 +368,7 @@ BaseCheckin.propTypes = {
   registeredChildrenRefName: PropTypes.string.isRequired,
   registryAccessRefName: PropTypes.string.isRequired,
   registryIdName: PropTypes.string.isRequired,
-  welcomeName: PropTypes.string.isRequired
+  welcomeName: PropTypes.string.isRequired,
 };
 
 export default BaseCheckin;

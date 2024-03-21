@@ -1,6 +1,6 @@
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
+import { Component } from 'react';
 import {Redirect} from 'react-router';
 
 import firebase from '../../firebase';
@@ -8,7 +8,7 @@ import routePaths from '../../routePaths';
 import {
   saveRegistrationData,
   getRegistrationData,
-  resetRegistrationData
+  resetRegistrationData,
 } from '../../stores/lastSubmittedRegistration';
 import utils from '../../utils/commonUtils';
 import constants from '../../utils/constants';
@@ -35,41 +35,41 @@ const FIELDS_INFO = {
     label: 'Child’s name',
     fieldRules: [
       fieldValidators.isNotEmpty,
-      fieldValidators.isAtLeastTwoCharacters
-    ]
+      fieldValidators.isAtLeastTwoCharacters,
+    ],
   },
 
   childDob: {
     fieldId: 'childDob',
     label: 'Child’s Date of Birth',
-    fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate]
+    fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isDate],
   },
 
   parentEmail: {
     fieldId: 'parentEmail',
     label: 'Email Address',
-    fieldRules: [fieldValidators.isValidEmail]
+    fieldRules: [fieldValidators.isValidEmail],
   },
   parentName: {
     fieldId: 'parentName',
     label: 'Parent’s Name',
     fieldRules: [
       fieldValidators.isNotEmpty,
-      fieldValidators.isAtLeastTwoCharacters
-    ]
+      fieldValidators.isAtLeastTwoCharacters,
+    ],
   },
   parentPhone: {
     fieldId: 'parentPhone',
     label: 'Phone Number',
-    fieldRules: [fieldValidators.isPhoneNumber, fieldValidators.isNotEmpty]
+    fieldRules: [fieldValidators.isPhoneNumber, fieldValidators.isNotEmpty],
   },
   address1: {
     fieldId: 'address1',
     label: 'Address Line 1',
     fieldRules: [
       fieldValidators.isNotEmpty,
-      fieldValidators.isAtLeastTwoCharacters
-    ]
+      fieldValidators.isAtLeastTwoCharacters,
+    ],
   },
   address2: {fieldId: 'address2', label: 'Address Line 2'},
   city: {
@@ -78,8 +78,8 @@ const FIELDS_INFO = {
     fieldRules: [
       fieldValidators.isAllLetters,
       fieldValidators.isNotEmpty,
-      fieldValidators.isAtLeastTwoCharacters
-    ]
+      fieldValidators.isAtLeastTwoCharacters,
+    ],
   },
   state: {
     fieldId: 'state',
@@ -87,30 +87,30 @@ const FIELDS_INFO = {
     fieldRules: [
       fieldValidators.isAllLetters,
       fieldValidators.isNotEmpty,
-      fieldValidators.isAtLeastTwoCharacters
-    ]
+      fieldValidators.isAtLeastTwoCharacters,
+    ],
   },
   zip: {
     fieldId: 'zip',
     label: 'ZIP Code',
-    fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isValidZip]
+    fieldRules: [fieldValidators.isNotEmpty, fieldValidators.isValidZip],
   },
   subscribe: {
     fieldId: 'subscribe',
     default: false,
-    label: 'Subscribe'
+    label: 'Subscribe',
   },
   knownAllergies: {
     fieldId: 'knownAllergies',
     label: 'Known Allergies',
-    fieldRules: [fieldValidators.isNotEmpty]
+    fieldRules: [fieldValidators.isNotEmpty],
   },
   agreementChecked: {
     fieldId: 'agreementChecked',
     label: 'Terms Agreement Checkbox',
     fieldRules: [fieldValidators.disclaimerIsChecked],
-    showInConfirmation: false
-  }
+    showInConfirmation: false,
+  },
 };
 
 class BaseCcRegistrationChild extends Component {
@@ -148,7 +148,7 @@ class BaseCcRegistrationChild extends Component {
       state: 'MD',
       zip: '00000',
       subscribe: true,
-      knownAllergies: 'Things I am allergic to'
+      knownAllergies: 'Things I am allergic to',
     };
 
     const fieldStates = {};
@@ -173,7 +173,7 @@ class BaseCcRegistrationChild extends Component {
       errors: [],
       redirect: false,
       showModal: false,
-      agreementChecked: false
+      agreementChecked: false,
     };
   }
 
@@ -188,7 +188,7 @@ class BaseCcRegistrationChild extends Component {
     const child = {
       [childIdPropName]: utils.generatePushID(),
       registerTime: new Date().toISOString(),
-      parentNames: [parentName]
+      parentNames: [parentName],
     };
 
     Object.values(FIELDS_INFO).forEach(({fieldId}) => {
@@ -197,7 +197,7 @@ class BaseCcRegistrationChild extends Component {
 
     const standardChildDob = moment(
       childDob,
-      constants.VALID_INPUT_DATE_FORMATS
+      constants.VALID_INPUT_DATE_FORMATS,
     ).format(constants.INTERNAL_DATE_FORMAT);
 
     child.childDob = standardChildDob;
@@ -222,13 +222,13 @@ class BaseCcRegistrationChild extends Component {
   onSubmitClick() {
     const errors = registrationUtils.getPageErrors(
       this.state,
-      Object.values(FIELDS_INFO)
+      Object.values(FIELDS_INFO),
     );
 
     this.setState({
       postStatus: undefined,
       showModal: !errors.length,
-      errors
+      errors,
     });
   }
 
@@ -373,13 +373,13 @@ class BaseCcRegistrationChild extends Component {
           items.push(
             <li key={fieldId}>
               <span className="bold">{label}</span>: {value}
-            </li>
+            </li>,
           );
         }
 
         return items;
       },
-      []
+      [],
     );
 
     return (
@@ -403,7 +403,7 @@ class BaseCcRegistrationChild extends Component {
           push
           to={{
             pathname: routePaths.CE_THANK_YOU,
-            state
+            state,
           }}
         />
       );
@@ -436,7 +436,7 @@ BaseCcRegistrationChild.propTypes = {
   className: PropTypes.string,
   headerContent: PropTypes.node,
   refName: PropTypes.string.isRequired,
-  routePath: PropTypes.string.isRequired
+  routePath: PropTypes.string.isRequired,
 };
 
 export default BaseCcRegistrationChild;

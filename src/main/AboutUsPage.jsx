@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 import churchExterior from '../assets/images/church-exterior.jpg';

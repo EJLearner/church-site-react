@@ -38,5 +38,5 @@ export {
   getRegistrationData,
   getRoutePath,
   resetRegistrationData,
-  saveRegistrationData
+  saveRegistrationData,
 };

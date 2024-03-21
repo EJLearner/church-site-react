@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
+import { Component } from 'react';
 import {withRouter} from 'react-router-dom';
 
 import firebase from '../../firebase';
@@ -12,7 +12,7 @@ class CcVbsAdminBase extends Component {
   static propTypes = {
     // show mon-fri property values from volunteer data
     showAvailability: PropTypes.bool,
-    stringPrefix: PropTypes.string.isRequired
+    stringPrefix: PropTypes.string.isRequired,
   };
 
   constructor(props) {
@@ -21,7 +21,7 @@ class CcVbsAdminBase extends Component {
     this.state = {
       studentTableRows: [],
       volunteerTableRows: [],
-      dataYear: '2021'
+      dataYear: '2021',
     };
 
     this.getInfoFromFirebase();
@@ -39,20 +39,20 @@ class CcVbsAdminBase extends Component {
     this.convertFbObjectToState(
       'volunteers',
       'volunteerTableRows',
-      this.generateVolunteerRowObject
+      this.generateVolunteerRowObject,
     );
 
     this.convertFbObjectToState(
       'students',
       'studentTableRows',
-      this.generateChildRowObject
+      this.generateChildRowObject,
     );
 
     this.convertFbObjectWithSubObjectsToState(
       `${this.props.stringPrefix}Logbook`,
       'checkinTableRows',
       this.generateCheckinRowObject,
-      true
+      true,
     );
   }
 
@@ -77,7 +77,7 @@ class CcVbsAdminBase extends Component {
         const tableRows = this.getRowsFromSnapshot(
           snapshot,
           generateRowObject,
-          this
+          this,
         );
         this.setState({[stateName]: tableRows});
       });
@@ -95,7 +95,7 @@ class CcVbsAdminBase extends Component {
           const tableRows = this.getRowsFromSnapshot(
             snapshotItem,
             generateRowObject,
-            this
+            this,
           );
 
           props[key] = tableRows;
@@ -110,7 +110,7 @@ class CcVbsAdminBase extends Component {
     snapshot.forEach((snapshotItem) => {
       const object = snapshotItem.val();
       tableRows.push(
-        generateRowObject.bind(instance)(snapshotItem.key, object)
+        generateRowObject.bind(instance)(snapshotItem.key, object),
       );
     });
 
@@ -134,7 +134,7 @@ class CcVbsAdminBase extends Component {
       ['admin', 'Administrative Staff'],
       ['assistantMentor', 'Assistant/Hallway Monitor'],
       ['kitchen', 'Kitchen Staff'],
-      ['otherText']
+      ['otherText'],
     ];
 
     return this.makeString(keysAndLabels, volunteerObject);
@@ -144,7 +144,7 @@ class CcVbsAdminBase extends Component {
     const keysAndLabels = [
       ['bibleSchool', 'Bible School'],
       ['sundaySchool', 'Sunday School'],
-      ['youthMinistry', 'Youth Ministry']
+      ['youthMinistry', 'Youth Ministry'],
     ];
 
     return this.makeString(keysAndLabels, volunteerObject);
@@ -156,7 +156,7 @@ class CcVbsAdminBase extends Component {
       ['pastAdmin', 'Administrative Staff'],
       ['pastTransition', 'Transition Team'],
       ['pastKitchen', 'Kitchen Staff'],
-      ['pastChaperone', 'Chaperone']
+      ['pastChaperone', 'Chaperone'],
     ];
 
     return this.makeString(keysAndLabels, volunteerObject);
@@ -168,7 +168,7 @@ class CcVbsAdminBase extends Component {
       {key: 'tuesday', short: 'T'},
       {key: 'wednesday', short: 'W'},
       {key: 'thursday', short: 'TH'},
-      {key: 'friday', short: 'F'}
+      {key: 'friday', short: 'F'},
     ];
 
     return days.reduce((daysString, day) => {
@@ -192,7 +192,7 @@ class CcVbsAdminBase extends Component {
       address2,
       city,
       state,
-      zip
+      zip,
     } = volunteerObject;
 
     return {
@@ -213,7 +213,7 @@ class CcVbsAdminBase extends Component {
       pastAreas: this.generatePastAreaString(volunteerObject),
       pastRoles: this.generatePastRolesString(volunteerObject),
       dob: volunteerObject.dob,
-      updateTime: commonUtils.formatTime(volunteerObject.timeChanged)
+      updateTime: commonUtils.formatTime(volunteerObject.timeChanged),
     };
   }
 
@@ -223,7 +223,7 @@ class CcVbsAdminBase extends Component {
       {label: 'Home Phone', name: 'homePhone'},
       {label: 'Mobile Phone', name: 'mobilePhone'},
       {label: 'Email', name: 'email'},
-      {label: 'Address', name: 'address'}
+      {label: 'Address', name: 'address'},
     ];
 
     const availability = {label: 'Availability', name: 'availability'};
@@ -233,7 +233,7 @@ class CcVbsAdminBase extends Component {
       {label: 'Past Areas', name: 'pastAreas'},
       {label: 'Past Roles', name: 'pastRoles'},
       {label: 'Update Time', name: 'updateTime'},
-      {label: 'DOB', name: 'dob'}
+      {label: 'DOB', name: 'dob'},
     ];
 
     const allColumns = firstGroup;
@@ -262,7 +262,7 @@ class CcVbsAdminBase extends Component {
       subscribe,
       registerTime,
       type,
-      zip
+      zip,
     } = childObject;
 
     const isChild = type === 'CHILD';
@@ -283,7 +283,7 @@ class CcVbsAdminBase extends Component {
       allergies: knownAllergies,
       subscribed: subscribe ? 'Yes' : 'No',
       age: commonUtils.getAge(childDob),
-      registerTime: commonUtils.formatTime(registerTime)
+      registerTime: commonUtils.formatTime(registerTime),
     };
 
     if (!isChild) {
@@ -305,7 +305,7 @@ class CcVbsAdminBase extends Component {
       {label: 'Known Allergies', name: 'allergies'},
       {label: 'Subscribed', name: 'subscribed'},
       {label: 'Age', name: 'age'},
-      {label: 'Registered Time', name: 'registerTime'}
+      {label: 'Registered Time', name: 'registerTime'},
     ];
   }
 
@@ -323,10 +323,10 @@ class CcVbsAdminBase extends Component {
       parentEmail: checkinObject.parentEmail,
       parentPhone: commonUtils.formatPhoneNumber(
         checkinObject.parentPhone,
-        true
+        true,
       ),
       checkInTime: commonUtils.formatTime(checkinObject.checkInTime),
-      checkOutTime: commonUtils.formatTime(checkinObject.checkOutTime)
+      checkOutTime: commonUtils.formatTime(checkinObject.checkOutTime),
     };
   }
 
@@ -340,7 +340,7 @@ class CcVbsAdminBase extends Component {
       {label: 'Parent Phone', name: 'parentPhone'},
       {label: 'Status', name: 'status'},
       {label: 'Check In Time', name: 'checkInTime'},
-      {label: 'Check Out Time', name: 'checkOutTime'}
+      {label: 'Check Out Time', name: 'checkOutTime'},
     ];
   }
 
@@ -367,7 +367,7 @@ class CcVbsAdminBase extends Component {
     const options = ['2017', '2018', '2019', '2021'].map((year) => {
       return {
         label: year,
-        value: year
+        value: year,
       };
     });
 
@@ -387,7 +387,7 @@ class CcVbsAdminBase extends Component {
     const options = dates.map((date) => {
       return {
         label: commonUtils.formatDate(date),
-        value: date
+        value: date,
       };
     });
 

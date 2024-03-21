@@ -1,6 +1,6 @@
 import {Parser as HtmlToReactParser} from 'html-to-react';
 import moment from 'moment';
-import React, {Component} from 'react';
+import { Component } from 'react';
 
 import firebase from '../../firebase';
 import commonUtils from '../../utils/commonUtils';
@@ -11,7 +11,7 @@ import Textbox from '../commonComponents/Textbox';
 const TIME_FORMAT = {
   SIMPLE_TIME: 'h:mm a',
   DATE_TIME: 'YYYY-MM-DDTHH:mm:ss',
-  STD_DATE: 'YYYY-MM-DD'
+  STD_DATE: 'YYYY-MM-DD',
 };
 
 class EventAdmin extends Component {
@@ -29,7 +29,7 @@ class EventAdmin extends Component {
       timeEnd: '',
       timeStart: '',
       title: '',
-      user: null
+      user: null,
     };
 
     this.onChange = this.onChange.bind(this);
@@ -51,7 +51,7 @@ class EventAdmin extends Component {
       const dates = snapshot.val();
 
       this.setState({
-        dates
+        dates,
       });
     });
   }
@@ -69,7 +69,7 @@ class EventAdmin extends Component {
       if (timeMoment.isValid()) {
         const dateTimeMoment = moment(date, TIME_FORMAT.STD_DATE).set({
           hour: timeMoment.hour(),
-          minute: timeMoment.minute()
+          minute: timeMoment.minute(),
         });
 
         return dateTimeMoment.format(TIME_FORMAT.DATE_TIME);
@@ -105,7 +105,7 @@ class EventAdmin extends Component {
       title,
       longDescription,
       followsWorship,
-      isAnnouncement
+      isAnnouncement,
     } = this.state;
 
     const hasValidDate = moment(date, TIME_FORMAT.STD_DATE, true).isValid();
@@ -117,7 +117,7 @@ class EventAdmin extends Component {
       timeEnd: this.getDateTimeFromSimple(date, timeEnd),
       longDescription: longDescription || null,
       followsWorship: followsWorship || null,
-      isAnnouncement: isAnnouncement || null
+      isAnnouncement: isAnnouncement || null,
     };
 
     const dataIsValid = this.isValid(event) && hasValidDate;
@@ -155,7 +155,7 @@ class EventAdmin extends Component {
       timeEnd: '',
       longDescription: '',
       followsWorship: false,
-      isAnnouncement: false
+      isAnnouncement: false,
     });
   }
 
@@ -172,7 +172,7 @@ class EventAdmin extends Component {
       timeStart,
       timeEnd,
       shortDescription,
-      longDescription
+      longDescription,
     } = eventObject;
 
     this.setState({
@@ -185,7 +185,7 @@ class EventAdmin extends Component {
       shortDescription,
       longDescription,
       isAnnouncement,
-      followsWorship
+      followsWorship,
     });
   }
 
@@ -269,7 +269,7 @@ class EventAdmin extends Component {
                   </Button>
                 </div>
               )}
-            </div>
+            </div>,
           );
         }
       });
@@ -283,13 +283,13 @@ class EventAdmin extends Component {
       {
         checked: Boolean(isAnnouncement),
         label: 'Announcement',
-        value: 'isAnnouncement'
+        value: 'isAnnouncement',
       },
       {
         checked: Boolean(followsWorship),
         label: 'Immediately Follows Worship',
-        value: 'followsWorship'
-      }
+        value: 'followsWorship',
+      },
     ];
   }
 

@@ -22,7 +22,7 @@ const getVerseInfo = (query, cb) => {
 
     xhr.open(
       'GET',
-      `https://api.scripture.api.bible/v1/bibles/${ASV_ID}/search?query=${query}`
+      `https://api.scripture.api.bible/v1/bibles/${ASV_ID}/search?query=${query}`,
     );
     xhr.setRequestHeader('api-key', key);
 

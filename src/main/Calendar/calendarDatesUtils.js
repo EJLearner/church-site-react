@@ -77,7 +77,7 @@ const calendarDatesUtils = {
 
   unlisten: (id) => {
     delete callbacks[id];
-  }
+  },
 };
 
 export default calendarDatesUtils;

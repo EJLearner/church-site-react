@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import { Component } from 'react';
 import styled from 'styled-components';
 
 const POST_STATUSES = {
   FAILURE: 'failure',
-  SUCCESS: 'success'
+  SUCCESS: 'success',
 };
 const PostSubmitStatusMessageStyle = styled.div`
   display: inline-block;
@@ -32,7 +32,7 @@ const defaultInputErrorMessage = (
   </div>
 );
 
-class PostSubmitStatusMessage extends React.Component {
+class PostSubmitStatusMessage extends Component {
   componentDidMount() {
     this.errorBox?.focus();
   }
@@ -84,11 +84,11 @@ class PostSubmitStatusMessage extends React.Component {
 PostSubmitStatusMessage.propTypes = {
   inputErrorMessage: PropTypes.node,
   postStatus: PropTypes.oneOf(Object.values(POST_STATUSES)),
-  responseError: PropTypes.object
+  responseError: PropTypes.object,
 };
 
 PostSubmitStatusMessage.defaultProps = {
-  inputErrorMessage: defaultInputErrorMessage
+  inputErrorMessage: defaultInputErrorMessage,
 };
 
 export default PostSubmitStatusMessage;

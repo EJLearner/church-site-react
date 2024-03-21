@@ -15,12 +15,12 @@ const set = jest.fn(() => {
 const refObject = {
   child: jest.fn(function () {
     return {
-      set: set
+      set: set,
     };
   }),
   on: jest.fn(),
   set: jest.fn(),
-  update: jest.fn()
+  update: jest.fn(),
 };
 
 const refStub = jest.fn(function () {
@@ -28,7 +28,7 @@ const refStub = jest.fn(function () {
 });
 
 const dbObject = {
-  ref: refStub
+  ref: refStub,
 };
 
 const getDatabase = function () {

@@ -10,7 +10,7 @@ const FONT_FAMILIES = {
     "'Adobe Garamond Pro', Garamond, Baskerville, 'Baskerville Old Face'," +
     "'Hoefler Text', 'Times New Roman', serif",
   BEBAS: '"Bebas Neue", arial, helvetica, sans-serif',
-  ROBOTO: 'Roboto, arial, helvetica, sans-serif'
+  ROBOTO: 'Roboto, arial, helvetica, sans-serif',
 };
 const COLORS = {
   GREEN_20: 'rgb(146, 208, 80)',
@@ -39,7 +39,7 @@ const COLORS = {
   YELLOW: 'yellow',
   MAROON: '#C00000',
   GREEN: 'green',
-  GRAY: 'gray'
+  GRAY: 'gray',
 };
 
 const LOGICAL_COLORS = {
@@ -54,22 +54,22 @@ const LOGICAL_COLORS = {
   CT_ACCENT: '#FFC600',
   CT_LIGHTENED_ACCENT: '#bff3ff',
   CT_SECOND: '#07294D',
-  CT_THIRD: '#d2b48c'
+  CT_THIRD: '#d2b48c',
 };
 
 const STYLES = {
   FONT_FAMILIES,
   COLORS,
-  LOGICAL_COLORS
+  LOGICAL_COLORS,
 };
 
 const WIDTHS = {
   SIDE_CONTENT_PADDING: '64px',
-  CALENDAR_WIDTH_MAX: '1200px'
+  CALENDAR_WIDTH_MAX: '1200px',
 };
 
 const SIZES = {
-  ...WIDTHS
+  ...WIDTHS,
 };
 
 export {FONT_FAMILIES, COLORS, LOGICAL_COLORS, SIZES, WIDTHS};

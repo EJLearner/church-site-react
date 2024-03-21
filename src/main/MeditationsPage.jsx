@@ -1,5 +1,5 @@
 import {format, add} from 'date-fns';
-import React from 'react';
+import { Fragment } from 'react';
 import styled from 'styled-components';
 
 import choir from '../assets/images/choir.jpg';
@@ -61,7 +61,7 @@ const getCurrentWeekDates = () => {
     const jsDate = add(jsSundayTime, {days: i});
     const standardDate = format(
       jsDate,
-      constants.DATE_FNS_INTERNAL_DATE_FORMAT
+      constants.DATE_FNS_INTERNAL_DATE_FORMAT,
     );
 
     const dayOfWeek = format(jsDate, 'EEEE');
@@ -89,7 +89,7 @@ function getVersesContent() {
     const {verse, referenceText} = bibleComFormattedVerses?.[date] ?? {};
 
     return (
-      <React.Fragment key={date}>
+      <Fragment key={date}>
         <h3 id={day}>{day}</h3>
         <Verse
           date={date}
@@ -97,7 +97,7 @@ function getVersesContent() {
           passage={verse}
           referenceText={referenceText}
         />
-      </React.Fragment>
+      </Fragment>
     );
   });
 

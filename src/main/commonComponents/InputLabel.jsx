@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 import styled from 'styled-components';
 
 const LabelStyle = styled.label`
@@ -33,11 +32,11 @@ InputLabel.propTypes = {
   htmlFor: PropTypes.string,
   id: PropTypes.string,
   inline: PropTypes.bool,
-  required: PropTypes.bool
+  required: PropTypes.bool,
 };
 
 InputLabel.defaultProps = {
-  inline: false
+  inline: false,
 };
 
 export default InputLabel;

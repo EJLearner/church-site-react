@@ -6,7 +6,7 @@ import {
   endOfYesterday,
   parseISO,
   startOfDay,
-  isAfter
+  isAfter,
 } from '../utils/dateTimeUtils';
 
 const sortEventsByStartTime = (events) => {
@@ -49,7 +49,7 @@ function useFirebaseEvents(options = {}) {
           // make an array of events
           if (eventInfo.events) {
             const events = Object.values(eventInfo.events).map(
-              (event) => event
+              (event) => event,
             );
             newState[date] = {events};
           }
@@ -64,13 +64,13 @@ function useFirebaseEvents(options = {}) {
     const datesAsArray = Object.keys(events).reduce(
       (eventsArray, dateString) => {
         const sortedDateEvents = sortEventsByStartTime(
-          events[dateString].events
+          events[dateString].events,
         );
 
         sortedDateEvents.forEach((event) => {
           const eventWithDate = {
             ...event,
-            dateString
+            dateString,
           };
 
           eventsArray.push(eventWithDate);
@@ -78,7 +78,7 @@ function useFirebaseEvents(options = {}) {
 
         return eventsArray;
       },
-      []
+      [],
     );
 
     return datesAsArray;

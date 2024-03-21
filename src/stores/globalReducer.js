@@ -4,7 +4,7 @@ function updateCartCookie(cart) {
   const threeDaysInSeconds = 60 * 60 * 24 * 3;
 
   document.cookie = `${constants.COOKIE_KEYS.CART_DATA}=${encodeURIComponent(
-    JSON.stringify(cart)
+    JSON.stringify(cart),
   )};max-age=${threeDaysInSeconds}`;
 }
 

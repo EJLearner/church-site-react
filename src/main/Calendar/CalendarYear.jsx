@@ -1,6 +1,6 @@
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
+import { Component } from 'react';
 import {Redirect} from 'react-router';
 import styled from 'styled-components';
 
@@ -74,7 +74,7 @@ class CalendarYear extends Component {
         push
         to={{
           pathname: routePaths.MAIN_CALENDAR_DAY,
-          state: {selectedDay: this.state.redirectDate}
+          state: {selectedDay: this.state.redirectDate},
         }}
       />
     );
@@ -97,11 +97,11 @@ class CalendarYear extends Component {
 }
 
 CalendarYear.propTypes = {
-  firstMonth: PropTypes.string
+  firstMonth: PropTypes.string,
 };
 
 CalendarYear.defaultProps = {
-  firstMonth: moment().format('YYYY-MM-DD')
+  firstMonth: moment().format('YYYY-MM-DD'),
 };
 
 export default CalendarYear;

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, {createContext, useReducer} from 'react';
+import { createContext, useReducer } from 'react';
 
 import constants from '../utils/constants';
 import {getCookie} from '../utils/cookieUtils';
@@ -13,7 +13,7 @@ const savedCartValue = savedCartCookie && JSON.parse(savedCartCookie);
 
 const initialState = {
   cart: savedCartValue || {},
-  viewInfo: {view: VIEWS.STORE_FRONT}
+  viewInfo: {view: VIEWS.STORE_FRONT},
 };
 
 const GlobalStoreWrapper = ({children}) => {
@@ -25,7 +25,7 @@ const GlobalStoreWrapper = ({children}) => {
 };
 
 GlobalStoreWrapper.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 export const Context = createContext(initialState);

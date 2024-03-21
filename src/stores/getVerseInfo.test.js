@@ -2,8 +2,8 @@ import getVerseInfo, {_resetCache} from './getVerseInfo';
 
 const testResponseObject = {
   data: {
-    passages: [{content: 'test'}]
-  }
+    passages: [{content: 'test'}],
+  },
 };
 const createMockXHR = (responseObject = testResponseObject, readyState = 4) => {
   return {
@@ -12,7 +12,7 @@ const createMockXHR = (responseObject = testResponseObject, readyState = 4) => {
     DONE: 4,
     readyState,
     responseText: JSON.stringify(responseObject),
-    setRequestHeader: jest.fn()
+    setRequestHeader: jest.fn(),
   };
 };
 

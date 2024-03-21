@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import React, {Component} from 'react';
+import { Component } from 'react';
 
 import firebase, {auth, provider} from '../../firebase';
 import utils from '../../utils/commonUtils';
@@ -29,7 +29,7 @@ class BaseCheckout extends Component {
       regStaff: {},
       status: PAGE_STATUS.ENTERING_PARENT_NAME,
       todaysLogbook: {},
-      user: null
+      user: null,
     };
 
     bindThese(
@@ -40,9 +40,9 @@ class BaseCheckout extends Component {
         'onCheckoutClick',
         'onChecklistChange',
         'onSearch',
-        'onSelectAllClick'
+        'onSelectAllClick',
       ],
-      this
+      this,
     );
   }
 
@@ -113,7 +113,7 @@ class BaseCheckout extends Component {
 
           childRef.update({
             checkOutTime: new Date().toISOString(),
-            status: CHILD_STATUS.CHECKED_OUT
+            status: CHILD_STATUS.CHECKED_OUT,
           });
         }
       });
@@ -137,7 +137,7 @@ class BaseCheckout extends Component {
 
     this.setState({
       status: PAGE_STATUS.SELECT_CHILDREN,
-      childrenOfParent
+      childrenOfParent,
     });
   }
 
@@ -174,7 +174,7 @@ class BaseCheckout extends Component {
         checked,
         disabled,
         label,
-        value: registeredId
+        value: registeredId,
       };
     });
 
@@ -225,7 +225,7 @@ class BaseCheckout extends Component {
 
     const checkedInChildrenOfParent = _.filter(
       childrenOfParent,
-      (child) => child.status === CHILD_STATUS.CHECKED_IN
+      (child) => child.status === CHILD_STATUS.CHECKED_IN,
     );
 
     if (!checkedInChildrenOfParent.length) {
@@ -366,7 +366,7 @@ BaseCheckout.propTypes = {
   logbookRefName: PropTypes.string.isRequired,
   registryAccessRefName: PropTypes.string.isRequired,
   registryIdName: PropTypes.string.isRequired,
-  welcomeName: PropTypes.string.isRequired
+  welcomeName: PropTypes.string.isRequired,
 };
 
 export default BaseCheckout;

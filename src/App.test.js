@@ -1,6 +1,5 @@
 import {shallow} from 'enzyme';
 import moment from 'moment';
-import React from 'react';
 
 import App from './App';
 import TopRoutes from './TopRoutes';

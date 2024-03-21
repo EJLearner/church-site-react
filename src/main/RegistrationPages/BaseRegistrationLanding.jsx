@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import React from 'react';
 import styled from 'styled-components';
 
 import {FONT_FAMILIES, LOGICAL_COLORS} from '../../utils/styleVariables';
@@ -77,14 +76,14 @@ const RegistrationLandingStyle = styled.div`
 
 const types = {
   VACATION_BIBLE: 'Vacation Bible School',
-  CHILDRENS_CHURCH: 'Children’s Church'
+  CHILDRENS_CHURCH: 'Children’s Church',
 };
 
 const RegistrationLanding = ({
   imgPath,
   onClickAdultAttend,
   type,
-  onClickChildAttend
+  onClickChildAttend,
 }) => {
   return (
     <RegistrationLandingStyle className="registration-landing">
@@ -115,7 +114,7 @@ RegistrationLanding.propTypes = {
   imgPath: PropTypes.string,
   onClickAdultAttend: PropTypes.func,
   onClickChildAttend: PropTypes.func.isRequired,
-  type: PropTypes.oneOf(Object.values(types))
+  type: PropTypes.oneOf(Object.values(types)),
 };
 
 RegistrationLanding.TYPES = types;

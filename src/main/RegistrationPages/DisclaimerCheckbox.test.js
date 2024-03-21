@@ -1,5 +1,4 @@
 import {shallow} from 'enzyme';
-import React from 'react';
 
 import DisclaimerCheckbox from './DisclaimerCheckbox';
 
@@ -10,7 +9,7 @@ describe('DisclaimerCheckbox', () => {
     props = {
       checked: false,
       id: 'test-disclaimer-checkbox',
-      onChange: jest.fn()
+      onChange: jest.fn(),
     };
   });
 
@@ -44,7 +43,7 @@ describe('DisclaimerCheckbox', () => {
     expect(props.onChange.mock.calls[0]).toEqual([
       testEvent.target.checked,
       props.id,
-      testEvent
+      testEvent,
     ]);
   });
 });
