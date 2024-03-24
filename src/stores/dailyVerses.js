@@ -549,6 +549,13 @@ const bibleComFormattedVerses = {
   '2024-03-21': {verse: 'Isaiah 25.1-9'},
   '2024-03-22': {verse: 'Colossians 3.1-17'},
   '2024-03-23': {verse: 'Romans 8.31-39'},
+  '2024-03-24': {verse: 'Psalm 118.19-29'},
+  '2024-03-25': {verse: 'Acts 14.19-28'},
+  '2024-03-26': {verse: '1 Peter 2.21-25'},
+  '2024-03-27': {verse: '2 Corinthians 1.3-11'},
+  '2024-03-28': {verse: 'Isaiah 53.1-6'},
+  '2024-03-29': {verse: 'Isaiah 53.7-9'},
+  '2024-03-30': {verse: 'Isaiah 53.10-12'},
 };
 
 export {bibleComFormattedVerses};
