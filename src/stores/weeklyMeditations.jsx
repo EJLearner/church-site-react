@@ -1388,4 +1388,22 @@ export default {
       </p>
     ),
   },
+  '2024-03-24': {
+    subTitle: (
+      <>
+        From <i>Unknown</i> by John Wesley
+      </>
+    ),
+    content: (
+      <p>
+        “In the evening I went very unwillingly to a society in Aldersgate
+        Street, where one was reading Luther’s preface to the Epistle to the
+        Romans. About a quarter before nine, while he was describing the change
+        which God works in the heart through faith in Christ, I felt my heart
+        strangely warmed. I felt I did trust in Christ, Christ alone for
+        salvation: And an assurance was given me, that he had taken away my
+        sins, even mine, and saved me from the law of sin and death.”
+      </p>
+    ),
+  },
 };
