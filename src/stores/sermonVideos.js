@@ -5,6 +5,14 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-03-24',
+    youtubeId: 'KSxCVspm-6g',
+    title: 'The Setup For A Lifetime!',
+    preacher: PREACHERS.L_FORD,
+    scripture: 'Matthew 21:1-11',
+    version: BIBLE_VERSIONS.NRSVUE,
+  },
+  {
     date: '2024-03-17',
     youtubeId: 'cZ45Hhj1Sz8',
     title: '"Living Above it!',
