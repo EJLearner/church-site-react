@@ -1,15 +1,16 @@
+import '../../firebaseApp';
 import {
   getAuth,
   onAuthStateChanged,
   GoogleAuthProvider,
   signInWithPopup,
 } from 'firebase/auth';
+import {getDatabase, ref, onValue} from 'firebase/database';
 import {Component} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import styled from 'styled-components';
 
 import choir from '../../assets/images/choir.jpg';
-import firebaseApp from '../../firebaseApp';
 import routePaths from '../../routePaths';
 import Menubar from '../Menubar';
 import Button from '../commonComponents/Button/Button';
@@ -70,9 +71,10 @@ class Admin extends Component {
 
   componentDidMount() {
     // update adminUsers state based on firebase data status
-    const adminUsersRef = firebaseApp.database().ref('user_groups/admins');
+    const db = getDatabase();
+    const adminUsersRef = ref(db, 'user_groups/admins');
 
-    adminUsersRef.on('value', (snapshot) => {
+    onValue(adminUsersRef, (snapshot) => {
       const adminUsers = snapshot.val();
       this.setState({adminUsers});
     });

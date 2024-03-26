@@ -1,9 +1,10 @@
+import '../../firebaseApp';
+import {getDatabase, ref} from 'firebase/database';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import { Component } from 'react';
+import {Component} from 'react';
 import {Redirect} from 'react-router';
 
-import firebase from '../../firebase';
 import routePaths from '../../routePaths';
 import utils from '../../utils/commonUtils';
 import constants from '../../utils/constants';
@@ -293,7 +294,7 @@ class BaseRegistrationVolunteer extends Component {
 
     volunteer.dob = standardDob;
 
-    const firebaseRef = firebase.database().ref(refName);
+    const firebaseRef = ref(getDatabase(), refName);
 
     if (subscribe && email) {
       pushToSubscribedList(email, 'Volunteer Registration', name);

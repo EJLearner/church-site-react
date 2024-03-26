@@ -1,9 +1,16 @@
+import '../../firebaseApp';
+import {
+  getAuth,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  signInWithPopup,
+} from 'firebase/auth';
+import {getDatabase, onValue, ref} from 'firebase/database';
 import _ from 'lodash';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import { Component } from 'react';
+import {Component} from 'react';
 
-import firebase, {auth, provider} from '../../firebase';
 import utils from '../../utils/commonUtils';
 import Button from '../Reusable/Button/Button';
 import Checklist from '../Reusable/Checklist/Checklist';
@@ -12,6 +19,8 @@ import Textbox from '../commonComponents/Textbox';
 import {CHILD_STATUS, PAGE_STATUS} from './BaseCheckinOutConstants';
 
 import './BaseCheckinOut.css';
+const auth = getAuth();
+const provider = new GoogleAuthProvider();
 
 const bindThese = function (functions, context) {
   functions.forEach((func) => {
@@ -48,24 +57,22 @@ class BaseCheckout extends Component {
 
   componentDidMount() {
     // update regStaff state based on firebase data status
-    const regStaffRef = firebase
-      .database()
-      .ref(this.props.registryAccessRefName);
+    const regStaffRef = ref(getDatabase(), this.props.registryAccessRefName);
 
-    regStaffRef.on('value', (snapshot) => {
+    onValue(regStaffRef, (snapshot) => {
       const regStaff = snapshot.val();
       this.setState({regStaff});
     });
 
     const todaysLogRef = this.getTodaysLogRef();
 
-    todaysLogRef.on('value', (snapshot) => {
+    onValue(todaysLogRef, (snapshot) => {
       const todaysLogbook = snapshot.val();
       this.setState({todaysLogbook});
     });
 
     // keeps user logged in on a page refresh
-    auth.onAuthStateChanged((user) => {
+    onAuthStateChanged(auth, (user) => {
       if (user) {
         this.setState({user});
       }
@@ -92,7 +99,7 @@ class BaseCheckout extends Component {
 
   getTodaysLogRef() {
     const today = moment().format('YYYY-MM-DD');
-    return firebase.database().ref(`${this.props.logbookRefName}/${today}`);
+    return ref(getDatabase(), `${this.props.logbookRefName}/${today}`);
   }
 
   onCheckoutClick(disabled) {
@@ -142,7 +149,7 @@ class BaseCheckout extends Component {
   }
 
   handleLoginClick() {
-    auth.signInWithPopup(provider).then((result) => {
+    signInWithPopup(auth, provider).then((result) => {
       const {user} = result;
       this.setState({user});
     });

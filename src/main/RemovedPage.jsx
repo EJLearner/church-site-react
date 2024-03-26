@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 import {Redirect} from 'react-router';
 import styled from 'styled-components';
 
@@ -6,7 +6,7 @@ import choir from '../assets/images/choir.jpg';
 
 import MainMenubar from './commonComponents/MainMenubar';
 
-const ContactPage = styled.div`
+const RemovedPageStyle = styled.div`
   background-color: var(--gossamer-veil);
   min-height: 100%;
 
@@ -29,7 +29,7 @@ function RemovedPage() {
   useEffect(() => {
     setTimeout(() => {
       setShouldRedirect(true);
-    }, 3000);
+    }, 8000);
   }, []);
 
   if (shouldRedirect) {
@@ -37,7 +37,7 @@ function RemovedPage() {
   }
 
   return (
-    <ContactPage>
+    <RemovedPageStyle>
       <MainMenubar imageSource={choir} />
       <div className="content">
         <h1>This page no longer exists</h1>
@@ -47,7 +47,7 @@ function RemovedPage() {
           successful.
         </p>
       </div>
-    </ContactPage>
+    </RemovedPageStyle>
   );
 }
 

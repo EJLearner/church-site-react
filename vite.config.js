@@ -7,5 +7,10 @@ export default defineConfig({
   build: {
     target: browserslistToEsbuild(),
   },
+  server: true,
   plugins: [react()],
+  test: {
+    global: true,
+    environment: 'jsdom',
+  },
 });

@@ -1,10 +1,17 @@
+import '../../firebaseApp';
+import {
+  getAuth,
+  onAuthStateChanged,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from 'firebase/auth';
+import {getDatabase, onValue, ref} from 'firebase/database';
 import _ from 'lodash';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import { Component } from 'react';
+import {Component} from 'react';
 import {Link} from 'react-router-dom';
 
-import firebase, {auth, provider} from '../../firebase';
 import utils from '../../utils/commonUtils';
 import Button from '../commonComponents/Button/Button';
 import Checklist from '../commonComponents/Checklist/Checklist';
@@ -13,6 +20,9 @@ import Textbox from '../commonComponents/Textbox';
 import {CHILD_STATUS, PAGE_STATUS} from './BaseCheckinOutConstants';
 
 import './BaseCheckinOut.css';
+
+const provider = new GoogleAuthProvider();
+const auth = getAuth();
 
 class BaseCheckin extends Component {
   constructor(props) {
@@ -37,34 +47,33 @@ class BaseCheckin extends Component {
 
   componentDidMount() {
     // update registered state based on firebase data status
-    const registeredRef = firebase
-      .database()
-      .ref(this.props.registeredChildrenRefName);
+    const registeredRef = ref(
+      getDatabase(),
+      this.props.registeredChildrenRefName,
+    );
 
-    registeredRef.on('value', (snapshot) => {
+    onValue(registeredRef, (snapshot) => {
       const registered = snapshot.val();
       this.setState({registered});
     });
 
     // update regStaff state based on firebase data status
-    const regStaffRef = firebase
-      .database()
-      .ref(this.props.registryAccessRefName);
+    const regStaffRef = ref(getDatabase(), this.props.registryAccessRefName);
 
-    regStaffRef.on('value', (snapshot) => {
+    onValue(regStaffRef, (snapshot) => {
       const regStaff = snapshot.val();
       this.setState({regStaff});
     });
 
     const todaysLogRef = this.getTodaysLogRef();
 
-    todaysLogRef.on('value', (snapshot) => {
+    onValue(todaysLogRef, (snapshot) => {
       const checkedinIds = _.map(snapshot.val(), this.props.registryIdName);
       this.setState({checkedinIds});
     });
 
     // keeps user logged in on a page refresh
-    auth.onAuthStateChanged((user) => {
+    onAuthStateChanged(auth, (user) => {
       if (user) {
         this.setState({user});
       }
@@ -91,7 +100,7 @@ class BaseCheckin extends Component {
 
   getTodaysLogRef() {
     const today = moment().format('YYYY-MM-DD');
-    return firebase.database().ref(`${this.props.logbookRefName}/${today}`);
+    return ref(getDatabase(), `${this.props.logbookRefName}/${today}`);
   }
 
   onCheckInClick(disabled) {
@@ -136,7 +145,7 @@ class BaseCheckin extends Component {
   }
 
   handleLoginClick() {
-    auth.signInWithPopup(provider).then((result) => {
+    signInWithPopup(auth, provider).then((result) => {
       const {user} = result;
       this.setState({user});
     });

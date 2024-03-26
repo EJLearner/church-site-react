@@ -1,7 +1,8 @@
+import '../../firebaseApp';
+import {getDatabase, ref, onValue} from 'firebase/database';
 import _ from 'lodash';
 import moment from 'moment';
 
-import firebase from '../../firebase';
 import constants from '../../utils/constants';
 
 let datesStore = {};
@@ -15,12 +16,13 @@ const callAllCallbacks = () => {
 
 const loadDates = () => {
   // FBH get a reference for the 'dates' top level prop of the data
-  const datesRef = firebase.database().ref(constants.FB_REF_EVENTS);
+  const db = getDatabase();
+  const datesRef = ref(db, constants.FB_REF_EVENTS);
 
   // FBH add a listener to the dates object, update on value change
   // listener gets the dates object using snapshot.val();
   // then pushes the updated date object into the state
-  datesRef.on('value', (snapshot) => {
+  onValue(datesRef, (snapshot) => {
     const retrievedDates = snapshot.val();
     const newState = {};
 

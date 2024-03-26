@@ -1,13 +1,15 @@
-import firebase from '../firebase';
+import '../../firebaseApp';
+import {getDatabase, ref} from 'firebase/database';
 
 import constants from './constants';
 
 const pushToSubscribedList = function (email, subscribeSource, name) {
   const emailFireBaseKey = email.replace(/\./g, ',');
 
-  const subscribedEmailsDbRef = firebase
-    .database()
-    .ref(constants.SUBSCRIBED_EMAILS_REF_NAME);
+  const subscribedEmailsDbRef = ref(
+    getDatabase(),
+    constants.SUBSCRIBED_EMAILS_REF_NAME,
+  );
 
   const newEmail = subscribedEmailsDbRef.child(emailFireBaseKey);
 
