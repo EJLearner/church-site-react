@@ -1,9 +1,15 @@
-import { Component } from 'react';
+import {
+  getAuth,
+  onAuthStateChanged,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from 'firebase/auth';
+import {Component} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import styled from 'styled-components';
 
 import choir from '../../assets/images/choir.jpg';
-import firebase, {auth, provider} from '../../firebase';
+import firebaseApp from '../../firebaseApp';
 import routePaths from '../../routePaths';
 import Menubar from '../Menubar';
 import Button from '../commonComponents/Button/Button';
@@ -11,6 +17,8 @@ import Button from '../commonComponents/Button/Button';
 import CcVbsAdminBase from './CcVbsAdminBase';
 import EventAdmin from './EventAdmin';
 import SubscribedEmailsAdmin from './SubscribedEmailsAdmin';
+const provider = new GoogleAuthProvider();
+const auth = getAuth();
 
 const StyledAdminPage = styled.div`
   background-color: var(--light-background);
@@ -62,7 +70,7 @@ class Admin extends Component {
 
   componentDidMount() {
     // update adminUsers state based on firebase data status
-    const adminUsersRef = firebase.database().ref('user_groups/admins');
+    const adminUsersRef = firebaseApp.database().ref('user_groups/admins');
 
     adminUsersRef.on('value', (snapshot) => {
       const adminUsers = snapshot.val();
@@ -70,7 +78,7 @@ class Admin extends Component {
     });
 
     // keeps user logged in on a page refresh
-    auth.onAuthStateChanged((user) => {
+    onAuthStateChanged(auth, (user) => {
       if (user) {
         this.setState({user});
       }
@@ -78,7 +86,7 @@ class Admin extends Component {
   }
 
   login() {
-    auth.signInWithPopup(provider).then((result) => {
+    signInWithPopup(auth, provider).then((result) => {
       const {user} = result;
       this.setState({user});
     });
@@ -121,6 +129,8 @@ class Admin extends Component {
   }
 
   renderContent() {
+    // return 'blah';
+
     const {user} = this.state;
 
     if (user) {

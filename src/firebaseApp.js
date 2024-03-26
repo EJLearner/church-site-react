@@ -1,5 +1,5 @@
 // This import loads the firebase namespace.
-import firebase from 'firebase/compat/app';
+import firebaseApp from 'firebase/compat/app';
 
 // These imports load individual services into the firebase namespace.
 import 'firebase/compat/auth';
@@ -14,8 +14,8 @@ const config = {
   messagingSenderId: '127519582002',
 };
 
-firebase.initializeApp(config);
+firebaseApp.initializeApp(config);
 
-export const provider = new firebase.auth.GoogleAuthProvider();
-export const auth = firebase.auth();
-export default firebase;
+export const provider = new firebaseApp.auth.GoogleAuthProvider();
+export const auth = firebaseApp.auth();
+export default firebaseApp;
