@@ -4,7 +4,7 @@ import {Parser as HtmlToReactParser} from 'html-to-react';
 import moment from 'moment';
 import {Component} from 'react';
 
-import commonUtils from '../../utils/commonUtils';
+import commonUtils from '../../utils/commonUtils.ts';
 import Button from '../commonComponents/Button/Button';
 import Checklist from '../commonComponents/Checklist/Checklist';
 import Textbox from '../commonComponents/Textbox';

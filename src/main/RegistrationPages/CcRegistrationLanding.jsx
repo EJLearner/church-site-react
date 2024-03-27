@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import {Component} from 'react';
 import {Redirect} from 'react-router';
 
 import routePaths from '../../routePaths';

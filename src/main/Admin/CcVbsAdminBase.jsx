@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 
-import commonUtils from '../../utils/commonUtils';
+import commonUtils from '../../utils/commonUtils.ts';
 import {CHILD_STATUS} from '../CcVbsCheckinOut/BaseCheckinOutConstants';
 import Select from '../commonComponents/Select';
 import Table from '../commonComponents/Table/Table';

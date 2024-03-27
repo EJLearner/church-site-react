@@ -1,6 +1,6 @@
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import { Component } from 'react';
+import {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 
 import EventsListPage from './EventsListPage';

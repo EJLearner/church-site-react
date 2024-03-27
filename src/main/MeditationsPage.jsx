@@ -1,5 +1,5 @@
 import {format, add} from 'date-fns';
-import { Fragment } from 'react';
+import {Fragment} from 'react';
 import styled from 'styled-components';
 
 import choir from '../assets/images/choir.jpg';

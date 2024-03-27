@@ -6,7 +6,7 @@ import {Component} from 'react';
 import {Redirect} from 'react-router';
 
 import routePaths from '../../routePaths';
-import utils from '../../utils/commonUtils';
+import utils from '../../utils/commonUtils.ts';
 import constants from '../../utils/constants';
 import pushToSubscribedList from '../../utils/pushToSubscribedList';
 import Button from '../commonComponents/Button/Button';

@@ -2,7 +2,7 @@ import '../../firebaseApp';
 import {getDatabase, onValue, ref} from 'firebase/database';
 import {Component} from 'react';
 
-import commonUtils from '../../utils/commonUtils';
+import commonUtils from '../../utils/commonUtils.ts';
 import Table from '../commonComponents/Table/Table';
 
 const getColumns = () => {

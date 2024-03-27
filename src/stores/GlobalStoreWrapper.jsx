@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { createContext, useReducer } from 'react';
+import {createContext, useReducer} from 'react';
 
 import constants from '../utils/constants';
 import {getCookie} from '../utils/cookieUtils';

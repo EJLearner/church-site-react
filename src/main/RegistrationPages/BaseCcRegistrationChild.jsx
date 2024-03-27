@@ -11,7 +11,7 @@ import {
   getRegistrationData,
   resetRegistrationData,
 } from '../../stores/lastSubmittedRegistration';
-import utils from '../../utils/commonUtils';
+import utils from '../../utils/commonUtils.ts';
 import constants from '../../utils/constants';
 import pushToSubscribedList from '../../utils/pushToSubscribedList';
 import Button from '../commonComponents/Button/Button';

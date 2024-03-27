@@ -1,6 +1,6 @@
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import { Component } from 'react';
+import {Component} from 'react';
 
 import EventsListPage from './EventsListPage';
 import calendarDatesUtils from './calendarDatesUtils';

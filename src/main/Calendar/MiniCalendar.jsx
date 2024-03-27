@@ -1,9 +1,9 @@
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import { Component } from 'react';
+import {Component} from 'react';
 import styled from 'styled-components';
 
-import commonUtils from '../../utils/commonUtils';
+import commonUtils from '../../utils/commonUtils.ts';
 
 import MonthTableBody from './MonthTableBody';
 import MonthTableHeader, {formats as headerFormats} from './MonthTableHeader';

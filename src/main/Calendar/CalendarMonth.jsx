@@ -1,12 +1,12 @@
 import _ from 'lodash';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import { Component } from 'react';
+import {Component} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 import routePaths from '../../routePaths';
-import commonUtils from '../../utils/commonUtils';
+import commonUtils from '../../utils/commonUtils.ts';
 import Select from '../commonComponents/Select';
 
 import MonthTableBody from './MonthTableBody';

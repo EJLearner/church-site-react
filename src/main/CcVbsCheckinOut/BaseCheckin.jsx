@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 import {Component} from 'react';
 import {Link} from 'react-router-dom';
 
-import utils from '../../utils/commonUtils';
+import utils from '../../utils/commonUtils.ts';
 import Button from '../commonComponents/Button/Button';
 import Checklist from '../commonComponents/Checklist/Checklist';
 import Textbox from '../commonComponents/Textbox';

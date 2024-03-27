@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { Component } from 'react';
+import {Component} from 'react';
 import {Redirect, Route, Switch} from 'react-router-dom';
 import styled from 'styled-components';
 

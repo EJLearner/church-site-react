@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Component } from 'react';
+import {Component} from 'react';
 import styled from 'styled-components';
 
 const StyledTable = styled.table`

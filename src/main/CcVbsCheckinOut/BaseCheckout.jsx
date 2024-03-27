@@ -11,7 +11,7 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import {Component} from 'react';
 
-import utils from '../../utils/commonUtils';
+import utils from '../../utils/commonUtils.ts';
 import Button from '../Reusable/Button/Button';
 import Checklist from '../Reusable/Checklist/Checklist';
 import Textbox from '../commonComponents/Textbox';

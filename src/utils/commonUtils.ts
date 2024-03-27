@@ -2,7 +2,8 @@ import _ from 'lodash';
 import moment from 'moment';
 
 import routePaths from '../routePaths';
-import constants from '../utils/constants';
+
+import constants from './constants';
 
 const {
   INTERNAL_DATE_FORMAT,
@@ -23,10 +24,10 @@ let lastPushTime = 0;
 // timestamp to prevent collisions with other clients.  We store the last characters we
 // generated because in the event of a collision, we'll use those same characters except
 // "incremented" by one.
-const lastRandChars = [];
+const lastRandChars: number[] = [];
 
 const commonUtils = {
-  formatCurrency(amount) {
+  formatCurrency(amount: number) {
     return `$${amount.toFixed(2)}`;
   },
 
@@ -144,15 +145,15 @@ const commonUtils = {
     const currentMoment = moment();
     const currentYear = currentMoment.year();
     // moment/date months start at 0, adding 1 to avoid my confusion
-    const currentMonth = currentMoment.month + 1;
+    const currentMonth = currentMoment.month() + 1;
 
     // if date is in July or later, return the current year
     if (currentMonth >= 7) {
-      return currentYear - 1;
+      return currentYear;
     }
 
     // else return the previous year
-    return currentYear;
+    return currentYear - 1;
   },
 
   getComputedPath(path, pathKey) {

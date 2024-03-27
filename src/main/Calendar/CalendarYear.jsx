@@ -1,11 +1,11 @@
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import { Component } from 'react';
+import {Component} from 'react';
 import {Redirect} from 'react-router';
 import styled from 'styled-components';
 
 import routePaths from '../../routePaths';
-import commonUtils from '../../utils/commonUtils';
+import commonUtils from '../../utils/commonUtils.ts';
 
 import MiniCalendar from './MiniCalendar';
 
