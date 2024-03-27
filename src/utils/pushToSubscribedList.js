@@ -1,4 +1,4 @@
-import '../../firebaseApp';
+import '../firebaseApp';
 import {getDatabase, ref} from 'firebase/database';
 
 import constants from './constants';

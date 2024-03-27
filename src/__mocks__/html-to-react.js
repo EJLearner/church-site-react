@@ -1,10 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import {Parser as HtmlToReactParser} from 'html-to-react';
+import {vi} from 'vitest';
 
- 
-jest.mock('html-to-react', () => {
+vi.mock('html-to-react', () => {
   return {
-     
-    HtmlToReactParser: jest.fn(),
+    HtmlToReactParser: vi.fn(),
   };
 });
