@@ -556,6 +556,13 @@ const bibleComFormattedVerses = {
   '2024-03-28': {verse: 'Isaiah 53.1-6'},
   '2024-03-29': {verse: 'Isaiah 53.7-9'},
   '2024-03-30': {verse: 'Isaiah 53.10-12'},
+  '2024-03-31': {verse: 'Psalm 118.14-24'},
+  '2024-04-01': {verse: 'John 12.1-11'},
+  '2024-04-02': {verse: 'Ezekiel 37.1-14'},
+  '2024-04-03': {verse: 'John 13.21-38'},
+  '2024-04-04': {verse: 'Mark 14.12-26'},
+  '2024-04-05': {verse: 'John 1.18-19'},
+  '2024-04-06': {verse: 'John 2.1-14'},
 };
 
 export {bibleComFormattedVerses};
