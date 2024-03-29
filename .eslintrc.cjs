@@ -6,11 +6,13 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
+    'plugin:@typescript-eslint/recommended',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
+  parser: '@typescript-eslint/parser',
   parserOptions: {ecmaVersion: 'latest', sourceType: 'module'},
   settings: {react: {version: 'detect'}},
-  plugins: ['react-refresh', 'import'],
+  plugins: ['react-refresh', 'import', '@typescript-eslint'],
   rules: {
     'import/first': 'error',
     'import/order': [

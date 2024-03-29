@@ -14,7 +14,7 @@ const mainMenuItems = [
   {text: 'Contact', path: routePaths.MAIN_CONTACT},
 ];
 
-// eslint-disable-next-line no-unused-vars -- may want this later
+// eslint-disable-next-line @typescript-eslint/no-unused-vars -- may want this later
 const StyledAnnouncementBar = styled.div`
   padding: 0.1em;
   background-color: var(--accent-background);
