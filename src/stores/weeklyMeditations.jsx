@@ -1388,4 +1388,40 @@ export default {
       </p>
     ),
   },
+  '2024-03-24': {
+    subTitle: (
+      <>
+        From <i>Unknown</i> by John Wesley
+      </>
+    ),
+    content: (
+      <p>
+        “In the evening I went very unwillingly to a society in Aldersgate
+        Street, where one was reading Luther’s preface to the Epistle to the
+        Romans. About a quarter before nine, while he was describing the change
+        which God works in the heart through faith in Christ, I felt my heart
+        strangely warmed. I felt I did trust in Christ, Christ alone for
+        salvation: And an assurance was given me, that he had taken away my
+        sins, even mine, and saved me from the law of sin and death.”
+      </p>
+    ),
+  },
+  '2024-03-31': {
+    subTitle: (
+      <>
+        From <i>Letters from the Desert</i> by Carlo Carretto
+      </>
+    ),
+    content: (
+      <p>
+        “Astonishing! The Son of God – who, more than anyone else, was free to
+        choose what he would – chose not only a mother and a people, but also a
+        social position. And he wanted to be a wage earner. That Jesus had
+        voluntarily lost himself in an obscure Middle Eastern village;
+        annihilated himself in the daily monotony of thirty years’ rough,
+        miserable work; separated himself from the society that “counts”; and
+        died in total anonymity.”
+      </p>
+    ),
+  },
 };
