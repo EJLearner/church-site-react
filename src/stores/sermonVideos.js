@@ -5,6 +5,12 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-03-28',
+    youtubeId: 'u3sr-MNkk2M',
+    title: 'Maundy Thursday',
+    preacher: PREACHERS.MINISTERS,
+  },
+  {
     date: '2024-03-24',
     youtubeId: 'KSxCVspm-6g',
     title: 'The Setup For A Lifetime!',
