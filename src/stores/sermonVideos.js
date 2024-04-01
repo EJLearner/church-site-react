@@ -5,6 +5,13 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-03-31',
+    youtubeId: 'stYTTkQiV48',
+    title: 'Resurrection: The Key To Everything!!',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'John 11:24-26, Ephesians 2:4-6',
+  },
+  {
     date: '2024-03-28',
     youtubeId: 'u3sr-MNkk2M',
     title: 'Maundy Thursday',
