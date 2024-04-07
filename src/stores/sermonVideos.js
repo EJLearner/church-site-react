@@ -5,6 +5,13 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-04-07',
+    youtubeId: 'RGmubJZr2IE',
+    title: 'Coming In On Broken Pieces',
+    preacher: PREACHERS.T_CURLEY,
+    scripture: 'Luke 22:19 - 20',
+  },
+  {
     date: '2024-03-31',
     youtubeId: 'stYTTkQiV48',
     title: 'Resurrection: The Key To Everything!!',
