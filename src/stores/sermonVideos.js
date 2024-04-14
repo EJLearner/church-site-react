@@ -5,6 +5,14 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-04-14',
+    youtubeId: 'M7saFa5niDQ',
+    title: 'Our Representatives At The Atonement',
+    preacher: PREACHERS.D_NELSON,
+    scripture: 'Matthew 27:15-26',
+    version: BIBLE_VERSIONS.KJV,
+  },
+  {
     date: '2024-04-07',
     youtubeId: 'RGmubJZr2IE',
     title: 'Coming In On Broken Pieces',
