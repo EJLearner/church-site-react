@@ -577,6 +577,13 @@ const bibleComFormattedVerses = {
   '2024-04-18': {verse: 'Galatians 2.11-20'},
   '2024-04-19': {verse: 'Leviticus 26.1-13'},
   '2024-04-20': {verse: 'Acts 4.23-27'},
+  '2024-04-21': {verse: 'Psalm 23'},
+  '2024-04-22': {verse: 'Jeremiah 23'},
+  '2024-04-23': {verse: '1 Peter 5.1-11'},
+  '2024-04-24': {verse: 'Ezekiel 34.11-16'},
+  '2024-04-25': {verse: 'Isaiah 40.9-11'},
+  '2024-04-26': {verse: '1 Timothy 3.1-13'},
+  '2024-04-27': {verse: '2 Corinthians 4'},
 };
 
 export {bibleComFormattedVerses};
