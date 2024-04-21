@@ -1469,4 +1469,27 @@ export default {
       </p>
     ),
   },
+  '2024-04-21': {
+    subTitle: (
+      <>
+        From <i>Letter from the Desert</i> by Carlo Carretto
+      </>
+    ),
+    content: (
+      <p>
+        “Joy or sadness, war or peace, love or hate, purity or impurity, charity
+        or greed, all are tremendous realities which are the hinges of our
+        interior life. Everyday things, relationships with other people, daily
+        work, love of our family – all these may breed saints. Jesus at Nazareth
+        taught us to live every hour of the day as saints. Every hour of the day
+        is useful and may lead to divine inspiration, the will of the Father,
+        the prayer of contemplation – holiness. Every hour of the day is holy.
+        What matters is to live it as Jesus taught us. And for this one does not
+        have to shut oneself in a monastery or fix strange and inhumane regimes
+        for one’s life. It is enough to accept the realities of life. Work is
+        one of these realities; motherhood, the rearing of children, family life
+        with all its obligations are others.”
+      </p>
+    ),
+  },
 };
