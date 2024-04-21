@@ -5,6 +5,12 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-04-21',
+    youtubeId: 'cZP9pIlqzSs',
+    title: 'Stay Ready',
+    preacher: PREACHERS.M_HAMIEL,
+  },
+  {
     date: '2024-04-14',
     youtubeId: 'M7saFa5niDQ',
     title: 'Our Representatives At The Atonement',
