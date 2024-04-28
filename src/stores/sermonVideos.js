@@ -5,6 +5,12 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-04-28',
+    youtubeId: 'zEiduCUDZA8',
+    title: 'The Breakthrough Power Of God',
+    preacher: PREACHERS.D_HICKMAN,
+  },
+  {
     date: '2024-04-21',
     youtubeId: 'cZP9pIlqzSs',
     title: 'Stay Ready',
