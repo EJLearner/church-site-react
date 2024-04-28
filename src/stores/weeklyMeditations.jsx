@@ -1492,4 +1492,24 @@ export default {
       </p>
     ),
   },
+  '2024-04-28': {
+    subTitle: (
+      <>
+        From <i>Visions of a World Hungry</i> by Thomas G. Pettepiece
+      </>
+    ),
+    content: (
+      <p>
+        “James considers it natural that a person with faith also has works. It
+        is not a heavy and moralistic Christian duty; it is the Christian
+        possibility and life-style – response comes with true faith. On this
+        theme, the Bible is clear and direct in both Testaments – God loves and
+        cares for the poor. Jesus said to be perfect. In other words, to be
+        imitators of the perfect God, to do as God does. If we are to love God,
+        we are to love and care for the poor and hungry, too. “You will know
+        them by their fruits” (Matt. 7:16a – RSV) he said, and he meant that we
+        are known by our etherical behavior as illustrated by life experience.”
+      </p>
+    ),
+  },
 };
