@@ -1535,4 +1535,19 @@ export default {
       </p>
     ),
   },
+  '2024-05-12': {
+    subTitle: (
+      <>
+        From <i>Liberation of Life</i> by Harvey and Lois Seifert
+      </>
+    ),
+    content: (
+      <p>
+        “An old rabbi was once asked why so few people were finding God. He
+        wisely replied that people are not willing to look that low. Jesus was
+        born in a stable, and God is especially concerned for the poorest, the
+        lowliest, the lost, and the neglected.”
+      </p>
+    ),
+  },
 };
