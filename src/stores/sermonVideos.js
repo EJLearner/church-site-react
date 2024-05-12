@@ -5,6 +5,12 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-05-12',
+    youtubeId: '1iUdYVIU27Y',
+    title: 'Respect Your Elders As Spiritual Leaders!!!',
+    preacher: PREACHERS.T_CURLEY,
+  },
+  {
     date: '2024-05-05',
     youtubeId: 't_BktTl5h20',
     title: 'Love Your Enemies',
