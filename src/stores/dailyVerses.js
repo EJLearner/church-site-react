@@ -605,6 +605,13 @@ const bibleComFormattedVerses = {
   '2024-05-16': {verse: '1 Corinthians 3.5-23'},
   '2024-05-17': {verse: 'Romans 12.1-21'},
   '2024-05-18': {verse: 'Colossians 3.5-17'},
+  '2024-05-19': {verse: 'Psalm 104.24-34'},
+  '2024-05-20': {verse: 'Acts 2.43-47'},
+  '2024-05-21': {verse: 'Acts 3.1-10'},
+  '2024-05-22': {verse: 'Acts 4.32-37'},
+  '2024-05-23': {verse: 'Zechariah 4.1-10'},
+  '2024-05-24': {verse: 'Ephesians 4.17-5.2'},
+  '2024-05-25': {verse: 'Romans 8.1-17'},
 };
 
 export {bibleComFormattedVerses};
