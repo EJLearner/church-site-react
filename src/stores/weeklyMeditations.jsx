@@ -1571,4 +1571,33 @@ export default {
       </p>
     ),
   },
+  '2024-05-26': {
+    subTitle: (
+      <>
+        From <i>Visions of a World Hungry</i> by Thomas G. Pettepiece
+      </>
+    ),
+    content: (
+      <p>
+        “God, Creator and Author of Life, warned anew of the threats to human
+        survival, we confess that the way we live and order society sets us
+        against one another and alienates us from your creation, exploiting as
+        though dead, things to which you have given life. Separated from you we
+        live in emptiness. We long in our own lives for a new spirituality of
+        intention, thought and action. Help us to struggle to conserve the earth
+        for future generations, and free us to share together, that all may be
+        free. God of love, who through Jesus Christ shares our suffering,
+        forgives our sins, and delivers from the bondage of oppression, help us
+        to desire and nourish in ourselves sustaining community with our
+        brothers and sisters everywhere. Give us courage to share suffering when
+        it comes. Restore to us the joy of Resurrection, that in the midst of
+        situations we can hardly bear we may sing out: HALLELUJAH God of hope,
+        whose spirit gives light and power to your people, empower us to witness
+        to your name in all the nations, to struggle for your own justice
+        against all principalities and powers and to persevere with faith and
+        humor in the tasks that you have given to us. Without you we are
+        powerless. Therefore we cry together: MARANANTHA.”
+      </p>
+    ),
+  },
 };
