@@ -5,6 +5,12 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-05-26',
+    youtubeId: 'IUOVAfozBnY',
+    title: 'Greatest Love',
+    preacher: PREACHERS.D_HICKMAN,
+  },
+  {
     date: '2024-05-19',
     youtubeId: 'pNBXpp4Xs-E',
     title: 'Who’s Managing The Temple!!!',
