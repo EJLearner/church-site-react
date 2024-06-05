@@ -1600,4 +1600,25 @@ export default {
       </p>
     ),
   },
+  '2024-06-02': {
+    subTitle: (
+      <>
+        From <i>The Wounded Healer</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “…I have – found that the very feeling which has seemed to me most
+        private, most personal and hence most incomprehensible by others, has
+        turned out to be an expression for which there is a resonance in many
+        other people. It has led me to believe that what is most personal and
+        unique in each one of us is probably the very element which would, if it
+        were shared or expressed, speak most deeply to others. This has helped
+        me to understand artists and poets who have dared to express the unique
+        in themselves.” It indeed seems that the Christian leader is first of
+        all the artist who can bind together many people by his courage in
+        giving expression to his most personal concern.”
+      </p>
+    ),
+  },
 };
