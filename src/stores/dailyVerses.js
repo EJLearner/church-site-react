@@ -626,6 +626,13 @@ const bibleComFormattedVerses = {
   '2024-06-06': {verse: 'Acts 3.1-10'},
   '2024-06-07': {verse: 'Acts 9.32-42'},
   '2024-06-08': {verse: 'Acts 16.1-18'},
+  '2024-06-09': {verse: 'Psalm 13'},
+  '2024-06-10': {verse: 'Luke 15.1-10'},
+  '2024-06-11': {verse: 'Acts 3.17-26'},
+  '2024-06-12': {verse: 'Ephesians 2.1-10'},
+  '2024-06-13': {verse: 'Romans 6.1-14'},
+  '2024-06-14': {verse: 'Luke 7.36-50'},
+  '2024-06-15': {verse: 'John 4.7-42'},
 };
 
 export {bibleComFormattedVerses};
