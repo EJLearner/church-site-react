@@ -5,6 +5,13 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-06-09',
+    youtubeId: 'ZTtbe2bFBiw',
+    title: 'I Will Give You a Generous Heart',
+    preacher: PREACHERS.T_CURLEY,
+    scripture: 'Luke 6:37-38',
+  },
+  {
     date: '2024-05-26',
     youtubeId: 'IUOVAfozBnY',
     title: 'Greatest Love',
