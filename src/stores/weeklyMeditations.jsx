@@ -1654,4 +1654,16 @@ export default {
       </>
     ),
   },
+  '2024-06-16': {
+    subTitle: <>By Dom Augustin Guillerand</>,
+    content: (
+      <>
+        <p>
+          “God will know how to draw glory even from our faults. Not to be
+          downcast after committing a fault is one of the marks of true
+          sanctity.
+        </p>
+      </>
+    ),
+  },
 };
