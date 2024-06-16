@@ -5,6 +5,14 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-06-16',
+    youtubeId: 'BDTH_mVvFqY',
+    title: 'The Obedient Faithfulness of Sacrifice',
+    preacher: PREACHERS.D_NELSON,
+    scripture: 'Genesis 22:1-12',
+    version: BIBLE_VERSIONS.KJV,
+  },
+  {
     date: '2024-06-09',
     youtubeId: 'ZTtbe2bFBiw',
     title: 'I Will Give You a Generous Heart',
