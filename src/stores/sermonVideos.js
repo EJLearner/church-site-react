@@ -5,6 +5,20 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-06-30',
+    youtubeId: '3X1EejJVl4o',
+    title: 'Best Friend',
+    preacher: PREACHERS.M_HAMIEL,
+    scripture: 'Joshua 1:9',
+  },
+  {
+    date: '2024-06-23',
+    youtubeId: 'xzK3mG64_uI',
+    title: 'From Mount Zion to Juneteenth: A Journey of Liberation',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: ' Isaiah 2:2-3',
+  },
+  {
     date: '2024-06-16',
     youtubeId: 'BDTH_mVvFqY',
     title: 'The Obedient Faithfulness of Sacrifice',
