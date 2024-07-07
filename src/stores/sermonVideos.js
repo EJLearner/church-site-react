@@ -5,6 +5,14 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-07-07',
+    youtubeId: 'Go8g6HvF60Y',
+    title: 'The Melody of Faith!!!',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'Psalm 133:1, Ephesians 4:3, and Colossians 3:14',
+    version: BIBLE_VERSIONS.NRSVUE,
+  },
+  {
     date: '2024-06-30',
     youtubeId: '3X1EejJVl4o',
     title: 'Best Friend',
@@ -16,7 +24,7 @@ const sermonVideos = [
     youtubeId: 'xzK3mG64_uI',
     title: 'From Mount Zion to Juneteenth: A Journey of Liberation',
     preacher: PREACHERS.D_HICKMAN,
-    scripture: ' Isaiah 2:2-3',
+    scripture: 'Isaiah 2:2-3',
   },
   {
     date: '2024-06-16',
