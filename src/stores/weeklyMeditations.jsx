@@ -1682,4 +1682,42 @@ export default {
       </p>
     ),
   },
+  '2024-06-30': {
+    subTitle: (
+      <>
+        From <i>The Cloud of Unknowing</i>
+      </>
+    ),
+    content: (
+      <p>
+        “It is not what you are nor what you have been that God sees with his
+        all-merciful eyes, but what you desire to be. St. Gregory declares that
+        “all holy desires heighten in intensity with the delay of fulfillment,
+        and desire which fades with delay was never holy desire at all.” For if
+        you experience less and less joy when you discover anew the sudden
+        presence of great desires you had formerly pursued, your first desire
+        was not holy desire. Possibly you felt a natural tendency toward the
+        good but this should not be confused with holy desire. St. Augustine
+        explains what I mean by holy desire when he says that “the entire life
+        of a good Christian is nothing less than holy desire.”
+      </p>
+    ),
+  },
+  '2024-07-07': {
+    subTitle: (
+      <>
+        From <i>Something Beautiful for God</i> by Malcolm Muggeridge
+      </>
+    ),
+    content: (
+      <p>
+        “Miracles are unpopular today – to the scientifically minded because
+        they seem to conflict with so-called scientific miracles, like bumping
+        television programmes across the world by satellite, or going to the
+        moon; to the ostensibly religiously minded because they remind them of
+        miraculous claims made in the past and now discredited, which they wish
+        to forget.”
+      </p>
+    ),
+  },
 };
