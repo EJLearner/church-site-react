@@ -1720,4 +1720,21 @@ export default {
       </p>
     ),
   },
+  '2024-07-14': {
+    subTitle: (
+      <>
+        From <i>A Gift for God</i> by Mother Teresa
+      </>
+    ),
+    content: (
+      <p>
+        “Miracles are unpopular today – to the scientifically minded because
+        they seem to conflict with so-called scientific miracles, like bumping
+        television programmes across the world by satellite, or going to the
+        moon; to the ostensibly religiously minded because they remind them of
+        miraculous claims made in the past and now discredited, which they wish
+        to forget.”
+      </p>
+    ),
+  },
 };
