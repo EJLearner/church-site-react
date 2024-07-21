@@ -5,6 +5,20 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-07-21',
+    youtubeId: 'uOUYgclpLCs',
+    title: 'Now Move, Like You Know God’s Got It!!!',
+    preacher: PREACHERS.L_FORD,
+    scripture: 'Psalm 18:28-30',
+  },
+  {
+    date: '2024-07-14',
+    youtubeId: 'RikDfDloBWE ',
+    title: 'I’m “Tard”',
+    preacher: PREACHERS.M_HAMIEL,
+    scripture: 'John 4:6, 31, and 34',
+  },
+  {
     date: '2024-07-07',
     youtubeId: 'Go8g6HvF60Y',
     title: 'The Melody of Faith!!!',
