@@ -1720,4 +1720,41 @@ export default {
       </p>
     ),
   },
+  '2024-07-14': {
+    subTitle: (
+      <>
+        From <i>A Gift for God</i> by Mother Teresa
+      </>
+    ),
+    content: (
+      <p>
+        “Miracles are unpopular today – to the scientifically minded because
+        they seem to conflict with so-called scientific miracles, like bumping
+        television programmes across the world by satellite, or going to the
+        moon; to the ostensibly religiously minded because they remind them of
+        miraculous claims made in the past and now discredited, which they wish
+        to forget.”
+      </p>
+    ),
+  },
+  '2024-07-21': {
+    subTitle: (
+      <>
+        From <i>A Cry for Mercy</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “I call to you, O Lord, from my quiet darkness. Show me your mercy and
+        love. Let me see your face, hear your voice, touch the hem of your
+        cloak. I want to love you, be with you, speak to you and simply stand in
+        your presence. But I cannot make it happen. Pressing my eyes against my
+        hands is not praying, and reading about your presence is not living in
+        it. But there is that moment in which you will come to me, as you did
+        you your fearful disciples, and say, “Do not be afraid; it is I.” Let
+        that moment come soon, O Lord. And if you want to delay it, then make me
+        patient. Amen.”
+      </p>
+    ),
+  },
 };
