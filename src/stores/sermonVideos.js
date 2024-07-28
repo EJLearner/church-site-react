@@ -5,6 +5,14 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-07-28',
+    youtubeId: 'pN0xA-uXYyg',
+    title: 'Stand Strong in the Lord’s Strength',
+    preacher: PREACHERS.T_CURLEY,
+    scripture: 'John 14:27',
+    version: BIBLE_VERSIONS.NRSVUE,
+  },
+  {
     date: '2024-07-21',
     youtubeId: 'uOUYgclpLCs',
     title: 'Now Move, Like You Know God’s Got It!!!',
