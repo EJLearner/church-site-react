@@ -5,6 +5,14 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-08-06',
+    youtubeId: 'YgNDEZT9oG4',
+    title: 'The Same God is Unchanging in the Midst of Evil and Danger',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'Psalm 102:25-27, Malachi 3:6, Hebrews 13:8',
+    version: BIBLE_VERSIONS.ESV,
+  },
+  {
     date: '2024-07-28',
     youtubeId: 'pN0xA-uXYyg',
     title: 'Stand Strong in the Lord’s Strength',
