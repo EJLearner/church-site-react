@@ -1793,4 +1793,28 @@ export default {
       </p>
     ),
   },
+  '2024-08-11': {
+    subTitle: (
+      <>
+        From <i>The Imitation of Christ</i> by Thomas a` Kempis
+      </>
+    ),
+    content: (
+      <p>
+        “Confirm me, Lord, by the grace of the Holy Spirit, and give me grace to
+        be strong inwardly in soul and to cast out from it all unprofitable
+        business of the world and of the flesh, that it may not be led by
+        unstable desires of earthly things. And grant that I may behold all
+        things in this world as they are – transitory and of short abiding, and
+        I myself also to pass away together with them, for nothing under the sun
+        can long abide, but all in vanity and affliction of spirit. Therefore, O
+        Lord, give me true heavenly wisdom, that I may learn to seek you and to
+        find you, and above all things to love you, and to understand and know
+        all other things as they are, after the direction of your wisdom, and
+        not otherwise. And give me grace, also, to withdraw myself from those
+        who flatter me, and patiently to tolerate those who grieve me so that
+        the way I have begun will bring me to a good and blessed ending.”
+      </p>
+    ),
+  },
 };
