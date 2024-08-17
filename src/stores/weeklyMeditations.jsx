@@ -1817,4 +1817,26 @@ export default {
       </p>
     ),
   },
+  '2024-08-18': {
+    subTitle: (
+      <>
+        From <i>Reaching Out</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “Only when we have come in touch with our own life experiences and have
+        learned to listen to our inner cravings for liberation and new life can
+        we realize that Jesus did not just speak, but that he reached out to us
+        in our most personal needs. The Gospel doesn’t just contain ideas worth
+        remembering. It is a message respondent to our individual human
+        condition. The Church is not an institution forcing us to follow its
+        rules. It is a community of people inviting us to still our hunger and
+        thirst at its tables. Doctrines are not alien formulations which we must
+        adhere to but the documentation of the most profound human experiences
+        which, transcending time and place, are handed over from generation to
+        generation as a light in our darkness.”
+      </p>
+    ),
+  },
 };
