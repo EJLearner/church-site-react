@@ -1776,4 +1776,87 @@ export default {
       </p>
     ),
   },
+  '2024-08-04': {
+    subTitle: (
+      <>
+        From <i>The Spiritual Life</i> by Evely Underhill
+      </>
+    ),
+    content: (
+      <p>
+        “We are the agents of the Creative Spirit in this world. Real advance in
+        the spiritual life, then, means accepting this vocation with all it
+        involves. Not merely turning over the pages of an engineering magazine
+        and enjoying the pictures, but putting on overalls and getting on with
+        the job. The real spiritual life must be horizontal as well as vertical;
+        spread more and more as well as aspire more and more.”
+      </p>
+    ),
+  },
+  '2024-08-11': {
+    subTitle: (
+      <>
+        From <i>The Imitation of Christ</i> by Thomas a` Kempis
+      </>
+    ),
+    content: (
+      <p>
+        “Confirm me, Lord, by the grace of the Holy Spirit, and give me grace to
+        be strong inwardly in soul and to cast out from it all unprofitable
+        business of the world and of the flesh, that it may not be led by
+        unstable desires of earthly things. And grant that I may behold all
+        things in this world as they are – transitory and of short abiding, and
+        I myself also to pass away together with them, for nothing under the sun
+        can long abide, but all in vanity and affliction of spirit. Therefore, O
+        Lord, give me true heavenly wisdom, that I may learn to seek you and to
+        find you, and above all things to love you, and to understand and know
+        all other things as they are, after the direction of your wisdom, and
+        not otherwise. And give me grace, also, to withdraw myself from those
+        who flatter me, and patiently to tolerate those who grieve me so that
+        the way I have begun will bring me to a good and blessed ending.”
+      </p>
+    ),
+  },
+  '2024-08-18': {
+    subTitle: (
+      <>
+        From <i>Reaching Out</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “Only when we have come in touch with our own life experiences and have
+        learned to listen to our inner cravings for liberation and new life can
+        we realize that Jesus did not just speak, but that he reached out to us
+        in our most personal needs. The Gospel doesn’t just contain ideas worth
+        remembering. It is a message respondent to our individual human
+        condition. The Church is not an institution forcing us to follow its
+        rules. It is a community of people inviting us to still our hunger and
+        thirst at its tables. Doctrines are not alien formulations which we must
+        adhere to but the documentation of the most profound human experiences
+        which, transcending time and place, are handed over from generation to
+        generation as a light in our darkness.”
+      </p>
+    ),
+  },
+  '2024-08-25': {
+    subTitle: (
+      <>
+        From <i>Meditations of a Hermit</i> by Charles de Foucauld
+      </>
+    ),
+    content: (
+      <p>
+        “The hour in our life in which we are best employed is the hour in which
+        we best love Jesus. A soul does good to others not in the measure of its
+        knowledge or intelligence but in that of its holiness. For me, all men
+        should be enveloped, in God’s sight, in the same love and the same
+        indifference. I must no more trouble about health or life than a tree
+        troubles about a failing leaf. I must remember only Jesus, think only of
+        Jesus, estimating as a gain any loss at the price of which I have more
+        room in myself for thought and knowledge of Jesus, beside whom
+        everything else is nothing. I must reserve all my strength for Jesus.”
+      </p>
+    ),
+  },
 };
