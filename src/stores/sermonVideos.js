@@ -5,7 +5,38 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
-    date: '2024-08-06',
+    date: '2024-09-01',
+    youtubeId: 'LJh8IQ8N_ac',
+    title: 'Victory is Ours',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: '1 Corinthians 15:57-58',
+    version: BIBLE_VERSIONS.NRSV,
+  },
+  {
+    date: '2024-08-25',
+    youtubeId: 'WrImBvH0xl8',
+    title: 'I’m Expecting Great Things!!!!',
+    preacher: 'Min. Sequoia Wright',
+    scripture: 'Isiah 43:18-19',
+  },
+  {
+    date: '2024-08-18',
+    youtubeId: '6ZT_E-SO9rc',
+    title: 'Don’t Let Go!!!',
+    preacher: 'Rev. Donald L Wright, Jr',
+    scripture: 'Psalm 27:1 - 3',
+    version: BIBLE_VERSIONS.NKJV,
+  },
+  {
+    date: '2024-08-11',
+    youtubeId: 'IfJvdbLeWAk',
+    title: 'It’s Okay to Cry!',
+    preacher: 'Pastor Jammie Pendleton',
+    scripture: 'John 11:33-36',
+    version: BIBLE_VERSIONS.NRSV,
+  },
+  {
+    date: '2024-08-04',
     youtubeId: 'YgNDEZT9oG4',
     title: 'The Same God is Unchanging in the Midst of Evil and Danger',
     preacher: PREACHERS.D_HICKMAN,
