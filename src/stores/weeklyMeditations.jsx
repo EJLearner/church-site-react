@@ -1859,4 +1859,22 @@ export default {
       </p>
     ),
   },
+  '2024-09-08': {
+    subTitle: (
+      <>
+        From <i>Doctor Johnson’s Prayers</i> by Elton Trueblood
+      </>
+    ),
+    content: (
+      <p>
+        “Almighty and most merciful Father, whose clemency I now presume to
+        implore, after a long life of carelessness and wickedness, have mercy
+        upon me. I have committed many trespasses; I have neglected many duties.
+        I have done what Thou hast forbidden, and left undone what thou hast
+        commanded. Forgive, merciful Lord, my sins, negligences, and ignorances
+        and enable me, by the Holy Spirit, to amend my life according to thy
+        Holy Word, for Jesus Christ’s sake. Amen.”
+      </p>
+    ),
+  },
 };
