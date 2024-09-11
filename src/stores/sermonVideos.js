@@ -5,6 +5,13 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-09-08',
+    youtubeId: 'YJ6XPOmBEUY',
+    title: 'Keep The Fire Burning!!!',
+    preacher: PREACHERS.L_FORD,
+    scripture: 'Leviticus 6:12-13',
+  },
+  {
     date: '2024-09-01',
     youtubeId: 'LJh8IQ8N_ac',
     title: 'Victory is Ours',
