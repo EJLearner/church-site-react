@@ -710,6 +710,13 @@ const bibleComFormattedVerses = {
   '2024-08-29': {verse: 'Matthew 8.18-27'},
   '2024-08-30': {verse: 'Luke 5.27-39'},
   '2024-08-31': {verse: 'John 12.20-36'},
+  '2024-09-08': {verse: 'Psalm 115.1-11'},
+  '2024-09-09': {verse: 'Acts 10.34-43'},
+  '2024-09-10': {verse: '1 John 2.1-17'},
+  '2024-09-11': {verse: '2 Corinthians 3.2-3'},
+  '2024-09-12': {verse: 'Luke 6.27-36'},
+  '2024-09-13': {verse: 'Luke 6.37-42'},
+  '2024-09-14': {verse: 'Luke 17.1-6'},
 };
 
 export {bibleComFormattedVerses};
