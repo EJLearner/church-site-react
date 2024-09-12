@@ -717,6 +717,13 @@ const bibleComFormattedVerses = {
   '2024-09-12': {verse: 'Luke 6.27-36'},
   '2024-09-13': {verse: 'Luke 6.37-42'},
   '2024-09-14': {verse: 'Luke 17.1-6'},
+  '2024-09-15': {verse: 'Psalm 19.7-14'},
+  '2024-09-16': {verse: 'John 5.1-15'},
+  '2024-09-17': {verse: 'John 8.1-11'},
+  '2024-09-18': {verse: 'Psalm 25'},
+  '2024-09-19': {verse: 'Ephesians 2'},
+  '2024-09-20': {verse: 'Romans 6.1-14'},
+  '2024-09-21': {verse: 'Romans 3.21-31'},
 };
 
 export {bibleComFormattedVerses};
