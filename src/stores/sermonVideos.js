@@ -5,6 +5,13 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-09-15',
+    youtubeId: 'mkzQ9h6ntEc',
+    title: 'Initiation Into Christianity!!!',
+    preacher: PREACHERS.D_NELSON,
+    scripture: 'Matthew 16: 24-26',
+  },
+  {
     date: '2024-09-08',
     youtubeId: 'YJ6XPOmBEUY',
     title: 'Keep The Fire Burning!!!',
