@@ -5,6 +5,14 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-09-22',
+    youtubeId: 'uG3FQOosj2E',
+    title: 'Joyful Expectations',
+    preacher: PREACHERS.T_CURLEY,
+    scripture: 'Psalm 34: 6-7',
+    version: BIBLE_VERSIONS.NRSVUE,
+  },
+  {
     date: '2024-09-15',
     youtubeId: 'mkzQ9h6ntEc',
     title: 'Initiation Into Christianity!!!',
