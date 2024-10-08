@@ -53,6 +53,7 @@ const constants = {
     NRSV: 'NRSV',
     NLT: 'NLT',
     NRSVUE: 'NRSVUE',
+    MSG: 'MSG',
   },
 
   BIBLE_VERSIONS_INFO: {
@@ -66,6 +67,7 @@ const constants = {
       long: 'New Revised Standard Version UPDATED EDITION',
       short: 'NRSVUE',
     },
+    MSG: {long: 'The Message Bible', short: 'MSG'},
   },
 
   SLENDER_ARROW_LEFT: '‹',

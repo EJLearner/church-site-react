@@ -5,6 +5,14 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-10-06',
+    youtubeId: 'i5yUCzmh_Ms',
+    title: 'God Gives Us Salt & Light IN The Darkness',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'Matthew 5:13-16',
+    version: BIBLE_VERSIONS.MSG,
+  },
+  {
     date: '2024-09-22',
     youtubeId: 'uG3FQOosj2E',
     title: 'Joyful Expectations',
