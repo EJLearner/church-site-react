@@ -731,6 +731,13 @@ const bibleComFormattedVerses = {
   '2024-09-26': {verse: 'Ephesians 3.1-20'},
   '2024-09-27': {verse: '2 Corinthians 6.1-10'},
   '2024-09-28': {verse: '1 Corinthians 4.1-13'},
+  '2024-09-29': {verse: 'Psalm 99'},
+  '2024-09-30': {verse: '1 Kings 17'},
+  '2024-10-01': {verse: 'Luke 12.1-21'},
+  '2024-10-02': {verse: 'Luke 12.22-32'},
+  '2024-10-03': {verse: '1 Timothy 6.1-19'},
+  '2024-10-04': {verse: '2 Corinthians 10.1-18'},
+  '2024-10-05': {verse: 'Philippians 4.10-19'},
 };
 
 export {bibleComFormattedVerses};
