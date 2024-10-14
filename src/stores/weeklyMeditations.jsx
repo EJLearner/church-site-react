@@ -1937,4 +1937,32 @@ export default {
       </p>
     ),
   },
+  '2024-10-13': {
+    subTitle: (
+      <>
+        From <i>The Captivating Presence</i> by Albert Edward Day
+      </>
+    ),
+    content: (
+      <p>
+        “I came to a new understanding why Jesus passed up the religious
+        establishment of his day, the economically secure, the socially
+        prestigious, and sought out the poor, the outcast, the sinner, the
+        broken, the sick, the lonely. He felt, as we so often do not feel, their
+        sorrow. He was acquainted, as we too seldom are, with their grief. On
+        Calvary he died of a broken heart. But that heart was broken long before
+        Black Friday, by the desolation of the common people. “In all their
+        afflictions he was afflicted.” Most of the time we are not. We seem to
+        have quite a different conception of life. We avoid as much as possible
+        the unpleasant. We shun the suffering of others. We shrink from any
+        burdens except those which life itself inescapably thrusts upon us. We
+        seek arduously the wealth and power that will enable us to secure
+        ourselves against the possibility of being involved with another’s
+        affliction. Lazarus sometimes makes his way to our door step. We toss
+        him a coin and go on our way. We give our charities but we do not give
+        ourselves. We build our charitable institutions but we do not build
+        ourselves into other’s lives.”
+      </p>
+    ),
+  },
 };
