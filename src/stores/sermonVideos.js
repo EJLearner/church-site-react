@@ -5,6 +5,13 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-10-13',
+    youtubeId: 'LkfIFbLU0Nc',
+    title: 'They Wont See You Coming!!!',
+    preacher: PREACHERS.L_FORD,
+    scripture: '2 Kings 7:3-7',
+  },
+  {
     date: '2024-10-06',
     youtubeId: 'i5yUCzmh_Ms',
     title: 'God Gives Us Salt & Light IN The Darkness',
