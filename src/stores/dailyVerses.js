@@ -745,6 +745,13 @@ const bibleComFormattedVerses = {
   '2024-10-17': {verse: 'Hebrews 8.1-12'},
   '2024-10-18': {verse: 'Hebrews 13.1-21'},
   '2024-10-19': {verse: 'John 15.1-17'},
+  '2024-10-20': {verse: 'Psalm 146'},
+  '2024-10-21': {verse: 'Matthew 10.1-15'},
+  '2024-10-22': {verse: 'Matthew 10.16-23'},
+  '2024-10-23': {verse: 'Matthew 10.24-42'},
+  '2024-10-24': {verse: '2 Corinthians 11.7-12.10'},
+  '2024-10-25': {verse: '2 Corinthians 4.1-6'},
+  '2024-10-26': {verse: '2 Timothy 2.14-26'},
 };
 
 export {bibleComFormattedVerses};
