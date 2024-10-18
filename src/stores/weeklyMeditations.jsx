@@ -1965,4 +1965,26 @@ export default {
       </p>
     ),
   },
+  '2024-10-20': {
+    subTitle: (
+      <>
+        From <i>The New Man for Our Time</i> by Elton Trueblood
+      </>
+    ),
+    content: (
+      <p>
+        “Because we cannot reasonably expect to erect a constantly expanding
+        structure of social activism upon a constantly diminishing foundation of
+        faith, attention to the cultivation of the inner life is our first order
+        of business, even in a period of rapid social change. The Church, if it
+        is to affect the world, must become a center from which new spiritual
+        power emanates. While the Church must be secular in the sense that it
+        operates in the world, if it is only secular it will not have the
+        desired effect upon the secular order which it is called upon to
+        penetrate. With no diminution of concern for people, we can and must
+        give new attention to the production of a trustworthy religious
+        experience.”
+      </p>
+    ),
+  },
 };
