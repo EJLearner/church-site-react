@@ -5,6 +5,14 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-10-20',
+    youtubeId: 'iux6ZZEs-14',
+    title: 'Lost....Then Found!!!',
+    preacher: PREACHERS.D_NELSON,
+    scripture: '2 Chronicles 7:11-15',
+    version: BIBLE_VERSIONS.KJV,
+  },
+  {
     date: '2024-10-13',
     youtubeId: 'LkfIFbLU0Nc',
     title: 'They Wont See You Coming!!!',
