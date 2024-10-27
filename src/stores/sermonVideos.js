@@ -5,6 +5,13 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-10-27',
+    youtubeId: '8FlVEnP6Qlw',
+    title: 'Trusting in the Slow Work of God',
+    preacher: 'Rev. Pamula Yerby Hammack',
+    scripture: 'Isaiah 40:31',
+  },
+  {
     date: '2024-10-20',
     youtubeId: 'iux6ZZEs-14',
     title: 'Lost....Then Found!!!',
