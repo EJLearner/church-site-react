@@ -1,3 +1,4 @@
+// keeping this file as a temporary archive wile new verse/mediation strategy is confirmed
 export default {
   '2022-12-11': {
     subTitle: (
