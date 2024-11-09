@@ -5,6 +5,13 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-11-03',
+    youtubeId: '2qri4J35V9M',
+    title: 'How We Win The Civil, I Mean, The Spiritual War!',
+    preacher: PREACHERS.M_HAMIEL,
+    scripture: 'Matthew 26:20 - 29',
+  },
+  {
     date: '2024-10-27',
     youtubeId: '8FlVEnP6Qlw',
     title: 'Trusting in the Slow Work of God',
