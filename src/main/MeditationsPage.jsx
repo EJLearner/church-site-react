@@ -108,9 +108,12 @@ function getVersesContent() {
 
 function renderMeditationContent() {
   const sundayOfYearIndex = getSundayOfYearIndex(currentWeekDates[0].date);
+  // the array doesn't seem to be perfectly setup for the year, this should be fixed
+  // until then, the offset is needed for this calendar and should be checked for the new year
+  const indexToUse = sundayOfYearIndex - 2;
 
   const {subTitle: subTitle, content: content} =
-    weeklyMeditationsYear[sundayOfYearIndex] || {};
+    weeklyMeditationsYear[indexToUse] || {};
 
   if (content) {
     return (
