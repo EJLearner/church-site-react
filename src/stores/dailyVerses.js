@@ -760,6 +760,20 @@ const bibleComFormattedVerses = {
   '2024-10-31': {verse: 'Romans 13.1-10'},
   '2024-11-01': {verse: '1 Peter 3.8-12'},
   '2024-11-02': {verse: 'Philippians 2.1-18'},
+  // '2024-11-03': {verse: 'Psalm 128'},
+  // '2024-11-04': {verse: 'Isaiah 57.4-21'},
+  // '2024-11-05': {verse: 'Zephaniah 3'},
+  // '2024-11-06': {verse: '2 Chronicles 7.11-22'},
+  // '2024-11-07': {verse: 'Romans 13.1-10'},
+  // '2024-11-08': {verse: '1 Peter 3.8-12'},
+  // '2024-11-09': {verse: 'Philippians 2.1-18'},
+  '2024-11-10': {verse: 'Psalm 146'},
+  '2024-11-11': {verse: 'Luke 12.35-59'},
+  '2024-11-12': {verse: 'Hebrews 11.32-12.2'},
+  '2024-11-13': {verse: '1 Peter 1.3-9'},
+  '2024-11-14': {verse: 'Acts 17.16-34'},
+  '2024-11-15': {verse: 'John 11.1-44'},
+  '2024-11-16': {verse: '1 Corinthians 15.51-58'},
 };
 
 export {bibleComFormattedVerses};

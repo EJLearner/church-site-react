@@ -3,10 +3,10 @@ import {Fragment} from 'react';
 import styled from 'styled-components';
 
 import choir from '../assets/images/choir.jpg';
-import {bibleComFormattedVerses} from '../stores/dailyVersesYear';
-import weeklyMeditationsYear from '../stores/weeklyMeditationsYear';
+import {bibleComFormattedVerses} from '../stores/dailyVerses';
+import weeklyMeditations from '../stores/weeklyMeditations';
 import constants from '../utils/constants';
-import {getStartOfWeek, getSundayOfYearIndex} from '../utils/dateTimeUtils';
+import {getStartOfWeek} from '../utils/dateTimeUtils';
 
 import MainMenubar from './commonComponents/MainMenubar';
 import Verse from './commonComponents/Verse';
@@ -76,8 +76,7 @@ const currentWeekDates = getCurrentWeekDates();
 
 function getVersesContent() {
   const sundayDate = currentWeekDates[0].date;
-  const sundayOfYearIndex = getSundayOfYearIndex(sundayDate);
-  if (!bibleComFormattedVerses[sundayOfYearIndex]) {
+  if (!bibleComFormattedVerses[sundayDate]) {
     return (
       <>
         <h2>Content unavailable</h2>
@@ -86,9 +85,8 @@ function getVersesContent() {
     );
   }
 
-  const verses = currentWeekDates.map(({date, day}, index) => {
-    const {verse, referenceText} =
-      bibleComFormattedVerses?.[sundayOfYearIndex]?.[index] ?? {};
+  const verses = currentWeekDates.map(({date, day}) => {
+    const {verse, referenceText} = bibleComFormattedVerses?.[date] ?? {};
 
     return (
       <Fragment key={date}>
@@ -107,13 +105,8 @@ function getVersesContent() {
 }
 
 function renderMeditationContent() {
-  const sundayOfYearIndex = getSundayOfYearIndex(currentWeekDates[0].date);
-  // the array doesn't seem to be perfectly setup for the year, this should be fixed
-  // until then, the offset is needed for this calendar and should be checked for the new year
-  const indexToUse = sundayOfYearIndex - 2;
-
   const {subTitle: subTitle, content: content} =
-    weeklyMeditationsYear[indexToUse] || {};
+    weeklyMeditations[currentWeekDates[0].date] || {};
 
   if (content) {
     return (

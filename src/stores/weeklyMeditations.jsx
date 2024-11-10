@@ -2010,4 +2010,73 @@ export default {
       </p>
     ),
   },
+  '2024-11-10': {
+    subTitle: <>by Jesuit Father Luís Espinal</>,
+    content: (
+      <>
+        <p>
+          There are Christians who have hysterical reactions, as if the world
+          would have slipped out of God’s hands. They act violently as if they
+          were risking everything. But we believe in history; the world is not a
+          roll of the dice going toward chaos. A new world has begun to happen
+          since Christ has risen...
+        </p>
+        <p>
+          Jesus Christ, we rejoice in your definitive triumph...
+          <br />
+          with our bodies still in the breach
+          <br />
+          and our souls in tension,
+          <br />
+          we cry out our first “Hurrah!”
+          <br />
+          till eternity unfolds itself.
+        </p>
+        <p>
+          Your sorrow now has passed.
+          <br />
+          Your enemies have failed.
+          <br />
+          You are a definitive smile for humankind.
+        </p>
+        <p>
+          What matter the wait now for us?
+          <br />
+          We accept the struggle and the death;
+          <br />
+          because you, our love, will not die!
+        </p>
+        <p>
+          We march behind you, on the road to the future.
+          <br />
+          You are with us and you are our immortality!
+        </p>
+        <p>
+          Take away the sadness from our faces.
+          <br />
+          We are not in a game of chance...
+          <br />
+          you have the last word!
+        </p>
+        <p>
+          Beyond the crushing of our bones,
+          <br />
+          now has begun the eternal “alleluia!”
+          <br />
+          From the thousand openings of our wounded bodies
+          <br />
+          and souls there arises now a triumphal song!
+        </p>
+        <p>
+          So, teach us to give voice to your new life throughout
+          <br />
+          all the world.
+          <br />
+          Because you dry the tears from the eyes of the
+          <br />
+          oppressed forever...
+        </p>
+      </>
+    ),
+  },
 };
