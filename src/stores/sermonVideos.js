@@ -5,6 +5,13 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-11-10',
+    youtubeId: 'TSPtlYEeo0w',
+    title: 'In God We Trust and Have Victory!',
+    preacher: PREACHERS.D_HICKMAN,
+    scripture: 'Psalm 33:17-22',
+  },
+  {
     date: '2024-11-03',
     youtubeId: '2qri4J35V9M',
     title: 'How We Win The Civil, I Mean, The Spiritual War!',
