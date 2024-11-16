@@ -19,6 +19,10 @@ const ADMIN_PATHS = {
   ADMIN_VBS: `${ADMIN_PATH}vbs/`,
 };
 
+const PASTOR_APPLICATION_PATHS = {
+  PASTOR_APPLICATION: '/pastor-application/',
+};
+
 const MAIN_HOME_PATH = '/';
 
 const MAIN_ROOT_PATHS = {
@@ -137,6 +141,7 @@ const ALL_PATHS = {
   ...CE_VISION_PATHS,
   ...CE_WHO_PATHS,
   ...CE_YOUTH_PATHS,
+  ...PASTOR_APPLICATION_PATHS,
 };
 
 const routePaths =

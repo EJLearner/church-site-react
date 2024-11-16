@@ -16,6 +16,7 @@ const BUTTON_COLORS = {
 };
 
 const StyledButton = styled.button`
+  border: none;
   box-shadow: none;
   min-width: 80px;
   min-height: 30px;
@@ -41,12 +42,7 @@ const StyledButton = styled.button`
   }
 
   &.oval-button {
-    border: none;
     border-radius: 15px;
-  }
-
-  &.rect-button {
-    border: none;
   }
 
   &.disabled {
@@ -125,6 +121,9 @@ Button.propTypes = {
   type: PropTypes.string,
   value: PropTypes.string,
 };
+
+Button.SHAPES = SHAPES;
+Button.BUTTON_COLORS = BUTTON_COLORS;
 
 export {SHAPES, BUTTON_COLORS};
 export default Button;
