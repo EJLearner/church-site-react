@@ -1,3 +1,5 @@
+import {faSpinner} from '@fortawesome/free-solid-svg-icons/faSpinner';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import {useState, useEffect} from 'react';
 import styled from 'styled-components';
@@ -25,7 +27,7 @@ const LOAD_STATES = {
 function LoadingMessage() {
   return (
     <div>
-      <i className="fa fa-spinner fa-pulse" /> Loading Passage
+      <FontAwesomeIcon icon={faSpinner} spin /> Loading Passage
     </div>
   );
 }

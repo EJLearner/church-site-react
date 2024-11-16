@@ -18,6 +18,8 @@ const GlobalStyle = createGlobalStyle`
     --charcoal-grey: rgb(38, 38, 38);
     --maroon: rgb(142, 19, 27);
     --light-blue: rgb(51, 204, 204);
+    --application-blue: rgb(0, 112, 192);
+    --application-gray: rgb(229, 229, 229);
 
     --background: var(--black);
     --content: var(--white);

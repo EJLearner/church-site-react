@@ -1,3 +1,6 @@
+import {faCaretLeft} from '@fortawesome/free-solid-svg-icons/faCaretLeft';
+import {faCaretRight} from '@fortawesome/free-solid-svg-icons/faCaretRight';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import _ from 'lodash';
 import moment from 'moment';
 import PropTypes from 'prop-types';
@@ -265,11 +268,19 @@ class CalendarMonth extends Component {
           </div>
           <div className="month-arrows">
             <button onClick={this.monthBack}>
-              <i className="fa fa-caret-left fa-lg" title="Previous Month" />
+              <FontAwesomeIcon
+                icon={faCaretLeft}
+                size="lg"
+                title="Previous Month"
+              />
             </button>
             <h2>{this.state.selectedMoment.format('MMMM')}</h2>
             <button onClick={this.monthForward}>
-              <i className="fa fa-caret-right fa-lg" title="Next Month" />
+              <FontAwesomeIcon
+                icon={faCaretRight}
+                size="lg"
+                title="Next Month"
+              />
             </button>
           </div>
           <div className="empty-space" />

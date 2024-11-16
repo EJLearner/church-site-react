@@ -1,3 +1,6 @@
+import {faAngleDoubleLeft} from '@fortawesome/free-solid-svg-icons/faAngleDoubleLeft';
+import {faAngleDoubleRight} from '@fortawesome/free-solid-svg-icons/faAngleDoubleRight';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import {Component} from 'react';
@@ -205,16 +208,16 @@ class MiniCalendar extends Component {
 
   renderControls(control) {
     if (!this.props.yearDisplayMode) {
-      let direction;
+      let icon;
       let addition;
       let previousOrNext;
 
       if (control === CONTROLS.PREV) {
-        direction = 'left';
+        icon = faAngleDoubleLeft;
         addition = -1;
         previousOrNext = 'previous';
       } else {
-        direction = 'right';
+        icon = faAngleDoubleRight;
         addition = 1;
         previousOrNext = 'next';
       }
@@ -224,7 +227,7 @@ class MiniCalendar extends Component {
           onClick={() => this.addMonth(addition)}
           title={`Change to ${previousOrNext} month.`}
         >
-          <i className={`fa fa-angle-double-${direction}`} />
+          <FontAwesomeIcon icon={icon} />
         </button>
       );
     }

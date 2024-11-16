@@ -1,3 +1,5 @@
+import {faAngleDoubleDown} from '@fortawesome/free-solid-svg-icons/faAngleDoubleDown';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {useState} from 'react';
 import styled from 'styled-components';
 
@@ -243,8 +245,8 @@ function renderShowMore(setArchiveVideoShowCount, archiveVideoShowCount) {
       <PlainButton
         onClick={() => setArchiveVideoShowCount(archiveVideoShowCount + 10)}
       >
-        <i className="fa fa-angle-double-down" /> Show More Videos{' '}
-        <i className="fa fa-angle-double-down" />
+        <FontAwesomeIcon icon={faAngleDoubleDown} /> Show More Videos{' '}
+        <FontAwesomeIcon icon={faAngleDoubleDown} />
       </PlainButton>
     </div>
   );

@@ -1,3 +1,5 @@
+import {faExclamationTriangle} from '@fortawesome/free-solid-svg-icons/faExclamationTriangle';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 
 const ErrorList = (props) => {
@@ -7,7 +9,7 @@ const ErrorList = (props) => {
 
   return (
     <div className="error-list">
-      <i className="fa fa-exclamation-triangle" />
+      <FontAwesomeIcon icon={faExclamationTriangle} />
       Oops, there were some errors!
       <ul>{errorList}</ul>
     </div>

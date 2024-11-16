@@ -131,8 +131,6 @@ class Admin extends Component {
   }
 
   renderContent() {
-    // return 'blah';
-
     const {user} = this.state;
 
     if (user) {
