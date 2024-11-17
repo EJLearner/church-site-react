@@ -1,17 +1,21 @@
-import {faFacebook} from '@fortawesome/free-brands-svg-icons/faFacebook';
-import {faFacebookMessenger} from '@fortawesome/free-brands-svg-icons/faFacebookMessenger';
-import {faLinkedin} from '@fortawesome/free-brands-svg-icons/faLinkedin';
-import {faTwitter} from '@fortawesome/free-brands-svg-icons/faTwitter';
-import {faWhatsapp} from '@fortawesome/free-brands-svg-icons/faWhatsapp';
+import {faFacebookF} from '@fortawesome/free-brands-svg-icons/faFacebookF';
+import {faLinkedinIn} from '@fortawesome/free-brands-svg-icons/faLinkedinIn';
+import {faXTwitter} from '@fortawesome/free-brands-svg-icons/faXTwitter';
 import {faEnvelope} from '@fortawesome/free-solid-svg-icons/faEnvelope';
+import {faShare} from '@fortawesome/free-solid-svg-icons/faShare';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import {Popover} from 'react-tiny-popover';
 import styled from 'styled-components';
+
+import circleCtLogo from '../assets/images/circlectlogo-black.png';
 
 import Button from './commonComponents/Button/Button';
 
 const StyledPastorApplicationPage = styled.div`
+  --application-blue: rgb(0, 112, 192);
+  --application-gray: rgb(229, 229, 229);
+
   background-color: var(--application-gray);
   color: var(--text-on-light-background);
   padding-bottom: var(--page-bottom-padding);
@@ -31,45 +35,65 @@ const StyledPastorApplicationPage = styled.div`
     justify-content: center;
   }
 
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+    padding: 1em;
+
+    img {
+      height: 3rem;
+    }
+  }
+
   main {
     margin-top: 6em;
     background-color: var(--light-background);
     padding: 1em;
     position: relative;
-    width: 40%;
+    width: clamp(500px, 50%, 800px);
+    box-shadow: 3px -3px 10px rgba(0, 0, 0, 0.8);
   }
 
   section {
     margin-bottom: 1em;
   }
 
+  .header-and-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .share-and-apply-wrapper {
-    position: absolute;
-    right: 3em;
-    top: 3em;
+    button {
+      padding: 1em;
+    }
   }
 
   .share-button {
     background-color: var(--application-gray);
     border: none;
+    border-radius: 16px;
     font-weight: bold;
     box-shadow: none;
     min-width: 80px;
     min-height: 30px;
+    transition: all 0.05s;
+
+    svg {
+      margin-right: 0.5em;
+      color: var(--application-blue);
+    }
 
     &:hover {
       cursor: pointer;
+      scale: 1.05;
     }
   }
 
-  .share-options {
-    background-color: var(--light-background);
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-
   .apply-button {
+    border-radius: 4px;
     background-color: var(--application-blue);
     color: var(--text-on-dark-background);
     font-weight: bold;
@@ -90,60 +114,150 @@ const StyledPastorApplicationPage = styled.div`
   }
 `;
 
+// had to separate out because react-tiny-popover doesnt' render this
+// within the parent context
+const StyledShareList = styled.ul`
+  background-color: var(--light-background);
+  border: 1px solid var(--application-gray);
+  border-radius: 6px;
+  list-style-type: none;
+  padding: 0.5em 1em;
+  margin: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+
+  svg {
+    margin-right: 0.75rem;
+    color: rgb(149, 161, 185);
+  }
+
+  li {
+    padding: 0.5em;
+  }
+
+  li a {
+    color: var(--text-on-light-background);
+  }
+`;
+
 const PastorApplicationPage = () => {
+  const emailAnchorRef = useRef(null);
   const [shouldShowShareItems, setShouldShowShareItems] = useState(false);
+
+  // focus on email anchor when share items pop up
+  useEffect(() => {
+    if (shouldShowShareItems) {
+      emailAnchorRef?.current?.focus?.();
+    }
+  }, [shouldShowShareItems]);
+
+  const shareSubject = encodeURIComponent('The City Temple Pastor Application');
+
+  const shareUrl = encodeURIComponent(
+    'https://thecitytemple.org/pastor-application/',
+  );
+
+  const shareDescription = encodeURIComponent(
+    'The City Temple is Searching for a Pastor. Apply or share if Interested: https://thecitytemple.org/pastor-application/',
+  );
 
   return (
     <StyledPastorApplicationPage>
       <header>
-        {/* todo add logo */}
-        {/* <img src={logo} /> */}
+        <img src={circleCtLogo} />
         The City Temple of Baltimore (Baptist)
       </header>
       <div className="main-wrapper">
         <main>
-          <h2>Senior Pastor Position</h2>
-          <div className="share-and-apply-wrapper">
-            <Popover
-              isOpen={shouldShowShareItems}
-              positions={['bottom', 'left', 'right', 'top']}
-              content={
-                <div>
-                  <ul className="share-options">
-                    <li>
-                      <FontAwesomeIcon icon={faEnvelope} /> Email
-                    </li>
-                    <li>
-                      <FontAwesomeIcon icon={faFacebookMessenger} /> Messenger
-                    </li>
-                    <li>
-                      <FontAwesomeIcon icon={faFacebook} /> Facebook
-                    </li>
-                    <li>
-                      <FontAwesomeIcon icon={faTwitter} /> Twitter
-                    </li>
-                    <li>
-                      <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
-                    </li>
-                    <li>
-                      <FontAwesomeIcon icon={faWhatsapp} /> WhatsApp
-                    </li>
-                  </ul>
-                </div>
-              }
-            >
-              <button
-                className="share-button"
-                onClick={() => {
-                  return setShouldShowShareItems(!shouldShowShareItems);
-                }}
+          <div className="header-and-buttons">
+            <h2>Senior Pastor Position</h2>
+            <div className="share-and-apply-wrapper">
+              <Popover
+                padding={10}
+                isOpen={shouldShowShareItems}
+                onClickOutside={() => setShouldShowShareItems(false)}
+                onBlurOutside={() => setShouldShowShareItems(false)}
+                positions={['bottom', 'left', 'right', 'top']}
+                content={
+                  <div>
+                    <StyledShareList
+                      onBlur={(event) => {
+                        const blurDestination = event.relatedTarget;
+                        // if ul does not contain the blur destination, close share popup
+                        if (
+                          !blurDestination ||
+                          !blurDestination.closest('ul')
+                        ) {
+                          setShouldShowShareItems(false);
+                        }
+                      }}
+                    >
+                      <li>
+                        <a
+                          href={`mailto:?subject=${shareSubject}&body=${shareDescription}`}
+                          target="_blank"
+                          title="Send email"
+                          ref={emailAnchorRef}
+                          tabIndex={2}
+                        >
+                          <FontAwesomeIcon icon={faEnvelope} size="lg" />
+                          Email
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}&quote=${shareSubject}`}
+                          title="Share on Facebook"
+                          target="_blank"
+                          tabIndex={3}
+                        >
+                          <FontAwesomeIcon icon={faFacebookF} size="lg" />
+                          Facebook
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href={`https://x.com/intent/tweet?source=${shareUrl}&text=${shareSubject}:%20${shareUrl}`}
+                          target="_blank"
+                          title="Post on X"
+                          tabIndex={4}
+                        >
+                          <FontAwesomeIcon icon={faXTwitter} size="lg" />X
+                          (Formerly Twitter)
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href={`http://www.linkedin.com/shareArticle?mini=true&url=${shareUrl}&title=${shareSubject}&summary=${shareDescription}&source=${shareUrl}`}
+                          target="_blank"
+                          title="Share on LinkedIn"
+                          tabIndex={5}
+                        >
+                          <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
+                          LinkedIn
+                        </a>
+                      </li>
+                    </StyledShareList>
+                  </div>
+                }
               >
-                Share
-              </button>
-            </Popover>
-            <Button className="apply-button" buttonShape={Button.SHAPES.RECT}>
-              Apply
-            </Button>
+                <button
+                  className="share-button"
+                  // tabindex 1 here and 2-5 in the share list are used to ensure that user tabs into the share list
+                  // in an order that makes sense
+                  tabIndex={1}
+                  onClick={() => {
+                    return setShouldShowShareItems(!shouldShowShareItems);
+                  }}
+                >
+                  <FontAwesomeIcon icon={faShare} size="lg" />
+                  {''}
+                  Share
+                </button>
+              </Popover>
+              <Button className="apply-button" buttonShape={Button.SHAPES.RECT}>
+                Apply
+              </Button>
+            </div>
           </div>
           <section className="quick-info">
             Position Title: Senior Pastor

@@ -21,6 +21,7 @@ const StyledButton = styled.button`
   min-width: 80px;
   min-height: 30px;
   color: ${LOGICAL_COLORS.STANDARD_TEXT};
+  transition: all 0.05s;
 
   margin-left: 1em;
 
@@ -51,6 +52,7 @@ const StyledButton = styled.button`
 
   &:hover {
     cursor: pointer;
+    transform: scale(1.05);
   }
 `;
 
