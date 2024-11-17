@@ -22,6 +22,11 @@ const StyledPastorApplicationPage = styled.div`
   min-height: 100%;
   font-size: 14px;
 
+  h2,
+  h3 {
+    font-family: var(--times);
+  }
+
   .main-wrapper {
     background: linear-gradient(
       to bottom,

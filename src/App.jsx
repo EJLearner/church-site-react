@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
     --sans-serif: Calibri, 'Segoe UI', Candara, Segoe, Optima, Arial, sans-serif;
     --serif: cambria, georgia, 'bookman old style', 'times new roman', serif;
     --quire: "Quire Sans", Helvetica, arial, sans-serif;
+    --times: "Times New Roman", Times, Baskerville, Georgia, serif;
 
     --black: rgb(5, 5, 5);
     --white: rgb(240, 240, 240);
