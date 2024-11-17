@@ -2079,4 +2079,40 @@ export default {
       </>
     ),
   },
+  '2024-11-17': {
+    subTitle: (
+      <>
+        From <i>As A Man Thinketh</i> by James Allen
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “The aphorism, “As a man thinketh in his heart so is he,” not only
+          embraces the whole of a man’s being, but is so comprehensive as to
+          reach out to every condition and circumstance of his life. A man is
+          literally what he thinks, his character being the complete sum of all
+          his thoughts.
+        </p>
+        <p>
+          As the plant springs from, and could not be without, the seed, so
+          every act of a man springs from the hidden seeds of thought, and could
+          not have appeared without them. This applies equally to those acts
+          called “spontaneous” and “unpremeditated” as to those which are
+          deliberately executed.
+        </p>
+        <p>
+          Act is the blossom of thought, and joy and suffering are it fruits;
+          thus does a man garner in the sweet and bitter fruitage of his own
+          husbandry.
+        </p>
+        <p>
+          Thought in the mind hath made us, what we are by thought was wrought
+          and built. If a man’s mind hath evil thoughts, pain comes on him as
+          comes the wheel the ox behind…If one endure in purity of thought, joy
+          follows him as his own shadow – sure.”
+        </p>
+      </>
+    ),
+  },
 };
