@@ -5,6 +5,13 @@ const {PREACHERS, BIBLE_VERSIONS} = constants;
 
 const sermonVideos = [
   {
+    date: '2024-11-17',
+    youtubeId: 'mTL7rA99dpo',
+    title: 'Put God First',
+    preacher: 'Rev. Carmi Washington-Flood',
+    scripture: 'Matthew 6:33',
+  },
+  {
     date: '2024-11-10',
     youtubeId: 'TSPtlYEeo0w',
     title: 'In God We Trust and Have Victory!',
