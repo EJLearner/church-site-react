@@ -2034,4 +2034,20 @@ export default {
       </p>
     ),
   },
+  '2024-11-24': {
+    subTitle: (
+      <>
+        From <i>St. Teresa of Avila</i>
+      </>
+    ),
+    content: (
+      <p>
+        “Govern all by thy wisdom, O Lord, so that my soul may be serving thee
+        as thou dost will, and not as I may choose. Do not punish me, I beseech
+        thee, by granting that which I wish or ask, if it offend thy love, which
+        would always live in me. Let me die to myself, that I may serve thee,
+        who in thyself art the true life. Amen”
+      </p>
+    ),
+  },
 };

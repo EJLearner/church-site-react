@@ -766,6 +766,13 @@ const bibleComFormattedVerses = {
   '2024-11-21': {verse: '2 Thessalonians 2'},
   '2024-11-22': {verse: '2 Thessalonians 2'},
   '2024-11-23': {verse: 'John 4.31-38'},
+  '2024-11-24': {verse: 'Psalm 93'},
+  '2024-11-25': {verse: 'John 1.43-51'},
+  '2024-11-26': {verse: 'Luke 8.22-56'},
+  '2024-11-27': {verse: 'Acts 17.1-9'},
+  '2024-11-28': {verse: 'Luke 19.28-40'},
+  '2024-11-29': {verse: '1 Corinthians 15.1-28'},
+  '2024-11-30': {verse: 'Matthew 26.1-29'},
 };
 
 export {bibleComFormattedVerses};
