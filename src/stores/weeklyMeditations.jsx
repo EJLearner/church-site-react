@@ -2050,4 +2050,29 @@ export default {
       </p>
     ),
   },
+  '2024-12-01': {
+    subTitle: (
+      <>
+        From <i>The God Who Comes</i> by Carlo Carretto
+      </>
+    ),
+    content: (
+      <p>
+        “Personal prayer is the meeting place between the Eternal One and me;
+        the Blessed Sacrament is the visible sign of my covenant with him. That
+        is why I believe in personal prayer, and why every day I wait to meet
+        him in the Eucharist. To pray means to wait for the God who comes. Every
+        prayer-filled day sees a meeting with the God who comes; every night
+        which we faithfully put at his disposal is full of his presence. And his
+        coming and his presence are not only the result of our waiting or a
+        prize for our efforts: They are his decision, based on his love freely
+        poured out. His coming is bound to his promise, not to our works or
+        virtue. We have not earned the meeting with God because we have served
+        him faithfully in our brethren, or because we have heaped up such a pile
+        of virtue as to shine before Heaven. God is thrust onward by his love,
+        not attracted by our beauty. He comes even in moments when we have done
+        everything wrong, when we have done nothing…when we have sinned.”
+      </p>
+    ),
+  },
 };
