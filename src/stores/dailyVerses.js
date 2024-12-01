@@ -781,6 +781,20 @@ const bibleComFormattedVerses = {
   '2024-11-21': {verse: '2 Thessalonians 2'},
   '2024-11-22': {verse: '2 Thessalonians 2'},
   '2024-11-23': {verse: 'John 4.31-38'},
+  '2024-11-24': {verse: 'Psalm 93'},
+  '2024-11-25': {verse: 'John 1.43-51'},
+  '2024-11-26': {verse: 'Luke 8.22-56'},
+  '2024-11-27': {verse: 'Acts 17.1-9'},
+  '2024-11-28': {verse: 'Luke 19.28-40'},
+  '2024-11-29': {verse: '1 Corinthians 15.1-28'},
+  '2024-11-30': {verse: 'Matthew 26.1-29'},
+  '2024-12-01': {verse: 'Psalm 122'},
+  '2024-12-02': {verse: 'Matthew 3'},
+  '2024-12-03': {verse: 'Colossians 1.9-23'},
+  '2024-12-04': {verse: 'John 18.33-37'},
+  '2024-12-05': {verse: 'Isaiah 43.1-21'},
+  '2024-12-06': {verse: 'Hebrews 10.11-25'},
+  '2024-12-07': {verse: 'Zephaniah 3.14-20'},
 };
 
 export {bibleComFormattedVerses};
