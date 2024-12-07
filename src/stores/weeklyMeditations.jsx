@@ -2075,4 +2075,30 @@ export default {
       </p>
     ),
   },
+  '2024-12-08': {
+    subTitle: (
+      <>
+        From <i>Reflections for Ragamuffins</i> by Brennan Manning
+      </>
+    ),
+    content: (
+      <p>
+        “The Christmas contemplative knows that hope is a gift, an undeserved
+        gift of peace, but that it is also a call to decision – the decision to
+        trust.... Hope thrives on the difficult and challenges the conclusion
+        that our only contribution to the world will be, in the words of T. S.
+        Elliot, “an asphalt driveway in front of our home and a thousand lost
+        golf balls.” Hope convinces us that in clinging to a miserable sense of
+        security and status quo, the possibility of growth and greatness is
+        utterly defeated. Hope says that I no longer need be dismayed over my
+        personal dishonesty and self-centeredness and feeble life of faith. That
+        I no longer need to feel defeated, insensitive, and superficial. Because
+        the question no longer is: Can I do it? Am I able? Can I overcome my
+        moodiness, my laziness, my sensuality, my grudges and resentments? The
+        Only question is: Is Jesus Christ able? Can my Savior, the Lord of my
+        life, revive my drooping spirit and transform me at Christmas as he
+        transformed the world through his birth in Bethlehem?”
+      </p>
+    ),
+  },
 };
