@@ -795,6 +795,13 @@ const bibleComFormattedVerses = {
   '2024-12-05': {verse: 'Isaiah 43.1-21'},
   '2024-12-06': {verse: 'Hebrews 10.11-25'},
   '2024-12-07': {verse: 'Zephaniah 3.14-20'},
+  '2024-12-08': {verse: 'Psalm 85.1-2; 8-13'},
+  '2024-12-09': {verse: 'Luke 1.18-20'},
+  '2024-12-10': {verse: 'Isaiah 40.27-31'},
+  '2024-12-11': {verse: 'Luke 1.18-20'},
+  '2024-12-12': {verse: 'Luke 1.5-20'},
+  '2024-12-13': {verse: 'Romans 8.18-25'},
+  '2024-12-14': {verse: 'Galatians 5.2-6'},
 };
 
 export {bibleComFormattedVerses};
