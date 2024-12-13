@@ -97,6 +97,15 @@ const StyledPastorApplicationPage = styled.div`
     justify-content: space-between;
   }
 
+  h2 {
+    // TODO: fix space between top and bottom lines
+    margin-bottom: 0;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
   .share-and-apply-wrapper {
     button {
       padding: 1em;
@@ -208,7 +217,12 @@ const PastorApplicationPage = () => {
       <div className="main-wrapper">
         <main>
           <div className="header-and-buttons">
-            <h2>Senior Pastor Position</h2>
+            <h2>
+              Senior Pastor Position <br />
+              <span className="subtitle">
+                for the City Temple of Baltimore (Baptist)
+              </span>
+            </h2>
             <div className="share-and-apply-wrapper">
               <Popover
                 padding={10}
@@ -294,7 +308,7 @@ const PastorApplicationPage = () => {
                 </button>
               </Popover>
               <Button className="apply-button" buttonShape={Button.SHAPES.RECT}>
-                Apply
+                Download Application
               </Button>
             </div>
           </div>
@@ -425,14 +439,10 @@ const PastorApplicationPage = () => {
           <section>
             <h3>HOW TO APPLY</h3>
             <p>
-              To apply for the Senior Pastor position, please complete the
-              fillable PDF application form.{' '}
-              <a href="https://thecitytemple.org/application-for-senior-pastor/">
-                Click here to download the application{' '}
-                <span className="content-needed">(correct link needed)</span>.
-              </a>{' '}
-              The following materials must be submitted with your application
-              for consideration.
+              To apply for the Senior Pastor position, please download and
+              complete the fillable PDF application form. The following
+              materials must be submitted with your application for
+              consideration.
             </p>
             <ol>
               <li>
@@ -486,8 +496,8 @@ const PastorApplicationPage = () => {
               </a>
               .{' '}
               <strong>
-                All applications are due by{' '}
-                <span className="content-needed">(DATE NEEDED)</span>.
+                All applications and supporting materials are due by Thursday,
+                April 3, 2025.
               </strong>
             </p>
           </section>
