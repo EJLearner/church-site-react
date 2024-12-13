@@ -2,12 +2,17 @@ import constants from '../utils/constants';
 import {getNumberOfDaysAgo, isPast, parseISO} from '../utils/dateTimeUtils';
 
 const {PREACHERS, BIBLE_VERSIONS} = constants;
-
 const {D_HICKMAN, D_NELSON, L_FORD, T_CURLEY, MINISTERS, M_HAMIEL} = PREACHERS;
-
 const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
+  {
+    date: '2024-12-08',
+    youtubeId: '2AwnxZe3SQA',
+    title: 'The Glory At Daybreak!!!',
+    preacher: L_FORD,
+    scripture: 'Genesis 32:22 - 31',
+  },
   {
     date: '2024-12-01',
     youtubeId: 'htWZu5yAxP0',
