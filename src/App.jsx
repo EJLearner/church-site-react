@@ -20,6 +20,8 @@ const GlobalStyle = createGlobalStyle`
     --light-blue: rgb(51, 204, 204);
     --application-blue: rgb(0, 112, 192);
     --application-gray: rgb(229, 229, 229);
+    --28-font-clamped: clamp(16px, 2vw, 28px);
+    --46-font-clamped: clamp(16px, 4vw, 46px);
 
     --background: var(--black);
     --content: var(--white);

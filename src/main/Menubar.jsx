@@ -13,15 +13,17 @@ const StyledMenuBar = styled.header`
   .main-menu-bar {
     border-top: 1px solid var(--standard-border);
     border-bottom: 1px solid var(--standard-border);
-    display: flex;
     font-family: var(--serif);
-    font-size: 20px;
-    justify-content: center;
+    font-size: clamp(16px, 2vw, 20px);
     text-transform: uppercase;
 
     & > div {
-      margin: 0 16px;
-      padding: 16px 8px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .main-menu-item {
+      padding: 16px 4px;
     }
   }
 `;
@@ -37,7 +39,9 @@ const Menubar = ({imageSource, menuItems}) => {
 
   return (
     <StyledMenuBar imageSource={imageSource}>
-      <div className="main-menu-bar">{renderedMenuItems}</div>
+      <div className="main-menu-bar">
+        <div>{renderedMenuItems}</div>
+      </div>
     </StyledMenuBar>
   );
 };
