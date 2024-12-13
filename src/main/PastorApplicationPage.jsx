@@ -23,6 +23,7 @@ const StyledPastorApplicationPage = styled.div`
   font-size: 16px;
 
   h2 {
+    line-height: 24px;
     margin-top: 0;
     text-transform: uppercase;
     font-family: var(--times);
@@ -95,11 +96,6 @@ const StyledPastorApplicationPage = styled.div`
   .header-and-buttons {
     display: flex;
     justify-content: space-between;
-  }
-
-  h2 {
-    // TODO: fix space between top and bottom lines
-    margin-bottom: 0;
   }
 
   .subtitle {
