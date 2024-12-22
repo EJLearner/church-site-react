@@ -2101,4 +2101,50 @@ export default {
       </p>
     ),
   },
+  '2024-12-15': {
+    subTitle: (
+      <>
+        From <i>The Mood of Christmas</i> by Howard Thurman
+      </>
+    ),
+    content: (
+      <p>
+        “The symbol of Christmas – what is it? It is the rainbow arched over the
+        roof of the sky when the clouds are heavy with foreboding. It is the cry
+        of life in the newborn babe when, forced from mother’s nest, it claims
+        its right to live. It is the brooding Presence of the Eternal Spirit
+        making crooked paths straight, rough places smooth, tired hearts
+        refreshed, dead hopes stir with newness of life. It is the promise of
+        tomorrow at the close of every day, the movement of life in defiance of
+        death, and the assurance that love is sturdier than hate, that right is
+        more confident than wrong, that good is more permanent than evil.”
+      </p>
+    ),
+  },
+  '2024-12-22': {
+    subTitle: (
+      <>
+        From <i>Here and Now</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “It requires a lot of inner solitude and silence to become aware of
+        these divine movements. God does not shout, scream or push. The Spirit
+        of God is soft and gentle like a small voice or a light breeze. It is
+        the spirit of love. Maybe we still do not fully believe that God’s
+        Spirit is, indeed, the Spirit of love, always leading us deeper into
+        love. Maybe we still distrust the Spirit, afraid to be led to places
+        where our freedom is taken away. Maybe we still think of God’s Spirit as
+        an enemy who wants something of us that is not good for us. But God is
+        love, only love, and God’s Spirit is the Spirit of love longing to guide
+        us to the place where the deepest desires of our heart can be fulfilled.
+        Often we ourselves do not even know what our deepest desire is. We so
+        easily get entangled in our own lust and anger, mistakenly assuming that
+        they tell us what we really want. The Spirit of love says: “Don’t be
+        afraid to let go of your need to control your own life. Let me fulfill
+        the true desire of your heart.”
+      </p>
+    ),
+  },
 };
