@@ -4,10 +4,9 @@ import styled from 'styled-components';
 
 const StyledMenuBar = styled.header`
   padding-top: 1px; // collapsing margin fix, otherwise, there's white space at the top
-  ${(props) =>
+  background: ${(props) =>
     props.imageSource &&
-    `background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url(${props.imageSource});`};
+    `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${props.imageSource});`};
   padding: 32px var(--gutter-space) 32px var(--gutter-space);
 
   .main-menu-bar {

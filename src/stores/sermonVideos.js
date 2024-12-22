@@ -7,6 +7,21 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2024-12-22',
+    youtubeId: '-w81JGGHrDU',
+    title: 'Merry Christmas',
+    // no sermon
+    preacher: null,
+  },
+  {
+    date: '2024-12-15',
+    youtubeId: 'JVzSAswnvDg',
+    title: 'No Vacancy: No room for the blessing!!!',
+    preacher: D_NELSON,
+    scripture: 'Luke 2:1 - 11',
+    version: KJV,
+  },
+  {
     date: '2024-12-08',
     youtubeId: '2AwnxZe3SQA',
     title: 'The Glory At Daybreak!!!',
