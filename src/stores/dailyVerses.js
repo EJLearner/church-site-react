@@ -802,6 +802,20 @@ const bibleComFormattedVerses = {
   '2024-12-12': {verse: 'Luke 1.5-20'},
   '2024-12-13': {verse: 'Romans 8.18-25'},
   '2024-12-14': {verse: 'Galatians 5.2-6'},
+  '2024-12-15': {verse: 'Psalm 146.5-10'},
+  '2024-12-16': {verse: 'Luke 3.7-18'},
+  '2024-12-17': {verse: 'Job 33.29-33'},
+  '2024-12-18': {verse: '1 Samuel 3.1-10'},
+  '2024-12-19': {verse: '1 Samuel 3.11-18'},
+  '2024-12-20': {verse: 'Mark 9.2-8'},
+  '2024-12-21': {verse: 'John 10.1-6'},
+  '2024-12-22': {verse: 'Psalm 80.1-7'},
+  '2024-12-23': {verse: 'Luke 1.38'},
+  '2024-12-24': {verse: '1 Samuel 3.1-14'},
+  '2024-12-25': {verse: '1 Samuel 3.15-21'},
+  '2024-12-26': {verse: 'Psalm 10.12-18'},
+  '2024-12-27': {verse: 'Matthew 9.9-13'},
+  '2024-12-28': {verse: 'Acts 10.34-43'},
 };
 
 export {bibleComFormattedVerses};
