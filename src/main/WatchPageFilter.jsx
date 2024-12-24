@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import Button, {BUTTON_COLORS, SHAPES} from './commonComponents/Button/Button';
+import Button from './commonComponents/Button/Button';
 import Textbox from './commonComponents/Textbox';
 
 const StyledWatchPageFilter = styled.div`
@@ -39,8 +39,8 @@ function WatchPageFilter({
   };
 
   const buttonOptions = {
-    buttonShape: SHAPES.RECT,
-    color: BUTTON_COLORS.GRAY,
+    buttonShape: Button.SHAPES.RECT,
+    color: Button.BUTTON_COLORS.GRAY,
   };
 
   return (

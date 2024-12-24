@@ -53,6 +53,11 @@ const StyledButton = styled.button`
   &:hover {
     cursor: pointer;
     transform: scale(1.05);
+
+    @media (prefers-reduced-motion) {
+      transform: none;
+      filter: brightness(0.9);
+    }
   }
 `;
 
@@ -127,5 +132,4 @@ Button.propTypes = {
 Button.SHAPES = SHAPES;
 Button.BUTTON_COLORS = BUTTON_COLORS;
 
-export {SHAPES, BUTTON_COLORS};
 export default Button;

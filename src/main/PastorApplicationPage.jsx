@@ -8,9 +8,8 @@ import {useEffect, useRef, useState} from 'react';
 import {Popover} from 'react-tiny-popover';
 import styled from 'styled-components';
 
+import applicationPdf from '../assets/files/PastorApplication.pdf';
 import circleCtLogo from '../assets/images/circlectlogo-black.png';
-
-import Button from './commonComponents/Button/Button';
 
 const StyledPastorApplicationPage = styled.div`
   --application-blue: rgb(0, 112, 192);
@@ -126,35 +125,35 @@ const StyledPastorApplicationPage = styled.div`
     &:hover {
       cursor: pointer;
       scale: 1.05;
+
+      @media (prefers-reduced-motion) {
+        scale: none;
+        filter: brightness(0.9);
+      }
     }
   }
 
   .apply-button {
+    // stuff necessary since I'm using the anchor tag
+    display: inline-block;
+    padding: 0.5em;
+    margin-left: 1em;
+    transition: all 0.05s;
+
     border-radius: 4px;
     background-color: var(--application-blue);
     color: var(--text-on-dark-background);
     font-weight: bold;
-  }
 
-  .quick-info {
-    color: var(--application-blue);
-    font-weight: bold;
-  }
+    &:hover {
+      text-decoration: none;
+      transform: scale(1.05);
 
-  .how-to-item-heading {
-    font-weight: bold;
-  }
-
-  .church-site-link {
-    font-weight: bold;
-    font-style: italic;
-  }
-
-  .content-needed {
-    color: red;
-    font-weight: bold;
-    text-decoration: underline;
-    text-transform: uppercase;
+      @media (prefers-reduced-motion) {
+        transform: none;
+        filter: brightness(0.9);
+      }
+    }
   }
 `;
 
@@ -303,9 +302,13 @@ const PastorApplicationPage = () => {
                   Share
                 </button>
               </Popover>
-              <Button className="apply-button" buttonShape={Button.SHAPES.RECT}>
+              <a
+                className="apply-button"
+                href={applicationPdf}
+                download="Application.pdf"
+              >
                 Download Application
-              </Button>
+              </a>
             </div>
           </div>
           <section className="quick-info">
