@@ -29,14 +29,14 @@ const StyledHomePage = styled.div`
     flex-direction: column;
     min-height: 100%;
 
-    margin: 0 300px;
+    margin: 0 clamp(10px, -400px + 70vw, 300px);
     text-align: center;
-    font-size: 28px;
+    font-size: var(--28-font-clamped);
     color: var(--text-on-dark-background);
   }
 
   h1 {
-    font-size: 46px;
+    font-size: var(--46-font-clamped);
     margin-top: 0;
   }
 

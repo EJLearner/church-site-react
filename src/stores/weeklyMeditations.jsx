@@ -2079,4 +2079,153 @@ export default {
       </>
     ),
   },
+  '2024-11-17': {
+    subTitle: (
+      <>
+        From <i>As A Man Thinketh</i> by James Allen
+      </>
+    ),
+    content: (
+      <>
+        <p>
+          “The aphorism, “As a man thinketh in his heart so is he,” not only
+          embraces the whole of a man’s being, but is so comprehensive as to
+          reach out to every condition and circumstance of his life. A man is
+          literally what he thinks, his character being the complete sum of all
+          his thoughts.
+        </p>
+        <p>
+          As the plant springs from, and could not be without, the seed, so
+          every act of a man springs from the hidden seeds of thought, and could
+          not have appeared without them. This applies equally to those acts
+          called “spontaneous” and “unpremeditated” as to those which are
+          deliberately executed.
+        </p>
+        <p>
+          Act is the blossom of thought, and joy and suffering are it fruits;
+          thus does a man garner in the sweet and bitter fruitage of his own
+          husbandry.
+        </p>
+        <p>
+          Thought in the mind hath made us, what we are by thought was wrought
+          and built. If a man’s mind hath evil thoughts, pain comes on him as
+          comes the wheel the ox behind…If one endure in purity of thought, joy
+          follows him as his own shadow – sure.”
+        </p>
+      </>
+    ),
+  },
+  '2024-11-24': {
+    subTitle: (
+      <>
+        From <i>St. Teresa of Avila</i>
+      </>
+    ),
+    content: (
+      <p>
+        “Govern all by thy wisdom, O Lord, so that my soul may be serving thee
+        as thou dost will, and not as I may choose. Do not punish me, I beseech
+        thee, by granting that which I wish or ask, if it offend thy love, which
+        would always live in me. Let me die to myself, that I may serve thee,
+        who in thyself art the true life. Amen”
+      </p>
+    ),
+  },
+  '2024-12-01': {
+    subTitle: (
+      <>
+        From <i>The God Who Comes</i> by Carlo Carretto
+      </>
+    ),
+    content: (
+      <p>
+        “Personal prayer is the meeting place between the Eternal One and me;
+        the Blessed Sacrament is the visible sign of my covenant with him. That
+        is why I believe in personal prayer, and why every day I wait to meet
+        him in the Eucharist. To pray means to wait for the God who comes. Every
+        prayer-filled day sees a meeting with the God who comes; every night
+        which we faithfully put at his disposal is full of his presence. And his
+        coming and his presence are not only the result of our waiting or a
+        prize for our efforts: They are his decision, based on his love freely
+        poured out. His coming is bound to his promise, not to our works or
+        virtue. We have not earned the meeting with God because we have served
+        him faithfully in our brethren, or because we have heaped up such a pile
+        of virtue as to shine before Heaven. God is thrust onward by his love,
+        not attracted by our beauty. He comes even in moments when we have done
+        everything wrong, when we have done nothing…when we have sinned.”
+      </p>
+    ),
+  },
+  '2024-12-08': {
+    subTitle: (
+      <>
+        From <i>Reflections for Ragamuffins</i> by Brennan Manning
+      </>
+    ),
+    content: (
+      <p>
+        “The Christmas contemplative knows that hope is a gift, an undeserved
+        gift of peace, but that it is also a call to decision – the decision to
+        trust.... Hope thrives on the difficult and challenges the conclusion
+        that our only contribution to the world will be, in the words of T. S.
+        Elliot, “an asphalt driveway in front of our home and a thousand lost
+        golf balls.” Hope convinces us that in clinging to a miserable sense of
+        security and status quo, the possibility of growth and greatness is
+        utterly defeated. Hope says that I no longer need be dismayed over my
+        personal dishonesty and self-centeredness and feeble life of faith. That
+        I no longer need to feel defeated, insensitive, and superficial. Because
+        the question no longer is: Can I do it? Am I able? Can I overcome my
+        moodiness, my laziness, my sensuality, my grudges and resentments? The
+        Only question is: Is Jesus Christ able? Can my Savior, the Lord of my
+        life, revive my drooping spirit and transform me at Christmas as he
+        transformed the world through his birth in Bethlehem?”
+      </p>
+    ),
+  },
+  '2024-12-15': {
+    subTitle: (
+      <>
+        From <i>The Mood of Christmas</i> by Howard Thurman
+      </>
+    ),
+    content: (
+      <p>
+        “The symbol of Christmas – what is it? It is the rainbow arched over the
+        roof of the sky when the clouds are heavy with foreboding. It is the cry
+        of life in the newborn babe when, forced from mother’s nest, it claims
+        its right to live. It is the brooding Presence of the Eternal Spirit
+        making crooked paths straight, rough places smooth, tired hearts
+        refreshed, dead hopes stir with newness of life. It is the promise of
+        tomorrow at the close of every day, the movement of life in defiance of
+        death, and the assurance that love is sturdier than hate, that right is
+        more confident than wrong, that good is more permanent than evil.”
+      </p>
+    ),
+  },
+  '2024-12-22': {
+    subTitle: (
+      <>
+        From <i>Here and Now</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “It requires a lot of inner solitude and silence to become aware of
+        these divine movements. God does not shout, scream or push. The Spirit
+        of God is soft and gentle like a small voice or a light breeze. It is
+        the spirit of love. Maybe we still do not fully believe that God’s
+        Spirit is, indeed, the Spirit of love, always leading us deeper into
+        love. Maybe we still distrust the Spirit, afraid to be led to places
+        where our freedom is taken away. Maybe we still think of God’s Spirit as
+        an enemy who wants something of us that is not good for us. But God is
+        love, only love, and God’s Spirit is the Spirit of love longing to guide
+        us to the place where the deepest desires of our heart can be fulfilled.
+        Often we ourselves do not even know what our deepest desire is. We so
+        easily get entangled in our own lust and anger, mistakenly assuming that
+        they tell us what we really want. The Spirit of love says: “Don’t be
+        afraid to let go of your need to control your own life. Let me fulfill
+        the true desire of your heart.”
+      </p>
+    ),
+  },
 };
