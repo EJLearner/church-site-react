@@ -64,4 +64,7 @@ CalendarDay.defaultProps = {
   selectedDay: moment().format('YYYY-MM-DD'),
 };
 
-export default withRouter(withDatesSubscription(CalendarDay));
+const CalendarDayWrappedWithdatesWrappedWithRouter = withRouter(
+  withDatesSubscription(CalendarDay),
+);
+export default CalendarDayWrappedWithdatesWrappedWithRouter;

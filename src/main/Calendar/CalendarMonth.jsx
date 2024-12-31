@@ -310,4 +310,5 @@ CalendarMonth.defaultPropTypes = {
   isCe: false,
 };
 
-export default withDatesSubscription(CalendarMonth);
+const CalendarMonthWrappedWithDates = withDatesSubscription(CalendarMonth);
+export default CalendarMonthWrappedWithDates;

@@ -450,4 +450,5 @@ class CcVbsAdminBase extends Component {
   }
 }
 
-export default withRouter(CcVbsAdminBase);
+const CcVbsAdminBaseWrappedWithRouter = withRouter(CcVbsAdminBase);
+export default CcVbsAdminBaseWrappedWithRouter;

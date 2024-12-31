@@ -31,6 +31,7 @@ module.exports = {
       },
     ],
     'react/jsx-no-target-blank': 'off',
+    'react/jsx-curly-brace-presence': 'error',
     'react-refresh/only-export-components': [
       'warn',
       {allowConstantExport: true},

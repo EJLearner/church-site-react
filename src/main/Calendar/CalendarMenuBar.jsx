@@ -121,4 +121,5 @@ class MenuBar extends Component {
   }
 }
 
-export default withRouter(MenuBar);
+const MenuBarWrappedWithRouter = withRouter(MenuBar);
+export default MenuBarWrappedWithRouter;
