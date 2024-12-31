@@ -2147,4 +2147,20 @@ export default {
       </p>
     ),
   },
+  '2024-12-29': {
+    subTitle: (
+      <>
+        From <i>Forty Days With The Messiah</i> by David Winter
+      </>
+    ),
+    content: (
+      <p>
+        “When God comes among us there are always and only two possible
+        consequences: judgment or salvation. There is judgment if we close our
+        eyes to his coming or refuse to receive. In that case, we are dependent
+        on God’s justice and mercy. Or there is salvation and healing if we
+        welcome him with faith and trust.”
+      </p>
+    ),
+  },
 };
