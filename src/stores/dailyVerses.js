@@ -801,6 +801,13 @@ const bibleComFormattedVerses = {
   '2024-12-26': {verse: 'Psalm 10.12-18'},
   '2024-12-27': {verse: 'Matthew 9.9-13'},
   '2024-12-28': {verse: 'Acts 10.34-43'},
+  '2024-12-29': {verse: 'Psalm 98'},
+  '2024-12-30': {verse: 'Luke 2.1-14'},
+  '2024-12-31': {verse: 'Isaiah 42.1-9'},
+  '2025-01-01': {verse: 'John 3.1-16'},
+  '2025-01-02': {verse: 'John 1.29-34'},
+  '2025-01-03': {verse: 'Matthew 1.18-25'},
+  '2025-01-04': {verse: 'Romans 1.1-7'},
 };
 
 export {bibleComFormattedVerses};
