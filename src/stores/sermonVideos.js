@@ -7,6 +7,12 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-01-05',
+    youtubeId: 'N2FxxUZBa6c',
+    title: 'Untitled',
+    preacher: D_NELSON,
+  },
+  {
     date: '2024-12-29',
     youtubeId: 't4Lsp7YG77M',
     title: 'Faith, Fight, Finish!!!',
