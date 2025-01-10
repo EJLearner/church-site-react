@@ -2163,4 +2163,24 @@ export default {
       </p>
     ),
   },
+  '2025-01-12': {
+    subTitle: (
+      <>
+        From <i>Ordinary People as Monks and Mystics</i> by Marsha Sinetar
+      </>
+    ),
+    content: (
+      <p>
+        “To find in ourselves what makes life worth living is risky business,
+        for it means that once we know we must seek it. It also means that
+        without it life will be valueless. More than just a few find their most
+        valued selves despite the risk, although the majority seem to be…people
+        who don’t wish to make any trouble – not even the kind that’s expected.
+        The majority shrewdly stay dull to what in them is life and has meaning.
+        A few brave souls, however, do look within and are so moved by what they
+        find that they sacrifice, from then on, whatever is necessary to bring
+        that self into being.”
+      </p>
+    ),
+  },
 };
