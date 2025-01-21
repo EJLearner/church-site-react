@@ -815,6 +815,13 @@ const bibleComFormattedVerses = {
   '2025-01-16': {verse: '2 Corinthians 11.1-15'},
   '2025-01-17': {verse: '2 Corinthians 11.16-30'},
   '2025-01-18': {verse: 'Matthew 10.34-39'},
+  '2025-01-19': {verse: 'Psalm 36.5-10'},
+  '2025-01-20': {verse: 'Psalm 63.1-8'},
+  '2025-01-21': {verse: 'Jeremiah 29.10-14; Isaiah 55.1-9'},
+  '2025-01-22': {verse: 'Matthew 5.1-11'},
+  '2025-01-23': {verse: 'John 8.12-20'},
+  '2025-01-24': {verse: 'Ephesians 1.15-23'},
+  '2025-01-25': {verse: 'Luke 19.1-10'},
 };
 
 export {bibleComFormattedVerses};
