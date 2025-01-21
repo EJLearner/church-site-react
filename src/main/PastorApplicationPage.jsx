@@ -8,7 +8,7 @@ import {useEffect, useRef, useState} from 'react';
 import {Popover} from 'react-tiny-popover';
 import styled from 'styled-components';
 
-import applicationPdf from '../assets/files/PastorApplication.pdf';
+import applicationPdf from '../assets/files/EmploymentApplicationSeniorPastor.pdf';
 import circleCtLogo from '../assets/images/circlectlogo-black.png';
 
 const StyledPastorApplicationPage = styled.div`
@@ -298,7 +298,6 @@ const PastorApplicationPage = () => {
                   }}
                 >
                   <FontAwesomeIcon icon={faShare} size="lg" />
-                  {''}
                   Share
                 </button>
               </Popover>
