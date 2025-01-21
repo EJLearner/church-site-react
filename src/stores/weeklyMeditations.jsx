@@ -2247,20 +2247,16 @@ export default {
   '2025-01-12': {
     subTitle: (
       <>
-        From <i>Ordinary People as Monks and Mystics</i> by Marsha Sinetar
+        From <i>The Fire of Love</i> by Richard Rolle
       </>
     ),
     content: (
       <p>
-        “To find in ourselves what makes life worth living is risky business,
-        for it means that once we know we must seek it. It also means that
-        without it life will be valueless. More than just a few find their most
-        valued selves despite the risk, although the majority seem to be…people
-        who don’t wish to make any trouble – not even the kind that’s expected.
-        The majority shrewdly stay dull to what in them is life and has meaning.
-        A few brave souls, however, do look within and are so moved by what they
-        find that they sacrifice, from then on, whatever is necessary to bring
-        that self into being.”
+        “Since the human soul is capable of receiving God alone, nothing less
+        than God can fill it; which explains why lovers of earthly things are
+        never satisfied. The peace known by lovers of Christ comes from their
+        heart being fixed, in longing and in thought, in the love of God; it is
+        a peace that sings and loves and burns and contemplates.”
       </p>
     ),
   },
