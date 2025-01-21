@@ -2163,7 +2163,7 @@ export default {
       </p>
     ),
   },
-  '2025-01-12': {
+  '2025-01-19': {
     subTitle: (
       <>
         From <i>The Fire of Love</i> by Richard Rolle
