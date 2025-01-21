@@ -2228,4 +2228,36 @@ export default {
       </p>
     ),
   },
+  '2024-12-29': {
+    subTitle: (
+      <>
+        From <i>Forty Days With The Messiah</i> by David Winter
+      </>
+    ),
+    content: (
+      <p>
+        “When God comes among us there are always and only two possible
+        consequences: judgment or salvation. There is judgment if we close our
+        eyes to his coming or refuse to receive. In that case, we are dependent
+        on God’s justice and mercy. Or there is salvation and healing if we
+        welcome him with faith and trust.”
+      </p>
+    ),
+  },
+  '2025-01-12': {
+    subTitle: (
+      <>
+        From <i>The Fire of Love</i> by Richard Rolle
+      </>
+    ),
+    content: (
+      <p>
+        “Since the human soul is capable of receiving God alone, nothing less
+        than God can fill it; which explains why lovers of earthly things are
+        never satisfied. The peace known by lovers of Christ comes from their
+        heart being fixed, in longing and in thought, in the love of God; it is
+        a peace that sings and loves and burns and contemplates.”
+      </p>
+    ),
+  },
 };
