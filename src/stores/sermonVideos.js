@@ -7,6 +7,17 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-01-26',
+    youtubeId: 'GeQ8h0-PP4M',
+    title: 'Addicted to Righteousness!!!',
+    preacher: D_HICKMAN,
+    scripture: '1 Peter 5: 6-7',
+  },
+  {
+    // No recording, service was over Zoom
+    date: '2025-01-19',
+  },
+  {
     date: '2025-01-12',
     youtubeId: 'JMgtB3g6G-o',
     title: 'Cast All Your Cares...!!!',
