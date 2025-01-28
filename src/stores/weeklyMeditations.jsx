@@ -2244,7 +2244,7 @@ export default {
       </p>
     ),
   },
-  '2025-01-12': {
+  '2025-01-19': {
     subTitle: (
       <>
         From <i>The Fire of Love</i> by Richard Rolle
@@ -2257,6 +2257,27 @@ export default {
         never satisfied. The peace known by lovers of Christ comes from their
         heart being fixed, in longing and in thought, in the love of God; it is
         a peace that sings and loves and burns and contemplates.”
+      </p>
+    ),
+  },
+  '2025-01-26': {
+    subTitle: (
+      <>
+        From <i>Lion and Lamb</i> by Brennan Manning
+      </>
+    ),
+    content: (
+      <p>
+        “What distinguishes the Christians whose faith is deep, burning,
+        powerful and luminous is…seriousness. Seriousness is not the opposite of
+        joy but of superficiality. Francis of Assisi was such a lighthearted,
+        whimsical, musical, gentle man. But that was only part of his character.
+        On the other side was the totally dedicated, unbending, relentless
+        search for truth and reality. A Jesus-haunted man who gave up all to
+        obtain all. His seriousness changed him from the wealthy son of a
+        comfortable Umbrian home into the blind ragged beggar of Mt. Alvernia.
+        It was his seriousness about what he read in the Gospel that turned his
+        life into what it was.”
       </p>
     ),
   },
