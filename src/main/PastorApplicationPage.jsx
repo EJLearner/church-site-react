@@ -498,6 +498,13 @@ const PastorApplicationPage = () => {
                 April 3, 2025.
               </strong>
             </p>
+            <p>
+              Any questions regarding this posting should be directed to Racquel
+              Smith or Carolyn Gaskins at{' '}
+              <a href="mailto:search-committee@thecitytemple.org">
+                search-committee@thecitytemple.org
+              </a>
+            </p>
           </section>
         </main>
       </div>
