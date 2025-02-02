@@ -7,6 +7,13 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-02-02',
+    youtubeId: '8LFS_WDOLrw',
+    title: 'Rejected by Man, But Perfected by God!',
+    preacher: D_NELSON,
+    scripture: 'Matthew 21:42-46',
+  },
+  {
     date: '2025-01-26',
     youtubeId: 'GeQ8h0-PP4M',
     title: 'Addicted to Righteousness!!!',
