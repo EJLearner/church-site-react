@@ -504,6 +504,7 @@ const PastorApplicationPage = () => {
               <a href="mailto:search-committee@thecitytemple.org">
                 search-committee@thecitytemple.org
               </a>
+              .
             </p>
           </section>
         </main>
