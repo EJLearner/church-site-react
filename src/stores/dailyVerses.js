@@ -829,6 +829,13 @@ const bibleComFormattedVerses = {
   '2025-01-30': {verse: 'Acts 9.1-9'},
   '2025-01-31': {verse: 'Acts 9.10-19'},
   '2025-02-01': {verse: 'John 13.1-11'},
+  '2025-02-09': {verse: 'Psalm 138'},
+  '2025-02-10': {verse: 'Luke 3.21-22'},
+  '2025-02-11': {verse: '2 Peter 1.16-21'},
+  '2025-02-12': {verse: 'Psalm 18.1-6'},
+  '2025-02-13': {verse: 'Psalm 18.17-19'},
+  '2025-02-14': {verse: '1 John 3.1-3'},
+  '2025-02-15': {verse: 'Psalm 127.1-2'},
 };
 
 export {bibleComFormattedVerses};
