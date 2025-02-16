@@ -13,7 +13,7 @@ const LabelStyle = styled.label`
 `;
 
 function InputLabel(props) {
-  const {inline, children, required} = props;
+  const {inline = false, children, required} = props;
 
   return (
     <LabelStyle
@@ -33,10 +33,6 @@ InputLabel.propTypes = {
   id: PropTypes.string,
   inline: PropTypes.bool,
   required: PropTypes.bool,
-};
-
-InputLabel.defaultProps = {
-  inline: false,
 };
 
 export default InputLabel;

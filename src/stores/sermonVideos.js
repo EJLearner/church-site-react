@@ -7,6 +7,19 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-02-16',
+    youtubeId: 'Zh9fDYt__8w',
+    title: 'Show Them Who You Are!!!',
+    preacher: L_FORD,
+    scripture: '1 Peter 2: 9-10',
+  },
+  {
+    date: '2025-02-09',
+    youtubeId: 'hFqbK1N8S9Y',
+    title: 'Reverend Debra Hickman-Arnette sermon',
+    preacher: D_HICKMAN,
+  },
+  {
     date: '2025-02-02',
     youtubeId: '8LFS_WDOLrw',
     title: 'Rejected by Man, But Perfected by God!',
