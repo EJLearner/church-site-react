@@ -2218,4 +2218,25 @@ export default {
       </p>
     ),
   },
+  '2025-02-16': {
+    subTitle: (
+      <>
+        From <i>Spiritual Autobiography of Charles de Foucauld</i> by Robert
+        Ellsberg
+      </>
+    ),
+    content: (
+      <p>
+        “You put me under the wing of a saint, and I have stayed there. You used
+        his hands to bear me up, and the result has been grace upon grace. I
+        asked for instruction in religion: he made me get down on my knees and
+        make my confession and sent me straight away to Holy Communion. When I
+        think of it, I cannot stop myself from crying: and I do not want to stop
+        the tears running down for, O God, they are so justified. What streams
+        of tears should flow from my eyes at the remembrance of so many mercies!
+        How good you have been – how happy I am! What have I done to deserve
+        it?”
+      </p>
+    ),
+  },
 };
