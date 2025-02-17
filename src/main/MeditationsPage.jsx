@@ -3,7 +3,7 @@ import {Fragment} from 'react';
 import styled from 'styled-components';
 
 import choir from '../assets/images/choir.jpg';
-import {bibleComFormattedVerses} from '../stores/dailyVerses';
+import {dailyVerses} from '../stores/dailyVerses';
 import weeklyMeditations from '../stores/weeklyMeditations';
 import constants from '../utils/constants';
 import {getStartOfWeek} from '../utils/dateTimeUtils';
@@ -75,8 +75,11 @@ const getCurrentWeekDates = () => {
 const currentWeekDates = getCurrentWeekDates();
 
 function getVersesContent() {
-  const sundayDate = currentWeekDates[0].date;
-  if (!bibleComFormattedVerses[sundayDate]) {
+  const weekHasSomeVerses = currentWeekDates.some(
+    ({date}) => dailyVerses?.[date]?.verse,
+  );
+
+  if (!weekHasSomeVerses) {
     return (
       <>
         <h2>Content unavailable</h2>
@@ -86,7 +89,7 @@ function getVersesContent() {
   }
 
   const verses = currentWeekDates.map(({date, day}) => {
-    const {verse, referenceText} = bibleComFormattedVerses?.[date] ?? {};
+    const {verse, referenceText} = dailyVerses?.[date] ?? {};
 
     return (
       <Fragment key={date}>

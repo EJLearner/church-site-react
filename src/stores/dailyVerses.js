@@ -1,5 +1,5 @@
 // keeping this file as a temporary archive wile new verse/mediation strategy is confirmed
-const bibleComFormattedVerses = {
+const dailyVerses = {
   '2021-01-20': {
     verse: 'Luke 9.23-27; 9.57-62',
     referenceText: 'Luke 9.23-27, 57-62',
@@ -852,7 +852,6 @@ const bibleComFormattedVerses = {
   '2025-02-14': {verse: '1 John 3.1-3'},
   '2025-02-15': {verse: 'Psalm 127.1-2'},
   '2025-02-16': {verse: 'Psalm 1'},
-  '2025-02-17': {verse: 'Psalm 127.1-2'},
   '2025-02-18': {verse: 'Ezekiel 37.1-6'},
   '2025-02-19': {verse: 'Psalm 69.1-3'},
   '2025-02-20': {verse: 'Mark 15.25-32'},
@@ -860,4 +859,4 @@ const bibleComFormattedVerses = {
   '2025-02-22': {verse: 'James 1.12-18'},
 };
 
-export {bibleComFormattedVerses};
+export {dailyVerses};
