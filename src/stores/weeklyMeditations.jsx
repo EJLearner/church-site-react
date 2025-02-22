@@ -2239,4 +2239,21 @@ export default {
       </p>
     ),
   },
+  '2025-02-23': {
+    subTitle: (
+      <>
+        From <i>A Celebration of Faith</i> by Austin Farrer
+      </>
+    ),
+    content: (
+      <p>
+        “Temptation is what distracts us, beguiles us or bullies us off the
+        path. Temptation is what makes real life different from the world of our
+        dreams. We dream a world which is wax under the moulding of our
+        ambitions or our aspirations; we meet a world which faces us with trials
+        we have not the character to surmount, and with seductions we have not
+        the virtue to resist.”
+      </p>
+    ),
+  },
 };
