@@ -857,6 +857,13 @@ const dailyVerses = {
   '2025-02-20': {verse: 'Mark 15.25-32'},
   '2025-02-21': {verse: 'Matthew 28.1-10'},
   '2025-02-22': {verse: 'James 1.12-18'},
+  '2025-02-23': {verse: 'Psalm 37.1-11'},
+  '2025-02-24': {verse: 'Matthew 4.1-11'},
+  '2025-02-25': {verse: 'James 4.1-10'},
+  '2025-02-26': {verse: 'Psalm 91.1-16'},
+  '2025-02-27': {verse: 'Luke 2.24-30'},
+  '2025-02-28': {verse: '1 Corinthians 10.1-13'},
+  '2025-03-01': {verse: 'Hebrews 4.14-16'},
 };
 
 export {dailyVerses};
