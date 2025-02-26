@@ -7,6 +7,14 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-02-23',
+    youtubeId: 'ofmZVfovH5E',
+    title: 'This is Our Story!!!',
+    preacher: 'Rev. Arnold W. Howard',
+    scripture: 'Psalm 8:1-9',
+    version: NRSV,
+  },
+  {
     date: '2025-02-16',
     youtubeId: 'Zh9fDYt__8w',
     title: 'Show Them Who You Are!!!',
