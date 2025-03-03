@@ -2337,4 +2337,22 @@ export default {
       </p>
     ),
   },
+  '2025-03-02': {
+    subTitle: (
+      <>
+        From <i>Absolute Truths</i> by Susan Howath
+      </>
+    ),
+    content: (
+      <p>
+        “We die; indeed we have to die in order to be resurrected, restored and
+        renewed. We die and we die and we die in this life, not only physically
+        – within seen years every cell in our body is renewed – but emotionally
+        and spiritually as change seizes us by the scruff of the neck and drags
+        us forward into another life. We are not here simply to exist. We are
+        here in order to become. It is the essence of the creative process; it
+        is in the deepest nature of things.”
+      </p>
+    ),
+  },
 };
