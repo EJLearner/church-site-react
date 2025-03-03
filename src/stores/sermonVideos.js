@@ -7,6 +7,14 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-03-02',
+    youtubeId: 'Dzw32V6v-n4',
+    title: '"The Epitome of God’s High Calling For Women',
+    preacher: D_HICKMAN,
+    scripture: '1 Timothy 2:9-15',
+    version: MSG,
+  },
+  {
     date: '2025-02-23',
     youtubeId: 'ofmZVfovH5E',
     title: 'This is Our Story!!!',
