@@ -2274,4 +2274,25 @@ export default {
       </p>
     ),
   },
+  '2025-03-09': {
+    subTitle: (
+      <>
+        From <i>Learning to Listen</i> by Wendy Miller
+      </>
+    ),
+    content: (
+      <p>
+        “We do not come to be with Jesus because we are righteous or strong. The
+        people gathered around Jesus because they were needy. In his sermon
+        Jesus begins to explain the profound difference between the religious
+        leaders’ teaching about attaining righteousness through their
+        interpretation of the Law and traditions and the greater righteousness
+        that moves beyond the Law to a relationship with God in Jesus Christ.”
+        Our sinful, restricted self is uncomfortable and fights being revealed.
+        But deeper within us is the longing for God, placed within our true self
+        by God. We come to God as we are: caught by sin and longing for God; and
+        we are always met by God’s grace and mercy.”
+      </p>
+    ),
+  },
 };
