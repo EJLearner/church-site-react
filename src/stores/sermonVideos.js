@@ -7,6 +7,14 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-03-09',
+    youtubeId: 'dA9lyfiSqDw',
+    title: 'Follow Me!!!',
+    preacher: M_HAMIEL,
+    scripture: 'Luke 8: 43 - 48',
+    version: null,
+  },
+  {
     date: '2025-03-02',
     youtubeId: 'Dzw32V6v-n4',
     title: '"The Epitome of God’s High Calling For Women',
@@ -28,6 +36,7 @@ const sermonVideos = [
     title: 'Show Them Who You Are!!!',
     preacher: L_FORD,
     scripture: '1 Peter 2: 9-10',
+    version: null,
   },
   {
     date: '2025-02-09',
