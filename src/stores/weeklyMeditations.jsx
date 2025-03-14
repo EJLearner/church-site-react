@@ -2295,4 +2295,26 @@ export default {
       </p>
     ),
   },
+  '2025-03-16': {
+    subTitle: (
+      <>
+        From <i>The Fruits of the Spirit</i> by Evelyn Underhill
+      </>
+    ),
+    content: (
+      <p>
+        “Goodness and Faithfulness – we think of them as the supreme virtues of
+        plain people. Yet they, too, are the fruits of the Spirit. In the long
+        run we cannot really manage them without God. The good citizen, good
+        employer, good artist, good worker – the faithful husband or wife or
+        mother – in these, too, Divine Love, selfless charity, is bringing forth
+        its fruits within the natural order and on the natural scale:
+        proclaiming the dignity and possibilities of our human life on all
+        levels, disclosing the full meaning of the Word made flesh. Another
+        lesson in not being high-minded; another invitation to come off our
+        self-chosen spiritual perch, whatever it may be, and face the facts of
+        human life.”
+      </p>
+    ),
+  },
 };
