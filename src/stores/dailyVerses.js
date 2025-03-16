@@ -878,6 +878,13 @@ const dailyVerses = {
   '2025-03-13': {verse: 'Romans 12.9-13'},
   '2025-03-14': {verse: 'Romans 12.14-21'},
   '2025-03-15': {verse: 'Colossians 3.12-17'},
+  '2025-03-16': {verse: 'Psalm 91.1-2'},
+  '2025-03-17': {verse: 'Luke 22.24-30'},
+  '2025-03-18': {verse: 'Isaiah 41.8-10'},
+  '2025-03-19': {verse: 'Luke 16.10-13'},
+  '2025-03-20': {verse: 'Matthew 12.15-21'},
+  '2025-03-21': {verse: '1 Corinthians 4.1-5'},
+  '2025-03-22': {verse: 'John 15.12-16'},
 };
 
 export {dailyVerses};
