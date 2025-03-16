@@ -7,6 +7,12 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-03-16',
+    youtubeId: 'ChdH0EYB0D4',
+    preacher: 'Elder Dorcas Baker',
+    version: null,
+  },
+  {
     date: '2025-03-09',
     youtubeId: 'dA9lyfiSqDw',
     title: 'Follow Me!!!',
