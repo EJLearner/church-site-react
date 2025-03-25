@@ -2398,4 +2398,21 @@ export default {
       </p>
     ),
   },
+  '2025-03-23': {
+    subTitle: (
+      <>
+        From <i>The Cup of Our Life</i> by Joyce Rupp
+      </>
+    ),
+    content: (
+      <p>
+        “A cup is a container for holding something. Whatever it holds has to
+        eventually be emptied out so that something more can be put into it. I
+        have learned that I cannot always expect my life to be full. There has
+        to be some emptying, some pouring out, if I am to make room for the new.
+        The spiritual journey is like that – a constant process of emptying and
+        filling, of giving and receiving, of accepting and letting go.”
+      </p>
+    ),
+  },
 };
