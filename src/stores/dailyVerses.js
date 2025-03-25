@@ -1,4 +1,3 @@
-// keeping this file as a temporary archive wile new verse/mediation strategy is confirmed
 const dailyVerses = {
   '2021-01-20': {
     verse: 'Luke 9.23-27; 9.57-62',
