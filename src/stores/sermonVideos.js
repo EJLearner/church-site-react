@@ -7,6 +7,14 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-03-30',
+    youtubeId: 'HL9lk46mxcU',
+    // title: 'Falling Back on Fear or Faith',
+    preacher: D_HICKMAN,
+    // scripture: 'Exodus 17:1-7',
+    // version: KJV,
+  },
+  {
     date: '2025-03-23',
     youtubeId: 'eYu0Kpce2SY',
     title: 'Falling Back on Fear or Faith',
