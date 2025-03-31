@@ -878,6 +878,13 @@ const bibleComFormattedVerses = {
   '2025-03-27': {verse: 'Romans 6.5-11'},
   '2025-03-28': {verse: '1 Thessalonians 3.1-13'},
   '2025-03-29': {verse: 'Luke 14.25-33'},
+  '2025-03-30': {verse: 'Psalm 63.1-8'},
+  '2025-03-31': {verse: 'Matthew 5.13-16'},
+  '2025-04-01': {verse: '2 Corinthians 4.16-18'},
+  '2025-04-02': {verse: '2 Corinthians 5.1-10'},
+  '2025-04-03': {verse: 'Matthew 15.10-20'},
+  '2025-04-04': {verse: 'Philippians 3.1-11'},
+  '2025-04-05': {verse: 'John 16.25-33'},
 };
 
 export {bibleComFormattedVerses};
