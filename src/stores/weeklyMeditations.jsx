@@ -2334,4 +2334,22 @@ export default {
       </p>
     ),
   },
+  '2025-03-30': {
+    subTitle: (
+      <>
+        From <i>Can You Drink The Cup?</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “Action, just as silence and the word, can help us to claim and
+        celebrate our true self. But here again we need discipline, because the
+        world in which we live says, “Do this, do that, go here, go there, meet
+        him, meet her.” Busyness has become a sign of importance. Having much to
+        do, many places to go, and countless people to meet gives us status and
+        even fame. However, being busy can lead us away from our true vocation
+        and prevent us from drinking our cup.”
+      </p>
+    ),
+  },
 };
