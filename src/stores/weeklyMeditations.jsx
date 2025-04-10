@@ -2352,4 +2352,21 @@ export default {
       </p>
     ),
   },
+  '2025-04-06': {
+    subTitle: (
+      <>
+        From <i>The Transforming Moment</i> by James E. Loder
+      </>
+    ),
+    content: (
+      <p>
+        “The pattern should be clear. When serenity comes up out of anxiety, joy
+        out of depression, hope out of hopelessness; when good is returned for
+        evil, forgiveness replaces retaliation, and courage triumphs over fear;
+        then we recognize the movement of something beyond the personality and
+        mental health. Such profound manifestations of the human spirit of the
+        faces of the fourth dimension, which I have called the Holy.”
+      </p>
+    ),
+  },
 };
