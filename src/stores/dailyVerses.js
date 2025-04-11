@@ -892,6 +892,13 @@ const bibleComFormattedVerses = {
   '2025-04-10': {verse: 'Acts 2.22-24'},
   '2025-04-11': {verse: '1 Kings 3.1-9'},
   '2025-04-12': {verse: 'Hebrews 5.11-14'},
+  '2025-04-13': {verse: 'Psalm 31.9-16'},
+  '2025-04-14': {verse: 'Mark 11.1-11'},
+  '2025-04-15': {verse: 'Zechariah 9.9-10'},
+  '2025-04-16': {verse: 'John 12.12-19'},
+  '2025-04-17': {verse: 'Isaiah 62.10-12'},
+  '2025-04-18': {verse: 'Matthew 21.1-11'},
+  '2025-04-19': {verse: 'Luke 19.29-39'},
 };
 
 export {bibleComFormattedVerses};
