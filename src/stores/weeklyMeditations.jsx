@@ -2369,4 +2369,24 @@ export default {
       </p>
     ),
   },
+  '2025-04-13': {
+    subTitle: (
+      <>
+        From <i>Henri Nouwen: Writings Selected with an Introduction</i> by
+        Robert Jonas
+      </>
+    ),
+    content: (
+      <p>
+        “Peacemaking must be the primary focus of all political leaders, whether
+        in or out of power. But the temptations to personal power are too
+        intense to be overcome by our insistently self-centered egos. Therefore,
+        the peace must be God’s peace, a peace that is freely available when we
+        turn inwardly to Jesus. Jesus is the model of the ultimate peacemaker,
+        always pointing to Abba as the ultimate source of peace, justice,
+        goodness, mercy, love and creativity. In order to claim peace, we must
+        relinquish our own private agendas and let ourselves be claimed by God.”
+      </p>
+    ),
+  },
 };
