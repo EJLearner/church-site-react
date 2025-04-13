@@ -2415,4 +2415,59 @@ export default {
       </p>
     ),
   },
+  '2025-03-30': {
+    subTitle: (
+      <>
+        From <i>Can You Drink The Cup?</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “Action, just as silence and the word, can help us to claim and
+        celebrate our true self. But here again we need discipline, because the
+        world in which we live says, “Do this, do that, go here, go there, meet
+        him, meet her.” Busyness has become a sign of importance. Having much to
+        do, many places to go, and countless people to meet gives us status and
+        even fame. However, being busy can lead us away from our true vocation
+        and prevent us from drinking our cup.”
+      </p>
+    ),
+  },
+  '2025-04-06': {
+    subTitle: (
+      <>
+        From <i>The Transforming Moment</i> by James E. Loder
+      </>
+    ),
+    content: (
+      <p>
+        “The pattern should be clear. When serenity comes up out of anxiety, joy
+        out of depression, hope out of hopelessness; when good is returned for
+        evil, forgiveness replaces retaliation, and courage triumphs over fear;
+        then we recognize the movement of something beyond the personality and
+        mental health. Such profound manifestations of the human spirit of the
+        faces of the fourth dimension, which I have called the Holy.”
+      </p>
+    ),
+  },
+  '2025-04-13': {
+    subTitle: (
+      <>
+        From <i>Henri Nouwen: Writings Selected with an Introduction</i> by
+        Robert Jonas
+      </>
+    ),
+    content: (
+      <p>
+        “Peacemaking must be the primary focus of all political leaders, whether
+        in or out of power. But the temptations to personal power are too
+        intense to be overcome by our insistently self-centered egos. Therefore,
+        the peace must be God’s peace, a peace that is freely available when we
+        turn inwardly to Jesus. Jesus is the model of the ultimate peacemaker,
+        always pointing to Abba as the ultimate source of peace, justice,
+        goodness, mercy, love and creativity. In order to claim peace, we must
+        relinquish our own private agendas and let ourselves be claimed by God.”
+      </p>
+    ),
+  },
 };
