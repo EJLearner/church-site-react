@@ -7,12 +7,25 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-04-13',
+    youtubeId: 'RMSUUkT_Jd4',
+    title: 'Palm Sunday Praise!',
+    preacher: 'D_HICKMAN',
+    scripture: 'Matthew 21:12-16',
+    version: ESV,
+  },
+  {
+    date: '2025-04-06',
+    youtubeId: 'oagsql4UfJU',
+    title: 'Drink Up!',
+    preacher: 'D_HICKMAN',
+    scripture: 'Matthew 26:27-28',
+    version: MSG,
+  },
+  {
     date: '2025-03-30',
     youtubeId: 'HL9lk46mxcU',
-    // title: 'Falling Back on Fear or Faith',
     preacher: D_HICKMAN,
-    // scripture: 'Exodus 17:1-7',
-    // version: KJV,
   },
   {
     date: '2025-03-23',
@@ -26,6 +39,7 @@ const sermonVideos = [
     date: '2025-03-16',
     youtubeId: 'ChdH0EYB0D4',
     preacher: 'Elder Dorcas Baker',
+    scripture: 'Luke 8: 43 - 48',
     version: null,
   },
   {
