@@ -2404,9 +2404,9 @@ export default {
         with us than we are with ourselves), nothing is wasted, nothing is
         missing. There is never a moment that does not carry eternal
         significance – no action that is sterile, no love that lacks fruition,
-        and no prayer that is unheard. “We know that by turning everything to
-        their good, God cooperates with all those who love [God]” (Rom. 8:28,
-        emphasis added).”
+        and no prayer that is unheard. “We know that by turning{' '}
+        <b>everything</b> to their good, God cooperates with all those who love
+        [God]” (Rom. 8:28, emphasis added).”
       </p>
     ),
   },
