@@ -7,6 +7,12 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-04-20',
+    youtubeId: 'zPExU-3XENo',
+    title: 'Unbelievable',
+    preacher: M_HAMIEL,
+  },
+  {
     date: '2025-04-13',
     youtubeId: 'RMSUUkT_Jd4',
     title: 'Palm Sunday Praise!',
