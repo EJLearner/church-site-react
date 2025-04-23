@@ -2470,4 +2470,25 @@ export default {
       </p>
     ),
   },
+  '2025-04-20': {
+    subTitle: (
+      <>
+        From <i>Abba’s Child</i> by Brennan Manning
+      </>
+    ),
+    content: (
+      <p>
+        “Everything that is comes alive in the risen Christ – who, as Chesterton
+        reminded, is standing behind us. Everything – great, small, important,
+        unimportant, distant and near – has its place, its meaning, and its
+        value. Through union with Him (as Augustine said, He is more intimate
+        with us than we are with ourselves), nothing is wasted, nothing is
+        missing. There is never a moment that does not carry eternal
+        significance – no action that is sterile, no love that lacks fruition,
+        and no prayer that is unheard. “We know that by turning{' '}
+        <b>everything</b> to their good, God cooperates with all those who love
+        [God]” (Rom. 8:28, emphasis added).”
+      </p>
+    ),
+  },
 };

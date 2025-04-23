@@ -912,6 +912,13 @@ const dailyVerses = {
   '2025-04-17': {verse: 'Isaiah 62.10-12'},
   '2025-04-18': {verse: 'Matthew 21.1-11'},
   '2025-04-19': {verse: 'Luke 19.29-39'},
+  '2025-04-20': {verse: 'Psalm 118.1-2'},
+  '2025-04-21': {verse: 'Matthew 28.1-10'},
+  '2025-04-22': {verse: 'Revelation 1.12-20'},
+  '2025-04-23': {verse: 'Luke 24.1-12'},
+  '2025-04-24': {verse: 'Acts 17.16-21'},
+  '2025-04-25': {verse: 'Luke 20.27-40'},
+  '2025-04-26': {verse: 'Philippians 3.7-11'},
 };
 
 export {dailyVerses};
