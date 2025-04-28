@@ -7,6 +7,13 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-04-27',
+    youtubeId: 'UcqGPvC9p4k',
+    preacher: L_FORD,
+    scripture: 'Luke 13:10 - 13',
+    version: NIV,
+  },
+  {
     date: '2025-04-20',
     youtubeId: 'zPExU-3XENo',
     title: 'Unbelievable',
