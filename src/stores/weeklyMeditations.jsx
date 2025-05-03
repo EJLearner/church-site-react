@@ -2429,4 +2429,25 @@ export default {
       </p>
     ),
   },
+  '2025-05-04': {
+    subTitle: (
+      <>
+        From <i>Abba’s Child</i> by Brennan Manning
+      </>
+    ),
+    content: (
+      <p>
+        “The greatest gift I have ever received from Jesus Christ has been the
+        Abba experience. “No one knows the Son except the Father, just as no one
+        knows the Father except the Son and those to whom the Son chooses to
+        reveal him” (Matt. 11:27). My dignity as Abba’s child is my most
+        coherent sense of self. When I seek to fashion a self-image from the
+        adulation of others and the inner voice whispers, “You’ve arrived;
+        you’re a player in the Kingdom enterprise,” there is no truth in that
+        self-concept. When I sink into despondency and the inner voice whispers,
+        “You are no good, a fraud, a hypocrite and a dilettante,” there is no
+        truth in any image shaped from that message.”
+      </p>
+    ),
+  },
 };
