@@ -2450,4 +2450,22 @@ export default {
       </p>
     ),
   },
+  '2025-05-11': {
+    subTitle: (
+      <>
+        From <i>The Way of Forgiveness</i> by Marjorie J. Thompson
+      </>
+    ),
+    content: (
+      <p>
+        “We may see that to live as Jesus did is to experience what it means to
+        be beloved sons and daughters of God. The more we know our belovedness,
+        the more freely we may live by the measure of Jesus’ own example in the
+        power of loving humility and transforming mercy. Here lie the spiritual
+        roots of forgiveness and reconciliation. But the possibility of
+        forgiveness and reconciliation can be as difficult to embrace as the
+        notion of our belovedness.”
+      </p>
+    ),
+  },
 };
