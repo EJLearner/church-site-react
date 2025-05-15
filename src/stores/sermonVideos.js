@@ -7,8 +7,23 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-05-11',
+    youtubeId: 'VQ6trtDos-Y',
+    title: 'The Precious Power of Mothers',
+    preacher: D_HICKMAN,
+    scripture: ' Titus 2:3-5; Luke 1:28-38',
+  },
+  {
+    date: '2025-05-04',
+    youtubeId: 'EU3v4FXoQQQ',
+    title: 'When Life Bends You Over',
+    preacher: 'Rev. Renee Hammock',
+    scripture: 'Luke 13:10-13',
+  },
+  {
     date: '2025-04-27',
     youtubeId: 'UcqGPvC9p4k',
+    title: 'You Are More Important Than The Rule!',
     preacher: L_FORD,
     scripture: 'Luke 13:10 - 13',
     version: NIV,
