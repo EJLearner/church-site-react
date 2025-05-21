@@ -7,11 +7,18 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-05-18',
+    youtubeId: 'uUI7cLd6EG0',
+    title: 'Fool’s Gold!',
+    preacher: 'Rev. William Burgess',
+    scripture: '1 Corinthians 1:18-25',
+  },
+  {
     date: '2025-05-11',
     youtubeId: 'VQ6trtDos-Y',
     title: 'The Precious Power of Mothers',
     preacher: D_HICKMAN,
-    scripture: ' Titus 2:3-5; Luke 1:28-38',
+    scripture: 'Titus 2:3-5; Luke 1:28-38',
   },
   {
     date: '2025-05-04',
