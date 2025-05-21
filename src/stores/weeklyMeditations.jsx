@@ -2510,4 +2510,60 @@ export default {
       </p>
     ),
   },
+  '2025-05-04': {
+    subTitle: (
+      <>
+        From <i>Abba’s Child</i> by Brennan Manning
+      </>
+    ),
+    content: (
+      <p>
+        “The greatest gift I have ever received from Jesus Christ has been the
+        Abba experience. “No one knows the Son except the Father, just as no one
+        knows the Father except the Son and those to whom the Son chooses to
+        reveal him” (Matt. 11:27). My dignity as Abba’s child is my most
+        coherent sense of self. When I seek to fashion a self-image from the
+        adulation of others and the inner voice whispers, “You’ve arrived;
+        you’re a player in the Kingdom enterprise,” there is no truth in that
+        self-concept. When I sink into despondency and the inner voice whispers,
+        “You are no good, a fraud, a hypocrite and a dilettante,” there is no
+        truth in any image shaped from that message.”
+      </p>
+    ),
+  },
+  '2025-05-11': {
+    subTitle: (
+      <>
+        From <i>The Way of Forgiveness</i> by Marjorie J. Thompson
+      </>
+    ),
+    content: (
+      <p>
+        “We may see that to live as Jesus did is to experience what it means to
+        be beloved sons and daughters of God. The more we know our belovedness,
+        the more freely we may live by the measure of Jesus’ own example in the
+        power of loving humility and transforming mercy. Here lie the spiritual
+        roots of forgiveness and reconciliation. But the possibility of
+        forgiveness and reconciliation can be as difficult to embrace as the
+        notion of our belovedness.”
+      </p>
+    ),
+  },
+  '2025-05-18': {
+    subTitle: (
+      <>
+        From <i>Seeking the Face of God</i> by Gary Thomas
+      </>
+    ),
+    content: (
+      <p>
+        “Those who have gone before us have left a clear witness: We may seek
+        God or we may seek ease, but we cannot seek both. The road we travel is
+        anything but easy. It is true that God loves us and has a wonderful plan
+        for our lives, but it is equally true that the plan is often fraught
+        with tension and uncertainty, and with emotional, spiritual and physical
+        pain.”
+      </p>
+    ),
+  },
 };
