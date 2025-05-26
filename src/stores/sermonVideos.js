@@ -7,6 +7,13 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-05-25',
+    youtubeId: 'nJL8_rW2BUg',
+    title: 'I’m Anchored by the Father!',
+    preacher: 'Min. Shantell Thomas',
+    scripture: 'Hebrews 6:13-20',
+  },
+  {
     date: '2025-05-18',
     youtubeId: 'uUI7cLd6EG0',
     title: 'Fool’s Gold!',
