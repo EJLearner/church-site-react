@@ -7,6 +7,13 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-06-01',
+    youtubeId: 'rx8310nWngc',
+    title: 'The Ascension of Our Lord & Its Meaning & The Importance',
+    preacher: D_HICKMAN,
+    scripture: 'Acts 1:1-11; Ephesians 1:17-23',
+  },
+  {
     date: '2025-05-25',
     youtubeId: 'nJL8_rW2BUg',
     title: 'I’m Anchored by the Father!',
