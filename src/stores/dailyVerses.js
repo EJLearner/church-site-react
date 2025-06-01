@@ -947,6 +947,13 @@ const dailyVerses = {
   '2025-05-22': {verse: '2 Corinthians 11.16-32'},
   '2025-05-23': {verse: 'Acts 16.6-10'},
   '2025-05-24': {verse: 'Acts 16.16-34'},
+  '2025-05-25': {verse: 'Psalm 67'},
+  '2025-05-26': {verse: 'Matthew 28.18-20'},
+  '2025-05-27': {verse: 'Psalm 32.1-11'},
+  '2025-05-28': {verse: 'Luke 10.1-12'},
+  '2025-05-29': {verse: 'Acts 9.1-9'},
+  '2025-05-30': {verse: 'Acts 10.1-16'},
+  '2025-05-31': {verse: 'Acts 10.17-33'},
 };
 
 export {dailyVerses};
