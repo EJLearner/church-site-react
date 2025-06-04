@@ -2504,4 +2504,22 @@ export default {
       </p>
     ),
   },
+  '2025-06-01': {
+    subTitle: (
+      <>
+        From <i>Spiritual Awakening</i> by John Ackerman
+      </>
+    ),
+    content: (
+      <p>
+        “Though we can teach methods for listening and cultivate them in our own
+        lives, hearing and recognizing God’s voice ultimately is a spiritual
+        gift, not an achievement that one can master. Methods such as the lectio
+        or the Jesuit pattern are like scales on the piano that are helpful for
+        beginners and good reminders for the proficient. They help the mind find
+        receptive patterns. But prayerfulness, begging for the Spirit to teach,
+        is the attitude that makes listening possible.”
+      </p>
+    ),
+  },
 };
