@@ -2522,4 +2522,22 @@ export default {
       </p>
     ),
   },
+  '2025-06-15': {
+    subTitle: (
+      <>
+        From <i>Gracias!</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “God is greater than my senses, greater than my thoughts, greater than
+        my heart. I do believe that he touches me in places that are unknown
+        even to myself. I seldom can point directly to these places; but when I
+        feel this inner pull to return again to that hidden hour of prayer, I
+        realize that something is happening that is so deep that it becomes like
+        the riverbed through which the waters can safety flow and find their way
+        to the open sea.”
+      </p>
+    ),
+  },
 };
