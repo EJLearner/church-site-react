@@ -2585,4 +2585,40 @@ export default {
       </p>
     ),
   },
+  '2025-06-01': {
+    subTitle: (
+      <>
+        From <i>Spiritual Awakening</i> by John Ackerman
+      </>
+    ),
+    content: (
+      <p>
+        “Though we can teach methods for listening and cultivate them in our own
+        lives, hearing and recognizing God’s voice ultimately is a spiritual
+        gift, not an achievement that one can master. Methods such as the lectio
+        or the Jesuit pattern are like scales on the piano that are helpful for
+        beginners and good reminders for the proficient. They help the mind find
+        receptive patterns. But prayerfulness, begging for the Spirit to teach,
+        is the attitude that makes listening possible.”
+      </p>
+    ),
+  },
+  '2025-06-15': {
+    subTitle: (
+      <>
+        From <i>Gracias!</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “God is greater than my senses, greater than my thoughts, greater than
+        my heart. I do believe that he touches me in places that are unknown
+        even to myself. I seldom can point directly to these places; but when I
+        feel this inner pull to return again to that hidden hour of prayer, I
+        realize that something is happening that is so deep that it becomes like
+        the riverbed through which the waters can safety flow and find their way
+        to the open sea.”
+      </p>
+    ),
+  },
 };

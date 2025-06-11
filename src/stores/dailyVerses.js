@@ -954,6 +954,20 @@ const dailyVerses = {
   '2025-05-29': {verse: 'Acts 9.1-9'},
   '2025-05-30': {verse: 'Acts 10.1-16'},
   '2025-05-31': {verse: 'Acts 10.17-33'},
+  '2025-06-01': {verse: 'Psalm 97'},
+  '2025-06-02': {verse: 'Acts 1.1-5'},
+  '2025-06-03': {verse: 'Psalm 25.1-10'},
+  '2025-06-04': {verse: 'John 16.12-15'},
+  '2025-06-05': {verse: '2 Timothy 3.10-17'},
+  '2025-06-06': {verse: 'Luke 8.40-42'},
+  '2025-06-07': {verse: 'Psalm 40.1-8'},
+  '2025-06-08': {verse: 'Psalm 104.24-34'},
+  '2025-06-09': {verse: 'Acts 2.1-4'},
+  '2025-06-10': {verse: 'John 14.25-31'},
+  '2025-06-11': {verse: '2 Corinthians 12.1-10'},
+  '2025-06-12': {verse: 'Luke 24.44-49'},
+  '2025-06-13': {verse: 'Ephesians 3.20-21'},
+  '2025-06-14': {verse: '1 Corinthians 12.1-11'},
 };
 
 export {dailyVerses};
