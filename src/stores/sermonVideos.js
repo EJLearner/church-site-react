@@ -7,6 +7,13 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-06-08',
+    youtubeId: 'UNH_YpMftzA',
+    title: 'Signed, Sealed, Delivered!',
+    preacher: M_HAMIEL,
+    scripture: 'Ephesians 1:13-14',
+  },
+  {
     date: '2025-06-01',
     youtubeId: 'rx8310nWngc',
     title: 'The Ascension of Our Lord & Its Meaning & The Importance',
