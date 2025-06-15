@@ -7,6 +7,11 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-06-15',
+    youtubeId: 'kGIy01Odu6I',
+    title: 'Happy Father’s Day',
+  },
+  {
     date: '2025-06-08',
     youtubeId: 'UNH_YpMftzA',
     title: 'Signed, Sealed, Delivered!',
