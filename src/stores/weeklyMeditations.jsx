@@ -2603,7 +2603,7 @@ export default {
       </p>
     ),
   },
-  '2025-06-15': {
+  '2025-06-08': {
     subTitle: (
       <>
         From <i>Gracias!</i> by Henri J. M. Nouwen
@@ -2618,6 +2618,22 @@ export default {
         realize that something is happening that is so deep that it becomes like
         the riverbed through which the waters can safety flow and find their way
         to the open sea.”
+      </p>
+    ),
+  },
+  '2025-06-15': {
+    subTitle: (
+      <>
+        From <i>Illuminated</i> by Joan Chittister
+      </>
+    ),
+    content: (
+      <p>
+        “Clearly, in the serious contemplation of our place in the human
+        community lies the quality of our contemplation. To be a real
+        contemplative we must every day take others into the narrow little
+        confines of our lives – and listen to their call to us to be about
+        something greater than ourselves.”
       </p>
     ),
   },
