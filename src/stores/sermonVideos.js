@@ -7,6 +7,13 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-06-22',
+    youtubeId: 'BNqaADb5WDE',
+    title: 'Busting Out!',
+    preacher: M_HAMIEL,
+    scripture: 'Isaiah 43:18 - 19',
+  },
+  {
     date: '2025-06-15',
     youtubeId: 'kGIy01Odu6I',
     title: 'Happy Father’s Day',
