@@ -982,6 +982,13 @@ const dailyVerses = {
   '2025-06-26': {verse: 'Acts 4.23-31'},
   '2025-06-27': {verse: 'Acts 4.32-37'},
   '2025-06-28': {verse: '1 Thessalonians 1.1-10'},
+  '2025-06-29': {verse: 'Psalm 96'},
+  '2025-06-30': {verse: 'Acts 2.14-21'},
+  '2025-06-31': {verse: 'Acts 4.1-12'},
+  '2025-07-01': {verse: 'Acts 4.13-22'},
+  '2025-07-02': {verse: 'Acts 4.23-31'},
+  '2025-07-03': {verse: 'Acts 4.32-37'},
+  '2025-07-04': {verse: '1 Thessalonians 1.1-10'},
 };
 
 export {dailyVerses};

@@ -2654,4 +2654,21 @@ export default {
       </p>
     ),
   },
+  '2025-06-29': {
+    subTitle: (
+      <>
+        From <i>The Fire of Love</i> by Richard Rolle
+      </>
+    ),
+    content: (
+      <p>
+        “I ask you, Lord Jesus, to develop in me, your lover, an immeasurable
+        urge towards you, an affection that is unbounded, longing that is
+        unrestrained, fervour that throws discretion to the winds! The more
+        worthwhile our love for you, all the more pressing does it become.
+        Reason cannot hold it in check, fear does not make it tremble, wise
+        judgement does not temper it.”
+      </p>
+    ),
+  },
 };
