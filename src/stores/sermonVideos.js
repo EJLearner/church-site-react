@@ -9,7 +9,7 @@ const sermonVideos = [
   {
     date: '2025-06-29',
     youtubeId: 'op7K4HlY1Vw',
-    title: 'Walking Into A New Season…Embracing Change and Renewal!!!',
+    title: 'Walking into a New Season…Embracing Change and Renewal!!!',
     scripture: 'Joel 2:1 - 13',
     preacher: 'Rev. Renee Hammock',
     version: NIV,
