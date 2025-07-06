@@ -7,6 +7,14 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-07-06',
+    youtubeId: '_a8wG1XFPKE',
+    title: 'Servants of Righteousness!!!',
+    preacher: D_HICKMAN,
+    scripture: 'Romans 6:15-18',
+    version: ESV,
+  },
+  {
     date: '2025-06-29',
     youtubeId: 'op7K4HlY1Vw',
     title: 'Walking into a New Season…Embracing Change and Renewal!!!',
