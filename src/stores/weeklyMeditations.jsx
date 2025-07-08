@@ -2590,4 +2590,23 @@ export default {
       </p>
     ),
   },
+  '2025-07-06': {
+    subTitle: (
+      <>
+        From <i>Everything Belongs</i> by Richard Rohr
+      </>
+    ),
+    content: (
+      <p>
+        “We shouldn’t put down people who show great euphoria and excitement
+        after a born again or religious experience. They’re right. Suddenly the
+        world makes sense for them. Suddenly it’s okay, despite the absurdity,
+        the injustice, the pain. Life is now so spacious that we can even absorb
+        the contradictions. God is so great, so bottomless, so empty, that God
+        can absorb even the contraries, even the collision of opposites. Thus
+        salvation often feels like a kind of universal amnesty, a total
+        forgiveness of ourselves and all other things.”
+      </p>
+    ),
+  },
 };
