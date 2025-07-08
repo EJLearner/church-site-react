@@ -976,6 +976,13 @@ const bibleComFormattedVerses = {
   '2025-07-02': {verse: 'Acts 4.23-31'},
   '2025-07-03': {verse: 'Acts 4.32-37'},
   '2025-07-04': {verse: '1 Thessalonians 1.1-10'},
+  '2025-07-05': {verse: 'Psalm 5.1-8'},
+  '2025-07-06': {verse: 'Acts 2.37-42'},
+  '2025-07-07': {verse: 'Luke 3.10-14'},
+  '2025-07-08': {verse: 'Hebrews 10.32-39'},
+  '2025-07-09': {verse: 'Acts 9.1-9'},
+  '2025-07-10': {verse: '1 Timothy 1.12-16'},
+  '2025-07-11': {verse: '1 John 3.4-10'},
 };
 
 export {bibleComFormattedVerses};
