@@ -2609,4 +2609,22 @@ export default {
       </p>
     ),
   },
+  '2025-07-13': {
+    subTitle: (
+      <>
+        From <i>Yearning to Know God’s Will</i> by Danny E. Morris
+      </>
+    ),
+    content: (
+      <p>
+        “To think that God could put an idea into someone’s mind and that person
+        could comprehend that idea and immediately act upon it with
+        unquestioning determination is the most remarkable wonder of all! A
+        second wonder is that God has given all of us this capacity. God
+        communicates with all of us! We get little nudges – feelings that this
+        or that should be done or not done; we get hunches and leadings, signs
+        and signals, and sometimes direct messages.”
+      </p>
+    ),
+  },
 };
