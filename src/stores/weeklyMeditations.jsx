@@ -2647,4 +2647,19 @@ export default {
       </p>
     ),
   },
+  '2025-07-27': {
+    subTitle: (
+      <>
+        From <i>Power Through Constructive Thinking</i> by Emmet Fox
+      </>
+    ),
+    content: (
+      <p>
+        “Any difficulty, any dilemma, can be surmounted by whole-hearted prayer.
+        A given difficulty can only confront you on its own level. Rise above
+        that level through prayer and meditation and the difficulty will melt
+        away.”
+      </p>
+    ),
+  },
 };
