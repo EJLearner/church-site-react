@@ -1011,6 +1011,13 @@ const bibleComFormattedVerses = {
   '2025-08-07': {verse: '2 Corinthians 1.3-11'},
   '2025-08-08': {verse: '2 Corinthians 8.1-15'},
   '2025-08-09': {verse: '2 Thessalonians 3.1-5'},
+  '2025-08-10': {verse: 'Psalm 52'},
+  '2025-08-11': {verse: 'Acts 4.32-37'},
+  '2025-08-12': {verse: 'Romans 15.1-15'},
+  '2025-08-13': {verse: 'Philippians 1.27-30'},
+  '2025-08-14': {verse: 'Mark 16.19-20'},
+  '2025-08-15': {verse: '1 Peter 3.8-12'},
+  '2025-08-16': {verse: '1 Peter 3.13-22'},
 };
 
 export {bibleComFormattedVerses};

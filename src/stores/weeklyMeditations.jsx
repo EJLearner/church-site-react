@@ -2677,4 +2677,18 @@ export default {
       </p>
     ),
   },
+  '2025-08-10': {
+    subTitle: <>by Norman Shawchuck</>,
+    content: (
+      <p>
+        “Remember for whom you work: Whether you work for a private company, the
+        government, a large corporation, or yourself, the true disciple
+        understands that he or she ultimately is working for God in that place.
+        “Whatever your task, put yourselves into it, as done for the Lord and
+        not for your masters, since you know that from the Lord you will receive
+        the inheritance as your reward; you serve the Lord Christ.”{' '}
+        <i>(Col. 3:23-24)</i>
+      </p>
+    ),
+  },
 };
