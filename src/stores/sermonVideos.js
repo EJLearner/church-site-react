@@ -2,10 +2,42 @@ import constants from '../utils/constants';
 import {getNumberOfDaysAgo, isPast, parseISO} from '../utils/dateTimeUtils';
 
 const {PREACHERS, BIBLE_VERSIONS} = constants;
-const {D_HICKMAN, D_NELSON, L_FORD, T_CURLEY, MINISTERS, M_HAMIEL} = PREACHERS;
+const {D_HICKMAN, D_NELSON, L_FORD, L_PIERCE, T_CURLEY, MINISTERS, M_HAMIEL} =
+  PREACHERS;
 const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
+  {
+    date: '2025-08-10',
+    youtubeId: '-C4IvtslYis',
+    preacher: L_PIERCE,
+  },
+  {
+    date: '2025-08-03',
+    youtubeId: 'YK6WKwgTyg4',
+    preacher: M_HAMIEL,
+    scripture: 'Luke 22:18-19',
+  },
+  {
+    date: '2025-07-27',
+    youtubeId: '0vycUN4m_Qg',
+    title: 'Give God Your Best!',
+    preacher: 'Rev. Renee Hammock',
+    scripture: 'Mark 14:3-9',
+  },
+  {
+    date: '2025-07-20',
+    youtubeId: 'bYE9dGJvFpQ',
+    title: 'We are the Ones!',
+    preacher: M_HAMIEL,
+    scripture: 'Matthew 5:13 - 16',
+  },
+  {
+    date: '2025-07-13',
+    youtubeId: 'rxW4710tbVw',
+    preacher: 'Rev. William Burgess',
+    scripture: 'Jeremiah 29:10-14',
+  },
   {
     date: '2025-07-06',
     youtubeId: '_a8wG1XFPKE',
