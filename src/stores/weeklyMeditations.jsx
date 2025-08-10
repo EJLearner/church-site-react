@@ -2662,4 +2662,19 @@ export default {
       </p>
     ),
   },
+  '2025-08-03': {
+    subTitle: (
+      <>
+        From <i>Power Through Constructive Thinking</i> by Emmet Fox
+      </>
+    ),
+    content: (
+      <p>
+        “There is no end to a prayer. It echoes on forever in your soul. Long
+        after the visible demonstration has been made and forgotten, the prayer
+        that produced it continues to work for your spiritual advancement, for
+        the creative power of a God thought is unlimited and eternal.”
+      </p>
+    ),
+  },
 };
