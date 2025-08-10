@@ -2671,4 +2671,105 @@ export default {
       </p>
     ),
   },
+  '2025-07-06': {
+    subTitle: (
+      <>
+        From <i>Everything Belongs</i> by Richard Rohr
+      </>
+    ),
+    content: (
+      <p>
+        “We shouldn’t put down people who show great euphoria and excitement
+        after a born again or religious experience. They’re right. Suddenly the
+        world makes sense for them. Suddenly it’s okay, despite the absurdity,
+        the injustice, the pain. Life is now so spacious that we can even absorb
+        the contradictions. God is so great, so bottomless, so empty, that God
+        can absorb even the contraries, even the collision of opposites. Thus
+        salvation often feels like a kind of universal amnesty, a total
+        forgiveness of ourselves and all other things.”
+      </p>
+    ),
+  },
+  '2025-07-13': {
+    subTitle: (
+      <>
+        From <i>Yearning to Know God’s Will</i> by Danny E. Morris
+      </>
+    ),
+    content: (
+      <p>
+        “To think that God could put an idea into someone’s mind and that person
+        could comprehend that idea and immediately act upon it with
+        unquestioning determination is the most remarkable wonder of all! A
+        second wonder is that God has given all of us this capacity. God
+        communicates with all of us! We get little nudges – feelings that this
+        or that should be done or not done; we get hunches and leadings, signs
+        and signals, and sometimes direct messages.”
+      </p>
+    ),
+  },
+  '2025-07-20': {
+    subTitle: (
+      <>
+        From <i>Making All Things New</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “One of the early Christian writers describes the first stage of
+        solitary prayer as the experience of a man who, after years of living
+        with open doors, suddenly decides to shut them. The visitors who used to
+        come and enter his home start pounding on his doors, wondering why they
+        are not allowed to enter. Only when they realize that they are not
+        welcome do they gradually stop coming. This is the experience of anyone
+        who decides to enter into solitude after a life with much spiritual
+        discipline. At first, the many distractions keep presenting themselves.
+        Later, as they receive less and less attention, they slowly withdraw.”
+      </p>
+    ),
+  },
+  '2025-07-27': {
+    subTitle: (
+      <>
+        From <i>Power Through Constructive Thinking</i> by Emmet Fox
+      </>
+    ),
+    content: (
+      <p>
+        “Any difficulty, any dilemma, can be surmounted by whole-hearted prayer.
+        A given difficulty can only confront you on its own level. Rise above
+        that level through prayer and meditation and the difficulty will melt
+        away.”
+      </p>
+    ),
+  },
+  '2025-08-03': {
+    subTitle: (
+      <>
+        From <i>Power Through Constructive Thinking</i> by Emmet Fox
+      </>
+    ),
+    content: (
+      <p>
+        “There is no end to a prayer. It echoes on forever in your soul. Long
+        after the visible demonstration has been made and forgotten, the prayer
+        that produced it continues to work for your spiritual advancement, for
+        the creative power of a God thought is unlimited and eternal.”
+      </p>
+    ),
+  },
+  '2025-08-10': {
+    subTitle: <>by Norman Shawchuck</>,
+    content: (
+      <p>
+        “Remember for whom you work: Whether you work for a private company, the
+        government, a large corporation, or yourself, the true disciple
+        understands that he or she ultimately is working for God in that place.
+        “Whatever your task, put yourselves into it, as done for the Lord and
+        not for your masters, since you know that from the Lord you will receive
+        the inheritance as your reward; you serve the Lord Christ.”{' '}
+        <i>(Col. 3:23-24)</i>
+      </p>
+    ),
+  },
 };
