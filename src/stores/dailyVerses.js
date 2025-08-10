@@ -997,6 +997,13 @@ const bibleComFormattedVerses = {
   '2025-07-24': {verse: 'Acts 11.19-26'},
   '2025-07-25': {verse: 'Luke 11.14-23'},
   '2025-07-26': {verse: '1 Peter 4.12-19'},
+  '2025-07-27': {verse: 'Psalm 30'},
+  '2025-07-28': {verse: 'Acts 4.23-31'},
+  '2025-07-29': {verse: 'Romans 15.1-6'},
+  '2025-07-30': {verse: 'Acts 15.14-21'},
+  '2025-07-31': {verse: 'Philippians 1.1-11'},
+  '2025-08-01': {verse: 'Acts 5.12-16'},
+  '2025-08-02': {verse: 'Ephesians 6.18-20'},
 };
 
 export {bibleComFormattedVerses};
