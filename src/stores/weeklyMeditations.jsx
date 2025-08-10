@@ -2627,4 +2627,24 @@ export default {
       </p>
     ),
   },
+  '2025-07-20': {
+    subTitle: (
+      <>
+        From <i>Making All Things New</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “One of the early Christian writers describes the first stage of
+        solitary prayer as the experience of a man who, after years of living
+        with open doors, suddenly decides to shut them. The visitors who used to
+        come and enter his home start pounding on his doors, wondering why they
+        are not allowed to enter. Only when they realize that they are not
+        welcome do they gradually stop coming. This is the experience of anyone
+        who decides to enter into solitude after a life with much spiritual
+        discipline. At first, the many distractions keep presenting themselves.
+        Later, as they receive less and less attention, they slowly withdraw.”
+      </p>
+    ),
+  },
 };
