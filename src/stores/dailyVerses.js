@@ -1018,6 +1018,13 @@ const bibleComFormattedVerses = {
   '2025-08-14': {verse: 'Mark 16.19-20'},
   '2025-08-15': {verse: '1 Peter 3.8-12'},
   '2025-08-16': {verse: '1 Peter 3.13-22'},
+  '2025-08-17': {verse: 'Psalm 85'},
+  '2025-08-18': {verse: 'Luke 22.14-23'},
+  '2025-08-19': {verse: 'John 21.9-14'},
+  '2025-08-20': {verse: 'Luke 15.15-24'},
+  '2025-08-21': {verse: 'Luke 24.36-43'},
+  '2025-08-22': {verse: '1 Corinthians 11.23-26'},
+  '2025-08-23': {verse: 'Revelation 19.6-10'},
 };
 
 export {bibleComFormattedVerses};
