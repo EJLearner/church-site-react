@@ -2772,4 +2772,24 @@ export default {
       </p>
     ),
   },
+  '2025-08-17': {
+    subTitle: (
+      <>
+        From <i>Spiritual Life in the Congregation</i> by Rueben P. Job
+      </>
+    ),
+    content: (
+      <p>
+        “The Christian life flourishes in community. Corporate worship, study,
+        fellowship, and action are the soil in which authentic faith takes root
+        and grows toward maturity… Worship is one of the most profound
+        experiences of life for humankind. For Christians, gathering around the
+        Lord’s Table, the baptismal font, and the scriptures are essential
+        elements of an authentic life of worship. The congregation where
+        scripture, liturgy, music, persons in quest of communion with God, and
+        spirit-filled leadership come together will provide nurture and
+        sustenance to all who experience its life.”
+      </p>
+    ),
+  },
 };
