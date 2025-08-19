@@ -8,6 +8,13 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-08-17',
+    youtubeId: '0gcJCa0JAYcqIYzv',
+    preacher: M_HAMIEL,
+    title: 'Let’s Get Rooted',
+    scripture: 'Luke 22:18-19',
+  },
+  {
     date: '2025-08-10',
     youtubeId: '-C4IvtslYis',
     preacher: L_PIERCE,
