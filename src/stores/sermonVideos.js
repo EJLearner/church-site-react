@@ -8,6 +8,11 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-08-24',
+    youtubeId: '3iVXV1pl8S8',
+    preacher: L_PIERCE,
+  },
+  {
     date: '2025-08-17',
     youtubeId: '0gcJCa0JAYcqIYzv',
     preacher: M_HAMIEL,
