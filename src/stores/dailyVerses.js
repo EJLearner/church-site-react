@@ -1045,6 +1045,13 @@ const dailyVerses = {
   '2025-08-28': {verse: 'Matthew 6.1-15'},
   '2025-08-29': {verse: 'Psalm 118.1-9'},
   '2025-08-30': {verse: 'Matthew 7.7-11'},
+  '2025-08-31': {verse: 'Psalm 50.1-8'},
+  '2025-09-01': {verse: 'Luke 7.36-50'},
+  '2025-09-02': {verse: 'Matthew 9.2-8'},
+  '2025-09-03': {verse: 'Psalm 103.1-14'},
+  '2025-09-04': {verse: 'Acts 10.34-43'},
+  '2025-09-05': {verse: 'Isaiah 1.18-20'},
+  '2025-09-06': {verse: 'Colossians 1.9-14'},
 };
 
 export {dailyVerses};

@@ -2810,4 +2810,26 @@ export default {
       </p>
     ),
   },
+  '2025-08-31': {
+    subTitle: (
+      <>
+        From <i>Everything Belongs</i> by Richard Rohr
+      </>
+    ),
+    content: (
+      <p>
+        “I believe, with all my heart, that the mystery of forgiveness is the
+        entire Gospel. When you “get” forgiveness, you get it. We use the phrase
+        “falling in love.” I think forgiveness is almost the same thing. It’s a
+        mystery we fall into: the mystery is God. God forgives all things for
+        being imperfect, broken, and poor. Not only Jesus but all great people
+        who pray that I have met say the same thing. That’s the conclusion they
+        come to. The people who know God well, those who risk everything to find
+        God, always meet a lover, not a dictator. God is never found to be an
+        abusive father or a tyrannical mother, but always a lover who is more
+        than we dared hope for. How different than the “account manager” that
+        most people seem to worship.”
+      </p>
+    ),
+  },
 };
