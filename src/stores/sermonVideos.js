@@ -8,6 +8,13 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-08-31',
+    youtubeId: 'xWrZPbi9eXc',
+    preacher: 'Rev. Renee Hammock',
+    title: 'Put it in the Lord’s Hands',
+    scripture: 'John 6:1-11',
+  },
+  {
     date: '2025-08-24',
     youtubeId: '3iVXV1pl8S8',
     preacher: L_PIERCE,
