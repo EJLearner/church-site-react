@@ -8,6 +8,13 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-09-07',
+    youtubeId: 'Uq2CTL50dRY',
+    preacher: D_HICKMAN,
+    title: 'Communion in Divisive Times',
+    scripture: '1 Corinthians 11: 17-32',
+  },
+  {
     date: '2025-08-31',
     youtubeId: 'xWrZPbi9eXc',
     preacher: 'Rev. Renee Hammock',
