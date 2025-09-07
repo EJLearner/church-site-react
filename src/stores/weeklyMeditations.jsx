@@ -2832,4 +2832,26 @@ export default {
       </p>
     ),
   },
+  '2025-09-07': {
+    subTitle: (
+      <>
+        From <i>The Inner Voice of Love</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “You have been wounded in many ways. The more you open yourself to being
+        healed, the more you will discover how deep your wounds are. You will be
+        tempted to become discouraged, because under every wound you uncover you
+        will find others. Your search for true healing will be a suffering
+        search. Many tears still need to be shed. But do not be afraid. The
+        simple fact that you are more aware of your wounds shows that you have
+        sufficient strength to face them. The great challenge is living your
+        wounds through instead of thinking them through. It is better to cry
+        than to worry, better to feel your wounds deeply than to understand
+        them, better to let them enter into your silence than to talk about
+        them.”
+      </p>
+    ),
+  },
 };
