@@ -8,6 +8,20 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-09-21',
+    youtubeId: 'n-fOVVXE8fM',
+    preacher: 'Rev. Renee Hammock',
+    title: 'How To Make It Through!!!',
+    scripture: 'Jeremiah 29:4 - 14',
+    version: ESV,
+  },
+  {
+    date: '2025-09-14',
+    youtubeId: 'V39yo7FV4I4',
+    preacher: 'Rev. Donald Wright',
+    title: 'Strength for the Journey',
+  },
+  {
     date: '2025-09-07',
     youtubeId: 'Uq2CTL50dRY',
     preacher: D_HICKMAN,
