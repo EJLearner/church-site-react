@@ -2791,4 +2791,23 @@ export default {
       </p>
     ),
   },
+  '2025-09-21': {
+    subTitle: (
+      <>
+        From <i>Abba’s Child</i> by Brennan Manning
+      </>
+    ),
+    content: (
+      <p>
+        “In other words, the resurrection needs to be experienced as present
+        risenness. If we take seriously the word of the risen Christ, “Know that
+        I am with you always; yes, to the end of time” (Matt. 23:20), we should
+        expect the [Christ] will be actively present in our lives. If our faith
+        is alive and luminous, we will be alert to moments, events and occasions
+        when the power of resurrection is brought to bear on our lives.
+        Self-absorbed and inattentive, we fail to notice the subtle ways in
+        which Jesus is snagging our attention..”
+      </p>
+    ),
+  },
 };
