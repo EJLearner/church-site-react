@@ -2806,7 +2806,7 @@ export default {
         is alive and luminous, we will be alert to moments, events and occasions
         when the power of resurrection is brought to bear on our lives.
         Self-absorbed and inattentive, we fail to notice the subtle ways in
-        which Jesus is snagging our attention..”
+        which Jesus is snagging our attention.”
       </p>
     ),
   },
