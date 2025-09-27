@@ -2810,4 +2810,21 @@ export default {
       </p>
     ),
   },
+  '2025-09-28': {
+    subTitle: (
+      <>
+        From <i>Every Bush Is Burning</i> by Joan Puls
+      </>
+    ),
+    content: (
+      <p>
+        “The amazing truth of the kingdom is its availability. The kingdom is
+        not for buying. It is not exclusive. It can’t be hoarded. It succumbs,
+        not to power, not to birthright, not even to the magnitude and sparkle
+        of one’s achievements. It is available to those born of the Spirit,
+        those imbued with a simple faith. It requires one possession, freedom.
+        The freedom to recognize kingdom-events and to follow a kingdom-course.”
+      </p>
+    ),
+  },
 };
