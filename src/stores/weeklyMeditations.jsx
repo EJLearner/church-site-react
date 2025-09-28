@@ -2854,4 +2854,58 @@ export default {
       </p>
     ),
   },
+  '2025-09-14': {
+    subTitle: (
+      <>
+        From <i>Visions and Character</i> by Craig R. Dykstra
+      </>
+    ),
+    content: (
+      <p>
+        “Repentance…requires two things: humility and trust. Repentance requires
+        the humility involved in the confession that I am a sinner, one whose
+        life is not whole and who lacks the power both to find either the
+        direction to wholeness or the resources for wholeness on my own.
+        Repentance requires trust in a power that can and will ultimately
+        sustain and establish me if I let go of myself into that power’s hands.
+        Without both trust and humility, repentance is impossible.”
+      </p>
+    ),
+  },
+  '2025-09-21': {
+    subTitle: (
+      <>
+        From <i>Abba’s Child</i> by Brennan Manning
+      </>
+    ),
+    content: (
+      <p>
+        “In other words, the resurrection needs to be experienced as present
+        risenness. If we take seriously the word of the risen Christ, “Know that
+        I am with you always; yes, to the end of time” (Matt. 23:20), we should
+        expect the [Christ] will be actively present in our lives. If our faith
+        is alive and luminous, we will be alert to moments, events and occasions
+        when the power of resurrection is brought to bear on our lives.
+        Self-absorbed and inattentive, we fail to notice the subtle ways in
+        which Jesus is snagging our attention.”
+      </p>
+    ),
+  },
+  '2025-09-28': {
+    subTitle: (
+      <>
+        From <i>Every Bush Is Burning</i> by Joan Puls
+      </>
+    ),
+    content: (
+      <p>
+        “The amazing truth of the kingdom is its availability. The kingdom is
+        not for buying. It is not exclusive. It can’t be hoarded. It succumbs,
+        not to power, not to birthright, not even to the magnitude and sparkle
+        of one’s achievements. It is available to those born of the Spirit,
+        those imbued with a simple faith. It requires one possession, freedom.
+        The freedom to recognize kingdom-events and to follow a kingdom-course.”
+      </p>
+    ),
+  },
 };
