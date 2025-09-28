@@ -8,6 +8,13 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-09-28',
+    youtubeId: '5n0p3YBWoNk',
+    preacher: 'Rev. William Burgess',
+    title: 'Hit by God!',
+    scripture: 'Acts 9:1-9; 17-19',
+  },
+  {
     date: '2025-09-21',
     youtubeId: 'n-fOVVXE8fM',
     preacher: 'Rev. Renee Hammock',
