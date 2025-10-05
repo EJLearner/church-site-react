@@ -1067,6 +1067,13 @@ const bibleComFormattedVerses = {
   '2025-10-02': {verse: 'Luke 18.1-8'},
   '2025-10-03': {verse: 'Luke 18.9-14'},
   '2025-10-04': {verse: 'Romans 8.9-14'},
+  '2025-10-05': {verse: 'Psalm 137'},
+  '2025-10-06': {verse: 'Luke 24.28-35'},
+  '2025-10-07': {verse: '1 Thessalonians 1.2-10'},
+  '2025-10-08': {verse: 'Acts 1.6-11'},
+  '2025-10-09': {verse: 'Mark 16.1-8'},
+  '2025-10-10': {verse: 'Psalm 105.1-6'},
+  '2025-10-11': {verse: 'Psalm 90'},
 };
 
 export {bibleComFormattedVerses};
