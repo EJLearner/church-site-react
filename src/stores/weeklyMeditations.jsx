@@ -2827,4 +2827,19 @@ export default {
       </p>
     ),
   },
+  '2025-10-05': {
+    subTitle: (
+      <>
+        From <i>The Return of the Prodigal Son</i> by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “I am beginning now to see how radically the character of my spiritual
+        journey will change when I no longer think of God as hiding out and
+        making it as difficult as possible for me to find [God], but, instead,
+        as the one who is looking for me while I am doing the hiding.”
+      </p>
+    ),
+  },
 };
