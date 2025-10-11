@@ -2842,4 +2842,19 @@ export default {
       </p>
     ),
   },
+  '2025-10-12': {
+    subTitle: (
+      <>
+        From <i>In Pursuit of the Great White Rabbit</i> by Edward Hays
+      </>
+    ),
+    content: (
+      <p>
+        “If we are to experience God, we must be open to God, to the mystical,
+        to the divine, appearing in our lives. And we must have an openness that
+        is free of any preconditions about how that will happen. Looking for God
+        in a godly form is the great historical mistake.”
+      </p>
+    ),
+  },
 };
