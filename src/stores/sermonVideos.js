@@ -8,6 +8,13 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-10-19',
+    youtubeId: 'F-viqheqMCg',
+    preacher: L_FORD,
+    scripture: 'Isaiah 54:16-17',
+    version: KJV,
+  },
+  {
     date: '2025-10-12',
     youtubeId: 'UUny_Ni_LJM',
     preacher: D_HICKMAN,
