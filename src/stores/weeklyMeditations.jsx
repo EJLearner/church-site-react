@@ -2857,4 +2857,36 @@ export default {
       </p>
     ),
   },
+  '2025-10-19': {
+    subTitle: (
+      <>
+        From <i>Everything Belongs</i> by Richard Rohr
+      </>
+    ),
+    content: (
+      <p>
+        “Spirituality is about seeing. It’s not about earning or achieving. It’s
+        about relationship rather than results or requirements. Once you see,
+        the rest follows. You don’t need to push the river, because you are in
+        it. The life is lived within us, and we learn how to say yes to that
+        life.”
+      </p>
+    ),
+  },
+  '2025-10-26': {
+    subTitle: (
+      <>
+        From <i>Ashes Transformed</i> by Tilda Norberg
+      </>
+    ),
+    content: (
+      <p>
+        “The more healing I experience, the more I understand one of the most
+        magnificent truths of the Christian faith: God can turn our worst pain
+        into the source of our giftedness. It is no accident that my life’s work
+        involves helping people invite Jesus into the worst moments of their
+        lives.”
+      </p>
+    ),
+  },
 };
