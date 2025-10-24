@@ -1088,6 +1088,13 @@ const bibleComFormattedVerses = {
   '2025-10-23': {verse: 'Romans 6.12-14'},
   '2025-10-24': {verse: 'John 3.31-36'},
   '2025-10-25': {verse: 'John 6.35-40'},
+  '2025-10-26': {verse: 'Psalm 119.137-144'},
+  '2025-10-27': {verse: 'John 20.24-28'},
+  '2025-10-28': {verse: 'John 10.22-30'},
+  '2025-10-29': {verse: 'John 10.31-42'},
+  '2025-10-30': {verse: 'Mark 11.20-25'},
+  '2025-10-31': {verse: 'Matthew 14.22-33'},
+  '2025-11-01': {verse: 'John 1.10-13'},
 };
 
 export {bibleComFormattedVerses};
