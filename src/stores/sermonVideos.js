@@ -8,6 +8,13 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-10-26',
+    youtubeId: 'NSbxQzJmgAA',
+    preacher: 'Rev. Arnold Howard',
+    scripture: '2 Kings 6:8-23',
+    version: KJV,
+  },
+  {
     date: '2025-10-19',
     youtubeId: 'F-viqheqMCg',
     preacher: L_FORD,
