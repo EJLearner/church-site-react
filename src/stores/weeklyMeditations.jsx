@@ -2889,4 +2889,20 @@ export default {
       </p>
     ),
   },
+  '2025-11-02': {
+    subTitle: (
+      <>
+        From <i>Ashes Transformed</i> by Tilda Norberg
+      </>
+    ),
+    content: (
+      <p>
+        “The more healing I experience, the more I understand one of the most
+        magnificent truths of the Christian faith: God can turn our worst pain
+        into the source of our giftedness. It is no accident that my life’s work
+        involves helping people invite Jesus into the worst moments of their
+        lives.”
+      </p>
+    ),
+  },
 };
