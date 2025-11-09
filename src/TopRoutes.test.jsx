@@ -1,5 +1,4 @@
 import {render} from '@testing-library/react';
-import {MemoryRouter} from 'react-router-dom';
 import {expect, it, describe} from 'vitest';
 
 import TopRoutes from './TopRoutes';
@@ -11,10 +10,8 @@ describe('TopRoutes', () => {
   });
 
   it('loads VbsCheckin correctly', () => {
-    render(
-      <MemoryRouter initialEntries={[routePaths.CE_VBS_CHECKIN]}>
-        <TopRoutes />
-      </MemoryRouter>,
-    );
+    window.history.pushState(null, '', routePaths.CE_VBS_CHECKIN);
+
+    render(<TopRoutes />);
   });
 });

@@ -19,17 +19,20 @@ const createMockXHR = (responseObject = testResponseObject, readyState = 4) => {
 };
 
 describe('getVerseInfo', () => {
-  const oldXMLHttpRequest = window.XMLHttpRequest;
+  const oldXMLHttpRequest = globalThis.XMLHttpRequest;
   const testQuery = 'test-query';
   let mockXHR;
 
   beforeEach(() => {
     mockXHR = createMockXHR();
-    window.XMLHttpRequest = vi.fn(() => mockXHR);
+    function FakeXHR() {
+      return mockXHR;
+    }
+    globalThis.XMLHttpRequest = vi.fn(FakeXHR);
   });
 
   afterEach(() => {
-    window.XMLHttpRequest = oldXMLHttpRequest;
+    globalThis.XMLHttpRequest = oldXMLHttpRequest;
     _resetCache();
   });
 
@@ -84,7 +87,10 @@ describe('getVerseInfo', () => {
 
   it('does not call callback with parsed object if readyState is not done', () => {
     mockXHR = createMockXHR(testResponseObject, 0);
-    window.XMLHttpRequest = vi.fn(() => mockXHR);
+    function FakeXHR() {
+      return mockXHR;
+    }
+    globalThis.XMLHttpRequest = vi.fn(FakeXHR);
 
     const cb = vi.fn();
     getVerseInfo(testQuery, cb);
