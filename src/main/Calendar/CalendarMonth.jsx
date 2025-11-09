@@ -1,7 +1,6 @@
 import {faCaretLeft} from '@fortawesome/free-solid-svg-icons/faCaretLeft';
 import {faCaretRight} from '@fortawesome/free-solid-svg-icons/faCaretRight';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import _ from 'lodash';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import {Component} from 'react';
@@ -157,12 +156,10 @@ class CalendarMonth extends Component {
       dateString,
     );
 
-    return _.map(daysEventsData, (event, index, allEvents) => {
+    return daysEventsData.map((event, index, allEvents) => {
       const title = event.title || event;
-      const isLastEvent = event === _.last(allEvents);
-      const pathname = this.props.isCe
-        ? routePaths.CE_CALENDAR_DAY
-        : routePaths.MAIN_CALENDAR_DAY;
+      const isLastEvent = event === allEvents.at(-1);
+      const pathname = routePaths.MAIN_CALENDAR_DAY;
 
       return (
         <div key={index}>
@@ -301,13 +298,11 @@ class CalendarMonth extends Component {
 
 CalendarMonth.propTypes = {
   id: PropTypes.string,
-  isCe: PropTypes.bool,
   storedDates: PropTypes.object,
 };
 
 CalendarMonth.defaultPropTypes = {
   id: 'calendar-month-div',
-  isCe: false,
 };
 
 const CalendarMonthWrappedWithDates = withDatesSubscription(CalendarMonth);

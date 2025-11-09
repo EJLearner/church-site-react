@@ -2,7 +2,6 @@ import '../../firebaseApp';
 import {getDatabase, ref, onValue} from 'firebase/database';
 import PropTypes from 'prop-types';
 import {Component} from 'react';
-import {withRouter} from 'react-router-dom';
 
 import commonUtils from '../../utils/commonUtils.ts';
 import {CHILD_STATUS} from '../CcVbsCheckinOut/BaseCheckinOutConstants';
@@ -271,7 +270,7 @@ class CcVbsAdminBase extends Component {
       studentName,
       type: 'Child',
       phone: commonUtils.formatPhoneNumber(phone, true),
-      email: email,
+      email,
       parentNames: parentNames?.join(' & '),
       address: (
         <div>
@@ -450,5 +449,4 @@ class CcVbsAdminBase extends Component {
   }
 }
 
-const CcVbsAdminBaseWrappedWithRouter = withRouter(CcVbsAdminBase);
-export default CcVbsAdminBaseWrappedWithRouter;
+export default CcVbsAdminBase;

@@ -3,7 +3,7 @@ import {getDatabase, ref} from 'firebase/database';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import {Component} from 'react';
-import {Redirect} from 'react-router';
+import {Navigate} from 'react-router';
 
 import routePaths from '../../routePaths';
 import utils from '../../utils/commonUtils.ts';
@@ -686,15 +686,12 @@ class BaseRegistrationVolunteer extends Component {
     const {redirect, postStatus, errors, responseError, showModal} = this.state;
 
     if (redirect) {
-      const state = {forMessage: 'you for registering.'};
-
       return (
-        <Redirect
-          push
-          to={{
-            pathname: routePaths.CE_THANK_YOU,
-            state,
+        <Navigate
+          state={{
+            forMessage: 'you for registering.',
           }}
+          to={routePaths.CE_THANK_YOU}
         />
       );
     }

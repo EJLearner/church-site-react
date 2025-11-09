@@ -220,11 +220,6 @@ const PastorApplicationPage = () => {
             </h2>
             <div className="share-and-apply-wrapper">
               <Popover
-                padding={10}
-                isOpen={shouldShowShareItems}
-                onClickOutside={() => setShouldShowShareItems(false)}
-                onBlurOutside={() => setShouldShowShareItems(false)}
-                positions={['bottom', 'left', 'right', 'top']}
                 content={
                   <div>
                     <StyledShareList
@@ -242,10 +237,10 @@ const PastorApplicationPage = () => {
                       <li>
                         <a
                           href={`mailto:?subject=${shareSubject}&body=${shareDescription}`}
-                          target="_blank"
-                          title="Send email"
                           ref={emailAnchorRef}
                           tabIndex={2}
+                          target="_blank"
+                          title="Send email"
                         >
                           <FontAwesomeIcon icon={faEnvelope} size="lg" />
                           Email
@@ -254,9 +249,9 @@ const PastorApplicationPage = () => {
                       <li>
                         <a
                           href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}&quote=${shareSubject}`}
-                          title="Share on Facebook"
-                          target="_blank"
                           tabIndex={3}
+                          target="_blank"
+                          title="Share on Facebook"
                         >
                           <FontAwesomeIcon icon={faFacebookF} size="lg" />
                           Facebook
@@ -265,9 +260,9 @@ const PastorApplicationPage = () => {
                       <li>
                         <a
                           href={`https://x.com/intent/tweet?source=${shareUrl}&text=${shareSubject}:%20${shareUrl}`}
+                          tabIndex={4}
                           target="_blank"
                           title="Post on X"
-                          tabIndex={4}
                         >
                           <FontAwesomeIcon icon={faXTwitter} size="lg" />X
                           (Formerly Twitter)
@@ -276,9 +271,9 @@ const PastorApplicationPage = () => {
                       <li>
                         <a
                           href={`http://www.linkedin.com/shareArticle?mini=true&url=${shareUrl}&title=${shareSubject}&summary=${shareDescription}&source=${shareUrl}`}
+                          tabIndex={5}
                           target="_blank"
                           title="Share on LinkedIn"
-                          tabIndex={5}
                         >
                           <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
                           LinkedIn
@@ -287,15 +282,20 @@ const PastorApplicationPage = () => {
                     </StyledShareList>
                   </div>
                 }
+                isOpen={shouldShowShareItems}
+                onBlurOutside={() => setShouldShowShareItems(false)}
+                onClickOutside={() => setShouldShowShareItems(false)}
+                padding={10}
+                positions={['bottom', 'left', 'right', 'top']}
               >
                 <button
                   className="share-button"
                   // tabindex 1 here and 2-5 in the share list are used to ensure that user tabs into the share list
                   // in an order that makes sense
-                  tabIndex={1}
                   onClick={() => {
                     return setShouldShowShareItems(!shouldShowShareItems);
                   }}
+                  tabIndex={1}
                 >
                   <FontAwesomeIcon icon={faShare} size="lg" />
                   Share
@@ -303,8 +303,8 @@ const PastorApplicationPage = () => {
               </Popover>
               <a
                 className="apply-button"
-                href={applicationPdf}
                 download="Application.pdf"
+                href={applicationPdf}
               >
                 Download Application
               </a>

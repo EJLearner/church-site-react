@@ -1,4 +1,4 @@
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 import Admin from './main/Admin/Admin';
 import MainWrapper from './main/MainWrapper';
@@ -11,19 +11,15 @@ const TopRoutes = () => {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Switch>
-        <Route component={MainWrapper} exact path={routePaths.MAIN_HOME} />
-        <Route path="/ce/">
-          <RemovedPage />
-        </Route>
-        <Route path={routePaths.ADMIN}>
-          <Admin />
-        </Route>
-        <Route path={routePaths.PASTOR_APPLICATION}>
-          <PastorApplicationPage />
-        </Route>
-        <Route component={MainWrapper} path={routePaths.MAIN_HOME} />
-      </Switch>
+      <Routes>
+        <Route element={<MainWrapper />} path="/*" />
+        <Route element={<RemovedPage />} path="/ce/" />
+        <Route element={<Admin />} path={`${routePaths.ADMIN  }/*`} />
+        <Route
+          element={<PastorApplicationPage />}
+          path={routePaths.PASTOR_APPLICATION}
+        />
+      </Routes>
     </BrowserRouter>
   );
 };

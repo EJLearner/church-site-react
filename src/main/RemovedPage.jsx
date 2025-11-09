@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {Redirect} from 'react-router';
+import {Navigate} from 'react-router';
 import styled from 'styled-components';
 
 import choir from '../assets/images/choir.jpg';
@@ -33,7 +33,7 @@ function RemovedPage() {
   }, []);
 
   if (shouldRedirect) {
-    return <Redirect push to="/" />;
+    return <Navigate to="/" />;
   }
 
   return (

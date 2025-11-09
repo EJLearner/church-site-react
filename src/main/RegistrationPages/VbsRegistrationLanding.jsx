@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import {Redirect} from 'react-router';
+import {Navigate} from 'react-router';
 
 import routePaths from '../../routePaths';
 
@@ -15,7 +15,7 @@ class VbsRegistrationLanding extends Component {
 
   render() {
     if (this.state.redirect) {
-      return <Redirect push to={this.state.redirect} />;
+      return <Navigate push to={this.state.redirect} />;
     }
 
     return (

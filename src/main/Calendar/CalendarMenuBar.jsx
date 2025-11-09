@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
-import {Component} from 'react';
-import {Link} from 'react-router-dom';
-import {withRouter} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 import styled from 'styled-components';
+
 const CalendarMenuBarStyles = styled.div`
   &#calendar-menu {
     display: block;
@@ -71,55 +70,47 @@ const CalendarMenuBarStyles = styled.div`
   }
 `;
 
-class MenuBar extends Component {
-  static propTypes = {
-    id: PropTypes.string,
-    links: PropTypes.arrayOf(
-      PropTypes.shape({
-        path: PropTypes.string.isRequired,
-        text: PropTypes.string.isRequired,
-      }),
-    ),
-    location: PropTypes.object,
-  };
+function CalendarMenuBar({links, id}) {
+  const {pathname} = useLocation();
+  const renderedLinks = links.map(({path, text}) => {
+    let className =
+      path !== '/' && pathname.indexOf(path) > -1 ? 'current-page-link' : null;
 
-  static defaultProps = {
-    showLogo: true,
-  };
+    const isHomePage =
+      !pathname || pathname === '/christianedu.html' || pathname === '/';
 
-  render() {
-    const renderedLinks = this.props.links.map(({path, text}) => {
-      const {pathname} = this.props.location;
-      let className =
-        path !== '/' && pathname.indexOf(path) > -1
-          ? 'current-page-link'
-          : null;
-
-      const isHomePage =
-        !pathname || pathname === '/christianedu.html' || pathname === '/';
-
-      if (path === '/' && isHomePage) {
-        className = 'current-page-link';
-      }
-
-      return (
-        <li className={className} key={path}>
-          <Link to={path}>{text}</Link>
-        </li>
-      );
-    });
-
-    renderedLinks.push();
+    if (path === '/' && isHomePage) {
+      className = 'current-page-link';
+    }
 
     return (
-      <CalendarMenuBarStyles className="menu-bar" id={this.props.id}>
-        <div className="empty-space">&nbsp;</div>
-        <ul>{renderedLinks}</ul>
-        <div className="empty-space">&nbsp;</div>
-      </CalendarMenuBarStyles>
+      <li className={className} key={path}>
+        <Link to={`../calendar/${  path}`}>{text}</Link>
+      </li>
     );
-  }
+  });
+
+  return (
+    <CalendarMenuBarStyles className="menu-bar" id={id}>
+      <div className="empty-space">&nbsp;</div>
+      <ul>{renderedLinks}</ul>
+      <div className="empty-space">&nbsp;</div>
+    </CalendarMenuBarStyles>
+  );
 }
 
-const MenuBarWrappedWithRouter = withRouter(MenuBar);
-export default MenuBarWrappedWithRouter;
+CalendarMenuBar.propTypes = {
+  id: PropTypes.string,
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      path: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+    }),
+  ),
+};
+
+CalendarMenuBar.defaultProps = {
+  showLogo: true,
+};
+
+export default CalendarMenuBar;

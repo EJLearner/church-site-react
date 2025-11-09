@@ -15,7 +15,7 @@ const set = vi.fn(() => {
 const refObject = {
   child: vi.fn(function () {
     return {
-      set: set,
+      set,
     };
   }),
   on: vi.fn(),

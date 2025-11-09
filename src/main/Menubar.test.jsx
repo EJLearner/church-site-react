@@ -9,7 +9,7 @@ describe('MainHome', () => {
     expect(() =>
       render(
         <MemoryRouter>
-          <Menubar menuItems={[{text: 'Home', path: 'home'}]} />
+          <Menubar basePath="/" menuItems={[{text: 'Home', path: 'home'}]} />
         </MemoryRouter>,
       ),
     ).not.toThrow();

@@ -7,7 +7,7 @@ import {
 } from 'firebase/auth';
 import {getDatabase, ref, onValue} from 'firebase/database';
 import {Component} from 'react';
-import {Route, Switch} from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 import styled from 'styled-components';
 
 import choir from '../../assets/images/choir.jpg';
@@ -111,20 +111,21 @@ class Admin extends Component {
 
     const uid = user?.uid;
     const isAdmin = user && adminUsers?.[uid];
+    const adminPath = '/admin/';
 
     return [
-      {text: 'Home', path: routePaths.MAIN_HOME},
-      isAdmin && {path: routePaths.ADMIN_EVENTS, text: 'Events'},
+      {text: 'Home', path: '/'},
+      isAdmin && {path: adminPath + routePaths.ADMIN_EVENTS, text: 'Events'},
       (isAdmin || ccRegAccess?.[uid]) && {
-        path: routePaths.ADMIN_CC,
+        path: adminPath + routePaths.ADMIN_CC,
         text: 'Children’s Church',
       },
       (isAdmin || vbsRegAccess?.[uid]) && {
-        path: routePaths.ADMIN_VBS,
+        path: adminPath + routePaths.ADMIN_VBS,
         text: 'VBS',
       },
       (isAdmin || emailSubscribersAccess?.[uid]) && {
-        path: routePaths.ADMIN_EMAIL_SUBSCRIBERS,
+        path: adminPath + routePaths.ADMIN_EMAIL_SUBSCRIBERS,
         text: 'Email Subscribers List',
       },
     ].filter(Boolean);
@@ -141,21 +142,21 @@ class Admin extends Component {
             <Button onClick={this.logout}>Log out</Button>
           </div>
 
-          <Switch>
-            <Route path={routePaths.ADMIN_EVENTS}>
-              <EventAdmin />
-            </Route>
-            <Route path={routePaths.ADMIN_CC}>
-              <CcVbsAdminBase stringPrefix="cc" />
-            </Route>
-            <Route path={routePaths.ADMIN_VBS}>
-              <CcVbsAdminBase stringPrefix="vbs" />
-            </Route>
+          <Routes>
+            <Route element={<EventAdmin />} path={routePaths.ADMIN_EVENTS} />
             <Route
-              component={SubscribedEmailsAdmin}
+              element={<CcVbsAdminBase stringPrefix="cc" />}
+              path={routePaths.ADMIN_CC}
+            />
+            <Route
+              element={<CcVbsAdminBase stringPrefix="vbs" />}
+              path={routePaths.ADMIN_VBS}
+            />
+            <Route
+              element={<SubscribedEmailsAdmin />}
               path={routePaths.ADMIN_EMAIL_SUBSCRIBERS}
             />
-          </Switch>
+          </Routes>
         </div>
       );
     }

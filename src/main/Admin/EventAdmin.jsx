@@ -114,7 +114,7 @@ class EventAdmin extends Component {
 
     // make new date object
     const event = {
-      title: title,
+      title,
       timeStart: this.getDateTimeFromSimple(date, timeStart),
       timeEnd: this.getDateTimeFromSimple(date, timeEnd),
       longDescription: longDescription || null,

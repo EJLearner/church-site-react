@@ -38,17 +38,16 @@ function Verse({passage, referenceText}) {
   const [loadState, setLoadState] = useState(LOAD_STATES.loading);
 
   useEffect(() => {
-    if (!passage) {
-      setLoadState(LOAD_STATES.missingPassage);
-      return;
+    if (passage) {
+      getVerseInfo(passage, (response) => {
+        setPassages(response);
+
+        const newLoadState = response
+          ? LOAD_STATES.complete
+          : LOAD_STATES.error;
+        setLoadState(newLoadState);
+      });
     }
-
-    getVerseInfo(passage, (response) => {
-      setPassages(response);
-
-      const newLoadState = response ? LOAD_STATES.complete : LOAD_STATES.error;
-      setLoadState(newLoadState);
-    });
   }, [passage]);
 
   if (loadState === LOAD_STATES.loading) {
@@ -63,7 +62,7 @@ function Verse({passage, referenceText}) {
     return `Error loading ${passage}`;
   }
 
-  if (loadState === LOAD_STATES.missingPassage) {
+  if (!passage) {
     return <p>Sorry, no verse is available at this time.</p>;
   }
 

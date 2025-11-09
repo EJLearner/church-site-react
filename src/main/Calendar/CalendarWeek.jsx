@@ -55,4 +55,6 @@ CalendarWeek.propTypes = {
   storedDates: PropTypes.object,
 };
 
-export default withDatesSubscription(CalendarWeek);
+const CalendarWeekWithDatesSubscription = withDatesSubscription(CalendarWeek);
+
+export default CalendarWeekWithDatesSubscription;
