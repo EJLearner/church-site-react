@@ -2905,4 +2905,18 @@ export default {
       </p>
     ),
   },
+  '2025-11-09': {
+    subTitle: (
+      <>
+        From <i>Prayers and Thoughts from World Religions</i> by Michel Quoist
+      </>
+    ),
+    content: (
+      <p>
+        “Lord, help me faithfully to journey along my road, holding my rightful
+        place in the great procession of humanity; Help me above all to
+        recognize you and to help you in all my pilgrim brothers.”
+      </p>
+    ),
+  },
 };
