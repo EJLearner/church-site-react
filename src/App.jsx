@@ -24,18 +24,16 @@ const GlobalStyle = createGlobalStyle`
     --28-font-clamped: clamp(16px, 2vw, 28px);
     --46-font-clamped: clamp(16px, 4vw, 46px);
 
-    --background: var(--black);
-    --content: var(--white);
 
-    --standard-background: var(--background);
+    --standard-background: var(--white);
     --light-background: var(--white);
-    --text-on-dark-background: var(--content);
+    --text-on-dark-background: var(--white);
     --text-on-light-background: var(--charcoal-grey);
     --accent-background: rgb(255,192,0);
     --accent-background-2: var(--light-blue);
     --accent-content: var(--text-on-light-background);
 
-    --standard-border: var(--content);
+    --main-menu-border: var(--white);
     --border-on-light: var(--charcoal-grey);
     --top-content-background: var(--white);
     --top-content-text: var(--text-on-light-background);

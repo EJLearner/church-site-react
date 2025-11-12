@@ -10,8 +10,8 @@ const StyledMenuBar = styled.header`
   padding: 32px var(--gutter-space) 32px var(--gutter-space);
 
   .main-menu-bar {
-    border-top: 1px solid var(--standard-border);
-    border-bottom: 1px solid var(--standard-border);
+    border-top: 1px solid var(--main-menu-border);
+    border-bottom: 1px solid var(--main-menu-border);
     font-family: var(--serif);
     font-size: clamp(16px, 2vw, 20px);
     text-transform: uppercase;

@@ -8,6 +8,14 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-11-09',
+    youtubeId: 'LLzgrDGt-7U',
+    preacher: 'Rev. Shawntay Thomas',
+    title: 'Healing is coming to your house!',
+    scripture: 'Amos 8:1-2; 9:11-15',
+    version: MSG,
+  },
+  {
     date: '2025-11-02',
     youtubeId: 'Oa9IL59h_CA',
     preacher: D_HICKMAN,
