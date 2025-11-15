@@ -2908,7 +2908,11 @@ export default {
   '2025-11-09': {
     subTitle: (
       <>
-        From <i>Prayers and Thoughts from World Religions</i> by Michel Quoist
+        From
+        <i>
+          Michel Quoist as quoted in Prayers and Thoughts from World Religions
+        </i>
+        by Sid G. Hedges
       </>
     ),
     content: (
@@ -2916,6 +2920,25 @@ export default {
         “Lord, help me faithfully to journey along my road, holding my rightful
         place in the great procession of humanity; Help me above all to
         recognize you and to help you in all my pilgrim brothers.”
+      </p>
+    ),
+  },
+  '2025-11-16': {
+    subTitle: (
+      <>
+        From
+        <i>Reaching Out</i>
+        by Henri J. M. Nouwen
+      </>
+    ),
+    content: (
+      <p>
+        “Only by denying the world can you live in it, that only by surrounding
+        yourself by an artificial, self-induced quietude can you live in a
+        spiritual life. A real spiritual life does exactly the opposite: it make
+        us so alert and aware of the world around us, that all that is and
+        happens becomes part of our contemplation and meditation and invites us
+        to a free and fearless response.”
       </p>
     ),
   },
