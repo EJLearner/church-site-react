@@ -8,6 +8,14 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-11-16',
+    youtubeId: '_dIz6FdpN0g',
+    preacher: M_HAMIEL,
+    title: 'Keep Hope Alive!!!',
+    scripture: 'Amos 8:1-2; 9:11-15',
+    version: MSG,
+  },
+  {
     date: '2025-11-09',
     youtubeId: 'LLzgrDGt-7U',
     preacher: 'Rev. Shawntay Thomas',
