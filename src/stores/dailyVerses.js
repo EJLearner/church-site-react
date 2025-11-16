@@ -1122,6 +1122,13 @@ const dailyVerses = {
   '2025-11-13': {verse: 'Acts 17.16-34'},
   '2025-11-14': {verse: 'John 11.1-44'},
   '2025-11-15': {verse: '1 Corinthians 15.51-58'},
+  '2025-11-16': {verse: 'Psalm 82'},
+  '2025-11-17': {verse: 'Matthew 25.1-13'},
+  '2025-11-18': {verse: 'Colossians 4.2-18'},
+  '2025-11-19': {verse: '1 Thessalonians 5'},
+  '2025-11-20': {verse: '2 Thessalonians 2'},
+  '2025-11-21': {verse: '2 Thessalonians 3'},
+  '2025-11-22': {verse: 'John 4.31-38'},
 };
 
 export {dailyVerses};
