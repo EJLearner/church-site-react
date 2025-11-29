@@ -2959,4 +2959,21 @@ export default {
       </p>
     ),
   },
+  '2025-11-30': {
+    subTitle: (
+      <>
+        From
+        <i>The God Who Comes</i>
+        by Carlo Caretto
+      </>
+    ),
+    content: (
+      <p>
+        “To have found God, to have experienced him in the intimacy of our
+        being, to have lived even for one hour in the fire of his Trinity and
+        the bliss of his Unity clearly makes us say: “Now I understand. You
+        alone are enough for me.”
+      </p>
+    ),
+  },
 };
