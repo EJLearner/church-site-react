@@ -1123,6 +1123,13 @@ const bibleComFormattedVerses = {
   '2025-11-27': {verse: 'Hebrews 9.23-28'},
   '2025-11-28': {verse: 'John 12.20-26'},
   '2025-11-29': {verse: '2 Thessalonians 1.5-12'},
+  '2025-11-30': {verse: 'Psalm 122'},
+  '2025-12-01': {verse: 'Matthew 3'},
+  '2025-12-02': {verse: 'Colossians 1.9-23'},
+  '2025-12-03': {verse: 'John 18.33-37'},
+  '2025-12-04': {verse: 'Isaiah 43.1-21'},
+  '2025-12-05': {verse: 'Hebrews 10.11-25'},
+  '2025-12-06': {verse: 'Zephaniah 3.14-20'},
 };
 
 export {bibleComFormattedVerses};
