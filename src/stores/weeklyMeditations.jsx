@@ -2989,10 +2989,10 @@ export default {
   '2025-11-09': {
     subTitle: (
       <>
-        From
+        From{' '}
         <i>
           Michel Quoist as quoted in Prayers and Thoughts from World Religions
-        </i>
+        </i>{' '}
         by Sid G. Hedges
       </>
     ),
@@ -3007,9 +3007,7 @@ export default {
   '2025-11-16': {
     subTitle: (
       <>
-        From
-        <i>Reaching Out</i>
-        by Henri J. M. Nouwen
+        From <i>Reaching Out</i> by Henri J. M. Nouwen
       </>
     ),
     content: (
@@ -3026,9 +3024,7 @@ export default {
   '2025-11-23': {
     subTitle: (
       <>
-        From
-        <i>Assurance</i>
-        by George Herbert
+        From <i>Assurance</i> by George Herbert
       </>
     ),
     content: (
@@ -3043,9 +3039,7 @@ export default {
   '2025-11-30': {
     subTitle: (
       <>
-        From
-        <i>The God Who Comes</i>
-        by Carlo Caretto
+        From <i>The God Who Comes</i> by Carlo Caretto
       </>
     ),
     content: (

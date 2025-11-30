@@ -8,6 +8,18 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-11-30',
+    youtubeId: 'xpDnlzCdNjI',
+    preacher: 'Rev. Dr. Kevin A. Slayton, Sr.',
+  },
+  {
+    date: '2025-11-23',
+    youtubeId: 'DRABtKMorrg',
+    preacher: 'Rev. Dr. Douglass Summers',
+    title: 'Gossiping about God’s Goodness',
+    scripture: 'Psalm 145:1-21',
+  },
+  {
     date: '2025-11-16',
     youtubeId: '_dIz6FdpN0g',
     preacher: M_HAMIEL,
