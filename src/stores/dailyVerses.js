@@ -1129,6 +1129,20 @@ const dailyVerses = {
   '2025-11-20': {verse: '2 Thessalonians 2'},
   '2025-11-21': {verse: '2 Thessalonians 3'},
   '2025-11-22': {verse: 'John 4.31-38'},
+  '2025-11-23': {verse: 'Psalm 100'},
+  '2025-11-24': {verse: 'Zechariah 14.1-11'},
+  '2025-11-25': {verse: 'Acts 3.17-26'},
+  '2025-11-26': {verse: 'Romans 14.10-12'},
+  '2025-11-27': {verse: 'Hebrews 9.23-28'},
+  '2025-11-28': {verse: 'John 12.20-26'},
+  '2025-11-29': {verse: '2 Thessalonians 1.5-12'},
+  '2025-11-30': {verse: 'Psalm 122'},
+  '2025-12-01': {verse: 'Matthew 3'},
+  '2025-12-02': {verse: 'Colossians 1.9-23'},
+  '2025-12-03': {verse: 'John 18.33-37'},
+  '2025-12-04': {verse: 'Isaiah 43.1-21'},
+  '2025-12-05': {verse: 'Hebrews 10.11-25'},
+  '2025-12-06': {verse: 'Zephaniah 3.14-20'},
 };
 
 export {dailyVerses};
