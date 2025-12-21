@@ -8,6 +8,14 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2025-12-21',
+    preacher: M_HAMIEL,
+    scripture: 'Philippians 4:1-9; John 14:27',
+    youtubeId: 'EjjOWU7n0-I',
+  },
+  // 2025-12-14 - Missing, no service due to weather
+  // 2025-12-07 - Missing, service might not have been recorded
+  {
     date: '2025-11-30',
     youtubeId: 'xpDnlzCdNjI',
     preacher: 'Rev. Dr. Kevin A. Slayton, Sr.',

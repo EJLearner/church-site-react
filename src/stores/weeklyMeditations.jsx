@@ -3054,9 +3054,7 @@ export default {
   '2025-12-07': {
     subTitle: (
       <>
-        From
-        <i>A Diary of Private Prayer</i>
-        by John Baillie
+        From <i>A Diary of Private Prayer</i> by John Baillie
       </>
     ),
     content: (
@@ -3074,9 +3072,7 @@ export default {
   '2025-12-14': {
     subTitle: (
       <>
-        From
-        <i>The Divine Conspiracy</i>
-        by Dallas Willard
+        From <i>The Divine Conspiracy</i> by Dallas Willard
       </>
     ),
     content: (
@@ -3090,9 +3086,7 @@ export default {
   '2025-12-21': {
     subTitle: (
       <>
-        From
-        <i>The Divine Conspiracy</i>
-        by Dallas Willard
+        From <i>The Divine Conspiracy</i> by Dallas Willard
       </>
     ),
     content: (
