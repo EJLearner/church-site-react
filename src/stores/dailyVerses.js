@@ -1137,6 +1137,13 @@ const bibleComFormattedVerses = {
   '2025-12-11': {verse: 'Isaiah 62'},
   '2025-12-12': {verse: 'John 1.6-34'},
   '2025-12-13': {verse: 'Mark 1.1-8'},
+  '2025-12-14': {verse: 'Psalm 146.5-10'},
+  '2025-12-15': {verse: 'Luke 1.26-33'},
+  '2025-12-16': {verse: 'Job 33.29-33'},
+  '2025-12-17': {verse: '1 Samuel 3.1-10'},
+  '2025-12-18': {verse: '1 Samuel 3.11-18'},
+  '2025-12-19': {verse: 'Mark 9.2-8'},
+  '2025-12-20': {verse: 'John 10.1-6'},
 };
 
 export {bibleComFormattedVerses};
