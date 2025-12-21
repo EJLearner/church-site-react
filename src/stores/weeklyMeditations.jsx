@@ -2996,4 +2996,20 @@ export default {
       </p>
     ),
   },
+  '2025-12-14': {
+    subTitle: (
+      <>
+        From
+        <i>The Divine Conspiracy</i>
+        by Dallas Willard
+      </>
+    ),
+    content: (
+      <p>
+        “Spiritual” is not just something we ought to be. It is something we are
+        and cannot escape, regardless of how we may think or feel about it. It
+        is our nature and our destiny.”
+      </p>
+    ),
+  },
 };
