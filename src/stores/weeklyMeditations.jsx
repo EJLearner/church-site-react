@@ -3051,4 +3051,56 @@ export default {
       </p>
     ),
   },
+  '2025-12-07': {
+    subTitle: (
+      <>
+        From
+        <i>A Diary of Private Prayer</i>
+        by John Baillie
+      </>
+    ),
+    content: (
+      <p>
+        “O Holy Spirit of God, visit now this soul of mine, and tarry within it
+        until eventide. Inspire all my thoughts. Pervade all my imaginations.
+        Suggest all my decisions. Lodge in my will’s most inward citadel and
+        order all my doings. Be with me in my silence and in my speech, in my
+        haste and in my leisure, in company and in solitude, in the freshness of
+        the morning and in the weariness of the evening; and give me grace at
+        all times to rejoice in thy mysterious companionship.”
+      </p>
+    ),
+  },
+  '2025-12-14': {
+    subTitle: (
+      <>
+        From
+        <i>The Divine Conspiracy</i>
+        by Dallas Willard
+      </>
+    ),
+    content: (
+      <p>
+        “Spiritual” is not just something we ought to be. It is something we are
+        and cannot escape, regardless of how we may think or feel about it. It
+        is our nature and our destiny.”
+      </p>
+    ),
+  },
+  '2025-12-21': {
+    subTitle: (
+      <>
+        From
+        <i>The Divine Conspiracy</i>
+        by Dallas Willard
+      </>
+    ),
+    content: (
+      <p>
+        “Spiritual” is not just something we ought to be. It is something we are
+        and cannot escape, regardless of how we may think or feel about it. It
+        is our nature and our destiny.”
+      </p>
+    ),
+  },
 };
