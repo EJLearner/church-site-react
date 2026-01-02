@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import commonUtils from '../../utils/commonUtils';
+import commonUtils from '../../utils/commonUtils.ts';
 
 function MonthTableBody({todayMoment, renderRow}) {
   const firstWeekOfMonth = todayMoment.startOf('month').week();

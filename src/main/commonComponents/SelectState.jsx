@@ -85,8 +85,4 @@ SelectState.propTypes = {
   value: PropTypes.string,
 };
 
-SelectState.defaultProps = {
-  label: 'State',
-};
-
 export default SelectState;

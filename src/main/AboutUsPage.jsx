@@ -1,26 +1,27 @@
 import styled from 'styled-components';
 
+import choir from '../assets/images/choir.jpg';
 import churchExterior from '../assets/images/church-exterior.jpg';
-import yearginPulpitMartins from '../assets/images/yeargin-pulpit-martins.jpg';
 
 import MainMenubar from './commonComponents/MainMenubar';
+
+//  Saving in case new pastor info formatting works the same
+// .menu-and-pastor {
+//   background-attachment: fixed;
+//   background: linear-gradient(
+//       to right,
+//       rgba(0, 0, 0, 1),
+//       rgba(0, 0, 0, 0.7),
+//       rgba(0, 0, 0, 0)
+//     ),
+//     url(${yearginPulpitMartins});
+//   background-size: cover;
+//   background-repeat: no-repeat;
+// }
 
 const StyledAboutUspage = styled.div`
   p:last-of-type {
     margin-bottom: 0;
-  }
-
-  .menu-and-pastor {
-    background-attachment: fixed;
-    background: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 1),
-        rgba(0, 0, 0, 0.7),
-        rgba(0, 0, 0, 0)
-      ),
-      url(${yearginPulpitMartins});
-    background-size: cover;
-    background-repeat: no-repeat;
   }
 
   h2:nth-child(1) {
@@ -75,45 +76,52 @@ const StyledAboutUspage = styled.div`
   }
 `;
 
+const SHOW_PASTOR_INFO_AND_PICTURE = false;
+
+function renderPastorInfoAndPicture() {
+  return (
+    <div className="pastor-info-and-picture">
+      <div className="pastor-info">
+        <h2>About the Pastor</h2>
+        <p>
+          After serving Mount Prospect for nine years, Dr. Yeargin was called to
+          pastor the City Temple of Baltimore (Baptist) on September 10, 1985.
+          He began his pastorate in January 1986. Dr. Yeargin has brought a new
+          dimension of spiritual nourishment and growth to City Temple through
+          worship, study, and action. Under his direction several new ministries
+          have been established in City Temple that include: the Shelter
+          Ministry, the Dance Ministry, the New Members Counselors Ministry, the
+          Christian Education Ministry, the Courtesy Guild, the Tape Ministry as
+          well as the re-establishment of the Cultural and Fine Arts Ministry
+          and the Building Ministry.
+        </p>
+        <p>
+          Dr. Yeargin has been socially involved in the life of the community
+          through his participation in Baltimoreans United in Leadership
+          Development (B.U.I.L.D.) as well as serving for two years as a clergy
+          co-chairperson, the Interdenominational Ministerial Alliance, the
+          Institute for Christian and Jewish Studies, The United Missionary
+          Baptist Convention of Maryland, and was the previous co-chairperson of
+          the Baltimore affiliate of the National Black Leadership Commission on
+          AIDS.
+        </p>
+        <p>
+          Dr. Yeargin is married to Patricia Ann Yeargin and they share two
+          daughters, Adia Joy and Candace. He also continues to maintain his
+          sense of fatherhood to his beloved daughter, Kimberly Rei, who is
+          deceased.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 const AboutUsPage = () => {
   return (
     <StyledAboutUspage>
       <div className="menu-and-pastor">
-        <MainMenubar />
-        <div className="pastor-info-and-picture">
-          <div className="pastor-info">
-            <h2>About the Pastor</h2>
-            <p>
-              After serving Mount Prospect for nine years, Dr. Yeargin was
-              called to pastor the City Temple of Baltimore (Baptist) on
-              September 10, 1985. He began his pastorate in January 1986. Dr.
-              Yeargin has brought a new dimension of spiritual nourishment and
-              growth to City Temple through worship, study, and action. Under
-              his direction several new ministries have been established in City
-              Temple that include: the Shelter Ministry, the Dance Ministry, the
-              New Members Counselors Ministry, the Christian Education Ministry,
-              the Courtesy Guild, the Tape Ministry as well as the
-              re-establishment of the Cultural and Fine Arts Ministry and the
-              Building Ministry.
-            </p>
-            <p>
-              Dr. Yeargin has been socially involved in the life of the
-              community through his participation in Baltimoreans United in
-              Leadership Development (B.U.I.L.D.) as well as serving for two
-              years as a clergy co-chairperson, the Interdenominational
-              Ministerial Alliance, the Institute for Christian and Jewish
-              Studies, The United Missionary Baptist Convention of Maryland, and
-              was the previous co-chairperson of the Baltimore affiliate of the
-              National Black Leadership Commission on AIDS.
-            </p>
-            <p>
-              Dr. Yeargin is married to Patricia Ann Yeargin and they share two
-              daughters, Adia Joy and Candace. He also continues to maintain his
-              sense of fatherhood to his beloved daughter, Kimberly Rei, who is
-              deceased.
-            </p>
-          </div>
-        </div>
+        <MainMenubar imageSource={choir} />
+        {SHOW_PASTOR_INFO_AND_PICTURE && renderPastorInfoAndPicture()}
       </div>
       <div className="history-wrapper">
         <div className="history">

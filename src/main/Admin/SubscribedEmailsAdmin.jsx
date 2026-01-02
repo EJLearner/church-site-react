@@ -1,7 +1,8 @@
-import { Component } from 'react';
+import '../../firebaseApp';
+import {getDatabase, onValue, ref} from 'firebase/database';
+import {Component} from 'react';
 
-import firebase from '../../firebase';
-import commonUtils from '../../utils/commonUtils';
+import commonUtils from '../../utils/commonUtils.ts';
 import Table from '../commonComponents/Table/Table';
 
 const getColumns = () => {
@@ -37,12 +38,12 @@ class SubscribedEmailsAdmin extends Component {
 
   componentDidMount() {
     // FBH get a reference for the 'subscribedEmails' top level prop of the data
-    const subscribedEmailsRef = firebase.database().ref('subscribedEmails');
+    const subscribedEmailsRef = ref(getDatabase(), 'subscribedEmails');
 
     // FBH add a listener to the subscribedEmails object, update on value change (guessing)
     // listener gets the subscribedEmails object using snapshot.val();
     // then pushes the updated subScribedEmails object into the state
-    subscribedEmailsRef.on('value', (snapshot) => {
+    onValue(subscribedEmailsRef, (snapshot) => {
       const subscribedEmails = snapshot.val() || {};
 
       this.setState({

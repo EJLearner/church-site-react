@@ -1,8 +1,8 @@
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import { Component } from 'react';
+import {Component} from 'react';
 
-import commonUtils from '../../utils/commonUtils';
+import commonUtils from '../../utils/commonUtils.ts';
 import constants from '../../utils/constants';
 
 import EventsListPage from './EventsListPage';
@@ -55,4 +55,6 @@ CalendarWeek.propTypes = {
   storedDates: PropTypes.object,
 };
 
-export default withDatesSubscription(CalendarWeek);
+const CalendarWeekWithDatesSubscription = withDatesSubscription(CalendarWeek);
+
+export default CalendarWeekWithDatesSubscription;

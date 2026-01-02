@@ -1,9 +1,10 @@
+import '../../firebaseApp';
+import {getDatabase, onValue, ref, get, remove} from 'firebase/database';
 import {Parser as HtmlToReactParser} from 'html-to-react';
 import moment from 'moment';
-import { Component } from 'react';
+import {Component} from 'react';
 
-import firebase from '../../firebase';
-import commonUtils from '../../utils/commonUtils';
+import commonUtils from '../../utils/commonUtils.ts';
 import Button from '../commonComponents/Button/Button';
 import Checklist from '../commonComponents/Checklist/Checklist';
 import Textbox from '../commonComponents/Textbox';
@@ -42,12 +43,13 @@ class EventAdmin extends Component {
 
   componentDidMount() {
     // FBH get a reference for the 'dates' top level prop of the data
-    const datesRef = firebase.database().ref('dates');
+    const db = getDatabase();
+    const datesRef = ref(db, 'dates');
 
     // FBH add a listener to the dates object, update on value change (guessing)
     // listener gets the dates object using snapshot.val();
     // then pushes the udpated date object into the state
-    datesRef.on('value', (snapshot) => {
+    onValue(datesRef, (snapshot) => {
       const dates = snapshot.val();
 
       this.setState({
@@ -112,7 +114,7 @@ class EventAdmin extends Component {
 
     // make new date object
     const event = {
-      title: title,
+      title,
       timeStart: this.getDateTimeFromSimple(date, timeStart),
       timeEnd: this.getDateTimeFromSimple(date, timeEnd),
       longDescription: longDescription || null,
@@ -124,7 +126,8 @@ class EventAdmin extends Component {
 
     if (dataIsValid) {
       if (isNew) {
-        const dateRef = firebase.database().ref(`dates/${date}/events`);
+        const db = getDatabase();
+        const dateRef = ref(db, `dates/${date}/events`);
 
         // push date object into 'dates' reference
 
@@ -140,7 +143,8 @@ class EventAdmin extends Component {
         } else {
           eventRef.set(null);
 
-          const dateRef = firebase.database().ref(`dates/${date}/events`);
+          const db = getDatabase();
+          const dateRef = ref(db, `dates/${date}/events`);
           dateRef.push(event);
         }
       }
@@ -161,7 +165,7 @@ class EventAdmin extends Component {
 
   // FBH get specific date reference from firebase using key
   getEventRef(dateString, key) {
-    return firebase.database().ref(`/dates/${dateString}/events/${key}`);
+    return ref(getDatabase(), `/dates/${dateString}/events/${key}`);
   }
 
   editItem(dateTitleKey, date, eventObject) {
@@ -194,19 +198,18 @@ class EventAdmin extends Component {
     this.resetData();
   }
 
-  removeItem(dateString, key) {
+  async removeItem(dateString, key) {
     // FBH get specific date reference from firebase using key
     const eventRef = this.getEventRef(dateString, key);
 
-    eventRef.once('value', (snapshot) => {
-      const value = snapshot.val();
-      const title = typeof value === 'string' ? value : value.title;
-      const confirmMessage = `Are you sure you want to delete the event titled ${title}?`;
+    const snapshot = await get(eventRef);
+    const value = snapshot.val();
+    const title = typeof value === 'string' ? value : value.title;
+    const confirmMessage = `Are you sure you want to delete the event titled ${title}?`;
 
-      if (window.confirm(confirmMessage)) {
-        eventRef.remove();
-      }
-    });
+    if (window.confirm(confirmMessage)) {
+      remove(eventRef);
+    }
   }
 
   renderItems() {

@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import {Component} from 'react';
 
 import calendarDatesUtils from './calendarDatesUtils.js';
 

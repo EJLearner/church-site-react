@@ -1,9 +1,9 @@
+import '../../firebaseApp';
+import {getDatabase, ref, onValue} from 'firebase/database';
 import PropTypes from 'prop-types';
-import { Component } from 'react';
-import {withRouter} from 'react-router-dom';
+import {Component} from 'react';
 
-import firebase from '../../firebase';
-import commonUtils from '../../utils/commonUtils';
+import commonUtils from '../../utils/commonUtils.ts';
 import {CHILD_STATUS} from '../CcVbsCheckinOut/BaseCheckinOutConstants';
 import Select from '../commonComponents/Select';
 import Table from '../commonComponents/Table/Table';
@@ -70,39 +70,38 @@ class CcVbsAdminBase extends Component {
 
     const refPath = `${this.props.stringPrefix}Registered${registerTypeString}/${this.state.dataYear}`;
 
-    firebase
-      .database()
-      .ref(refPath)
-      .on('value', (snapshot) => {
-        const tableRows = this.getRowsFromSnapshot(
-          snapshot,
-          generateRowObject,
-          this,
-        );
-        this.setState({[stateName]: tableRows});
-      });
+    const db = getDatabase();
+    const thisRef = ref(db, refPath);
+
+    onValue(thisRef, (snapshot) => {
+      const tableRows = this.getRowsFromSnapshot(
+        snapshot,
+        generateRowObject,
+        this,
+      );
+      this.setState({[stateName]: tableRows});
+    });
   }
 
   convertFbObjectWithSubObjectsToState(refPath, stateName, generateRowObject) {
-    firebase
-      .database()
-      .ref(refPath)
-      .on('value', (snapshot) => {
-        const props = {};
+    const db = getDatabase();
+    const thisRef = ref(db, refPath);
+    onValue(thisRef, (snapshot) => {
+      const props = {};
 
-        snapshot.forEach((snapshotItem) => {
-          const key = `${stateName}-${snapshotItem.key}`;
-          const tableRows = this.getRowsFromSnapshot(
-            snapshotItem,
-            generateRowObject,
-            this,
-          );
+      snapshot.forEach((snapshotItem) => {
+        const key = `${stateName}-${snapshotItem.key}`;
+        const tableRows = this.getRowsFromSnapshot(
+          snapshotItem,
+          generateRowObject,
+          this,
+        );
 
-          props[key] = tableRows;
-        });
-
-        this.setState(props);
+        props[key] = tableRows;
       });
+
+      this.setState(props);
+    });
   }
 
   getRowsFromSnapshot(snapshot, generateRowObject, instance) {
@@ -271,7 +270,7 @@ class CcVbsAdminBase extends Component {
       studentName,
       type: 'Child',
       phone: commonUtils.formatPhoneNumber(phone, true),
-      email: email,
+      email,
       parentNames: parentNames?.join(' & '),
       address: (
         <div>
@@ -450,4 +449,4 @@ class CcVbsAdminBase extends Component {
   }
 }
 
-export default withRouter(CcVbsAdminBase);
+export default CcVbsAdminBase;

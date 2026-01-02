@@ -1,4 +1,4 @@
-const bibleComFormattedVerses = {
+const dailyVerses = {
   '2021-01-20': {
     verse: 'Luke 9.23-27; 9.57-62',
     referenceText: 'Luke 9.23-27, 57-62',
@@ -759,6 +759,20 @@ const bibleComFormattedVerses = {
   '2024-10-31': {verse: 'Romans 13.1-10'},
   '2024-11-01': {verse: '1 Peter 3.8-12'},
   '2024-11-02': {verse: 'Philippians 2.1-18'},
+  '2024-11-03': {verse: 'Psalm 128'},
+  '2024-11-04': {verse: 'Isaiah 57.4-21'},
+  '2024-11-05': {verse: 'Zephaniah 3'},
+  '2024-11-06': {verse: '2 Chronicles 7.11-22'},
+  '2024-11-07': {verse: 'Romans 13.1-10'},
+  '2024-11-08': {verse: '1 Peter 3.8-12'},
+  '2024-11-09': {verse: 'Philippians 2.1-18'},
+  '2024-11-10': {verse: 'Psalm 146'},
+  '2024-11-11': {verse: 'Luke 12.35-59'},
+  '2024-11-12': {verse: 'Hebrews 11.32-12.2'},
+  '2024-11-13': {verse: '1 Peter 1.3-9'},
+  '2024-11-14': {verse: 'Acts 17.16-34'},
+  '2024-11-15': {verse: 'John 11.1-44'},
+  '2024-11-16': {verse: '1 Corinthians 15.51-58'},
   '2024-11-17': {verse: 'Psalm 76'},
   '2024-11-18': {verse: 'Matthew 25.1-13'},
   '2024-11-19': {verse: 'Colossians 4.2-18'},
@@ -837,7 +851,6 @@ const bibleComFormattedVerses = {
   '2025-02-14': {verse: '1 John 3.1-3'},
   '2025-02-15': {verse: 'Psalm 127.1-2'},
   '2025-02-16': {verse: 'Psalm 1'},
-  '2025-02-17': {verse: 'Psalm 127.1-2'},
   '2025-02-18': {verse: 'Ezekiel 37.1-6'},
   '2025-02-19': {verse: 'Psalm 69.1-3'},
   '2025-02-20': {verse: 'Mark 15.25-32'},
@@ -1160,4 +1173,4 @@ const bibleComFormattedVerses = {
   '2026-01-03': {verse: 'Romans 1.1-7'},
 };
 
-export {bibleComFormattedVerses};
+export {dailyVerses};

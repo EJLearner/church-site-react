@@ -6,6 +6,7 @@ const StyledPageNotFoundDiv = styled.div`
   margin: 0 64px;
   padding: 1em;
   background-color: ${STYLES.LOGICAL_COLORS.STANDARD_BACKGROUND};
+  color: ${STYLES.LOGICAL_COLORS.STANDARD_TEXT};
 `;
 
 function NotFound() {

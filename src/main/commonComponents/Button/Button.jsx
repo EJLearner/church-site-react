@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Component } from 'react';
+import {Component} from 'react';
 import styled from 'styled-components';
 
 import {COLORS, LOGICAL_COLORS} from '../../../utils/styleVariables';
@@ -16,10 +16,12 @@ const BUTTON_COLORS = {
 };
 
 const StyledButton = styled.button`
+  border: none;
   box-shadow: none;
   min-width: 80px;
   min-height: 30px;
   color: ${LOGICAL_COLORS.STANDARD_TEXT};
+  transition: all 0.05s;
 
   margin-left: 1em;
 
@@ -41,12 +43,7 @@ const StyledButton = styled.button`
   }
 
   &.oval-button {
-    border: none;
     border-radius: 15px;
-  }
-
-  &.rect-button {
-    border: none;
   }
 
   &.disabled {
@@ -55,6 +52,12 @@ const StyledButton = styled.button`
 
   &:hover {
     cursor: pointer;
+    transform: scale(1.05);
+
+    @media (prefers-reduced-motion) {
+      transform: none;
+      filter: brightness(0.9);
+    }
   }
 `;
 
@@ -126,5 +129,7 @@ Button.propTypes = {
   value: PropTypes.string,
 };
 
-export {SHAPES, BUTTON_COLORS};
+Button.SHAPES = SHAPES;
+Button.BUTTON_COLORS = BUTTON_COLORS;
+
 export default Button;

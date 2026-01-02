@@ -1,6 +1,6 @@
 import moment from 'moment';
-import { Component } from 'react';
-import {Redirect, Route, Switch} from 'react-router-dom';
+import {Component} from 'react';
+import {Navigate, Route, Routes} from 'react-router-dom';
 import styled from 'styled-components';
 
 import choir from '../assets/images/choir.jpg';
@@ -62,28 +62,32 @@ class Calendar extends Component {
         <div className="calendar-page-content">
           <h1>Events at City Temple</h1>
           <CalendarMenuBar id="calendar-menu" links={linkData} />
-          <Switch>
-            <Route path={routePaths.MAIN_CALENDAR_MONTH}>
-              <CalendarMonth />
-            </Route>
-            <Route path={routePaths.MAIN_CALENDAR_DAY}>
-              <CalendarDay />
-            </Route>
-            <Route path={routePaths.MAIN_CALENDAR_WEEK}>
-              <CalendarWeek />
-            </Route>
-            <Route path={routePaths.MAIN_CALENDAR_YEAR}>
-              <CalendarYear />
-            </Route>
-            <Route path={routePaths.MAIN_CALENDAR_UPCOMING}>
-              <CalendarUpcoming />
-            </Route>
+          <Routes>
             <Route
-              exact
-              path={routePaths.MAIN_CALENDAR}
-              render={() => <Redirect to={routePaths.MAIN_CALENDAR_MONTH} />}
+              element={<Navigate to={routePaths.MAIN_CALENDAR_MONTH} />}
+              path="/"
             />
-          </Switch>
+            <Route
+              element={<CalendarMonth />}
+              path={routePaths.MAIN_CALENDAR_MONTH}
+            />
+            <Route
+              element={<CalendarDay />}
+              path={routePaths.MAIN_CALENDAR_DAY}
+            />
+            <Route
+              element={<CalendarWeek />}
+              path={routePaths.MAIN_CALENDAR_WEEK}
+            />
+            <Route
+              element={<CalendarYear />}
+              path={routePaths.MAIN_CALENDAR_YEAR}
+            />
+            <Route
+              element={<CalendarUpcoming />}
+              path={routePaths.MAIN_CALENDAR_UPCOMING}
+            />
+          </Routes>
         </div>
       </CalendarPageStyles>
     );

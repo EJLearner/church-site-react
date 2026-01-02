@@ -37,31 +37,37 @@ const constants = {
     D_NELSON: 'Rev. Donnell Nelson',
     D_HICKMAN: 'Rev. Debra Hickman-Arnette',
     G_YEARGIN: 'Rev. Dr. Grady A Yeargin, Jr.',
-    L_FORD: 'Minister Lori Ford',
-    M_HAMIEL: 'Rev. Michelle Hamiel',
+    L_FORD: 'Minister Lori Pierce',
+    L_PIERCE: 'Minister Lori Pierce',
+    M_HAMIEL: 'Minister Michelle Hamiel',
     MINISTERS: 'City Temple Ministers', // use when multiple ministers are in video
     P_YEARGIN: 'Minister Patricia Ann Yeargin',
     T_CURLEY: 'Rev. Tyra Curley',
   },
 
   BIBLE_VERSIONS: {
+    ESV: 'ESV',
     KJV: 'KJV',
+    NKJV: 'NKJV',
     NIV: 'NIV',
     NRSV: 'NRSV',
     NLT: 'NLT',
     NRSVUE: 'NRSVUE',
+    MSG: 'MSG',
   },
 
   BIBLE_VERSIONS_INFO: {
     ESV: {long: 'English Standard Version', short: 'ESV'},
     KJV: {long: 'King James Version', short: 'KJV'},
+    NKJV: {long: 'New King James Version', short: 'NKJV'},
     NIV: {long: 'New International Version', short: 'NIV'},
     NRSV: {long: 'New Revised Standard Version', short: 'NRSV'},
+    NLT: {long: 'New Living Translation', short: 'NLT'},
     NRSVUE: {
       long: 'New Revised Standard Version UPDATED EDITION',
       short: 'NRSVUE',
     },
-    NLT: {long: 'New Living Translation', short: 'NLT'},
+    MSG: {long: 'The Message Bible', short: 'MSG'},
   },
 
   SLENDER_ARROW_LEFT: '‹',

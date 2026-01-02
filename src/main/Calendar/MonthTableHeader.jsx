@@ -2,7 +2,7 @@ import format from 'date-fns/format';
 import setDay from 'date-fns/setDay';
 import PropTypes from 'prop-types';
 
-import commonUtils from '../../utils/commonUtils';
+import commonUtils from '../../utils/commonUtils.ts';
 
 const formats = {
   twoChars: 'EEEEEE',

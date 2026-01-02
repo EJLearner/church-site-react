@@ -1,5 +1,7 @@
+import {faTimesCircle} from '@fortawesome/free-solid-svg-icons/faTimesCircle';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
-import { Component } from 'react';
+import {Component} from 'react';
 
 import './Modal.css';
 
@@ -32,9 +34,11 @@ class Modal extends Component {
               {children}
             </div>
             {onCloseClick && (
-              <i
-                className="close-icon fa fa-2x fa-times-circle"
+              <FontAwesomeIcon
+                className="close-icon"
+                icon={faTimesCircle}
                 onClick={onCloseClick}
+                size="2x"
                 tabIndex="0"
                 title="Close Button"
               />

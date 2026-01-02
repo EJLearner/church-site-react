@@ -1,4 +1,6 @@
-import firebase from '../firebase';
+import {beforeEach, describe, expect, it} from 'vitest';
+
+import firebase from '../firebaseApp';
 
 import constants from './constants';
 import pushToSubscribedList from './pushToSubscribedList';

@@ -1,12 +1,14 @@
-import _ from 'lodash';
+import {faCaretLeft} from '@fortawesome/free-solid-svg-icons/faCaretLeft';
+import {faCaretRight} from '@fortawesome/free-solid-svg-icons/faCaretRight';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import { Component } from 'react';
+import {Component} from 'react';
 import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 import routePaths from '../../routePaths';
-import commonUtils from '../../utils/commonUtils';
+import commonUtils from '../../utils/commonUtils.ts';
 import Select from '../commonComponents/Select';
 
 import MonthTableBody from './MonthTableBody';
@@ -154,12 +156,10 @@ class CalendarMonth extends Component {
       dateString,
     );
 
-    return _.map(daysEventsData, (event, index, allEvents) => {
+    return daysEventsData.map((event, index, allEvents) => {
       const title = event.title || event;
-      const isLastEvent = event === _.last(allEvents);
-      const pathname = this.props.isCe
-        ? routePaths.CE_CALENDAR_DAY
-        : routePaths.MAIN_CALENDAR_DAY;
+      const isLastEvent = event === allEvents.at(-1);
+      const pathname = routePaths.MAIN_CALENDAR_DAY;
 
       return (
         <div key={index}>
@@ -265,11 +265,19 @@ class CalendarMonth extends Component {
           </div>
           <div className="month-arrows">
             <button onClick={this.monthBack}>
-              <i className="fa fa-caret-left fa-lg" title="Previous Month" />
+              <FontAwesomeIcon
+                icon={faCaretLeft}
+                size="lg"
+                title="Previous Month"
+              />
             </button>
             <h2>{this.state.selectedMoment.format('MMMM')}</h2>
             <button onClick={this.monthForward}>
-              <i className="fa fa-caret-right fa-lg" title="Next Month" />
+              <FontAwesomeIcon
+                icon={faCaretRight}
+                size="lg"
+                title="Next Month"
+              />
             </button>
           </div>
           <div className="empty-space" />
@@ -290,13 +298,12 @@ class CalendarMonth extends Component {
 
 CalendarMonth.propTypes = {
   id: PropTypes.string,
-  isCe: PropTypes.bool,
   storedDates: PropTypes.object,
 };
 
 CalendarMonth.defaultPropTypes = {
   id: 'calendar-month-div',
-  isCe: false,
 };
 
-export default withDatesSubscription(CalendarMonth);
+const CalendarMonthWrappedWithDates = withDatesSubscription(CalendarMonth);
+export default CalendarMonthWrappedWithDates;

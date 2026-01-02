@@ -1,3 +1,4 @@
+// keeping this file as a temporary archive wile new verse/mediation strategy is confirmed
 export default {
   '2022-12-11': {
     subTitle: (
@@ -2009,6 +2010,75 @@ export default {
       </p>
     ),
   },
+  '2024-11-10': {
+    subTitle: <>by Jesuit Father Luís Espinal</>,
+    content: (
+      <>
+        <p>
+          There are Christians who have hysterical reactions, as if the world
+          would have slipped out of God’s hands. They act violently as if they
+          were risking everything. But we believe in history; the world is not a
+          roll of the dice going toward chaos. A new world has begun to happen
+          since Christ has risen...
+        </p>
+        <p>
+          Jesus Christ, we rejoice in your definitive triumph...
+          <br />
+          with our bodies still in the breach
+          <br />
+          and our souls in tension,
+          <br />
+          we cry out our first “Hurrah!”
+          <br />
+          till eternity unfolds itself.
+        </p>
+        <p>
+          Your sorrow now has passed.
+          <br />
+          Your enemies have failed.
+          <br />
+          You are a definitive smile for humankind.
+        </p>
+        <p>
+          What matter the wait now for us?
+          <br />
+          We accept the struggle and the death;
+          <br />
+          because you, our love, will not die!
+        </p>
+        <p>
+          We march behind you, on the road to the future.
+          <br />
+          You are with us and you are our immortality!
+        </p>
+        <p>
+          Take away the sadness from our faces.
+          <br />
+          We are not in a game of chance...
+          <br />
+          you have the last word!
+        </p>
+        <p>
+          Beyond the crushing of our bones,
+          <br />
+          now has begun the eternal “alleluia!”
+          <br />
+          From the thousand openings of our wounded bodies
+          <br />
+          and souls there arises now a triumphal song!
+        </p>
+        <p>
+          So, teach us to give voice to your new life throughout
+          <br />
+          all the world.
+          <br />
+          Because you dry the tears from the eyes of the
+          <br />
+          oppressed forever...
+        </p>
+      </>
+    ),
+  },
   '2024-11-17': {
     subTitle: (
       <>
@@ -2016,22 +2086,33 @@ export default {
       </>
     ),
     content: (
-      <p>
-        “The aphorism, “As a man thinketh in his heart so is he,” not only
-        embraces the whole of a man’s being, but is so comprehensive as to reach
-        out to every condition and circumstance of his life. A man is literally
-        what he thinks, his character being the complete sum of all his
-        thoughts. As the plant springs from, and could not be without, the seed,
-        so every act of a man springs from the hidden seeds of thought, and
-        could not have appeared without them. This applies equally to those acts
-        called “spontaneous” and “unpremeditated” as to those which are
-        deliberately executed. Act is the blossom of thought, and joy and
-        suffering are its fruits; thus does a man garner in the sweet and bitter
-        fruitage of his own husbandry. Thought in the mind hath made us, what we
-        are by thought was wrought and built. If a man’s mind hath evil
-        thoughts, pain comes on him as comes the wheel the ox behind…If one
-        endure in purity of thought, joy follows him as his own shadow – sure.”
-      </p>
+      <>
+        <p>
+          “The aphorism, “As a man thinketh in his heart so is he,” not only
+          embraces the whole of a man’s being, but is so comprehensive as to
+          reach out to every condition and circumstance of his life. A man is
+          literally what he thinks, his character being the complete sum of all
+          his thoughts.
+        </p>
+        <p>
+          As the plant springs from, and could not be without, the seed, so
+          every act of a man springs from the hidden seeds of thought, and could
+          not have appeared without them. This applies equally to those acts
+          called “spontaneous” and “unpremeditated” as to those which are
+          deliberately executed.
+        </p>
+        <p>
+          Act is the blossom of thought, and joy and suffering are it fruits;
+          thus does a man garner in the sweet and bitter fruitage of his own
+          husbandry.
+        </p>
+        <p>
+          Thought in the mind hath made us, what we are by thought was wrought
+          and built. If a man’s mind hath evil thoughts, pain comes on him as
+          comes the wheel the ox behind…If one endure in purity of thought, joy
+          follows him as his own shadow – sure.”
+        </p>
+      </>
     ),
   },
   '2024-11-24': {
@@ -2908,10 +2989,10 @@ export default {
   '2025-11-09': {
     subTitle: (
       <>
-        From
+        From{' '}
         <i>
           Michel Quoist as quoted in Prayers and Thoughts from World Religions
-        </i>
+        </i>{' '}
         by Sid G. Hedges
       </>
     ),
@@ -2926,9 +3007,7 @@ export default {
   '2025-11-16': {
     subTitle: (
       <>
-        From
-        <i>Reaching Out</i>
-        by Henri J. M. Nouwen
+        From <i>Reaching Out</i> by Henri J. M. Nouwen
       </>
     ),
     content: (
@@ -2945,9 +3024,7 @@ export default {
   '2025-11-23': {
     subTitle: (
       <>
-        From
-        <i>Assurance</i>
-        by George Herbert
+        From <i>Assurance</i> by George Herbert
       </>
     ),
     content: (
@@ -2962,9 +3039,7 @@ export default {
   '2025-11-30': {
     subTitle: (
       <>
-        From
-        <i>The God Who Comes</i>
-        by Carlo Caretto
+        From <i>The God Who Comes</i> by Carlo Caretto
       </>
     ),
     content: (
@@ -2979,9 +3054,7 @@ export default {
   '2025-12-07': {
     subTitle: (
       <>
-        From
-        <i>A Diary of Private Prayer</i>
-        by John Baillie
+        From <i>A Diary of Private Prayer</i> by John Baillie
       </>
     ),
     content: (
@@ -2999,9 +3072,7 @@ export default {
   '2025-12-14': {
     subTitle: (
       <>
-        From
-        <i>The Divine Conspiracy</i>
-        by Dallas Willard
+        From <i>The Divine Conspiracy</i> by Dallas Willard
       </>
     ),
     content: (
@@ -3015,9 +3086,7 @@ export default {
   '2025-12-21': {
     subTitle: (
       <>
-        From
-        <i>The Divine Conspiracy</i>
-        by Dallas Willard
+        From <i>The Divine Conspiracy</i> by Dallas Willard
       </>
     ),
     content: (

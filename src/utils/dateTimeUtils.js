@@ -13,6 +13,7 @@ import startOfDay from 'date-fns/startOfDay';
 import startOfToday from 'date-fns/startOfToday';
 import startOfTomorrow from 'date-fns/startOfTomorrow';
 import startOfWeek from 'date-fns/startOfWeek';
+import {Temporal as TemporalPolyfill} from 'temporal-polyfill';
 
 import constants from './constants';
 
@@ -43,6 +44,23 @@ const isoTimeHasPassed = (time) => {
   return isPast(dateObj);
 };
 
+const getSundayOfYearIndex = (date) => {
+  const temporalDate = TemporalPolyfill.PlainDate.from(date);
+
+  const startOfYear = TemporalPolyfill.PlainDate.from({
+    year: temporalDate.year,
+    month: 1,
+    day: 1,
+  });
+
+  // adds the number of days between the start of the year and the first Sunday
+  const daysToAdd = 7 - startOfYear.dayOfWeek;
+
+  const firstSunday = startOfYear.add({days: daysToAdd % 7});
+
+  return temporalDate.since(firstSunday).days / 7;
+};
+
 export {
   convertValidTypedDateToIso as convertTypedDateToIso,
   convertValidTypedDateToIso,
@@ -53,6 +71,7 @@ export {
   getStartOfWeek,
   getLongDisplayDate,
   getShortDisplayDate,
+  getSundayOfYearIndex,
   isAfter,
   isBefore,
   isoTimeHasPassed,

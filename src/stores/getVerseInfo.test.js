@@ -1,3 +1,5 @@
+import {afterEach, beforeEach, describe, expect, it, vi} from 'vitest';
+
 import getVerseInfo, {_resetCache} from './getVerseInfo';
 
 const testResponseObject = {
@@ -7,27 +9,30 @@ const testResponseObject = {
 };
 const createMockXHR = (responseObject = testResponseObject, readyState = 4) => {
   return {
-    open: jest.fn(),
-    send: jest.fn(),
+    open: vi.fn(),
+    send: vi.fn(),
     DONE: 4,
     readyState,
     responseText: JSON.stringify(responseObject),
-    setRequestHeader: jest.fn(),
+    setRequestHeader: vi.fn(),
   };
 };
 
 describe('getVerseInfo', () => {
-  const oldXMLHttpRequest = window.XMLHttpRequest;
+  const oldXMLHttpRequest = globalThis.XMLHttpRequest;
   const testQuery = 'test-query';
   let mockXHR;
 
   beforeEach(() => {
     mockXHR = createMockXHR();
-    window.XMLHttpRequest = jest.fn(() => mockXHR);
+    function FakeXHR() {
+      return mockXHR;
+    }
+    globalThis.XMLHttpRequest = vi.fn(FakeXHR);
   });
 
   afterEach(() => {
-    window.XMLHttpRequest = oldXMLHttpRequest;
+    globalThis.XMLHttpRequest = oldXMLHttpRequest;
     _resetCache();
   });
 
@@ -37,13 +42,13 @@ describe('getVerseInfo', () => {
     const bibleId = '06125adad2d5898a-01';
     const expectedUrl = `${siteAddress}${sitePath}${bibleId}/search?query=${testQuery}`;
 
-    getVerseInfo(testQuery, jest.fn());
+    getVerseInfo(testQuery, vi.fn());
 
     expect(mockXHR.open).toBeCalledWith('GET', expectedUrl);
   });
 
   it('calls xhr setHeaderRequest', () => {
-    getVerseInfo(testQuery, jest.fn());
+    getVerseInfo(testQuery, vi.fn());
 
     expect(mockXHR.setRequestHeader).toHaveBeenCalledTimes(1);
     expect(mockXHR.setRequestHeader.mock.calls[0][0]).toBe('api-key');
@@ -51,27 +56,27 @@ describe('getVerseInfo', () => {
   });
 
   it('calls xhr send', () => {
-    getVerseInfo(testQuery, jest.fn());
+    getVerseInfo(testQuery, vi.fn());
 
     expect(mockXHR.send).toHaveBeenCalledTimes(1);
     expect(mockXHR.send.mock.calls[0][0]).not.toBeDefined();
   });
 
   it('gets repeat call of same query from cache', () => {
-    const firstCb = jest.fn();
+    const firstCb = vi.fn();
 
     getVerseInfo(testQuery, firstCb);
     mockXHR.onreadystatechange();
 
     expect(mockXHR.send).toHaveBeenCalledTimes(1);
 
-    const secondCb = jest.fn();
+    const secondCb = vi.fn();
     getVerseInfo(testQuery, secondCb);
     expect(mockXHR.send).toHaveBeenCalledTimes(1);
   });
 
   it('calls callback with parsed object if readyState is done', () => {
-    const cb = jest.fn();
+    const cb = vi.fn();
     getVerseInfo(testQuery, cb);
 
     mockXHR.onreadystatechange();
@@ -82,9 +87,12 @@ describe('getVerseInfo', () => {
 
   it('does not call callback with parsed object if readyState is not done', () => {
     mockXHR = createMockXHR(testResponseObject, 0);
-    window.XMLHttpRequest = jest.fn(() => mockXHR);
+    function FakeXHR() {
+      return mockXHR;
+    }
+    globalThis.XMLHttpRequest = vi.fn(FakeXHR);
 
-    const cb = jest.fn();
+    const cb = vi.fn();
     getVerseInfo(testQuery, cb);
 
     mockXHR.onreadystatechange();

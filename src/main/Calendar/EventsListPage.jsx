@@ -1,7 +1,7 @@
 import {Parser as HtmlToReactParser} from 'html-to-react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import { Component } from 'react';
+import {Component} from 'react';
 import styled from 'styled-components';
 
 import MiniCalendar from './MiniCalendar';
