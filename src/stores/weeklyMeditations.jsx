@@ -3031,9 +3031,7 @@ export default {
   '2025-12-28': {
     subTitle: (
       <>
-        From
-        <i>Forty Days with the Messiah</i>
-        by David Winte
+        From <i>Forty Days with the Messiah</i> by David Winte
       </>
     ),
     content: (

@@ -8,10 +8,26 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2026-01-04',
+    youtubeId: 'Hw9mVkL2t5M',
+    preacher: D_HICKMAN,
+    title: 'The Manifestations of God’s Promises!!!',
+    scripture: 'Ezekiel 36:26-27; 2 Corinthians 1:20',
+    version: null,
+  },
+  {
+    date: '2025-12-28',
+    youtubeId: 'gaDXVtv9P6I',
+    preacher: 'Rev. Dr. William Burgess',
+    title: 'Baggage!',
+    scripture: 'Philippians 4:4-7',
+  },
+  {
     date: '2025-12-21',
-    preacher: M_HAMIEL,
-    scripture: 'Philippians 4:1-9; John 14:27',
     youtubeId: 'EjjOWU7n0-I',
+    preacher: M_HAMIEL,
+    title: undefined,
+    scripture: 'Philippians 4:1-9; John 14:27',
   },
   // 2025-12-14 - Missing, no service due to weather
   // 2025-12-07 - Missing, service might not have been recorded
@@ -19,6 +35,8 @@ const sermonVideos = [
     date: '2025-11-30',
     youtubeId: 'xpDnlzCdNjI',
     preacher: 'Rev. Dr. Kevin A. Slayton, Sr.',
+    title: undefined,
+    scripture: undefined,
   },
   {
     date: '2025-11-23',
