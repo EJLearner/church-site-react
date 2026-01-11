@@ -8,6 +8,14 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2026-01-11',
+    youtubeId: 'sSAaHEtzQZw',
+    preacher: 'Rev. Shawntay Thomas',
+    title: 'A Blindsided Blessing!!!',
+    scripture: null,
+    version: null,
+  },
+  {
     date: '2026-01-04',
     youtubeId: 'Hw9mVkL2t5M',
     preacher: D_HICKMAN,
