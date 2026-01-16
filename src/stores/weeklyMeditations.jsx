@@ -3057,4 +3057,22 @@ export default {
       </p>
     ),
   },
+  '2026-01-11': {
+    subTitle: (
+      <>
+        From
+        <i>Power Through Constructive Thinking</i>
+        by Emmet Fox
+      </>
+    ),
+    content: (
+      <p>
+        “So grave are the dangers that attend organized religion, so powerful
+        and so subtle are the evils resulting from the accumulation of much
+        property (an evil sooner or later), that unless we keep this point
+        constantly fresh in our minds, we may be in danger of repeating the old
+        mistakes.”
+      </p>
+    ),
+  },
 };
