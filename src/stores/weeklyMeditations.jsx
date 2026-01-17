@@ -3075,4 +3075,22 @@ export default {
       </p>
     ),
   },
+  '2026-01-18': {
+    subTitle: (
+      <>
+        From
+        <i>The Fire of Love</i>
+        by Richard Rolle
+      </>
+    ),
+    content: (
+      <p>
+        “Since the human soul is capable of receiving God alone, nothing less
+        than God can fill it; which explains why lovers of earthly things are
+        never satisfied. The peace known by lovers of Christ comes from their
+        heart being fixed, in longing and in thought, in the love of God; it is
+        a peace that sings and loves and burns and contemplates.”
+      </p>
+    ),
+  },
 };
