@@ -349,14 +349,13 @@ const PastorApplicationPage = () => {
             <h3>About The City Temple of Baltimore (Baptist)</h3>
             <p>
               The City Temple of Baltimore (Baptist) is located at the southeast
-              {/* TODO: "Baltimore City, MD?" */}
-              corner of Eutaw and Dolphin Streets in Baltimore City, MD. We
-              currently hold one Sunday worship service, and our congregation
-              consists of less than 100 active members. As a longstanding pillar
-              in the Baltimore community, City Temple has a rich history of
-              serving those in need—providing meals, clothing, and shelter
-              assistance. We are entering an exciting new chapter and seek a
-              leader to guide us forward.
+              corner of Eutaw and Dolphin Streets in Baltimore, MD. We currently
+              hold one Sunday worship service, and our congregation consists of
+              less than 100 active members. As a longstanding pillar in the
+              Baltimore community, City Temple has a rich history of serving
+              those in need—providing meals, clothing, and shelter assistance.
+              We are entering an exciting new chapter and seek a leader to guide
+              us forward.
             </p>
           </section>
           <section>
