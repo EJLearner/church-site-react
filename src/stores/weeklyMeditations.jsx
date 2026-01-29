@@ -3055,4 +3055,40 @@ export default {
       </p>
     ),
   },
+  '2026-01-11': {
+    subTitle: (
+      <>
+        From
+        <i>Power Through Constructive Thinking</i>
+        by Emmet Fox
+      </>
+    ),
+    content: (
+      <p>
+        “So grave are the dangers that attend organized religion, so powerful
+        and so subtle are the evils resulting from the accumulation of much
+        property (an evil sooner or later), that unless we keep this point
+        constantly fresh in our minds, we may be in danger of repeating the old
+        mistakes.”
+      </p>
+    ),
+  },
+  '2026-01-18': {
+    subTitle: (
+      <>
+        From
+        <i>The Fire of Love</i>
+        by Richard Rolle
+      </>
+    ),
+    content: (
+      <p>
+        “Since the human soul is capable of receiving God alone, nothing less
+        than God can fill it; which explains why lovers of earthly things are
+        never satisfied. The peace known by lovers of Christ comes from their
+        heart being fixed, in longing and in thought, in the love of God; it is
+        a peace that sings and loves and burns and contemplates.”
+      </p>
+    ),
+  },
 };

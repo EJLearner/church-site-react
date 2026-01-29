@@ -1178,6 +1178,20 @@ const dailyVerses = {
   '2026-01-08': {verse: 'Acts 2.22-24'},
   '2026-01-09': {verse: '1 Kings 3.1-9'},
   '2026-01-10': {verse: 'Hebrews 5.11-14'},
+  '2026-01-11': {verse: 'Psalm 29'},
+  '2026-01-12': {verse: 'Matthew 2.13-13'},
+  '2026-01-13': {verse: 'John 1.1-13'},
+  '2026-01-14': {verse: 'John 1.35-42'},
+  '2026-01-15': {verse: '2 Corinthians 11.1-15'},
+  '2026-01-16': {verse: '2 Corinthians 11.16-30'},
+  '2026-01-17': {verse: 'Matthew 10.34-39'},
+  '2026-01-18': {verse: 'Psalm 36.5-10'},
+  '2026-01-19': {verse: 'Psalm 63.1-8'},
+  '2026-01-20': {verse: 'Jeremiah 29.10-14; Isaiah 55.1-9'},
+  '2026-01-21': {verse: 'Matthew 5.1-11'},
+  '2026-01-22': {verse: 'John 8.12-20'},
+  '2026-01-23': {verse: 'Ephesians 1.15-23'},
+  '2026-01-24': {verse: 'Luke 19.1-10'},
 };
 
 export {dailyVerses};
