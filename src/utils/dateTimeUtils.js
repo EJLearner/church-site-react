@@ -61,6 +61,25 @@ const getSundayOfYearIndex = (date) => {
   return temporalDate.since(firstSunday).days / 7;
 };
 
+/**
+ * Checks if a date is between two other dates (inclusive)
+ * @param {string} date - date to compare
+ * @param {string} start - start date
+ * @param {string} end - end date
+ * @returns {boolean}
+ */
+function isBetween(date, start, end) {
+  const comparePD = TemporalPolyfill.PlainDate.from(date);
+  const startPD = TemporalPolyfill.PlainDate.from(start);
+  const endPD = TemporalPolyfill.PlainDate.from(end);
+
+  const isAfterStart =
+    TemporalPolyfill.PlainDate.compare(comparePD, startPD) >= 0;
+  const isBeforeEnd = TemporalPolyfill.PlainDate.compare(comparePD, endPD) <= 0;
+
+  return isAfterStart && isBeforeEnd;
+}
+
 export {
   convertValidTypedDateToIso as convertTypedDateToIso,
   convertValidTypedDateToIso,
@@ -73,6 +92,7 @@ export {
   getShortDisplayDate,
   getSundayOfYearIndex,
   isAfter,
+  isBetween,
   isBefore,
   isoTimeHasPassed,
   isPast,

@@ -66,6 +66,7 @@ export default defineConfig([
           ],
         },
       ],
+      'no-warning-comments': 'warn',
       'object-shorthand': 'error',
       'prefer-template': 'error',
       'react/jsx-no-target-blank': 'off',

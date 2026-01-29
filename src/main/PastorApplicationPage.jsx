@@ -29,7 +29,8 @@ const StyledPastorApplicationPage = styled.div`
   }
 
   h3 {
-    margin: 0;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
     font-family: var(--times);
   }
 
@@ -39,18 +40,41 @@ const StyledPastorApplicationPage = styled.div`
 
   // more specific to override root style
   section {
+    border-bottom: 2px solid grey;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
     a {
-      color: var(--text-on-light-background);
+      color: rgb(0, 0, 238);
+      &:visited {
+        color: #551a8b;
+      }
     }
 
     p,
     ul,
     ol {
+      // Let the section handle spacing unless it's not the last child
       margin-top: 0;
+      padding-bottom: 0;
+      margin-bottom: 0;
 
       &:not(:last-child) {
         margin-bottom: 0.5em;
       }
+    }
+
+    li {
+      padding-bottom: 0.8em;
+    }
+
+    li:last-child {
+      padding-bottom: 0;
     }
   }
 
@@ -88,10 +112,6 @@ const StyledPastorApplicationPage = styled.div`
     box-shadow: 3px -3px 10px rgba(0, 0, 0, 0.8);
   }
 
-  section {
-    margin-bottom: 1em;
-  }
-
   .header-and-buttons {
     display: flex;
     justify-content: space-between;
@@ -102,12 +122,17 @@ const StyledPastorApplicationPage = styled.div`
   }
 
   .share-and-apply-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    align-items: baseline;
     button {
       padding: 1em;
     }
   }
 
   .share-button {
+    flex-shrink: 0;
     background-color: var(--application-gray);
     border: none;
     border-radius: 16px;
@@ -115,6 +140,7 @@ const StyledPastorApplicationPage = styled.div`
     box-shadow: none;
     min-width: 80px;
     min-height: 30px;
+    max-height: 45px;
     transition: all 0.05s;
 
     svg {
@@ -137,8 +163,8 @@ const StyledPastorApplicationPage = styled.div`
     // stuff necessary since I'm using the anchor tag
     display: inline-block;
     padding: 0.5em;
-    margin-left: 1em;
     transition: all 0.05s;
+    white-space: nowrap;
 
     border-radius: 4px;
     background-color: var(--application-blue);
@@ -311,81 +337,73 @@ const PastorApplicationPage = () => {
             </div>
           </div>
           <section className="quick-info">
-            Position Title: Senior Pastor
+            <b>Position Title:</b> Senior Pastor
             <br />
-            Location: Baltimore, MD
+            <b>Location:</b> Baltimore, MD
             <br />
-            Status: Bivocational
+            <b>Status:</b> Bivocational
             <br />
-            Salary Range: $55,000 - $65,000/annually
+            <b>Salary Range:</b> $55,000 - $65,000/annually
           </section>
           <section>
             <h3>About The City Temple of Baltimore (Baptist)</h3>
             <p>
               The City Temple of Baltimore (Baptist) is located at the southeast
-              corner of Eutaw and Dolphin Streets in Baltimore City, MD. Its
-              membership currently consists of 175 members, predominantly
-              female. The predominant age range, of 60 percent of our members,
-              is 60-96. We currently have one Sunday Worship Service. As an
-              integral part of the Baltimore City community, the City Temple of
-              Baltimore (Baptist) has opened its doors to the sorrowful, served
-              meals to the hungry, given clothing to the needy, and assisted the
-              homeless in finding shelter. God’s faithfulness and grace have
-              been seen throughout its history. The City Temple of Baltimore
-              (Baptist) history is long, but it is also a church that is more
-              recently being re-founded, in a new and exciting chapter in its
-              journey.
+              {/* TODO: "Baltimore City, MD?" */}
+              corner of Eutaw and Dolphin Streets in Baltimore City, MD. We
+              currently hold one Sunday worship service, and our congregation
+              consists of less than 100 active members. As a longstanding pillar
+              in the Baltimore community, City Temple has a rich history of
+              serving those in need—providing meals, clothing, and shelter
+              assistance. We are entering an exciting new chapter and seek a
+              leader to guide us forward.
             </p>
           </section>
           <section>
-            <h3>Job Description</h3>
+            <h3>Position Overview</h3>
             <p>
-              The City Temple of Baltimore (Baptist) is seeking a caring and
-              dedicated Senior Pastor to lead our congregation in spiritual
-              growth, community outreach, and service. As the God-sent spiritual
-              leader of our church family, the Senior Pastor will play a vital
-              role in developing an environment where individuals can deepen
-              their faith, foster meaningful relationships, and contribute to
-              our community.
+              The City Temple of Baltimore (Baptist) is seeking a{' '}
+              <strong>bi-vocational Senior Pastor</strong> to serve as the
+              spiritual leader of our congregation. This position is designed
+              for a candidate who will balance pastoral responsibilities with
+              another professional or vocational commitment outside the church.
+              The Senior Pastor will cultivate our worship service, foster
+              spiritual growth, revitalize our community outreach, and help
+              create an environment where individuals of all ages and
+              backgrounds can deepen their faith, build meaningful
+              relationships, and contribute to the broader community.
             </p>
           </section>
           <section>
-            <h3>Responsibilities</h3>
+            <h3>Key Responsibilities</h3>
             <ul>
               <li>
-                Provide dynamic and engaging preaching that inspires and
-                challenges individuals to live out their faith in their daily
-                lives.
+                <b>Preaching & Teaching</b>: Deliver dynamic, engaging sermons
+                each Sunday; lead Bible Study and Adult Sunday School Classes.
               </li>
               <li>
-                Lead and oversee all aspects of worship services, including
-                planning, organizing, and facilitating meaningful worship
-                experiences, preach each Sunday, teach Bible Study and Sunday
-                School.
+                <b>Worship Leadership</b>: Plan, organize, and facilitate
+                meaningful worship experiences.
               </li>
               <li>
-                Provide pastoral care and support to congregation members, such
-                as visitation, offering guidance, counsel, and prayer during
-                times of joy, sorrow, and spiritual growth.
+                <b>Pastoral Care</b>: Provide support and guidance to members
+                through visitation, counseling, and prayer during times of joy,
+                sorrow, and spiritual growth.
               </li>
               <li>
-                Collaborate with church leaders to develop and implement
-                strategies for spiritual growth, discipleship, and outreach
-                ministries that meet the diverse needs of our community.
+                <b>Ministry Development</b>: Collaborate with church leaders to
+                develop and implement strategies for spiritual growth,
+                discipleship, and outreach.
               </li>
               <li>
-                Recommend church officers to be elected by the congregation.
+                <b>Leadership</b>: Model Christ-like character, integrity,
+                humility, and servant leadership; recommend church officers for
+                election by the congregation.
               </li>
               <li>
-                Serve as a visible and active presence in the community,
-                building relationships, fostering partnerships, and
-                participating in local events and initiatives that promote
-                compassion and general well-being.
-              </li>
-              <li>
-                Lead by example, modeling Christ-like character, integrity,
-                humility, and servant leadership in all interactions and
-                relationships.
+                <b>Community Engagement</b>: Serve as a visible and active
+                presence in the community, building relationships and
+                participating in local events and initiatives.
               </li>
             </ul>
           </section>
@@ -393,118 +411,93 @@ const PastorApplicationPage = () => {
             <h3>Qualifications</h3>
             <ul>
               <li>
-                Must currently be a licensed and ordained Baptist minister,
-                having received his/her divine calling and demonstrated a
+                Licensed and ordained Baptist minister, with a demonstrated
                 commitment to the call.
               </li>
               <li>
-                Minimum three years as a pastor with congregational preaching
-                and teaching experience. Additional years’ experience preferred,
-                along with a demonstrated commitment to and knowledge of the
-                doctrines of the Christian faith and the principles of the
-                teaching of the Holy Bible.
+                Minimum of three years’ experience as a pastor, including
+                congregational preaching and teaching.
               </li>
               <li>
-                A Master of Divinity degree from an accredited theological
-                seminary, college, or university is required.
+                Master of Divinity degree from an accredited theological
+                seminary, college, or university.
               </li>
               <li>
-                Strong preaching and teaching skills with the ability to
-                communicate biblical truths in a relevant and engaging manner.
+                Strong preaching and teaching skills; ability to communicate
+                biblical truths in a relevant and engaging manner.
               </li>
               <li>
                 Proven leadership experience in pastoral ministry, including
                 pastoral care, worship planning, and community engagement.
               </li>
               <li>
-                Excellent interpersonal and communication skills with the
-                ability to connect with individuals of all ages, backgrounds,
-                and walks of life.
+                Excellent interpersonal, administrative, and communication
+                skills; ability to connect with individuals of all ages and
+                backgrounds.
               </li>
               <li>
-                A heart for pastoral care and a desire to walk alongside
-                individuals and families during both times of celebration and
-                times of difficulty.
+                Heart for pastoral care and ability to support individuals and
+                families in times of celebration and difficulty.
               </li>
               <li>
-                A collaborative spirit with the ability to work effectively with
-                staff, volunteers, and church leaders to achieve shared goals.
+                Collaborative spirit; ability to work effectively with staff,
+                volunteers, and church leaders.
               </li>
-              objectives.
-              <li>Good computer/technology skills required.</li>
+              <li>Proficient computer/technology skills.</li>
             </ul>
           </section>
           <section>
-            <h3>HOW TO APPLY</h3>
+            <h3>Application Instructions</h3>
             <p>
-              To apply for the Senior Pastor position, please download and
-              complete the fillable PDF application form. The following
-              materials must be submitted with your application for
-              consideration.
+              To apply, please complete the fillable PDF application form
+              located <a href={applicationPdf}>here</a>. Submit the following
+              materials{' '}
+              <span style={{textDecoration: 'underline'}}>
+                with your application
+              </span>
+              :
             </p>
             <ol>
               <li>
-                <span className="how-to-item-heading">Cover Letter</span> - The
-                cover letter should express your interest in the Senior Pastor
-                position, why you believe you might be a good fit as the Senior
-                Pastor of the City Temple of Baltimore (Baptist), your
-                qualifications, and your salary requirements.
+                <b>Cover Letter</b>: Express your interest in the position, why
+                you are a good fit, and your qualifications.
               </li>
               <li>
-                <span className="how-to-item-heading">Resume</span> - Your
-                current resume should detail your educational history,
-                ministerial and pastoral experiences, and accomplishments.
+                <b>Resume</b>: Detail your educational history, ministerial and
+                pastoral experience, and accomplishments.
               </li>
               <li>
-                <span className="how-to-item-heading">Degrees</span> - Provide a
-                copy of degrees attained and transcript.
+                <b>Certificate of License and Ordination</b>: Provide a copy of
+                your certificate of license and ordination.
               </li>
               <li>
-                <span className="how-to-item-heading">
-                  Certificate of License and Ordination
-                </span>{' '}
-                - Provide a copy of your certificate of license and ordination.
+                <b>References</b>: Submit three written references, including
+                one from a previous supervising pastor and two personal
+                references.
               </li>
               <li>
-                <span className="how-to-item-heading">References</span> -
-                Provide three written references, one from a previous pastor who
-                has supervised you, and personal references.
-              </li>
-              <li>
-                <span className="how-to-item-heading">Statement of Faith</span>{' '}
-                - Provide a page or less overview of your Christian faith
-                journey and theological beliefs.
-              </li>
-              <li>
-                <span className="how-to-item-heading">Links to sermons</span> -
-                Provide access to three to five recently recorded sermons and
-                teachings you have delivered.
+                <b>Links to sermons</b>: Provide access to three{' '}
+                <span style={{textDecoration: 'underline'}}>recently</span>{' '}
+                recorded sermons or teachings.
               </li>
             </ol>
             <p>
-              Interested applicants should review the City Temple of Baltimore
-              (Baptist) website at{' '}
+              For more information about our church, visit{' '}
               <a className="church-site-link" href="https://thecitytemple.org/">
-                <nobr>https://thecitytemple.org/</nobr>
-              </a>{' '}
-              for information about the church. Applications and supporting
-              materials should be emailed to{' '}
-              <a href="mailto:search-committee@thecitytemple.org">
-                search-committee@thecitytemple.org
-              </a>
-              .{' '}
-              <strong>
-                All applications and supporting materials are due by Thursday,
-                April 3, 2025.
-              </strong>
-            </p>
-            <p>
-              Any questions regarding this posting should be directed to Racquel
-              Smith or Carolyn Gaskins at{' '}
-              <a href="mailto:search-committee@thecitytemple.org">
-                search-committee@thecitytemple.org
+                https://thecitytemple.org/
               </a>
               .
+            </p>
+            <br />
+            <p>
+              <b>Submit applications and supporting materials to:</b>
+              <br />
+              <a href="mailto:search-committee@thecitytemple.org">
+                search-committee@thecitytemple.org
+              </a>
+            </p>
+            <p>
+              <b>Application Deadlne:</b> Tuesday, March 3, 2026
             </p>
           </section>
         </main>

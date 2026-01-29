@@ -7,15 +7,21 @@ const StyledPageNotFoundDiv = styled.div`
   padding: 1em;
   background-color: ${STYLES.LOGICAL_COLORS.STANDARD_BACKGROUND};
   color: ${STYLES.LOGICAL_COLORS.STANDARD_TEXT};
+
+  a,
+  a:visited {
+    color: rgb(0, 0, 238);
+    text-decoration: underline;
+  }
 `;
 
 function NotFound() {
   return (
     <StyledPageNotFoundDiv>
-      <h1>Page Not FOUND</h1>
+      <h1>Page Not Found</h1>
       <p>
-        Sorry, the page that you were looking for was not found. Please click a
-        link at the top to navigate to a page.
+        The page that you were looking for was not found. Please go to the{' '}
+        <a href="/">Home Page</a>.
       </p>
     </StyledPageNotFoundDiv>
   );
