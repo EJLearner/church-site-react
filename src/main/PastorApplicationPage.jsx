@@ -239,7 +239,8 @@ const PastorApplicationPage = () => {
         <main>
           <div className="header-and-buttons">
             <h2>
-              Senior Pastor Position <br />
+              Pastor Position
+              <br />
               <span className="subtitle">
                 for the City Temple of Baltimore (Baptist)
               </span>
@@ -337,7 +338,7 @@ const PastorApplicationPage = () => {
             </div>
           </div>
           <section className="quick-info">
-            <b>Position Title:</b> Senior Pastor
+            <b>Position Title:</b> Pastor
             <br />
             <b>Location:</b> Baltimore, MD
             <br />
@@ -351,7 +352,7 @@ const PastorApplicationPage = () => {
               The City Temple of Baltimore (Baptist) is located at the southeast
               corner of Eutaw and Dolphin Streets in Baltimore, MD. We currently
               hold one Sunday worship service, and our congregation consists of
-              less than 100 active members. As a longstanding pillar in the
+              approximately 155 active members. As a longstanding pillar in the
               Baltimore community, City Temple has a rich history of serving
               those in need—providing meals, clothing, and shelter assistance.
               We are entering an exciting new chapter and seek a leader to guide
@@ -362,15 +363,15 @@ const PastorApplicationPage = () => {
             <h3>Position Overview</h3>
             <p>
               The City Temple of Baltimore (Baptist) is seeking a{' '}
-              <strong>bi-vocational Senior Pastor</strong> to serve as the
-              spiritual leader of our congregation. This position is designed
-              for a candidate who will balance pastoral responsibilities with
-              another professional or vocational commitment outside the church.
-              The Senior Pastor will cultivate our worship service, foster
-              spiritual growth, revitalize our community outreach, and help
-              create an environment where individuals of all ages and
-              backgrounds can deepen their faith, build meaningful
-              relationships, and contribute to the broader community.
+              <strong>bi-vocational Pastor</strong> to serve as the spiritual
+              leader of our congregation. This position is designed for a
+              candidate who will balance pastoral responsibilities with another
+              professional or vocational commitment outside the church. The
+              Pastor will cultivate our worship service, foster spiritual
+              growth, revitalize our community outreach, and help create an
+              environment where individuals of all ages and backgrounds can
+              deepen their faith, build meaningful relationships, and contribute
+              to the broader community.
             </p>
           </section>
           <section>
@@ -414,8 +415,11 @@ const PastorApplicationPage = () => {
                 commitment to the call.
               </li>
               <li>
-                Minimum of three years’ experience as a pastor, including
-                congregational preaching and teaching.
+                Minimum of three years’ experience as a pastor preferred
+                (experience as an assistant or an associate pastor acceptable)
+                with demonstrated readiness through leadership including
+                preaching, pastoral care, ministry leadership, and
+                administrative abilities.
               </li>
               <li>
                 Master of Divinity degree from an accredited theological
@@ -426,17 +430,9 @@ const PastorApplicationPage = () => {
                 biblical truths in a relevant and engaging manner.
               </li>
               <li>
-                Proven leadership experience in pastoral ministry, including
-                pastoral care, worship planning, and community engagement.
-              </li>
-              <li>
                 Excellent interpersonal, administrative, and communication
                 skills; ability to connect with individuals of all ages and
                 backgrounds.
-              </li>
-              <li>
-                Heart for pastoral care and ability to support individuals and
-                families in times of celebration and difficulty.
               </li>
               <li>
                 Collaborative spirit; ability to work effectively with staff,
@@ -470,13 +466,19 @@ const PastorApplicationPage = () => {
                 your certificate of license and ordination.
               </li>
               <li>
+                <b>Unofficial Copy of Transcripts</b>: Provide a copy of your
+                transcript from your highest level of education.
+              </li>
+              <li>
                 <b>References</b>: Submit three written references, including
                 one from a previous supervising pastor and two personal
                 references.
               </li>
               <li>
                 <b>Links to sermons</b>: Provide access to three{' '}
-                <span style={{textDecoration: 'underline'}}>recently</span>{' '}
+                <span style={{textDecoration: 'underline'}}>
+                  <b>recently</b>
+                </span>{' '}
                 recorded sermons or teachings.
               </li>
             </ol>
