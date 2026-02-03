@@ -141,6 +141,7 @@ function renderPastorInfoAndPicture() {
   );
 }
 
+// eslint-disable-next-line react/prop-types
 function ProfileSection({title, children}) {
   return (
     <li>
@@ -592,7 +593,7 @@ const ProfilePage = () => {
                 have not reinstituted this fellowship.
               </p>{' '}
               <p>
-                We celebrate through music in a blended service by having
+                We celebrate through music in a blended service by having
                 traditional hymns and anthems and praise choruses. We sing
                 praise songs, led by our Director of Music, drummer/band, and
                 the choir. Following the reading of the sermon scripture, the
@@ -743,7 +744,7 @@ const ProfilePage = () => {
                   clothing distribution. We also plan to re-open this in the
                   near future. The Women’s Ministry distributes toiletries to
                   the House of Ruth, a non-profit organization that provides a
-                  haven for victims of domestic violence and their children. In
+                  haven for victims of domestic violence and their children. In
                   September of each year, the church distributes back-to-school
                   supplies for City Temple’s youth and community youth. Due to
                   COVID-19 and the health and safety of our congregation
