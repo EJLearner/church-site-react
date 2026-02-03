@@ -28,7 +28,9 @@ const MAIN_ROOT_PATHS = {
 
   BIBLE_STUDY: `bible-study`,
 
+  // old page, redirects to profile now
   MAIN_ABOUT_US: `about-us`,
+  MAIN_PROFILE: 'profile',
   MAIN_CALENDAR: `calendar`,
   MAIN_CONTACT: `contact`,
   MAIN_GIVING: `giving`,

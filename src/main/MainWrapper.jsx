@@ -1,16 +1,16 @@
-import {Route, Routes} from 'react-router-dom';
+import {Navigate, Route, Routes} from 'react-router-dom';
 import styled from 'styled-components';
 
 import routePaths from '../routePaths';
 import GlobalStoreWrapper from '../stores/GlobalStoreWrapper';
 
-import AboutUsPage from './AboutUsPage';
 import BibleStudyPage from './BibleStudyPage';
 import Calendar from './CalendarPage';
 import ContactPage from './ContactPage';
 import GivingPage from './GivingPage';
 import HomePage from './HomePage';
 import MeditationsPage from './MeditationsPage';
+import ProfilePage from './ProfilePage';
 import WatchPage from './WatchPage';
 import NotFound from './commonComponents/NotFound';
 
@@ -23,7 +23,12 @@ function MainWrapper() {
     <GlobalStoreWrapper>
       <StyledMainWrapperDiv>
         <Routes>
-          <Route element={<AboutUsPage />} path={routePaths.MAIN_ABOUT_US} />
+          {/* Page name and route changed from "About Us" to "Profile" */}
+          <Route
+            element={<Navigate replace to={`/${routePaths.MAIN_PROFILE}`} />}
+            path={routePaths.MAIN_ABOUT_US}
+          />
+          <Route element={<ProfilePage />} path={routePaths.MAIN_PROFILE} />
           <Route
             element={<Calendar />}
             path={`${routePaths.MAIN_CALENDAR}/*`}
