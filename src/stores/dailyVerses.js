@@ -1192,6 +1192,14 @@ const dailyVerses = {
   '2026-01-22': {verse: 'John 8.12-20'},
   '2026-01-23': {verse: 'Ephesians 1.15-23'},
   '2026-01-24': {verse: 'Luke 19.1-10'},
+  // TODO: remove this
+  '2026-02-01': {verse: 'John 1.29-34'},
+  '2026-02-02': {verse: 'John 1.29-34'},
+  '2026-02-03': {verse: 'John 1.29-34'},
+  '2026-02-04': {verse: 'John 1.29-34'},
+  '2026-02-05': {verse: 'John 1.29-34'},
+  '2026-02-06': {verse: 'John 1.29-34'},
+  '2026-02-07': {verse: 'John 1.29-34'},
 };
 
 export {dailyVerses};

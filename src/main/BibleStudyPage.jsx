@@ -10,29 +10,21 @@ const StyledBibleStudyPage = styled.div`
   display: flex;
   flex-direction: column;
 
-  .content-wrapper {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 2;
-    justify-content: center;
-  }
-
-  .content {
+  // TODO: rename these throughout to just "content"
+  .actual-content {
     color: var(--text-on-light-background);
     display: flex;
     flex-direction: column;
-    font-size: 18px;
-    padding: 0 var(--gutter-space) var(--page-bottom-padding)
-      var(--gutter-space);
+    font-size: var(--19-font-clamped);
     text-align: center;
   }
 
   h2 {
-    font-size: 32px;
+    font-size: var(--32-font-clamped);
   }
 
   h3 {
-    font-size: 24px;
+    font-size: var(--28-font-clamped);
     font-family: var(--sans-serif);
     margin: 16px 0 8px 0;
   }
@@ -50,8 +42,8 @@ const BibleStudyPage = () => {
   return (
     <StyledBibleStudyPage>
       <MainMenubar imageSource={choir} />
-      <div className="content-wrapper">
-        <div className="content">
+      <div className="content">
+        <div className="actual-content">
           <h2>Growing deeper through God’s word</h2>
           <h3>Bible Study</h3>
           <p>Every Tuesday at 7 pm</p>

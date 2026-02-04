@@ -21,7 +21,9 @@ const GlobalStyle = createGlobalStyle`
     --light-blue: rgb(51, 204, 204);
     --application-blue: rgb(0, 112, 192);
     --application-gray: rgb(229, 229, 229);
-    --28-font-clamped: clamp(16px, 2vw, 28px);
+    --19-font-clamped: clamp(15px, 1.9vw, 19px);
+    --28-font-clamped: clamp(16px, 2.5vw, 28px);
+    --32-font-clamped: clamp(16px, 3.5vw, 32px);
     --46-font-clamped: clamp(16px, 4vw, 46px);
 
 
@@ -40,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
     --second-content-background: var(--gossamer-veil);
     --second-content-text: var(--text-on-light-background);
     --alternate-background-text: var(--charcoal-grey);
-    --gutter-space: 64px;
+    --gutter-space: clamp(16px, 6vw, 64px);
     --page-bottom-padding: 64px;
 
     --watch-page-text-accent: var(--maroon);
@@ -58,6 +60,12 @@ const GlobalStyle = createGlobalStyle`
     #root {
       color: var(--text-on-dark-background);
       height: 100%;
+    }
+
+    // TODO: rename this throughout to content-wrapper
+    .content {
+      padding: 0 var(--gutter-space) var(--page-bottom-padding)
+        var(--gutter-space);
     }
 
     a {

@@ -10,12 +10,8 @@ const RemovedPageStyle = styled.div`
   background-color: var(--gossamer-veil);
   min-height: 100%;
 
-  .content {
+  .actual-content {
     color: var(--text-on-light-background);
-    display: flex;
-    flex-direction: column;
-    padding: 0 var(--gutter-space) var(--page-bottom-padding)
-      var(--gutter-space);
     text-align: center;
   }
 
@@ -40,12 +36,14 @@ function RemovedPage() {
     <RemovedPageStyle>
       <MainMenubar imageSource={choir} />
       <div className="content">
-        <h1>This page no longer exists</h1>
-        <p>
-          Sorry, this page can no longer be reached. You will be redirected to
-          the main page. Please use the link below if the redirect is not
-          successful.
-        </p>
+        <div className="actual-content">
+          <h1>This page no longer exists</h1>
+          <p>
+            Sorry, this page can no longer be reached. You will be redirected to
+            the main page. Please use the link below if the redirect is not
+            successful.
+          </p>
+        </div>
       </div>
     </RemovedPageStyle>
   );

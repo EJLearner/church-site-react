@@ -4,15 +4,11 @@ import styled from 'styled-components';
 
 const CalendarMenuBarStyles = styled.div`
   &#calendar-menu {
-    display: block;
     margin: 16px 0;
-    padding: 0;
-    position: relative;
-    align-items: center;
-    font-family: var(--sans-serif);
-    font-size: 20px;
-    justify-content: space-between;
-    min-width: 800px;
+    display: flex;
+    justify-content: center;
+    // TODO: under 500px, the menu bar should go vertical or something
+    min-width: 500px;
 
     ul {
       box-sizing: border-box;
@@ -27,17 +23,18 @@ const CalendarMenuBarStyles = styled.div`
     }
 
     li {
+      font-size: var(--19-font-clamped);
       border: none;
       display: inline-block;
       margin-top: 0px;
-      padding: 0 8px;
+      padding: 0 clamp(6px, calc(-2.909px + 0.909vw), 8px);
       text-align: center;
     }
 
     li a,
     li a:visited {
       color: black;
-      padding: 0 12px;
+      padding: 0 clamp(0px, calc(-4.364px + 1.364vw), 12px);
       text-align: center;
       text-decoration: none;
     }
@@ -65,12 +62,12 @@ const CalendarMenuBarStyles = styled.div`
       bottom: 0;
       border-bottom: 1px solid gray;
       display: inline-block;
-      width: 5%;
+      width: clamp(0px, calc(-14.545px + 4.545vw), 40px);
     }
   }
 `;
 
-function CalendarMenuBar({links, id}) {
+function CalendarMenuBar({links}) {
   const {pathname} = useLocation();
   const renderedLinks = links.map(({path, text}) => {
     let className =
@@ -85,13 +82,13 @@ function CalendarMenuBar({links, id}) {
 
     return (
       <li className={className} key={path}>
-        <Link to={`../calendar/${  path}`}>{text}</Link>
+        <Link to={`../calendar/${path}`}>{text}</Link>
       </li>
     );
   });
 
   return (
-    <CalendarMenuBarStyles className="menu-bar" id={id}>
+    <CalendarMenuBarStyles className="menu-bar" id="calendar-menu">
       <div className="empty-space">&nbsp;</div>
       <ul>{renderedLinks}</ul>
       <div className="empty-space">&nbsp;</div>

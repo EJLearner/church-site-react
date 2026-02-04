@@ -19,10 +19,15 @@ const StyledGivingPage = styled.div`
     padding-bottom: var(--page-bottom-padding);
   }
 
+  .actual-content {
+    margin: 0 clamp(16px, calc(-72.727px + 27.727vw), 240px) 16px;
+  }
+
   h1 {
+    font-size: var(--32-font-clamped);
+    margin-top: 0;
     font-weight: normal;
     line-height: 120%;
-    margin: 0 320px 16px;
     text-align: center;
   }
 
@@ -34,7 +39,7 @@ const StyledGivingPage = styled.div`
 
   .input-fields {
     display: flex;
-
+    flex-wrap: wrap;
     margin-bottom: 32px;
 
     select {
@@ -148,7 +153,7 @@ const GivingPage = () => {
   };
 
   const renderTextbox = (id, label, options = {}) => {
-    const {hasLineBreak = true, type, required, size = 40} = options;
+    const {hasLineBreak = true, type, required, size} = options;
 
     return (
       <>
@@ -177,7 +182,6 @@ const GivingPage = () => {
           label="Amount"
           onChange={(value) => setPaymentAmount(value, index)}
           required={required}
-          size={40}
           value={amounts[index].amount ?? ''}
         />
         <br />
@@ -253,50 +257,55 @@ const GivingPage = () => {
     <StyledGivingPage>
       <MainMenubar imageSource={choir} />
       <div className="content">
-        <h1>
-          Thank you for your commitment to City Temple and for your
-          contribution. To make a donation, please submit the form below.
-        </h1>
-        <form
-          action="https://www.paypal.com/cgi-bin/webscr"
-          method="post"
-          name="validform"
-        >
-          <div className="input-fields">
-            <div className="left-side">
-              {renderTextbox('first_name', 'First Name')}
-              {renderTextbox('last_name', 'Last Name')}
-              {renderTextbox('address1', 'Street Address')}
-              {renderTextbox('address2', 'Street Address cont.')}
-              {renderTextbox('city', 'City', {hasLineBreak: false, size: 13})}
-              {renderStateSelect('state', {hasLineBreak: false})}
-              {renderTextbox('zip', 'Zipcode', {size: 11})}
-              {renderTextbox('email', 'Email', {required: true, type: 'email'})}
+        <div className="actual-content">
+          <h1>
+            Thank you for your commitment to City Temple and for your
+            contribution. To make a donation, please submit the form below.
+          </h1>
+          <form
+            action="https://www.paypal.com/cgi-bin/webscr"
+            method="post"
+            name="validform"
+          >
+            <div className="input-fields">
+              <div className="left-side">
+                {renderTextbox('first_name', 'First Name')}
+                {renderTextbox('last_name', 'Last Name')}
+                {renderTextbox('address1', 'Street Address')}
+                {renderTextbox('address2', 'Street Address cont.')}
+                {renderTextbox('city', 'City', {hasLineBreak: false, size: 13})}
+                {renderStateSelect('state')}
+                {renderTextbox('zip', 'Zipcode', {size: 11})}
+                {renderTextbox('email', 'Email', {
+                  required: true,
+                  type: 'email',
+                })}
+              </div>
+              <div className="right-side">
+                {renderTextbox('box', 'Box #')}
+                {boxNum && renderHiddenTextbox('custom', `Box: ${boxNum}`)}
+                {renderHiddenTextbox('business', 'giving@thecitytemple.org')}
+                {renderHiddenTextbox('return', 'https://www.thecitytemple.org')}
+                {renderHiddenTextbox(
+                  'cancel_return',
+                  'https://www.thecitytemple.org',
+                )}
+                {renderHiddenTextbox('no_shipping', '1')}
+                {renderTithingFields()}
+              </div>
             </div>
-            <div className="right-side">
-              {renderTextbox('box', 'Box #')}
-              {boxNum && renderHiddenTextbox('custom', `Box: ${boxNum}`)}
-              {renderHiddenTextbox('business', 'giving@thecitytemple.org')}
-              {renderHiddenTextbox('return', 'https://www.thecitytemple.org')}
-              {renderHiddenTextbox(
-                'cancel_return',
-                'https://www.thecitytemple.org',
-              )}
-              {renderHiddenTextbox('no_shipping', '1')}
-              {renderTithingFields()}
+            <div>
+              <PlainButton
+                className="donate-button"
+                name="submit"
+                type="submit"
+                value="Continue"
+              >
+                Donate Now
+              </PlainButton>
             </div>
-          </div>
-          <div>
-            <PlainButton
-              className="donate-button"
-              name="submit"
-              type="submit"
-              value="Continue"
-            >
-              Donate Now
-            </PlainButton>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </StyledGivingPage>
   );

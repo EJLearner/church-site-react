@@ -6,30 +6,24 @@ import routePaths from '../routePaths';
 import Anchor from './commonComponents/Anchor';
 import MainMenubar from './commonComponents/MainMenubar';
 
+// TODO: tweak margin further for better dynamic sizing
 const StyledHomePage = styled.div`
   background: var(--black);
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url(${choir});
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${choir});
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100%;
   display: flex;
   flex-direction: column;
 
-  .content-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-grow: 2;
-  }
-
-  .content {
+  .actual-content {
+    margin: 15px clamp(10px, 70vw - 400px, 250px);
     display: flex;
     align-items: center;
     flex-direction: column;
     min-height: 100%;
 
-    margin: 0 clamp(10px, -400px + 70vw, 300px);
     text-align: center;
     font-size: var(--28-font-clamped);
     color: var(--text-on-dark-background);
@@ -74,8 +68,8 @@ function HomePage() {
   return (
     <StyledHomePage>
       <MainMenubar />
-      <div className="content-wrapper">
-        <div className="content">
+      <div className="content">
+        <div className="actual-content">
           <h1>
             Welcome to the
             <br />

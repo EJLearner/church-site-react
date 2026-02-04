@@ -6,8 +6,8 @@ import MainMenubar from './commonComponents/MainMenubar';
 
 const StyledContactPage = styled.div`
   background: var(--black);
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url(${choir});
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${choir});
   background-size: cover;
   background-repeat: no-repeat;
   font-size: 18px;
@@ -19,17 +19,9 @@ const StyledContactPage = styled.div`
     font-size: 24px;
   }
 
-  .content-wrapper {
+  .actual-content {
     display: flex;
     flex-direction: column;
-    flex-grow: 2;
-    justify-content: center;
-  }
-
-  .content {
-    display: flex;
-    flex-direction: column;
-    margin-top: 32px;
     padding-bottom: var(--page-bottom-padding);
     text-align: center;
   }
@@ -44,8 +36,8 @@ const BibleStudyPage = () => {
   return (
     <StyledContactPage>
       <MainMenubar />
-      <div className="content-wrapper">
-        <div className="content">
+      <div className="content">
+        <div className="actual-content">
           <h2>Want to know more?</h2>
           <p>
             410.462.4800
