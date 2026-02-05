@@ -80,6 +80,10 @@ function isBetween(date, start, end) {
   return isAfterStart && isBeforeEnd;
 }
 
+function getTodayDate() {
+  return TemporalPolyfill.Now.plainDateISO().toString();
+}
+
 export {
   convertValidTypedDateToIso as convertTypedDateToIso,
   convertValidTypedDateToIso,
@@ -101,4 +105,5 @@ export {
   startOfDay,
   startOfToday,
   startOfTomorrow,
+  getTodayDate,
 };

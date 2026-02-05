@@ -4,6 +4,7 @@ import moment from 'moment';
 import routePaths from '../routePaths';
 
 import constants from './constants';
+import {getTodayDate, isBetween} from './dateTimeUtils';
 
 const {
   INTERNAL_DATE_FORMAT,
@@ -206,6 +207,9 @@ const commonUtils = {
 
       return valueA < valueB ? -1 * reverseMultiplier : 1 * reverseMultiplier;
     });
+  },
+  isAcceptingApplications: () => {
+    return isBetween(getTodayDate(), '2026-02-01', '2026-03-03');
   },
 };
 

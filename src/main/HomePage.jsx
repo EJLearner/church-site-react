@@ -2,14 +2,15 @@ import styled from 'styled-components';
 
 import choir from '../assets/images/choir.jpg';
 import routePaths from '../routePaths';
+import commonUtils from '../utils/commonUtils';
 
 import Anchor from './commonComponents/Anchor';
 import MainMenubar from './commonComponents/MainMenubar';
 
 const StyledHomePage = styled.div`
   background: var(--black);
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url(${choir});
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${choir});
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100%;
@@ -70,10 +71,38 @@ const StyledHomePage = styled.div`
   }
 `;
 
+const StyledAnnouncementBar = styled.div`
+  margin-right: var(--gutter-space);
+  margin-left: var(--gutter-space);
+  background-color: var(--accent-background);
+  color: var(--accent-content);
+  padding: 8px;
+  font-size: 1.1rem;
+  text-align: center;
+
+  a,
+  a:visited {
+    color: var(--accent-content);
+    text-decoration: underline;
+  }
+`;
+
 function HomePage() {
   return (
     <StyledHomePage>
       <MainMenubar />
+      {commonUtils.isAcceptingApplications() && (
+        <StyledAnnouncementBar>
+          City Temple is looking for a new pastor! See the following link for
+          more information.{' '}
+          <a
+            href="https://thecitytemple.org/pastor-application"
+            target="_blank"
+          >
+            Pastor Application
+          </a>
+        </StyledAnnouncementBar>
+      )}
       <div className="content-wrapper">
         <div className="content">
           <h1>
