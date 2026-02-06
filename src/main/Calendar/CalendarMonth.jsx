@@ -28,11 +28,12 @@ const MonthCalendarStyle = styled.div`
 
   .controls-and-title {
     align-items: center;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
 
     .drop-downs {
-      width: 300px;
+      justify-self: start;
     }
 
     .month-select-lists {
@@ -50,17 +51,15 @@ const MonthCalendarStyle = styled.div`
     .month-arrows h2 {
       font-weight: normal;
       margin: 0.8em 1em;
-      width: 150px;
+      width: 120px;
       text-align: center;
     }
 
-    .empty-space {
-      width: 300px;
-    }
     button {
-      // would rather use "initial" but that doesn't work for IE11
       background-color: initial;
       border: none;
+      min-width: 40px;
+      min-height: 40px;
 
       &:hover {
         cursor: pointer;
@@ -151,6 +150,7 @@ class CalendarMonth extends Component {
   }
 
   renderDaysEvents(dateString) {
+    // TODO: these probably shouldn't show under a certain screen width - improve that when we have events
     const daysEventsData = calendarDatesUtils.getEventsForDate(
       this.props.storedDates,
       dateString,
@@ -280,7 +280,6 @@ class CalendarMonth extends Component {
               />
             </button>
           </div>
-          <div className="empty-space" />
         </div>
         <table className="month-calendar-table">
           <MonthTableHeader format={headerFormats.twoChars} />

@@ -16,17 +16,36 @@ const StyledMenuBar = styled.header`
     font-size: clamp(16px, 2vw, 20px);
     text-transform: uppercase;
 
-    & > div {
+    .main-menu-items-wrapper {
       display: flex;
+      gap: 5px;
       justify-content: space-around;
+    }
+  }
+
+  .main-menu-item {
+    padding: 16px 4px;
+
+    &.active a {
+      color: var(--accent-background);
+    }
+  }
+
+  @media (max-width: 700px) {
+    padding-bottom: 1rem;
+
+    .main-menu-bar {
+      border-bottom: none;
+      border-top: none;
     }
 
     .main-menu-item {
-      padding: 16px 4px;
+      padding: 0;
+    }
 
-      &.active a {
-        color: var(--accent-background);
-      }
+    .main-menu-items-wrapper {
+      align-items: center;
+      flex-direction: column;
     }
   }
 `;
@@ -57,7 +76,7 @@ const Menubar = ({imageSource, menuItems}) => {
   return (
     <StyledMenuBar imageSource={imageSource}>
       <div className="main-menu-bar">
-        <div>{renderedMenuItems}</div>
+        <div className="main-menu-items-wrapper">{renderedMenuItems}</div>
       </div>
     </StyledMenuBar>
   );

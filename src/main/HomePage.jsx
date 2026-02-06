@@ -7,6 +7,7 @@ import commonUtils from '../utils/commonUtils';
 import Anchor from './commonComponents/Anchor';
 import MainMenubar from './commonComponents/MainMenubar';
 
+// TODO: tweak margin further for better dynamic sizing
 const StyledHomePage = styled.div`
   background: var(--black);
   background:
@@ -17,20 +18,13 @@ const StyledHomePage = styled.div`
   display: flex;
   flex-direction: column;
 
-  .content-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-grow: 2;
-  }
-
   .content {
+    margin: 15px clamp(10px, 70vw - 400px, 250px);
     display: flex;
     align-items: center;
     flex-direction: column;
     min-height: 100%;
 
-    margin: 0 clamp(10px, -400px + 70vw, 300px);
     text-align: center;
     font-size: var(--28-font-clamped);
     color: var(--text-on-dark-background);
@@ -72,8 +66,6 @@ const StyledHomePage = styled.div`
 `;
 
 const StyledAnnouncementBar = styled.div`
-  margin-right: var(--gutter-space);
-  margin-left: var(--gutter-space);
   background-color: var(--accent-background);
   color: var(--accent-content);
   padding: 8px;
@@ -91,19 +83,19 @@ function HomePage() {
   return (
     <StyledHomePage>
       <MainMenubar />
-      {commonUtils.isAcceptingApplications() && (
-        <StyledAnnouncementBar>
-          City Temple is looking for a new pastor! See the following link for
-          more information.{' '}
-          <a
-            href="https://thecitytemple.org/pastor-application"
-            target="_blank"
-          >
-            Pastor Application
-          </a>
-        </StyledAnnouncementBar>
-      )}
       <div className="content-wrapper">
+        {commonUtils.isAcceptingApplications() && (
+          <StyledAnnouncementBar>
+            City Temple is looking for a new pastor! See the following link for
+            more information.{' '}
+            <a
+              href="https://thecitytemple.org/pastor-application"
+              target="_blank"
+            >
+              Pastor Application
+            </a>
+          </StyledAnnouncementBar>
+        )}
         <div className="content">
           <h1>
             Welcome to the

@@ -29,9 +29,9 @@ const CalendarPageStyles = styled.div`
     display: flex;
     flex-direction: column;
     padding: 1em;
-    padding: 0 var(--gutter-space);
 
     h1 {
+      font-size: var(--32-font-clamped);
       font-weight: normal;
       margin-top: 0;
       text-transform: uppercase;
@@ -61,7 +61,7 @@ class Calendar extends Component {
         <MainMenubar imageSource={choir} />
         <div className="calendar-page-content">
           <h1>Events at City Temple</h1>
-          <CalendarMenuBar id="calendar-menu" links={linkData} />
+          <CalendarMenuBar links={linkData} />
           <Routes>
             <Route
               element={<Navigate to={routePaths.MAIN_CALENDAR_MONTH} />}

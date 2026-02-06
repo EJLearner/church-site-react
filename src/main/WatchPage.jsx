@@ -39,8 +39,6 @@ const StyledWatchPage = styled.div`
   .content {
     font-size: 14px;
     font-weight: bold;
-    padding: 0 var(--gutter-space) var(--page-bottom-padding)
-      var(--gutter-space);
   }
 
   h2 {
@@ -298,23 +296,25 @@ const WatchPage = () => {
   return (
     <StyledWatchPage>
       <MainMenubar imageSource={choir} />
-      <div className="content">
-        {renderNewestVideo(newestVideo)}
-        <WatchPageFilter
-          ids={FIELD_IDS}
-          onFilterClick={() =>
-            setFilteredVideos(filterVideos(otherVideos, searchInfo))
-          }
-          onResetClick={() => {
-            setSearchInfo(initialSearchInfo);
-            setFilteredVideos(filterVideos(otherVideos, initialSearchInfo));
-          }}
-          searchInfo={searchInfo}
-          setSearchInfo={setSearchInfo}
-        />
-        {renderArchiveVideos(displayedVideos)}
-        {renderShowMoreContent &&
-          renderShowMore(setArchiveVideoShowCount, archiveVideoShowCount)}
+      <div className="content-wrapper">
+        <div className="content">
+          {renderNewestVideo(newestVideo)}
+          <WatchPageFilter
+            ids={FIELD_IDS}
+            onFilterClick={() =>
+              setFilteredVideos(filterVideos(otherVideos, searchInfo))
+            }
+            onResetClick={() => {
+              setSearchInfo(initialSearchInfo);
+              setFilteredVideos(filterVideos(otherVideos, initialSearchInfo));
+            }}
+            searchInfo={searchInfo}
+            setSearchInfo={setSearchInfo}
+          />
+          {renderArchiveVideos(displayedVideos)}
+          {renderShowMoreContent &&
+            renderShowMore(setArchiveVideoShowCount, archiveVideoShowCount)}
+        </div>
       </div>
     </StyledWatchPage>
   );

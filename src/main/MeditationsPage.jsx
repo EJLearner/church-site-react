@@ -17,13 +17,14 @@ const StyledMeditationsPage = styled.div`
   .content {
     color: var(--text-on-light-background);
     display: flex;
-    font-size: 14px;
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0 var(--gutter-space) var(--page-bottom-padding)
-      var(--gutter-space);
 
     .daily-scriptures {
       flex: 0 1 40%;
+      min-width: 200px;
 
       p {
         margin: 4px 0;
@@ -31,11 +32,13 @@ const StyledMeditationsPage = styled.div`
     }
 
     .weekly-meditation {
-      flex: 0 2 50%;
+      flex: 0 1 50%;
+      min-width: 250px;
     }
 
     h1 {
       border: 2px solid var(--charcoal-grey);
+      font-size: var(--28-font-clamped);
       border-left: none;
       border-right: none;
       font-weight: normal;
@@ -45,6 +48,7 @@ const StyledMeditationsPage = styled.div`
     }
 
     h3 {
+      font-size: var(--19-font-clamped);
       text-transform: uppercase;
       margin: 16px 0 2px 0;
       font-weight: normal;
@@ -132,14 +136,16 @@ export default function MeditationsPage() {
   return (
     <StyledMeditationsPage>
       <MainMenubar imageSource={choir} />
-      <div className="content">
-        <div className="daily-scriptures">
-          <h1>Daily Scripture Readings</h1>
-          {getVersesContent()}
-        </div>
-        <div className="weekly-meditation">
-          <h1>Weekly Meditation</h1>
-          {renderMeditationContent()}
+      <div className="content-wrapper">
+        <div className="content">
+          <div className="daily-scriptures">
+            <h1>Daily Scripture Readings</h1>
+            {getVersesContent()}
+          </div>
+          <div className="weekly-meditation">
+            <h1>Weekly Meditation</h1>
+            {renderMeditationContent()}
+          </div>
         </div>
       </div>
     </StyledMeditationsPage>

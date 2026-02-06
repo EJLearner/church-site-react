@@ -12,10 +12,6 @@ const RemovedPageStyle = styled.div`
 
   .content {
     color: var(--text-on-light-background);
-    display: flex;
-    flex-direction: column;
-    padding: 0 var(--gutter-space) var(--page-bottom-padding)
-      var(--gutter-space);
     text-align: center;
   }
 
@@ -39,13 +35,15 @@ function RemovedPage() {
   return (
     <RemovedPageStyle>
       <MainMenubar imageSource={choir} />
-      <div className="content">
-        <h1>This page no longer exists</h1>
-        <p>
-          Sorry, this page can no longer be reached. You will be redirected to
-          the main page. Please use the link below if the redirect is not
-          successful.
-        </p>
+      <div className="content-wrapper">
+        <div className="content">
+          <h1>This page no longer exists</h1>
+          <p>
+            Sorry, this page can no longer be reached. You will be redirected to
+            the main page. Please use the link below if the redirect is not
+            successful.
+          </p>
+        </div>
       </div>
     </RemovedPageStyle>
   );
