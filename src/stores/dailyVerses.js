@@ -1199,6 +1199,13 @@ const dailyVerses = {
   '2026-02-05': {verse: 'Isaiah 40.27-31'},
   '2026-02-06': {verse: 'Mark 6.30-42'},
   '2026-02-07': {verse: 'Hebrews 4.1-11'},
+  '2026-02-08': {verse: 'Psalm 147.1-11'},
+  '2026-02-09': {verse: 'Luke 3.21-22'},
+  '2026-02-10': {verse: '2 Peter 1.16-21'},
+  '2026-02-11': {verse: 'Psalm 18.1-6'},
+  '2026-02-12': {verse: 'Psalm 18.17-19'},
+  '2026-02-13': {verse: '1 John 3.1-3'},
+  '2026-02-14': {verse: 'Psalm 127.1-2'},
 };
 
 export {dailyVerses};
