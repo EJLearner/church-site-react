@@ -8,6 +8,24 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2026-02-08',
+    youtubeId: 'Lp1-MFeSvwI',
+    preacher: 'Rev. Renee Hammock',
+    title: 'Fix My Life!!!',
+    scripture: 'Luke 17:11-19',
+    version: NRSV,
+  },
+  // 2026-02-01 wasn't recorded. It was a zoom service due to snow
+  // 2026-01-25 wasn't recorded. It was a zoom service due to snow
+  {
+    date: '2026-01-18',
+    youtubeId: 'QKkghznuRi0',
+    preacher: 'Rev. Donald Wright Jr',
+    title: 'Keep Dreaming!!!',
+    scripture: 'Genesis 37:5 - 11',
+    version: null,
+  },
+  {
     date: '2026-01-11',
     youtubeId: 'sSAaHEtzQZw',
     preacher: 'Rev. Shawntay Thomas',

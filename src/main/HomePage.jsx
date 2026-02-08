@@ -7,7 +7,6 @@ import commonUtils from '../utils/commonUtils';
 import Anchor from './commonComponents/Anchor';
 import MainMenubar from './commonComponents/MainMenubar';
 
-// TODO: tweak margin further for better dynamic sizing
 const StyledHomePage = styled.div`
   background: var(--black);
   background:

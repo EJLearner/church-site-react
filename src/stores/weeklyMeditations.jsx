@@ -2908,10 +2908,10 @@ export default {
   '2025-11-09': {
     subTitle: (
       <>
-        From
+        From{' '}
         <i>
           Michel Quoist as quoted in Prayers and Thoughts from World Religions
-        </i>
+        </i>{' '}
         by Sid G. Hedges
       </>
     ),
@@ -2926,9 +2926,7 @@ export default {
   '2025-11-16': {
     subTitle: (
       <>
-        From
-        <i>Reaching Out</i>
-        by Henri J. M. Nouwen
+        From <i>Reaching Out</i> by Henri J. M. Nouwen
       </>
     ),
     content: (
@@ -2945,9 +2943,7 @@ export default {
   '2025-11-23': {
     subTitle: (
       <>
-        From
-        <i>Assurance</i>
-        by George Herbert
+        From <i>Assurance</i> by George Herbert
       </>
     ),
     content: (
@@ -2962,9 +2958,7 @@ export default {
   '2025-11-30': {
     subTitle: (
       <>
-        From
-        <i>The God Who Comes</i>
-        by Carlo Caretto
+        From <i>The God Who Comes</i> by Carlo Caretto
       </>
     ),
     content: (
@@ -2979,9 +2973,7 @@ export default {
   '2025-12-07': {
     subTitle: (
       <>
-        From
-        <i>A Diary of Private Prayer</i>
-        by John Baillie
+        From <i>A Diary of Private Prayer</i> by John Baillie
       </>
     ),
     content: (
@@ -2999,9 +2991,7 @@ export default {
   '2025-12-14': {
     subTitle: (
       <>
-        From
-        <i>The Divine Conspiracy</i>
-        by Dallas Willard
+        From <i>The Divine Conspiracy</i> by Dallas Willard
       </>
     ),
     content: (
@@ -3015,9 +3005,7 @@ export default {
   '2025-12-21': {
     subTitle: (
       <>
-        From
-        <i>The Divine Conspiracy</i>
-        by Dallas Willard
+        From <i>The Divine Conspiracy</i> by Dallas Willard
       </>
     ),
     content: (
@@ -3058,9 +3046,7 @@ export default {
   '2026-01-11': {
     subTitle: (
       <>
-        From
-        <i>Power Through Constructive Thinking</i>
-        by Emmet Fox
+        From <i>Power Through Constructive Thinking</i> by Emmet Fox
       </>
     ),
     content: (
@@ -3076,9 +3062,7 @@ export default {
   '2026-01-18': {
     subTitle: (
       <>
-        From
-        <i>The Fire of Love</i>
-        by Richard Rolle
+        From <i>The Fire of Love</i> by Richard Rolle
       </>
     ),
     content: (
@@ -3094,9 +3078,7 @@ export default {
   '2026-02-01': {
     subTitle: (
       <>
-        From
-        <i>Concerning the Inner Life</i>
-        by Evelyn Underhill
+        From <i>Concerning the Inner Life</i> by Evelyn Underhill
       </>
     ),
     content: (
