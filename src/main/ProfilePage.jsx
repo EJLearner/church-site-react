@@ -457,13 +457,11 @@ const ProfilePage = () => {
               <p>
                 Our Sunday Morning Worship service begins at 9:00 a.m. and lasts
                 for an hour to an hour and a half. It includes praise, worship,
-                prayers to God, scripture, liturgical music/dance, a sermon
-                based on the Bible, a welcome to visitors, an offering, an
-                invitation to discipleship, and Holy Communion and Baptism each
-                first Sunday of each month. Our usual Sunday service has
-                approximately 65-80 people who regularly attend. On the second
-                and fourth Sundays, our children usually leave the service after
-                the first 30 minutes to attend church school.
+                prayers to God, scripture, a sermon based on the Bible, a
+                welcome to visitors, an offering, an invitation to discipleship,
+                and Holy Communion each first Sunday of each month. Our usual
+                Sunday service has approximately 65-80 people who regularly
+                attend.
               </p>
               <h3>Discipline</h3>
               <p>
@@ -472,28 +470,26 @@ const ProfilePage = () => {
                 Bible Study met during the worship service on the second and
                 fourth Sunday of each month. It concluded at the end of May. Our
                 prayer is that our regular Sunday School for youth and adults
-                will resume beginning September 2024. Adult Bible Study is held
-                each Tuesday evening. It concludes in June and resumes in
-                September. The Wednesday Morning Prayer Line is held at 6:00
-                a.m. The Wednesday Evening Prayer Hour is held each Wednesday at
-                6:00 p.m. The evening prayer hour concludes in June and resumes
-                in September. A special program is held for Graduate
-                Recognition. In the past, the CTBB held Vacation Bible School
-                (VBS) each year. We were unable to hold VBS since returning to
+                will resume 2026. Adult Bible Study is held each Tuesday evening
+                via Zoom. It concludes in June and resumes in September. The
+                Wednesday Morning Prayer Line is held at 6:00 a.m. The Wednesday
+                Evening Prayer Hour is held each Wednesday at 6:00 p.m via Zoom.
+                The evening prayer hour concludes in June and resumes in
+                September. A special program is held for Graduate Recognition.
+                In the past, the CTBB held Vacation Bible School (VBS) each
+                year. We have been unable to hold VBS since returning to
                 in-person worship in 2022 due to a shortage of teachers. The
                 Youth Ministry and Anniversary Committee planned a youth
                 explosion and church cookout event for youth and adults in place
-                of VBS for 2024. The event included feeding the spiritual word,
-                fun, games, and a cookout. The church will decide how we will
-                hold Vacation Bible School in the future.
+                of VBS for 2024. The church will decide how to provide Vacation
+                Bible School in the future.
               </p>
               <h3>Fellowship</h3>
               <p>
-                The CTBB has held many fellowship activities in the past. Due to
-                COVID-19, and the health and safety of our members, we have not
-                resumed many of these activities. Past events included the CTBB
-                52nd Anniversary Banquet, church-wide annual outings, trips to
-                the National Museum of African American History and Culture, and
+                The CTBB has held many fellowship activities in the past,
+                however we have not resumed many of these activities. Past
+                events included church-wide annual outings, trips to the
+                National Museum of African American History and Culture, and
                 Sight and Sound & Sounds Theatre. We were blessed to have a
                 Graduate Recognition Brunch, a Six Flags America trip, a Trunk
                 or Treat, and a Cookie Decoration and Bake-off since our return
@@ -505,11 +501,11 @@ const ProfilePage = () => {
                 The maintenance work needed in the church is financed by tithes
                 and offerings of church members. Through capital campaigns and
                 special gifts, we have been able to make several improvements to
-                our building and grounds, and the sound system. Our elevator was
+                our building and grounds and the sound system. Our elevator was
                 repaired so that the elderly and physically challenged could
                 easily access our sanctuary. The Payne Outreach Center’s front
-                door was repaired, and the church roof was replaced. Funds were
-                used to maintain the church’s pipe organ.
+                door was repaired, the church roof was replaced, and the
+                church’s pipe organ received maintenance.
               </p>
             </ProfileSection>
             <ProfileSection number={9} title="Our Worship Life">
@@ -667,29 +663,23 @@ const ProfilePage = () => {
                   Ministry.
                 </li>
                 <li>
-                  <div className="label">Outreach</div> As a part of our
-                  community outreach, each Thanksgiving we distribute food for
-                  Thanksgiving meals to people who sign up through our outreach
-                  program. From 1971-2019, we served free Thanksgiving meals to
-                  those who were in need, during Thanksgiving Day. For Christmas
-                  outreach, the church collects toys for youth and gift cards
-                  for those in need. The Church also assists those who need
-                  financial support for rental assistance, utility bills, and
-                  food needs. We are re-opening our soup kitchen, which was
-                  closed during the pandemic, where those in need of a daily
-                  meal will be able to receive it two or three days per week.
-                  Due to pandemic infections, we were forced to close our
-                  clothing distribution. We also plan to re-open this in the
-                  near future. The Women’s Ministry distributes toiletries to
-                  the House of Ruth, a non-profit organization that provides a
-                  haven for victims of domestic violence and their children. In
-                  September of each year, the church distributes back-to-school
-                  supplies for City Temple’s youth and community youth. Due to
+                  <div className="label">Outreach</div> In the past, we
+                  distributed food for Thanksgiving meals to people who sign up
+                  through our outreach program. From 1971-2019, we served free
+                  Thanksgiving meals to those who were in need, during
+                  Thanksgiving Day. For Christmas outreach, the church collects
+                  toys for youth and gift cards for those in need. The Church
+                  also assists those who need financial support for rental
+                  assistance, utility bills, and food needs. Due to pandemic
+                  infections, we were forced to close our clothing distribution
+                  and have not reopened. The Women’s Ministry distributes
+                  toiletries to city shelters. In August of each year, the
+                  church distributes gift cards for the purchasing of
+                  back-to-school supplies to City Temple’s youth. Due to
                   COVID-19 and the health and safety of our congregation
-                  members, the Diaconate Ministry has not visited the
-                  congregation’s sick and shut-in. However, they continue to
-                  provide means of staying connected with members by phone calls
-                  and cards.
+                  members, the Diaconate Ministry has halted its regular
+                  visitation schedule. We hope to reestablish our visitation
+                  program in the future.
                 </li>
                 <li>
                   <div className="label">Church plant</div> Our Church is a
@@ -704,10 +694,10 @@ const ProfilePage = () => {
                   William W. Payne Building, which was built in 1995. This
                   building is for the use of the community and 10 years before
                   the COVID-19 pandemic, we collaborated with Baltimore City
-                  Community College to host a GED program. We are also preparing
-                  to fix parts of the ceiling in the main sanctuary. We have
-                  central air conditioning in our sanctuary. The church also has
-                  a connecting parking lot, which can accommodate 15 vehicles.
+                  Community College to host a GED program. We fixed parts of the
+                  ceiling in the main sanctuary. We have central air
+                  conditioning in our sanctuary. The church also has a
+                  connecting parking lot.
                 </li>
                 <li>
                   <div className="label">Minister accommodation</div> The church
@@ -730,7 +720,7 @@ const ProfilePage = () => {
                   <div className="label">Communication</div> The CTBB has many
                   forms of communication including print, REALM email system,
                   church Robocalls, church information line, social media,
-                  texting, church website, Zoom, YouTube, Facebook, and text.
+                  texting, church website, Zoom, YouTube, and Facebook.
                 </li>
               </ol>
             </ProfileSection>
