@@ -87,10 +87,7 @@ function HomePage() {
           <StyledAnnouncementBar>
             City Temple is looking for a new pastor! See the following link for
             more information.{' '}
-            <a
-              href="https://thecitytemple.org/pastor-application"
-              target="_blank"
-            >
+            <a href="/pastor-application" target="_blank">
               Pastor Application
             </a>
           </StyledAnnouncementBar>

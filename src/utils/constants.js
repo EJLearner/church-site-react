@@ -17,6 +17,8 @@ const FEATURE_FLAGS = {
 };
 
 const constants = {
+  PASTOR_APPLICATION_START_DATE: '2026-02-01',
+  PASTOR_APPLICATION_END_DATE: '2026-03-16',
   NBSP: '\u00a0',
   ...dateConstants,
 

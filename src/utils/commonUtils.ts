@@ -209,7 +209,11 @@ const commonUtils = {
     });
   },
   isAcceptingApplications: () => {
-    return isBetween(getTodayDate(), '2026-02-01', '2026-03-03');
+    return isBetween(
+      getTodayDate(),
+      constants.PASTOR_APPLICATION_START_DATE,
+      constants.PASTOR_APPLICATION_END_DATE,
+    );
   },
 };
 

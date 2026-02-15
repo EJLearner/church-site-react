@@ -8,6 +8,14 @@ const {MSG, ESV, NRSV, NRSVUE, KJV, NIV, NKJV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2026-02-15',
+    youtubeId: 'jfXWDAfmW3E',
+    preacher: M_HAMIEL,
+    title: 'Sunday Service!!!',
+    scripture: null,
+    version: null,
+  },
+  {
     date: '2026-02-08',
     youtubeId: 'Lp1-MFeSvwI',
     preacher: 'Rev. Renee Hammock',

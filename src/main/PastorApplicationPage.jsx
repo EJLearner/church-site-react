@@ -10,6 +10,7 @@ import styled from 'styled-components';
 
 import applicationPdf from '../assets/files/EmploymentApplicationSeniorPastor.pdf';
 import circleCtLogo from '../assets/images/circlectlogo-black.png';
+import constants from '../utils/constants';
 
 const StyledPastorApplicationPage = styled.div`
   --application-blue: rgb(0, 112, 192);
@@ -208,6 +209,20 @@ const StyledShareList = styled.ul`
   }
 `;
 
+function getFormattedDate(dateString) {
+  // set the time to midnight in UTC to avoid timezone issues
+  const date = new Date(`${dateString}T00:00:00Z`);
+
+  return date.toLocaleDateString('en-US', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    // use UTC time because the Date was set to midnight on 3/16 UTC
+    timeZone: 'UTC',
+  });
+}
+
 const PastorApplicationPage = () => {
   const emailAnchorRef = useRef(null);
   const [shouldShowShareItems, setShouldShowShareItems] = useState(false);
@@ -342,7 +357,7 @@ const PastorApplicationPage = () => {
             <br />
             <b>Location:</b> Baltimore, MD
             <br />
-            <b>Status:</b> Bivocational
+            <b>Status:</b> Bi-vocational
             <br />
             <b>Salary Range:</b> $55,000 - $65,000/annually
           </section>
@@ -498,7 +513,8 @@ const PastorApplicationPage = () => {
               </a>
             </p>
             <p>
-              <b>Application Deadlne:</b> Tuesday, March 3, 2026
+              <b>Application Deadlne:</b>{' '}
+              {getFormattedDate(constants.PASTOR_APPLICATION_END_DATE)}
             </p>
           </section>
         </main>
