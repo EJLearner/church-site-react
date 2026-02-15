@@ -3100,4 +3100,41 @@ export default {
       </p>
     ),
   },
+  '2026-02-08': {
+    subTitle: (
+      <>
+        From
+        <i>Free to Pray, Free to Love</i>
+        by Max Oliva, S. J
+      </>
+    ),
+    content: (
+      <p>
+        “The word “radical” means going to the root, getting down to essentials.
+        People who get down to essentials and stay with them, no matter what the
+        changes around them, are and remain radical. They are rooted in
+        something that endures. The most radical element of our faith is the
+        unconditional love of God. The more we internalize this truth, the
+        greater the transformation that happens within us. Transformation has to
+        do with freedom, freedom to live and love like Christ.”
+      </p>
+    ),
+  },
+  '2026-02-15': {
+    subTitle: <>by Norman Shawchuck</>,
+    content: (
+      <p>
+        “Perhaps at first they talked of little things that spring evening. The
+        upper room was dim with lamplight as Jesus sat with the twelve and
+        remembered. Then quietly he said, “There is one here whose kiss will
+        bring me betrayal by and by.” They did not look at Judas, but each man
+        murmured, “Master, is it I?” Each one looked inward, frightened, lest he
+        find shifting sand where he had dreamed of rock. None placed the guilt
+        on any other guest who had partaken of that gracious meal. When hungry
+        children dwell on my street, when I see tears or hear a heart’s cry
+        because someone failed to keep faith, may I too murmur, Master, is it
+        I?”
+      </p>
+    ),
+  },
 };
