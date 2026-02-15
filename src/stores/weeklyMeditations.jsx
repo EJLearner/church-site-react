@@ -3140,4 +3140,21 @@ export default {
       </p>
     ),
   },
+  '2026-02-15': {
+    subTitle: <>by Norman Shawchuck</>,
+    content: (
+      <p>
+        “Perhaps at first they talked of little things that spring evening. The
+        upper room was dim with lamplight as Jesus sat with the twelve and
+        remembered. Then quietly he said, “There is one here whose kiss will
+        bring me betrayal by and by.” They did not look at Judas, but each man
+        murmured, “Master, is it I?” Each one looked inward, frightened, lest he
+        find shifting sand where he had dreamed of rock. None placed the guilt
+        on any other guest who had partaken of that gracious meal. When hungry
+        children dwell on my street, when I see tears or hear a heart’s cry
+        because someone failed to keep faith, may I too murmur, Master, is it
+        I?”
+      </p>
+    ),
+  },
 };
