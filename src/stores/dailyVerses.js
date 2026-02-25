@@ -1213,6 +1213,13 @@ const dailyVerses = {
   '2026-02-19': {verse: 'Mark 15.25-32'},
   '2026-02-20': {verse: 'Matthew 28.1-10'},
   '2026-02-21': {verse: 'James 1.12-18'},
+  '2026-02-22': {verse: 'Psalm 25.1-10'},
+  '2026-02-23': {verse: 'Luke 22.24-30'},
+  '2026-02-24': {verse: 'Isaiah 41.8-10'},
+  '2026-02-25': {verse: 'Luke 16.10-13'},
+  '2026-02-26': {verse: 'Matthew 12.15-21'},
+  '2026-02-27': {verse: '1 Corinthians 4.1-5'},
+  '2026-02-28': {verse: 'John 15.12-16'},
 };
 
 export {dailyVerses};
