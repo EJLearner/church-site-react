@@ -1220,6 +1220,13 @@ const dailyVerses = {
   '2026-02-26': {verse: 'Matthew 12.15-21'},
   '2026-02-27': {verse: '1 Corinthians 4.1-5'},
   '2026-02-28': {verse: 'John 15.12-16'},
+  '2026-03-01': {verse: 'Psalm 121'},
+  '2026-03-02': {verse: 'Matthew 16.24-28'},
+  '2026-03-03': {verse: 'Acts 14.21-22'},
+  '2026-03-04': {verse: '2 Timothy 2.8-13'},
+  '2026-03-05': {verse: 'Romans 6.5-11'},
+  '2026-03-06': {verse: '1 Thessalonians 3.1-13'},
+  '2026-03-07': {verse: 'Luke 14.25-33'},
 };
 
 export {dailyVerses};
