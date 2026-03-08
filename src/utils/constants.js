@@ -45,6 +45,13 @@ const constants = {
     MINISTERS: 'City Temple Ministers', // use when multiple ministers are in video
     P_YEARGIN: 'Minister Patricia Ann Yeargin',
     T_CURLEY: 'Rev. Tyra Curley',
+    // Recurring Guests
+    D_SUMMERS: 'Rev. Dr. Douglass Summers',
+    D_WRIGHT: 'Rev. Donald Wright Jr',
+    K_SLAYTON: 'Rev. Dr. Kevin A. Slayton, Sr.',
+    R_HAMMOCK: 'Rev. Renee Hammock',
+    S_THOMAS: 'Rev. Shawntay Thomas',
+    W_BURGESS: 'Rev. Dr. William Burgess',
   },
 
   BIBLE_VERSIONS: {
