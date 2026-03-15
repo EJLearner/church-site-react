@@ -18,6 +18,14 @@ const {MSG, ESV, NRSV, KJV, NIV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2026-03-15',
+    youtubeId: 'ROSoP6EpkjM',
+    preacher: D_WRIGHT,
+    title: null,
+    scripture: null,
+    version: null,
+  },
+  {
     date: '2026-03-08',
     youtubeId: 'algk38coGWY',
     preacher: W_BURGESS,
