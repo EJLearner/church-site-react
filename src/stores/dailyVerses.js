@@ -1227,6 +1227,13 @@ const dailyVerses = {
   '2026-03-05': {verse: 'Romans 6.5-11'},
   '2026-03-06': {verse: '1 Thessalonians 3.1-13'},
   '2026-03-07': {verse: 'Luke 14.25-33'},
+  '2026-03-15': {verse: 'Psalm 23'},
+  '2026-03-16': {verse: 'Deuteronomy 30.15-20'},
+  '2026-03-17': {verse: 'Joshua 24.14-28'},
+  '2026-03-18': {verse: 'Hebrews 2.1-18'},
+  '2026-03-19': {verse: 'Philemon 1.8-21'},
+  '2026-03-20': {verse: 'Colossians 3.1-17'},
+  '2026-03-21': {verse: 'Romans 12'},
 };
 
 export {dailyVerses};
