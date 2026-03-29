@@ -3248,4 +3248,25 @@ export default {
       </p>
     ),
   },
+  '2026-03-29': {
+    subTitle: (
+      <>
+        From
+        <i>The Prophetic Imagination</i>
+        by Walter Brueggemann
+      </>
+    ),
+    content: (
+      <p>
+        “I believe that the possibility of passion is a primary prophetic agenda
+        and that it is precisely what the royal consciousness means to
+        eradicate…Passion as the capacity and readiness to care, to suffer, to
+        die, and to feel is the enemy of imperial reality. Imperial economics is
+        designed to keep people satiated so that they do not notice. Its
+        politics is intended to block out the cries of the denied ones. Its
+        religion is to be an opiate so that no one discerns misery alive in the
+        hearth of God.”
+      </p>
+    ),
+  },
 };
