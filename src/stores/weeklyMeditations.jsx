@@ -3165,12 +3165,87 @@ export default {
     ),
     content: (
       <p>
-        A cup is a container for holding something. Whatever it holds has to
+        “A cup is a container for holding something. Whatever it holds has to
         eventually be emptied out so that something more can be put into it. I
         have learned that I cannot always expect my life to be full. There has
         to be some emptying, some pouring out, if I am to make room for the new.
         The spiritual journey is like that – a constant process of emptying and
         filling, or giving and receiving, of accepting and letting go.”
+      </p>
+    ),
+  },
+  '2026-03-15': {
+    subTitle: (
+      <>
+        From
+        <i>Mere Christianity</i>
+        by C. S. Lewis
+      </>
+    ),
+    content: (
+      <p>
+        “People often think of Christian morality as a kind of bargain in which
+        God says, “If you keep a lot of rules, I’ll reward you, and if you don’t
+        I’ll do the other thing.” I do not think that is the best way of looking
+        at it. I would much rather say that every time you make a choice you are
+        turning the central part of you, the part of you that chooses, into
+        something a little different from what it was before. And taking your
+        life as a whole, with all you innumerable choices, all your life long
+        you are slowly turning this central thing either into a Heaven creature
+        or into a hellish creature: either into a creature that is in harmony
+        with God, and with other creatures, and with itself, or else into one
+        that is in a state of war and hatred with God, and with its fellow
+        creatures, and with itself. To be the one kind of creature is Heaven:
+        that is, it is joy, and peace, and knowledge, and power. To be the other
+        means madness, horror, idiocy, rage, impotence, and eternal loneliness.
+        Each of us at each moment is progressing to the one state or the other.”
+      </p>
+    ),
+  },
+  '2026-03-22': {
+    subTitle: (
+      <>
+        From
+        <i>Waiting for God</i>
+        by Simone Weil
+      </>
+    ),
+    content: (
+      <p>
+        “That we may have to strive after goodness with an effort of our will is
+        one of the lies invented by the mediocre part of ourselves in its fear
+        of being destroyed. Such an effort does not threaten it, in any way, it
+        does not even disturb its comfort – not even when it entails a great
+        deal of fatigue and suffering. For the mediocre part of ourselves is not
+        afraid of fatigue and suffering; it is afraid of being killed. There are
+        people who try to raise their souls like a man continually taking
+        standing jumps in the hopes that, if he jumps higher every day, a time
+        may come when he will no longer fall back but will go right up to the
+        sky. Thus occupied he cannot look at the sky. We cannot take a single
+        step toward heaven. It is not in our power to travel in a vertical
+        direction. If, however we look heavenward for a long time, God comes and
+        takes us up. He raises us easily.”
+      </p>
+    ),
+  },
+  '2026-03-29': {
+    subTitle: (
+      <>
+        From
+        <i>The Prophetic Imagination</i>
+        by Walter Brueggemann
+      </>
+    ),
+    content: (
+      <p>
+        “I believe that the possibility of passion is a primary prophetic agenda
+        and that it is precisely what the royal consciousness means to
+        eradicate…Passion as the capacity and readiness to care, to suffer, to
+        die, and to feel is the enemy of imperial reality. Imperial economics is
+        designed to keep people satiated so that they do not notice. Its
+        politics is intended to block out the cries of the denied ones. Its
+        religion is to be an opiate so that no one discerns misery alive in the
+        hearth of God.”
       </p>
     ),
   },
