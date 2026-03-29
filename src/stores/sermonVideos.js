@@ -18,6 +18,22 @@ const {MSG, ESV, NRSV, KJV, NIV} = BIBLE_VERSIONS;
 
 const sermonVideos = [
   {
+    date: '2026-03-29',
+    youtubeId: 'i7RJ352SNPA',
+    preacher: M_HAMIEL,
+    title: 'Palm Sunday!!!',
+    scripture: null,
+    version: null,
+  },
+  {
+    date: '2026-03-22',
+    youtubeId: 'VqXyYUbiF1k',
+    preacher: S_THOMAS,
+    title: null,
+    scripture: 'Psalm 23',
+    version: null,
+  },
+  {
     date: '2026-03-15',
     youtubeId: 'ROSoP6EpkjM',
     preacher: D_WRIGHT,
@@ -30,6 +46,8 @@ const sermonVideos = [
     youtubeId: 'algk38coGWY',
     preacher: W_BURGESS,
     title: 'The Best Is Yet To Come!!!',
+    scripture: null,
+    version: null,
   },
   {
     date: '2026-03-01',
@@ -43,7 +61,7 @@ const sermonVideos = [
     date: '2026-02-22',
     youtubeId: '2QQ4wREc4Ng',
     preacher: R_HAMMOCK,
-    title: 'Sunday Service!!!',
+    title: 'From Toxicity to Testimony',
     scripture: null,
     version: null,
   },
@@ -95,6 +113,7 @@ const sermonVideos = [
     preacher: W_BURGESS,
     title: 'Baggage!',
     scripture: 'Philippians 4:4-7',
+    version: null,
   },
   {
     date: '2025-12-21',
@@ -111,6 +130,7 @@ const sermonVideos = [
     preacher: K_SLAYTON,
     title: undefined,
     scripture: undefined,
+    version: null,
   },
   {
     date: '2025-11-23',
@@ -162,12 +182,16 @@ const sermonVideos = [
     youtubeId: 'UUny_Ni_LJM',
     preacher: D_HICKMAN,
     title: 'Trust God!!!',
+    scripture: null,
+    version: null,
   },
   {
     date: '2025-10-05',
     youtubeId: 'Q4ZV99zIPZM',
     preacher: M_HAMIEL,
     title: 'Just Wait!',
+    scripture: null,
+    version: null,
   },
   {
     date: '2025-09-28',
@@ -175,6 +199,7 @@ const sermonVideos = [
     preacher: W_BURGESS,
     title: 'Hit by God!',
     scripture: 'Acts 9:1-9; 17-19',
+    version: null,
   },
   {
     date: '2025-09-21',
@@ -189,6 +214,8 @@ const sermonVideos = [
     youtubeId: 'V39yo7FV4I4',
     preacher: 'Rev. Donald Wright',
     title: 'Strength for the Journey',
+    scripture: null,
+    version: null,
   },
   {
     date: '2025-09-07',
@@ -196,6 +223,7 @@ const sermonVideos = [
     preacher: D_HICKMAN,
     title: 'Communion in Divisive Times',
     scripture: '1 Corinthians 11: 17-32',
+    version: null,
   },
   {
     date: '2025-08-31',
