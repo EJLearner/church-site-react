@@ -3249,4 +3249,22 @@ export default {
       </p>
     ),
   },
+  '2026-04-05': {
+    subTitle: (
+      <>
+        From
+        <i>Prayers for the Christian Year</i>
+        by William Barclay
+      </>
+    ),
+    content: (
+      <p>
+        “O God, our Father, at Easter time we remember the great hope of eternal
+        life which you have set before us, and we feel within our hearts the
+        longings for goodness and for you. Grant that nothing may hinder the
+        hope of eternal life from coming true, and the desire for goodness and
+        for you from being realized.”
+      </p>
+    ),
+  },
 };
