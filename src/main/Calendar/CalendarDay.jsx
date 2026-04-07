@@ -11,8 +11,6 @@ const CalendarDay = (props) => {
   const {storedDates} = props;
   const [selectedDay, setSelectedDay] = useState(location.state?.selectedDay);
 
-  console.log({stateDay: location.state?.selectedDay});
-
   const onDateChange = (dayString) => {
     setSelectedDay(dayString);
   };

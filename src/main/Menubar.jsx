@@ -53,12 +53,8 @@ const StyledMenuBar = styled.header`
 const Menubar = ({imageSource, menuItems}) => {
   const {pathname} = useLocation();
 
-  console.log(pathname);
-
   const renderedMenuItems = menuItems.map(({hash = '', text, path}) => {
     let className = 'main-menu-item';
-
-    console.log({pathname, path});
 
     if (path === '/' && pathname === '/') {
       className += ' active';

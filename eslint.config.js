@@ -66,6 +66,7 @@ export default defineConfig([
           ],
         },
       ],
+      'no-console': 'error',
       'no-warning-comments': 'warn',
       'object-shorthand': 'error',
       'prefer-template': 'error',

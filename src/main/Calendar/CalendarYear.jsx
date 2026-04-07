@@ -69,14 +69,10 @@ class CalendarYear extends Component {
   }
 
   redirect() {
-    console.log(
-      `redirecting to ${this.state.redirectDate} and selectedDay is ${this.state.redirectDate}`,
-    );
-
     return (
       <Navigate
         state={{selectedDay: this.state.redirectDate}}
-        to={`../${  routePaths.MAIN_CALENDAR_DAY}`}
+        to={`../${routePaths.MAIN_CALENDAR_DAY}`}
       />
     );
   }
