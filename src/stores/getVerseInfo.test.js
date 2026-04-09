@@ -12,6 +12,7 @@ describe('getVerseInfo', () => {
     vi.stubGlobal(
       'fetch',
       vi.fn().mockResolvedValue({
+        ok: true,
         json: vi.fn().mockResolvedValue(testResponseObject),
       }),
     );
@@ -46,11 +47,31 @@ describe('getVerseInfo', () => {
     expect(fetch).toHaveBeenCalledTimes(1);
   });
 
-  it('calls callback with null on fetch error', async () => {
+  it('falls back to scripture.api.bible when fetch fails', async () => {
     vi.stubGlobal(
       'fetch',
       vi.fn().mockRejectedValue(new Error('network error')),
     );
+
+    let xhrInstance;
+    vi.stubGlobal(
+      'XMLHttpRequest',
+      vi.fn(function () {
+        xhrInstance = {
+          open: vi.fn(),
+          send: vi
+            .fn()
+            .mockImplementation(() => xhrInstance.onreadystatechange()),
+          setRequestHeader: vi.fn(),
+          readyState: 4,
+          DONE: 4,
+          responseText: JSON.stringify(testResponseObject),
+          onreadystatechange: null,
+        };
+        return xhrInstance;
+      }),
+    );
+
     const cb = vi.fn();
     await new Promise((resolve) => {
       getVerseInfo(testQuery, (result) => {
@@ -58,6 +79,11 @@ describe('getVerseInfo', () => {
         resolve();
       });
     });
-    expect(cb).toHaveBeenCalledWith(null);
+
+    expect(xhrInstance.open).toHaveBeenCalledWith(
+      'GET',
+      expect.stringContaining('api.scripture.api.bible'),
+    );
+    expect(cb).toHaveBeenCalledWith(testPassages);
   });
 });
