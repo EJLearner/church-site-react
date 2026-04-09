@@ -114,7 +114,11 @@ export default function MeditationsPage() {
           return (
             <Fragment key={date}>
               <h3 id={day}>{day}</h3>
-              <Verse date={date} passage={verse} referenceText={referenceText} />
+              <Verse
+                date={date}
+                passage={verse}
+                referenceText={referenceText}
+              />
             </Fragment>
           );
         })}

@@ -57,7 +57,12 @@ function parseReference(ref) {
 
     // No dot → whole chapter (e.g. "Romans 8")
     if (!rest.includes('.')) {
-      segments.push({book, chapter: parseInt(rest), verseStart: 1, verseEnd: Infinity});
+      segments.push({
+        book,
+        chapter: parseInt(rest),
+        verseStart: 1,
+        verseEnd: Infinity,
+      });
       continue;
     }
 
@@ -84,22 +89,47 @@ function parseReference(ref) {
           const vEnd = parseInt(match[4]);
           for (let ch = chStart; ch <= chEnd; ch++) {
             if (ch === chStart && ch === chEnd) {
-              segments.push({book, chapter: ch, verseStart: vStart, verseEnd: vEnd});
+              segments.push({
+                book,
+                chapter: ch,
+                verseStart: vStart,
+                verseEnd: vEnd,
+              });
             } else if (ch === chStart) {
-              segments.push({book, chapter: ch, verseStart: vStart, verseEnd: Infinity});
+              segments.push({
+                book,
+                chapter: ch,
+                verseStart: vStart,
+                verseEnd: Infinity,
+              });
             } else if (ch === chEnd) {
               segments.push({book, chapter: ch, verseStart: 1, verseEnd: vEnd});
             } else {
-              segments.push({book, chapter: ch, verseStart: 1, verseEnd: Infinity});
+              segments.push({
+                book,
+                chapter: ch,
+                verseStart: 1,
+                verseEnd: Infinity,
+              });
             }
           }
           lastChapter = chEnd;
         } else if (match[5]) {
           // Same-chapter range: 3.16-18
-          segments.push({book, chapter: chStart, verseStart: vStart, verseEnd: parseInt(match[5])});
+          segments.push({
+            book,
+            chapter: chStart,
+            verseStart: vStart,
+            verseEnd: parseInt(match[5]),
+          });
         } else {
           // Single verse: 3.16
-          segments.push({book, chapter: chStart, verseStart: vStart, verseEnd: vStart});
+          segments.push({
+            book,
+            chapter: chStart,
+            verseStart: vStart,
+            verseEnd: vStart,
+          });
         }
       } else if (lastChapter !== null) {
         // Verse-only range continuing previous chapter: "27-30" after "1.12-14"
@@ -107,7 +137,12 @@ function parseReference(ref) {
         if (!rangeMatch) continue;
         const vStart = parseInt(rangeMatch[1]);
         const vEnd = rangeMatch[2] ? parseInt(rangeMatch[2]) : vStart;
-        segments.push({book, chapter: lastChapter, verseStart: vStart, verseEnd: vEnd});
+        segments.push({
+          book,
+          chapter: lastChapter,
+          verseStart: vStart,
+          verseEnd: vEnd,
+        });
       }
     }
   }
@@ -139,7 +174,9 @@ function buildPassageContent(book, chapter, verses) {
 // GET /api/verse?q=Romans+8.31-39
 router.get('/', (req, res) => {
   if (!asvData) {
-    return res.status(503).json({error: 'Bible data not available. See server logs.'});
+    return res
+      .status(503)
+      .json({error: 'Bible data not available. See server logs.'});
   }
 
   const {q} = req.query;
@@ -161,10 +198,12 @@ router.get('/', (req, res) => {
     passageMap.get(key).verses.push(...found);
   }
 
-  const passages = [...passageMap.entries()].map(([, {book, chapter, verses}]) => ({
-    reference: `${book} ${chapter}`,
-    content: buildPassageContent(book, chapter, verses),
-  }));
+  const passages = [...passageMap.entries()].map(
+    ([, {book, chapter, verses}]) => ({
+      reference: `${book} ${chapter}`,
+      content: buildPassageContent(book, chapter, verses),
+    }),
+  );
 
   res.json({data: {passages}});
 });

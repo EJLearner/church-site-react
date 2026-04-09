@@ -79,4 +79,20 @@ export default defineConfig([
       ],
     },
   },
+  // API folder: Node.js CommonJS environment — overrides the base config above
+  {
+    files: ['api/**/*.js'],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+      ecmaVersion: 'latest',
+      sourceType: 'commonjs',
+    },
+    rules: {
+      '@typescript-eslint/no-require-imports': 'off',
+      'import/order': 'off',
+      'no-console': 'off',
+    },
+  },
 ]);

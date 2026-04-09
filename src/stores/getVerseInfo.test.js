@@ -9,9 +9,9 @@ describe('getVerseInfo', () => {
   const testQuery = 'John 3.16';
 
   beforeEach(() => {
-    global.fetch = vi.fn().mockResolvedValue({
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
       json: vi.fn().mockResolvedValue(testResponseObject),
-    });
+    }));
   });
 
   afterEach(() => {
@@ -44,7 +44,7 @@ describe('getVerseInfo', () => {
   });
 
   it('calls callback with null on fetch error', async () => {
-    global.fetch = vi.fn().mockRejectedValue(new Error('network error'));
+    vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new Error('network error')));
     const cb = vi.fn();
     await new Promise((resolve) => {
       getVerseInfo(testQuery, (result) => {
