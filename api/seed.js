@@ -335,16 +335,26 @@ const sermons = [
   },
 ];
 
-const insert = db.prepare(`
-  INSERT OR IGNORE INTO sermon_videos (date, youtube_id, preacher, title, scripture, bible_version, expires)
-  VALUES (@date, @youtube_id, @preacher, @title, @scripture, @bible_version, 1)
-`);
-
-const insertMany = db.transaction((rows) => {
-  for (const row of rows) {
-    insert.run(row);
+async function seed() {
+  for (const row of sermons) {
+    await db.runAsync(
+      `INSERT OR IGNORE INTO sermon_videos (date, youtube_id, preacher, title, scripture, bible_version, expires)
+       VALUES (?, ?, ?, ?, ?, ?, 1)`,
+      [
+        row.date,
+        row.youtube_id,
+        row.preacher,
+        row.title,
+        row.scripture,
+        row.bible_version,
+      ],
+    );
   }
-});
+  console.log(`Seeded ${sermons.length} sermon records.`);
+  db.close();
+}
 
-insertMany(sermons);
-console.log(`Seeded ${sermons.length} sermon records.`);
+seed().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

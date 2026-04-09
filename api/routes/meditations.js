@@ -13,19 +13,20 @@ function getCurrentSunday() {
 }
 
 // Returns the most recent meditation on or before the current Sunday
-router.get('/', (req, res) => {
-  const sunday = getCurrentSunday();
-
-  const meditation = db
-    .prepare(
+router.get('/', async (req, res) => {
+  try {
+    const sunday = getCurrentSunday();
+    const meditation = await db.getAsync(
       `SELECT * FROM weekly_meditations
        WHERE week_start_date <= ?
        ORDER BY week_start_date DESC
        LIMIT 1`,
-    )
-    .get(sunday);
-
-  res.json(meditation || null);
+      [sunday],
+    );
+    res.json(meditation || null);
+  } catch (err) {
+    res.status(500).json({error: err.message});
+  }
 });
 
 module.exports = router;
