@@ -1,10 +1,9 @@
 import {faAngleDoubleDown} from '@fortawesome/free-solid-svg-icons/faAngleDoubleDown';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 import choir from '../assets/images/choir.jpg';
-import sermonVideos from '../stores/sermonVideos';
 import constants from '../utils/constants';
 import {
   convertTypedDateToIso,
@@ -280,15 +279,34 @@ function filterVideos(otherVideos, searchInfo) {
 }
 
 const WatchPage = () => {
+  const [sermonVideos, setSermonVideos] = useState([]);
   const [archiveVideoShowCount, setArchiveVideoShowCount] = useState(
     INITIAL_VIDEO_SHOW_COUNT,
   );
   const [searchInfo, setSearchInfo] = useState(initialSearchInfo);
+  const [filteredVideos, setFilteredVideos] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/sermons')
+      .then((r) => r.json())
+      .then((data) => {
+        // API returns snake_case; map to camelCase to match existing render logic
+        const mapped = data.map(({youtube_id, bible_version, ...rest}) => ({
+          ...rest,
+          youtubeId: youtube_id,
+          version: bible_version,
+          videoMissingMessage: 'No video for this date',
+        }));
+        setSermonVideos(mapped);
+        const [, ...rest] = mapped;
+        setFilteredVideos(rest.filter(({youtubeId}) => youtubeId));
+      })
+      .catch(() => {});
+  }, []);
+
   const [newestVideo, ...notNewestVideos] = sermonVideos;
   // videos without youtube id are just placeholders for days where video doesn't exist
   const otherVideos = notNewestVideos.filter(({youtubeId}) => youtubeId);
-
-  const [filteredVideos, setFilteredVideos] = useState(otherVideos);
 
   const displayedVideos = filteredVideos.slice(0, archiveVideoShowCount);
   const renderShowMoreContent = filteredVideos.length >= archiveVideoShowCount;

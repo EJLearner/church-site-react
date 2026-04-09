@@ -26,3 +26,4 @@ dist-ssr
 
 #other
 .eslintcache
+api/church.db

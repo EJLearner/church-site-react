@@ -56,7 +56,7 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to server
+      - name: Deploy React app
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -66,3 +66,26 @@ jobs:
           target: ${{ secrets.DEPLOY_PATH }}
           strip_components: 1
           overwrite: true
+
+      - name: Deploy API
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: 'api/*'
+          target: ${{ secrets.API_PATH }}
+          strip_components: 1
+          overwrite: true
+          exclude: 'church.db,data/asv.json'
+
+      - name: Install API dependencies and restart
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ${{ secrets.API_PATH }}
+            npm ci --omit=dev
+            pm2 restart church-api || pm2 start server.js --name church-api

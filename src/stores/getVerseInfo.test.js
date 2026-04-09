@@ -2,101 +2,56 @@ import {afterEach, beforeEach, describe, expect, it, vi} from 'vitest';
 
 import getVerseInfo, {_resetCache} from './getVerseInfo';
 
-const testResponseObject = {
-  data: {
-    passages: [{content: 'test'}],
-  },
-};
-const createMockXHR = (responseObject = testResponseObject, readyState = 4) => {
-  return {
-    open: vi.fn(),
-    send: vi.fn(),
-    DONE: 4,
-    readyState,
-    responseText: JSON.stringify(responseObject),
-    setRequestHeader: vi.fn(),
-  };
-};
+const testPassages = [{content: '<p>test</p>', reference: 'John 3:16'}];
+const testResponseObject = {data: {passages: testPassages}};
 
 describe('getVerseInfo', () => {
-  const oldXMLHttpRequest = globalThis.XMLHttpRequest;
-  const testQuery = 'test-query';
-  let mockXHR;
+  const testQuery = 'John 3.16';
 
   beforeEach(() => {
-    mockXHR = createMockXHR();
-    function FakeXHR() {
-      return mockXHR;
-    }
-    globalThis.XMLHttpRequest = vi.fn(FakeXHR);
+    global.fetch = vi.fn().mockResolvedValue({
+      json: vi.fn().mockResolvedValue(testResponseObject),
+    });
   });
 
   afterEach(() => {
-    globalThis.XMLHttpRequest = oldXMLHttpRequest;
     _resetCache();
+    vi.restoreAllMocks();
   });
 
-  it('calls xhr open', () => {
-    const siteAddress = 'https://api.scripture.api.bible';
-    const sitePath = '/v1/bibles/';
-    const bibleId = '06125adad2d5898a-01';
-    const expectedUrl = `${siteAddress}${sitePath}${bibleId}/search?query=${testQuery}`;
-
-    getVerseInfo(testQuery, vi.fn());
-
-    expect(mockXHR.open).toBeCalledWith('GET', expectedUrl);
+  it('calls fetch with the correct URL', async () => {
+    await new Promise((resolve) => getVerseInfo(testQuery, resolve));
+    expect(fetch).toHaveBeenCalledWith(
+      `/api/verse?q=${encodeURIComponent(testQuery)}`,
+    );
   });
 
-  it('calls xhr setHeaderRequest', () => {
-    getVerseInfo(testQuery, vi.fn());
-
-    expect(mockXHR.setRequestHeader).toHaveBeenCalledTimes(1);
-    expect(mockXHR.setRequestHeader.mock.calls[0][0]).toBe('api-key');
-    expect(mockXHR.setRequestHeader.mock.calls[0][1]).toBeDefined();
-  });
-
-  it('calls xhr send', () => {
-    getVerseInfo(testQuery, vi.fn());
-
-    expect(mockXHR.send).toHaveBeenCalledTimes(1);
-    expect(mockXHR.send.mock.calls[0][0]).not.toBeDefined();
-  });
-
-  it('gets repeat call of same query from cache', () => {
-    const firstCb = vi.fn();
-
-    getVerseInfo(testQuery, firstCb);
-    mockXHR.onreadystatechange();
-
-    expect(mockXHR.send).toHaveBeenCalledTimes(1);
-
-    const secondCb = vi.fn();
-    getVerseInfo(testQuery, secondCb);
-    expect(mockXHR.send).toHaveBeenCalledTimes(1);
-  });
-
-  it('calls callback with parsed object if readyState is done', () => {
+  it('calls callback with passages array', async () => {
     const cb = vi.fn();
-    getVerseInfo(testQuery, cb);
-
-    mockXHR.onreadystatechange();
-
-    expect(cb).toHaveBeenCalledTimes(1);
-    expect(cb.mock.calls[0][0]).toEqual(testResponseObject.data.passages);
+    await new Promise((resolve) => {
+      getVerseInfo(testQuery, (result) => {
+        cb(result);
+        resolve();
+      });
+    });
+    expect(cb).toHaveBeenCalledWith(testPassages);
   });
 
-  it('does not call callback with parsed object if readyState is not done', () => {
-    mockXHR = createMockXHR(testResponseObject, 0);
-    function FakeXHR() {
-      return mockXHR;
-    }
-    globalThis.XMLHttpRequest = vi.fn(FakeXHR);
+  it('returns cached result on second call without fetching again', async () => {
+    await new Promise((resolve) => getVerseInfo(testQuery, resolve));
+    await new Promise((resolve) => getVerseInfo(testQuery, resolve));
+    expect(fetch).toHaveBeenCalledTimes(1);
+  });
 
+  it('calls callback with null on fetch error', async () => {
+    global.fetch = vi.fn().mockRejectedValue(new Error('network error'));
     const cb = vi.fn();
-    getVerseInfo(testQuery, cb);
-
-    mockXHR.onreadystatechange();
-
-    expect(cb).not.toHaveBeenCalled();
+    await new Promise((resolve) => {
+      getVerseInfo(testQuery, (result) => {
+        cb(result);
+        resolve();
+      });
+    });
+    expect(cb).toHaveBeenCalledWith(null);
   });
 });

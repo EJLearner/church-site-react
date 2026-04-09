@@ -7,7 +7,12 @@ export default defineConfig({
   build: {
     target: browserslistToEsbuild(),
   },
-  server: {open: true},
+  server: {
+    open: true,
+    proxy: {
+      '/api': 'http://localhost:3000',
+    },
+  },
   plugins: [react()],
   test: {
     globals: true,

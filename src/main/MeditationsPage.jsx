@@ -1,10 +1,9 @@
 import {format, add} from 'date-fns';
-import {Fragment} from 'react';
+import {Fragment, useState, useEffect} from 'react';
+import Markdown from 'react-markdown';
 import styled from 'styled-components';
 
 import choir from '../assets/images/choir.jpg';
-import {dailyVerses} from '../stores/dailyVerses';
-import weeklyMeditations from '../stores/weeklyMeditations';
 import constants from '../utils/constants';
 import {getStartOfWeek} from '../utils/dateTimeUtils';
 
@@ -78,61 +77,69 @@ const getCurrentWeekDates = () => {
 
 const currentWeekDates = getCurrentWeekDates();
 
-function getVersesContent() {
+export default function MeditationsPage() {
+  const [dailyVerses, setDailyVerses] = useState({});
+  const [meditation, setMeditation] = useState(null);
+
+  useEffect(() => {
+    fetch('/api/daily-verses')
+      .then((r) => r.json())
+      .then(setDailyVerses)
+      .catch(() => {});
+
+    fetch('/api/weekly-meditation')
+      .then((r) => r.json())
+      .then(setMeditation)
+      .catch(() => {});
+  }, []);
+
   const weekHasSomeVerses = currentWeekDates.some(
     ({date}) => dailyVerses?.[date]?.verse,
   );
 
-  if (!weekHasSomeVerses) {
+  function renderVersesContent() {
+    if (!weekHasSomeVerses) {
+      return (
+        <>
+          <h2>Content unavailable</h2>
+          <p>Sorry, no verses are available at this time.</p>
+        </>
+      );
+    }
+
+    return (
+      <div>
+        {currentWeekDates.map(({date, day}) => {
+          const {verse, referenceText} = dailyVerses?.[date] ?? {};
+          return (
+            <Fragment key={date}>
+              <h3 id={day}>{day}</h3>
+              <Verse date={date} passage={verse} referenceText={referenceText} />
+            </Fragment>
+          );
+        })}
+      </div>
+    );
+  }
+
+  function renderMeditationContent() {
+    if (meditation?.content) {
+      return (
+        <>
+          <h3>{meditation.subtitle}</h3>
+          <Markdown>{meditation.content}</Markdown>
+        </>
+      );
+    }
+
     return (
       <>
         <h2>Content unavailable</h2>
-        <p>Sorry, no verses are available at this time.</p>
+        Sorry, no weekly meditation is available at this time.
       </>
     );
   }
 
-  const verses = currentWeekDates.map(({date, day}) => {
-    const {verse, referenceText} = dailyVerses?.[date] ?? {};
-
-    return (
-      <Fragment key={date}>
-        <h3 id={day}>{day}</h3>
-        <Verse
-          date={date}
-          key={date}
-          passage={verse}
-          referenceText={referenceText}
-        />
-      </Fragment>
-    );
-  });
-
-  return <div>{verses}</div>;
-}
-
-function renderMeditationContent() {
-  const {subTitle: subTitle, content: content} =
-    weeklyMeditations[currentWeekDates[0].date] || {};
-
-  if (content) {
-    return (
-      <>
-        <h3>{subTitle}</h3>
-        {content}
-      </>
-    );
-  }
-
-  return (
-    <>
-      <h2>Content unavailable</h2>
-      Sorry, no weekly meditation is available at this time.
-    </>
-  );
-}
-
-export default function MeditationsPage() {
   return (
     <StyledMeditationsPage>
       <MainMenubar imageSource={choir} />
@@ -140,7 +147,7 @@ export default function MeditationsPage() {
         <div className="content">
           <div className="daily-scriptures">
             <h1>Daily Scripture Readings</h1>
-            {getVersesContent()}
+            {renderVersesContent()}
           </div>
           <div className="weekly-meditation">
             <h1>Weekly Meditation</h1>
