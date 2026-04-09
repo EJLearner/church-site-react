@@ -21,6 +21,7 @@ describe('getVerseInfo', () => {
   afterEach(() => {
     _resetCache();
     vi.restoreAllMocks();
+    vi.unstubAllGlobals();
   });
 
   it('calls fetch with the correct URL', async () => {
@@ -56,20 +57,21 @@ describe('getVerseInfo', () => {
     let xhrInstance;
     vi.stubGlobal(
       'XMLHttpRequest',
-      vi.fn(function () {
-        xhrInstance = {
-          open: vi.fn(),
-          send: vi
+      class {
+        constructor() {
+          this.open = vi.fn();
+          this.setRequestHeader = vi.fn();
+          this.readyState = 4;
+          this.DONE = 4;
+          this.responseText = JSON.stringify(testResponseObject);
+          this.onreadystatechange = null;
+          this.send = vi
             .fn()
-            .mockImplementation(() => xhrInstance.onreadystatechange()),
-          setRequestHeader: vi.fn(),
-          readyState: 4,
-          DONE: 4,
-          responseText: JSON.stringify(testResponseObject),
-          onreadystatechange: null,
-        };
-        return xhrInstance;
-      }),
+            .mockImplementation(() => this.onreadystatechange());
+          // eslint-disable-next-line @typescript-eslint/no-this-alias
+          xhrInstance = this;
+        }
+      },
     );
 
     const cb = vi.fn();
