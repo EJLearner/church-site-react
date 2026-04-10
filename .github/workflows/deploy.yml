@@ -77,7 +77,6 @@ jobs:
           target: ${{ secrets.API_PATH }}
           strip_components: 1
           overwrite: true
-          exclude: 'church.db,data/asv.json'
 
       - name: Install API dependencies and restart
         uses: appleboy/ssh-action@v1.0.3
@@ -87,5 +86,5 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd ${{ secrets.API_PATH }}
-            npm ci --omit=dev
-            pm2 restart church-api || pm2 start server.js --name church-api
+            npm install --omit=dev --cache /home/deploy/.npm
+            PM2_HOME=/home/deploy/.pm2 pm2 restart church-api || PM2_HOME=/home/deploy/.pm2 pm2 start server.js --name church-api
