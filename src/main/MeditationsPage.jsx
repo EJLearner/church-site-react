@@ -152,7 +152,9 @@ export default function MeditationsPage() {
     if (meditation?.content) {
       return (
         <>
-          <h3>{meditation.subtitle}</h3>
+          <h3>
+            <Markdown>{meditation.subtitle}</Markdown>
+          </h3>
           <Markdown>{meditation.content}</Markdown>
         </>
       );

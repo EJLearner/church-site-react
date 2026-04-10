@@ -4,20 +4,98 @@ const path = require('path');
 
 const router = express.Router();
 
-// Expected format of api/data/asv.json:
-// { "Genesis": { "1": { "1": "In the beginning...", "2": "..." } }, ... }
-// Keys are book names, chapter numbers (as strings), verse numbers (as strings).
-// Book name variations (e.g. "Psalm" vs "Psalms") are handled by BOOK_NAME_MAP below.
+// Expected format of api/data/asv.json (bibleapi-bibles-json):
+// { "resultset": { "row": [{ "field": [id, bookNum, chapter, verse, text] }, ...] } }
+// Download from: https://github.com/bibleapi/bibleapi-bibles-json
 const ASV_PATH = path.join(__dirname, '../data/asv.json');
+
+const BOOK_NAMES = [
+  'Genesis',
+  'Exodus',
+  'Leviticus',
+  'Numbers',
+  'Deuteronomy',
+  'Joshua',
+  'Judges',
+  'Ruth',
+  '1 Samuel',
+  '2 Samuel',
+  '1 Kings',
+  '2 Kings',
+  '1 Chronicles',
+  '2 Chronicles',
+  'Ezra',
+  'Nehemiah',
+  'Esther',
+  'Job',
+  'Psalms',
+  'Proverbs',
+  'Ecclesiastes',
+  'Song of Solomon',
+  'Isaiah',
+  'Jeremiah',
+  'Lamentations',
+  'Ezekiel',
+  'Daniel',
+  'Hosea',
+  'Joel',
+  'Amos',
+  'Obadiah',
+  'Jonah',
+  'Micah',
+  'Nahum',
+  'Habakkuk',
+  'Zephaniah',
+  'Haggai',
+  'Zechariah',
+  'Malachi',
+  'Matthew',
+  'Mark',
+  'Luke',
+  'John',
+  'Acts',
+  'Romans',
+  '1 Corinthians',
+  '2 Corinthians',
+  'Galatians',
+  'Ephesians',
+  'Philippians',
+  'Colossians',
+  '1 Thessalonians',
+  '2 Thessalonians',
+  '1 Timothy',
+  '2 Timothy',
+  'Titus',
+  'Philemon',
+  'Hebrews',
+  'James',
+  '1 Peter',
+  '2 Peter',
+  '1 John',
+  '2 John',
+  '3 John',
+  'Jude',
+  'Revelation',
+];
 
 let asvData = null;
 try {
-  asvData = JSON.parse(fs.readFileSync(ASV_PATH, 'utf8'));
+  const raw = JSON.parse(fs.readFileSync(ASV_PATH, 'utf8'));
+  // Build nested lookup: { bookName: { chapter: { verse: text } } }
+  asvData = {};
+  for (const {field} of raw.resultset.row) {
+    const [, bookNum, chapter, verse, text] = field;
+    const bookName = BOOK_NAMES[bookNum - 1];
+    if (!bookName) continue;
+    if (!asvData[bookName]) asvData[bookName] = {};
+    if (!asvData[bookName][chapter]) asvData[bookName][chapter] = {};
+    asvData[bookName][chapter][verse] = text;
+  }
 } catch {
   console.warn(
     'ASV JSON not found at',
     ASV_PATH,
-    '\nDownload a public domain ASV JSON (book → chapter → verse object format)',
+    '\nDownload asv.json from https://github.com/bibleapi/bibleapi-bibles-json',
     'and place it at api/data/asv.json to enable the /api/verse endpoint.',
   );
 }

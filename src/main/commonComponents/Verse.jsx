@@ -50,6 +50,10 @@ function Verse({passage, referenceText}) {
     }
   }, [passage]);
 
+  if (!passage) {
+    return <p>Sorry, no verse is available at this time.</p>;
+  }
+
   if (loadState === LOAD_STATES.loading) {
     return (
       <div>
@@ -60,10 +64,6 @@ function Verse({passage, referenceText}) {
 
   if (loadState === LOAD_STATES.error) {
     return `Error loading ${passage}`;
-  }
-
-  if (!passage) {
-    return <p>Sorry, no verse is available at this time.</p>;
   }
 
   return (
