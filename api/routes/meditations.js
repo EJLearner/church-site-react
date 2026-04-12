@@ -12,15 +12,13 @@ function getCurrentSunday() {
   return sunday.toISOString().split('T')[0];
 }
 
-// Returns the most recent meditation on or before the current Sunday
+// Returns the meditation for the current week
 router.get('/', async (req, res) => {
   try {
     const sunday = getCurrentSunday();
     const meditation = await db.getAsync(
       `SELECT * FROM weekly_meditations
-       WHERE week_start_date <= ?
-       ORDER BY week_start_date DESC
-       LIMIT 1`,
+       WHERE week_start_date = ?`,
       [sunday],
     );
     res.json(meditation || null);
