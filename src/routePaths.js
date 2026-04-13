@@ -16,7 +16,10 @@ const ADMIN_PATHS = {
   ADMIN_CC: `cc`,
   ADMIN_EMAIL_SUBSCRIBERS: `email-subscribers`,
   ADMIN_EVENTS: `events`,
+  ADMIN_MEDITATIONS: `meditations`,
+  ADMIN_SERMONS: `sermons`,
   ADMIN_VBS: `vbs`,
+  ADMIN_VERSES: `verses`,
 };
 
 const PASTOR_APPLICATION_PATHS = {

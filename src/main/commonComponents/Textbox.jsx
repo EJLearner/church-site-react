@@ -24,6 +24,7 @@ const Textbox = (props) => {
     instructions,
     label,
     name,
+    onBlur,
     onChange,
     onEnter,
     placeholder,
@@ -62,6 +63,7 @@ const Textbox = (props) => {
         aria-labelledby={labelledBy}
         id={id}
         name={name || id}
+        onBlur={(event) => onBlur?.(event.target.value, id, event)}
         onChange={(event) => onChange(event.target.value, id, event)}
         onKeyPress={onKeyPress}
         placeholder={placeholder}
@@ -79,6 +81,7 @@ Textbox.propTypes = {
   instructions: PropTypes.node,
   label: PropTypes.string.isRequired,
   name: PropTypes.string,
+  onBlur: PropTypes.func,
   onChange: PropTypes.func.isRequired,
   onEnter: PropTypes.func,
   placeholder: PropTypes.string,

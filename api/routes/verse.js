@@ -122,8 +122,11 @@ function normalizeBook(name) {
 function parseReference(ref) {
   const segments = [];
 
+  // Normalize colon chapter:verse separator to dot (e.g. "John 3:16" → "John 3.16")
+  const normalized = ref.replace(/(\d):(\d)/g, '$1.$2');
+
   // Split on semicolons first
-  const semicolonParts = ref.split(';').map((s) => s.trim());
+  const semicolonParts = normalized.split(';').map((s) => s.trim());
 
   for (const part of semicolonParts) {
     // Match book name (handles "1 John", "2 Corinthians", etc.)
@@ -276,12 +279,16 @@ router.get('/', (req, res) => {
     passageMap.get(key).verses.push(...found);
   }
 
-  const passages = [...passageMap.entries()].map(
-    ([, {book, chapter, verses}]) => ({
+  const passages = [...passageMap.entries()]
+    .filter(([, {verses}]) => verses.length > 0)
+    .map(([, {book, chapter, verses}]) => ({
       reference: `${book} ${chapter}`,
       content: buildPassageContent(book, chapter, verses),
-    }),
-  );
+    }));
+
+  if (passages.length === 0) {
+    return res.status(404).json({error: `No verses found for: ${q}`});
+  }
 
   res.json({data: {passages}});
 });

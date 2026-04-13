@@ -67,6 +67,13 @@ export default defineConfig([
         },
       ],
       'no-console': 'error',
+      'prefer-destructuring': [
+        'error',
+        {
+          VariableDeclarator: {array: true, object: true},
+          AssignmentExpression: {array: false, object: false},
+        },
+      ],
       'no-warning-comments': 'warn',
       'object-shorthand': 'error',
       'prefer-template': 'error',

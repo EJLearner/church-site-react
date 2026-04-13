@@ -2,6 +2,34 @@ const COOKIE_KEYS = {
   CART_DATA: 'cart-data',
 };
 
+// Defines each admin page — key matches GROUP_PAGES keys
+const ADMIN_PAGE_CONFIG = {
+  events: {text: 'Events', path: 'events'},
+  cc: {text: "Children's Church", path: 'cc'},
+  vbs: {text: 'VBS', path: 'vbs'},
+  emailSubscribers: {text: 'Email Subscribers', path: 'email-subscribers'},
+  sermons: {text: 'Sermons', path: 'sermons'},
+  meditations: {text: 'Meditations', path: 'meditations'},
+  verses: {text: 'Verses', path: 'verses'},
+};
+
+// Maps Firebase group names to the page keys they can access
+const GROUP_PAGES = {
+  admins: [
+    'events',
+    'cc',
+    'vbs',
+    'emailSubscribers',
+    'sermons',
+    'meditations',
+    'verses',
+  ],
+  contentAdmin: ['sermons', 'meditations', 'verses'],
+  ccRegAccess: ['cc'],
+  vbsRegAccess: ['vbs'],
+  emailSubscribersAccess: ['emailSubscribers'],
+};
+
 const dateConstants = {
   DATE_FNS_DISPLAY_DATE_FORMAT: 'M/d/yyyy',
   DATE_FNS_INTERNAL_DATE_FORMAT: 'yyyy-MM-dd',
@@ -17,6 +45,8 @@ const FEATURE_FLAGS = {
 };
 
 const constants = {
+  ADMIN_PAGE_CONFIG,
+  GROUP_PAGES,
   PASTOR_APPLICATION_START_DATE: '2026-02-01',
   PASTOR_APPLICATION_END_DATE: '2026-03-16',
   NBSP: '\u00a0',

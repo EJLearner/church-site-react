@@ -68,9 +68,7 @@ function Verse({passage, referenceText}) {
 
   return (
     <StyleWrapper>
-      <span className="reference">
-        {referenceText ?? passages?.[0]?.reference}
-      </span>
+      <span className="reference">{referenceText ?? passage}</span>
       {renderPassages(passages)}
     </StyleWrapper>
   );

@@ -14,13 +14,17 @@ import styled from 'styled-components';
 
 import choir from '../../assets/images/choir.jpg';
 import routePaths from '../../routePaths';
-import Menubar from '../Menubar';
+import constants from '../../utils/constants';
 import Button from '../commonComponents/Button/Button';
+import MainMenubar from '../commonComponents/MainMenubar';
 import Textbox from '../commonComponents/Textbox';
 
 import CcVbsAdminBase from './CcVbsAdminBase';
 import EventAdmin from './EventAdmin';
+import MeditationAdmin from './MeditationAdmin';
+import SermonAdmin from './SermonAdmin';
 import SubscribedEmailsAdmin from './SubscribedEmailsAdmin';
+import VersesAdmin from './VersesAdmin';
 const provider = new GoogleAuthProvider();
 const auth = getAuth();
 
@@ -56,6 +60,23 @@ const StyledAdminPage = styled.div`
     font-family: var(--code);
     margin-top: 1em;
     padding: 0.5em;
+  }
+
+  .secondary-nav {
+    background: var(--charcoal-grey);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    padding: 0.5em 1em;
+
+    a {
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   .login-form {
@@ -105,7 +126,8 @@ class Admin extends Component {
 
     this.state = {
       user: null,
-      adminUser: null,
+      authLoading: true,
+      groupMembership: {},
       email: '',
       password: '',
       loginError: null,
@@ -114,20 +136,22 @@ class Admin extends Component {
   }
 
   componentDidMount() {
-    // update adminUsers state based on firebase data status
     const db = getDatabase();
-    const adminUsersRef = ref(db, 'user_groups/admins');
 
-    onValue(adminUsersRef, (snapshot) => {
-      const adminUsers = snapshot.val();
-      this.setState({adminUsers});
+    // Load all group membership data
+    Object.keys(constants.GROUP_PAGES).forEach((groupKey) => {
+      onValue(ref(db, `user_groups/${groupKey}`), (snapshot) => {
+        this.setState((prev) => ({
+          groupMembership: {
+            ...prev.groupMembership,
+            [groupKey]: snapshot.val(),
+          },
+        }));
+      });
     });
 
-    // keeps user logged in on a page refresh
     onAuthStateChanged(auth, (user) => {
-      if (user) {
-        this.setState({user});
-      }
+      this.setState({user: user ?? null, authLoading: false});
     });
   }
 
@@ -175,39 +199,29 @@ class Admin extends Component {
     });
   }
 
-  generateLinks() {
-    const {
-      adminUsers,
-      ccRegAccess,
-      emailSubscribersAccess,
-      vbsRegAccess,
-      user,
-    } = this.state;
+  getAccessiblePages() {
+    const {groupMembership, user} = this.state;
+    if (!user) return [];
 
-    const uid = user?.uid;
-    const isAdmin = user && adminUsers?.[uid];
-    const adminPath = '/admin/';
+    const {uid} = user;
+    const {ADMIN_PAGE_CONFIG, GROUP_PAGES} = constants;
+    const pageKeys = new Set();
 
-    return [
-      {text: 'Home', path: '/'},
-      isAdmin && {path: adminPath + routePaths.ADMIN_EVENTS, text: 'Events'},
-      (isAdmin || ccRegAccess?.[uid]) && {
-        path: adminPath + routePaths.ADMIN_CC,
-        text: 'Children’s Church',
-      },
-      (isAdmin || vbsRegAccess?.[uid]) && {
-        path: adminPath + routePaths.ADMIN_VBS,
-        text: 'VBS',
-      },
-      (isAdmin || emailSubscribersAccess?.[uid]) && {
-        path: adminPath + routePaths.ADMIN_EMAIL_SUBSCRIBERS,
-        text: 'Email Subscribers List',
-      },
-    ].filter(Boolean);
+    Object.keys(GROUP_PAGES).forEach((groupKey) => {
+      if (groupMembership[groupKey]?.[uid]) {
+        GROUP_PAGES[groupKey]?.forEach((page) => pageKeys.add(page));
+      }
+    });
+
+    return [...pageKeys].map((key) => ADMIN_PAGE_CONFIG[key]).filter(Boolean);
   }
 
   renderContent() {
-    const {user} = this.state;
+    const {authLoading, user} = this.state;
+
+    if (authLoading) {
+      return null;
+    }
 
     if (user) {
       return (
@@ -231,6 +245,12 @@ class Admin extends Component {
               element={<SubscribedEmailsAdmin />}
               path={routePaths.ADMIN_EMAIL_SUBSCRIBERS}
             />
+            <Route element={<SermonAdmin />} path={routePaths.ADMIN_SERMONS} />
+            <Route
+              element={<MeditationAdmin />}
+              path={routePaths.ADMIN_MEDITATIONS}
+            />
+            <Route element={<VersesAdmin />} path={routePaths.ADMIN_VERSES} />
           </Routes>
         </div>
       );
@@ -278,10 +298,25 @@ class Admin extends Component {
     );
   }
 
+  renderSecondaryNav(pages) {
+    return (
+      <div className="secondary-nav">
+        {pages.map(({text, path}) => (
+          <a href={`/admin/${path}`} key={path}>
+            {text}
+          </a>
+        ))}
+      </div>
+    );
+  }
+
   render() {
+    const pages = this.getAccessiblePages();
+
     return (
       <StyledAdminPage>
-        <Menubar imageSource={choir} menuItems={this.generateLinks()} />
+        <MainMenubar imageSource={choir} />
+        {Boolean(pages.length) && this.renderSecondaryNav(pages)}
         <div className="admin-content">{this.renderContent()}</div>
       </StyledAdminPage>
     );
