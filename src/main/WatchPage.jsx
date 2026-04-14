@@ -4,7 +4,6 @@ import {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 import choir from '../assets/images/choir.jpg';
-import sermonVideosFallback from '../stores/sermonVideos'; // FALLBACK: remove when API is stable
 import constants from '../utils/constants';
 import {
   convertTypedDateToIso,
@@ -303,15 +302,9 @@ const WatchPage = () => {
         setFilteredVideos(rest.filter(({youtubeId}) => youtubeId));
       })
       .catch(() => {
-        // FALLBACK: remove when API is stable
-        const mapped = sermonVideosFallback.map((v) => ({
-          ...v,
-          videoMissingMessage: 'No video for this date',
-        }));
-        setSermonVideos(mapped);
-        const [, ...rest] = mapped;
-        setFilteredVideos(rest.filter(({youtubeId}) => youtubeId));
-      }); // END FALLBACK
+        setSermonVideos([]);
+        setFilteredVideos([]);
+      });
   }, []);
 
   const [newestVideo, ...notNewestVideos] = sermonVideos;

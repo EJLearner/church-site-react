@@ -22,8 +22,6 @@ const StyleWrapper = styled.div`
 const LOAD_STATES = {
   loading: 'loading',
   complete: 'complete',
-  // for when passage prop was not provided
-  missingPassage: 'missingPassage',
   error: 'error',
 };
 
@@ -38,16 +36,19 @@ function Verse({passage, referenceText}) {
   const [loadState, setLoadState] = useState(LOAD_STATES.loading);
 
   useEffect(() => {
-    if (passage) {
-      getVerseInfo(passage, (response) => {
-        setPassages(response);
+    async function passageSetup() {
+      if (passage) {
+        const response = await getVerseInfo(passage);
+        setPassages(response ?? []);
 
         const newLoadState = response
           ? LOAD_STATES.complete
           : LOAD_STATES.error;
         setLoadState(newLoadState);
-      });
+      }
     }
+
+    passageSetup();
   }, [passage]);
 
   if (!passage) {

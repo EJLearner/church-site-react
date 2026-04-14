@@ -4,9 +4,6 @@ import Markdown from 'react-markdown';
 import styled from 'styled-components';
 
 import choir from '../assets/images/choir.jpg';
-// FALLBACK: remove these two imports when API is stable
-import {dailyVerses as dailyVersesFallback} from '../stores/dailyVerses';
-import weeklyMeditationsFallback from '../stores/weeklyMeditations';
 import constants from '../utils/constants';
 import {getStartOfWeek} from '../utils/dateTimeUtils';
 
@@ -80,16 +77,6 @@ const getCurrentWeekDates = () => {
 
 const currentWeekDates = getCurrentWeekDates();
 
-// FALLBACK: extracts plain text from JSX elements to match API string format
-const getJsxText = (node) => {
-  if (!node) return '';
-  if (typeof node === 'string') return node;
-  if (Array.isArray(node)) return node.map(getJsxText).join('');
-  if (node?.props?.children) return getJsxText(node.props.children);
-  return '';
-};
-// END FALLBACK
-
 export default function MeditationsPage() {
   const [dailyVerses, setDailyVerses] = useState({});
   const [meditation, setMeditation] = useState(null);
@@ -98,21 +85,12 @@ export default function MeditationsPage() {
     fetch('/api/daily-verses')
       .then((r) => r.json())
       .then(setDailyVerses)
-      .catch(() => setDailyVerses(dailyVersesFallback)); // FALLBACK
+      .catch(() => setDailyVerses({}));
 
     fetch('/api/weekly-meditation')
       .then((r) => r.json())
       .then(setMeditation)
-      .catch(() => {
-        // FALLBACK
-        const fallback = weeklyMeditationsFallback[currentWeekDates[0].date];
-        if (fallback) {
-          setMeditation({
-            subtitle: getJsxText(fallback.subTitle),
-            content: getJsxText(fallback.content),
-          });
-        }
-      }); // END FALLBACK
+      .catch(() => setMeditation(null));
   }, []);
 
   const weekHasSomeVerses = currentWeekDates.some(

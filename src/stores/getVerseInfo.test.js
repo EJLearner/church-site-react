@@ -24,27 +24,19 @@ describe('getVerseInfo', () => {
     vi.unstubAllGlobals();
   });
 
-  it('calls fetch with the correct URL', async () => {
-    await new Promise((resolve) => getVerseInfo(testQuery, resolve));
+  it('calls fetch with the correct URL and returns response', async () => {
+    const response = await getVerseInfo(testQuery);
+
     expect(fetch).toHaveBeenCalledWith(
       `/api/verse?q=${encodeURIComponent(testQuery)}`,
     );
-  });
 
-  it('calls callback with passages array', async () => {
-    const cb = vi.fn();
-    await new Promise((resolve) => {
-      getVerseInfo(testQuery, (result) => {
-        cb(result);
-        resolve();
-      });
-    });
-    expect(cb).toHaveBeenCalledWith(testPassages);
+    expect(response).toEqual(testPassages);
   });
 
   it('returns cached result on second call without fetching again', async () => {
-    await new Promise((resolve) => getVerseInfo(testQuery, resolve));
-    await new Promise((resolve) => getVerseInfo(testQuery, resolve));
+    await getVerseInfo(testQuery);
+    await getVerseInfo(testQuery);
     expect(fetch).toHaveBeenCalledTimes(1);
   });
 
