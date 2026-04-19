@@ -20,6 +20,10 @@
 - [ ] Rethink page background colors — home and contact use dark backgrounds while everything else is light, causing awkwardness with shared components (e.g. link colors)
 - [ ] Research email/communication sending options for the site — use cases include user-initiated contact forms, API-triggered notifications (data updated), and admin registration requests
 
+## Testing
+
+- [ ] Improve test coverage — aim for full coverage throughout, especially newer AI-written code
+
 ## Dev Environment
 
 - [ ] Address 24 npm vulnerabilities flagged by Dependabot (15 high, 8 moderate, 1 low) — see https://github.com/EJLearner/church-site-react/security/dependabot
