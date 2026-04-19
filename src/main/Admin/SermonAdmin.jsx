@@ -1,4 +1,4 @@
-import {useState, useEffect, useRef} from 'react';
+import {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 import authFetch from '../../utils/adminApi';
@@ -12,6 +12,22 @@ const PREACHER_OPTIONS = [
   ...Object.values(constants.PREACHERS),
   OTHER_PREACHER,
 ];
+
+const TITLE_PREFIXES = ['rev.', 'dr.', 'minister'];
+
+function detectPreacher(videoTitle) {
+  const titleLower = videoTitle.toLowerCase();
+  for (const name of Object.values(constants.PREACHERS)) {
+    const firstName = name
+      .split(' ')
+      .find((word) => !TITLE_PREFIXES.includes(word.toLowerCase()))
+      ?.toLowerCase();
+    if (firstName && titleLower.includes(firstName)) {
+      return name;
+    }
+  }
+  return '';
+}
 
 const BIBLE_VERSION_OPTIONS = ['', ...Object.values(constants.BIBLE_VERSIONS)];
 
@@ -53,15 +69,78 @@ const StyledSermonAdmin = styled.div`
     }
   }
 
-  .youtube-status {
-    margin-bottom: 1em;
+  .youtube-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 1em;
+    margin-bottom: 0.5em;
 
-    .valid {
-      color: green;
+    > :first-child {
+      flex: 1;
     }
 
-    .invalid {
-      color: red;
+    .youtube-selected {
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.25em;
+      }
+
+      a {
+        color: var(--text-on-light-background);
+      }
+    }
+  }
+
+  .channel-picker {
+    border: 1px solid var(--charcoal-grey);
+    padding: 1em;
+    margin-bottom: 1em;
+
+    .picker-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75em;
+
+      h4 {
+        margin: 0;
+      }
+    }
+
+    .picker-loading {
+      color: var(--charcoal-grey);
+    }
+
+    .picker-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 0.75em;
+    }
+
+    .picker-video {
+      cursor: pointer;
+      border: 2px solid transparent;
+      padding: 0.25em;
+
+      &:hover {
+        border-color: var(--maroon);
+      }
+
+      img {
+        width: 100%;
+        display: block;
+      }
+
+      .picker-title {
+        font-size: 12px;
+        margin-top: 0.25em;
+      }
+
+      .picker-date {
+        font-size: 11px;
+        color: var(--charcoal-grey);
+      }
     }
   }
 
@@ -77,38 +156,23 @@ function SermonAdmin() {
   const [form, setForm] = useState(emptyForm);
   const [editingId, setEditingId] = useState(null);
   const [error, setError] = useState(null);
-  const [youtubeStatus, setYoutubeStatus] = useState(null);
-  const [youtubeTitle, setYoutubeTitle] = useState(null);
-  const youtubeDebounceRef = useRef(null);
+  const [channelVideos, setChannelVideos] = useState(null);
+  const [pickerVisible, setPickerVisible] = useState(true);
 
-  /* eslint-disable react-hooks/set-state-in-effect -- YouTube ID validation state */
-  useEffect(() => {
-    clearTimeout(youtubeDebounceRef.current);
-    if (!form.youtube_id) {
-      setYoutubeStatus(null);
-      setYoutubeTitle(null);
-      return;
-    }
-    setYoutubeStatus('checking');
-    setYoutubeTitle(null);
-    youtubeDebounceRef.current = setTimeout(async () => {
-      try {
-        const res = await fetch(
-          `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${form.youtube_id}&format=json`,
-        );
-        if (res.ok) {
-          const data = await res.json();
-          setYoutubeStatus('valid');
-          setYoutubeTitle(data.title);
-        } else {
-          setYoutubeStatus('invalid');
-        }
-      } catch {
-        setYoutubeStatus('invalid');
-      }
-    }, 600);
-  }, [form.youtube_id]);
-  /* eslint-enable react-hooks/set-state-in-effect */
+  function selectChannelVideo(video) {
+    setForm((prev) => ({
+      ...prev,
+      youtube_id: video.videoId,
+      title: prev.title || video.title,
+      preacher: prev.preacher || detectPreacher(video.title),
+    }));
+    setPickerVisible(false);
+  }
+
+  function clearYoutubeId() {
+    setForm((prev) => ({...prev, youtube_id: ''}));
+    setPickerVisible(true);
+  }
 
   async function loadSermons() {
     const res = await authFetch('/api/sermons/all');
@@ -116,9 +180,25 @@ function SermonAdmin() {
     setSermons(data);
   }
 
+  async function loadChannelVideos(reload = false) {
+    setChannelVideos(null);
+    setPickerVisible(true);
+    try {
+      const url = reload
+        ? '/api/youtube-feed?reload=true'
+        : '/api/youtube-feed';
+      const res = await authFetch(url);
+      const data = await res.json();
+      setChannelVideos(data);
+    } catch {
+      setChannelVideos([]);
+    }
+  }
+
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- async API fetch
     loadSermons();
+    loadChannelVideos();
   }, []);
 
   function startEdit(sermon) {
@@ -229,25 +309,86 @@ function SermonAdmin() {
               required
               value={form.date}
             />
-            <Textbox
-              id="sermon-youtube-id"
-              label="YouTube ID"
-              onChange={(value) =>
-                setForm((prev) => ({...prev, youtube_id: value}))
-              }
-              value={form.youtube_id}
-            />
           </div>
-          {youtubeStatus && (
-            <div className="youtube-status">
-              {youtubeStatus === 'checking' && <span>Checking...</span>}
-              {youtubeStatus === 'valid' && (
-                <span className="valid">
-                  ✓ Video found{youtubeTitle ? `: ${youtubeTitle}` : ''}
+          <div className="youtube-row">
+            {form.youtube_id ? (
+              <div className="youtube-selected">
+                <label>YouTube Video</label>
+                <div>
+                  <a
+                    href={`https://www.youtube.com/watch?v=${form.youtube_id}`}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    {`https://www.youtube.com/watch?v=${form.youtube_id}`}
+                  </a>
+                </div>
+              </div>
+            ) : (
+              <Textbox
+                id="sermon-youtube-id"
+                label="YouTube ID"
+                onChange={(value) =>
+                  setForm((prev) => ({...prev, youtube_id: value}))
+                }
+                value={form.youtube_id}
+              />
+            )}
+            {form.youtube_id ? (
+              <Button onClick={clearYoutubeId} type="button">
+                Change
+              </Button>
+            ) : (
+              !pickerVisible &&
+              channelVideos?.length > 0 && (
+                <Button onClick={() => setPickerVisible(true)} type="button">
+                  Show recent videos
+                </Button>
+              )
+            )}
+          </div>
+          {channelVideos === null && (
+            <div className="channel-picker">
+              <span className="picker-loading">Loading channel videos...</span>
+            </div>
+          )}
+          {channelVideos !== null && pickerVisible && (
+            <div className="channel-picker">
+              {channelVideos.length === 0 ? (
+                <span className="picker-loading">
+                  Automatic video retrieval not working (RSS feed down)
                 </span>
-              )}
-              {youtubeStatus === 'invalid' && (
-                <span className="invalid">✗ Invalid YouTube ID</span>
+              ) : (
+                <>
+                  <div className="picker-header">
+                    <h4>Select a video</h4>
+                    <Button
+                      onClick={() => loadChannelVideos(true)}
+                      type="button"
+                    >
+                      Reload latest videos
+                    </Button>
+                  </div>
+                  <div className="picker-grid">
+                    {channelVideos.map((video) => (
+                      <div
+                        className="picker-video"
+                        key={video.videoId}
+                        onClick={() => selectChannelVideo(video)}
+                      >
+                        {video.thumbnail && (
+                          <img alt={video.title} src={video.thumbnail} />
+                        )}
+                        <div className="picker-title">{video.title}</div>
+                        <div className="picker-date">
+                          {video.published
+                            ? new Date(video.published).toLocaleDateString()
+                            : ''}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </>
               )}
             </div>
           )}
