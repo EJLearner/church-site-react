@@ -2,11 +2,12 @@
 
 ## Server
 
-- [ ] Upgrade Ubuntu 16.04 to a newer LTS version (currently running very old Node/npm due to OS constraints)
+- [ ] Upgrade server OS
 
 ## Church Site
 
 - [ ] Consider simplifying WatchPage archive videos to use YouTube thumbnail JPGs linking to the video instead of embedded iframes
+- [ ] WatchPage sermon feed: show all future sermons but exclude sermons older than 3 weeks
 - [ ] Improve the design of the admin pages
 - [ ] Review newer mostly AI-written code (SermonAdmin, MeditationAdmin, VersesAdmin, API routes)
 
@@ -26,4 +27,4 @@
 
 ## Dev Environment
 
-- [ ] Address 24 npm vulnerabilities flagged by Dependabot (15 high, 8 moderate, 1 low) — see https://github.com/EJLearner/church-site-react/security/dependabot
+- [ ] Fully update frontend and API dependencies
