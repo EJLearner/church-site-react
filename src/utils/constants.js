@@ -69,7 +69,6 @@ const constants = {
     D_NELSON: 'Rev. Donnell Nelson',
     D_HICKMAN: 'Rev. Debra Hickman-Arnette',
     G_YEARGIN: 'Rev. Dr. Grady A Yeargin, Jr.',
-    L_FORD: 'Minister Lori Pierce',
     L_PIERCE: 'Minister Lori Pierce',
     M_HAMIEL: 'Minister Michelle Hamiel',
     MINISTERS: 'City Temple Ministers', // use when multiple ministers are in video

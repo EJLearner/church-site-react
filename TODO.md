@@ -17,6 +17,8 @@
 
 ## Future Features
 
+- [ ] Add support for recurring events in the church calendar (e.g. weekly services, monthly meetings)
+
 - [ ] Figure out how to have Firebase Google sign-in show a friendly app name instead of the default app identifier
 - [ ] Rethink page background colors — home and contact use dark backgrounds while everything else is light, causing awkwardness with shared components (e.g. link colors)
 - [ ] Research email/communication sending options for the site — use cases include user-initiated contact forms, API-triggered notifications (data updated), and admin registration requests

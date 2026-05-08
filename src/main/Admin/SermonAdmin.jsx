@@ -188,6 +188,7 @@ function SermonAdmin() {
         ? '/api/youtube-feed?reload=true'
         : '/api/youtube-feed';
       const res = await authFetch(url);
+      if (!res.ok) throw new Error('Failed to load videos');
       const data = await res.json();
       setChannelVideos(data);
     } catch {
