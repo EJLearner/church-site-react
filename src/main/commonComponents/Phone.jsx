@@ -1,10 +1,13 @@
+// TODO: Make this more customized to displaying a phone. For now,
+// it's just a copy of TextBox with a different name
+
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import InputLabel from './InputLabel';
 
 const TextboxStyle = styled.div`
-  ${(props) => (props.ownLine ? 'display: block' : 'display: inline-block')};
+  display: inline-block;
   margin: 1em 16px 0.5em 0;
 
   .text-box-pattern {
@@ -17,7 +20,7 @@ const TextboxStyle = styled.div`
   }
 `;
 
-const Textbox = (props) => {
+const Phone = (props) => {
   const {
     errors,
     id,
@@ -64,7 +67,11 @@ const Textbox = (props) => {
         id={id}
         name={name || id}
         onBlur={(event) => onBlur?.(event.target.value, id, event)}
-        onChange={(event) => onChange(event.target.value, id, event)}
+        onChange={(event) => {
+          console.log('Phone onChange', event.target.value, id);
+
+          return onChange(event.target.value, id, event);
+        }}
         onKeyDown={onKeyDown}
         placeholder={placeholder}
         size={size}
@@ -75,7 +82,7 @@ const Textbox = (props) => {
   );
 };
 
-Textbox.propTypes = {
+Phone.propTypes = {
   errors: PropTypes.node,
   id: PropTypes.string.isRequired,
   instructions: PropTypes.node,
@@ -91,4 +98,4 @@ Textbox.propTypes = {
   value: PropTypes.string.isRequired,
 };
 
-export default Textbox;
+export default Phone;

@@ -119,12 +119,12 @@ Button.defaultProps = {
 
 Button.propTypes = {
   buttonShape: PropTypes.oneOf(Object.values(SHAPES)),
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
   className: PropTypes.string,
   color: PropTypes.oneOf(Object.values(BUTTON_COLORS)),
   disable: PropTypes.bool,
   name: PropTypes.string,
-  onClick: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
   type: PropTypes.string,
   value: PropTypes.string,
 };

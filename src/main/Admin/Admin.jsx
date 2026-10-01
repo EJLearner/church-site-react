@@ -68,8 +68,10 @@ const StyledAdminPage = styled.div`
     flex-wrap: wrap;
     gap: 0.5em;
     padding: 0.5em 1em;
+    justify-content: space-around;
 
     a {
+      display: block;
       color: white;
       text-decoration: none;
 
