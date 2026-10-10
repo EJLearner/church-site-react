@@ -5,30 +5,29 @@ const COOKIE_KEYS = {
 // Defines each admin page — key matches GROUP_PAGES keys
 const ADMIN_PAGE_CONFIG = {
   events: {text: 'Update Events', path: 'events'},
-  cc: {text: "Children's Church Sign In", path: 'cc'},
-  vbs: {text: 'VBS Information and Sign In', path: 'vbs'},
   emailSubscribers: {text: 'Email Subscribers List', path: 'email-subscribers'},
   sermons: {text: 'Sermons Update', path: 'sermons'},
   meditations: {text: 'Meditations Update', path: 'meditations'},
   verses: {text: 'Verses Update', path: 'verses'},
   sundaySchool: {text: 'Sunday School Registration', path: 'sunday-school'},
+  savedRegistrations: {
+    text: 'Saved Registrations',
+    path: 'saved-registrations',
+  },
 };
 
 // Maps Firebase group names to the page keys they can access
 const GROUP_PAGES = {
   admins: [
     'events',
-    'cc',
-    'vbs',
     'emailSubscribers',
     'sermons',
     'meditations',
     'verses',
     'sundaySchool',
+    'savedRegistrations',
   ],
   contentAdmin: ['sermons', 'meditations', 'verses'],
-  ccRegAccess: ['cc'],
-  vbsRegAccess: ['vbs'],
   emailSubscribersAccess: ['emailSubscribers'],
 };
 

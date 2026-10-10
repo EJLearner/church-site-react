@@ -1,3 +1,7 @@
+// NOTE: Adding and editing events are not working. They save with the outdated
+// Firebase API (dateRef.push, eventRef.set), which does not exist in the
+// current modular SDK. Viewing and deleting events still work. This may be
+// fixed or replaced later.
 import '../../firebaseApp';
 import {getDatabase, onValue, ref, get, remove} from 'firebase/database';
 import {Parser as HtmlToReactParser} from 'html-to-react';

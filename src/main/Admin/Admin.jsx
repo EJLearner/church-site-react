@@ -22,6 +22,7 @@ import Textbox from '../commonComponents/Textbox';
 import CcVbsAdminBase from './CcVbsAdminBase';
 import EventAdmin from './EventAdmin';
 import MeditationAdmin from './MeditationAdmin';
+import SavedRegistrationsAdmin from './SavedRegistrationsAdmin';
 import SermonAdmin from './SermonAdmin';
 import SubscribedEmailsAdmin from './SubscribedEmailsAdmin';
 import SundaySchoolAdmin from './SundaySchoolAdmin';
@@ -263,6 +264,10 @@ class Admin extends Component {
               path={routePaths.ADMIN_MEDITATIONS}
             />
             <Route element={<VersesAdmin />} path={routePaths.ADMIN_VERSES} />
+            <Route
+              element={<SavedRegistrationsAdmin />}
+              path={routePaths.ADMIN_SAVED_REGISTRATIONS}
+            />
             <Route
               element={
                 <SundaySchoolAdmin onKioskModeChange={this.setKioskMode} />

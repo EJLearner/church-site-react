@@ -1,3 +1,6 @@
+// NOTE: This check-in page is no longer working or in use. It saves with the
+// outdated Firebase API (todaysLogRef.push), which does not exist in the
+// current modular SDK. It may be removed or fixed later.
 import '../../firebaseApp';
 import {
   getAuth,
