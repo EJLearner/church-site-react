@@ -30,3 +30,4 @@ notes
 api/church.db
 api/.env
 api/data/asv.json
+api/data/legacyRegistrations.json

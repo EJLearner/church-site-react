@@ -18,6 +18,7 @@ const ADMIN_PATHS = {
   ADMIN_EVENTS: `events`,
   ADMIN_MEDITATIONS: `meditations`,
   ADMIN_SERMONS: `sermons`,
+  ADMIN_SUNDAY_SCHOOL: `sunday-school`,
   ADMIN_VBS: `vbs`,
   ADMIN_VERSES: `verses`,
 };

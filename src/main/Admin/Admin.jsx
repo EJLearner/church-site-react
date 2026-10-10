@@ -24,6 +24,7 @@ import EventAdmin from './EventAdmin';
 import MeditationAdmin from './MeditationAdmin';
 import SermonAdmin from './SermonAdmin';
 import SubscribedEmailsAdmin from './SubscribedEmailsAdmin';
+import SundaySchoolAdmin from './SundaySchoolAdmin';
 import VersesAdmin from './VersesAdmin';
 const provider = new GoogleAuthProvider();
 const auth = getAuth();
@@ -253,6 +254,10 @@ class Admin extends Component {
               path={routePaths.ADMIN_MEDITATIONS}
             />
             <Route element={<VersesAdmin />} path={routePaths.ADMIN_VERSES} />
+            <Route
+              element={<SundaySchoolAdmin />}
+              path={routePaths.ADMIN_SUNDAY_SCHOOL}
+            />
           </Routes>
         </div>
       );

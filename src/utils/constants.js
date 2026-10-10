@@ -11,6 +11,7 @@ const ADMIN_PAGE_CONFIG = {
   sermons: {text: 'Sermons Update', path: 'sermons'},
   meditations: {text: 'Meditations Update', path: 'meditations'},
   verses: {text: 'Verses Update', path: 'verses'},
+  sundaySchool: {text: 'Sunday School Registration', path: 'sunday-school'},
 };
 
 // Maps Firebase group names to the page keys they can access
@@ -23,6 +24,7 @@ const GROUP_PAGES = {
     'sermons',
     'meditations',
     'verses',
+    'sundaySchool',
   ],
   contentAdmin: ['sermons', 'meditations', 'verses'],
   ccRegAccess: ['cc'],
