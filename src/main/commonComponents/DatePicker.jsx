@@ -1,28 +1,11 @@
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
 import InputLabel from './InputLabel';
-
-const DatePickerStyle = styled.div`
-  display: inline-block;
-  margin: 1em 16px 0.5em 0;
-
-  .date-picker-pattern {
-    display: inline-block;
-    margin: 0.5em 0;
-  }
-
-  .date-picker-pattern label {
-    display: block;
-  }
-`;
 
 function DatePicker(props) {
   const {label, value, id, required, onBlur, onChange} = props;
 
-  const errorsId = `${id}-errors`;
   const labelId = `${id}-label`;
-  const instructionsId = `${id}-instructions`;
 
   return (
     <div className="date-picker">
@@ -52,7 +35,7 @@ DatePicker.propTypes = {
   required: PropTypes.bool,
   size: PropTypes.number,
   type: PropTypes.string,
-  value: PropTypes.object.isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 export default DatePicker;
