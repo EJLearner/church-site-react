@@ -1,7 +1,7 @@
 const express = require('express');
 
 const db = require('../db');
-const {requireAuth} = require('../firebaseAdmin');
+const {requireContentAccess} = require('../firebaseAdmin');
 
 const router = express.Router();
 
@@ -45,7 +45,7 @@ router.get('/', async (req, res) => {
 });
 
 // Returns daily verses for a specific week (admin)
-router.get('/:sundayDate', requireAuth, async (req, res) => {
+router.get('/:sundayDate', requireContentAccess, async (req, res) => {
   try {
     const dates = getWeekDates(req.params.sundayDate);
     const placeholders = dates.map(() => '?').join(', ');
@@ -63,7 +63,7 @@ router.get('/:sundayDate', requireAuth, async (req, res) => {
   }
 });
 
-router.post('/', requireAuth, async (req, res) => {
+router.post('/', requireContentAccess, async (req, res) => {
   const {date, verse_reference, reference_text} = req.body;
   try {
     const result = await db.runAsync(
@@ -77,7 +77,7 @@ router.post('/', requireAuth, async (req, res) => {
   }
 });
 
-router.put('/:id', requireAuth, async (req, res) => {
+router.put('/:id', requireContentAccess, async (req, res) => {
   const {verse_reference, reference_text} = req.body;
   try {
     await db.runAsync(
@@ -90,7 +90,7 @@ router.put('/:id', requireAuth, async (req, res) => {
   }
 });
 
-router.delete('/:id', requireAuth, async (req, res) => {
+router.delete('/:id', requireContentAccess, async (req, res) => {
   try {
     await db.runAsync(`DELETE FROM daily_verses WHERE id=?`, [req.params.id]);
     res.json({success: true});

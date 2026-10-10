@@ -1,7 +1,7 @@
 const express = require('express');
 
 const db = require('../db');
-const {requireAuth} = require('../firebaseAdmin');
+const {requireContentAccess} = require('../firebaseAdmin');
 
 const router = express.Router();
 
@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
 });
 
 // Returns meditation for a specific week (admin)
-router.get('/:weekStartDate', requireAuth, async (req, res) => {
+router.get('/:weekStartDate', requireContentAccess, async (req, res) => {
   try {
     const meditation = await db.getAsync(
       `SELECT * FROM weekly_meditations WHERE week_start_date = ?`,
@@ -40,7 +40,7 @@ router.get('/:weekStartDate', requireAuth, async (req, res) => {
   }
 });
 
-router.post('/', requireAuth, async (req, res) => {
+router.post('/', requireContentAccess, async (req, res) => {
   const {week_start_date, subtitle, content} = req.body;
   try {
     const result = await db.runAsync(
@@ -54,7 +54,7 @@ router.post('/', requireAuth, async (req, res) => {
   }
 });
 
-router.put('/:weekStartDate', requireAuth, async (req, res) => {
+router.put('/:weekStartDate', requireContentAccess, async (req, res) => {
   const {subtitle, content} = req.body;
   try {
     await db.runAsync(
@@ -67,7 +67,7 @@ router.put('/:weekStartDate', requireAuth, async (req, res) => {
   }
 });
 
-router.delete('/:weekStartDate', requireAuth, async (req, res) => {
+router.delete('/:weekStartDate', requireContentAccess, async (req, res) => {
   try {
     await db.runAsync(
       `DELETE FROM weekly_meditations WHERE week_start_date=?`,
