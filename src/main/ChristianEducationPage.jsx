@@ -1,10 +1,12 @@
+import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 
 import choir from '../assets/images/choir.jpg';
+import routePaths from '../routePaths';
 
 import MainMenubar from './commonComponents/MainMenubar';
 
-const StyledBibleStudyPage = styled.div`
+const StyledChristianEducationPage = styled.div`
   background-color: var(--gossamer-veil);
   min-height: 100%;
   display: flex;
@@ -28,8 +30,13 @@ const StyledBibleStudyPage = styled.div`
     margin: 16px 0 8px 0;
   }
 
-  h3:last-of-type {
+  h3:not(:first-of-type) {
     margin-top: 32px;
+  }
+
+  .content a {
+    color: var(--maroon);
+    font-weight: bold;
   }
 
   p {
@@ -37,9 +44,9 @@ const StyledBibleStudyPage = styled.div`
   }
 `;
 
-const BibleStudyPage = () => {
+const ChristianEducationPage = () => {
   return (
-    <StyledBibleStudyPage>
+    <StyledChristianEducationPage>
       <MainMenubar imageSource={choir} />
       <div className="content-wrapper">
         <div className="content">
@@ -48,9 +55,15 @@ const BibleStudyPage = () => {
           <p>Every Tuesday at 7 pm</p>
           <h3>Prayer Service</h3>
           <p>Every Wednesday at 6 pm</p>
+          <h3>Children&apos;s Sunday School</h3>
+          <p>
+            <Link to={`/${routePaths.MAIN_SUNDAY_SCHOOL}`}>
+              Register your child
+            </Link>
+          </p>
         </div>
       </div>
-    </StyledBibleStudyPage>
+    </StyledChristianEducationPage>
   );
 };
-export default BibleStudyPage;
+export default ChristianEducationPage;

@@ -31,7 +31,9 @@ const PASTOR_APPLICATION_PATHS = {
 const MAIN_ROOT_PATHS = {
   MAIN_HOME: '/',
 
+  // old page, redirects to christian education now
   BIBLE_STUDY: `bible-study`,
+  MAIN_CHRISTIAN_EDUCATION: `christian-education`,
 
   // old page, redirects to profile now
   MAIN_ABOUT_US: `about-us`,
@@ -40,6 +42,7 @@ const MAIN_ROOT_PATHS = {
   MAIN_CONTACT: `contact`,
   MAIN_GIVING: `giving`,
   MAIN_MEDITATIONS: `meditations`,
+  MAIN_SUNDAY_SCHOOL: `sunday-school`,
   MAIN_WATCH: `watch`,
 };
 
@@ -58,6 +61,7 @@ const CE_ROOT_PATHS = {
   CE_CC_REG_CHILD: '/ce/cc-registration-child/',
   CE_CC_REG_VOLUNTEER: '/ce/cc-registration-volunteer/',
   CE_IDEA_FORM: '/ce/idea-form/',
+  CE_REG_SUNDAY_SCHOOL: '/ce/register-sunday-school/',
   CE_THANK_YOU: '/ce/thank-you/',
   CE_VBS_CHECKIN: '/ce/vbs-checkin/',
   CE_VBS_REG_ADULT: '/ce/vbs-registration-adult/',

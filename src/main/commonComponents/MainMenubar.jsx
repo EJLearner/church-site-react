@@ -14,7 +14,10 @@ const baseMenuItems = [
   {text: 'Profile', path: `/${routePaths.MAIN_PROFILE}`},
   {text: 'Meditations', path: `/${routePaths.MAIN_MEDITATIONS}`},
   {text: 'Giving', path: `/${routePaths.MAIN_GIVING}`},
-  {text: 'Bible Study', path: `/${routePaths.BIBLE_STUDY}`},
+  {
+    text: 'Christian Education',
+    path: `/${routePaths.MAIN_CHRISTIAN_EDUCATION}`,
+  },
   {text: 'Calendar', path: `/${routePaths.MAIN_CALENDAR}`},
   {text: 'Watch', path: `/${routePaths.MAIN_WATCH}`},
   {text: 'Contact', path: `/${routePaths.MAIN_CONTACT}`},
