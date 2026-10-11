@@ -34,7 +34,7 @@ const StyledChristianEducationPage = styled.div`
     margin-top: 32px;
   }
 
-  a {
+  .content a {
     color: var(--maroon);
     font-weight: bold;
   }
