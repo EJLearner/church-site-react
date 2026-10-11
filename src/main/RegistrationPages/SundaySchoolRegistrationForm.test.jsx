@@ -27,8 +27,12 @@ const initialValues = {
     state: 'MD',
     zip: '21201',
   },
+  emergencyContactName: {first: 'Mary', last: 'Somerville'},
+  emergencyContactRelationship: 'Aunt',
+  emergencyPhone: '4105551111',
   allergies: 'yes',
   allergyDetails: 'Peanuts',
+  agreementCheckList: new Set(['parentGuardian', 'emergencyCare']),
   subscribe: true,
 };
 const legacySources = [{table: 'ccRegisteredChildren', year: '2019', id: 'a'}];
@@ -80,7 +84,7 @@ describe('SundaySchoolRegistrationForm', () => {
     );
     expect(record).toMatchObject({
       address: {city: 'Towson'},
-      agreementCheckList: [],
+      agreementCheckList: ['parentGuardian', 'emergencyCare'],
       childName: {first: 'Ada', last: 'Lovelace'},
       legacySources,
       source: 'legacy',
@@ -107,6 +111,10 @@ describe('SundaySchoolRegistrationForm', () => {
     expect(summary).toHaveTextContent(
       'Please say whether your child has allergies',
     );
+    expect(summary).toHaveTextContent(
+      'Emergency contact relationship is required',
+    );
+    expect(summary).toHaveTextContent('Please check every agreement statement');
     expect(document.activeElement).toBe(
       document.getElementById('childName-first'),
     );
