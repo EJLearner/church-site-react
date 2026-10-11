@@ -65,7 +65,9 @@ const Textarea = (props) => {
 
   const inputOrTextarea = (
     <textarea
+      aria-invalid={errorMessage ? true : undefined}
       aria-labelledby={labelledBy}
+      aria-required={required || undefined}
       cols={columns}
       id={id}
       name={name}

@@ -6,7 +6,7 @@ import InputLabel from './InputLabel';
 import SupportText from './SupportText';
 import {describedBy, fieldInputStyles} from './formFieldStyles';
 
-const DatePickerStyle = styled.div`
+const TextFieldStyle = styled.div`
   ${fieldInputStyles}
 
   .field-error {
@@ -15,20 +15,23 @@ const DatePickerStyle = styled.div`
   }
 `;
 
-// Date input whose value is a yyyy-mm-dd string ('' when blank or only
-// partly filled in)
-function DatePicker(props) {
+// Single-line input with a label above, and optional support text and error
+// message below
+const TextField = (props) => {
   const {
     autoComplete,
+    className,
     errors,
     id,
+    inputMode,
     label,
-    max,
-    min,
+    maxLength,
     onBlur,
     onChange,
+    placeholder,
     required,
     supportText,
+    type = 'text',
     value,
   } = props;
 
@@ -36,7 +39,9 @@ function DatePicker(props) {
   const supportTextId = `${id}-support-text`;
 
   return (
-    <DatePickerStyle className="date-picker">
+    <TextFieldStyle
+      className={['text-field', className].filter(Boolean).join(' ')}
+    >
       <InputLabel htmlFor={id} required={required}>
         {label}
       </InputLabel>
@@ -49,12 +54,13 @@ function DatePicker(props) {
         aria-required={required || undefined}
         autoComplete={autoComplete}
         id={id}
-        max={max}
-        min={min}
+        inputMode={inputMode}
+        maxLength={maxLength}
         name={id}
         onBlur={(event) => onBlur?.(event.target.value, id, event)}
         onChange={(event) => onChange(event.target.value, id, event)}
-        type="date"
+        placeholder={placeholder}
+        type={type}
         value={value ?? ''}
       />
       {supportText && (
@@ -65,22 +71,25 @@ function DatePicker(props) {
           {errors}
         </InputError>
       )}
-    </DatePickerStyle>
+    </TextFieldStyle>
   );
-}
-
-DatePicker.propTypes = {
-  autoComplete: PropTypes.string,
-  errors: PropTypes.node,
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  max: PropTypes.string,
-  min: PropTypes.string,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func.isRequired,
-  required: PropTypes.bool,
-  supportText: PropTypes.node,
-  value: PropTypes.string.isRequired,
 };
 
-export default DatePicker;
+TextField.propTypes = {
+  autoComplete: PropTypes.string,
+  className: PropTypes.string,
+  errors: PropTypes.node,
+  id: PropTypes.string.isRequired,
+  inputMode: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  maxLength: PropTypes.number,
+  onBlur: PropTypes.func,
+  onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
+  required: PropTypes.bool,
+  supportText: PropTypes.node,
+  type: PropTypes.string,
+  value: PropTypes.string,
+};
+
+export default TextField;

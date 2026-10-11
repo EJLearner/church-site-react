@@ -61,6 +61,7 @@ const Textbox = (props) => {
       {errors && <div id={errorsId}>{errors}</div>}
       <input
         aria-labelledby={labelledBy}
+        aria-required={required || undefined}
         id={id}
         name={name || id}
         onBlur={(event) => onBlur?.(event.target.value, id, event)}
