@@ -1,7 +1,7 @@
 const express = require('express');
 
 const db = require('../db');
-const {requireAuth} = require('../firebaseAdmin');
+const {requireContentAccess} = require('../firebaseAdmin');
 
 const router = express.Router();
 
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 });
 
 // Returns all sermons for admin view
-router.get('/all', requireAuth, async (req, res) => {
+router.get('/all', requireContentAccess, async (req, res) => {
   try {
     const sermons = await db.allAsync(
       `SELECT * FROM sermon_videos ORDER BY date DESC`,
@@ -32,7 +32,7 @@ router.get('/all', requireAuth, async (req, res) => {
   }
 });
 
-router.post('/', requireAuth, async (req, res) => {
+router.post('/', requireContentAccess, async (req, res) => {
   const {date, youtube_id, preacher, title, scripture, bible_version, expires} =
     req.body;
   try {
@@ -55,7 +55,7 @@ router.post('/', requireAuth, async (req, res) => {
   }
 });
 
-router.put('/:id', requireAuth, async (req, res) => {
+router.put('/:id', requireContentAccess, async (req, res) => {
   const {date, youtube_id, preacher, title, scripture, bible_version, expires} =
     req.body;
   try {
@@ -80,7 +80,7 @@ router.put('/:id', requireAuth, async (req, res) => {
   }
 });
 
-router.delete('/:id', requireAuth, async (req, res) => {
+router.delete('/:id', requireContentAccess, async (req, res) => {
   try {
     await db.runAsync(`DELETE FROM sermon_videos WHERE id=?`, [req.params.id]);
     res.json({success: true});

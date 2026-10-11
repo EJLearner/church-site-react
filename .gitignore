@@ -25,7 +25,9 @@ dist-ssr
 *.sw?
 
 #other
+notes
 .eslintcache
 api/church.db
 api/.env
 api/data/asv.json
+api/data/legacyRegistrations.json

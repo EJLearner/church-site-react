@@ -5,7 +5,7 @@
 const https = require('https');
 const express = require('express');
 
-const {requireAuth} = require('../firebaseAdmin');
+const {requireContentAccess} = require('../firebaseAdmin');
 
 const CHANNEL_ID = 'UCtqcWNEVAjxI4jx6ucoM0TA';
 // Uploads playlist ID is channel ID with UC replaced by UU
@@ -34,7 +34,7 @@ function fetchJson(url) {
   });
 }
 
-router.get('/', requireAuth, async (req, res) => {
+router.get('/', requireContentAccess, async (req, res) => {
   const apiKey = process.env.YOUTUBE_API_KEY;
   if (!apiKey) {
     return res.status(500).json({error: 'YOUTUBE_API_KEY not configured'});

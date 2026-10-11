@@ -1,61 +1,52 @@
-import {beforeEach, describe, expect, it} from 'vitest';
-
-import firebase from '../firebaseApp';
+import {child, ref, set} from 'firebase/database';
+import {beforeEach, describe, expect, it, vi} from 'vitest';
 
 import constants from './constants';
 import pushToSubscribedList from './pushToSubscribedList';
 
-// IMPROVEMENTS: Get these tests working again
-describe.skip('pushToSubscribedList', () => {
+vi.mock('firebase/database', () => ({
+  child: vi.fn((parent, path) => ({path: `${parent.path}/${path}`})),
+  getDatabase: vi.fn(() => ({})),
+  ref: vi.fn((database, path) => ({path})),
+  set: vi.fn(() => Promise.resolve()),
+}));
+
+describe('pushToSubscribedList', () => {
   let testEmail;
   let testSource;
   let testName;
 
   beforeEach(() => {
+    vi.clearAllMocks();
     testEmail = 'test@email.com';
     testSource = 'test source';
     testName = 'test name';
   });
 
-  it('firebase.database is called', () => {
+  it('uses the subscribed emails ref name', () => {
     pushToSubscribedList(testEmail, testSource, testName);
 
-    expect(firebase.database).toBeCalled();
-  });
-
-  it('firebase.database().ref to be called with emails ref name', () => {
-    pushToSubscribedList(testEmail, testSource, testName);
-
-    expect(firebase.database().ref).toBeCalledWith(
+    expect(ref).toHaveBeenCalledWith(
+      expect.anything(),
       constants.SUBSCRIBED_EMAILS_REF_NAME,
     );
   });
 
   describe('child key', () => {
-    it('firebase.database().ref().child to be called correct key (case 1)', () => {
-      pushToSubscribedList('test@email.com', testSource, testName);
+    it.each([
+      ['test@email.com', 'test@email,com'],
+      ['test@mail.somewhere.com', 'test@mail,somewhere,com'],
+      ['a.person-here@mail.somewhere.com', 'a,person-here@mail,somewhere,com'],
+    ])('replaces periods in %s', (email, key) => {
+      pushToSubscribedList(email, testSource, testName);
 
-      expect(firebase.database().ref().child).toBeCalledWith('test@email,com');
-    });
-
-    it('firebase.database().ref().child to be called correct key (case 2)', () => {
-      pushToSubscribedList('test@mail.somewhere.com', testSource, testName);
-
-      expect(firebase.database().ref().child).toBeCalledWith(
-        'test@mail,somewhere,com',
+      expect(child).toHaveBeenCalledWith(
+        {path: constants.SUBSCRIBED_EMAILS_REF_NAME},
+        key,
       );
-    });
-
-    it('firebase.database().ref().child to be called correct key (case 3)', () => {
-      pushToSubscribedList(
-        'a.person-here@mail.somewhere.com',
-        testSource,
-        testName,
-      );
-
-      expect(firebase.database().ref().child).toBeCalledWith(
-        'a,person-here@mail,somewhere,com',
-      );
+      expect(set.mock.calls[0][0]).toEqual({
+        path: `${constants.SUBSCRIBED_EMAILS_REF_NAME}/${key}`,
+      });
     });
   });
 
@@ -65,7 +56,7 @@ describe.skip('pushToSubscribedList', () => {
     beforeEach(() => {
       pushToSubscribedList(testEmail, testSource, testName);
 
-      setObject = firebase.database().ref().child().set.mock.calls[0][0];
+      [[, setObject]] = set.mock.calls;
     });
 
     it('uses email from argument', () => {
@@ -86,5 +77,13 @@ describe.skip('pushToSubscribedList', () => {
     it('uses name', () => {
       expect(setObject.name).toBe(testName);
     });
+  });
+
+  it('ignores a failed save', async () => {
+    set.mockReturnValueOnce(Promise.reject(new Error('exists')));
+
+    expect(() =>
+      pushToSubscribedList(testEmail, testSource, testName),
+    ).not.toThrow();
   });
 });

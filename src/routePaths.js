@@ -17,7 +17,9 @@ const ADMIN_PATHS = {
   ADMIN_EMAIL_SUBSCRIBERS: `email-subscribers`,
   ADMIN_EVENTS: `events`,
   ADMIN_MEDITATIONS: `meditations`,
+  ADMIN_SAVED_REGISTRATIONS: `saved-registrations`,
   ADMIN_SERMONS: `sermons`,
+  ADMIN_SUNDAY_SCHOOL: `sunday-school`,
   ADMIN_VBS: `vbs`,
   ADMIN_VERSES: `verses`,
 };

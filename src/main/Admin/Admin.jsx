@@ -22,8 +22,10 @@ import Textbox from '../commonComponents/Textbox';
 import CcVbsAdminBase from './CcVbsAdminBase';
 import EventAdmin from './EventAdmin';
 import MeditationAdmin from './MeditationAdmin';
+import SavedRegistrationsAdmin from './SavedRegistrationsAdmin';
 import SermonAdmin from './SermonAdmin';
 import SubscribedEmailsAdmin from './SubscribedEmailsAdmin';
+import SundaySchoolAdmin from './SundaySchoolAdmin';
 import VersesAdmin from './VersesAdmin';
 const provider = new GoogleAuthProvider();
 const auth = getAuth();
@@ -68,8 +70,10 @@ const StyledAdminPage = styled.div`
     flex-wrap: wrap;
     gap: 0.5em;
     padding: 0.5em 1em;
+    justify-content: space-around;
 
     a {
+      display: block;
       color: white;
       text-decoration: none;
 
@@ -123,6 +127,7 @@ class Admin extends Component {
 
     this.loginWithEmail = this.loginWithEmail.bind(this);
     this.sendPasswordReset = this.sendPasswordReset.bind(this);
+    this.setKioskMode = this.setKioskMode.bind(this);
 
     this.state = {
       user: null,
@@ -132,6 +137,8 @@ class Admin extends Component {
       password: '',
       loginError: null,
       resetSent: false,
+      // Hides all menus while a parent fills in a form on the admin's device
+      kioskMode: false,
     };
   }
 
@@ -193,6 +200,10 @@ class Admin extends Component {
     });
   }
 
+  setKioskMode(kioskMode) {
+    this.setState({kioskMode});
+  }
+
   logout() {
     auth.signOut().then(() => {
       this.setState({user: null});
@@ -217,7 +228,7 @@ class Admin extends Component {
   }
 
   renderContent() {
-    const {authLoading, user} = this.state;
+    const {authLoading, kioskMode, user} = this.state;
 
     if (authLoading) {
       return null;
@@ -226,10 +237,12 @@ class Admin extends Component {
     if (user) {
       return (
         <div className="admin-page">
-          <div className="login-info-and-button">
-            Logged in as {user.displayName}{' '}
-            <Button onClick={this.logout}>Log out</Button>
-          </div>
+          {!kioskMode && (
+            <div className="login-info-and-button">
+              Logged in as {user.displayName}{' '}
+              <Button onClick={this.logout}>Log out</Button>
+            </div>
+          )}
 
           <Routes>
             <Route element={<EventAdmin />} path={routePaths.ADMIN_EVENTS} />
@@ -251,6 +264,16 @@ class Admin extends Component {
               path={routePaths.ADMIN_MEDITATIONS}
             />
             <Route element={<VersesAdmin />} path={routePaths.ADMIN_VERSES} />
+            <Route
+              element={<SavedRegistrationsAdmin />}
+              path={routePaths.ADMIN_SAVED_REGISTRATIONS}
+            />
+            <Route
+              element={
+                <SundaySchoolAdmin onKioskModeChange={this.setKioskMode} />
+              }
+              path={routePaths.ADMIN_SUNDAY_SCHOOL}
+            />
           </Routes>
         </div>
       );
@@ -311,12 +334,13 @@ class Admin extends Component {
   }
 
   render() {
+    const {kioskMode} = this.state;
     const pages = this.getAccessiblePages();
 
     return (
       <StyledAdminPage>
-        <MainMenubar imageSource={choir} />
-        {Boolean(pages.length) && this.renderSecondaryNav(pages)}
+        {!kioskMode && <MainMenubar imageSource={choir} />}
+        {!kioskMode && Boolean(pages.length) && this.renderSecondaryNav(pages)}
         <div className="admin-content">{this.renderContent()}</div>
       </StyledAdminPage>
     );

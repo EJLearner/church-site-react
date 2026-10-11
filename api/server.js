@@ -3,6 +3,7 @@ const cors = require('cors');
 const express = require('express');
 
 const dailyVersesRouter = require('./routes/dailyVerses');
+const legacyRegistrationsRouter = require('./routes/legacyRegistrations');
 const meditationsRouter = require('./routes/meditations');
 const sermonsRouter = require('./routes/sermons');
 const verseRouter = require('./routes/verse');
@@ -19,6 +20,7 @@ app.use('/api/daily-verses', dailyVersesRouter);
 app.use('/api/weekly-meditation', meditationsRouter);
 app.use('/api/verse', verseRouter);
 app.use('/api/youtube-feed', youtubeFeedRouter);
+app.use('/api/legacy-registrations', legacyRegistrationsRouter);
 
 app.listen(PORT, () => {
   console.log(`Church API running on port ${PORT}`);

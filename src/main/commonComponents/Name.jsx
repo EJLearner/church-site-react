@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 import InputLabel from './InputLabel';
 
-const TextboxStyle = styled.div`
-  ${(props) => (props.ownLine ? 'display: block' : 'display: inline-block')};
+const NameStyle = styled.div`
+  display: inline-block;
   margin: 1em 16px 0.5em 0;
 
   .text-box-pattern {
@@ -17,7 +17,7 @@ const TextboxStyle = styled.div`
   }
 `;
 
-const Textbox = (props) => {
+const Name = (props) => {
   const {
     errors,
     id,
@@ -40,6 +40,8 @@ const Textbox = (props) => {
     }
   };
 
+  const {first, last} = value;
+
   const errorsId = `${id}-errors`;
   const labelId = `${id}-label`;
   const instructionsId = `${id}-instructions`;
@@ -53,7 +55,7 @@ const Textbox = (props) => {
     .join(' ');
 
   return (
-    <TextboxStyle className="text-box-pattern">
+    <NameStyle className="text-box-pattern">
       {instructions && <p id={instructionsId}>{instructions}</p>}
       <InputLabel htmlFor={id} id={labelId} required={required}>
         {label}
@@ -63,24 +65,40 @@ const Textbox = (props) => {
         aria-labelledby={labelledBy}
         id={id}
         name={name || id}
-        onBlur={(event) => onBlur?.(event.target.value, id, event)}
-        onChange={(event) => onChange(event.target.value, id, event)}
+        onBlur={(event) => onBlur?.(value, id, event)}
+        onChange={(event) =>
+          onChange({...value, first: event.target.value}, id, event)
+        }
         onKeyDown={onKeyDown}
         placeholder={placeholder}
         size={size}
         type={type}
-        value={value}
+        value={first ?? ''}
+      />{' '}
+      <input
+        aria-labelledby={labelledBy}
+        id={id}
+        name={name || id}
+        onBlur={(event) => onBlur?.(value, id, event)}
+        onChange={(event) =>
+          onChange({...value, last: event.target.value}, id, event)
+        }
+        onKeyDown={onKeyDown}
+        placeholder={placeholder}
+        size={size}
+        type={type}
+        value={last ?? ''}
       />
-    </TextboxStyle>
+    </NameStyle>
   );
 };
 
-Textbox.propTypes = {
+Name.propTypes = {
   errors: PropTypes.node,
   id: PropTypes.string.isRequired,
   instructions: PropTypes.node,
   label: PropTypes.string.isRequired,
-  name: PropTypes.string,
+  name: PropTypes.object,
   onBlur: PropTypes.func,
   onChange: PropTypes.func.isRequired,
   onEnter: PropTypes.func,
@@ -88,7 +106,7 @@ Textbox.propTypes = {
   required: PropTypes.bool,
   size: PropTypes.number,
   type: PropTypes.string,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.object.isRequired,
 };
 
-export default Textbox;
+export default Name;
