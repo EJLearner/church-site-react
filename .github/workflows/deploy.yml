@@ -3,6 +3,8 @@ name: Deploy to DigitalOcean
 on:
   push:
     branches: [master]
+  pull_request:
+    branches: [master]
 
 jobs:
   lint:
@@ -36,9 +38,13 @@ jobs:
           node-version: 20
           cache: 'npm'
       - run: npm ci
+      # API tests need the API's own dependencies (e.g. firebase-admin)
+      - run: npm ci --prefix api
       - run: npm test
 
   deploy:
+    # Pull requests only run the checks above; deploy after merging to master
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     needs: [lint, format-check, test]
     steps:
