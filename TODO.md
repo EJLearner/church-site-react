@@ -1,9 +1,5 @@
 # TODO List
 
-## Server
-
-- [ ] Upgrade server OS
-
 ## Church Site
 
 - [ ] Consider simplifying WatchPage archive videos to use YouTube thumbnail JPGs linking to the video instead of embedded iframes
@@ -27,7 +23,3 @@
 
 - [ ] Improve test coverage — aim for full coverage throughout, especially newer AI-written code
 - [ ] Give api/ its own test setup (Vitest dev dependency, `test` script, Node environment config), exclude api/ from the root Vitest run, and run `npm test --prefix api` as a separate CI step
-
-## Dev Environment
-
-- [ ] Fully update frontend and API dependencies
