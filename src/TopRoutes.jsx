@@ -1,9 +1,8 @@
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
 
 import Admin from './main/Admin/Admin';
 import MainWrapper from './main/MainWrapper';
 import PastorApplicationPage from './main/PastorApplicationPage';
-import ChildrensSundaySchool from './main/RegistrationPages/ChildrensSundaySchool';
 import RemovedPage from './main/RemovedPage';
 import ScrollToTop from './main/commonComponents/ScrollToTop';
 import routePaths from './routePaths';
@@ -23,9 +22,12 @@ const TopRoutes = () => {
             path={routePaths.PASTOR_APPLICATION}
           />
         )}
+        {/* Old address for the Sunday School page, in case it was shared */}
         <Route
-          element={<ChildrensSundaySchool />}
-          path="/ce/register-sunday-school/"
+          element={
+            <Navigate replace to={`/${routePaths.MAIN_SUNDAY_SCHOOL}`} />
+          }
+          path={routePaths.CE_REG_SUNDAY_SCHOOL}
         />
       </Routes>
     </BrowserRouter>
