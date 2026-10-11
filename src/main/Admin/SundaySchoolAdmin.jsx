@@ -146,6 +146,7 @@ function SundaySchoolAdmin({onKioskModeChange}) {
       </div>
 
       {error && <p role="alert">{error}</p>}
+      {!entries && !error && <p>Loading…</p>}
       {results?.length === 0 && <p>No matches found.</p>}
       {results?.length > 0 && (
         <table>

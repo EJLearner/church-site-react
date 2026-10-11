@@ -82,6 +82,16 @@ describe('SundaySchoolAdmin', () => {
     expect(authFetch).toHaveBeenCalledTimes(1);
   });
 
+  it('shows Loading until the list arrives', async () => {
+    respondWith(entries);
+
+    render(<SundaySchoolAdmin />);
+
+    expect(screen.getByText('Loading…')).toBeInTheDocument();
+    expect(await screen.findByText('Ada Lovelace')).toBeInTheDocument();
+    expect(screen.queryByText('Loading…')).not.toBeInTheDocument();
+  });
+
   it('shows the server error message', async () => {
     respondWith({error: 'Forbidden'}, false);
 
