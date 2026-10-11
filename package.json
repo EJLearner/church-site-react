@@ -24,7 +24,6 @@
     "date-fns": "^4.1.0",
     "firebase": "^11.0.1",
     "html-to-react": "^1.4.8",
-    "immer": "^11.1.21",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "prop-types": "^15.8.1",
