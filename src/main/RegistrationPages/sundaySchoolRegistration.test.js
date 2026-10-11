@@ -1,6 +1,7 @@
 import {describe, expect, it} from 'vitest';
 
 import {
+  AGREEMENT_OPTIONS,
   BLANK_REGISTRATION,
   buildRegistrationRecord,
   cleanRegistration,
@@ -67,9 +68,13 @@ describe('validateRegistration', () => {
   const today = new Date(2026, 9, 10);
   const validRegistration = {
     ...BLANK_REGISTRATION,
+    agreementCheckList: new Set(AGREEMENT_OPTIONS.map(({value}) => value)),
     allergies: 'no',
     childDateOfBirth: '2015-03-01',
     childName: {first: 'Ada', last: 'Lovelace'},
+    emergencyContactName: {first: 'Mary', last: 'Somerville'},
+    emergencyContactRelationship: 'Aunt',
+    emergencyPhone: '410-555-1111',
     parentName: {first: 'Anne', last: 'Lovelace'},
     parentPhone: '410-555-0000',
   };
@@ -80,7 +85,7 @@ describe('validateRegistration', () => {
     expect(validate({})).toEqual({});
   });
 
-  it('requires the child and parent names, date of birth, parent phone and allergies', () => {
+  it('lists every missing required field in form order', () => {
     expect(
       Object.keys(validateRegistration(BLANK_REGISTRATION, today)),
     ).toEqual([
@@ -90,7 +95,12 @@ describe('validateRegistration', () => {
       'parentName-first',
       'parentName-last',
       'parentPhone',
+      'emergencyContactName-first',
+      'emergencyContactName-last',
+      'emergencyContactRelationship',
+      'emergencyPhone',
       'allergies-yes',
+      'agreementCheckList-parentGuardian',
     ]);
   });
 
@@ -154,6 +164,15 @@ describe('validateRegistration', () => {
       'Allergy details are required',
     );
     expect(validate({allergies: 'yes', allergyDetails: 'Peanuts'})).toEqual({});
+  });
+
+  it('requires every agreement statement to be checked', () => {
+    expect(validate({agreementCheckList: new Set(['parentGuardian'])})).toEqual(
+      {
+        'agreementCheckList-emergencyCare':
+          'Please check every agreement statement',
+      },
+    );
   });
 });
 

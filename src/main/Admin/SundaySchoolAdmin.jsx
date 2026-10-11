@@ -17,6 +17,12 @@ const StyledSundaySchoolAdmin = styled.div`
     margin-bottom: 1em;
   }
 
+  .hand-back {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 1em 0;
+  }
+
   .review-banner {
     border: 2px solid var(--maroon);
     padding: 1em;
@@ -103,6 +109,9 @@ function SundaySchoolAdmin({onKioskModeChange}) {
       <StyledSundaySchoolAdmin>
         <h2>Thank you!</h2>
         <p>Your child is registered for Sunday School.</p>
+        <p className="hand-back">
+          Please pass this device back to the Sunday School staff.
+        </p>
         <Button onClick={startNextFamily}>Next family</Button>
       </StyledSundaySchoolAdmin>
     );

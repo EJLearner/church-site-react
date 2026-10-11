@@ -39,6 +39,19 @@ export function getSchoolYear(date) {
   return `${startYear}-${startYear + 1}`;
 }
 
+// Statements the parent must check before submitting
+export const AGREEMENT_OPTIONS = [
+  {
+    label: 'I am the parent/guardian of the child indicated above.',
+    value: 'parentGuardian',
+  },
+  {
+    label:
+      'If emergency medical care is needed and I am unavailable, I authorize the supervising teacher to seek medical treatment for my child.',
+    value: 'emergencyCare',
+  },
+];
+
 // Oldest a child can be to register, in years
 const MAX_CHILD_AGE = 20;
 
@@ -140,7 +153,13 @@ export function validateRegistration(registrationInfo, today, badDateIds) {
   requireName('parentName', 'Parent/guardian');
   checkEmail(parentEmailField);
   checkPhone(parentPhoneField, {required: true});
-  checkPhone(emergencyPhoneField);
+
+  requireName('emergencyContactName', 'Emergency contact');
+  if (isBlank(registrationInfo.emergencyContactRelationship)) {
+    errors.emergencyContactRelationship =
+      'Emergency contact relationship is required';
+  }
+  checkPhone(emergencyPhoneField, {required: true});
 
   if (!registrationInfo.allergies) {
     errors['allergies-yes'] = 'Please say whether your child has allergies';
@@ -149,6 +168,14 @@ export function validateRegistration(registrationInfo, today, badDateIds) {
     isBlank(registrationInfo.allergyDetails)
   ) {
     errors.allergyDetails = 'Allergy details are required';
+  }
+
+  const firstUnchecked = AGREEMENT_OPTIONS.find(
+    ({value}) => !registrationInfo.agreementCheckList?.has(value),
+  );
+  if (firstUnchecked) {
+    errors[`agreementCheckList-${firstUnchecked.value}`] =
+      'Please check every agreement statement';
   }
 
   return errors;

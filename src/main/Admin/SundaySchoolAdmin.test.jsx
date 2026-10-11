@@ -25,6 +25,9 @@ const createEntry = (id, childName, parentNames) => ({
     parentName: {first: 'Anne', last: 'Lovelace'},
     parentEmail: 'parent@example.com',
     parentPhone: '4105550000',
+    emergencyContactName: {first: 'Mary', last: 'Somerville'},
+    emergencyContactRelationship: 'Aunt',
+    emergencyPhone: '4105551111',
   },
 });
 
@@ -42,9 +45,14 @@ const respondWith = (body, ok = true) =>
 const clickButton = (name) =>
   fireEvent.click(screen.getByRole('button', {name}));
 
-// Old registrations never asked about allergies, so the parent must answer
-const answerNoAllergies = () =>
+// Old registrations never asked about allergies or had the agreements, so the
+// parent must fill those in
+const finishForm = () => {
   fireEvent.click(screen.getByRole('radio', {name: 'No'}));
+  screen
+    .getAllByRole('checkbox', {name: /^I am|^If emergency/})
+    .forEach((checkbox) => fireEvent.click(checkbox));
+};
 
 const search = (text) =>
   fireEvent.change(screen.getByRole('textbox'), {target: {value: text}});
@@ -118,10 +126,13 @@ describe('SundaySchoolAdmin', () => {
     expect(screen.getByDisplayValue('Ada')).toBeInTheDocument();
     expect(screen.queryByRole('table')).not.toBeInTheDocument();
 
-    answerNoAllergies();
+    finishForm();
     clickButton('Submit');
 
     expect(await screen.findByText('Thank you!')).toBeInTheDocument();
+    expect(
+      screen.getByText(/pass this device back to the Sunday School staff/),
+    ).toBeInTheDocument();
     expect(push.mock.calls.at(-1)[1]).toMatchObject({
       legacySources: [{table: 'ccRegisteredChildren', year: '2019', id: 'one'}],
       source: 'legacy',
@@ -161,7 +172,7 @@ describe('SundaySchoolAdmin', () => {
     clickButton('Verify and Register');
     expect(onKioskModeChange).toHaveBeenLastCalledWith(true);
 
-    answerNoAllergies();
+    finishForm();
     clickButton('Submit');
     await screen.findByText('Thank you!');
     expect(onKioskModeChange).toHaveBeenLastCalledWith(true);

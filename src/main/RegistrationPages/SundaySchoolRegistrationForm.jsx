@@ -19,6 +19,7 @@ import Textarea from '../commonComponents/Textarea';
 import {ERROR_COLOR} from '../commonComponents/formFieldStyles';
 
 import {
+  AGREEMENT_OPTIONS,
   BLANK_REGISTRATION,
   SUNDAY_SCHOOL_REF_NAME,
   buildRegistrationRecord,
@@ -140,6 +141,7 @@ const FormStyle = styled.div`
     }
   }
 
+  .photo-note,
   .signature-note,
   .submitted-date {
     margin: 0;
@@ -415,17 +417,22 @@ function SundaySchoolRegistrationForm({
       <section aria-labelledby="sunday-school-emergency-heading">
         <h2 id="sunday-school-emergency-heading">Emergency Contact</h2>
         <Name
+          errors={nameErrors('emergencyContactName')}
           id="emergencyContactName"
           label="Emergency Contact Name"
           onBlur={onInputBlur}
           onChange={onRegistrationInfoChange}
+          required
           value={registrationInfo.emergencyContactName}
         />
         <div className="row">
           <TextField
+            errors={visibleErrors.emergencyContactRelationship}
             id="emergencyContactRelationship"
             label="Relationship"
+            onBlur={onInputBlur}
             onChange={onRegistrationInfoChange}
+            required
             supportText="e.g. Grandparent, Aunt, Neighbor"
             value={registrationInfo.emergencyContactRelationship}
           />
@@ -435,6 +442,7 @@ function SundaySchoolRegistrationForm({
             label="Phone Number"
             onBlur={onInputBlur}
             onChange={onRegistrationInfoChange}
+            required
             value={registrationInfo.emergencyPhone}
           />
         </div>
@@ -477,31 +485,25 @@ function SundaySchoolRegistrationForm({
       <section aria-labelledby="sunday-school-agreement-heading">
         <h2 id="sunday-school-agreement-heading">Agreement</h2>
         <CheckList
+          errors={AGREEMENT_OPTIONS.map(
+            ({value}) => visibleErrors[`agreementCheckList-${value}`],
+          ).find(Boolean)}
           id="agreementCheckList"
           label="I agree with the following statements:"
           onChange={onRegistrationInfoChange}
-          options={[
-            {
-              label: 'I am the parent/guardian of the child indicated above.',
-              value: 'parentGuardian',
-            },
-            {
-              label:
-                'If emergency medical care is needed and I am unavailable, I authorize the supervising teacher to seek medical treatment for my child.',
-              value: 'emergencyCare',
-            },
-            {
-              label:
-                "I am giving my permission to take my child's pictures for classroom projects and post them on the church website.",
-              value: 'picturePermission',
-            },
-          ]}
+          options={AGREEMENT_OPTIONS}
+          required
           value={registrationInfo.agreementCheckList}
         />
+        <p className="photo-note">
+          Your child&apos;s pictures may be taken for classroom projects and
+          posted on the church website. If you do not want your child
+          photographed, please tell the Sunday School staff.
+        </p>
         <p className="signature-note">
-          By pressing Submit, I confirm that the information above is accurate
-          and that this serves as my electronic signature for the statements I
-          checked.
+          By pressing Submit, I confirm that the information above is accurate,
+          that I agree to everything in this Agreement section, and that this
+          serves as my electronic signature.
         </p>
         <p className="submitted-date">
           <strong>Date submitted:</strong> {formatLongDate(today)}
