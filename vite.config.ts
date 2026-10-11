@@ -14,6 +14,8 @@ export default defineConfig({
     },
   },
   plugins: [react()],
+  // Also runs the api/ tests, which need api/node_modules installed
+  // (npm ci --prefix api)
   test: {
     globals: true,
     environment: 'jsdom',
