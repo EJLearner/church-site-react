@@ -3,58 +3,6 @@ import styled from 'styled-components';
 
 import InputLabel from './InputLabel';
 
-const GenericInputStyle = styled.div``;
-
-function GenericInput(props) {
-  const {
-    errors,
-    id,
-    instructions,
-    label,
-    name,
-    onBlur,
-    onChange,
-    onEnter,
-    placeholder,
-    required,
-    size,
-    type,
-    value,
-  } = props;
-
-  return (
-    <input
-      id={id}
-      name={name || id}
-      onBlur={(event) => onBlur?.(value, id, event)}
-      onChange={(event) =>
-        onChange({...value, first: event.target.value}, id, event)
-      }
-      onKeyDown={() => {}}
-      placeholder={placeholder}
-      size={size}
-      type={type}
-      value={value ?? ''}
-    />
-  );
-}
-
-GenericInput.propTypes = {
-  errors: PropTypes.node,
-  id: PropTypes.string.isRequired,
-  instructions: PropTypes.node,
-  label: PropTypes.string.isRequired,
-  name: PropTypes.object,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func.isRequired,
-  onEnter: PropTypes.func,
-  placeholder: PropTypes.string,
-  required: PropTypes.bool,
-  size: PropTypes.number,
-  type: PropTypes.string,
-  value: PropTypes.object.isRequired,
-};
-
 const NameStyle = styled.div`
   display: inline-block;
   margin: 1em 16px 0.5em 0;

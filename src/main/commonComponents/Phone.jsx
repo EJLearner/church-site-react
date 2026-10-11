@@ -67,11 +67,7 @@ const Phone = (props) => {
         id={id}
         name={name || id}
         onBlur={(event) => onBlur?.(event.target.value, id, event)}
-        onChange={(event) => {
-          console.log('Phone onChange', event.target.value, id);
-
-          return onChange(event.target.value, id, event);
-        }}
+        onChange={(event) => onChange(event.target.value, id, event)}
         onKeyDown={onKeyDown}
         placeholder={placeholder}
         size={size}
