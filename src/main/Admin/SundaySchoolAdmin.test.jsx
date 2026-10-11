@@ -22,6 +22,7 @@ const createEntry = (id, childName, parentNames) => ({
   values: {
     childName,
     childDateOfBirth: '2015-03-01',
+    parentName: {first: 'Anne', last: 'Lovelace'},
     parentEmail: 'parent@example.com',
     parentPhone: '4105550000',
   },
@@ -40,6 +41,10 @@ const respondWith = (body, ok = true) =>
 
 const clickButton = (name) =>
   fireEvent.click(screen.getByRole('button', {name}));
+
+// Old registrations never asked about allergies, so the parent must answer
+const answerNoAllergies = () =>
+  fireEvent.click(screen.getByRole('radio', {name: 'No'}));
 
 const search = (text) =>
   fireEvent.change(screen.getByRole('textbox'), {target: {value: text}});
@@ -113,6 +118,7 @@ describe('SundaySchoolAdmin', () => {
     expect(screen.getByDisplayValue('Ada')).toBeInTheDocument();
     expect(screen.queryByRole('table')).not.toBeInTheDocument();
 
+    answerNoAllergies();
     clickButton('Submit');
 
     expect(await screen.findByText('Thank you!')).toBeInTheDocument();
@@ -151,9 +157,11 @@ describe('SundaySchoolAdmin', () => {
     render(<SundaySchoolAdmin onKioskModeChange={onKioskModeChange} />);
     await screen.findByText('Ada Lovelace');
 
-    clickButton('New registration');
+    search('ada');
+    clickButton('Verify and Register');
     expect(onKioskModeChange).toHaveBeenLastCalledWith(true);
 
+    answerNoAllergies();
     clickButton('Submit');
     await screen.findByText('Thank you!');
     expect(onKioskModeChange).toHaveBeenLastCalledWith(true);

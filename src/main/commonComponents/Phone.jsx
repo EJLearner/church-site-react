@@ -1,97 +1,28 @@
-// TODO: Make this more customized to displaying a phone. For now,
-// it's just a copy of TextBox with a different name
-
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 
-import InputLabel from './InputLabel';
+import TextField from './TextField';
 
-const TextboxStyle = styled.div`
-  display: inline-block;
-  margin: 1em 16px 0.5em 0;
-
-  .text-box-pattern {
-    display: inline-block;
-    margin: 0.5em 0;
-  }
-
-  .text-box-pattern label {
-    display: block;
-  }
-`;
-
-const Phone = (props) => {
-  const {
-    errors,
-    id,
-    instructions,
-    label,
-    name,
-    onBlur,
-    onChange,
-    onEnter,
-    placeholder,
-    required,
-    size,
-    type,
-    value,
-  } = props;
-
-  const onKeyDown = (event) => {
-    if (onEnter && event.key === 'Enter') {
-      onEnter(event.target.value, id, event);
-    }
-  };
-
-  const errorsId = `${id}-errors`;
-  const labelId = `${id}-label`;
-  const instructionsId = `${id}-instructions`;
-
-  const labelledBy = [
-    errors && errorsId,
-    labelId,
-    instructions && instructionsId,
-  ]
-    .filter(Boolean)
-    .join(' ');
-
-  return (
-    <TextboxStyle className="text-box-pattern">
-      {instructions && <p id={instructionsId}>{instructions}</p>}
-      <InputLabel htmlFor={id} id={labelId} required={required}>
-        {label}
-      </InputLabel>
-      {errors && <div id={errorsId}>{errors}</div>}
-      <input
-        aria-labelledby={labelledBy}
-        id={id}
-        name={name || id}
-        onBlur={(event) => onBlur?.(event.target.value, id, event)}
-        onChange={(event) => onChange(event.target.value, id, event)}
-        onKeyDown={onKeyDown}
-        placeholder={placeholder}
-        size={size}
-        type={type}
-        value={value}
-      />
-    </TextboxStyle>
-  );
-};
+const Phone = ({supportText = '10-digit phone number', ...props}) => (
+  <TextField
+    inputMode="tel"
+    placeholder="(000) 000-0000"
+    supportText={supportText}
+    type="tel"
+    {...props}
+  />
+);
 
 Phone.propTypes = {
+  autoComplete: PropTypes.string,
+  className: PropTypes.string,
   errors: PropTypes.node,
   id: PropTypes.string.isRequired,
-  instructions: PropTypes.node,
   label: PropTypes.string.isRequired,
-  name: PropTypes.string,
   onBlur: PropTypes.func,
   onChange: PropTypes.func.isRequired,
-  onEnter: PropTypes.func,
-  placeholder: PropTypes.string,
   required: PropTypes.bool,
-  size: PropTypes.number,
-  type: PropTypes.string,
-  value: PropTypes.string.isRequired,
+  supportText: PropTypes.node,
+  value: PropTypes.string,
 };
 
 export default Phone;

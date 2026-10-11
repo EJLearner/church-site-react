@@ -93,22 +93,81 @@ describe('SundaySchoolRegistrationForm', () => {
     );
   });
 
-  it('saves a blank form as a new registration without subscribing', async () => {
+  it('does not save a blank form and lists what is missing', () => {
+    render(<SundaySchoolRegistrationForm onSubmitted={vi.fn()} />);
+
+    submit();
+
+    const summary = screen.getByRole('alert');
+    expect(summary).toHaveTextContent("Child's first name is required");
+    expect(summary).toHaveTextContent("Child's date of birth is required");
+    expect(summary).toHaveTextContent(
+      'Parent/guardian phone number is required',
+    );
+    expect(summary).toHaveTextContent(
+      'Please say whether your child has allergies',
+    );
+    expect(document.activeElement).toBe(
+      document.getElementById('childName-first'),
+    );
+    expect(push).not.toHaveBeenCalled();
+  });
+
+  it('shows an error when leaving an invalid field', () => {
+    render(<SundaySchoolRegistrationForm onSubmitted={vi.fn()} />);
+    const phone = screen.getByLabelText(/Child's Phone Number/);
+
+    fireEvent.change(phone, {target: {value: '410-555'}});
+    fireEvent.blur(phone);
+
+    expect(phone).toHaveAttribute('aria-invalid', 'true');
+    expect(
+      screen.getByText("Child's phone number must have 10 digits"),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByText(/first name is required/),
+    ).not.toBeInTheDocument();
+  });
+
+  it('only shows allergy details when the child has allergies', () => {
+    render(<SundaySchoolRegistrationForm onSubmitted={vi.fn()} />);
+
+    expect(screen.queryByLabelText(/allergy details/)).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('radio', {name: 'Yes'}));
+
+    expect(screen.getByLabelText(/allergy details/)).toBeInTheDocument();
+  });
+
+  it('saves phone numbers as digits only', async () => {
     push.mockResolvedValue({});
     const onSubmitted = vi.fn();
-    render(<SundaySchoolRegistrationForm onSubmitted={onSubmitted} />);
+    render(
+      <SundaySchoolRegistrationForm
+        initialValues={{...initialValues, parentPhone: ' (410) 555-0000 '}}
+        onSubmitted={onSubmitted}
+      />,
+    );
 
     submit();
 
     await waitFor(() => expect(onSubmitted).toHaveBeenCalled());
-    expect(push.mock.calls[0][1]).toMatchObject({source: 'new'});
-    expect(pushToSubscribedList).not.toHaveBeenCalled();
+    expect(push.mock.calls[0][1]).toMatchObject({
+      parentPhone: '4105550000',
+      source: 'new',
+    });
+    expect(pushToSubscribedList).toHaveBeenCalled();
   });
 
   it('saves only once when Submit is clicked twice', async () => {
     push.mockResolvedValue({});
     const onSubmitted = vi.fn();
-    render(<SundaySchoolRegistrationForm onSubmitted={onSubmitted} />);
+    render(
+      <SundaySchoolRegistrationForm
+        initialValues={initialValues}
+        onSubmitted={onSubmitted}
+      />,
+    );
 
     submit();
     submit();
@@ -121,7 +180,12 @@ describe('SundaySchoolRegistrationForm', () => {
     push.mockRejectedValueOnce({code: 'PERMISSION_DENIED', message: 'denied'});
     push.mockResolvedValueOnce({});
     const onSubmitted = vi.fn();
-    render(<SundaySchoolRegistrationForm onSubmitted={onSubmitted} />);
+    render(
+      <SundaySchoolRegistrationForm
+        initialValues={initialValues}
+        onSubmitted={onSubmitted}
+      />,
+    );
 
     submit();
 

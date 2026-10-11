@@ -1,177 +1,122 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
+import InputError from './InputError';
 import InputLabel from './InputLabel';
+import SupportText from './SupportText';
+import {
+  describedBy,
+  fieldInputStyles,
+  fieldsetResetStyles,
+} from './formFieldStyles';
+import stateOptions from './stateOptions';
 
-const AddressStyle = styled.div`
-  display: block;
-  margin: 1em 16px 0.5em 0;
+const AddressStyle = styled.fieldset`
+  ${fieldsetResetStyles}
+  ${fieldInputStyles}
 
-  .text-box-pattern {
-    display: inline-block;
-    margin: 0.5em 0;
+  .address-part {
+    margin-bottom: 12px;
   }
 
-  .text-box-pattern label {
-    display: block;
+  .city-state-zip {
+    display: grid;
+    gap: 0 24px;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    .city-state-zip {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .city-state-zip .address-part:first-child {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .field-error {
+    font-size: 14px;
+    margin-top: 4px;
   }
 `;
 
-function SupportText({text}) {
-  return <p>{text}</p>;
-}
-
-SupportText.propTypes = {
-  text: PropTypes.string.isRequired,
-};
-
+// Street, city, state and zip inputs grouped under one label. Each input's id
+// is `${id}-${part}` (e.g. address-zip), and errors can be given per part.
 const Address = (props) => {
-  const {
-    errors,
-    id,
-    instructions,
-    label,
-    name,
-    onBlur,
-    onChange,
-    onEnter,
-    placeholder,
-    required,
-    size,
-    type,
-    value,
-  } = props;
+  const {errors, id, label, onBlur, onChange, required, value} = props;
 
-  const onKeyDown = (event) => {
-    if (onEnter && event.key === 'Enter') {
-      onEnter(event.target.value, id, event);
-    }
+  const renderPart = (part, partLabel, autoComplete, inputProps = {}) => {
+    const inputId = `${id}-${part}`;
+    const errorId = `${inputId}-errors`;
+    const partError = errors?.[part];
+    const sharedProps = {
+      'aria-describedby': describedBy(partError && errorId),
+      'aria-invalid': partError ? true : undefined,
+      autoComplete,
+      id: inputId,
+      name: inputId,
+      onBlur: (event) => onBlur?.(value, id, event),
+      onChange: (event) =>
+        onChange({...value, [part]: event.target.value}, id, event),
+      value: value?.[part] ?? '',
+    };
+
+    return (
+      <div className="address-part">
+        {part === 'state' ? (
+          <select {...sharedProps}>
+            <option value="" />
+            {stateOptions.map((state) => (
+              <option key={state} value={state}>
+                {state}
+              </option>
+            ))}
+          </select>
+        ) : (
+          <input type="text" {...sharedProps} {...inputProps} />
+        )}
+        <SupportText as="label" htmlFor={inputId}>
+          {partLabel}
+        </SupportText>
+        {partError && (
+          <InputError className="field-error" id={errorId}>
+            {partError}
+          </InputError>
+        )}
+      </div>
+    );
   };
 
-  const {streetLine1, streetLine2, city, state, zip} = value;
-
-  const errorsId = `${id}-errors`;
-  const labelId = `${id}-label`;
-  const instructionsId = `${id}-instructions`;
-
-  const labelledBy = [
-    errors && errorsId,
-    labelId,
-    instructions && instructionsId,
-  ]
-    .filter(Boolean)
-    .join(' ');
-
-  // TODO: Make sure autofill works right, right now, it's putting it on the line below, probably because the support text
-  // looks like it's associated with the field that it's above, not below.
-
   return (
-    <AddressStyle className="text-box-pattern">
-      {instructions && <p id={instructionsId}>{instructions}</p>}
-      <InputLabel htmlFor={id} id={labelId} required={required}>
+    <AddressStyle className="address-field">
+      <InputLabel as="legend" required={required}>
         {label}
       </InputLabel>
-      {errors && <div id={errorsId}>{errors}</div>}
-      <div>
-        <input
-          aria-labelledby={labelledBy}
-          id={id}
-          name={name || id}
-          onBlur={(event) => onBlur?.(value, id, event)}
-          onChange={(event) =>
-            onChange({...value, streetLine1: event.target.value}, id, event)
-          }
-          onKeyDown={onKeyDown}
-          placeholder={placeholder}
-          size={size}
-          type={type}
-          value={streetLine1 ?? ''}
-        />
-        <SupportText text="Street Address" />
-      </div>
-      <div>
-        <input
-          aria-labelledby={labelledBy}
-          id={id}
-          name={name || id}
-          onBlur={(event) => onBlur?.(value, id, event)}
-          onChange={(event) =>
-            onChange({...value, streetLine2: event.target.value}, id, event)
-          }
-          onKeyDown={onKeyDown}
-          placeholder={placeholder}
-          size={size}
-          type={type}
-          value={streetLine2 ?? ''}
-        />
-        <SupportText text="Street Address Line 2" />
-      </div>
-      <div>
-        <input
-          aria-labelledby={labelledBy}
-          id={id}
-          name={name || id}
-          onBlur={(event) => onBlur?.(value, id, event)}
-          onChange={(event) =>
-            onChange({...value, city: event.target.value}, id, event)
-          }
-          onKeyDown={onKeyDown}
-          placeholder={placeholder}
-          size={size}
-          type={type}
-          value={city ?? ''}
-        />
-        <SupportText text="City" />
-        <input
-          aria-labelledby={labelledBy}
-          id={id}
-          name={name || id}
-          onBlur={(event) => onBlur?.(value, id, event)}
-          onChange={(event) =>
-            onChange({...value, state: event.target.value}, id, event)
-          }
-          onKeyDown={onKeyDown}
-          placeholder={placeholder}
-          size={size}
-          type={type}
-          value={state ?? ''}
-        />
-        <SupportText text="State" />
-      </div>
-      <div>
-        <input
-          aria-labelledby={labelledBy}
-          id={id}
-          name={name || id}
-          onBlur={(event) => onBlur?.(value, id, event)}
-          onChange={(event) =>
-            onChange({...value, zip: event.target.value}, id, event)
-          }
-          onKeyDown={onKeyDown}
-          placeholder={placeholder}
-          size={size}
-          type={type}
-          value={zip ?? ''}
-        />
-        <SupportText text="Postal / Zip Code" />
+      {renderPart('streetLine1', 'Street Address', 'address-line1')}
+      {renderPart('streetLine2', 'Street Address Line 2', 'address-line2')}
+      <div className="city-state-zip">
+        {renderPart('city', 'City', 'address-level2')}
+        {renderPart('state', 'State', 'address-level1')}
+        {renderPart('zip', 'Zip Code', 'postal-code', {inputMode: 'numeric'})}
       </div>
     </AddressStyle>
   );
 };
 
 Address.propTypes = {
-  errors: PropTypes.node,
+  errors: PropTypes.shape({
+    streetLine1: PropTypes.node,
+    streetLine2: PropTypes.node,
+    city: PropTypes.node,
+    state: PropTypes.node,
+    zip: PropTypes.node,
+  }),
   id: PropTypes.string.isRequired,
-  instructions: PropTypes.node,
   label: PropTypes.string.isRequired,
-  name: PropTypes.object,
   onBlur: PropTypes.func,
   onChange: PropTypes.func.isRequired,
-  onEnter: PropTypes.func,
-  placeholder: PropTypes.string,
   required: PropTypes.bool,
-  size: PropTypes.number,
-  type: PropTypes.string,
   value: PropTypes.object.isRequired,
 };
 
