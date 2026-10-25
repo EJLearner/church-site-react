@@ -1,8 +1,10 @@
 import {useState, useEffect, useRef} from 'react';
 import styled from 'styled-components';
 
-import authFetch from '../../utils/adminApi';
+import authFetch, {requireOk} from '../../utils/adminApi';
 import Textbox from '../commonComponents/Textbox';
+
+import StatusMessage from './StatusMessage';
 
 const DAY_NAMES = [
   'Sunday',
@@ -70,11 +72,15 @@ const StyledVersesAdmin = styled.div`
 
     .verse-preview {
       font-size: 0.9em;
-      font-style: italic;
       margin-top: 0.4em;
 
       .found {
         color: green;
+      }
+
+      .snippet {
+        font-style: italic;
+        margin-top: 0.2em;
       }
 
       .not-found {
@@ -96,6 +102,22 @@ function makeSnippet(text) {
   return `${words.slice(0, 6).join(' ')} … ${words.slice(-6).join(' ')}`;
 }
 
+// Looks up a typed reference, resolving to the cleaned-up reference and a
+// snippet of its text, or null when no verses match
+async function lookUpReference(value) {
+  try {
+    const res = await fetch(`/api/verse?q=${encodeURIComponent(value)}`);
+    if (!res.ok) return null;
+    const {data} = await res.json();
+    const allText = data.passages
+      .map((passage) => stripHtml(passage.content))
+      .join(' ');
+    return {reference: data.reference, snippet: makeSnippet(allText)};
+  } catch {
+    return null;
+  }
+}
+
 function VersesAdmin() {
   const sundays = getSundays();
   const [selectedSunday, setSelectedSunday] = useState(sundays[0]);
@@ -107,8 +129,6 @@ function VersesAdmin() {
   const debounceRefs = useRef({});
 
   async function loadVerses(sunday) {
-    setError(null);
-    setSavedDate(null);
     try {
       const res = await authFetch(`/api/daily-verses/${sunday}`);
       const rows = await res.json();
@@ -149,30 +169,11 @@ function VersesAdmin() {
       }
       setPreviewByDate((prev) => ({...prev, [date]: {status: 'checking'}}));
       debounceRefs.current[date] = setTimeout(async () => {
-        try {
-          const res = await fetch(`/api/verse?q=${encodeURIComponent(value)}`);
-          if (!res.ok) {
-            setPreviewByDate((prev) => ({
-              ...prev,
-              [date]: {status: 'not-found'},
-            }));
-            return;
-          }
-          const data = await res.json();
-          const passages = data?.data?.passages ?? [];
-          const allText = passages
-            .map((passage) => stripHtml(passage.content))
-            .join(' ');
-          setPreviewByDate((prev) => ({
-            ...prev,
-            [date]: {status: 'found', snippet: makeSnippet(allText)},
-          }));
-        } catch {
-          setPreviewByDate((prev) => ({
-            ...prev,
-            [date]: {status: 'not-found'},
-          }));
-        }
+        const found = await lookUpReference(value);
+        setPreviewByDate((prev) => ({
+          ...prev,
+          [date]: found ? {status: 'found', ...found} : {status: 'not-found'},
+        }));
       }, 600);
     }
   }
@@ -181,31 +182,35 @@ function VersesAdmin() {
     setError(null);
     setSavedDate(null);
     const existing = versesByDate[date];
-    const {verse_reference} = formByDate[date];
-    const reference_text = verse_reference;
+    const typed = formByDate[date].verse_reference.trim();
+    if (typed === (existing?.verse_reference ?? '')) return;
     try {
-      if (!verse_reference) {
-        if (existing) {
+      if (!typed) {
+        await requireOk(
           await authFetch(`/api/daily-verses/${existing.id}`, {
             method: 'DELETE',
-          });
-          await loadVerses(selectedSunday);
-        }
-        return;
-      }
-      if (existing) {
-        await authFetch(`/api/daily-verses/${existing.id}`, {
-          method: 'PUT',
-          body: JSON.stringify({verse_reference, reference_text}),
-        });
+          }),
+        );
       } else {
-        await authFetch('/api/daily-verses', {
-          method: 'POST',
-          body: JSON.stringify({date, verse_reference, reference_text}),
-        });
+        // Save the cleaned-up reference ("John 3: 15 - 16" → "John 3:15-16"),
+        // or what was typed if it can't be looked up
+        const verse_reference =
+          (await lookUpReference(typed))?.reference ?? typed;
+        const reference_text = verse_reference;
+        await requireOk(
+          existing
+            ? await authFetch(`/api/daily-verses/${existing.id}`, {
+                method: 'PUT',
+                body: JSON.stringify({verse_reference, reference_text}),
+              })
+            : await authFetch('/api/daily-verses', {
+                method: 'POST',
+                body: JSON.stringify({date, verse_reference, reference_text}),
+              }),
+        );
       }
-      setSavedDate(date);
       await loadVerses(selectedSunday);
+      setSavedDate(date);
     } catch (err) {
       setError(err.message);
     }
@@ -220,7 +225,11 @@ function VersesAdmin() {
         <label htmlFor="verses-week">Week of</label>
         <select
           id="verses-week"
-          onChange={(event) => setSelectedSunday(event.target.value)}
+          onChange={(event) => {
+            setError(null);
+            setSavedDate(null);
+            setSelectedSunday(event.target.value);
+          }}
           value={selectedSunday}
         >
           {sundays.map((sunday) => (
@@ -231,7 +240,7 @@ function VersesAdmin() {
         </select>
       </div>
 
-      {error && <div style={{color: 'red'}}>{error}</div>}
+      <StatusMessage status={error && {type: 'error', text: error}} />
 
       {weekDates.map((date, index) => (
         <div className="day-row" key={date}>
@@ -255,9 +264,15 @@ function VersesAdmin() {
                     <span>Checking…</span>
                   )}
                   {previewByDate[date].status === 'found' && (
-                    <span className="found">
-                      ✓ {previewByDate[date].snippet}
-                    </span>
+                    <>
+                      <div className="found">
+                        ✓ Will use:{' '}
+                        <strong>{previewByDate[date].reference}</strong>
+                      </div>
+                      <div className="snippet">
+                        {previewByDate[date].snippet}
+                      </div>
+                    </>
                   )}
                   {previewByDate[date].status === 'not-found' && (
                     <span className="not-found">✗ Passage not found</span>

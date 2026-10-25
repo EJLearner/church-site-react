@@ -13,3 +13,12 @@ async function authFetch(url, options = {}) {
 }
 
 export default authFetch;
+
+// Throws the API's error message when a request didn't succeed
+export async function requireOk(res) {
+  if (!res.ok) {
+    const body = await res.json().catch(() => null);
+    throw new Error(body?.error ?? `Request failed (${res.status})`);
+  }
+  return res;
+}

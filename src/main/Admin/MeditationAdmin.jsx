@@ -1,14 +1,18 @@
 import {Bold} from '@tiptap/extension-bold';
 import {Italic} from '@tiptap/extension-italic';
-import {useEditor, EditorContent} from '@tiptap/react';
+import {useEditor, useEditorState, EditorContent} from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
 import PropTypes from 'prop-types';
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useCallback} from 'react';
 import styled from 'styled-components';
 import {Markdown} from 'tiptap-markdown';
 
-import authFetch from '../../utils/adminApi';
+import authFetch, {requireOk} from '../../utils/adminApi';
 import Button from '../commonComponents/Button/Button';
+import InputLabel from '../commonComponents/InputLabel';
+import {fieldInputStyles} from '../commonComponents/formFieldStyles';
+
+import StatusMessage from './StatusMessage';
 
 function getSundays() {
   const today = new Date();
@@ -25,71 +29,141 @@ function getSundays() {
   return sundays;
 }
 
+// "2026-10-25" → "October 25, 2026"
+function formatSunday(sunday) {
+  return new Date(`${sunday}T00:00:00`).toLocaleDateString('en-US', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+}
+
 const StyledMeditationAdmin = styled.div`
+  max-width: 800px;
+
   .week-nav {
-    align-items: center;
+    ${fieldInputStyles}
+    align-items: flex-end;
     display: flex;
+    flex-wrap: wrap;
     gap: 1em;
+    margin-bottom: 1.5em;
+
+    .week-select {
+      max-width: 280px;
+    }
+
+    .week-status {
+      color: var(--charcoal-grey);
+      font-size: 14px;
+      padding-bottom: 10px;
+    }
+  }
+
+  .editor-field {
     margin-bottom: 1.5em;
   }
 
   .editor-label {
     display: block;
-    font-weight: bold;
-    margin-bottom: 0.25em;
+    font-size: 14px;
+    margin-bottom: 0.5em;
   }
 
   .tiptap-wrapper {
-    border: 1px solid var(--charcoal-grey);
+    background-color: white;
+    border: 1px solid rgb(118, 118, 118);
     border-radius: 4px;
-    margin-bottom: 1em;
-    padding: 0.5em;
 
-    &.subtitle-wrapper {
-      min-height: 2.5em;
-    }
-
-    &.content-wrapper {
-      min-height: 200px;
+    &:focus-within {
+      border-color: var(--application-blue);
+      outline: 2px solid var(--application-blue);
     }
 
     .tiptap {
       outline: none;
+      padding: 0.5em 0.75em;
+
+      p {
+        margin: 0 0 0.75em;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &.subtitle-editor .tiptap {
+      min-height: 1.5em;
+    }
+
+    &.content-editor .tiptap {
+      min-height: 300px;
     }
   }
 
   .toolbar {
-    border-bottom: 1px solid var(--charcoal-grey);
+    background-color: var(--light-background);
+    border-bottom: 1px solid rgb(118, 118, 118);
+    border-radius: 4px 4px 0 0;
     display: flex;
-    flex-wrap: wrap;
     gap: 0.25em;
-    margin-bottom: 0.5em;
-    padding-bottom: 0.5em;
+    padding: 0.25em;
+
+    button {
+      background: none;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: var(--serif);
+      font-size: 16px;
+      height: 32px;
+      width: 32px;
+
+      &:hover {
+        border-color: rgb(118, 118, 118);
+      }
+
+      &[aria-pressed='true'] {
+        background-color: var(--charcoal-grey);
+        color: white;
+      }
+    }
   }
 
   .form-actions {
     display: flex;
     gap: 0.5em;
-    margin-top: 1em;
   }
 `;
 
 function TiptapToolbar({editor}) {
+  const active = useEditorState({
+    editor,
+    selector: (context) => ({
+      bold: context.editor?.isActive('bold') ?? false,
+      italic: context.editor?.isActive('italic') ?? false,
+    }),
+  });
   if (!editor) return null;
   return (
-    <div className="toolbar">
-      <Button
+    <div aria-label="Formatting" className="toolbar" role="toolbar">
+      <button
+        aria-label="Bold"
+        aria-pressed={active.bold}
         onClick={() => editor.chain().focus().toggleBold().run()}
         type="button"
       >
-        B
-      </Button>
-      <Button
+        <strong>B</strong>
+      </button>
+      <button
+        aria-label="Italic"
+        aria-pressed={active.italic}
         onClick={() => editor.chain().focus().toggleItalic().run()}
         type="button"
       >
-        I
-      </Button>
+        <em>I</em>
+      </button>
     </div>
   );
 }
@@ -102,8 +176,7 @@ function MeditationAdmin() {
   const sundays = getSundays();
   const [selectedSunday, setSelectedSunday] = useState(sundays[0]);
   const [existingId, setExistingId] = useState(null);
-  const [error, setError] = useState(null);
-  const [saved, setSaved] = useState(false);
+  const [status, setStatus] = useState(null);
 
   const subtitleEditor = useEditor({
     extensions: [
@@ -120,35 +193,36 @@ function MeditationAdmin() {
     content: '',
   });
 
-  async function loadMeditation(sunday) {
-    setError(null);
-    setSaved(false);
-    try {
-      const res = await authFetch(`/api/weekly-meditation/${sunday}`);
-      const data = await res.json();
-      if (data) {
-        setExistingId(data.id);
-        subtitleEditor?.commands.setContent(data.subtitle ?? '');
-        contentEditor?.commands.setContent(data.content ?? '');
-      } else {
-        setExistingId(null);
-        subtitleEditor?.commands.setContent('');
-        contentEditor?.commands.setContent('');
+  const loadMeditation = useCallback(
+    async (sunday) => {
+      try {
+        const res = await requireOk(
+          await authFetch(`/api/weekly-meditation/${sunday}`),
+        );
+        const data = await res.json();
+        setExistingId(data?.id ?? null);
+        subtitleEditor?.commands.setContent(data?.subtitle ?? '');
+        contentEditor?.commands.setContent(data?.content ?? '');
+      } catch (err) {
+        setStatus({type: 'error', text: err.message});
       }
-    } catch (err) {
-      setError(err.message);
-    }
-  }
+    },
+    [subtitleEditor, contentEditor],
+  );
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect -- async API fetch
     loadMeditation(selectedSunday);
-  }, [selectedSunday]);
+  }, [selectedSunday, loadMeditation]);
+
+  function changeWeek(sunday) {
+    setStatus(null);
+    setSelectedSunday(sunday);
+  }
 
   async function handleSubmit(event) {
     event.preventDefault();
-    setError(null);
-    setSaved(false);
+    setStatus(null);
     const subtitle = subtitleEditor.storage.markdown.getMarkdown().trim();
     const content = contentEditor.storage.markdown.getMarkdown();
     const body = {
@@ -158,32 +232,46 @@ function MeditationAdmin() {
     };
     try {
       if (existingId) {
-        await authFetch(`/api/weekly-meditation/${selectedSunday}`, {
-          method: 'PUT',
-          body: JSON.stringify(body),
-        });
+        await requireOk(
+          await authFetch(`/api/weekly-meditation/${selectedSunday}`, {
+            method: 'PUT',
+            body: JSON.stringify(body),
+          }),
+        );
       } else {
-        await authFetch('/api/weekly-meditation', {
-          method: 'POST',
-          body: JSON.stringify(body),
-        });
+        await requireOk(
+          await authFetch('/api/weekly-meditation', {
+            method: 'POST',
+            body: JSON.stringify(body),
+          }),
+        );
       }
-      setSaved(true);
       await loadMeditation(selectedSunday);
+      setStatus({
+        type: 'success',
+        text: `Meditation for ${formatSunday(selectedSunday)} saved.`,
+      });
     } catch (err) {
-      setError(err.message);
+      setStatus({type: 'error', text: err.message});
     }
   }
 
   async function handleDelete() {
     if (!confirm('Delete this meditation?')) return;
+    setStatus(null);
     try {
-      await authFetch(`/api/weekly-meditation/${selectedSunday}`, {
-        method: 'DELETE',
-      });
+      await requireOk(
+        await authFetch(`/api/weekly-meditation/${selectedSunday}`, {
+          method: 'DELETE',
+        }),
+      );
       await loadMeditation(selectedSunday);
+      setStatus({
+        type: 'success',
+        text: `Meditation for ${formatSunday(selectedSunday)} deleted.`,
+      });
     } catch (err) {
-      setError(err.message);
+      setStatus({type: 'error', text: err.message});
     }
   }
 
@@ -191,35 +279,53 @@ function MeditationAdmin() {
     <StyledMeditationAdmin>
       <h2>Weekly Meditation</h2>
       <div className="week-nav">
-        <label htmlFor="meditation-week">Week of</label>
-        <select
-          id="meditation-week"
-          onChange={(event) => setSelectedSunday(event.target.value)}
-          value={selectedSunday}
-        >
-          {sundays.map((sunday) => (
-            <option key={sunday} value={sunday}>
-              {sunday}
-            </option>
-          ))}
-        </select>
+        <div className="week-select">
+          <InputLabel htmlFor="meditation-week">Week of</InputLabel>
+          <select
+            id="meditation-week"
+            onChange={(event) => changeWeek(event.target.value)}
+            value={selectedSunday}
+          >
+            {sundays.map((sunday) => (
+              <option key={sunday} value={sunday}>
+                {formatSunday(sunday)}
+              </option>
+            ))}
+          </select>
+        </div>
+        <span className="week-status">
+          {existingId ? 'Editing saved meditation' : 'No meditation yet'}
+        </span>
       </div>
 
-      {error && <div style={{color: 'red'}}>{error}</div>}
-      {saved && <div style={{color: 'green'}}>Saved.</div>}
-
       <form onSubmit={handleSubmit}>
-        <span className="editor-label">Subtitle</span>
-        <div className="tiptap-wrapper subtitle-wrapper">
-          <TiptapToolbar editor={subtitleEditor} />
-          <EditorContent editor={subtitleEditor} />
+        <div className="editor-field">
+          <span className="editor-label" id="meditation-subtitle-label">
+            Subtitle
+          </span>
+          <div className="tiptap-wrapper subtitle-editor">
+            <TiptapToolbar editor={subtitleEditor} />
+            <EditorContent
+              aria-labelledby="meditation-subtitle-label"
+              editor={subtitleEditor}
+            />
+          </div>
         </div>
 
-        <span className="editor-label">Content</span>
-        <div className="tiptap-wrapper content-wrapper">
-          <TiptapToolbar editor={contentEditor} />
-          <EditorContent editor={contentEditor} />
+        <div className="editor-field">
+          <span className="editor-label" id="meditation-content-label">
+            Content
+          </span>
+          <div className="tiptap-wrapper content-editor">
+            <TiptapToolbar editor={contentEditor} />
+            <EditorContent
+              aria-labelledby="meditation-content-label"
+              editor={contentEditor}
+            />
+          </div>
         </div>
+
+        <StatusMessage status={status} />
 
         <div className="form-actions">
           <Button type="submit">{existingId ? 'Save' : 'Create'}</Button>
