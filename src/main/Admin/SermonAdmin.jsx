@@ -1,10 +1,15 @@
 import {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
-import authFetch from '../../utils/adminApi';
+import authFetch, {requireOk} from '../../utils/adminApi';
 import constants from '../../utils/constants';
 import Button from '../commonComponents/Button/Button';
-import Textbox from '../commonComponents/Textbox';
+import DatePicker from '../commonComponents/DatePicker';
+import InputLabel from '../commonComponents/InputLabel';
+import TextField from '../commonComponents/TextField';
+import {fieldInputStyles} from '../commonComponents/formFieldStyles';
+
+import StatusMessage from './StatusMessage';
 
 const OTHER_PREACHER = '__other__';
 
@@ -50,45 +55,42 @@ const StyledSermonAdmin = styled.div`
     table {
       width: 100%;
     }
+
+    .saved-row {
+      background-color: rgb(232, 245, 233);
+    }
   }
 
   .form-section {
+    ${fieldInputStyles}
     border-top: 2px solid var(--charcoal-grey);
+    max-width: 900px;
     padding-top: 1em;
   }
 
   .form-row {
-    display: flex;
-    flex-wrap: wrap;
+    align-items: start;
+    display: grid;
     gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     margin-bottom: 1em;
-
-    > * {
-      flex: 1;
-      min-width: 200px;
-    }
   }
 
   .youtube-row {
     display: flex;
     align-items: flex-end;
     gap: 1em;
-    margin-bottom: 0.5em;
+    margin-bottom: 1em;
 
     > :first-child {
       flex: 1;
     }
 
-    .youtube-selected {
-      label {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 0.25em;
-      }
-
-      a {
-        color: var(--text-on-light-background);
-      }
+    .youtube-selected a {
+      color: var(--text-on-light-background);
+      display: inline-block;
+      min-height: 40px;
+      line-height: 40px;
     }
   }
 
@@ -155,7 +157,9 @@ function SermonAdmin() {
   const [sermons, setSermons] = useState([]);
   const [form, setForm] = useState(emptyForm);
   const [editingId, setEditingId] = useState(null);
-  const [error, setError] = useState(null);
+  const [status, setStatus] = useState(null);
+  // The sermon just added or saved, highlighted in the list
+  const [savedId, setSavedId] = useState(null);
   const [channelVideos, setChannelVideos] = useState(null);
   const [pickerVisible, setPickerVisible] = useState(true);
 
@@ -214,13 +218,14 @@ function SermonAdmin() {
       bible_version: sermon.bible_version ?? '',
     });
     setEditingId(sermon.id);
-    setError(null);
+    setStatus(null);
+    setSavedId(null);
   }
 
   function startNew() {
     setForm(emptyForm());
     setEditingId(null);
-    setError(null);
+    setStatus(null);
   }
 
   function getPreacherValue() {
@@ -240,33 +245,48 @@ function SermonAdmin() {
       bible_version: form.bible_version || null,
     };
 
+    const name = body.title ? `"${body.title}"` : `for ${body.date}`;
     try {
+      let id = editingId;
       if (editingId) {
-        await authFetch(`/api/sermons/${editingId}`, {
-          method: 'PUT',
-          body: JSON.stringify(body),
-        });
+        await requireOk(
+          await authFetch(`/api/sermons/${editingId}`, {
+            method: 'PUT',
+            body: JSON.stringify(body),
+          }),
+        );
       } else {
-        await authFetch('/api/sermons', {
-          method: 'POST',
-          body: JSON.stringify(body),
-        });
+        const res = await requireOk(
+          await authFetch('/api/sermons', {
+            method: 'POST',
+            body: JSON.stringify(body),
+          }),
+        );
+        id = (await res.json()).id;
       }
       await loadSermons();
       startNew();
+      setSavedId(id);
+      setStatus({
+        type: 'success',
+        text: `Sermon ${name} ${editingId ? 'saved' : 'added'}.`,
+      });
     } catch (err) {
-      setError(err.message);
+      setStatus({type: 'error', text: err.message});
     }
   }
 
   async function handleDelete(id) {
     if (!confirm('Delete this sermon?')) return;
     try {
-      await authFetch(`/api/sermons/${id}`, {method: 'DELETE'});
+      await requireOk(
+        await authFetch(`/api/sermons/${id}`, {method: 'DELETE'}),
+      );
       await loadSermons();
       if (editingId === id) startNew();
+      setStatus({type: 'success', text: 'Sermon deleted.'});
     } catch (err) {
-      setError(err.message);
+      setStatus({type: 'error', text: err.message});
     }
   }
 
@@ -285,7 +305,10 @@ function SermonAdmin() {
           </thead>
           <tbody>
             {sermons.map((sermon) => (
-              <tr key={sermon.id}>
+              <tr
+                className={sermon.id === savedId ? 'saved-row' : undefined}
+                key={sermon.id}
+              >
                 <td>{sermon.date}</td>
                 <td>{sermon.preacher}</td>
                 <td>{sermon.title}</td>
@@ -300,12 +323,11 @@ function SermonAdmin() {
 
       <div className="form-section">
         <h3>{editingId ? 'Edit Sermon' : 'New Sermon'}</h3>
-        {error && <div style={{color: 'red'}}>{error}</div>}
         <form onSubmit={handleSubmit}>
           <div className="form-row">
-            <Textbox
+            <DatePicker
               id="sermon-date"
-              label="Date (YYYY-MM-DD)"
+              label="Date"
               onChange={(value) => setForm((prev) => ({...prev, date: value}))}
               required
               value={form.date}
@@ -314,7 +336,7 @@ function SermonAdmin() {
           <div className="youtube-row">
             {form.youtube_id ? (
               <div className="youtube-selected">
-                <label>YouTube Video</label>
+                <InputLabel>YouTube Video</InputLabel>
                 <div>
                   <a
                     href={`https://www.youtube.com/watch?v=${form.youtube_id}`}
@@ -326,7 +348,7 @@ function SermonAdmin() {
                 </div>
               </div>
             ) : (
-              <Textbox
+              <TextField
                 id="sermon-youtube-id"
                 label="YouTube ID"
                 onChange={(value) =>
@@ -394,9 +416,10 @@ function SermonAdmin() {
             </div>
           )}
           <div className="form-row">
-            <label>
-              Preacher
+            <div>
+              <InputLabel htmlFor="sermon-preacher">Preacher</InputLabel>
               <select
+                id="sermon-preacher"
                 onChange={(event) =>
                   setForm((prev) => ({...prev, preacher: event.target.value}))
                 }
@@ -409,9 +432,9 @@ function SermonAdmin() {
                   </option>
                 ))}
               </select>
-            </label>
+            </div>
             {form.preacher === OTHER_PREACHER && (
-              <Textbox
+              <TextField
                 id="sermon-preacher-other"
                 label="Preacher name"
                 onChange={(value) =>
@@ -422,13 +445,13 @@ function SermonAdmin() {
             )}
           </div>
           <div className="form-row">
-            <Textbox
+            <TextField
               id="sermon-title"
               label="Title"
               onChange={(value) => setForm((prev) => ({...prev, title: value}))}
               value={form.title}
             />
-            <Textbox
+            <TextField
               id="sermon-scripture"
               label="Scripture"
               onChange={(value) =>
@@ -436,9 +459,12 @@ function SermonAdmin() {
               }
               value={form.scripture}
             />
-            <label>
-              Bible Version
+            <div>
+              <InputLabel htmlFor="sermon-bible-version">
+                Bible Version
+              </InputLabel>
               <select
+                id="sermon-bible-version"
                 onChange={(event) =>
                   setForm((prev) => ({
                     ...prev,
@@ -453,8 +479,9 @@ function SermonAdmin() {
                   </option>
                 ))}
               </select>
-            </label>
+            </div>
           </div>
+          <StatusMessage status={status} />
           <div className="form-actions">
             <Button type="submit">{editingId ? 'Save' : 'Add'}</Button>
             {editingId && (

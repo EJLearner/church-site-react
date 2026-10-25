@@ -100,140 +100,132 @@ try {
   );
 }
 
-// Maps reference book names to JSON key names
-const BOOK_NAME_MAP = {
-  Psalm: 'Psalms',
-  Song: 'Song of Solomon',
-  'Song of Songs': 'Song of Solomon',
+// Other full names a book goes by, keyed like BOOKS_BY_KEY
+const BOOK_ALIASES = {
+  psalm: 'Psalms',
+  song: 'Song of Solomon',
+  songofsongs: 'Song of Solomon',
 };
 
-function normalizeBook(name) {
-  return BOOK_NAME_MAP[name] || name;
+// Lowercase name without spaces, so "1john" and "1 John" match
+const bookKey = (name) => name.replace(/\s+/g, '').toLowerCase();
+
+const BOOKS_BY_KEY = Object.fromEntries(
+  BOOK_NAMES.map((name) => [bookKey(name), name]),
+);
+
+// Returns the book's name as it appears in BOOK_NAMES, or null when it isn't
+// a book of the Bible
+function resolveBook(name) {
+  const key = bookKey(name);
+  return BOOKS_BY_KEY[key] ?? BOOK_ALIASES[key] ?? null;
 }
 
-// Parses verse references into segments: { book, chapter, verseStart, verseEnd }
-// Handles formats like:
-//   "John 3.16"             → single verse
-//   "Romans 8"              → whole chapter
-//   "Romans 8.31-39"        → verse range
-//   "Galatians 3.23-4.7"    → cross-chapter range
-//   "Luke 9.23-27; 9.57-62" → semicolon-separated ranges
-//   "Philippians 1.12-14, 27-30" → comma-separated ranges in same chapter
+// Removes spaces around separators and turns dashes into "-" and colons into
+// ".": "John 3: 15 – 16" → "John 3.15-16"
+function normalizeReference(ref) {
+  return ref
+    .trim()
+    .replace(/[‐-―]/g, '-')
+    .replace(/\s*([:.,;-])\s*/g, '$1')
+    .replace(/:/g, '.')
+    .replace(/\s+/g, ' ');
+}
+
+// The numbers captured by a regex match, leaving unmatched groups undefined
+const matchedNumbers = (match) =>
+  match.slice(1).map((value) => value && Number(value));
+
+// Longest chapter range accepted, to keep lookups bounded
+const MAX_CHAPTER_SPAN = 150;
+
+// Parses a verse reference into segments ({book, chapter, verseStart,
+// verseEnd}) plus the cleaned-up reference text that the segments cover.
+// Spaces are ignored, chapter and verse may be separated by ":" or ".", and
+// book names are matched regardless of case. Handles formats like:
+//   "John 3:16"                  → single verse
+//   "Romans 8"                   → whole chapter
+//   "Romans 8:31-39"             → verse range
+//   "Galatians 3:23-4:7"         → cross-chapter range
+//   "Luke 9:23-27; 9:57-62"      → semicolon-separated ranges
+//   "Philippians 1:12-14, 27-30" → comma-separated ranges in same chapter
+// Parts that can't be parsed are left out of both.
 function parseReference(ref) {
   const segments = [];
+  const referenceParts = [];
+  let book = null;
+  let lastReferenceBook = null;
 
-  // Normalize colon chapter:verse separator to dot (e.g. "John 3:16" → "John 3.16")
-  const normalized = ref.replace(/(\d):(\d)/g, '$1.$2');
-
-  // Split on semicolons first
-  const semicolonParts = normalized.split(';').map((s) => s.trim());
-
-  for (const part of semicolonParts) {
-    // Match book name (handles "1 John", "2 Corinthians", etc.)
-    const bookMatch = part.match(/^(\d?\s*[A-Za-z]+(?:\s+[A-Za-z]+)*)\s+(.+)$/);
-    if (!bookMatch) continue;
-
-    const book = bookMatch[1].trim();
-    const rest = bookMatch[2].trim();
-
-    // No dot → whole chapter (e.g. "Romans 8")
-    if (!rest.includes('.')) {
+  // Adds every verse from chStart.vStart through chEnd.vEnd
+  function pushRange(chStart, vStart, chEnd, vEnd) {
+    for (let chapter = chStart; chapter <= chEnd; chapter++) {
       segments.push({
         book,
-        chapter: parseInt(rest),
-        verseStart: 1,
-        verseEnd: Infinity,
+        chapter,
+        verseStart: chapter === chStart ? vStart : 1,
+        verseEnd: chapter === chEnd ? vEnd : Infinity,
       });
-      continue;
-    }
-
-    // Split on commas for multiple ranges (may or may not have a dot)
-    const commaParts = rest.split(',').map((s) => s.trim());
-    let lastChapter = null;
-
-    for (const commaPart of commaParts) {
-      if (commaPart.includes('.')) {
-        // Full chapter.verse reference (possibly a range)
-        // e.g. "3.23-4.7", "3.16", "3.23-27"
-        const match = commaPart.match(
-          /^(\d+)\.(\d+)(?:-(\d+)\.(\d+)|-(\d+))?$/,
-        );
-        if (!match) continue;
-
-        const chStart = parseInt(match[1]);
-        const vStart = parseInt(match[2]);
-        lastChapter = chStart;
-
-        if (match[3] && match[4]) {
-          // Cross-chapter: 3.23-4.7
-          const chEnd = parseInt(match[3]);
-          const vEnd = parseInt(match[4]);
-          for (let ch = chStart; ch <= chEnd; ch++) {
-            if (ch === chStart && ch === chEnd) {
-              segments.push({
-                book,
-                chapter: ch,
-                verseStart: vStart,
-                verseEnd: vEnd,
-              });
-            } else if (ch === chStart) {
-              segments.push({
-                book,
-                chapter: ch,
-                verseStart: vStart,
-                verseEnd: Infinity,
-              });
-            } else if (ch === chEnd) {
-              segments.push({book, chapter: ch, verseStart: 1, verseEnd: vEnd});
-            } else {
-              segments.push({
-                book,
-                chapter: ch,
-                verseStart: 1,
-                verseEnd: Infinity,
-              });
-            }
-          }
-          lastChapter = chEnd;
-        } else if (match[5]) {
-          // Same-chapter range: 3.16-18
-          segments.push({
-            book,
-            chapter: chStart,
-            verseStart: vStart,
-            verseEnd: parseInt(match[5]),
-          });
-        } else {
-          // Single verse: 3.16
-          segments.push({
-            book,
-            chapter: chStart,
-            verseStart: vStart,
-            verseEnd: vStart,
-          });
-        }
-      } else if (lastChapter !== null) {
-        // Verse-only range continuing previous chapter: "27-30" after "1.12-14"
-        const rangeMatch = commaPart.match(/^(\d+)(?:-(\d+))?$/);
-        if (!rangeMatch) continue;
-        const vStart = parseInt(rangeMatch[1]);
-        const vEnd = rangeMatch[2] ? parseInt(rangeMatch[2]) : vStart;
-        segments.push({
-          book,
-          chapter: lastChapter,
-          verseStart: vStart,
-          verseEnd: vEnd,
-        });
-      }
     }
   }
 
-  return segments;
+  for (const part of normalizeReference(ref).split(';')) {
+    // A part without a book ("9.57-62") continues the previous part's book
+    const bookMatch = part.match(/^(\d?\s*[A-Za-z]+(?:\s+[A-Za-z]+)*)\s*(.*)$/);
+    let rest = part;
+    if (bookMatch) {
+      book = resolveBook(bookMatch[1]);
+      rest = bookMatch[2];
+    }
+    if (!book) continue;
+
+    const pieces = [];
+    // Set once a chapter.verse is seen, so later bare numbers are verses
+    let chapter = null;
+
+    for (const piece of rest.split(',')) {
+      const verseMatch = piece.match(/^(\d+)\.(\d+)(?:-(\d+)(?:\.(\d+))?)?$/);
+      const numberMatch = piece.match(/^(\d+)(?:-(\d+))?$/);
+
+      if (verseMatch) {
+        const [chStart, vStart, end, endVerse] = matchedNumbers(verseMatch);
+        if (endVerse) {
+          // Cross-chapter: 3.23-4.7
+          if (end < chStart || end - chStart > MAX_CHAPTER_SPAN) continue;
+          pushRange(chStart, vStart, end, endVerse);
+          pieces.push(`${chStart}:${vStart}-${end}:${endVerse}`);
+          chapter = end;
+        } else {
+          // Single verse (3.16) or same-chapter range (3.16-18)
+          pushRange(chStart, vStart, chStart, end || vStart);
+          pieces.push(`${chStart}:${vStart}${end ? `-${end}` : ''}`);
+          chapter = chStart;
+        }
+      } else if (numberMatch) {
+        const [start, end] = matchedNumbers(numberMatch);
+        if (chapter !== null) {
+          // Verses continuing the previous chapter: "27-30" after "1.12-14"
+          pushRange(chapter, start, chapter, end || start);
+        } else {
+          // Whole chapters: "8" or "8-9"
+          if (end && (end < start || end - start > MAX_CHAPTER_SPAN)) continue;
+          pushRange(start, 1, end || start, Infinity);
+        }
+        pieces.push(`${start}${end ? `-${end}` : ''}`);
+      }
+    }
+
+    if (pieces.length > 0) {
+      const prefix = book === lastReferenceBook ? '' : `${book} `;
+      referenceParts.push(`${prefix}${pieces.join(', ')}`);
+      lastReferenceBook = book;
+    }
+  }
+
+  return {segments, reference: referenceParts.join('; ')};
 }
 
 function lookupSegment(book, chapter, verseStart, verseEnd) {
-  const normalizedBook = normalizeBook(book);
-  const chapterData = asvData[normalizedBook]?.[String(chapter)];
+  const chapterData = asvData[book]?.[String(chapter)];
   if (!chapterData) return [];
 
   const verseNums = Object.keys(chapterData)
@@ -265,7 +257,7 @@ router.get('/', (req, res) => {
     return res.status(400).json({error: 'Missing required query parameter: q'});
   }
 
-  const segments = parseReference(q);
+  const {segments, reference} = parseReference(q);
   if (segments.length === 0) {
     return res.status(400).json({error: `Could not parse reference: ${q}`});
   }
@@ -290,7 +282,8 @@ router.get('/', (req, res) => {
     return res.status(404).json({error: `No verses found for: ${q}`});
   }
 
-  res.json({data: {passages}});
+  res.json({data: {reference, passages}});
 });
 
 module.exports = router;
+module.exports.parseReference = parseReference;
